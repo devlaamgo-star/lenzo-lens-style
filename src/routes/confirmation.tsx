@@ -38,7 +38,7 @@ function ConfirmationPage() {
   }, []);
 
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    order ? `${t("conf.waMsg")} ${order.orderNumber}` : t("conf.waMsg"),
+    order ? `${t("wa.msg")} ${order.orderNumber}` : t("wa.msg"),
   )}`;
 
   return (
@@ -49,7 +49,7 @@ function ConfirmationPage() {
             <CheckCircle2 className="h-8 w-8" strokeWidth={1.6} />
           </span>
           <h1 className="mt-5 text-2xl font-bold sm:text-3xl">{t("conf.title")}</h1>
-          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">{t("conf.sub")}</p>
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">{t("conf.text")}</p>
 
           {order && (
             <div className="mt-6 w-full rounded-2xl bg-surface p-5 text-start">
@@ -90,13 +90,13 @@ function ConfirmationPage() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-whatsapp px-6 text-sm font-semibold text-whatsapp-foreground"
             >
               <MessageCircle className="h-4 w-4" />
-              {t("conf.wa")}
+              {t("wa.help")}
             </a>
             <Link
               to="/collection"
               className="inline-flex h-12 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold hover:bg-surface"
             >
-              {t("conf.continue")}
+              {t("conf.back")}
             </Link>
           </div>
         </div>
