@@ -81,7 +81,8 @@ function CollectionPage() {
   }, [search.collection, search.filter, search.q, sort, lang]);
 
   const update = (patch: Record<string, string | undefined>) =>
-    navigate({ search: (prev) => ({ ...prev, ...patch }) });
+    navigate({ search: { ...search, ...patch } as never });
+
 
   return (
     <>
