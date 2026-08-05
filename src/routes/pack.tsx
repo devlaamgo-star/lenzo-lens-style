@@ -149,7 +149,7 @@ function PackPage() {
             <div>
               <h2 className="text-lg font-bold">{t("pack.step1")}</h2>
               <div className="mt-4 max-w-md">
-                <Select value={pack.model || undefined} onValueChange={pack.setModel}>
+                <Select {...(pack.model ? { value: pack.model } : {})} onValueChange={pack.setModel}>
                   <SelectTrigger className="h-12 rounded-full">
                     <SelectValue placeholder={t("pack.modelPlaceholder")} />
                   </SelectTrigger>

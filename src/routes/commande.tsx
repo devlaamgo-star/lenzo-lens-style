@@ -157,7 +157,7 @@ function OrderPage() {
               </div>
               <div className="min-w-0">
                 <label className="mb-1.5 block text-sm font-medium">{t("f.model")}</label>
-                <Select value={pack.model || undefined} onValueChange={pack.setModel}>
+                <Select {...(pack.model ? { value: pack.model } : {})} onValueChange={pack.setModel}>
                   <SelectTrigger className="h-12 rounded-xl">
                     <SelectValue placeholder={t("pack.modelPlaceholder")} />
                   </SelectTrigger>
