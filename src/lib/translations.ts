@@ -1,0 +1,362 @@
+export type Lang = "fr" | "ar" | "en";
+
+export const LANGS: Lang[] = ["fr", "ar", "en"];
+
+type Entry = [fr: string, ar: string, en: string];
+
+const D = {
+  "announce.bar": [
+    "LIVRAISON GRATUITE PARTOUT AU MAROC — PAIEMENT À LA LIVRAISON",
+    "توصيل مجاني في جميع أنحاء المغرب — الدفع عند الاستلام",
+    "FREE DELIVERY ACROSS MOROCCO — CASH ON DELIVERY",
+  ],
+
+  "nav.home": ["Accueil", "الرئيسية", "Home"],
+  "nav.collection": ["Collection", "المجموعة", "Collection"],
+  "nav.new": ["Nouveautés", "الجديد", "New arrivals"],
+  "nav.best": ["Bestsellers", "الأكثر مبيعاً", "Bestsellers"],
+  "nav.how": ["Comment ça marche", "كيف تعمل", "How it works"],
+  "nav.reviews": ["Avis clients", "آراء العملاء", "Reviews"],
+  "nav.faq": ["FAQ", "الأسئلة الشائعة", "FAQ"],
+  "nav.menu": ["Menu", "القائمة", "Menu"],
+  "nav.search": ["Rechercher", "بحث", "Search"],
+  "nav.account": ["Compte", "الحساب", "Account"],
+  "nav.cart": ["Panier", "السلة", "Cart"],
+  "nav.close": ["Fermer", "إغلاق", "Close"],
+
+  "menu.all": ["Tous les designs", "كل التصاميم", "All designs"],
+  "menu.minimal": ["Designs minimalistes", "تصاميم بسيطة", "Minimal designs"],
+  "menu.artistic": ["Designs artistiques", "تصاميم فنية", "Artistic designs"],
+  "menu.premium": ["Designs premium", "تصاميم فاخرة", "Premium designs"],
+
+  "hero.label": ["PERSONNALISEZ VOTRE IPHONE", "خصص جهاز iPhone الخاص بك", "PERSONALISE YOUR IPHONE"],
+  "hero.title": [
+    "Un petit détail. Un nouveau style.",
+    "تفصيل صغير. أسلوب جديد.",
+    "A small detail. A whole new style.",
+  ],
+  "hero.desc": [
+    "Choisissez vos 3 designs préférés pour personnaliser et protéger les objectifs de votre iPhone.",
+    "اختر 3 تصاميم مفضلة لتخصيص وحماية عدسات كاميرا iPhone الخاصة بك.",
+    "Pick your 3 favourite designs to personalise and protect your iPhone camera lenses.",
+  ],
+  "hero.cta": ["Composer mon pack", "كوّن باقتك", "Build my pack"],
+  "hero.cta2": ["Voir la collection", "تصفح المجموعة", "View the collection"],
+  "hero.offer": ["3 skins à seulement 99 MAD", "3 ملصقات بـ 99 درهم فقط", "3 skins for only 99 MAD"],
+  "hero.trust1": ["Livraison gratuite au Maroc", "توصيل مجاني داخل المغرب", "Free delivery in Morocco"],
+  "hero.trust2": ["Paiement à la livraison", "الدفع عند الاستلام", "Cash on delivery"],
+  "hero.trust3": ["Installation facile", "تركيب سهل", "Easy to apply"],
+
+  "new.title": ["Nouveautés", "الجديد", "New arrivals"],
+  "new.sub": [
+    "Découvrez les derniers designs LENZO.",
+    "اكتشف أحدث تصاميم LENZO.",
+    "Discover the latest LENZO designs.",
+  ],
+  "badge.new": ["Nouveau", "جديد", "New"],
+  "badge.best": ["Bestseller", "الأكثر مبيعاً", "Bestseller"],
+  "card.included": ["Inclus dans votre pack de 3", "مشمول في باقة الـ 3", "Included in your pack of 3"],
+  "card.add": ["Ajouter au pack", "أضف إلى الباقة", "Add to pack"],
+  "card.added": ["Ajouté", "تمت الإضافة", "Added"],
+  "card.quickview": ["Aperçu rapide", "معاينة سريعة", "Quick view"],
+  "card.compatible": [
+    "Compatible iPhone 11 → iPhone 16 Pro Max",
+    "متوافق مع iPhone 11 حتى iPhone 16 Pro Max",
+    "Compatible with iPhone 11 → iPhone 16 Pro Max",
+  ],
+  "card.full": ["Pack complet (3/3)", "الباقة مكتملة (3/3)", "Pack complete (3/3)"],
+  "common.viewAll": ["Voir tous les designs", "عرض كل التصاميم", "View all designs"],
+
+  "collections.title": ["Explorez nos collections", "اكتشف مجموعاتنا", "Explore our collections"],
+  "collections.sub": [
+    "Quatre univers de style, deux sélections incontournables.",
+    "أربعة عوالم من الأناقة واختياران مميزان.",
+    "Four style worlds, two must-see selections.",
+  ],
+  "collections.discover": ["Découvrir", "اكتشف", "Discover"],
+  "col.minimal": ["Minimal", "بسيط", "Minimal"],
+  "col.minimal.d": [
+    "Des lignes sobres pour un rendu discret.",
+    "خطوط هادئة لمظهر خفي.",
+    "Clean lines for a discreet finish.",
+  ],
+  "col.artistique": ["Artistique", "فني", "Artistic"],
+  "col.artistique.d": [
+    "Des finitions travaillées et colorées.",
+    "لمسات ملونة ومصنوعة بعناية.",
+    "Crafted, colourful finishes.",
+  ],
+  "col.elegance": ["Élégance", "أناقة", "Elegance"],
+  "col.elegance.d": [
+    "Or, perle et finitions raffinées.",
+    "ذهب ولؤلؤ ولمسات راقية.",
+    "Gold, pearl and refined finishes.",
+  ],
+  "col.urbain": ["Urbain", "حضري", "Urban"],
+  "col.urbain.d": [
+    "Des teintes profondes au caractère affirmé.",
+    "ألوان عميقة بطابع قوي.",
+    "Deep tones with a strong character.",
+  ],
+  "col.best.d": [
+    "Les designs les plus choisis par nos clients.",
+    "التصاميم الأكثر اختياراً من عملائنا.",
+    "The designs our customers choose most.",
+  ],
+  "col.new.d": [
+    "Les dernières arrivées de la saison.",
+    "أحدث الإضافات لهذا الموسم.",
+    "The latest additions of the season.",
+  ],
+
+  "how.title": ["Comment ça marche ?", "كيف تعمل؟", "How does it work?"],
+  "how.sub": [
+    "Trois étapes, et votre pack est en route.",
+    "ثلاث خطوات وباقتك في الطريق.",
+    "Three steps and your pack is on its way.",
+  ],
+  "how.s1": ["Choisissez votre modèle", "اختر موديل هاتفك", "Choose your model"],
+  "how.s1d": [
+    "Sélectionnez le modèle exact de votre iPhone.",
+    "حدد موديل iPhone الخاص بك بدقة.",
+    "Select the exact model of your iPhone.",
+  ],
+  "how.s2": ["Composez votre pack", "كوّن باقتك", "Build your pack"],
+  "how.s2d": [
+    "Choisissez les 3 designs que vous préférez.",
+    "اختر التصاميم الثلاثة التي تفضلها.",
+    "Choose the 3 designs you like best.",
+  ],
+  "how.s3": ["Recevez et payez", "استلم وادفع", "Receive and pay"],
+  "how.s3d": [
+    "Nous livrons gratuitement et vous payez à la réception.",
+    "نوصل مجاناً وتدفع عند الاستلام.",
+    "We deliver for free and you pay on delivery.",
+  ],
+
+  "benefits.title": ["Le style jusque dans les détails", "الأناقة حتى في التفاصيل", "Style down to the details"],
+  "benefits.sub": [
+    "Une finition pensée pour durer au quotidien.",
+    "تشطيب مصمم ليدوم في الاستعمال اليومي.",
+    "A finish designed for everyday use.",
+  ],
+  "b1": ["Découpe précise", "قص دقيق", "Precise cut"],
+  "b1d": [
+    "Un ajustement net autour de chaque objectif.",
+    "تثبيت محكم حول كل عدسة.",
+    "A clean fit around every lens.",
+  ],
+  "b2": ["Application facile", "تركيب سهل", "Easy application"],
+  "b2d": [
+    "Posez vos skins en quelques secondes, sans outil.",
+    "ضع الملصقات في ثوانٍ دون أدوات.",
+    "Apply your skins in seconds, no tools needed.",
+  ],
+  "b3": ["Résistant aux rayures", "مقاوم للخدوش", "Scratch resistant"],
+  "b3d": [
+    "Aide à protéger la surface contre les petites rayures.",
+    "يساعد على حماية السطح من الخدوش الصغيرة.",
+    "Helps protect the surface against small scratches.",
+  ],
+  "b4": ["Aucun résidu après retrait", "بدون بقايا بعد الإزالة", "No residue after removal"],
+  "b4d": [
+    "Retirez-les proprement quand vous le souhaitez.",
+    "أزلها بنظافة متى شئت.",
+    "Remove them cleanly whenever you want.",
+  ],
+  "b5": ["Design fin et élégant", "تصميم رفيع وأنيق", "Slim, elegant design"],
+  "b5d": [
+    "Une épaisseur discrète qui respecte les lignes de votre iPhone.",
+    "سماكة خفيفة تحترم خطوط جهازك.",
+    "A discreet thickness that respects your iPhone's lines.",
+  ],
+  "b6": [
+    "Compatible avec plusieurs modèles d’iPhone",
+    "متوافق مع عدة موديلات iPhone",
+    "Compatible with many iPhone models",
+  ],
+  "b6d": [
+    "De l’iPhone 11 à l’iPhone 16 Pro Max.",
+    "من iPhone 11 إلى iPhone 16 Pro Max.",
+    "From iPhone 11 to iPhone 16 Pro Max.",
+  ],
+
+  "trust.title": ["Commander en toute confiance", "اطلب بكل ثقة", "Order with confidence"],
+  "trust.sub": [
+    "Un service pensé pour les clients au Maroc.",
+    "خدمة مصممة للعملاء في المغرب.",
+    "A service built for customers in Morocco.",
+  ],
+  "t1": ["Livraison gratuite partout au Maroc", "توصيل مجاني في كل المغرب", "Free delivery across Morocco"],
+  "t2": ["Paiement à la livraison", "الدفع عند الاستلام", "Cash on delivery"],
+  "t3": [
+    "Confirmation de commande par téléphone ou WhatsApp",
+    "تأكيد الطلب عبر الهاتف أو واتساب",
+    "Order confirmation by phone or WhatsApp",
+  ],
+  "t4": ["Support client rapide", "دعم سريع للعملاء", "Fast customer support"],
+  "t5": [
+    "Échange en cas de produit incorrect ou endommagé",
+    "استبدال في حالة منتج خاطئ أو تالف",
+    "Exchange for an incorrect or damaged product",
+  ],
+
+  "reviews.title": [
+    "Ils ont personnalisé leur iPhone avec LENZO",
+    "خصصوا هواتفهم مع LENZO",
+    "They personalised their iPhone with LENZO",
+  ],
+  "reviews.sub": [
+    "Avis de clients au Maroc.",
+    "آراء عملاء من المغرب.",
+    "Reviews from customers in Morocco.",
+  ],
+  "reviews.verified": ["Commande vérifiée", "طلب موثق", "Verified order"],
+
+  "faq.title": ["Questions fréquentes", "الأسئلة الشائعة", "Frequently asked questions"],
+  "faq.sub": [
+    "Tout ce qu’il faut savoir avant de commander.",
+    "كل ما تحتاج معرفته قبل الطلب.",
+    "Everything to know before you order.",
+  ],
+
+  "pack.title": ["Composer mon pack", "كوّن باقتي", "Build my pack"],
+  "pack.sub": [
+    "3 designs, 99 MAD, livraison gratuite.",
+    "3 تصاميم، 99 درهم، توصيل مجاني.",
+    "3 designs, 99 MAD, free delivery.",
+  ],
+  "pack.step1": ["Étape 1 — Choisissez le modèle de votre iPhone", "الخطوة 1 — اختر موديل iPhone", "Step 1 — Choose your iPhone model"],
+  "pack.step2": ["Étape 2 — Choisissez 3 designs", "الخطوة 2 — اختر 3 تصاميم", "Step 2 — Choose 3 designs"],
+  "pack.step3": ["Étape 3 — Résumé de votre pack", "الخطوة 3 — ملخص الباقة", "Step 3 — Your pack summary"],
+  "pack.modelPlaceholder": ["Sélectionnez votre modèle", "اختر الموديل", "Select your model"],
+  "pack.selected": ["designs sélectionnés", "تصاميم مختارة", "designs selected"],
+  "pack.sameAllowed": [
+    "Vous pouvez choisir 3 designs différents ou plusieurs fois le même.",
+    "يمكنك اختيار 3 تصاميم مختلفة أو نفس التصميم أكثر من مرة.",
+    "You can pick 3 different designs or the same one more than once.",
+  ],
+  "pack.summary": ["Résumé du pack", "ملخص الباقة", "Pack summary"],
+  "pack.model": ["Modèle d’iPhone", "موديل iPhone", "iPhone model"],
+  "pack.designs": ["Designs sélectionnés", "التصاميم المختارة", "Selected designs"],
+  "pack.total": ["Total", "المجموع", "Total"],
+  "pack.delivery": ["Livraison", "التوصيل", "Delivery"],
+  "pack.free": ["Gratuite", "مجاني", "Free"],
+  "pack.payment": ["Paiement", "الدفع", "Payment"],
+  "pack.cod": ["À la livraison", "عند الاستلام", "Cash on delivery"],
+  "pack.order": ["Commander mon pack", "اطلب باقتي", "Order my pack"],
+  "pack.needModel": ["Choisissez d’abord votre modèle", "اختر الموديل أولاً", "Choose your model first"],
+  "pack.needThree": ["Sélectionnez 3 designs", "اختر 3 تصاميم", "Select 3 designs"],
+  "pack.empty": ["Aucun design sélectionné", "لا يوجد تصميم مختار", "No design selected"],
+  "pack.remove": ["Retirer", "إزالة", "Remove"],
+  "pack.clear": ["Vider le pack", "إفراغ الباقة", "Clear pack"],
+
+  "col.title": ["Tous les designs", "كل التصاميم", "All designs"],
+  "col.sub": [
+    "Composez votre pack de 3 parmi toute la collection.",
+    "كوّن باقتك من 3 تصاميم من كل المجموعة.",
+    "Build your pack of 3 from the full collection.",
+  ],
+  "col.filters": ["Filtres", "التصفية", "Filters"],
+  "col.model": ["Modèle d’iPhone", "موديل iPhone", "iPhone model"],
+  "col.collection": ["Collection", "المجموعة", "Collection"],
+  "col.style": ["Style", "الأسلوب", "Style"],
+  "col.all": ["Tous", "الكل", "All"],
+  "col.sort": ["Trier", "الترتيب", "Sort"],
+  "sort.popular": ["Plus populaires", "الأكثر رواجاً", "Most popular"],
+  "sort.new": ["Nouveautés", "الجديد", "Newest"],
+  "sort.az": ["Nom A–Z", "الاسم أ–ي", "Name A–Z"],
+  "sort.za": ["Nom Z–A", "الاسم ي–أ", "Name Z–A"],
+  "col.results": ["designs", "تصميم", "designs"],
+  "col.none": ["Aucun design ne correspond à votre recherche.", "لا يوجد تصميم مطابق.", "No design matches your search."],
+  "col.reset": ["Réinitialiser", "إعادة الضبط", "Reset"],
+  "col.grid": ["Affichage", "طريقة العرض", "Layout"],
+  "search.placeholder": ["Rechercher un design…", "ابحث عن تصميم…", "Search a design…"],
+
+  "order.title": ["Finaliser ma commande", "إتمام الطلب", "Complete my order"],
+  "order.sub": [
+    "Paiement à la livraison, sans carte bancaire.",
+    "الدفع عند الاستلام، بدون بطاقة بنكية.",
+    "Cash on delivery, no card needed.",
+  ],
+  "f.name": ["Nom complet", "الاسم الكامل", "Full name"],
+  "f.phone": ["Numéro de téléphone", "رقم الهاتف", "Phone number"],
+  "f.city": ["Ville", "المدينة", "City"],
+  "f.address": ["Adresse complète", "العنوان الكامل", "Full address"],
+  "f.model": ["Modèle d’iPhone", "موديل iPhone", "iPhone model"],
+  "f.designs": ["Designs sélectionnés", "التصاميم المختارة", "Selected designs"],
+  "f.notes": ["Notes supplémentaires", "ملاحظات إضافية", "Additional notes"],
+  "f.optional": ["Facultatif", "اختياري", "Optional"],
+  "f.submit": ["Confirmer ma commande", "أكد طلبي", "Confirm my order"],
+  "f.sending": ["Envoi en cours…", "جاري الإرسال…", "Sending…"],
+  "f.note": [
+    "Notre équipe vous contactera pour confirmer votre commande avant l’expédition.",
+    "سيتصل بك فريقنا لتأكيد الطلب قبل الشحن.",
+    "Our team will contact you to confirm your order before shipping.",
+  ],
+  "f.summary": ["Récapitulatif", "الملخص", "Order summary"],
+  "f.pack3": ["Pack de 3 skins", "باقة 3 ملصقات", "Pack of 3 skins"],
+  "f.edit": ["Modifier mon pack", "تعديل الباقة", "Edit my pack"],
+  "e.name": ["Veuillez saisir votre nom complet.", "يرجى إدخال اسمك الكامل.", "Please enter your full name."],
+  "e.phone": [
+    "Numéro marocain invalide (ex. 0612345678).",
+    "رقم مغربي غير صالح (مثال 0612345678).",
+    "Invalid Moroccan number (e.g. 0612345678).",
+  ],
+  "e.city": ["Veuillez indiquer votre ville.", "يرجى إدخال المدينة.", "Please enter your city."],
+  "e.address": ["Adresse trop courte.", "العنوان قصير جداً.", "Address is too short."],
+  "e.model": ["Choisissez votre modèle d’iPhone.", "اختر موديل iPhone.", "Choose your iPhone model."],
+  "e.designs": ["Sélectionnez exactement 3 designs.", "اختر 3 تصاميم بالضبط.", "Select exactly 3 designs."],
+  "e.server": [
+    "Une erreur est survenue. Réessayez ou contactez-nous sur WhatsApp.",
+    "حدث خطأ. حاول مجدداً أو تواصل معنا عبر واتساب.",
+    "Something went wrong. Try again or contact us on WhatsApp.",
+  ],
+
+  "conf.title": ["Merci pour votre commande !", "شكراً على طلبك!", "Thank you for your order!"],
+  "conf.text": [
+    "Votre commande a bien été reçue. Notre équipe vous contactera prochainement pour confirmer vos informations avant l’expédition.",
+    "تم استلام طلبك. سيتصل بك فريقنا قريباً لتأكيد معلوماتك قبل الشحن.",
+    "We received your order. Our team will contact you shortly to confirm your details before shipping.",
+  ],
+  "conf.number": ["Numéro de commande", "رقم الطلب", "Order number"],
+  "conf.none": [
+    "Aucune commande récente à afficher.",
+    "لا يوجد طلب حديث لعرضه.",
+    "No recent order to display.",
+  ],
+  "conf.back": ["Retour à l’accueil", "العودة للرئيسية", "Back to home"],
+
+  "wa.help": ["Besoin d’aide ?", "تحتاج مساعدة؟", "Need help?"],
+  "wa.msg": [
+    "Bonjour LENZO, j’ai besoin d’aide pour choisir mon modèle d’iPhone et composer mon pack.",
+    "مرحباً LENZO، أحتاج مساعدة لاختيار موديل iPhone وتكوين باقتي.",
+    "Hello LENZO, I need help choosing my iPhone model and building my pack.",
+  ],
+
+  "footer.desc": [
+    "Des designs premium pour personnaliser votre iPhone jusque dans les moindres détails.",
+    "تصاميم فاخرة لتخصيص جهاز iPhone حتى أدق التفاصيل.",
+    "Premium designs to personalise your iPhone down to the finest details.",
+  ],
+  "footer.nav": ["Navigation", "التصفح", "Navigation"],
+  "footer.help": ["Aide", "المساعدة", "Help"],
+  "footer.contact": ["Contact", "اتصل بنا", "Contact"],
+  "footer.shipping": ["Livraison", "التوصيل", "Delivery"],
+  "footer.returns": ["Retours et échanges", "الإرجاع والاستبدال", "Returns & exchanges"],
+  "footer.terms": ["Conditions générales", "الشروط العامة", "Terms & conditions"],
+  "footer.privacy": ["Politique de confidentialité", "سياسة الخصوصية", "Privacy policy"],
+  "footer.shipPolicy": ["Politique de livraison", "سياسة التوصيل", "Delivery policy"],
+  "footer.returnPolicy": ["Politique de retours", "سياسة الإرجاع", "Returns policy"],
+  "footer.rights": ["© LENZO. Tous droits réservés.", "© LENZO. جميع الحقوق محفوظة.", "© LENZO. All rights reserved."],
+
+  "breadcrumb.home": ["Accueil", "الرئيسية", "Home"],
+  "sticky.build": ["Composer mon pack", "كوّن باقتي", "Build my pack"],
+} satisfies Record<string, Entry>;
+
+export type TKey = keyof typeof D;
+
+export function translate(lang: Lang, key: TKey): string {
+  const idx = lang === "fr" ? 0 : lang === "ar" ? 1 : 2;
+  return D[key][idx];
+}
