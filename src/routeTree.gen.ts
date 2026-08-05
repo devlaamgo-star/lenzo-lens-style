@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AvisRouteImport } from './routes/avis'
+import { Route as CollectionRouteImport } from './routes/collection'
+import { Route as CommandeRouteImport } from './routes/commande'
+import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
+import { Route as ConfirmationRouteImport } from './routes/confirmation'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as PackRouteImport } from './routes/pack'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AvisRoute = AvisRouteImport.update({
+  id: '/avis',
+  path: '/avis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionRoute = CollectionRouteImport.update({
+  id: '/collection',
+  path: '/collection',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommandeRoute = CommandeRouteImport.update({
+  id: '/commande',
+  path: '/commande',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CommentCaMarcheRoute = CommentCaMarcheRouteImport.update({
+  id: '/comment-ca-marche',
+  path: '/comment-ca-marche',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfirmationRoute = ConfirmationRouteImport.update({
+  id: '/confirmation',
+  path: '/confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PackRoute = PackRouteImport.update({
+  id: '/pack',
+  path: '/pack',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/avis': typeof AvisRoute
+  '/collection': typeof CollectionRoute
+  '/commande': typeof CommandeRoute
+  '/comment-ca-marche': typeof CommentCaMarcheRoute
+  '/confirmation': typeof ConfirmationRoute
+  '/faq': typeof FaqRoute
+  '/pack': typeof PackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/avis': typeof AvisRoute
+  '/collection': typeof CollectionRoute
+  '/commande': typeof CommandeRoute
+  '/comment-ca-marche': typeof CommentCaMarcheRoute
+  '/confirmation': typeof ConfirmationRoute
+  '/faq': typeof FaqRoute
+  '/pack': typeof PackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/avis': typeof AvisRoute
+  '/collection': typeof CollectionRoute
+  '/commande': typeof CommandeRoute
+  '/comment-ca-marche': typeof CommentCaMarcheRoute
+  '/confirmation': typeof ConfirmationRoute
+  '/faq': typeof FaqRoute
+  '/pack': typeof PackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/avis'
+    | '/collection'
+    | '/commande'
+    | '/comment-ca-marche'
+    | '/confirmation'
+    | '/faq'
+    | '/pack'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/avis'
+    | '/collection'
+    | '/commande'
+    | '/comment-ca-marche'
+    | '/confirmation'
+    | '/faq'
+    | '/pack'
+  id:
+    | '__root__'
+    | '/'
+    | '/avis'
+    | '/collection'
+    | '/commande'
+    | '/comment-ca-marche'
+    | '/confirmation'
+    | '/faq'
+    | '/pack'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AvisRoute: typeof AvisRoute
+  CollectionRoute: typeof CollectionRoute
+  CommandeRoute: typeof CommandeRoute
+  CommentCaMarcheRoute: typeof CommentCaMarcheRoute
+  ConfirmationRoute: typeof ConfirmationRoute
+  FaqRoute: typeof FaqRoute
+  PackRoute: typeof PackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,22 +143,68 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/avis': {
+      id: '/avis'
+      path: '/avis'
+      fullPath: '/avis'
+      preLoaderRoute: typeof AvisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collection': {
+      id: '/collection'
+      path: '/collection'
+      fullPath: '/collection'
+      preLoaderRoute: typeof CollectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/commande': {
+      id: '/commande'
+      path: '/commande'
+      fullPath: '/commande'
+      preLoaderRoute: typeof CommandeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comment-ca-marche': {
+      id: '/comment-ca-marche'
+      path: '/comment-ca-marche'
+      fullPath: '/comment-ca-marche'
+      preLoaderRoute: typeof CommentCaMarcheRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confirmation': {
+      id: '/confirmation'
+      path: '/confirmation'
+      fullPath: '/confirmation'
+      preLoaderRoute: typeof ConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pack': {
+      id: '/pack'
+      path: '/pack'
+      fullPath: '/pack'
+      preLoaderRoute: typeof PackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AvisRoute: AvisRoute,
+  CollectionRoute: CollectionRoute,
+  CommandeRoute: CommandeRoute,
+  CommentCaMarcheRoute: CommentCaMarcheRoute,
+  ConfirmationRoute: ConfirmationRoute,
+  FaqRoute: FaqRoute,
+  PackRoute: PackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
