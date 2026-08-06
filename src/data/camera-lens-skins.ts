@@ -29,6 +29,16 @@ import lens26 from "@/assets/lens/lens-26.webp.asset.json";
 import lens27 from "@/assets/lens/lens-27.webp.asset.json";
 import lens28 from "@/assets/lens/lens-28.webp.asset.json";
 import lens29 from "@/assets/lens/lens-29.webp.asset.json";
+import lens30 from "@/assets/lens/lens-30.webp.asset.json";
+import lens31 from "@/assets/lens/lens-31.webp.asset.json";
+import lens32 from "@/assets/lens/lens-32.webp.asset.json";
+import lens33 from "@/assets/lens/lens-33.webp.asset.json";
+import lens34 from "@/assets/lens/lens-34.webp.asset.json";
+import lens35 from "@/assets/lens/lens-35.webp.asset.json";
+import lens36 from "@/assets/lens/lens-36.webp.asset.json";
+import lens37 from "@/assets/lens/lens-37.webp.asset.json";
+import lens38 from "@/assets/lens/lens-38.webp.asset.json";
+import lens39 from "@/assets/lens/lens-39.webp.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -93,6 +103,17 @@ const SEEDS: Seed[] = [
   { slug: "chat-espion", fr: "Chat Espion", ar: "قط متلصص", en: "Spy Cat", image: lens27.url, isNew: true, popularity: 47 },
   { slug: "lune-lapin", fr: "Lune Lapin", ar: "قمر الأرنب", en: "Rabbit Moon", image: lens28.url, isNew: true, popularity: 45 },
   { slug: "dragon-fumee", fr: "Dragon Fumée", ar: "تنين الدخان", en: "Smoke Dragon", image: lens29.url, isNew: true, popularity: 43 },
+
+  { slug: "dracaufeu-ambre", fr: "Dracaufeu Ambré", ar: "تنين كهرماني", en: "Amber Charizard", image: lens30.url, isNew: true, popularity: 41 },
+  { slug: "dracaufeu-falaise", fr: "Dracaufeu Falaise", ar: "تنين الجرف", en: "Cliff Charizard", image: lens31.url, isNew: true, popularity: 39 },
+  { slug: "dragon-givre", fr: "Dragon Givré", ar: "تنين الصقيع", en: "Frost Dragon", image: lens32.url, isNew: true, popularity: 37 },
+  { slug: "dragon-onyx", fr: "Dragon Onyx", ar: "تنين أونيكس", en: "Onyx Dragon", image: lens33.url, isNew: true, popularity: 35 },
+  { slug: "nuit-douce", fr: "Nuit Douce", ar: "ليلة هادئة", en: "Cozy Night", image: lens34.url, isNew: true, popularity: 33 },
+  { slug: "chat-choque", fr: "Chat Choqué", ar: "قط مندهش", en: "Shocked Cat", image: lens35.url, isNew: true, popularity: 31 },
+  { slug: "chat-safran", fr: "Chat Safran", ar: "قط زعفراني", en: "Saffron Cat", image: lens36.url, isNew: true, popularity: 29 },
+  { slug: "chat-cobalt", fr: "Chat Cobalt", ar: "قط كوبالت", en: "Cobalt Cat", image: lens37.url, isNew: true, popularity: 27 },
+  { slug: "majlis-blanc", fr: "Majlis Blanc", ar: "مجلس أبيض", en: "White Majlis", image: lens38.url, isNew: true, popularity: 25 },
+  { slug: "majlis-nuit", fr: "Majlis Nuit", ar: "مجلس ليلي", en: "Night Majlis", image: lens39.url, isNew: true, popularity: 23 },
 ];
 
 export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
