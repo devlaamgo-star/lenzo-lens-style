@@ -5,7 +5,7 @@ import logo from "@/assets/lenzo-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { DESIGNS, CAMERA_LENS_SKINS, FULL_BODY_SKINS, PACK_SIZE } from "@/lib/catalog";
-import { BACK_LENS_SKINS, IPHONE_AIR_SKINS } from "@/lib/catalog";
+import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
 import { LANGS, type Lang } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import {
@@ -54,6 +54,7 @@ export function SiteHeader() {
     { to: "/objectifs" as const, search: {}, label: t("lens.nav") },
     { to: "/dos-camera" as const, search: {}, label: t("backlens.nav") },
     { to: "/iphone-air" as const, search: {}, label: t("air.nav") },
+    { to: "/anime" as const, search: {}, label: t("anime.nav") },
     { to: "/skins" as const, search: {}, label: t("skins.nav") },
     { to: "/collection" as const, search: { filter: "new" as const }, label: t("nav.new") },
     { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
@@ -283,6 +284,21 @@ export function SiteHeader() {
                 onSelect={() => {
                   setSearchOpen(false);
                   navigate({ to: "/objectifs/$slug", params: { slug: s.slug } });
+                }}
+              >
+                <img src={s.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-contain" />
+                {s.name[lang]}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading={t("anime.nav")}>
+            {ANIME_SKINS.map((s) => (
+              <CommandItem
+                key={s.id}
+                value={`${s.name.fr} ${s.name.en} ${s.name.ar}`}
+                onSelect={() => {
+                  setSearchOpen(false);
+                  navigate({ to: "/anime/$slug", params: { slug: s.slug } });
                 }}
               >
                 <img src={s.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-contain" />
