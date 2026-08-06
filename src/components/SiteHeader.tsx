@@ -230,15 +230,18 @@ export function SiteHeader() {
             <User className="h-[18px] w-[18px]" />
           </Link>
           <Link
-            to="/pack"
+            to="/panier"
             aria-label={t("nav.cart")}
             className="relative grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface"
           >
             <ShoppingBag className="h-[18px] w-[18px]" />
-            <span className="absolute -top-0.5 end-0 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
-              {pack.designs.length}/{PACK_SIZE}
-            </span>
+            {cart.count + (pack.designs.length === PACK_SIZE ? 1 : 0) > 0 && (
+              <span className="absolute -top-0.5 end-0 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                {cart.count + (pack.designs.length === PACK_SIZE ? 1 : 0)}
+              </span>
+            )}
           </Link>
+
           <div className="ms-1.5 flex items-center rounded-full border border-border p-0.5">
             {LANGS.map((l: Lang) => (
               <button
