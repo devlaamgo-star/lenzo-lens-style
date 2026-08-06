@@ -100,6 +100,12 @@ const SEEDS: Seed[] = [
   { slug: "dame-dragon", fr: "Dame Dragon", ar: "سيدة التنين", en: "Dragon Lady", image: skin49.url, isNew: true, popularity: 68 },
   { slug: "barque-etoilee", fr: "Barque Étoilée", ar: "قارب النجوم", en: "Starry Boat", image: skin51.url, isNew: true, popularity: 67 },
   { slug: "verger-en-fleurs", fr: "Verger en Fleurs", ar: "بستان مزهر", en: "Blossom Orchard", image: skin526.url, isNew: true, popularity: 66 },
+  { slug: "escale-tropicale", fr: "Escale Tropicale", ar: "محطة استوائية", en: "Tropical Stopover", image: skin619.url, isNew: true, popularity: 65 },
+  { slug: "muse-stellaire", fr: "Muse Stellaire", ar: "ملهمة النجوم", en: "Stellar Muse", image: skin702.url, isNew: true, popularity: 64 },
+  { slug: "hatter-man", fr: "Hatter Man", ar: "هاتر مان", en: "Hatter Man", image: skin710.url, isNew: true, popularity: 63 },
+  { slug: "retro-arcade", fr: "Rétro Arcade", ar: "أركيد ريترو", en: "Retro Arcade", image: skin818.url, isNew: true, popularity: 62 },
+  { slug: "mosaique-savane", fr: "Mosaïque Savane", ar: "فسيفساء السافانا", en: "Savanna Mosaic", image: skin860.url, isNew: true, popularity: 61 },
+  { slug: "graffiti-urbain", fr: "Graffiti Urbain", ar: "غرافيتي حضري", en: "Urban Graffiti", image: skin862.url, isNew: true, popularity: 60 },
 ];
 
 export const FULL_BODY_SKINS: FullBodySkin[] = SEEDS.map((s) => ({
