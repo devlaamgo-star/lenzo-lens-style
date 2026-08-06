@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/select";
 
 const searchSchema = z.object({
-  filter: z.enum(["new"]).optional(),
+  filter: z.enum(["new", "best"]).optional(),
   sort: z.enum(["popular", "new", "az", "za"]).optional(),
   model: z.string().optional(),
   q: z.string().optional(),
@@ -53,6 +53,9 @@ function CollectionPage() {
   const results = useMemo(() => {
     let list = [...DESIGNS];
     if (search.filter === "new") list = list.filter((d) => d.isNew);
+    if (search.filter === "best") {
+      list = [...list].sort((a, b) => b.popularity - a.popularity).slice(0, 12);
+    }
     if (search.q) {
       const q = search.q.toLowerCase();
       list = list.filter((d) =>

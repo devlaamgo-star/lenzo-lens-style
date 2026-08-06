@@ -14,6 +14,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { I18nProvider, useI18n } from "@/lib/i18n";
+import { getServerLang } from "@/lib/lang.functions";
+import { LANGS, type Lang } from "@/lib/translations";
 import { PackProvider } from "@/lib/pack";
 import { CartProvider } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -104,6 +106,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
+  loader: async (): Promise<{ lang: Lang }> => {
+    if (import.meta.env.SSR) return { lang: await getServerLang() };
+    const stored = typeof window !== "undefined" ? window.localStorage.getItem("lenzo-lang") : null;
+    return { lang: stored && (LANGS as readonly string[]).includes(stored) ? (stored as Lang) : "fr" };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -118,7 +125,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         <ScriptOnce>
-          {`try{var l=localStorage.getItem('lenzo-lang');if(l==='fr'||l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}else{document.documentElement.dir='ltr';}}catch(e){}`}
+          {`try{var l=localStorage.getItem('lenzo-lang');if(l){document.cookie='lenzo-lang='+l+'; path=/; max-age=31536000; samesite=lax';}if(l==='fr'||l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}else{document.documentElement.dir='ltr';}}catch(e){}`}
         </ScriptOnce>
         {children}
         <Scripts />
@@ -141,10 +148,11 @@ function AnnouncementBar() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const { lang } = Route.useLoaderData();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <I18nProvider>
+      <I18nProvider initialLang={lang}>
         <PackProvider>
          <CartProvider>
           <div className="flex min-h-screen flex-col">
