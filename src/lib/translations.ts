@@ -179,9 +179,9 @@ const D = {
     "A discreet thickness that respects your iPhone's lines.",
   ],
   "b6": [
-    "Compatible avec plusieurs modèles d’iPhone",
+    "Compatible avec iPhone 17 Pro Max",
     "متوافق مع عدة موديلات iPhone",
-    "Compatible with many iPhone models",
+    "Compatible with iPhone 17 Pro Max",
   ],
   "b6d": [
     "De l’iPhone 11 à l’iPhone 16 Pro Max.",

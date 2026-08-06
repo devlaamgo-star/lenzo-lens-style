@@ -26,7 +26,7 @@ const PackContext = createContext<PackValue | null>(null);
 const KEY = "lenzo-pack";
 
 export function PackProvider({ children }: { children: ReactNode }) {
-  const [model, setModelState] = useState("");
+  const [model, setModelState] = useState("iPhone 17 Pro Max");
   const [designs, setDesigns] = useState<string[]>([]);
   const [ready, setReady] = useState(false);
 
@@ -35,7 +35,7 @@ export function PackProvider({ children }: { children: ReactNode }) {
       const raw = window.localStorage.getItem(KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as { model?: string; designs?: string[] };
-        if (typeof parsed.model === "string") setModelState(parsed.model);
+        if (typeof parsed.model === "string" && parsed.model) setModelState("iPhone 17 Pro Max");
         if (Array.isArray(parsed.designs)) setDesigns(parsed.designs.slice(0, PACK_SIZE));
       }
     } catch {
