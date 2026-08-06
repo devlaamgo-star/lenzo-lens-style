@@ -97,6 +97,17 @@ function CollectionPage() {
           </nav>
           <h1 className="mt-3 text-2xl font-bold sm:text-3xl lg:text-[2.1rem]">{t("col.title")}</h1>
           <p className="mt-2 max-w-xl text-sm text-muted-foreground">{t("col.sub")}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <span className="inline-flex h-9 items-center rounded-full bg-ink px-4 text-[13px] font-semibold text-ink-foreground">
+              {t("menu.stickers")}
+            </span>
+            <Link
+              to="/skins"
+              className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-[13px] font-semibold transition-colors hover:bg-surface"
+            >
+              {t("skins.nav")}
+            </Link>
+          </div>
         </div>
       </section>
 
