@@ -37,7 +37,7 @@ const D = {
     "خصص كل تفصيل حول عدسات جهاز iPhone الخاص بك.",
     "Personalise every detail around your iPhone lenses.",
   ],
-  "lens.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "lens.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
   "lens.category": [
     "Sticker pour objectifs caméra",
     "ملصق لعدسات الكاميرا",
@@ -50,7 +50,7 @@ const D = {
     "تصاميم مستوحاة من عالم المانغا لتخصيص هاتفك آيفون.",
     "Manga-inspired designs to personalise your iPhone.",
   ],
-  "anime.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "anime.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
   "anime.category": ["Skin Anime", "سكين أنمي", "Anime skin"],
   "air.nav": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
   "air.title": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
@@ -59,7 +59,7 @@ const D = {
     "اكتشف تصاميم مصممة خصيصًا لجهاز iPhone Air.",
     "Discover designs made specifically for your iPhone Air.",
   ],
-  "air.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "air.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
   "air.category": ["Skin iPhone Air", "سكين iPhone Air", "iPhone Air skin"],
   "backlens.nav": ["Skins arrière & caméra", "سكينات الظهر والكاميرا", "Back & Lens Skins"],
   "backlens.title": ["Skins arrière & caméra", "سكينات الظهر والكاميرا", "Back & Lens Skins"],
@@ -68,7 +68,7 @@ const D = {
     "تصميم منسّق لظهر جهاز iPhone ووحدة الكاميرا.",
     "A coordinated design for your iPhone back and camera module.",
   ],
-  "backlens.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "backlens.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
   "backlens.category": [
     "Skin arrière & caméra",
     "سكين الظهر والكاميرا",
@@ -81,11 +81,7 @@ const D = {
     "غيّر مظهر جهاز iPhone بالكامل.",
     "Completely transform the style of your iPhone.",
   ],
-  "skins.viewAll": [
-    "Voir toutes les skins intégrales",
-    "شاهد كل السكينات الكاملة",
-    "View all full body skins",
-  ],
+  "skins.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
   "skins.category": ["Skin intégrale", "سكين كاملة", "Full body skin"],
   "skins.viewProduct": ["Voir le produit", "عرض المنتج", "View product"],
   "skins.compat": [
