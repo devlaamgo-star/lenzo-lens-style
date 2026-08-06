@@ -16,8 +16,7 @@ import {
 } from "@/components/ui/select";
 
 const searchSchema = z.object({
-  collection: z.enum(["minimal", "artistique", "elegance", "urbain"]).optional(),
-  filter: z.enum(["new", "best"]).optional(),
+  filter: z.enum(["new"]).optional(),
   sort: z.enum(["popular", "new", "az", "za"]).optional(),
   model: z.string().optional(),
   q: z.string().optional(),
@@ -43,8 +42,6 @@ export const Route = createFileRoute("/collection")({
   component: CollectionPage,
 });
 
-const COLLECTIONS = ["minimal", "artistique", "elegance", "urbain"] as const;
-
 function CollectionPage() {
   const { t, lang } = useI18n();
   const search = Route.useSearch();
@@ -55,9 +52,7 @@ function CollectionPage() {
 
   const results = useMemo(() => {
     let list = [...DESIGNS];
-    if (search.collection) list = list.filter((d) => d.collection === search.collection);
     if (search.filter === "new") list = list.filter((d) => d.isNew);
-    if (search.filter === "best") list = list.filter((d) => d.isBestseller);
     if (search.q) {
       const q = search.q.toLowerCase();
       list = list.filter((d) =>
@@ -78,7 +73,7 @@ function CollectionPage() {
         list.sort((a, b) => b.popularity - a.popularity);
     }
     return list;
-  }, [search.collection, search.filter, search.q, sort, lang]);
+  }, [search.filter, search.q, sort, lang]);
 
   const update = (patch: Record<string, string | undefined>) =>
     navigate({ search: { ...search, ...patch } as never });
@@ -139,7 +134,7 @@ function CollectionPage() {
       <section className="section-y">
         <div className="container-page">
           <div className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft lg:flex-row lg:items-center lg:justify-between">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:w-auto lg:flex-1">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:w-auto lg:flex-1">
               <Select
                 value={search.model ?? "all"}
                 onValueChange={(v) => update({ model: v === "all" ? undefined : v })}
@@ -158,23 +153,6 @@ function CollectionPage() {
               </Select>
 
               <Select
-                value={search.collection ?? "all"}
-                onValueChange={(v) => update({ collection: v === "all" ? undefined : v })}
-              >
-                <SelectTrigger className="h-11 min-w-0 rounded-full">
-                  <SelectValue placeholder={t("col.collection")} />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">{t("col.collection")} — {t("col.all")}</SelectItem>
-                  {COLLECTIONS.map((c) => (
-                    <SelectItem key={c} value={c}>
-                      {t(`col.${c}` as const)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-
-              <Select
                 value={search.filter ?? "all"}
                 onValueChange={(v) => update({ filter: v === "all" ? undefined : v })}
               >
@@ -184,7 +162,6 @@ function CollectionPage() {
                 <SelectContent>
                   <SelectItem value="all">{t("col.style")} — {t("col.all")}</SelectItem>
                   <SelectItem value="new">{t("nav.new")}</SelectItem>
-                  <SelectItem value="best">{t("nav.best")}</SelectItem>
                 </SelectContent>
               </Select>
 

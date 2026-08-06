@@ -12,7 +12,6 @@ import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
 import { AnimeSkinCard } from "@/components/AnimeSkinCard";
 import { AirSkinCard } from "@/components/AirSkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { CollectionsGrid } from "@/components/sections/CollectionsGrid";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BenefitsSection, TrustSection } from "@/components/sections/BenefitsTrust";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
@@ -147,24 +146,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="section-y bg-surface">
-        <div className="container-page">
-          <SectionHeading title="picks.title" subtitle="picks.sub" />
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-            {DESIGNS.slice(0, 8).map((d) => (
-              <ProductCard key={d.id} design={d} />
-            ))}
-          </div>
-          <div className="mt-8 flex justify-center">
-            <Link
-              to="/collection"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
-            >
-              {t("common.viewAll")}
-            </Link>
-          </div>
-        </div>
-      </section>
+
 
       <section className="section-y bg-surface">
         <div className="container-page">
@@ -261,8 +243,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      <CollectionsGrid />
 
       <HowItWorks />
       <BenefitsSection />
