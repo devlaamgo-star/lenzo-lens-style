@@ -28,6 +28,46 @@ const D = {
   "menu.minimal": ["Designs minimalistes", "تصاميم بسيطة", "Minimal designs"],
   "menu.artistic": ["Designs artistiques", "تصاميم فنية", "Artistic designs"],
   "menu.premium": ["Designs premium", "تصاميم فاخرة", "Premium designs"],
+  "menu.stickers": ["Stickers caméra", "ملصقات الكاميرا", "Camera stickers"],
+
+  "skins.nav": ["Skins intégrales", "سكينات كاملة", "Full Body Skins"],
+  "skins.title": ["Skins intégrales", "سكينات كاملة", "Full Body Skins"],
+  "skins.sub": [
+    "Transformez complètement le style de votre iPhone.",
+    "غيّر مظهر جهاز iPhone بالكامل.",
+    "Completely transform the style of your iPhone.",
+  ],
+  "skins.viewAll": [
+    "Voir toutes les skins intégrales",
+    "شاهد كل السكينات الكاملة",
+    "View all full body skins",
+  ],
+  "skins.category": ["Skin intégrale", "سكين كاملة", "Full body skin"],
+  "skins.viewProduct": ["Voir le produit", "عرض المنتج", "View product"],
+  "skins.compat": [
+    "Compatible avec iPhone 17 Pro Max",
+    "متوافق مع iPhone 17 Pro Max",
+    "Compatible with iPhone 17 Pro Max",
+  ],
+  "skins.qty": ["Quantité", "الكمية", "Quantity"],
+  "skins.order": ["Commander maintenant", "اطلب الآن", "Order now"],
+  "skins.stock": ["En stock", "متوفر", "In stock"],
+  "skins.cod": [
+    "Paiement à la livraison partout au Maroc.",
+    "الدفع عند الاستلام في جميع أنحاء المغرب.",
+    "Cash on delivery anywhere in Morocco.",
+  ],
+  "skins.free": [
+    "Livraison gratuite au Maroc.",
+    "توصيل مجاني داخل المغرب.",
+    "Free delivery across Morocco.",
+  ],
+  "skins.install": [
+    "Installation simple : nettoyez la surface, alignez la découpe puis lissez du centre vers les bords.",
+    "تركيب بسيط: نظّف السطح، حاذِ القصّة ثم املس من المركز نحو الأطراف.",
+    "Simple installation: clean the surface, align the cut, then smooth from the centre outwards.",
+  ],
+  "skins.gallery": ["Galerie", "المعرض", "Gallery"],
 
   "hero.label": ["PERSONNALISEZ VOTRE IPHONE", "خصص جهاز iPhone الخاص بك", "PERSONALISE YOUR IPHONE"],
   "hero.title": [
