@@ -17,6 +17,7 @@ import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
+import { Route as DosCameraIndexRouteImport } from './routes/dos-camera.index'
 import { Route as ObjectifsIndexRouteImport } from './routes/objectifs.index'
 import { Route as ObjectifsSlugRouteImport } from './routes/objectifs.$slug'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
@@ -62,6 +63,11 @@ const PackRoute = PackRouteImport.update({
   path: '/pack',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DosCameraIndexRoute = DosCameraIndexRouteImport.update({
+  id: '/dos-camera/',
+  path: '/dos-camera/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObjectifsIndexRoute = ObjectifsIndexRouteImport.update({
   id: '/objectifs/',
   path: '/objectifs/',
@@ -94,6 +100,7 @@ export interface FileRoutesByFullPath {
   '/pack': typeof PackRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/dos-camera/': typeof DosCameraIndexRoute
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
@@ -108,6 +115,7 @@ export interface FileRoutesByTo {
   '/pack': typeof PackRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/dos-camera': typeof DosCameraIndexRoute
   '/objectifs': typeof ObjectifsIndexRoute
   '/skins': typeof SkinsIndexRoute
 }
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   '/pack': typeof PackRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/dos-camera/': typeof DosCameraIndexRoute
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
@@ -139,6 +148,7 @@ export interface FileRouteTypes {
     | '/pack'
     | '/objectifs/$slug'
     | '/skins/$slug'
+    | '/dos-camera/'
     | '/objectifs/'
     | '/skins/'
   fileRoutesByTo: FileRoutesByTo
@@ -153,6 +163,7 @@ export interface FileRouteTypes {
     | '/pack'
     | '/objectifs/$slug'
     | '/skins/$slug'
+    | '/dos-camera'
     | '/objectifs'
     | '/skins'
   id:
@@ -167,6 +178,7 @@ export interface FileRouteTypes {
     | '/pack'
     | '/objectifs/$slug'
     | '/skins/$slug'
+    | '/dos-camera/'
     | '/objectifs/'
     | '/skins/'
   fileRoutesById: FileRoutesById
@@ -182,6 +194,7 @@ export interface RootRouteChildren {
   PackRoute: typeof PackRoute
   ObjectifsSlugRoute: typeof ObjectifsSlugRoute
   SkinsSlugRoute: typeof SkinsSlugRoute
+  DosCameraIndexRoute: typeof DosCameraIndexRoute
   ObjectifsIndexRoute: typeof ObjectifsIndexRoute
   SkinsIndexRoute: typeof SkinsIndexRoute
 }
@@ -244,6 +257,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dos-camera/': {
+      id: '/dos-camera/'
+      path: '/dos-camera'
+      fullPath: '/dos-camera/'
+      preLoaderRoute: typeof DosCameraIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/objectifs/': {
       id: '/objectifs/'
       path: '/objectifs'
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   PackRoute: PackRoute,
   ObjectifsSlugRoute: ObjectifsSlugRoute,
   SkinsSlugRoute: SkinsSlugRoute,
+  DosCameraIndexRoute: DosCameraIndexRoute,
   ObjectifsIndexRoute: ObjectifsIndexRoute,
   SkinsIndexRoute: SkinsIndexRoute,
 }
