@@ -1,0 +1,71 @@
+import type { Lang } from "./products";
+
+import bl1 from "@/assets/backlens/bl-1.webp.asset.json";
+import bl2 from "@/assets/backlens/bl-2.webp.asset.json";
+import bl3 from "@/assets/backlens/bl-3.webp.asset.json";
+import bl4 from "@/assets/backlens/bl-4.webp.asset.json";
+import bl5 from "@/assets/backlens/bl-5.webp.asset.json";
+import bl6 from "@/assets/backlens/bl-6.webp.asset.json";
+import bl7 from "@/assets/backlens/bl-7.webp.asset.json";
+import bl8 from "@/assets/backlens/bl-8.webp.asset.json";
+import bl9 from "@/assets/backlens/bl-9.webp.asset.json";
+
+export type BackLensSkin = {
+  id: string;
+  slug: string;
+  name: Record<Lang, string>;
+  description: Record<Lang, string>;
+  image: string;
+  gallery: string[];
+  category: "back-and-lens-skins";
+  device: string;
+  inStock: boolean;
+  isNew: boolean;
+  popularity: number;
+};
+
+const DESC: Record<Lang, string> = {
+  fr: "Skin décoratif en deux parties : un panneau pour le dos de l’iPhone et un panneau assorti pour la zone caméra. Découpes précises autour des objectifs, du flash et des capteurs, pour un design parfaitement coordonné.",
+  ar: "سكين زخرفي من قطعتين: لوحة لظهر الـ iPhone ولوحة مطابقة لمنطقة الكاميرا، بقصّات دقيقة حول العدسات والفلاش والمستشعرات.",
+  en: "Two-piece decorative skin: one panel for the iPhone back and a matching panel for the camera area, with precise cutouts around lenses, flash and sensors.",
+};
+
+const DEVICE = "iPhone 17 Pro Max";
+
+const SEEDS: {
+  slug: string;
+  fr: string;
+  ar: string;
+  en: string;
+  image: string;
+  isNew: boolean;
+  popularity: number;
+}[] = [
+  { slug: "nuit-etoilee", fr: "Nuit Étoilée", ar: "ليلة مرصعة", en: "Starry Night", image: bl1.url, isNew: true, popularity: 96 },
+  { slug: "horizon-celeste", fr: "Horizon Céleste", ar: "أفق سماوي", en: "Celestial Horizon", image: bl2.url, isNew: true, popularity: 94 },
+  { slug: "cite-dragon", fr: "Cité Dragon", ar: "مدينة التنين", en: "Dragon City", image: bl3.url, isNew: true, popularity: 92 },
+  { slug: "leopard-ambre", fr: "Léopard Ambré", ar: "فهد كهرماني", en: "Amber Leopard", image: bl4.url, isNew: true, popularity: 90 },
+  { slug: "canard-comptoir", fr: "Canard Comptoir", ar: "بطة الحانة", en: "Counter Duck", image: bl5.url, isNew: true, popularity: 88 },
+  { slug: "canard-smoking", fr: "Canard Smoking", ar: "بطة أنيقة", en: "Tuxedo Duck", image: bl6.url, isNew: true, popularity: 86 },
+  { slug: "canard-cobalt", fr: "Canard Cobalt", ar: "بطة كوبالت", en: "Cobalt Duck", image: bl7.url, isNew: true, popularity: 84 },
+  { slug: "canard-nocturne", fr: "Canard Nocturne", ar: "بطة ليلية", en: "Night Duck", image: bl8.url, isNew: true, popularity: 82 },
+  { slug: "envol-urbain", fr: "Envol Urbain", ar: "إقلاع حضري", en: "Urban Takeoff", image: bl9.url, isNew: true, popularity: 80 },
+];
+
+export const BACK_LENS_SKINS: BackLensSkin[] = SEEDS.map((s) => ({
+  id: `backlens-${s.slug}`,
+  slug: s.slug,
+  name: { fr: s.fr, ar: s.ar, en: s.en },
+  description: DESC,
+  image: s.image,
+  gallery: [s.image],
+  category: "back-and-lens-skins",
+  device: DEVICE,
+  inStock: true,
+  isNew: s.isNew,
+  popularity: s.popularity,
+}));
+
+export function backLensSkinBySlug(slug: string): BackLensSkin | undefined {
+  return BACK_LENS_SKINS.find((s) => s.slug === slug);
+}

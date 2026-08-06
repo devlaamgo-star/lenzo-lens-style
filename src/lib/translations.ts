@@ -43,6 +43,19 @@ const D = {
     "ملصق لعدسات الكاميرا",
     "Camera lens skin",
   ],
+  "backlens.nav": ["Skins arrière & caméra", "سكينات الظهر والكاميرا", "Back & Lens Skins"],
+  "backlens.title": ["Skins arrière & caméra", "سكينات الظهر والكاميرا", "Back & Lens Skins"],
+  "backlens.sub": [
+    "Un design coordonné pour le dos et le module caméra de votre iPhone.",
+    "تصميم منسّق لظهر جهاز iPhone ووحدة الكاميرا.",
+    "A coordinated design for your iPhone back and camera module.",
+  ],
+  "backlens.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "backlens.category": [
+    "Skin arrière & caméra",
+    "سكين الظهر والكاميرا",
+    "Back & lens skin",
+  ],
   "skins.nav": ["Skins intégrales", "سكينات كاملة", "Full Body Skins"],
   "skins.title": ["Skins intégrales", "سكينات كاملة", "Full Body Skins"],
   "skins.sub": [
