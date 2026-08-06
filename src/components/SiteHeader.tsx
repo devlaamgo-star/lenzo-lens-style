@@ -255,7 +255,7 @@ export function SiteHeader() {
         <CommandInput placeholder={t("search.placeholder")} />
         <CommandList>
           <CommandEmpty>{t("col.none")}</CommandEmpty>
-          <CommandGroup heading={t("col.title")}>
+          <CommandGroup heading={t("menu.stickers")}>
             {DESIGNS.map((d) => (
               <CommandItem
                 key={d.id}
@@ -267,6 +267,21 @@ export function SiteHeader() {
               >
                 <img src={d.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-cover" />
                 {d.name[lang]}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading={t("skins.nav")}>
+            {FULL_BODY_SKINS.map((s) => (
+              <CommandItem
+                key={s.id}
+                value={`${s.name.fr} ${s.name.en} ${s.name.ar}`}
+                onSelect={() => {
+                  setSearchOpen(false);
+                  navigate({ to: "/skins/$slug", params: { slug: s.slug } });
+                }}
+              >
+                <img src={s.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-contain" />
+                {s.name[lang]}
               </CommandItem>
             ))}
           </CommandGroup>
