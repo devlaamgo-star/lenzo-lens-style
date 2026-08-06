@@ -10,6 +10,16 @@ import skin7 from "@/assets/skins/skin-7.webp.asset.json";
 import skin8 from "@/assets/skins/skin-8.webp.asset.json";
 import skin9 from "@/assets/skins/skin-9.webp.asset.json";
 import skin10 from "@/assets/skins/skin-10.webp.asset.json";
+import skin12 from "@/assets/skins/skin-12.webp.asset.json";
+import skin13 from "@/assets/skins/skin-13.webp.asset.json";
+import skin14 from "@/assets/skins/skin-14.webp.asset.json";
+import skin15 from "@/assets/skins/skin-15.webp.asset.json";
+import skin16 from "@/assets/skins/skin-16.webp.asset.json";
+import skin17 from "@/assets/skins/skin-17.webp.asset.json";
+import skin18 from "@/assets/skins/skin-18.webp.asset.json";
+import skin19 from "@/assets/skins/skin-19.webp.asset.json";
+import skin20 from "@/assets/skins/skin-20.webp.asset.json";
+import skin21 from "@/assets/skins/skin-21.webp.asset.json";
 
 export type FullBodySkin = {
   id: string;
@@ -54,6 +64,16 @@ const SEEDS: Seed[] = [
   { slug: "doodle-turquoise", fr: "Doodle Turquoise", ar: "دودل فيروزي", en: "Turquoise Doodle", image: skin8.url, isNew: true, popularity: 88 },
   { slug: "doodle-violet", fr: "Doodle Violet", ar: "دودل بنفسجي", en: "Violet Doodle", image: skin9.url, isNew: true, popularity: 87 },
   { slug: "ombre-metallique", fr: "Ombre Métallique", ar: "ظل معدني", en: "Metallic Shade", image: skin10.url, isNew: true, popularity: 86 },
+  { slug: "marbre-atlas", fr: "Marbre Atlas", ar: "رخام أطلس", en: "Atlas Marble", image: skin12.url, isNew: true, popularity: 85 },
+  { slug: "jade-royal", fr: "Jade Royal", ar: "يشم ملكي", en: "Royal Jade", image: skin13.url, isNew: true, popularity: 84 },
+  { slug: "nuit-graphite", fr: "Nuit Graphite", ar: "ليل غرافيتي", en: "Graphite Night", image: skin14.url, isNew: true, popularity: 83 },
+  { slug: "bleu-mineral", fr: "Bleu Minéral", ar: "أزرق معدني", en: "Mineral Blue", image: skin15.url, isNew: true, popularity: 82 },
+  { slug: "lion-solaire", fr: "Lion Solaire", ar: "أسد شمسي", en: "Solar Lion", image: skin16.url, isNew: true, popularity: 81 },
+  { slug: "coq-rebelle", fr: "Coq Rebelle", ar: "ديك متمرد", en: "Rebel Rooster", image: skin17.url, isNew: true, popularity: 80 },
+  { slug: "ligne-urbaine", fr: "Ligne Urbaine", ar: "خط حضري", en: "Urban Line", image: skin18.url, isNew: true, popularity: 79 },
+  { slug: "leopard-pastel", fr: "Léopard Pastel", ar: "نمر باستيل", en: "Pastel Leopard", image: skin19.url, isNew: true, popularity: 78 },
+  { slug: "leopard-azur", fr: "Léopard Azur", ar: "نمر سماوي", en: "Azure Leopard", image: skin20.url, isNew: true, popularity: 77 },
+  { slug: "zebre-ivoire", fr: "Zèbre Ivoire", ar: "حمار وحشي عاجي", en: "Ivory Zebra", image: skin21.url, isNew: true, popularity: 76 },
 ];
 
 export const FULL_BODY_SKINS: FullBodySkin[] = SEEDS.map((s) => ({
