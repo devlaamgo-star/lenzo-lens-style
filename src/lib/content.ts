@@ -181,4 +181,28 @@ export const FAQS: Faq[] = [
       en: "Yes. Contact us within 7 days with your order number and we'll arrange an exchange for the right model.",
     },
   },
+  {
+    q: {
+      fr: "Quelle est votre politique de retours et remboursements ?",
+      ar: "ما هي سياسة الإرجاع والاسترجاع؟",
+      en: "What is your returns and refunds policy?",
+    },
+    a: {
+      fr: "Vous disposez de 7 jours après réception pour demander un retour si le produit est défectueux, endommagé ou ne correspond pas à votre commande. Le produit doit être dans son état d’origine.",
+      ar: "لديك 7 أيام بعد الاستلام لطلب الإرجاع إذا كان المنتج معيباً أو تالفاً أو غير مطابق لطلبك، بشرط أن يكون بحالته الأصلية.",
+      en: "You have 7 days after delivery to request a return if the item is defective, damaged or not what you ordered. It must be in its original condition.",
+    },
+  },
+  {
+    q: {
+      fr: "Comment demander un remboursement ?",
+      ar: "كيف أطلب استرجاع المبلغ؟",
+      en: "How do I request a refund?",
+    },
+    a: {
+      fr: "Contactez-nous par WhatsApp ou par téléphone avec votre numéro de commande et une photo du produit. Après validation, le remboursement est effectué sous 3 à 7 jours ouvrables.",
+      ar: "تواصل معنا عبر واتساب أو الهاتف مع رقم الطلب وصورة للمنتج. بعد التحقق يتم الاسترجاع خلال 3 إلى 7 أيام عمل.",
+      en: "Contact us on WhatsApp or by phone with your order number and a photo of the product. Once approved, the refund is issued within 3 to 7 business days.",
+    },
+  },
 ];
