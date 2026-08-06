@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import logo from "@/assets/lenzo-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { DESIGNS, PACK_SIZE } from "@/lib/catalog";
+import { DESIGNS, FULL_BODY_SKINS, PACK_SIZE } from "@/lib/catalog";
 import { LANGS, type Lang } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import {
@@ -22,6 +22,7 @@ const navLinkClass =
 
 export function SiteHeader() {
   const { t, lang, setLang, dir } = useI18n();
+  const navigate = useNavigate();
   const pack = usePack();
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -48,14 +49,14 @@ export function SiteHeader() {
 
   const collectionItems = [
     { to: "/collection" as const, search: {}, label: t("menu.all") },
-    { to: "/collection" as const, search: { collection: "minimal" as const }, label: t("menu.minimal") },
-    { to: "/collection" as const, search: { collection: "artistique" as const }, label: t("menu.artistic") },
-    { to: "/collection" as const, search: { collection: "elegance" as const }, label: t("menu.premium") },
+    { to: "/collection" as const, search: {}, label: t("menu.stickers") },
+    { to: "/skins" as const, search: {}, label: t("skins.nav") },
     { to: "/collection" as const, search: { filter: "new" as const }, label: t("nav.new") },
     { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
   ];
 
   const rightLinks = [
+    { to: "/skins" as const, label: t("skins.nav"), search: {} },
     { to: "/collection" as const, label: t("nav.new"), search: { filter: "new" as const } },
     { to: "/comment-ca-marche" as const, label: t("nav.how"), search: {} },
     { to: "/avis" as const, label: t("nav.reviews"), search: {} },
@@ -255,7 +256,7 @@ export function SiteHeader() {
         <CommandInput placeholder={t("search.placeholder")} />
         <CommandList>
           <CommandEmpty>{t("col.none")}</CommandEmpty>
-          <CommandGroup heading={t("col.title")}>
+          <CommandGroup heading={t("menu.stickers")}>
             {DESIGNS.map((d) => (
               <CommandItem
                 key={d.id}
@@ -267,6 +268,21 @@ export function SiteHeader() {
               >
                 <img src={d.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-cover" />
                 {d.name[lang]}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading={t("skins.nav")}>
+            {FULL_BODY_SKINS.map((s) => (
+              <CommandItem
+                key={s.id}
+                value={`${s.name.fr} ${s.name.en} ${s.name.ar}`}
+                onSelect={() => {
+                  setSearchOpen(false);
+                  navigate({ to: "/skins/$slug", params: { slug: s.slug } });
+                }}
+              >
+                <img src={s.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-contain" />
+                {s.name[lang]}
               </CommandItem>
             ))}
           </CommandGroup>

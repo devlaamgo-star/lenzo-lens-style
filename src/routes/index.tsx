@@ -3,8 +3,9 @@ import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-lenzo-stickers.jpg";
 
 import { useI18n } from "@/lib/i18n";
-import { DESIGNS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
+import { DESIGNS, FULL_BODY_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
 import { ProductCard } from "@/components/ProductCard";
+import { SkinCard } from "@/components/SkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CollectionsGrid } from "@/components/sections/CollectionsGrid";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -155,6 +156,25 @@ function HomePage() {
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
             >
               {t("common.viewAll")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y">
+        <div className="container-page">
+          <SectionHeading title="skins.title" subtitle="skins.sub" />
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            {FULL_BODY_SKINS.slice(0, 8).map((s) => (
+              <SkinCard key={s.id} skin={s} />
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/skins"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
+            >
+              {t("skins.viewAll")}
             </Link>
           </div>
         </div>

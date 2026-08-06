@@ -1,4 +1,13 @@
 import { PRODUCTS, type Product, type CollectionId as PCollectionId } from "@/data/products";
+import { FULL_BODY_SKINS, skinBySlug, type FullBodySkin } from "@/data/full-body-skins";
+
+export type { FullBodySkin };
+export { FULL_BODY_SKINS, skinBySlug };
+
+/** Camera stickers (small decorative camera-module stickers) */
+export const CAMERA_STICKERS: Product[] = PRODUCTS;
+
+export const FULL_SKIN_PRICE = 149;
 
 export type Lang = "fr" | "ar" | "en";
 
