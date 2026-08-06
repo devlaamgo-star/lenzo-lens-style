@@ -42,21 +42,22 @@ export function SiteHeader() {
 
   const collectionItems = [
     { to: "/collection" as const, search: {}, label: t("menu.all") },
-    { to: "/collection" as const, search: { collection: "minimal" }, label: t("menu.minimal") },
-    { to: "/collection" as const, search: { collection: "artistique" }, label: t("menu.artistic") },
-    { to: "/collection" as const, search: { collection: "elegance" }, label: t("menu.premium") },
-    { to: "/collection" as const, search: { filter: "new" }, label: t("nav.new") },
-    { to: "/collection" as const, search: { filter: "best" }, label: t("nav.best") },
+    { to: "/collection" as const, search: { collection: "minimal" as const }, label: t("menu.minimal") },
+    { to: "/collection" as const, search: { collection: "artistique" as const }, label: t("menu.artistic") },
+    { to: "/collection" as const, search: { collection: "elegance" as const }, label: t("menu.premium") },
+    { to: "/collection" as const, search: { filter: "new" as const }, label: t("nav.new") },
+    { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
   ];
 
   const mainLinks = [
-    { to: "/" as const, label: t("nav.home"), search: undefined },
-    { to: "/collection" as const, label: t("nav.new"), search: { filter: "new" } },
-    { to: "/collection" as const, label: t("nav.best"), search: { filter: "best" } },
-    { to: "/comment-ca-marche" as const, label: t("nav.how"), search: undefined },
-    { to: "/avis" as const, label: t("nav.reviews"), search: undefined },
-    { to: "/faq" as const, label: t("nav.faq"), search: undefined },
+    { to: "/" as const, label: t("nav.home"), search: {} },
+    { to: "/collection" as const, label: t("nav.new"), search: { filter: "new" as const } },
+    { to: "/collection" as const, label: t("nav.best"), search: { filter: "best" as const } },
+    { to: "/comment-ca-marche" as const, label: t("nav.how"), search: {} },
+    { to: "/avis" as const, label: t("nav.reviews"), search: {} },
+    { to: "/faq" as const, label: t("nav.faq"), search: {} },
   ];
+
 
   return (
     <header
