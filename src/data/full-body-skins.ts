@@ -10,6 +10,16 @@ import skin7 from "@/assets/skins/skin-7.webp.asset.json";
 import skin8 from "@/assets/skins/skin-8.webp.asset.json";
 import skin9 from "@/assets/skins/skin-9.webp.asset.json";
 import skin10 from "@/assets/skins/skin-10.webp.asset.json";
+import skin12 from "@/assets/skins/skin-12.webp.asset.json";
+import skin13 from "@/assets/skins/skin-13.webp.asset.json";
+import skin14 from "@/assets/skins/skin-14.webp.asset.json";
+import skin15 from "@/assets/skins/skin-15.webp.asset.json";
+import skin16 from "@/assets/skins/skin-16.webp.asset.json";
+import skin17 from "@/assets/skins/skin-17.webp.asset.json";
+import skin18 from "@/assets/skins/skin-18.webp.asset.json";
+import skin19 from "@/assets/skins/skin-19.webp.asset.json";
+import skin20 from "@/assets/skins/skin-20.webp.asset.json";
+import skin21 from "@/assets/skins/skin-21.webp.asset.json";
 
 export type FullBodySkin = {
   id: string;
