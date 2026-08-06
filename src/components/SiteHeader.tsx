@@ -77,7 +77,7 @@ export function SiteHeader() {
         scrolled ? "border-border shadow-[0_1px_3px_rgba(0,0,0,0.06)]" : "border-border/60",
       )}
     >
-      <div className="container-page grid h-14 grid-cols-[auto_1fr_auto] items-center gap-3 lg:h-[60px]">
+      <div className="container-page grid h-14 grid-cols-[auto_1fr_auto] items-center gap-3 md:h-[68px] lg:h-[78px]">
         <div className="flex items-center gap-2">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
