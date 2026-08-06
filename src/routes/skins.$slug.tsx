@@ -72,7 +72,7 @@ function SkinProductPage() {
             </div>
             {skin.gallery.length > 1 && (
               <div className="mt-4 flex gap-3" aria-label={t("skins.gallery")}>
-                {skin.gallery.map((g, i) => (
+                {skin.gallery.map((g: string, i: number) => (
                   <button
                     key={g}
                     type="button"

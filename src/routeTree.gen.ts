@@ -18,6 +18,7 @@ import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
+import { Route as SkinsSlugRouteImport } from './routes/skins.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -64,6 +65,11 @@ const SkinsIndexRoute = SkinsIndexRouteImport.update({
   path: '/skins/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SkinsSlugRoute = SkinsSlugRouteImport.update({
+  id: '/skins/$slug',
+  path: '/skins/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/skins/$slug': typeof SkinsSlugRoute
   '/skins/': typeof SkinsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/skins/$slug': typeof SkinsSlugRoute
   '/skins': typeof SkinsIndexRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/skins/$slug': typeof SkinsSlugRoute
   '/skins/': typeof SkinsIndexRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/skins/$slug'
     | '/skins/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/skins/$slug'
     | '/skins'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/skins/$slug'
     | '/skins/'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   ConfirmationRoute: typeof ConfirmationRoute
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
+  SkinsSlugRoute: typeof SkinsSlugRoute
   SkinsIndexRoute: typeof SkinsIndexRoute
 }
 
@@ -212,6 +225,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SkinsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/skins/$slug': {
+      id: '/skins/$slug'
+      path: '/skins/$slug'
+      fullPath: '/skins/$slug'
+      preLoaderRoute: typeof SkinsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmationRoute: ConfirmationRoute,
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
+  SkinsSlugRoute: SkinsSlugRoute,
   SkinsIndexRoute: SkinsIndexRoute,
 }
 export const routeTree = rootRouteImport
