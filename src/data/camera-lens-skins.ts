@@ -19,6 +19,16 @@ import lens16 from "@/assets/lens/lens-16.webp.asset.json";
 import lens17 from "@/assets/lens/lens-17.webp.asset.json";
 import lens18 from "@/assets/lens/lens-18.webp.asset.json";
 import lens19 from "@/assets/lens/lens-19.webp.asset.json";
+import lens20 from "@/assets/lens/lens-20.webp.asset.json";
+import lens21 from "@/assets/lens/lens-21.webp.asset.json";
+import lens22 from "@/assets/lens/lens-22.webp.asset.json";
+import lens23 from "@/assets/lens/lens-23.webp.asset.json";
+import lens24 from "@/assets/lens/lens-24.webp.asset.json";
+import lens25 from "@/assets/lens/lens-25.webp.asset.json";
+import lens26 from "@/assets/lens/lens-26.webp.asset.json";
+import lens27 from "@/assets/lens/lens-27.webp.asset.json";
+import lens28 from "@/assets/lens/lens-28.webp.asset.json";
+import lens29 from "@/assets/lens/lens-29.webp.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -72,6 +82,17 @@ const SEEDS: Seed[] = [
   { slug: "graffiti-neon", fr: "Graffiti Néon", ar: "غرافيتي نيون", en: "Neon Graffiti", image: lens17.url, isNew: true, popularity: 67 },
   { slug: "equilibre-lunaire", fr: "Équilibre Lunaire", ar: "توازن قمري", en: "Lunar Balance", image: lens18.url, isNew: true, popularity: 65 },
   { slug: "mode-hors-ligne", fr: "Mode Hors-Ligne", ar: "وضع دون اتصال", en: "Offline Mode", image: lens19.url, isNew: true, popularity: 63 },
+
+  { slug: "bande-de-chats", fr: "Bande de Chats", ar: "عصابة القطط", en: "Cat Crew", image: lens20.url, isNew: true, popularity: 61 },
+  { slug: "canards-jaunes", fr: "Canards Jaunes", ar: "بط أصفر", en: "Yellow Ducks", image: lens21.url, isNew: true, popularity: 59 },
+  { slug: "pew-pew", fr: "Pew Pew", ar: "بيو بيو", en: "Pew Pew", image: lens22.url, isNew: true, popularity: 57 },
+  { slug: "sieste-safran", fr: "Sieste Safran", ar: "قيلولة زعفرانية", en: "Saffron Nap", image: lens23.url, isNew: true, popularity: 55 },
+  { slug: "trio-curieux", fr: "Trio Curieux", ar: "ثلاثي فضولي", en: "Curious Trio", image: lens24.url, isNew: true, popularity: 53 },
+  { slug: "chat-approuve", fr: "Chat Approuvé", ar: "قط موافق", en: "Approved Cat", image: lens25.url, isNew: true, popularity: 51 },
+  { slug: "lets-go-tigre", fr: "Let's Go Tigré", ar: "هيا بنا", en: "Let's Go Tabby", image: lens26.url, isNew: true, popularity: 49 },
+  { slug: "chat-espion", fr: "Chat Espion", ar: "قط متلصص", en: "Spy Cat", image: lens27.url, isNew: true, popularity: 47 },
+  { slug: "lune-lapin", fr: "Lune Lapin", ar: "قمر الأرنب", en: "Rabbit Moon", image: lens28.url, isNew: true, popularity: 45 },
+  { slug: "dragon-fumee", fr: "Dragon Fumée", ar: "تنين الدخان", en: "Smoke Dragon", image: lens29.url, isNew: true, popularity: 43 },
 ];
 
 export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
