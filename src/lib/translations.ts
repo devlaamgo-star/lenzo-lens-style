@@ -31,21 +31,27 @@ const D = {
 
   "hero.label": ["PERSONNALISEZ VOTRE IPHONE", "خصص جهاز iPhone الخاص بك", "PERSONALISE YOUR IPHONE"],
   "hero.title": [
-    "Un petit détail. Un nouveau style.",
-    "تفصيل صغير. أسلوب جديد.",
+    "Un petit détail. Un tout nouveau style.",
+    "تفصيل صغير. أسلوب جديد تماماً.",
     "A small detail. A whole new style.",
   ],
   "hero.desc": [
-    "Choisissez vos 3 designs préférés pour personnaliser et protéger les objectifs de votre iPhone.",
-    "اختر 3 تصاميم مفضلة لتخصيص وحماية عدسات كاميرا iPhone الخاصة بك.",
-    "Pick your 3 favourite designs to personalise and protect your iPhone camera lenses.",
+    "Choisissez 3 stickers décoratifs pour personnaliser le module caméra de votre iPhone.",
+    "اختر 3 ملصقات ديكورية لتخصيص وحدة الكاميرا في جهاز iPhone الخاص بك.",
+    "Choose 3 decorative stickers to personalise your iPhone camera module.",
   ],
   "hero.cta": ["Composer mon pack", "كوّن باقتك", "Build my pack"],
-  "hero.cta2": ["Voir la collection", "تصفح المجموعة", "View the collection"],
-  "hero.offer": ["3 skins à seulement 99 MAD", "3 ملصقات بـ 99 درهم فقط", "3 skins for only 99 MAD"],
+  "hero.cta2": ["Voir les designs", "شاهد التصاميم", "View the designs"],
+  "hero.offer": [
+    "3 stickers au choix pour seulement 99 MAD",
+    "3 ملصقات من اختيارك بـ 99 درهم فقط",
+    "3 stickers of your choice for only 99 MAD",
+  ],
   "hero.trust1": ["Livraison gratuite au Maroc", "توصيل مجاني داخل المغرب", "Free delivery in Morocco"],
   "hero.trust2": ["Paiement à la livraison", "الدفع عند الاستلام", "Cash on delivery"],
-  "hero.trust3": ["Installation facile", "تركيب سهل", "Easy to apply"],
+  "hero.trust3": ["Découpe précise", "قص دقيق", "Precise cut"],
+  "hero.trust4": ["Installation facile", "تركيب سهل", "Easy to apply"],
+
 
   "new.title": ["Nouveautés", "الجديد", "New arrivals"],
   "new.sub": [
@@ -60,10 +66,11 @@ const D = {
   "card.added": ["Ajouté", "تمت الإضافة", "Added"],
   "card.quickview": ["Aperçu rapide", "معاينة سريعة", "Quick view"],
   "card.compatible": [
-    "Compatible iPhone 11 → iPhone 16 Pro Max",
-    "متوافق مع iPhone 11 حتى iPhone 16 Pro Max",
-    "Compatible with iPhone 11 → iPhone 16 Pro Max",
+    "Sticker décoratif pour module caméra iPhone",
+    "ملصق ديكوري لوحدة كاميرا iPhone",
+    "Decorative sticker for the iPhone camera module",
   ],
+
   "card.full": ["Pack complet (3/3)", "الباقة مكتملة (3/3)", "Pack complete (3/3)"],
   "common.viewAll": ["Voir tous les designs", "عرض كل التصاميم", "View all designs"],
 
