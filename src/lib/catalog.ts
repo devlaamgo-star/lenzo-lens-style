@@ -64,3 +64,22 @@ export const WHATSAPP_NUMBER = "212600000000";
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
+
+export const MOROCCAN_CITIES = [
+  "Casablanca",
+  "Rabat",
+  "Marrakech",
+  "Fès",
+  "Tanger",
+  "Agadir",
+  "Meknès",
+  "Oujda",
+  "Tétouan",
+  "Kénitra",
+  "Salé",
+  "El Jadida",
+  "Mohammedia",
+  "Beni Mellal",
+  "Nador",
+  "Safi",
+] as const;
