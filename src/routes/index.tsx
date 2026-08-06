@@ -70,11 +70,12 @@ function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-2 grid w-full gap-2.5 sm:grid-cols-3">
+          <ul className="mt-2 grid w-full gap-2.5 sm:grid-cols-2">
             {[
               { icon: Truck, label: t("hero.trust1") },
               { icon: Wallet, label: t("hero.trust2") },
-              { icon: Sparkles, label: t("hero.trust3") },
+              { icon: Scissors, label: t("hero.trust3") },
+              { icon: Sparkles, label: t("hero.trust4") },
             ].map((item) => (
               <li key={item.label} className="flex min-w-0 items-center gap-2 text-xs text-muted-foreground">
                 <item.icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.8} />
@@ -82,6 +83,7 @@ function Hero() {
               </li>
             ))}
           </ul>
+
         </div>
 
         <div className="relative order-first lg:order-last">
