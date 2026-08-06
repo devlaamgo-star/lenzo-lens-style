@@ -7,11 +7,11 @@ import { StickyPackBar } from "@/components/StickyPackBar";
 export const Route = createFileRoute("/comment-ca-marche")({
   head: () => ({
     meta: [
-      { title: "Comment ça marche — Poser vos skins LENZO" },
+      { title: "Comment ça marche — Poser vos stickers LENZO" },
       {
         name: "description",
         content:
-          "Choisissez votre iPhone, sélectionnez 3 designs, commandez et payez à la livraison. La pose des skins LENZO prend moins d’une minute.",
+          "Choisissez votre iPhone, sélectionnez 3 designs, commandez et payez à la livraison. La pose des stickers LENZO prend moins d’une minute.",
       },
       { property: "og:title", content: "Comment ça marche — LENZO" },
       {

@@ -19,7 +19,7 @@ export const Route = createFileRoute("/pack")({
       {
         name: "description",
         content:
-          "Choisissez votre modèle d’iPhone puis 3 designs de skins d’objectif. 99 MAD, livraison gratuite au Maroc, paiement à la livraison.",
+          "Choisissez votre modèle d’iPhone puis 3 designs de stickers caméra. 99 MAD, livraison gratuite au Maroc, paiement à la livraison.",
       },
       { property: "og:title", content: "Composer mon pack — LENZO" },
       {
@@ -39,6 +39,8 @@ function PackSummary({ compact = false }: { compact?: boolean }) {
   return (
     <div className={cn("rounded-2xl border border-border bg-card p-5 shadow-soft", compact && "p-4")}>
       <h3 className="text-base font-bold">{t("pack.summary")}</h3>
+      <p className="mt-1 text-xs text-muted-foreground">{t("pack.packLabel")}</p>
+
 
       <dl className="mt-4 space-y-3 text-sm">
         <div className="flex items-start justify-between gap-3">

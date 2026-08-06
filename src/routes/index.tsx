@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Truck, Wallet, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-phones.jpg";
+import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
+import heroImage from "@/assets/hero-lenzo-stickers.jpg";
+
 import { useI18n } from "@/lib/i18n";
 import { DESIGNS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
 import { ProductCard } from "@/components/ProductCard";
@@ -15,18 +16,19 @@ import { StickyPackBar } from "@/components/StickyPackBar";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LENZO — 3 skins d’objectif iPhone pour 99 MAD" },
+      { title: "LENZO — 3 stickers caméra iPhone pour 99 MAD" },
       {
         name: "description",
         content:
-          "Personnalisez les objectifs de votre iPhone avec LENZO. Composez votre pack de 3 designs à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
+          "Personnalisez le module caméra de votre iPhone avec les stickers décoratifs LENZO. 3 stickers au choix à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
       },
-      { property: "og:title", content: "LENZO — 3 skins d’objectif iPhone pour 99 MAD" },
+      { property: "og:title", content: "LENZO — 3 stickers caméra iPhone pour 99 MAD" },
       {
         property: "og:description",
         content:
-          "Composez votre pack de 3 designs à 99 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
+          "3 stickers décoratifs pour module caméra iPhone à 99 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
       },
+
     ],
   }),
   component: HomePage,
@@ -69,11 +71,12 @@ function Hero() {
             </Link>
           </div>
 
-          <ul className="mt-2 grid w-full gap-2.5 sm:grid-cols-3">
+          <ul className="mt-2 grid w-full gap-2.5 sm:grid-cols-2">
             {[
               { icon: Truck, label: t("hero.trust1") },
               { icon: Wallet, label: t("hero.trust2") },
-              { icon: Sparkles, label: t("hero.trust3") },
+              { icon: Scissors, label: t("hero.trust3") },
+              { icon: Sparkles, label: t("hero.trust4") },
             ].map((item) => (
               <li key={item.label} className="flex min-w-0 items-center gap-2 text-xs text-muted-foreground">
                 <item.icon className="h-4 w-4 shrink-0 text-primary" strokeWidth={1.8} />
@@ -81,13 +84,14 @@ function Hero() {
               </li>
             ))}
           </ul>
+
         </div>
 
         <div className="relative order-first lg:order-last">
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
             <img
               src={heroImage}
-              alt="iPhones avec skins d’objectif LENZO"
+              alt="Stickers décoratifs LENZO appliqués sur le module caméra d’iPhone, avec découpes précises autour des objectifs"
               width={1408}
               height={1408}
               className="aspect-square w-full object-cover"

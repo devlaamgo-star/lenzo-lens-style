@@ -9,12 +9,12 @@ export const Route = createFileRoute("/faq")({
       {
         name: "description",
         content:
-          "Livraison, paiement à la livraison, compatibilité iPhone, pose et durée de vie : toutes les réponses sur les skins d’objectif LENZO.",
+          "Livraison, paiement à la livraison, compatibilité iPhone, pose et durée de vie : toutes les réponses sur les stickers caméra LENZO.",
       },
       { property: "og:title", content: "FAQ — Questions fréquentes LENZO" },
       {
         property: "og:description",
-        content: "Livraison, paiement à la livraison, compatibilité et pose des skins LENZO.",
+        content: "Livraison, paiement à la livraison, compatibilité et pose des stickers LENZO.",
       },
     ],
   }),

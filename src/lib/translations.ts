@@ -31,21 +31,27 @@ const D = {
 
   "hero.label": ["PERSONNALISEZ VOTRE IPHONE", "خصص جهاز iPhone الخاص بك", "PERSONALISE YOUR IPHONE"],
   "hero.title": [
-    "Un petit détail. Un nouveau style.",
-    "تفصيل صغير. أسلوب جديد.",
+    "Un petit détail. Un tout nouveau style.",
+    "تفصيل صغير. أسلوب جديد تماماً.",
     "A small detail. A whole new style.",
   ],
   "hero.desc": [
-    "Choisissez vos 3 designs préférés pour personnaliser et protéger les objectifs de votre iPhone.",
-    "اختر 3 تصاميم مفضلة لتخصيص وحماية عدسات كاميرا iPhone الخاصة بك.",
-    "Pick your 3 favourite designs to personalise and protect your iPhone camera lenses.",
+    "Choisissez 3 stickers décoratifs pour personnaliser le module caméra de votre iPhone.",
+    "اختر 3 ملصقات ديكورية لتخصيص وحدة الكاميرا في جهاز iPhone الخاص بك.",
+    "Choose 3 decorative stickers to personalise your iPhone camera module.",
   ],
   "hero.cta": ["Composer mon pack", "كوّن باقتك", "Build my pack"],
-  "hero.cta2": ["Voir la collection", "تصفح المجموعة", "View the collection"],
-  "hero.offer": ["3 skins à seulement 99 MAD", "3 ملصقات بـ 99 درهم فقط", "3 skins for only 99 MAD"],
+  "hero.cta2": ["Voir les designs", "شاهد التصاميم", "View the designs"],
+  "hero.offer": [
+    "3 stickers au choix pour seulement 99 MAD",
+    "3 ملصقات من اختيارك بـ 99 درهم فقط",
+    "3 stickers of your choice for only 99 MAD",
+  ],
   "hero.trust1": ["Livraison gratuite au Maroc", "توصيل مجاني داخل المغرب", "Free delivery in Morocco"],
   "hero.trust2": ["Paiement à la livraison", "الدفع عند الاستلام", "Cash on delivery"],
-  "hero.trust3": ["Installation facile", "تركيب سهل", "Easy to apply"],
+  "hero.trust3": ["Découpe précise", "قص دقيق", "Precise cut"],
+  "hero.trust4": ["Installation facile", "تركيب سهل", "Easy to apply"],
+
 
   "new.title": ["Nouveautés", "الجديد", "New arrivals"],
   "new.sub": [
@@ -60,10 +66,11 @@ const D = {
   "card.added": ["Ajouté", "تمت الإضافة", "Added"],
   "card.quickview": ["Aperçu rapide", "معاينة سريعة", "Quick view"],
   "card.compatible": [
-    "Compatible iPhone 11 → iPhone 16 Pro Max",
-    "متوافق مع iPhone 11 حتى iPhone 16 Pro Max",
-    "Compatible with iPhone 11 → iPhone 16 Pro Max",
+    "Sticker décoratif pour module caméra iPhone",
+    "ملصق ديكوري لوحدة كاميرا iPhone",
+    "Decorative sticker for the iPhone camera module",
   ],
+
   "card.full": ["Pack complet (3/3)", "الباقة مكتملة (3/3)", "Pack complete (3/3)"],
   "common.viewAll": ["Voir tous les designs", "عرض كل التصاميم", "View all designs"],
 
@@ -142,22 +149,23 @@ const D = {
   ],
   "b1": ["Découpe précise", "قص دقيق", "Precise cut"],
   "b1d": [
-    "Un ajustement net autour de chaque objectif.",
-    "تثبيت محكم حول كل عدسة.",
-    "A clean fit around every lens.",
+    "Des découpes nettes autour des objectifs, du flash et du micro.",
+    "قص دقيق حول العدسات والفلاش والميكروفون.",
+    "Clean cutouts around the lenses, flash and microphone.",
   ],
   "b2": ["Application facile", "تركيب سهل", "Easy application"],
   "b2d": [
-    "Posez vos skins en quelques secondes, sans outil.",
-    "ضع الملصقات في ثوانٍ دون أدوات.",
-    "Apply your skins in seconds, no tools needed.",
+    "Posez votre sticker en quelques secondes, sans outil.",
+    "ضع الملصق في ثوانٍ دون أدوات.",
+    "Apply your sticker in seconds, no tools needed.",
   ],
-  "b3": ["Résistant aux rayures", "مقاوم للخدوش", "Scratch resistant"],
+  "b3": ["Surface protégée des micro-rayures", "حماية السطح من الخدوش الدقيقة", "Surface kept scratch-free"],
   "b3d": [
-    "Aide à protéger la surface contre les petites rayures.",
-    "يساعد على حماية السطح من الخدوش الصغيرة.",
-    "Helps protect the surface against small scratches.",
+    "Personnalise le module caméra et aide à protéger la surface plate contre les petites rayures.",
+    "يخصص وحدة الكاميرا ويساعد على حماية السطح المسطح من الخدوش الصغيرة.",
+    "Personalises the camera module and helps protect the flat surface from small scratches.",
   ],
+
   "b4": ["Aucun résidu après retrait", "بدون بقايا بعد الإزالة", "No residue after removal"],
   "b4d": [
     "Retirez-les proprement quand vous le souhaitez.",
@@ -227,10 +235,12 @@ const D = {
     "3 designs, 99 MAD, free delivery.",
   ],
   "pack.step1": ["Étape 1 — Choisissez le modèle de votre iPhone", "الخطوة 1 — اختر موديل iPhone", "Step 1 — Choose your iPhone model"],
-  "pack.step2": ["Étape 2 — Choisissez 3 designs", "الخطوة 2 — اختر 3 تصاميم", "Step 2 — Choose 3 designs"],
+  "pack.step2": ["Étape 2 — Choisissez vos 3 stickers", "الخطوة 2 — اختر ملصقاتك الثلاثة", "Step 2 — Choose your 3 stickers"],
   "pack.step3": ["Étape 3 — Résumé de votre pack", "الخطوة 3 — ملخص الباقة", "Step 3 — Your pack summary"],
   "pack.modelPlaceholder": ["Sélectionnez votre modèle", "اختر الموديل", "Select your model"],
-  "pack.selected": ["designs sélectionnés", "تصاميم مختارة", "designs selected"],
+  "pack.selected": ["sélectionnés", "مختارة", "selected"],
+  "pack.packLabel": ["Pack de 3 stickers caméra", "باقة 3 ملصقات كاميرا", "Pack of 3 camera stickers"],
+
   "pack.sameAllowed": [
     "Vous pouvez choisir 3 designs différents ou plusieurs fois le même.",
     "يمكنك اختيار 3 تصاميم مختلفة أو نفس التصميم أكثر من مرة.",
@@ -295,7 +305,7 @@ const D = {
     "Our team will contact you to confirm your order before shipping.",
   ],
   "f.summary": ["Récapitulatif", "الملخص", "Order summary"],
-  "f.pack3": ["Pack de 3 skins", "باقة 3 ملصقات", "Pack of 3 skins"],
+  "f.pack3": ["Pack de 3 stickers", "باقة 3 ملصقات", "Pack of 3 stickers"],
   "f.edit": ["Modifier mon pack", "تعديل الباقة", "Edit my pack"],
   "e.name": ["Veuillez saisir votre nom complet.", "يرجى إدخال اسمك الكامل.", "Please enter your full name."],
   "e.phone": [

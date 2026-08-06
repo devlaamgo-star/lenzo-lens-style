@@ -9,19 +9,20 @@ type Card = {
   title: TKey;
   desc: TKey;
   image: string;
-  search: { collection?: string; filter?: string };
+  search: { collection?: "minimal" | "artistique" | "elegance" | "urbain"; filter?: "new" | "best" };
 };
 
 const img = (id: string) => DESIGNS.find((d) => d.id === id)!.image;
 
 const CARDS: Card[] = [
-  { title: "col.minimal", desc: "col.minimal.d", image: img("argent-minimal"), search: { collection: "minimal" } },
-  { title: "col.artistique", desc: "col.artistique.d", image: img("rose-dore"), search: { collection: "artistique" } },
-  { title: "col.elegance", desc: "col.elegance.d", image: img("or-classique"), search: { collection: "elegance" } },
-  { title: "col.urbain", desc: "col.urbain.d", image: img("bleu-nuit"), search: { collection: "urbain" } },
-  { title: "nav.best", desc: "col.best.d", image: img("noir-mat"), search: { filter: "best" } },
-  { title: "nav.new", desc: "col.new.d", image: img("cuivre-urbain"), search: { filter: "new" } },
+  { title: "col.minimal", desc: "col.minimal.d", image: img("regard-noir"), search: { collection: "minimal" } },
+  { title: "col.artistique", desc: "col.artistique.d", image: img("chat-curieux"), search: { collection: "artistique" } },
+  { title: "col.elegance", desc: "col.elegance.d", image: img("fleurs-pastel"), search: { collection: "elegance" } },
+  { title: "col.urbain", desc: "col.urbain.d", image: img("canard-pop"), search: { collection: "urbain" } },
+  { title: "nav.best", desc: "col.best.d", image: img("chat-orange"), search: { filter: "best" } },
+  { title: "nav.new", desc: "col.new.d", image: img("soleil-felin"), search: { filter: "new" } },
 ];
+
 
 export function CollectionsGrid() {
   const { t } = useI18n();

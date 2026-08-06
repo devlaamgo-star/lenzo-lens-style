@@ -31,7 +31,7 @@ export const Route = createFileRoute("/collection")({
       {
         name: "description",
         content:
-          "Découvrez tous les designs de skins d’objectif LENZO pour iPhone. Filtrez par modèle, collection et style, puis composez votre pack de 3 pour 99 MAD.",
+          "Découvrez tous les designs de stickers caméra LENZO pour iPhone. Filtrez par modèle, collection et style, puis composez votre pack de 3 pour 99 MAD.",
       },
       { property: "og:title", content: "Tous les designs — Collection LENZO" },
       {

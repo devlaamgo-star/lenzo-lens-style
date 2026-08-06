@@ -22,12 +22,12 @@ export const Route = createFileRoute("/commande")({
       {
         name: "description",
         content:
-          "Commandez votre pack de 3 skins LENZO à 99 MAD. Paiement à la livraison, livraison gratuite partout au Maroc.",
+          "Commandez votre pack de 3 stickers LENZO à 99 MAD. Paiement à la livraison, livraison gratuite partout au Maroc.",
       },
       { property: "og:title", content: "Finaliser ma commande — LENZO" },
       {
         property: "og:description",
-        content: "Pack de 3 skins à 99 MAD, paiement à la livraison partout au Maroc.",
+        content: "Pack de 3 stickers à 99 MAD, paiement à la livraison partout au Maroc.",
       },
     ],
   }),
