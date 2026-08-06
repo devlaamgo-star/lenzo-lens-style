@@ -22,6 +22,7 @@ const navLinkClass =
 
 export function SiteHeader() {
   const { t, lang, setLang, dir } = useI18n();
+  const navigate = useNavigate();
   const pack = usePack();
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
