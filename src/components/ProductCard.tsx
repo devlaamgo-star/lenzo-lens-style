@@ -3,7 +3,15 @@ import { Check, Eye, Plus } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import type { Design } from "@/lib/catalog";
+import { IPHONE_MODELS, type Design } from "@/lib/catalog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 import { cn } from "@/lib/utils";
 import {
   Dialog,
@@ -102,8 +110,22 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
             className="w-full rounded-xl bg-surface object-cover"
           />
           <div className="flex flex-col gap-3">
+            <p className="text-sm text-muted-foreground">{design.description[lang]}</p>
             <p className="text-sm font-medium text-accent-foreground">{t("card.included")}</p>
+            <Select value={pack.model || undefined} onValueChange={pack.setModel}>
+              <SelectTrigger className="h-11 rounded-full">
+                <SelectValue placeholder={t("col.model")} />
+              </SelectTrigger>
+              <SelectContent className="max-h-64">
+                {IPHONE_MODELS.map((m) => (
+                  <SelectItem key={m} value={m}>
+                    {m}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+
               <button
                 type="button"
                 disabled={full && count === 0}
