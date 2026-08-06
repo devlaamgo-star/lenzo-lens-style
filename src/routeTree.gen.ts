@@ -17,6 +17,7 @@ import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
+import { Route as ObjectifsIndexRouteImport } from './routes/objectifs.index'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
 import { Route as SkinsSlugRouteImport } from './routes/skins.$slug'
 
@@ -60,6 +61,11 @@ const PackRoute = PackRouteImport.update({
   path: '/pack',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObjectifsIndexRoute = ObjectifsIndexRouteImport.update({
+  id: '/objectifs/',
+  path: '/objectifs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SkinsIndexRoute = SkinsIndexRouteImport.update({
   id: '/skins/',
   path: '/skins/',
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/objectifs': typeof ObjectifsIndexRoute
   '/skins': typeof SkinsIndexRoute
 }
 export interface FileRoutesById {
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
 export interface FileRouteTypes {
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/pack'
     | '/skins/$slug'
+    | '/objectifs/'
     | '/skins/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/pack'
     | '/skins/$slug'
+    | '/objectifs'
     | '/skins'
   id:
     | '__root__'
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/pack'
     | '/skins/$slug'
+    | '/objectifs/'
     | '/skins/'
   fileRoutesById: FileRoutesById
 }
@@ -157,6 +169,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
   SkinsSlugRoute: typeof SkinsSlugRoute
+  ObjectifsIndexRoute: typeof ObjectifsIndexRoute
   SkinsIndexRoute: typeof SkinsIndexRoute
 }
 
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/objectifs/': {
+      id: '/objectifs/'
+      path: '/objectifs'
+      fullPath: '/objectifs/'
+      preLoaderRoute: typeof ObjectifsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/skins/': {
       id: '/skins/'
       path: '/skins'
@@ -245,6 +265,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
   SkinsSlugRoute: SkinsSlugRoute,
+  ObjectifsIndexRoute: ObjectifsIndexRoute,
   SkinsIndexRoute: SkinsIndexRoute,
 }
 export const routeTree = rootRouteImport
