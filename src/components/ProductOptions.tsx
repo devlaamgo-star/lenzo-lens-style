@@ -28,7 +28,7 @@ export function ModelSelect({
   return (
     <div className="w-full">
       <label className="mb-1.5 block text-sm font-medium">{t("pack.model")}</label>
-      <Select {...(value ? { value } : {})} onValueChange={onChange}>
+      <Select value={value} onValueChange={onChange}>
         <SelectTrigger className={className}>
           <SelectValue placeholder={t("pack.modelPlaceholder")} />
         </SelectTrigger>
