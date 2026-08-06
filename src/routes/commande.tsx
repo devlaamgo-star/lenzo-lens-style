@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
-import { PACK_PRICE, designById } from "@/lib/catalog";
+import { PACK_PRICE, designById, MOROCCAN_CITIES } from "@/lib/catalog";
 import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
@@ -177,7 +177,21 @@ function OrderPage() {
                 <label htmlFor="city" className="mb-1.5 block text-sm font-medium">
                   {t("f.city")}
                 </label>
-                <input id="city" value={values.city} onChange={set("city")} maxLength={60} className={fieldClass} />
+                <input
+                  id="city"
+                  list="ma-cities"
+                  placeholder={t("f.cityPlaceholder")}
+                  value={values.city}
+                  onChange={set("city")}
+                  maxLength={60}
+                  className={fieldClass}
+                />
+                <datalist id="ma-cities">
+                  {MOROCCAN_CITIES.map((c) => (
+                    <option key={c} value={c} />
+                  ))}
+                </datalist>
+
                 {errors.city && <p className="mt-1.5 text-xs text-destructive">{errors.city}</p>}
               </div>
               {packReady && (

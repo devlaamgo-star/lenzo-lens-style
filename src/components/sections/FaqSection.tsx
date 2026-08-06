@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { FAQS } from "@/lib/content";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -9,7 +10,7 @@ import {
 } from "@/components/ui/accordion";
 
 export function FaqSection() {
-  const { lang } = useI18n();
+  const { lang, t } = useI18n();
   return (
     <section id="faq" className="section-y bg-surface">
       <div className="container-page">
@@ -32,6 +33,11 @@ export function FaqSection() {
               </AccordionItem>
             ))}
           </Accordion>
+          <p className="mt-6 text-center text-sm text-muted-foreground">
+            <Link to="/retours" className="font-semibold text-primary hover:underline">
+              {t("ret.title")}
+            </Link>
+          </p>
         </div>
       </div>
     </section>

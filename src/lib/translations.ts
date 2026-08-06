@@ -518,6 +518,30 @@ const D = {
   "conf.pending": ["En attente de confirmation", "في انتظار التأكيد", "Awaiting confirmation"],
   "conf.customer": ["Nom du client", "اسم العميل", "Customer name"],
   "sticky.build": ["Composer mon pack", "كوّن باقتي", "Build my pack"],
+  "f.cityPlaceholder": [
+    "Choisissez ou saisissez votre ville",
+    "اختر مدينتك أو اكتبها",
+    "Choose or type your city",
+  ],
+  "nf.title": ["Page introuvable", "الصفحة غير موجودة", "Page not found"],
+  "nf.text": [
+    "Cette page n’existe pas ou a été déplacée.",
+    "هذه الصفحة غير موجودة أو تم نقلها.",
+    "This page does not exist or has been moved.",
+  ],
+  "nf.back": ["Retour à l’accueil", "العودة إلى الرئيسية", "Back to home"],
+  "err.title": [
+    "Cette page n’a pas pu se charger",
+    "تعذّر تحميل هذه الصفحة",
+    "This page could not load",
+  ],
+  "err.text": [
+    "Réessayez ou revenez à l’accueil.",
+    "أعد المحاولة أو عد إلى الصفحة الرئيسية.",
+    "Please try again or return to the home page.",
+  ],
+  "err.retry": ["Réessayer", "إعادة المحاولة", "Try again"],
+
 } satisfies Record<string, Entry>;
 
 export type TKey = keyof typeof D;
