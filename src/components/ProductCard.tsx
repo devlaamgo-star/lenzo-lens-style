@@ -112,7 +112,7 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
           <div className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">{design.description[lang]}</p>
             <p className="text-sm font-medium text-accent-foreground">{t("card.included")}</p>
-            <Select value={pack.model || undefined} onValueChange={pack.setModel}>
+            <Select value={pack.model} onValueChange={pack.setModel}>
               <SelectTrigger className="h-11 rounded-full">
                 <SelectValue placeholder={t("col.model")} />
               </SelectTrigger>
