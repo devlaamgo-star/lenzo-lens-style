@@ -1,4 +1,4 @@
-import { PRODUCTS, type Product, type CollectionId as PCollectionId } from "@/data/products";
+import { type CollectionId as PCollectionId } from "@/data/products";
 import { FULL_BODY_SKINS, skinBySlug, type FullBodySkin } from "@/data/full-body-skins";
 import {
   CAMERA_LENS_SKINS,

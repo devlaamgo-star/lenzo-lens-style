@@ -4,7 +4,7 @@ import { ChevronDown, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import logo from "@/assets/lenzo-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { DESIGNS, CAMERA_LENS_SKINS, FULL_BODY_SKINS, PACK_SIZE } from "@/lib/catalog";
+import { CAMERA_LENS_SKINS, FULL_BODY_SKINS, PACK_SIZE } from "@/lib/catalog";
 import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
 import { LANGS, type Lang } from "@/lib/translations";
 import { cn } from "@/lib/utils";
