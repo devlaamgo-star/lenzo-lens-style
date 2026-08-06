@@ -17,6 +17,7 @@ import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
+import { Route as PanierRouteImport } from './routes/panier'
 import { Route as RetoursRouteImport } from './routes/retours'
 import { Route as AnimeIndexRouteImport } from './routes/anime.index'
 import { Route as AnimeSlugRouteImport } from './routes/anime.$slug'
@@ -67,6 +68,11 @@ const FaqRoute = FaqRouteImport.update({
 const PackRoute = PackRouteImport.update({
   id: '/pack',
   path: '/pack',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PanierRoute = PanierRouteImport.update({
+  id: '/panier',
+  path: '/panier',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RetoursRoute = RetoursRouteImport.update({
@@ -134,6 +140,7 @@ export interface FileRoutesByFullPath {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/panier': typeof PanierRoute
   '/retours': typeof RetoursRoute
   '/anime/$slug': typeof AnimeSlugRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
@@ -155,6 +162,7 @@ export interface FileRoutesByTo {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/panier': typeof PanierRoute
   '/retours': typeof RetoursRoute
   '/anime/$slug': typeof AnimeSlugRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
@@ -177,6 +185,7 @@ export interface FileRoutesById {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/panier': typeof PanierRoute
   '/retours': typeof RetoursRoute
   '/anime/$slug': typeof AnimeSlugRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
@@ -200,6 +209,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/panier'
     | '/retours'
     | '/anime/$slug'
     | '/dos-camera/$slug'
@@ -221,6 +231,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/panier'
     | '/retours'
     | '/anime/$slug'
     | '/dos-camera/$slug'
@@ -242,6 +253,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/panier'
     | '/retours'
     | '/anime/$slug'
     | '/dos-camera/$slug'
@@ -264,6 +276,7 @@ export interface RootRouteChildren {
   ConfirmationRoute: typeof ConfirmationRoute
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
+  PanierRoute: typeof PanierRoute
   RetoursRoute: typeof RetoursRoute
   AnimeSlugRoute: typeof AnimeSlugRoute
   DosCameraSlugRoute: typeof DosCameraSlugRoute
@@ -333,6 +346,13 @@ declare module '@tanstack/react-router' {
       path: '/pack'
       fullPath: '/pack'
       preLoaderRoute: typeof PackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/panier': {
+      id: '/panier'
+      path: '/panier'
+      fullPath: '/panier'
+      preLoaderRoute: typeof PanierRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/retours': {
@@ -424,6 +444,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmationRoute: ConfirmationRoute,
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
+  PanierRoute: PanierRoute,
   RetoursRoute: RetoursRoute,
   AnimeSlugRoute: AnimeSlugRoute,
   DosCameraSlugRoute: DosCameraSlugRoute,

@@ -1,19 +1,15 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ChevronRight, Loader2, ShieldCheck } from "lucide-react";
+import { ChevronRight, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { PACK_PRICE, designById, IPHONE_MODELS } from "@/lib/catalog";
+import { useCart } from "@/lib/cart";
+import { PACK_PRICE, designById } from "@/lib/catalog";
 import { createOrder } from "@/lib/orders.functions";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { ModelSelect } from "@/components/ProductOptions";
+import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 
 export const Route = createFileRoute("/commande")({
   head: () => ({
@@ -22,12 +18,12 @@ export const Route = createFileRoute("/commande")({
       {
         name: "description",
         content:
-          "Commandez votre pack de 3 stickers LENZO à 99 MAD. Paiement à la livraison, livraison gratuite partout au Maroc.",
+          "Finalisez votre commande LENZO : paiement à la livraison, livraison gratuite partout au Maroc, confirmation par téléphone.",
       },
       { property: "og:title", content: "Finaliser ma commande — LENZO" },
       {
         property: "og:description",
-        content: "Pack de 3 stickers à 99 MAD, paiement à la livraison partout au Maroc.",
+        content: "Paiement à la livraison et livraison gratuite partout au Maroc.",
       },
     ],
   }),
@@ -36,11 +32,14 @@ export const Route = createFileRoute("/commande")({
 
 const PHONE_RE = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
-type Errors = Partial<Record<"name" | "phone" | "city" | "address" | "model" | "designs", string>>;
+type Errors = Partial<
+  Record<"name" | "phone" | "city" | "address" | "model" | "cart", string>
+>;
 
 function OrderPage() {
   const { t, lang } = useI18n();
   const pack = usePack();
+  const cart = useCart();
   const navigate = useNavigate();
   const submitOrder = useServerFn(createOrder);
 
@@ -48,8 +47,14 @@ function OrderPage() {
   const [errors, setErrors] = useState<Errors>({});
   const [pending, setPending] = useState(false);
 
-  const set = (key: keyof typeof values) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setValues((v) => ({ ...v, [key]: e.target.value }));
+  const packReady = pack.designs.length === 3;
+  const total = cart.subtotal + (packReady ? PACK_PRICE : 0);
+  const empty = cart.items.length === 0 && !packReady;
+
+  const set =
+    (key: keyof typeof values) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setValues((v) => ({ ...v, [key]: e.target.value }));
 
   const validate = (): boolean => {
     const next: Errors = {};
@@ -57,8 +62,8 @@ function OrderPage() {
     if (!PHONE_RE.test(values.phone.replace(/[\s.-]/g, ""))) next.phone = t("e.phone");
     if (values.city.trim().length < 2) next.city = t("e.city");
     if (values.address.trim().length < 8) next.address = t("e.address");
-    if (!pack.model) next.model = t("e.model");
-    if (pack.designs.length !== 3) next.designs = t("e.designs");
+    if (packReady && !pack.model) next.model = t("e.modelSelect");
+    if (empty) next.cart = t("e.emptyCart");
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -74,8 +79,15 @@ function OrderPage() {
           phone: values.phone,
           city: values.city,
           address: values.address,
-          model: pack.model,
-          designs: pack.designs,
+          model: packReady ? pack.model : "",
+          designs: packReady ? pack.designs : [],
+          items: cart.items.map((i) => ({
+            productId: i.productId,
+            name: i.name.fr,
+            category: i.category,
+            model: i.model,
+            qty: i.qty,
+          })),
           notes: values.notes,
           locale: lang,
         },
@@ -84,11 +96,24 @@ function OrderPage() {
         "lenzo-last-order",
         JSON.stringify({
           orderNumber: res.orderNumber,
-          model: pack.model,
-          designs: pack.designs,
+          total: res.total,
+          name: values.name,
+          phone: values.phone,
+          city: values.city,
+          address: values.address,
+          model: packReady ? pack.model : "",
+          designs: packReady ? pack.designs : [],
+          items: cart.items.map((i) => ({
+            name: i.name[lang],
+            image: i.image,
+            model: i.model,
+            qty: i.qty,
+            price: i.price,
+          })),
         }),
       );
       pack.clear();
+      cart.clear();
       navigate({ to: "/confirmation" });
     } catch (err) {
       console.error(err);
@@ -110,8 +135,8 @@ function OrderPage() {
               {t("breadcrumb.home")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 flip-rtl" />
-            <Link to="/pack" className="hover:text-primary">
-              {t("pack.title")}
+            <Link to="/panier" className="hover:text-primary">
+              {t("cart.title")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5 flip-rtl" />
             <span className="text-foreground">{t("order.title")}</span>
@@ -122,7 +147,7 @@ function OrderPage() {
       </section>
 
       <section className="section-y">
-        <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10">
+        <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
           <form onSubmit={onSubmit} noValidate className="min-w-0 space-y-5">
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="min-w-0">
@@ -155,22 +180,16 @@ function OrderPage() {
                 <input id="city" value={values.city} onChange={set("city")} maxLength={60} className={fieldClass} />
                 {errors.city && <p className="mt-1.5 text-xs text-destructive">{errors.city}</p>}
               </div>
-              <div className="min-w-0">
-                <label className="mb-1.5 block text-sm font-medium">{t("f.model")}</label>
-                <Select {...(pack.model ? { value: pack.model } : {})} onValueChange={pack.setModel}>
-                  <SelectTrigger className="h-12 rounded-xl">
-                    <SelectValue placeholder={t("pack.modelPlaceholder")} />
-                  </SelectTrigger>
-                  <SelectContent className="max-h-72">
-                    {IPHONE_MODELS.map((m) => (
-                      <SelectItem key={m} value={m}>
-                        {m}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                {errors.model && <p className="mt-1.5 text-xs text-destructive">{errors.model}</p>}
-              </div>
+              {packReady && (
+                <div className="min-w-0">
+                  <ModelSelect
+                    value={pack.model}
+                    onChange={pack.setModel}
+                    error={errors.model}
+                    className="h-12 rounded-xl"
+                  />
+                </div>
+              )}
             </div>
 
             <div>
@@ -189,33 +208,8 @@ function OrderPage() {
             </div>
 
             <div>
-              <p className="mb-1.5 text-sm font-medium">{t("f.designs")}</p>
-              <div className="flex flex-wrap gap-2 rounded-xl border border-border bg-card p-3">
-                {pack.designs.length === 0 && (
-                  <span className="text-xs text-muted-foreground">{t("pack.empty")}</span>
-                )}
-                {pack.designs.map((id, i) => {
-                  const d = designById(id);
-                  return d ? (
-                    <span
-                      key={`${id}-${i}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-surface py-1.5 pe-3 ps-1.5 text-xs font-medium"
-                    >
-                      <img src={d.image} alt="" loading="lazy" className="h-6 w-6 rounded-full object-cover" />
-                      {d.name[lang]}
-                    </span>
-                  ) : null;
-                })}
-                <Link to="/pack" className="ms-auto self-center text-xs font-semibold text-primary hover:underline">
-                  {t("f.edit")}
-                </Link>
-              </div>
-              {errors.designs && <p className="mt-1.5 text-xs text-destructive">{errors.designs}</p>}
-            </div>
-
-            <div>
               <label htmlFor="notes" className="mb-1.5 block text-sm font-medium">
-                {t("f.notes")} <span className="text-xs text-muted-foreground">({t("f.optional")})</span>
+                {t("f.extra")} <span className="text-xs text-muted-foreground">({t("f.optional")})</span>
               </label>
               <textarea
                 id="notes"
@@ -231,6 +225,8 @@ function OrderPage() {
               <OrderSummary />
             </div>
 
+            {errors.cart && <p className="text-xs text-destructive">{errors.cart}</p>}
+
             <button
               type="submit"
               disabled={pending}
@@ -240,44 +236,101 @@ function OrderPage() {
               {pending ? t("f.sending") : t("f.submit")}
             </button>
             <p className="text-center text-xs text-muted-foreground">{t("f.note")}</p>
+            <div className="lg:hidden">
+              <ReturnsPolicyCard />
+            </div>
           </form>
 
           <aside className="hidden lg:block">
-            <div className="sticky top-28">
+            <div className="sticky top-28 space-y-5">
               <OrderSummary />
+              <CodInfoCard />
+              <ReturnsPolicyCard />
             </div>
           </aside>
         </div>
       </section>
     </>
   );
-}
 
-function OrderSummary() {
-  const { t } = useI18n();
-  return (
-    <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
-      <h2 className="text-base font-bold">{t("f.summary")}</h2>
-      <dl className="mt-4 space-y-3 text-sm">
-        <div className="flex items-center justify-between">
-          <dt className="text-muted-foreground">{t("f.pack3")}</dt>
-          <dd className="font-medium">{PACK_PRICE} MAD</dd>
+  function OrderSummary() {
+    return (
+      <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
+        <h2 className="text-base font-bold">{t("f.summary")}</h2>
+
+        <div className="mt-4 space-y-3">
+          {cart.items.map((i) => (
+            <div key={i.key} className="flex items-center gap-3">
+              <img
+                src={i.image}
+                alt={i.name[lang]}
+                loading="lazy"
+                className="h-12 w-12 shrink-0 rounded-lg bg-surface object-contain p-0.5"
+              />
+              <div className="min-w-0 flex-1">
+                <p className="truncate text-sm font-medium">{i.name[lang]}</p>
+                <p className="text-xs text-muted-foreground">
+                  {i.model} · {t("f.qty")} {i.qty}
+                </p>
+              </div>
+              <span className="text-sm font-semibold">{i.price * i.qty} MAD</span>
+            </div>
+          ))}
+
+          {packReady && (
+            <div>
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium">{t("pack.packLabel")}</p>
+                <span className="text-sm font-semibold">{PACK_PRICE} MAD</span>
+              </div>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {pack.model || "—"} · {t("f.qty")} 1
+              </p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {pack.designs.map((id, i) => {
+                  const d = designById(id);
+                  return d ? (
+                    <span
+                      key={`${id}-${i}`}
+                      className="inline-flex items-center gap-2 rounded-full bg-surface py-1 pe-2.5 ps-1 text-[11px] font-medium"
+                    >
+                      <img src={d.image} alt="" loading="lazy" className="h-5 w-5 rounded-full object-cover" />
+                      {d.name[lang]}
+                    </span>
+                  ) : null;
+                })}
+              </div>
+            </div>
+          )}
+
+          {empty && (
+            <p className="text-xs text-muted-foreground">{t("cart.empty")}</p>
+          )}
         </div>
-        <div className="flex items-center justify-between">
-          <dt className="text-muted-foreground">{t("pack.delivery")}</dt>
-          <dd className="font-medium text-success">{t("pack.free")}</dd>
-        </div>
-        <div className="flex items-center justify-between border-t border-border pt-3">
-          <dt className="font-semibold">{t("pack.total")}</dt>
-          <dd className="text-xl font-extrabold">{PACK_PRICE} MAD</dd>
-        </div>
-        <div className="flex items-center gap-2 rounded-xl bg-surface p-3 text-xs">
-          <ShieldCheck className="h-4 w-4 shrink-0 text-success" />
-          <span>
-            {t("pack.payment")}: {t("pack.cod")}
-          </span>
-        </div>
-      </dl>
-    </div>
-  );
+
+        <dl className="mt-4 space-y-3 border-t border-border pt-4 text-sm">
+          <div className="flex items-center justify-between">
+            <dt className="text-muted-foreground">{t("f.subtotal")}</dt>
+            <dd className="font-medium">{total} MAD</dd>
+          </div>
+          <div className="flex items-center justify-between">
+            <dt className="text-muted-foreground">{t("pack.delivery")}</dt>
+            <dd className="font-medium text-success">{t("pack.free")}</dd>
+          </div>
+          <div className="flex items-center justify-between">
+            <dt className="text-muted-foreground">{t("f.paymentMethod")}</dt>
+            <dd className="font-medium">{t("cod.title")}</dd>
+          </div>
+          <div className="flex items-center justify-between border-t border-border pt-3">
+            <dt className="font-semibold">{t("pack.total")}</dt>
+            <dd className="text-xl font-extrabold">{total} MAD</dd>
+          </div>
+        </dl>
+
+        <Link to="/panier" className="mt-4 inline-block text-xs font-semibold text-primary hover:underline">
+          {t("cart.viewCart")}
+        </Link>
+      </div>
+    );
+  }
 }
