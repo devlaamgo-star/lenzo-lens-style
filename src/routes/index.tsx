@@ -8,7 +8,8 @@ import { ProductCard } from "@/components/ProductCard";
 import { SkinCard } from "@/components/SkinCard";
 import { LensSkinCard } from "@/components/LensSkinCard";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
-import { BACK_LENS_SKINS, IPHONE_AIR_SKINS } from "@/lib/catalog";
+import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
+import { AnimeSkinCard } from "@/components/AnimeSkinCard";
 import { AirSkinCard } from "@/components/AirSkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CollectionsGrid } from "@/components/sections/CollectionsGrid";
@@ -184,6 +185,25 @@ function HomePage() {
         </div>
       </section>
 
+
+      <section className="section-y">
+        <div className="container-page">
+          <SectionHeading title="anime.title" subtitle="anime.sub" />
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            {ANIME_SKINS.slice(0, 8).map((s) => (
+              <AnimeSkinCard key={s.id} skin={s} />
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/anime"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
+            >
+              {t("anime.viewAll")}
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="section-y">
         <div className="container-page">

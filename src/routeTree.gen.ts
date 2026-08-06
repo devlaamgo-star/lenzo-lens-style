@@ -18,6 +18,7 @@ import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
 import { Route as AnimeIndexRouteImport } from './routes/anime.index'
+import { Route as AnimeSlugRouteImport } from './routes/anime.$slug'
 import { Route as DosCameraIndexRouteImport } from './routes/dos-camera.index'
 import { Route as DosCameraSlugRouteImport } from './routes/dos-camera.$slug'
 import { Route as IphoneAirIndexRouteImport } from './routes/iphone-air.index'
@@ -72,6 +73,11 @@ const AnimeIndexRoute = AnimeIndexRouteImport.update({
   path: '/anime/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnimeSlugRoute = AnimeSlugRouteImport.update({
+  id: '/anime/$slug',
+  path: '/anime/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DosCameraIndexRoute = DosCameraIndexRouteImport.update({
   id: '/dos-camera/',
   path: '/dos-camera/',
@@ -122,6 +128,7 @@ export interface FileRoutesByFullPath {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/anime/$slug': typeof AnimeSlugRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
@@ -141,6 +148,7 @@ export interface FileRoutesByTo {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/anime/$slug': typeof AnimeSlugRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
@@ -161,6 +169,7 @@ export interface FileRoutesById {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/anime/$slug': typeof AnimeSlugRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
@@ -182,6 +191,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/anime/$slug'
     | '/dos-camera/$slug'
     | '/iphone-air/$slug'
     | '/objectifs/$slug'
@@ -201,6 +211,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/anime/$slug'
     | '/dos-camera/$slug'
     | '/iphone-air/$slug'
     | '/objectifs/$slug'
@@ -220,6 +231,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/anime/$slug'
     | '/dos-camera/$slug'
     | '/iphone-air/$slug'
     | '/objectifs/$slug'
@@ -240,6 +252,7 @@ export interface RootRouteChildren {
   ConfirmationRoute: typeof ConfirmationRoute
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
+  AnimeSlugRoute: typeof AnimeSlugRoute
   DosCameraSlugRoute: typeof DosCameraSlugRoute
   IphoneAirSlugRoute: typeof IphoneAirSlugRoute
   ObjectifsSlugRoute: typeof ObjectifsSlugRoute
@@ -316,6 +329,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnimeIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/anime/$slug': {
+      id: '/anime/$slug'
+      path: '/anime/$slug'
+      fullPath: '/anime/$slug'
+      preLoaderRoute: typeof AnimeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dos-camera/': {
       id: '/dos-camera/'
       path: '/dos-camera'
@@ -384,6 +404,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmationRoute: ConfirmationRoute,
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
+  AnimeSlugRoute: AnimeSlugRoute,
   DosCameraSlugRoute: DosCameraSlugRoute,
   IphoneAirSlugRoute: IphoneAirSlugRoute,
   ObjectifsSlugRoute: ObjectifsSlugRoute,
