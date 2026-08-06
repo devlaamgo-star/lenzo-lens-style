@@ -3,16 +3,17 @@ import { CheckCircle2, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { PACK_PRICE, WHATSAPP_NUMBER, designById } from "@/lib/catalog";
+import { ReturnsPolicyCard } from "@/routes/retours";
 
 export const Route = createFileRoute("/confirmation")({
   head: () => ({
     meta: [
-      { title: "Commande confirmée — LENZO" },
+      { title: "Merci pour votre commande — LENZO" },
       {
         name: "description",
         content: "Merci pour votre commande LENZO. Notre équipe vous appelle pour confirmer la livraison.",
       },
-      { property: "og:title", content: "Commande confirmée — LENZO" },
+      { property: "og:title", content: "Merci pour votre commande — LENZO" },
       { property: "og:description", content: "Merci pour votre commande LENZO." },
       { name: "robots", content: "noindex" },
     ],
@@ -20,7 +21,27 @@ export const Route = createFileRoute("/confirmation")({
   component: ConfirmationPage,
 });
 
-type LastOrder = { orderNumber: string; model: string; designs: string[] };
+type OrderItem = { name: string; image: string; model: string; qty: number; price: number };
+type LastOrder = {
+  orderNumber: string;
+  total: number;
+  name: string;
+  phone: string;
+  city: string;
+  address: string;
+  model: string;
+  designs: string[];
+  items: OrderItem[];
+};
+
+function Row({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-start justify-between gap-3 text-sm">
+      <span className="text-muted-foreground">{label}</span>
+      <span className="min-w-0 text-end font-medium">{value}</span>
+    </div>
+  );
+}
 
 function ConfirmationPage() {
   const { t, lang } = useI18n();
@@ -43,46 +64,92 @@ function ConfirmationPage() {
 
   return (
     <section className="section-y">
-      <div className="container-page max-w-2xl">
+      <div className="container-page max-w-2xl space-y-6">
         <div className="flex flex-col items-center rounded-3xl border border-border bg-card p-6 text-center shadow-card sm:p-10">
           <span className="grid h-16 w-16 place-items-center rounded-full bg-success/12 text-success">
             <CheckCircle2 className="h-8 w-8" strokeWidth={1.6} />
           </span>
           <h1 className="mt-5 text-2xl font-bold sm:text-3xl">{t("conf.title")}</h1>
-          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">{t("conf.text")}</p>
+          <p className="mt-3 text-base font-medium">{t("conf.received")}</p>
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">{t("conf.support")}</p>
 
-          {order && (
-            <div className="mt-6 w-full rounded-2xl bg-surface p-5 text-start">
-              <div className="flex items-center justify-between gap-3 text-sm">
-                <span className="text-muted-foreground">{t("conf.number")}</span>
-                <span className="font-bold tracking-wide">{order.orderNumber}</span>
+          {order ? (
+            <div className="mt-6 w-full space-y-3 rounded-2xl bg-surface p-5 text-start">
+              <Row label={t("conf.number")} value={order.orderNumber} />
+              <Row label={t("conf.customer")} value={order.name} />
+              <Row label={t("f.phone")} value={order.phone} />
+              <Row label={t("f.city")} value={order.city} />
+              <Row label={t("f.address")} value={order.address} />
+
+              <div className="space-y-3 border-t border-border pt-3">
+                <p className="text-sm font-semibold">{t("cart.items")}</p>
+                {order.items.map((i, idx) => (
+                  <div key={`${i.name}-${idx}`} className="flex items-center gap-3">
+                    <img
+                      src={i.image}
+                      alt={i.name}
+                      loading="lazy"
+                      className="h-12 w-12 shrink-0 rounded-lg bg-card object-contain p-0.5"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium">{i.name}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {i.model} · {t("f.qty")} {i.qty}
+                      </p>
+                    </div>
+                    <span className="text-sm font-semibold">{i.price * i.qty} MAD</span>
+                  </div>
+                ))}
+
+                {order.designs.length === 3 && (
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-medium">{t("pack.packLabel")}</p>
+                      <span className="text-sm font-semibold">{PACK_PRICE} MAD</span>
+                    </div>
+                    <p className="mt-1 text-xs text-muted-foreground">
+                      {order.model} · {t("f.qty")} 1
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {order.designs.map((id, i) => {
+                        const d = designById(id);
+                        return d ? (
+                          <span
+                            key={`${id}-${i}`}
+                            className="inline-flex items-center gap-2 rounded-full bg-card py-1.5 pe-3 ps-1.5 text-xs font-medium"
+                          >
+                            <img src={d.image} alt="" loading="lazy" className="h-6 w-6 rounded-full object-cover" />
+                            {d.name[lang]}
+                          </span>
+                        ) : null;
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
-              <div className="mt-3 flex items-center justify-between gap-3 text-sm">
-                <span className="text-muted-foreground">{t("pack.model")}</span>
-                <span className="min-w-0 truncate font-medium">{order.model}</span>
-              </div>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {order.designs.map((id, i) => {
-                  const d = designById(id);
-                  return d ? (
-                    <span
-                      key={`${id}-${i}`}
-                      className="inline-flex items-center gap-2 rounded-full bg-card py-1.5 pe-3 ps-1.5 text-xs font-medium"
-                    >
-                      <img src={d.image} alt="" loading="lazy" className="h-6 w-6 rounded-full object-cover" />
-                      {d.name[lang]}
-                    </span>
-                  ) : null;
-                })}
-              </div>
-              <div className="mt-4 flex items-center justify-between border-t border-border pt-3 text-sm">
-                <span className="font-semibold">{t("pack.total")}</span>
-                <span className="text-lg font-extrabold">{PACK_PRICE} MAD</span>
+
+              <div className="space-y-3 border-t border-border pt-3">
+                <Row label={t("f.paymentMethod")} value={t("pack.cod")} />
+                <Row label={t("conf.status")} value={t("conf.pending")} />
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold">{t("pack.total")}</span>
+                  <span className="text-lg font-extrabold">{order.total} MAD</span>
+                </div>
               </div>
             </div>
+          ) : (
+            <p className="mt-6 text-sm text-muted-foreground">{t("conf.none")}</p>
           )}
 
+          <p className="mt-6 text-sm font-medium">{t("conf.keepPhone")}</p>
+
           <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
+            <Link
+              to="/"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold hover:bg-surface"
+            >
+              {t("conf.back")}
+            </Link>
             <a
               href={waHref}
               target="_blank"
@@ -90,16 +157,12 @@ function ConfirmationPage() {
               className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-whatsapp px-6 text-sm font-semibold text-whatsapp-foreground"
             >
               <MessageCircle className="h-4 w-4" />
-              {t("wa.help")}
+              {t("conf.wa")}
             </a>
-            <Link
-              to="/"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-border px-6 text-sm font-semibold hover:bg-surface"
-            >
-              {t("conf.back")}
-            </Link>
           </div>
         </div>
+
+        <ReturnsPolicyCard />
       </div>
     </section>
   );
