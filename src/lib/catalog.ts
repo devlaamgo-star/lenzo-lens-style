@@ -1,11 +1,11 @@
-import orClassique from "@/assets/skin-or-classique.jpg";
-import noirMat from "@/assets/skin-noir-mat.jpg";
-import argentMinimal from "@/assets/skin-argent-minimal.jpg";
-import bleuNuit from "@/assets/skin-bleu-nuit.jpg";
-import roseDore from "@/assets/skin-rose-dore.jpg";
-import vertEmeraude from "@/assets/skin-vert-emeraude.jpg";
-import cuivreUrbain from "@/assets/skin-cuivre-urbain.jpg";
-import blancPerle from "@/assets/skin-blanc-perle.jpg";
+import chatCurieux from "@/assets/skin-chat-curieux.jpg";
+import chatOrange from "@/assets/skin-chat-orange.jpg";
+import regardNoir from "@/assets/skin-regard-noir.jpg";
+import soleilFelin from "@/assets/skin-soleil-felin.jpg";
+import canardPop from "@/assets/skin-canard-pop.jpg";
+import nuitSauvage from "@/assets/skin-nuit-sauvage.jpg";
+import fleursPastel from "@/assets/skin-fleurs-pastel.jpg";
+import vagueRetro from "@/assets/skin-vague-retro.jpg";
 
 export type Lang = "fr" | "ar" | "en";
 
@@ -23,78 +23,79 @@ export type Design = {
 
 export const DESIGNS: Design[] = [
   {
-    id: "or-classique",
-    name: { fr: "Or Classique", ar: "ذهبي كلاسيكي", en: "Classic Gold" },
-    image: orClassique,
-    collection: "elegance",
-    isNew: false,
+    id: "chat-curieux",
+    name: { fr: "Chat Curieux", ar: "قطة فضولية", en: "Curious Cat" },
+    image: chatCurieux,
+    collection: "artistique",
+    isNew: true,
     isBestseller: true,
     popularity: 98,
   },
   {
-    id: "noir-mat",
-    name: { fr: "Noir Mat", ar: "أسود مطفي", en: "Matte Black" },
-    image: noirMat,
+    id: "chat-orange",
+    name: { fr: "Chat Orange", ar: "قطة برتقالية", en: "Orange Cat" },
+    image: chatOrange,
+    collection: "artistique",
+    isNew: true,
+    isBestseller: true,
+    popularity: 95,
+  },
+  {
+    id: "regard-noir",
+    name: { fr: "Regard Noir", ar: "نظرة سوداء", en: "Black Gaze" },
+    image: regardNoir,
     collection: "minimal",
     isNew: false,
     isBestseller: true,
-    popularity: 96,
+    popularity: 92,
   },
   {
-    id: "argent-minimal",
-    name: { fr: "Argent Minimal", ar: "فضي بسيط", en: "Minimal Silver" },
-    image: argentMinimal,
-    collection: "minimal",
-    isNew: false,
-    isBestseller: false,
-    popularity: 84,
-  },
-  {
-    id: "bleu-nuit",
-    name: { fr: "Bleu Nuit", ar: "أزرق ليلي", en: "Midnight Blue" },
-    image: bleuNuit,
-    collection: "urbain",
+    id: "soleil-felin",
+    name: { fr: "Soleil Félin", ar: "شمس القطط", en: "Feline Sun" },
+    image: soleilFelin,
+    collection: "artistique",
     isNew: true,
     isBestseller: false,
     popularity: 88,
   },
   {
-    id: "rose-dore",
-    name: { fr: "Rose Doré", ar: "ذهبي وردي", en: "Rose Gold" },
-    image: roseDore,
-    collection: "artistique",
-    isNew: true,
-    isBestseller: true,
-    popularity: 92,
-  },
-  {
-    id: "vert-emeraude",
-    name: { fr: "Vert Émeraude", ar: "أخضر زمردي", en: "Emerald Green" },
-    image: vertEmeraude,
-    collection: "artistique",
-    isNew: true,
-    isBestseller: false,
-    popularity: 79,
-  },
-  {
-    id: "cuivre-urbain",
-    name: { fr: "Cuivre Urbain", ar: "نحاسي حضري", en: "Urban Copper" },
-    image: cuivreUrbain,
+    id: "canard-pop",
+    name: { fr: "Canard Pop", ar: "بطة بوب", en: "Pop Duck" },
+    image: canardPop,
     collection: "urbain",
     isNew: true,
+    isBestseller: false,
+    popularity: 84,
+  },
+  {
+    id: "nuit-sauvage",
+    name: { fr: "Nuit Sauvage", ar: "ليل بري", en: "Wild Night" },
+    image: nuitSauvage,
+    collection: "urbain",
+    isNew: false,
     isBestseller: false,
     popularity: 81,
   },
   {
-    id: "blanc-perle",
-    name: { fr: "Blanc Perle", ar: "أبيض لؤلؤي", en: "Pearl White" },
-    image: blancPerle,
+    id: "fleurs-pastel",
+    name: { fr: "Fleurs Pastel", ar: "زهور باستيل", en: "Pastel Flowers" },
+    image: fleursPastel,
     collection: "elegance",
     isNew: false,
     isBestseller: false,
-    popularity: 74,
+    popularity: 79,
+  },
+  {
+    id: "vague-retro",
+    name: { fr: "Vague Rétro", ar: "موجة ريترو", en: "Retro Wave" },
+    image: vagueRetro,
+    collection: "elegance",
+    isNew: false,
+    isBestseller: false,
+    popularity: 76,
   },
 ];
+
 
 export function designById(id: string): Design | undefined {
   return DESIGNS.find((d) => d.id === id);
