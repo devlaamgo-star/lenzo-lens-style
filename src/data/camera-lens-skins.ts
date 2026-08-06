@@ -39,6 +39,8 @@ import lens36 from "@/assets/lens/lens-36.webp.asset.json";
 import lens37 from "@/assets/lens/lens-37.webp.asset.json";
 import lens38 from "@/assets/lens/lens-38.webp.asset.json";
 import lens39 from "@/assets/lens/lens-39.webp.asset.json";
+import lens40 from "@/assets/lens/lens-40.webp.asset.json";
+import lens41 from "@/assets/lens/lens-41.webp.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -114,6 +116,9 @@ const SEEDS: Seed[] = [
   { slug: "chat-cobalt", fr: "Chat Cobalt", ar: "قط كوبالت", en: "Cobalt Cat", image: lens37.url, isNew: true, popularity: 27 },
   { slug: "majlis-blanc", fr: "Majlis Blanc", ar: "مجلس أبيض", en: "White Majlis", image: lens38.url, isNew: true, popularity: 25 },
   { slug: "majlis-nuit", fr: "Majlis Nuit", ar: "مجلس ليلي", en: "Night Majlis", image: lens39.url, isNew: true, popularity: 23 },
+
+  { slug: "majlis-safran", fr: "Majlis Safran", ar: "مجلس زعفراني", en: "Saffron Majlis", image: lens40.url, isNew: true, popularity: 21 },
+  { slug: "toile-urbaine", fr: "Toile Urbaine", ar: "نسيج المدينة", en: "Urban Web", image: lens41.url, isNew: true, popularity: 19 },
 ];
 
 export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
