@@ -5,10 +5,16 @@ import {
   lensSkinBySlug,
   type CameraLensSkin,
 } from "@/data/camera-lens-skins";
+import {
+  BACK_LENS_SKINS,
+  backLensSkinBySlug,
+  type BackLensSkin,
+} from "@/data/back-lens-skins";
 
-export type { FullBodySkin, CameraLensSkin };
+export type { FullBodySkin, CameraLensSkin, BackLensSkin };
 export { FULL_BODY_SKINS, skinBySlug };
 export { CAMERA_LENS_SKINS, lensSkinBySlug };
+export { BACK_LENS_SKINS, backLensSkinBySlug };
 
 /** Camera stickers (small decorative camera-module stickers) */
 export const CAMERA_STICKERS: Product[] = PRODUCTS;
@@ -16,6 +22,8 @@ export const CAMERA_STICKERS: Product[] = PRODUCTS;
 export const FULL_SKIN_PRICE = 149;
 
 export const LENS_SKIN_PRICE = 79;
+
+export const BACK_LENS_SKIN_PRICE = 169;
 
 export type Lang = "fr" | "ar" | "en";
 
