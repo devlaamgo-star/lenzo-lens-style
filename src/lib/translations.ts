@@ -66,9 +66,9 @@ const D = {
   "card.added": ["Ajouté", "تمت الإضافة", "Added"],
   "card.quickview": ["Aperçu rapide", "معاينة سريعة", "Quick view"],
   "card.compatible": [
-    "Sticker décoratif pour module caméra iPhone",
-    "ملصق ديكوري لوحدة كاميرا iPhone",
-    "Decorative sticker for the iPhone camera module",
+    "Compatible avec iPhone 17 Pro Max",
+    "متوافق مع iPhone 17 Pro Max",
+    "Compatible with iPhone 17 Pro Max",
   ],
 
   "card.full": ["Pack complet (3/3)", "الباقة مكتملة (3/3)", "Pack complete (3/3)"],
@@ -179,14 +179,14 @@ const D = {
     "A discreet thickness that respects your iPhone's lines.",
   ],
   "b6": [
-    "Compatible avec plusieurs modèles d’iPhone",
-    "متوافق مع عدة موديلات iPhone",
-    "Compatible with many iPhone models",
+    "Compatible avec iPhone 17 Pro Max",
+    "متوافق مع iPhone 17 Pro Max",
+    "Compatible with iPhone 17 Pro Max",
   ],
   "b6d": [
-    "De l’iPhone 11 à l’iPhone 16 Pro Max.",
-    "من iPhone 11 إلى iPhone 16 Pro Max.",
-    "From iPhone 11 to iPhone 16 Pro Max.",
+    "Découpes ajustées au module caméra de l’iPhone 17 Pro Max.",
+    "قصات مضبوطة على وحدة كاميرا iPhone 17 Pro Max.",
+    "Cutouts tuned to the iPhone 17 Pro Max camera module.",
   ],
 
   "trust.title": ["Commander en toute confiance", "اطلب بكل ثقة", "Order with confidence"],
