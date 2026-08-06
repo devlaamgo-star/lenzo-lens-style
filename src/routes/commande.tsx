@@ -177,7 +177,21 @@ function OrderPage() {
                 <label htmlFor="city" className="mb-1.5 block text-sm font-medium">
                   {t("f.city")}
                 </label>
-                <input id="city" value={values.city} onChange={set("city")} maxLength={60} className={fieldClass} />
+                <input
+                  id="city"
+                  list="ma-cities"
+                  placeholder={t("f.cityPlaceholder")}
+                  value={values.city}
+                  onChange={set("city")}
+                  maxLength={60}
+                  className={fieldClass}
+                />
+                <datalist id="ma-cities">
+                  {MOROCCAN_CITIES.map((c) => (
+                    <option key={c} value={c} />
+                  ))}
+                </datalist>
+
                 {errors.city && <p className="mt-1.5 text-xs text-destructive">{errors.city}</p>}
               </div>
               {packReady && (
