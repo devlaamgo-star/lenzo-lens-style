@@ -15,12 +15,14 @@ import {
   iphoneAirSkinBySlug,
   type IphoneAirSkin,
 } from "@/data/iphone-air-skins";
+import { ANIME_SKINS, animeSkinBySlug, type AnimeSkin } from "@/data/anime-skins";
 
-export type { FullBodySkin, CameraLensSkin, BackLensSkin, IphoneAirSkin };
+export type { FullBodySkin, CameraLensSkin, BackLensSkin, IphoneAirSkin, AnimeSkin };
 export { FULL_BODY_SKINS, skinBySlug };
 export { CAMERA_LENS_SKINS, lensSkinBySlug };
 export { BACK_LENS_SKINS, backLensSkinBySlug };
 export { IPHONE_AIR_SKINS, iphoneAirSkinBySlug };
+export { ANIME_SKINS, animeSkinBySlug };
 
 /** Camera stickers (small decorative camera-module stickers) */
 export const CAMERA_STICKERS: Product[] = PRODUCTS;
@@ -32,6 +34,8 @@ export const LENS_SKIN_PRICE = 79;
 export const BACK_LENS_SKIN_PRICE = 169;
 
 export const AIR_SKIN_PRICE = 89;
+
+export const ANIME_SKIN_PRICE = 149;
 
 export type Lang = "fr" | "ar" | "en";
 
