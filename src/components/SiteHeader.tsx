@@ -261,21 +261,6 @@ export function SiteHeader() {
         <CommandInput placeholder={t("search.placeholder")} />
         <CommandList>
           <CommandEmpty>{t("col.none")}</CommandEmpty>
-          <CommandGroup heading={t("menu.stickers")}>
-            {DESIGNS.map((d) => (
-              <CommandItem
-                key={d.id}
-                value={`${d.name.fr} ${d.name.en} ${d.name.ar}`}
-                onSelect={() => {
-                  setSearchOpen(false);
-                  pack.add(d.id);
-                }}
-              >
-                <img src={d.image} alt="" loading="lazy" className="me-3 h-8 w-8 rounded-md object-cover" />
-                {d.name[lang]}
-              </CommandItem>
-            ))}
-          </CommandGroup>
           <CommandGroup heading={t("lens.nav")}>
             {CAMERA_LENS_SKINS.map((s) => (
               <CommandItem
