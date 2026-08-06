@@ -8,7 +8,8 @@ import { ProductCard } from "@/components/ProductCard";
 import { SkinCard } from "@/components/SkinCard";
 import { LensSkinCard } from "@/components/LensSkinCard";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
-import { BACK_LENS_SKINS } from "@/lib/catalog";
+import { BACK_LENS_SKINS, IPHONE_AIR_SKINS } from "@/lib/catalog";
+import { AirSkinCard } from "@/components/AirSkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CollectionsGrid } from "@/components/sections/CollectionsGrid";
 import { HowItWorks } from "@/components/sections/HowItWorks";
@@ -185,6 +186,25 @@ function HomePage() {
 
 
       <section className="section-y">
+        <div className="container-page">
+          <SectionHeading title="air.title" subtitle="air.sub" />
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            {IPHONE_AIR_SKINS.slice(0, 8).map((s) => (
+              <AirSkinCard key={s.id} skin={s} />
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/iphone-air"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
+            >
+              {t("air.viewAll")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-y bg-surface">
         <div className="container-page">
           <SectionHeading title="backlens.title" subtitle="backlens.sub" />
           <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
