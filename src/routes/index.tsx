@@ -151,12 +151,12 @@ function HomePage() {
       <section className="section-y bg-surface">
         <div className="container-page">
           <SectionHeading title="lens.title" subtitle="lens.sub" />
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-            {CAMERA_LENS_SKINS.slice(0, 8).map((s) => (
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+            {CAMERA_LENS_SKINS.slice(0, 4).map((s) => (
               <LensSkinCard key={s.id} skin={s} />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               to="/objectifs"
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
@@ -171,12 +171,12 @@ function HomePage() {
       <section className="section-y">
         <div className="container-page">
           <SectionHeading title="anime.title" subtitle="anime.sub" />
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-            {ANIME_SKINS.slice(0, 8).map((s) => (
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+            {ANIME_SKINS.slice(0, 4).map((s) => (
               <AnimeSkinCard key={s.id} skin={s} />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               to="/anime"
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
@@ -190,12 +190,12 @@ function HomePage() {
       <section className="section-y">
         <div className="container-page">
           <SectionHeading title="air.title" subtitle="air.sub" />
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-            {IPHONE_AIR_SKINS.slice(0, 8).map((s) => (
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+            {IPHONE_AIR_SKINS.slice(0, 4).map((s) => (
               <AirSkinCard key={s.id} skin={s} />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               to="/iphone-air"
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
@@ -209,12 +209,12 @@ function HomePage() {
       <section className="section-y bg-surface">
         <div className="container-page">
           <SectionHeading title="backlens.title" subtitle="backlens.sub" />
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-            {BACK_LENS_SKINS.slice(0, 8).map((s) => (
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+            {BACK_LENS_SKINS.slice(0, 4).map((s) => (
               <BackLensSkinCard key={s.id} skin={s} />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               to="/dos-camera"
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
@@ -228,12 +228,12 @@ function HomePage() {
       <section className="section-y bg-surface">
         <div className="container-page">
           <SectionHeading title="skins.title" subtitle="skins.sub" />
-          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-            {FULL_BODY_SKINS.slice(0, 8).map((s) => (
+          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
+            {FULL_BODY_SKINS.slice(0, 4).map((s) => (
               <SkinCard key={s.id} skin={s} />
             ))}
           </div>
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center">
             <Link
               to="/skins"
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
