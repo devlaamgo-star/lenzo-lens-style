@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
-import { PACK_PRICE, designById } from "@/lib/catalog";
+import { PACK_PRICE, designById, MOROCCAN_CITIES } from "@/lib/catalog";
 import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
