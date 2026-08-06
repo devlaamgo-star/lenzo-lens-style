@@ -305,7 +305,7 @@ const D = {
     "Our team will contact you to confirm your order before shipping.",
   ],
   "f.summary": ["Récapitulatif", "الملخص", "Order summary"],
-  "f.pack3": ["Pack de 3 skins", "باقة 3 ملصقات", "Pack of 3 skins"],
+  "f.pack3": ["Pack de 3 stickers", "باقة 3 ملصقات", "Pack of 3 stickers"],
   "f.edit": ["Modifier mon pack", "تعديل الباقة", "Edit my pack"],
   "e.name": ["Veuillez saisir votre nom complet.", "يرجى إدخال اسمك الكامل.", "Please enter your full name."],
   "e.phone": [

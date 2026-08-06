@@ -19,7 +19,7 @@ export const Route = createFileRoute("/pack")({
       {
         name: "description",
         content:
-          "Choisissez votre modèle d’iPhone puis 3 designs de skins d’objectif. 99 MAD, livraison gratuite au Maroc, paiement à la livraison.",
+          "Choisissez votre modèle d’iPhone puis 3 designs de stickers caméra. 99 MAD, livraison gratuite au Maroc, paiement à la livraison.",
       },
       { property: "og:title", content: "Composer mon pack — LENZO" },
       {

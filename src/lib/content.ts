@@ -43,9 +43,9 @@ export const REVIEWS: Review[] = [
     city: { fr: "Fès", ar: "فاس", en: "Fes" },
     rating: 5,
     text: {
-      fr: "Commande confirmée par WhatsApp en quelques minutes. Les skins tiennent bien depuis trois semaines.",
+      fr: "Commande confirmée par WhatsApp en quelques minutes. Les stickers tiennent bien depuis trois semaines.",
       ar: "تم تأكيد الطلب عبر واتساب في دقائق. الملصقات ثابتة منذ ثلاثة أسابيع.",
-      en: "Order confirmed on WhatsApp within minutes. The skins have held well for three weeks.",
+      en: "Order confirmed on WhatsApp within minutes. The stickers have held well for three weeks.",
     },
   },
   {
@@ -92,9 +92,9 @@ export const FAQS: Faq[] = [
       en: "Can I choose three different designs?",
     },
     a: {
-      fr: "Oui. Le pack contient trois skins et vous êtes libre de choisir trois designs différents.",
+      fr: "Oui. Le pack contient trois stickers et vous êtes libre de choisir trois designs différents.",
       ar: "نعم. الباقة تحتوي على ثلاث ملصقات ويمكنك اختيار ثلاثة تصاميم مختلفة.",
-      en: "Yes. The pack contains three skins and you can freely pick three different designs.",
+      en: "Yes. The pack contains three stickers and you can freely pick three different designs.",
     },
   },
   {
@@ -110,18 +110,18 @@ export const FAQS: Faq[] = [
     },
   },
   {
-    q: { fr: "Comment installer les skins ?", ar: "كيف أركب الملصقات؟", en: "How do I install the skins?" },
+    q: { fr: "Comment installer les stickers ?", ar: "كيف أركب الملصقات؟", en: "How do I install the stickers?" },
     a: {
-      fr: "Nettoyez la surface autour des objectifs, retirez le film protecteur, alignez le skin sur l’objectif puis appuyez quelques secondes.",
+      fr: "Nettoyez la surface autour des objectifs, retirez le film protecteur, alignez le sticker sur l’objectif puis appuyez quelques secondes.",
       ar: "نظف السطح حول العدسات، انزع الغشاء الواقي، ضع الملصق فوق العدسة واضغط لبضع ثوانٍ.",
-      en: "Clean the surface around the lenses, peel off the backing, align the skin over the lens and press for a few seconds.",
+      en: "Clean the surface around the lenses, peel off the backing, align the sticker over the lens and press for a few seconds.",
     },
   },
   {
     q: {
-      fr: "Les skins laissent-ils des traces ?",
+      fr: "Les stickers laissent-ils des traces ?",
       ar: "هل تترك الملصقات آثاراً؟",
-      en: "Do the skins leave marks?",
+      en: "Do the stickers leave marks?",
     },
     a: {
       fr: "Non. L’adhésif est conçu pour être retiré proprement, sans résidu visible sur la surface.",
@@ -131,14 +131,14 @@ export const FAQS: Faq[] = [
   },
   {
     q: {
-      fr: "Est-ce que les skins protègent les objectifs ?",
+      fr: "Est-ce que les stickers protègent les objectifs ?",
       ar: "هل تحمي الملصقات العدسات؟",
-      en: "Do the skins protect the lenses?",
+      en: "Do the stickers protect the lenses?",
     },
     a: {
-      fr: "Les skins sont avant tout décoratifs. Ils aident à protéger la surface contre les petites rayures du quotidien, mais ne sont pas conçus pour absorber les chocs importants.",
+      fr: "Les stickers sont avant tout décoratifs. Ils aident à protéger la surface contre les petites rayures du quotidien, mais ne sont pas conçus pour absorber les chocs importants.",
       ar: "الملصقات تزيينية بالأساس. تساعد على حماية السطح من الخدوش الصغيرة اليومية، لكنها ليست مصممة لامتصاص الصدمات القوية.",
-      en: "The skins are primarily decorative. They help protect the surface against small everyday scratches, but are not designed to absorb major impacts.",
+      en: "The stickers are primarily decorative. They help protect the surface against small everyday scratches, but are not designed to absorb major impacts.",
     },
   },
   {

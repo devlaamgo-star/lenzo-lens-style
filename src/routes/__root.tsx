@@ -83,11 +83,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LENZO — Skins d’objectif pour iPhone au Maroc" },
+      { title: "LENZO — Stickers caméra décoratifs pour iPhone au Maroc" },
       {
         name: "description",
         content:
-          "3 skins d’objectif iPhone pour 99 MAD. Livraison gratuite au Maroc et paiement à la livraison.",
+          "3 stickers caméra iPhone pour 99 MAD. Livraison gratuite au Maroc et paiement à la livraison.",
       },
       { name: "author", content: "LENZO" },
       { property: "og:type", content: "website" },

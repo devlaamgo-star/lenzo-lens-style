@@ -10,12 +10,12 @@ export const Route = createFileRoute("/avis")({
       {
         name: "description",
         content:
-          "Ce que nos clients marocains pensent des skins d’objectif LENZO : qualité, pose facile et livraison rapide partout au Maroc.",
+          "Ce que nos clients marocains pensent des stickers caméra LENZO : qualité, pose facile et livraison rapide partout au Maroc.",
       },
       { property: "og:title", content: "Avis clients — LENZO Maroc" },
       {
         property: "og:description",
-        content: "Les retours de nos clients au Maroc sur les skins d’objectif LENZO.",
+        content: "Les retours de nos clients au Maroc sur les stickers caméra LENZO.",
       },
     ],
   }),
