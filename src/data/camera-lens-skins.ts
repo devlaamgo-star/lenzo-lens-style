@@ -10,6 +10,15 @@ import lens7 from "@/assets/lens/lens-7.webp.asset.json";
 import lens8 from "@/assets/lens/lens-8.webp.asset.json";
 import lens9 from "@/assets/lens/lens-9.webp.asset.json";
 import lens10 from "@/assets/lens/lens-10.webp.asset.json";
+import lens11 from "@/assets/lens/lens-11.webp.asset.json";
+import lens12 from "@/assets/lens/lens-12.webp.asset.json";
+import lens13 from "@/assets/lens/lens-13.webp.asset.json";
+import lens14 from "@/assets/lens/lens-14.webp.asset.json";
+import lens15 from "@/assets/lens/lens-15.webp.asset.json";
+import lens16 from "@/assets/lens/lens-16.webp.asset.json";
+import lens17 from "@/assets/lens/lens-17.webp.asset.json";
+import lens18 from "@/assets/lens/lens-18.webp.asset.json";
+import lens19 from "@/assets/lens/lens-19.webp.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -54,6 +63,15 @@ const SEEDS: Seed[] = [
   { slug: "arc-vertical", fr: "Arc Vertical", ar: "قوس عمودي", en: "Vertical Arc", image: lens8.url, isNew: true, popularity: 85 },
   { slug: "crane-obscur", fr: "Crâne Obscur", ar: "جمجمة داكنة", en: "Dark Skull", image: lens9.url, isNew: true, popularity: 83 },
   { slug: "vigie-sauvage", fr: "Vigie Sauvage", ar: "برج الغابة", en: "Wild Lookout", image: lens10.url, isNew: true, popularity: 81 },
+  { slug: "tribu-pop", fr: "Tribu Pop", ar: "قبيلة بوب", en: "Pop Tribe", image: lens11.url, isNew: true, popularity: 79 },
+  { slug: "note-douce", fr: "Note Douce", ar: "ملاحظة لطيفة", en: "Sweet Note", image: lens12.url, isNew: true, popularity: 77 },
+  { slug: "envol-dore", fr: "Envol Doré", ar: "تحليق ذهبي", en: "Golden Flight", image: lens13.url, isNew: true, popularity: 75 },
+  { slug: "feuillage-espiegle", fr: "Feuillage Espiègle", ar: "أوراق مرحة", en: "Playful Foliage", image: lens14.url, isNew: true, popularity: 73 },
+  { slug: "regard-violet", fr: "Regard Violet", ar: "نظرة بنفسجية", en: "Violet Gaze", image: lens15.url, isNew: true, popularity: 71 },
+  { slug: "muse-emeraude", fr: "Muse Émeraude", ar: "ملهمة زمردية", en: "Emerald Muse", image: lens16.url, isNew: true, popularity: 69 },
+  { slug: "graffiti-neon", fr: "Graffiti Néon", ar: "غرافيتي نيون", en: "Neon Graffiti", image: lens17.url, isNew: true, popularity: 67 },
+  { slug: "equilibre-lunaire", fr: "Équilibre Lunaire", ar: "توازن قمري", en: "Lunar Balance", image: lens18.url, isNew: true, popularity: 65 },
+  { slug: "mode-hors-ligne", fr: "Mode Hors-Ligne", ar: "وضع دون اتصال", en: "Offline Mode", image: lens19.url, isNew: true, popularity: 63 },
 ];
 
 export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
