@@ -1,13 +1,21 @@
 import { PRODUCTS, type Product, type CollectionId as PCollectionId } from "@/data/products";
 import { FULL_BODY_SKINS, skinBySlug, type FullBodySkin } from "@/data/full-body-skins";
+import {
+  CAMERA_LENS_SKINS,
+  lensSkinBySlug,
+  type CameraLensSkin,
+} from "@/data/camera-lens-skins";
 
-export type { FullBodySkin };
+export type { FullBodySkin, CameraLensSkin };
 export { FULL_BODY_SKINS, skinBySlug };
+export { CAMERA_LENS_SKINS, lensSkinBySlug };
 
 /** Camera stickers (small decorative camera-module stickers) */
 export const CAMERA_STICKERS: Product[] = PRODUCTS;
 
 export const FULL_SKIN_PRICE = 149;
+
+export const LENS_SKIN_PRICE = 79;
 
 export type Lang = "fr" | "ar" | "en";
 

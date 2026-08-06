@@ -30,6 +30,19 @@ const D = {
   "menu.premium": ["Designs premium", "تصاميم فاخرة", "Premium designs"],
   "menu.stickers": ["Stickers caméra", "ملصقات الكاميرا", "Camera stickers"],
 
+  "lens.nav": ["Stickers pour objectifs caméra", "ملصقات عدسات الكاميرا", "Camera Lens Skins"],
+  "lens.title": ["Stickers pour objectifs caméra", "ملصقات عدسات الكاميرا", "Camera Lens Skins"],
+  "lens.sub": [
+    "Personnalisez chaque détail autour des objectifs de votre iPhone.",
+    "خصص كل تفصيل حول عدسات جهاز iPhone الخاص بك.",
+    "Personalise every detail around your iPhone lenses.",
+  ],
+  "lens.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "lens.category": [
+    "Sticker pour objectifs caméra",
+    "ملصق لعدسات الكاميرا",
+    "Camera lens skin",
+  ],
   "skins.nav": ["Skins intégrales", "سكينات كاملة", "Full Body Skins"],
   "skins.title": ["Skins intégrales", "سكينات كاملة", "Full Body Skins"],
   "skins.sub": [

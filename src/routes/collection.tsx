@@ -107,6 +107,13 @@ function CollectionPage() {
             >
               {t("skins.nav")}
             </Link>
+            <Link
+              to="/objectifs"
+              className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-[13px] font-semibold transition-colors hover:bg-surface"
+            >
+              {t("lens.nav")}
+
+            </Link>
           </div>
         </div>
       </section>

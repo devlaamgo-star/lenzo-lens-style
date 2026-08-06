@@ -17,6 +17,8 @@ import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
+import { Route as ObjectifsIndexRouteImport } from './routes/objectifs.index'
+import { Route as ObjectifsSlugRouteImport } from './routes/objectifs.$slug'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
 import { Route as SkinsSlugRouteImport } from './routes/skins.$slug'
 
@@ -60,6 +62,16 @@ const PackRoute = PackRouteImport.update({
   path: '/pack',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ObjectifsIndexRoute = ObjectifsIndexRouteImport.update({
+  id: '/objectifs/',
+  path: '/objectifs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObjectifsSlugRoute = ObjectifsSlugRouteImport.update({
+  id: '/objectifs/$slug',
+  path: '/objectifs/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SkinsIndexRoute = SkinsIndexRouteImport.update({
   id: '/skins/',
   path: '/skins/',
@@ -80,7 +92,9 @@ export interface FileRoutesByFullPath {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -92,7 +106,9 @@ export interface FileRoutesByTo {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/objectifs': typeof ObjectifsIndexRoute
   '/skins': typeof SkinsIndexRoute
 }
 export interface FileRoutesById {
@@ -105,7 +121,9 @@ export interface FileRoutesById {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
+  '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
 export interface FileRouteTypes {
@@ -119,7 +137,9 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/objectifs/$slug'
     | '/skins/$slug'
+    | '/objectifs/'
     | '/skins/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -131,7 +151,9 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/objectifs/$slug'
     | '/skins/$slug'
+    | '/objectifs'
     | '/skins'
   id:
     | '__root__'
@@ -143,7 +165,9 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/objectifs/$slug'
     | '/skins/$slug'
+    | '/objectifs/'
     | '/skins/'
   fileRoutesById: FileRoutesById
 }
@@ -156,7 +180,9 @@ export interface RootRouteChildren {
   ConfirmationRoute: typeof ConfirmationRoute
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
+  ObjectifsSlugRoute: typeof ObjectifsSlugRoute
   SkinsSlugRoute: typeof SkinsSlugRoute
+  ObjectifsIndexRoute: typeof ObjectifsIndexRoute
   SkinsIndexRoute: typeof SkinsIndexRoute
 }
 
@@ -218,6 +244,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/objectifs/': {
+      id: '/objectifs/'
+      path: '/objectifs'
+      fullPath: '/objectifs/'
+      preLoaderRoute: typeof ObjectifsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/objectifs/$slug': {
+      id: '/objectifs/$slug'
+      path: '/objectifs/$slug'
+      fullPath: '/objectifs/$slug'
+      preLoaderRoute: typeof ObjectifsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/skins/': {
       id: '/skins/'
       path: '/skins'
@@ -244,7 +284,9 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmationRoute: ConfirmationRoute,
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
+  ObjectifsSlugRoute: ObjectifsSlugRoute,
   SkinsSlugRoute: SkinsSlugRoute,
+  ObjectifsIndexRoute: ObjectifsIndexRoute,
   SkinsIndexRoute: SkinsIndexRoute,
 }
 export const routeTree = rootRouteImport
