@@ -43,6 +43,15 @@ const D = {
     "ملصق لعدسات الكاميرا",
     "Camera lens skin",
   ],
+  "air.nav": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
+  "air.title": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
+  "air.sub": [
+    "Découvrez des designs créés spécialement pour votre iPhone Air.",
+    "اكتشف تصاميم مصممة خصيصًا لجهاز iPhone Air.",
+    "Discover designs made specifically for your iPhone Air.",
+  ],
+  "air.viewAll": ["Voir toute la collection", "شاهد كل المجموعة", "View the whole collection"],
+  "air.category": ["Skin iPhone Air", "سكين iPhone Air", "iPhone Air skin"],
   "backlens.nav": ["Skins arrière & caméra", "سكينات الظهر والكاميرا", "Back & Lens Skins"],
   "backlens.title": ["Skins arrière & caméra", "سكينات الظهر والكاميرا", "Back & Lens Skins"],
   "backlens.sub": [

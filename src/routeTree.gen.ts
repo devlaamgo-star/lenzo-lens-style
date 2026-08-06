@@ -19,6 +19,8 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
 import { Route as DosCameraIndexRouteImport } from './routes/dos-camera.index'
 import { Route as DosCameraSlugRouteImport } from './routes/dos-camera.$slug'
+import { Route as IphoneAirIndexRouteImport } from './routes/iphone-air.index'
+import { Route as IphoneAirSlugRouteImport } from './routes/iphone-air.$slug'
 import { Route as ObjectifsIndexRouteImport } from './routes/objectifs.index'
 import { Route as ObjectifsSlugRouteImport } from './routes/objectifs.$slug'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
@@ -74,6 +76,16 @@ const DosCameraSlugRoute = DosCameraSlugRouteImport.update({
   path: '/dos-camera/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IphoneAirIndexRoute = IphoneAirIndexRouteImport.update({
+  id: '/iphone-air/',
+  path: '/iphone-air/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IphoneAirSlugRoute = IphoneAirSlugRouteImport.update({
+  id: '/iphone-air/$slug',
+  path: '/iphone-air/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObjectifsIndexRoute = ObjectifsIndexRouteImport.update({
   id: '/objectifs/',
   path: '/objectifs/',
@@ -105,9 +117,11 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
+  '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
   '/dos-camera/': typeof DosCameraIndexRoute
+  '/iphone-air/': typeof IphoneAirIndexRoute
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
@@ -121,9 +135,11 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
+  '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
   '/dos-camera': typeof DosCameraIndexRoute
+  '/iphone-air': typeof IphoneAirIndexRoute
   '/objectifs': typeof ObjectifsIndexRoute
   '/skins': typeof SkinsIndexRoute
 }
@@ -138,9 +154,11 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
+  '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
   '/dos-camera/': typeof DosCameraIndexRoute
+  '/iphone-air/': typeof IphoneAirIndexRoute
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
 }
@@ -156,9 +174,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/pack'
     | '/dos-camera/$slug'
+    | '/iphone-air/$slug'
     | '/objectifs/$slug'
     | '/skins/$slug'
     | '/dos-camera/'
+    | '/iphone-air/'
     | '/objectifs/'
     | '/skins/'
   fileRoutesByTo: FileRoutesByTo
@@ -172,9 +192,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/pack'
     | '/dos-camera/$slug'
+    | '/iphone-air/$slug'
     | '/objectifs/$slug'
     | '/skins/$slug'
     | '/dos-camera'
+    | '/iphone-air'
     | '/objectifs'
     | '/skins'
   id:
@@ -188,9 +210,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/pack'
     | '/dos-camera/$slug'
+    | '/iphone-air/$slug'
     | '/objectifs/$slug'
     | '/skins/$slug'
     | '/dos-camera/'
+    | '/iphone-air/'
     | '/objectifs/'
     | '/skins/'
   fileRoutesById: FileRoutesById
@@ -205,9 +229,11 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
   DosCameraSlugRoute: typeof DosCameraSlugRoute
+  IphoneAirSlugRoute: typeof IphoneAirSlugRoute
   ObjectifsSlugRoute: typeof ObjectifsSlugRoute
   SkinsSlugRoute: typeof SkinsSlugRoute
   DosCameraIndexRoute: typeof DosCameraIndexRoute
+  IphoneAirIndexRoute: typeof IphoneAirIndexRoute
   ObjectifsIndexRoute: typeof ObjectifsIndexRoute
   SkinsIndexRoute: typeof SkinsIndexRoute
 }
@@ -284,6 +310,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DosCameraSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/iphone-air/': {
+      id: '/iphone-air/'
+      path: '/iphone-air'
+      fullPath: '/iphone-air/'
+      preLoaderRoute: typeof IphoneAirIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/iphone-air/$slug': {
+      id: '/iphone-air/$slug'
+      path: '/iphone-air/$slug'
+      fullPath: '/iphone-air/$slug'
+      preLoaderRoute: typeof IphoneAirSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/objectifs/': {
       id: '/objectifs/'
       path: '/objectifs'
@@ -325,9 +365,11 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
   DosCameraSlugRoute: DosCameraSlugRoute,
+  IphoneAirSlugRoute: IphoneAirSlugRoute,
   ObjectifsSlugRoute: ObjectifsSlugRoute,
   SkinsSlugRoute: SkinsSlugRoute,
   DosCameraIndexRoute: DosCameraIndexRoute,
+  IphoneAirIndexRoute: IphoneAirIndexRoute,
   ObjectifsIndexRoute: ObjectifsIndexRoute,
   SkinsIndexRoute: SkinsIndexRoute,
 }
