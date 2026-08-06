@@ -3,6 +3,7 @@ import { Eye } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { LENS_SKIN_PRICE, type CameraLensSkin } from "@/lib/catalog";
+import { AddToCartBlock } from "@/components/ProductOptions";
 import {
   Dialog,
   DialogContent,
@@ -79,6 +80,18 @@ export function LensSkinCard({
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>
             <p className="text-sm">{t("skins.compat")}</p>
             <p className="text-base font-bold">{LENS_SKIN_PRICE} MAD</p>
+            <AddToCartBlock
+              compact
+              onDone={() => setOpen(false)}
+              product={{
+                productId: skin.id,
+                slug: skin.slug,
+                category: "lens",
+                name: skin.name,
+                image: skin.image,
+                price: LENS_SKIN_PRICE,
+              }}
+            />
             <Link
               to="/objectifs/$slug"
               params={{ slug: skin.slug }}

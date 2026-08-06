@@ -3,6 +3,7 @@ import { Eye } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { FULL_SKIN_PRICE, type FullBodySkin } from "@/lib/catalog";
+import { AddToCartBlock } from "@/components/ProductOptions";
 import {
   Dialog,
   DialogContent,
@@ -73,6 +74,18 @@ export function SkinCard({ skin, priority = false }: { skin: FullBodySkin; prior
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>
             <p className="text-sm">{t("skins.compat")}</p>
             <p className="text-base font-bold">{FULL_SKIN_PRICE} MAD</p>
+            <AddToCartBlock
+              compact
+              onDone={() => setOpen(false)}
+              product={{
+                productId: skin.id,
+                slug: skin.slug,
+                category: "skins",
+                name: skin.name,
+                image: skin.image,
+                price: FULL_SKIN_PRICE,
+              }}
+            />
             <Link
               to="/skins/$slug"
               params={{ slug: skin.slug }}

@@ -1,8 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronRight, Truck, Wallet, Scissors, Check } from "lucide-react";
 import { useState } from "react";
+import { AddToCartBlock } from "@/components/ProductOptions";
 import { useI18n } from "@/lib/i18n";
-import { AIR_SKIN_PRICE, iphoneAirSkinBySlug, whatsappLink } from "@/lib/catalog";
+import { AIR_SKIN_PRICE, iphoneAirSkinBySlug } from "@/lib/catalog";
 import { AirSkinCard } from "@/components/AirSkinCard";
 import { IPHONE_AIR_SKINS } from "@/data/iphone-air-skins";
 
@@ -37,10 +38,8 @@ export const Route = createFileRoute("/iphone-air/$slug")({
 function AirProductPage() {
   const { skin } = Route.useLoaderData();
   const { t, lang } = useI18n();
-  const [qty, setQty] = useState(1);
 
   const related = IPHONE_AIR_SKINS.filter((s) => s.id !== skin.id).slice(0, 4);
-  const message = `LENZO — ${skin.name.fr} (${t("air.category")}) × ${qty} — ${skin.device} — ${AIR_SKIN_PRICE * qty} MAD`;
 
   return (
     <>
@@ -87,37 +86,19 @@ function AirProductPage() {
               {skin.description[lang]}
             </p>
 
-            <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center">
-              <div className="inline-flex h-12 items-center rounded-full border border-border">
-                <button
-                  type="button"
-                  aria-label="-"
-                  onClick={() => setQty((q) => Math.max(1, q - 1))}
-                  className="grid h-12 w-12 place-items-center rounded-full text-lg"
-                >
-                  −
-                </button>
-                <span className="w-10 text-center text-sm font-semibold" aria-live="polite">
-                  {qty}
-                </span>
-                <button
-                  type="button"
-                  aria-label="+"
-                  onClick={() => setQty((q) => Math.min(10, q + 1))}
-                  className="grid h-12 w-12 place-items-center rounded-full text-lg"
-                >
-                  +
-                </button>
-              </div>
-              <a
-                href={whatsappLink(message)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 flex-1 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-soft transition-transform hover:scale-[1.01]"
-              >
-                {t("skins.order")}
-              </a>
-            </div>
+            <AddToCartBlock
+              product={{
+                productId: skin.id,
+                slug: skin.slug,
+                category: "air",
+                name: skin.name,
+                image: skin.image,
+                price: AIR_SKIN_PRICE,
+              }}
+            />
+            <Link to="/retours" className="text-xs font-semibold text-primary hover:underline">
+              {t("ret.title")}
+            </Link>
 
             <ul className="mt-2 grid w-full gap-2.5">
               {[
