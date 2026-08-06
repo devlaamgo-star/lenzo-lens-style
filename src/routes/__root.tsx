@@ -113,17 +113,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
+        <ScriptOnce>
+          {`try{var l=localStorage.getItem('lenzo-lang');if(l==='fr'||l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}else{document.documentElement.dir='ltr';}}catch(e){}`}
+        </ScriptOnce>
         {children}
         <Scripts />
       </body>
     </html>
   );
 }
+
 
 function AnnouncementBar() {
   const { t } = useI18n();
