@@ -18,6 +18,7 @@ import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
 import { Route as DosCameraIndexRouteImport } from './routes/dos-camera.index'
+import { Route as DosCameraSlugRouteImport } from './routes/dos-camera.$slug'
 import { Route as ObjectifsIndexRouteImport } from './routes/objectifs.index'
 import { Route as ObjectifsSlugRouteImport } from './routes/objectifs.$slug'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
@@ -68,6 +69,11 @@ const DosCameraIndexRoute = DosCameraIndexRouteImport.update({
   path: '/dos-camera/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DosCameraSlugRoute = DosCameraSlugRouteImport.update({
+  id: '/dos-camera/$slug',
+  path: '/dos-camera/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ObjectifsIndexRoute = ObjectifsIndexRouteImport.update({
   id: '/objectifs/',
   path: '/objectifs/',
@@ -98,6 +104,7 @@ export interface FileRoutesByFullPath {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
   '/dos-camera/': typeof DosCameraIndexRoute
@@ -113,6 +120,7 @@ export interface FileRoutesByTo {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
   '/dos-camera': typeof DosCameraIndexRoute
@@ -129,6 +137,7 @@ export interface FileRoutesById {
   '/confirmation': typeof ConfirmationRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
+  '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
   '/skins/$slug': typeof SkinsSlugRoute
   '/dos-camera/': typeof DosCameraIndexRoute
@@ -146,6 +155,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/dos-camera/$slug'
     | '/objectifs/$slug'
     | '/skins/$slug'
     | '/dos-camera/'
@@ -161,6 +171,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/dos-camera/$slug'
     | '/objectifs/$slug'
     | '/skins/$slug'
     | '/dos-camera'
@@ -176,6 +187,7 @@ export interface FileRouteTypes {
     | '/confirmation'
     | '/faq'
     | '/pack'
+    | '/dos-camera/$slug'
     | '/objectifs/$slug'
     | '/skins/$slug'
     | '/dos-camera/'
@@ -192,6 +204,7 @@ export interface RootRouteChildren {
   ConfirmationRoute: typeof ConfirmationRoute
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
+  DosCameraSlugRoute: typeof DosCameraSlugRoute
   ObjectifsSlugRoute: typeof ObjectifsSlugRoute
   SkinsSlugRoute: typeof SkinsSlugRoute
   DosCameraIndexRoute: typeof DosCameraIndexRoute
@@ -264,6 +277,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DosCameraIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dos-camera/$slug': {
+      id: '/dos-camera/$slug'
+      path: '/dos-camera/$slug'
+      fullPath: '/dos-camera/$slug'
+      preLoaderRoute: typeof DosCameraSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/objectifs/': {
       id: '/objectifs/'
       path: '/objectifs'
@@ -304,6 +324,7 @@ const rootRouteChildren: RootRouteChildren = {
   ConfirmationRoute: ConfirmationRoute,
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
+  DosCameraSlugRoute: DosCameraSlugRoute,
   ObjectifsSlugRoute: ObjectifsSlugRoute,
   SkinsSlugRoute: SkinsSlugRoute,
   DosCameraIndexRoute: DosCameraIndexRoute,
