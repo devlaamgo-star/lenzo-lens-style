@@ -24,8 +24,8 @@ export { BACK_LENS_SKINS, backLensSkinBySlug };
 export { IPHONE_AIR_SKINS, iphoneAirSkinBySlug };
 export { ANIME_SKINS, animeSkinBySlug };
 
-/** Camera stickers (small decorative camera-module stickers) */
-export const CAMERA_STICKERS: Product[] = PRODUCTS;
+/** Stickers caméra : uniquement les visuels réellement fournis (objectifs) */
+export const CAMERA_STICKERS: CameraLensSkin[] = CAMERA_LENS_SKINS;
 
 export const FULL_SKIN_PRICE = 149;
 
@@ -41,13 +41,14 @@ export type Lang = "fr" | "ar" | "en";
 
 export type CollectionId = PCollectionId;
 
-export type Design = Product;
+export type Design = CameraLensSkin;
 
-export const DESIGNS: Design[] = PRODUCTS;
+export const DESIGNS: Design[] = CAMERA_LENS_SKINS;
 
 export function designById(id: string): Design | undefined {
   return DESIGNS.find((d) => d.id === id);
 }
+
 
 export const IPHONE_MODELS = ["iPhone 17 Pro Max"] as const;
 
