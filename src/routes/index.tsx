@@ -12,7 +12,6 @@ import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
 import { AnimeSkinCard } from "@/components/AnimeSkinCard";
 import { AirSkinCard } from "@/components/AirSkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
-import { CollectionsGrid } from "@/components/sections/CollectionsGrid";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BenefitsSection, TrustSection } from "@/components/sections/BenefitsTrust";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
@@ -261,8 +260,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      <CollectionsGrid />
 
       <HowItWorks />
       <BenefitsSection />
