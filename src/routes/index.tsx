@@ -161,6 +161,26 @@ function HomePage() {
         </div>
       </section>
 
+      <section className="section-y bg-surface">
+        <div className="container-page">
+          <SectionHeading title="lens.title" subtitle="lens.sub" />
+          <div className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            {CAMERA_LENS_SKINS.slice(0, 8).map((s) => (
+              <LensSkinCard key={s.id} skin={s} />
+            ))}
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link
+              to="/objectifs"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
+            >
+              {t("lens.viewAll")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
       <section className="section-y">
         <div className="container-page">
           <SectionHeading title="skins.title" subtitle="skins.sub" />
