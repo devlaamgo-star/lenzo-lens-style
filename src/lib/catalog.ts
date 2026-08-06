@@ -50,9 +50,10 @@ export function designById(id: string): Design | undefined {
 }
 
 
-export const IPHONE_MODELS = ["iPhone 17 Pro Max"] as const;
+export const IPHONE_MODELS = ["iPhone 17 Pro", "iPhone 17 Pro Max"] as const;
 
-export const DEFAULT_IPHONE_MODEL = "iPhone 17 Pro Max";
+/** Aucun modèle présélectionné : le client doit choisir. */
+export const DEFAULT_IPHONE_MODEL = "";
 
 export const PACK_PRICE = 99;
 export const PACK_OLD_PRICE = 147;

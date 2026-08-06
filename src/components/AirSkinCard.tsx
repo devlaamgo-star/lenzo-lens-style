@@ -3,6 +3,7 @@ import { Eye } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { AIR_SKIN_PRICE, type IphoneAirSkin } from "@/lib/catalog";
+import { AddToCartBlock } from "@/components/ProductOptions";
 import {
   Dialog,
   DialogContent,
@@ -79,6 +80,18 @@ export function AirSkinCard({
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>
             <p className="text-sm">{skin.device}</p>
             <p className="text-base font-bold">{AIR_SKIN_PRICE} MAD</p>
+            <AddToCartBlock
+              compact
+              onDone={() => setOpen(false)}
+              product={{
+                productId: skin.id,
+                slug: skin.slug,
+                category: "air",
+                name: skin.name,
+                image: skin.image,
+                price: AIR_SKIN_PRICE,
+              }}
+            />
             <Link
               to="/iphone-air/$slug"
               params={{ slug: skin.slug }}

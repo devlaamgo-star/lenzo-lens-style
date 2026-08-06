@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 import { PackProvider } from "@/lib/pack";
+import { CartProvider } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -142,6 +143,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
         <PackProvider>
+         <CartProvider>
           <div className="flex min-h-screen flex-col">
             <AnnouncementBar />
             <SiteHeader />
@@ -153,6 +155,7 @@ function RootComponent() {
           </div>
           <WhatsAppFab />
           <Toaster position="top-center" />
+         </CartProvider>
         </PackProvider>
       </I18nProvider>
     </QueryClientProvider>

@@ -65,7 +65,7 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/faq" hash="retours" className="transition-colors hover:text-primary">
+              <Link to="/retours" className="transition-colors hover:text-primary">
                 {t("footer.returns")}
               </Link>
             </li>
@@ -136,7 +136,7 @@ export function SiteFooter() {
             <Link to="/faq" hash="livraison" className="hover:text-primary">
               {t("footer.shipPolicy")}
             </Link>
-            <Link to="/faq" hash="retours" className="hover:text-primary">
+            <Link to="/retours" className="hover:text-primary">
               {t("footer.returnPolicy")}
             </Link>
           </div>

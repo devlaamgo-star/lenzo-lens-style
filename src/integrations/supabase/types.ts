@@ -23,11 +23,13 @@ export type Database = {
           full_name: string
           id: string
           iphone_model: string
+          items: Json
           locale: string
           notes: string | null
           order_number: string
           payment_method: string
           phone: string
+          quantity: number
           status: string
           total_mad: number
         }
@@ -35,15 +37,17 @@ export type Database = {
           address: string
           city: string
           created_at?: string
-          designs: Json
+          designs?: Json
           full_name: string
           id?: string
-          iphone_model: string
+          iphone_model?: string
+          items?: Json
           locale?: string
           notes?: string | null
           order_number: string
           payment_method?: string
           phone: string
+          quantity?: number
           status?: string
           total_mad?: number
         }
@@ -55,11 +59,13 @@ export type Database = {
           full_name?: string
           id?: string
           iphone_model?: string
+          items?: Json
           locale?: string
           notes?: string | null
           order_number?: string
           payment_method?: string
           phone?: string
+          quantity?: number
           status?: string
           total_mad?: number
         }
