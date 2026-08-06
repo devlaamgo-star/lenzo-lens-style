@@ -281,6 +281,13 @@ const D = {
   "col.none": ["Aucun design ne correspond à votre recherche.", "لا يوجد تصميم مطابق.", "No design matches your search."],
   "col.reset": ["Réinitialiser", "إعادة الضبط", "Reset"],
   "col.grid": ["Affichage", "طريقة العرض", "Layout"],
+  "picks.title": ["Choisissez vos designs préférés", "اختر تصاميمك المفضلة", "Choose your favourite designs"],
+  "picks.sub": [
+    "3 stickers décoratifs au choix pour 99 MAD — livraison gratuite partout au Maroc, paiement à la livraison.",
+    "3 ملصقات ديكورية من اختيارك بـ 99 درهم — توصيل مجاني لكل المغرب والدفع عند الاستلام.",
+    "Any 3 decorative stickers for 99 MAD — free delivery across Morocco, cash on delivery.",
+  ],
+
   "search.placeholder": ["Rechercher un design…", "ابحث عن تصميم…", "Search a design…"],
 
   "order.title": ["Finaliser ma commande", "إتمام الطلب", "Complete my order"],
