@@ -20,14 +20,21 @@ const I18nContext = createContext<I18nValue | null>(null);
 
 const STORAGE_KEY = "lenzo-lang";
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("fr");
+export function I18nProvider({
+  children,
+  initialLang = "fr",
+}: {
+  children: ReactNode;
+  initialLang?: Lang;
+}) {
+  const [lang, setLangState] = useState<Lang>(initialLang);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored && (LANGS as string[]).includes(stored)) {
+    if (stored && (LANGS as string[]).includes(stored) && stored !== lang) {
       setLangState(stored as Lang);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -39,6 +46,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   const setLang = useCallback((l: Lang) => {
     setLangState(l);
     window.localStorage.setItem(STORAGE_KEY, l);
+    document.cookie = `${STORAGE_KEY}=${l}; path=/; max-age=31536000; samesite=lax`;
   }, []);
 
   const value = useMemo<I18nValue>(
