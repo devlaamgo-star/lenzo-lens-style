@@ -1,10 +1,10 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import logo from "@/assets/lenzo-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { DESIGNS, PACK_SIZE } from "@/lib/catalog";
+import { DESIGNS, FULL_BODY_SKINS, PACK_SIZE } from "@/lib/catalog";
 import { LANGS, type Lang } from "@/lib/translations";
 import { cn } from "@/lib/utils";
 import {
