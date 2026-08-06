@@ -16,18 +16,19 @@ import { StickyPackBar } from "@/components/StickyPackBar";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LENZO — 3 skins d’objectif iPhone pour 99 MAD" },
+      { title: "LENZO — 3 stickers caméra iPhone pour 99 MAD" },
       {
         name: "description",
         content:
-          "Personnalisez les objectifs de votre iPhone avec LENZO. Composez votre pack de 3 designs à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
+          "Personnalisez le module caméra de votre iPhone avec les stickers décoratifs LENZO. 3 stickers au choix à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
       },
-      { property: "og:title", content: "LENZO — 3 skins d’objectif iPhone pour 99 MAD" },
+      { property: "og:title", content: "LENZO — 3 stickers caméra iPhone pour 99 MAD" },
       {
         property: "og:description",
         content:
-          "Composez votre pack de 3 designs à 99 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
+          "3 stickers décoratifs pour module caméra iPhone à 99 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
       },
+
     ],
   }),
   component: HomePage,
@@ -90,7 +91,7 @@ function Hero() {
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
             <img
               src={heroImage}
-              alt="iPhones avec skins d’objectif LENZO"
+              alt="Stickers décoratifs LENZO appliqués sur le module caméra d’iPhone, avec découpes précises autour des objectifs"
               width={1408}
               height={1408}
               className="aspect-square w-full object-cover"
