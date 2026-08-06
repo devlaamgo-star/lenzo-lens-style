@@ -149,22 +149,23 @@ const D = {
   ],
   "b1": ["Découpe précise", "قص دقيق", "Precise cut"],
   "b1d": [
-    "Un ajustement net autour de chaque objectif.",
-    "تثبيت محكم حول كل عدسة.",
-    "A clean fit around every lens.",
+    "Des découpes nettes autour des objectifs, du flash et du micro.",
+    "قص دقيق حول العدسات والفلاش والميكروفون.",
+    "Clean cutouts around the lenses, flash and microphone.",
   ],
   "b2": ["Application facile", "تركيب سهل", "Easy application"],
   "b2d": [
-    "Posez vos skins en quelques secondes, sans outil.",
-    "ضع الملصقات في ثوانٍ دون أدوات.",
-    "Apply your skins in seconds, no tools needed.",
+    "Posez votre sticker en quelques secondes, sans outil.",
+    "ضع الملصق في ثوانٍ دون أدوات.",
+    "Apply your sticker in seconds, no tools needed.",
   ],
-  "b3": ["Résistant aux rayures", "مقاوم للخدوش", "Scratch resistant"],
+  "b3": ["Surface protégée des micro-rayures", "حماية السطح من الخدوش الدقيقة", "Surface kept scratch-free"],
   "b3d": [
-    "Aide à protéger la surface contre les petites rayures.",
-    "يساعد على حماية السطح من الخدوش الصغيرة.",
-    "Helps protect the surface against small scratches.",
+    "Personnalise le module caméra et aide à protéger la surface plate contre les petites rayures.",
+    "يخصص وحدة الكاميرا ويساعد على حماية السطح المسطح من الخدوش الصغيرة.",
+    "Personalises the camera module and helps protect the flat surface from small scratches.",
   ],
+
   "b4": ["Aucun résidu après retrait", "بدون بقايا بعد الإزالة", "No residue after removal"],
   "b4d": [
     "Retirez-les proprement quand vous le souhaitez.",
@@ -234,10 +235,12 @@ const D = {
     "3 designs, 99 MAD, free delivery.",
   ],
   "pack.step1": ["Étape 1 — Choisissez le modèle de votre iPhone", "الخطوة 1 — اختر موديل iPhone", "Step 1 — Choose your iPhone model"],
-  "pack.step2": ["Étape 2 — Choisissez 3 designs", "الخطوة 2 — اختر 3 تصاميم", "Step 2 — Choose 3 designs"],
+  "pack.step2": ["Étape 2 — Choisissez vos 3 stickers", "الخطوة 2 — اختر ملصقاتك الثلاثة", "Step 2 — Choose your 3 stickers"],
   "pack.step3": ["Étape 3 — Résumé de votre pack", "الخطوة 3 — ملخص الباقة", "Step 3 — Your pack summary"],
   "pack.modelPlaceholder": ["Sélectionnez votre modèle", "اختر الموديل", "Select your model"],
-  "pack.selected": ["designs sélectionnés", "تصاميم مختارة", "designs selected"],
+  "pack.selected": ["sélectionnés", "مختارة", "selected"],
+  "pack.packLabel": ["Pack de 3 stickers caméra", "باقة 3 ملصقات كاميرا", "Pack of 3 camera stickers"],
+
   "pack.sameAllowed": [
     "Vous pouvez choisir 3 designs différents ou plusieurs fois le même.",
     "يمكنك اختيار 3 تصاميم مختلفة أو نفس التصميم أكثر من مرة.",
