@@ -84,6 +84,16 @@ const SEEDS: Seed[] = [
   { slug: "leopard-pastel", fr: "Léopard Pastel", ar: "نمر باستيل", en: "Pastel Leopard", image: skin19.url, isNew: true, popularity: 78 },
   { slug: "leopard-azur", fr: "Léopard Azur", ar: "نمر سماوي", en: "Azure Leopard", image: skin20.url, isNew: true, popularity: 77 },
   { slug: "zebre-ivoire", fr: "Zèbre Ivoire", ar: "حمار وحشي عاجي", en: "Ivory Zebra", image: skin21.url, isNew: true, popularity: 76 },
+  { slug: "tigre-sauvage", fr: "Tigre Sauvage", ar: "نمر بري", en: "Wild Tiger", image: skin22.url, isNew: true, popularity: 75 },
+  { slug: "python-emeraude", fr: "Python Émeraude", ar: "ثعبان زمردي", en: "Emerald Python", image: skin23.url, isNew: true, popularity: 74 },
+  { slug: "equation-noire", fr: "Équation Noire", ar: "معادلة سوداء", en: "Black Equation", image: skin44.url, isNew: true, popularity: 73 },
+  { slug: "flamme-azur", fr: "Flamme Azur", ar: "لهب سماوي", en: "Azure Flame", image: skin45.url, isNew: true, popularity: 72 },
+  { slug: "bandana-vert", fr: "Bandana Vert", ar: "باندانا خضراء", en: "Green Bandana", image: skin46.url, isNew: true, popularity: 71 },
+  { slug: "tigre-orange", fr: "Tigre Orange", ar: "نمر برتقالي", en: "Orange Tiger", image: skin47.url, isNew: true, popularity: 70 },
+  { slug: "camo-ambre", fr: "Camo Ambre", ar: "تمويه كهرماني", en: "Amber Camo", image: skin48.url, isNew: true, popularity: 69 },
+  { slug: "dame-dragon", fr: "Dame Dragon", ar: "سيدة التنين", en: "Dragon Lady", image: skin49.url, isNew: true, popularity: 68 },
+  { slug: "barque-etoilee", fr: "Barque Étoilée", ar: "قارب النجوم", en: "Starry Boat", image: skin51.url, isNew: true, popularity: 67 },
+  { slug: "verger-en-fleurs", fr: "Verger en Fleurs", ar: "بستان مزهر", en: "Blossom Orchard", image: skin526.url, isNew: true, popularity: 66 },
 ];
 
 export const FULL_BODY_SKINS: FullBodySkin[] = SEEDS.map((s) => ({
