@@ -92,7 +92,7 @@ export function SiteHeader() {
             <SheetContent side={dir === "rtl" ? "right" : "left"} className="w-[86vw] max-w-sm overflow-y-auto p-0">
               <SheetTitle className="sr-only">{t("nav.menu")}</SheetTitle>
               <div className="flex items-center justify-between border-b border-border px-5 py-4">
-                <img src={logo} alt="LENZO" width={1152} height={576} className="h-7 w-auto" />
+                <img src={logo} alt="LENZO" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
                 <button
                   type="button"
                   aria-label={t("nav.close")}
@@ -162,7 +162,7 @@ export function SiteHeader() {
           </Sheet>
 
           <Link to="/" className="flex shrink-0 items-center">
-            <img src={logo} alt="LENZO" width={1152} height={576} className="h-7 w-auto sm:h-8" />
+            <img src={logo} alt="LENZO" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
           </Link>
         </div>
 
