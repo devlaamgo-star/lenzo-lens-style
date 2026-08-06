@@ -18,7 +18,7 @@ const CARDS: Card[] = [
   { title: "col.minimal", desc: "col.minimal.d", image: img("regard-noir"), search: { collection: "minimal" } },
   { title: "col.artistique", desc: "col.artistique.d", image: img("chat-curieux"), search: { collection: "artistique" } },
   { title: "col.elegance", desc: "col.elegance.d", image: img("retro-maroc"), search: { collection: "elegance" } },
-  { title: "col.urbain", desc: "col.urbain.d", image: img("canard-pop"), search: { collection: "urbain" } },
+  { title: "col.urbain", desc: "col.urbain.d", image: img("canards-pop"), search: { collection: "urbain" } },
   { title: "nav.best", desc: "col.best.d", image: img("chat-creme"), search: { filter: "best" } },
   { title: "nav.new", desc: "col.new.d", image: img("soleil-felin"), search: { filter: "new" } },
 ];
