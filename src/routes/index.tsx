@@ -95,11 +95,11 @@ function Hero() {
         <div className="relative order-first lg:order-last">
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
             <img
-              src={heroImage}
-              alt="Stickers décoratifs LENZO appliqués sur le module caméra d’iPhone, avec découpes précises autour des objectifs"
+              src={heroImage.url}
+              alt="Stickers décoratifs LENZO appliqués sur trois iPhone, designs colorés sur le module caméra"
               width={1408}
               height={1408}
-              className="aspect-square w-full object-cover"
+              className="h-full w-full object-contain object-center lg:object-cover"
             />
           </div>
           <div className="absolute -bottom-4 start-4 rounded-2xl border border-border bg-card px-4 py-3 shadow-lift sm:start-6">
