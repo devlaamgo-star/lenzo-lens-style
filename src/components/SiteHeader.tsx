@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, ShoppingBag, User, X } from "lucide-react";
 import logo from "@/assets/lenzo-logo.png";
 import { useI18n } from "@/lib/i18n";
@@ -7,12 +7,6 @@ import { usePack } from "@/lib/pack";
 import { DESIGNS, PACK_SIZE } from "@/lib/catalog";
 import { LANGS, type Lang } from "@/lib/translations";
 import { cn } from "@/lib/utils";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import {
   CommandDialog,
   CommandEmpty,
@@ -24,14 +18,17 @@ import {
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinkClass =
-  "text-sm font-medium text-foreground/80 transition-colors hover:text-primary data-[status=active]:text-primary";
+  "relative inline-flex items-center py-1 text-[13px] font-medium tracking-tight text-foreground/70 transition-colors hover:text-foreground data-[status=active]:text-foreground";
 
 export function SiteHeader() {
   const { t, lang, setLang, dir } = useI18n();
   const pack = usePack();
   const [searchOpen, setSearchOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [collectionOpen, setCollectionOpen] = useState(false);
+  const [mobileCollectionOpen, setMobileCollectionOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -39,6 +36,15 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const openCollection = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setCollectionOpen(true);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setCollectionOpen(false), 120);
+  };
 
   const collectionItems = [
     { to: "/collection" as const, search: {}, label: t("menu.all") },
@@ -49,24 +55,21 @@ export function SiteHeader() {
     { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
   ];
 
-  const mainLinks = [
-    { to: "/" as const, label: t("nav.home"), search: {} },
+  const rightLinks = [
     { to: "/collection" as const, label: t("nav.new"), search: { filter: "new" as const } },
-    { to: "/collection" as const, label: t("nav.best"), search: { filter: "best" as const } },
     { to: "/comment-ca-marche" as const, label: t("nav.how"), search: {} },
     { to: "/avis" as const, label: t("nav.reviews"), search: {} },
     { to: "/faq" as const, label: t("nav.faq"), search: {} },
   ];
 
-
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur transition-shadow",
-        scrolled ? "border-border shadow-soft" : "border-transparent",
+        "sticky top-0 z-50 w-full border-b bg-card transition-shadow",
+        scrolled ? "border-border shadow-[0_1px_3px_rgba(0,0,0,0.06)]" : "border-border/60",
       )}
     >
-      <div className="container-page grid h-16 grid-cols-[auto_1fr_auto] items-center gap-3 lg:h-[72px]">
+      <div className="container-page grid h-14 grid-cols-[auto_1fr_auto] items-center gap-3 lg:h-[60px]">
         <div className="flex items-center gap-2">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
@@ -81,7 +84,7 @@ export function SiteHeader() {
             <SheetContent side={dir === "rtl" ? "right" : "left"} className="w-[86vw] max-w-sm overflow-y-auto p-0">
               <SheetTitle className="sr-only">{t("nav.menu")}</SheetTitle>
               <div className="flex items-center justify-between border-b border-border px-5 py-4">
-                <img src={logo} alt="LENZO" width={1152} height={576} className="h-6 w-auto" />
+                <img src={logo} alt="LENZO" width={1152} height={576} className="h-7 w-auto" />
                 <button
                   type="button"
                   aria-label={t("nav.close")}
@@ -93,31 +96,46 @@ export function SiteHeader() {
               </div>
               <nav className="flex flex-col gap-1 p-4">
                 <Link
-                  to="/"
+                  to="/collection"
+                  search={{ filter: "best" as const }}
                   onClick={() => setMobileOpen(false)}
                   className="rounded-xl px-3 py-3 text-base font-medium hover:bg-surface"
                 >
-                  {t("nav.home")}
+                  {t("nav.best")}
                 </Link>
-                <p className="px-3 pt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+
+                <button
+                  type="button"
+                  onClick={() => setMobileCollectionOpen((v) => !v)}
+                  aria-expanded={mobileCollectionOpen}
+                  className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium hover:bg-surface"
+                >
                   {t("nav.collection")}
-                </p>
-                {collectionItems.map((item) => (
+                  <ChevronDown
+                    className={cn("h-4 w-4 transition-transform", mobileCollectionOpen && "rotate-180")}
+                  />
+                </button>
+                {mobileCollectionOpen && (
+                  <div className="flex flex-col border-s border-border ps-3">
+                    {collectionItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        to={item.to}
+                        search={item.search}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-surface hover:text-foreground"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                {rightLinks.map((item) => (
                   <Link
                     key={item.label}
                     to={item.to}
                     search={item.search}
-                    onClick={() => setMobileOpen(false)}
-                    className="rounded-xl px-3 py-2.5 text-base font-medium hover:bg-surface"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <div className="my-2 h-px bg-border" />
-                {mainLinks.slice(3).map((item) => (
-                  <Link
-                    key={item.label}
-                    to={item.to}
                     onClick={() => setMobileOpen(false)}
                     className="rounded-xl px-3 py-3 text-base font-medium hover:bg-surface"
                   >
@@ -136,76 +154,93 @@ export function SiteHeader() {
           </Sheet>
 
           <Link to="/" className="flex shrink-0 items-center">
-            <img
-              src={logo}
-              alt="LENZO"
-              width={1152}
-              height={576}
-              className="h-6 w-auto sm:h-7"
-            />
+            <img src={logo} alt="LENZO" width={1152} height={576} className="h-7 w-auto sm:h-8" />
           </Link>
         </div>
 
-        <nav className="hidden min-w-0 items-center justify-center gap-6 lg:flex">
-          <Link to="/" className={navLinkClass} activeOptions={{ exact: true }}>
-            {t("nav.home")}
+        <nav className="hidden min-w-0 items-center justify-center gap-5 lg:flex xl:gap-6">
+          <Link to="/collection" search={{ filter: "best" as const }} className={navLinkClass}>
+            {t("nav.best")}
           </Link>
-          <DropdownMenu>
-            <DropdownMenuTrigger className={cn(navLinkClass, "inline-flex items-center gap-1 outline-none")}>
+
+          <div className="relative" onMouseEnter={openCollection} onMouseLeave={scheduleClose}>
+            <button
+              type="button"
+              aria-expanded={collectionOpen}
+              onClick={() => setCollectionOpen((v) => !v)}
+              className={cn(navLinkClass, "gap-1 outline-none", collectionOpen && "text-foreground")}
+            >
               {t("nav.collection")}
-              <ChevronDown className="h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" className="w-56">
-              {collectionItems.map((item) => (
-                <DropdownMenuItem key={item.label} asChild>
-                  <Link to={item.to} search={item.search} className="cursor-pointer">
+              <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200", collectionOpen && "rotate-180")} />
+              <span
+                className={cn(
+                  "absolute inset-x-0 -bottom-[3px] h-[2px] rounded-full bg-primary transition-opacity duration-200",
+                  collectionOpen ? "opacity-100" : "opacity-0",
+                )}
+              />
+            </button>
+
+            {collectionOpen && (
+              <div
+                className="absolute start-0 top-full z-50 w-[264px] animate-fade-in border border-border/70 bg-card py-1.5 shadow-[0_6px_20px_rgba(0,0,0,0.08)]"
+                style={{ borderRadius: 3, marginTop: 10 }}
+              >
+                {collectionItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    search={item.search}
+                    onClick={() => setCollectionOpen(false)}
+                    className="block px-6 py-3 text-[13px] text-muted-foreground transition-colors hover:bg-surface hover:text-foreground data-[status=active]:text-foreground"
+                  >
                     {item.label}
                   </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-          {mainLinks.slice(1).map((item) => (
+                ))}
+              </div>
+            )}
+          </div>
+
+          {rightLinks.map((item) => (
             <Link key={item.label} to={item.to} search={item.search} className={navLinkClass}>
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center justify-end gap-0.5 sm:gap-1">
+        <div className="flex items-center justify-end gap-0 sm:gap-0.5">
           <button
             type="button"
             aria-label={t("nav.search")}
             onClick={() => setSearchOpen(true)}
-            className="grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-surface"
+            className="grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface"
           >
-            <Search className="h-5 w-5" />
+            <Search className="h-[18px] w-[18px]" />
           </button>
           <Link
             to="/commande"
             aria-label={t("nav.account")}
-            className="hidden h-10 w-10 place-items-center rounded-full transition-colors hover:bg-surface sm:grid"
+            className="hidden h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface sm:grid"
           >
-            <User className="h-5 w-5" />
+            <User className="h-[18px] w-[18px]" />
           </Link>
           <Link
             to="/pack"
             aria-label={t("nav.cart")}
-            className="relative grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-surface"
+            className="relative grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface"
           >
-            <ShoppingBag className="h-5 w-5" />
-            <span className="absolute -top-0.5 end-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 text-[11px] font-bold text-primary-foreground">
+            <ShoppingBag className="h-[18px] w-[18px]" />
+            <span className="absolute -top-0.5 end-0 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
               {pack.designs.length}/{PACK_SIZE}
             </span>
           </Link>
-          <div className="ms-1 flex items-center rounded-full border border-border p-0.5">
+          <div className="ms-1.5 flex items-center rounded-full border border-border p-0.5">
             {LANGS.map((l: Lang) => (
               <button
                 key={l}
                 type="button"
                 onClick={() => setLang(l)}
                 className={cn(
-                  "rounded-full px-2 py-1 text-[11px] font-semibold uppercase transition-colors",
+                  "rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase transition-colors",
                   l === lang ? "bg-ink text-ink-foreground" : "text-muted-foreground hover:text-foreground",
                 )}
               >
