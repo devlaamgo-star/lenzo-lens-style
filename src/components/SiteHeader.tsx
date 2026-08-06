@@ -22,6 +22,8 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 const navLinkClass =
   "relative inline-flex items-center py-1 text-[13px] font-medium tracking-tight text-foreground/70 transition-colors hover:text-foreground data-[status=active]:text-foreground";
 
+const LANG_LABELS: Record<Lang, string> = { fr: "Français", ar: "العربية", en: "English" };
+
 export function SiteHeader() {
   const { t, lang, setLang, dir } = useI18n();
   const navigate = useNavigate();
@@ -250,6 +252,8 @@ export function SiteHeader() {
                 key={l}
                 type="button"
                 onClick={() => setLang(l)}
+                aria-label={LANG_LABELS[l]}
+                aria-pressed={l === lang}
                 className={cn(
                   "rounded-full px-1.5 py-0.5 text-[10px] font-semibold uppercase transition-colors",
                   l === lang ? "bg-ink text-ink-foreground" : "text-muted-foreground hover:text-foreground",

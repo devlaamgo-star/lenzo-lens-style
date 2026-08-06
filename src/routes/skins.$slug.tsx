@@ -82,7 +82,7 @@ function SkinProductPage() {
                       (i === active ? "border-primary" : "border-border")
                     }
                   >
-                    <img src={g} alt="" className="h-full w-full object-contain" />
+                    <img src={g} alt="" loading="lazy" className="h-full w-full object-contain" />
                   </button>
                 ))}
               </div>
