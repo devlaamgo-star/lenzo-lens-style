@@ -20,6 +20,16 @@ import skin18 from "@/assets/skins/skin-18.webp.asset.json";
 import skin19 from "@/assets/skins/skin-19.webp.asset.json";
 import skin20 from "@/assets/skins/skin-20.webp.asset.json";
 import skin21 from "@/assets/skins/skin-21.webp.asset.json";
+import skin22 from "@/assets/skins/skin-22.webp.asset.json";
+import skin23 from "@/assets/skins/skin-23.webp.asset.json";
+import skin44 from "@/assets/skins/skin-44.webp.asset.json";
+import skin45 from "@/assets/skins/skin-45.webp.asset.json";
+import skin46 from "@/assets/skins/skin-46.webp.asset.json";
+import skin47 from "@/assets/skins/skin-47.webp.asset.json";
+import skin48 from "@/assets/skins/skin-48.webp.asset.json";
+import skin49 from "@/assets/skins/skin-49.webp.asset.json";
+import skin51 from "@/assets/skins/skin-51.webp.asset.json";
+import skin526 from "@/assets/skins/skin-526.webp.asset.json";
 
 export type FullBodySkin = {
   id: string;
@@ -74,6 +84,16 @@ const SEEDS: Seed[] = [
   { slug: "leopard-pastel", fr: "Léopard Pastel", ar: "نمر باستيل", en: "Pastel Leopard", image: skin19.url, isNew: true, popularity: 78 },
   { slug: "leopard-azur", fr: "Léopard Azur", ar: "نمر سماوي", en: "Azure Leopard", image: skin20.url, isNew: true, popularity: 77 },
   { slug: "zebre-ivoire", fr: "Zèbre Ivoire", ar: "حمار وحشي عاجي", en: "Ivory Zebra", image: skin21.url, isNew: true, popularity: 76 },
+  { slug: "tigre-sauvage", fr: "Tigre Sauvage", ar: "نمر بري", en: "Wild Tiger", image: skin22.url, isNew: true, popularity: 75 },
+  { slug: "python-emeraude", fr: "Python Émeraude", ar: "ثعبان زمردي", en: "Emerald Python", image: skin23.url, isNew: true, popularity: 74 },
+  { slug: "equation-noire", fr: "Équation Noire", ar: "معادلة سوداء", en: "Black Equation", image: skin44.url, isNew: true, popularity: 73 },
+  { slug: "flamme-azur", fr: "Flamme Azur", ar: "لهب سماوي", en: "Azure Flame", image: skin45.url, isNew: true, popularity: 72 },
+  { slug: "bandana-vert", fr: "Bandana Vert", ar: "باندانا خضراء", en: "Green Bandana", image: skin46.url, isNew: true, popularity: 71 },
+  { slug: "tigre-orange", fr: "Tigre Orange", ar: "نمر برتقالي", en: "Orange Tiger", image: skin47.url, isNew: true, popularity: 70 },
+  { slug: "camo-ambre", fr: "Camo Ambre", ar: "تمويه كهرماني", en: "Amber Camo", image: skin48.url, isNew: true, popularity: 69 },
+  { slug: "dame-dragon", fr: "Dame Dragon", ar: "سيدة التنين", en: "Dragon Lady", image: skin49.url, isNew: true, popularity: 68 },
+  { slug: "barque-etoilee", fr: "Barque Étoilée", ar: "قارب النجوم", en: "Starry Boat", image: skin51.url, isNew: true, popularity: 67 },
+  { slug: "verger-en-fleurs", fr: "Verger en Fleurs", ar: "بستان مزهر", en: "Blossom Orchard", image: skin526.url, isNew: true, popularity: 66 },
 ];
 
 export const FULL_BODY_SKINS: FullBodySkin[] = SEEDS.map((s) => ({
