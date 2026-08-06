@@ -103,7 +103,7 @@ function CollectionPage() {
       <section className="section-y">
         <div className="container-page">
           <div className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-4 shadow-soft lg:flex-row lg:items-center lg:justify-between">
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:flex lg:flex-wrap">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:w-auto lg:flex-1">
               <Select
                 value={search.model ?? "all"}
                 onValueChange={(v) => update({ model: v === "all" ? undefined : v })}
