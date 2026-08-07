@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { PACK_SIZE } from "./catalog";
+import { packBreakdown, type PackBreakdown } from "./pricing";
 
 type PackValue = {
   model: string;
@@ -19,6 +19,7 @@ type PackValue = {
   clear: () => void;
   countOf: (id: string) => number;
   isComplete: boolean;
+  breakdown: PackBreakdown;
   ready: boolean;
 };
 
@@ -36,7 +37,7 @@ export function PackProvider({ children }: { children: ReactNode }) {
       if (raw) {
         const parsed = JSON.parse(raw) as { model?: string; designs?: string[] };
         if (typeof parsed.model === "string" && parsed.model) setModelState("iPhone 17 Pro Max");
-        if (Array.isArray(parsed.designs)) setDesigns(parsed.designs.slice(0, PACK_SIZE));
+        if (Array.isArray(parsed.designs)) setDesigns(parsed.designs.slice(0, 30));
       }
     } catch {
       /* ignore malformed storage */
@@ -50,7 +51,7 @@ export function PackProvider({ children }: { children: ReactNode }) {
   }, [model, designs, ready]);
 
   const add = useCallback((id: string) => {
-    setDesigns((prev) => (prev.length >= PACK_SIZE ? prev : [...prev, id]));
+    setDesigns((prev) => (prev.length >= 30 ? prev : [...prev, id]));
   }, []);
 
   const removeAt = useCallback((index: number) => {
@@ -74,7 +75,8 @@ export function PackProvider({ children }: { children: ReactNode }) {
       removeOne,
       clear: () => setDesigns([]),
       countOf: (id: string) => designs.filter((d) => d === id).length,
-      isComplete: designs.length === PACK_SIZE,
+      isComplete: designs.length >= 3,
+      breakdown: packBreakdown(designs.length),
       ready,
     }),
     [model, designs, add, removeAt, removeOne, ready],
