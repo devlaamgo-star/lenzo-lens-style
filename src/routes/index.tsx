@@ -97,8 +97,8 @@ function Hero() {
             <img
               src={heroImage.url}
               alt="Stickers décoratifs SKINUP appliqués sur trois iPhone, designs colorés sur le module caméra"
-              width={783}
-              height={813}
+              width={1122}
+              height={1402}
               className="h-full w-full object-contain object-center lg:object-cover"
             />
 
