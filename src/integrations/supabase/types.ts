@@ -21,16 +21,20 @@ export type Database = {
           created_at: string
           description: string
           file_path: string | null
+          file_paths: string[]
           full_name: string
           id: string
           locale: string
           notes: string
           phone: string
           phone_brand: string
+          phone_color: string
           phone_model: string
           request_number: string
           request_type: string
           status: string
+          style: string
+          subject: string
         }
         Insert: {
           city: string
@@ -38,16 +42,20 @@ export type Database = {
           created_at?: string
           description?: string
           file_path?: string | null
+          file_paths?: string[]
           full_name: string
           id?: string
           locale?: string
           notes?: string
           phone: string
           phone_brand?: string
+          phone_color?: string
           phone_model?: string
           request_number: string
           request_type: string
           status?: string
+          style?: string
+          subject?: string
         }
         Update: {
           city?: string
@@ -55,16 +63,20 @@ export type Database = {
           created_at?: string
           description?: string
           file_path?: string | null
+          file_paths?: string[]
           full_name?: string
           id?: string
           locale?: string
           notes?: string
           phone?: string
           phone_brand?: string
+          phone_color?: string
           phone_model?: string
           request_number?: string
           request_type?: string
           status?: string
+          style?: string
+          subject?: string
         }
         Relationships: []
       }
