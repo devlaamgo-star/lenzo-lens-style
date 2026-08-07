@@ -41,6 +41,16 @@ import lens38 from "@/assets/lens/lens-38.webp.asset.json";
 import lens39 from "@/assets/lens/lens-39.webp.asset.json";
 import lens40 from "@/assets/lens/lens-40.webp.asset.json";
 import lens41 from "@/assets/lens/lens-41.webp.asset.json";
+import lens42 from "@/assets/lens/lens-42.webp.asset.json";
+import lens43 from "@/assets/lens/lens-43.webp.asset.json";
+import lens44 from "@/assets/lens/lens-44.webp.asset.json";
+import lens45 from "@/assets/lens/lens-45.png.asset.json";
+import lens46 from "@/assets/lens/lens-46.webp.asset.json";
+import lens47 from "@/assets/lens/lens-47.png.asset.json";
+import lens48 from "@/assets/lens/lens-48.webp.asset.json";
+import lens49 from "@/assets/lens/lens-49.png.asset.json";
+import lens50 from "@/assets/lens/lens-50.png.asset.json";
+import lens51 from "@/assets/lens/lens-51.png.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -119,6 +129,16 @@ const SEEDS: Seed[] = [
 
   { slug: "majlis-safran", fr: "Majlis Safran", ar: "مجلس زعفراني", en: "Saffron Majlis", image: lens40.url, isNew: true, popularity: 21 },
   { slug: "toile-urbaine", fr: "Toile Urbaine", ar: "نسيج المدينة", en: "Urban Web", image: lens41.url, isNew: true, popularity: 19 },
+  { slug: "zellige-royal", fr: "Zellige Royal", ar: "زليج ملكي", en: "Royal Zellige", image: lens42.url, isNew: true, popularity: 18 },
+  { slug: "atlas-berbere", fr: "Atlas Berbère", ar: "أطلس أمازيغي", en: "Berber Atlas", image: lens43.url, isNew: true, popularity: 17 },
+  { slug: "kasbah-sunset", fr: "Kasbah Sunset", ar: "غروب القصبة", en: "Kasbah Sunset", image: lens44.url, isNew: true, popularity: 16 },
+  { slug: "the-a-la-menthe", fr: "Thé à la Menthe", ar: "أتاي بالنعناع", en: "Mint Tea", image: lens45.url, isNew: true, popularity: 15 },
+  { slug: "jardin-majorelle", fr: "Jardin Majorelle", ar: "حديقة ماجوريل", en: "Majorelle Garden", image: lens46.url, isNew: true, popularity: 14 },
+  { slug: "bull-market", fr: "Bull Market", ar: "سوق صاعد", en: "Bull Market", image: lens47.url, isNew: true, popularity: 13 },
+  { slug: "dollar-vision", fr: "Dollar Vision", ar: "رؤية الدولار", en: "Dollar Vision", image: lens48.url, isNew: true, popularity: 12 },
+  { slug: "web-hustler", fr: "Web Hustler", ar: "ويب هاسلر", en: "Web Hustler", image: lens49.url, isNew: true, popularity: 11 },
+  { slug: "night-trader", fr: "Night Trader", ar: "متداول الليل", en: "Night Trader", image: lens50.url, isNew: true, popularity: 10 },
+  { slug: "million-mindset", fr: "Million Mindset", ar: "عقلية المليون", en: "Million Mindset", image: lens51.url, isNew: true, popularity: 9 },
 ];
 
 export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
