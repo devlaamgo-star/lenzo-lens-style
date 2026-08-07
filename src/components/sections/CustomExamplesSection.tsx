@@ -25,7 +25,7 @@ export function CustomExamplesSection() {
           <p className="mt-3 text-sm text-muted-foreground sm:text-base">{CD.examplesSub[lang]}</p>
         </div>
 
-        <div className="mt-8 grid grid-cols-1 gap-4 min-[400px]:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid grid-cols-1 gap-4 min-[360px]:grid-cols-2 lg:grid-cols-4">
           {CD_EXAMPLES.map((ex, i) => (
             <button
               key={ex.label.en}
