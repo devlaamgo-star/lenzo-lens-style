@@ -51,6 +51,11 @@ import lens48 from "@/assets/lens/lens-48.webp.asset.json";
 import lens49 from "@/assets/lens/lens-49.png.asset.json";
 import lens50 from "@/assets/lens/lens-50.png.asset.json";
 import lens51 from "@/assets/lens/lens-51.png.asset.json";
+import lens52 from "@/assets/lens/lens-52.png.asset.json";
+import lens53 from "@/assets/lens/lens-53.png.asset.json";
+import lens54 from "@/assets/lens/lens-54.png.asset.json";
+import lens55 from "@/assets/lens/lens-55.png.asset.json";
+import lens56 from "@/assets/lens/lens-56.png.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -139,6 +144,11 @@ const SEEDS: Seed[] = [
   { slug: "web-hustler", fr: "Web Hustler", ar: "ويب هاسلر", en: "Web Hustler", image: lens49.url, isNew: true, popularity: 11 },
   { slug: "night-trader", fr: "Night Trader", ar: "متداول الليل", en: "Night Trader", image: lens50.url, isNew: true, popularity: 10 },
   { slug: "million-mindset", fr: "Million Mindset", ar: "عقلية المليون", en: "Million Mindset", image: lens51.url, isNew: true, popularity: 9 },
+  { slug: "rush-hour", fr: "Rush Hour", ar: "ساعة الذروة", en: "Rush Hour", image: lens52.url, isNew: true, popularity: 8 },
+  { slug: "risk-reward", fr: "Risk & Reward", ar: "المخاطرة والمكافأة", en: "Risk & Reward", image: lens53.url, isNew: true, popularity: 7 },
+  { slug: "digital-nomad", fr: "Digital Nomad", ar: "رحّالة رقمي", en: "Digital Nomad", image: lens54.url, isNew: true, popularity: 6 },
+  { slug: "code-cash", fr: "Code & Cash", ar: "كود وكاش", en: "Code & Cash", image: lens55.url, isNew: true, popularity: 5 },
+  { slug: "focus-mode", fr: "Focus Mode", ar: "وضع التركيز", en: "Focus Mode", image: lens56.url, isNew: true, popularity: 4 },
 ];
 
 export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
