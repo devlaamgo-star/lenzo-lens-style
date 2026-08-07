@@ -238,16 +238,16 @@ export const CD = {
   } as L,
 };
 
-const bl = (slug: string) => BACK_LENS_SKINS.find((s) => s.slug === slug)?.image ?? BACK_LENS_SKINS[0].image;
-const ln = (i: number) => CAMERA_LENS_SKINS[i]?.image ?? CAMERA_LENS_SKINS[0].image;
+const bl = (i: number) => BACK_LENS_SKINS[i]?.image ?? BACK_LENS_SKINS[0]?.image ?? "";
+const ln = (i: number) => CAMERA_LENS_SKINS[i]?.image ?? CAMERA_LENS_SKINS[0]?.image ?? "";
 
 export const CD_EXAMPLES: { image: string; label: L }[] = [
-  { image: BACK_LENS_SKINS[0].image, label: { fr: "Portrait personnel", ar: "صورة شخصية", en: "Personal portrait" } },
-  { image: BACK_LENS_SKINS[9]?.image ?? bl("nuit-etoilee"), label: { fr: "Logo d'entreprise", ar: "Logo ديال شركة", en: "Business logo" } },
-  { image: BACK_LENS_SKINS[19]?.image ?? bl("nuit-etoilee"), label: { fr: "Initiales & nom", ar: "Initials و الاسم", en: "Initials & name" } },
-  { image: BACK_LENS_SKINS[4]?.image ?? bl("nuit-etoilee"), label: { fr: "Design couple", ar: "Design ديال الكوبل", en: "Couple design" } },
-  { image: BACK_LENS_SKINS[22]?.image ?? bl("nuit-etoilee"), label: { fr: "Inspiration auto", ar: "Design ديال الطوموبيلات", en: "Car inspired" } },
-  { image: BACK_LENS_SKINS[14]?.image ?? bl("nuit-etoilee"), label: { fr: "Branding minimal", ar: "Branding بسيط", en: "Minimal branding" } },
+  { image: bl(0), label: { fr: "Portrait personnel", ar: "صورة شخصية", en: "Personal portrait" } },
+  { image: bl(9), label: { fr: "Logo d'entreprise", ar: "Logo ديال شركة", en: "Business logo" } },
+  { image: bl(19), label: { fr: "Initiales & nom", ar: "Initials و الاسم", en: "Initials & name" } },
+  { image: bl(4), label: { fr: "Design couple", ar: "Design ديال الكوبل", en: "Couple design" } },
+  { image: bl(22), label: { fr: "Inspiration auto", ar: "Design ديال الطوموبيلات", en: "Car inspired" } },
+  { image: bl(14), label: { fr: "Branding minimal", ar: "Branding بسيط", en: "Minimal branding" } },
   { image: ln(0), label: { fr: "Sticker caméra sur mesure", ar: "Sticker كاميرا مخصص", en: "Custom camera sticker" } },
-  { image: BACK_LENS_SKINS[27]?.image ?? bl("nuit-etoilee"), label: { fr: "Arrière + caméra assortis", ar: "الظهر + الكاميرا متناسقين", en: "Matching rear + camera" } },
+  { image: bl(27), label: { fr: "Arrière + caméra assortis", ar: "الظهر + الكاميرا متناسقين", en: "Matching rear + camera" } },
 ];
