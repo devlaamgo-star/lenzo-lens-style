@@ -20,17 +20,13 @@ export function CustomDesignCta() {
               {HOME_CTA.title[lang]}
             </h2>
             <p className="mt-2.5 max-w-lg text-sm text-muted-foreground sm:text-base">{HOME_CTA.text[lang]}</p>
-            <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:flex">
+            <div className="mt-5">
               <Link
                 to="/design-personnalise"
                 className="inline-flex h-12 min-w-0 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
               >
                 <span className="truncate">{HOME_CTA.cta[lang]}</span>
               </Link>
-              <span className="inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-muted-foreground sm:text-sm">
-                <ShieldCheck className="h-4 w-4 shrink-0 text-primary" />
-                {HOME_CTA.note[lang]}
-              </span>
             </div>
           </div>
 
