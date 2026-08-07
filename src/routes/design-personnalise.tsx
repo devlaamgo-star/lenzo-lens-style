@@ -3,7 +3,7 @@ import { Check, MessageCircle, ShieldCheck, Sparkles } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { whatsappLink } from "@/lib/catalog";
 import { CD, CD_EXAMPLES } from "@/lib/custom-design";
-import { WIZ } from "@/lib/custom-design-wizard";
+import { HOME_CTA, WIZ } from "@/lib/custom-design-wizard";
 import { CustomDesignWizard } from "@/components/CustomDesignWizard";
 import {
   CustomGallerySection,
