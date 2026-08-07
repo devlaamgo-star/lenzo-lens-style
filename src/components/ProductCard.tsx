@@ -69,7 +69,7 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
 
         <button
           type="button"
-          disabled={full && count === 0}
+          
           onClick={() => pack.add(design.id)}
           className={cn(
             "mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold transition-colors",
