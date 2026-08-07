@@ -4,6 +4,7 @@ import { z } from "zod";
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
 const MAX_BYTES = 8 * 1024 * 1024;
+const MAX_FILES = 6;
 
 const ALLOWED: Record<string, string> = {
   "image/jpeg": "jpg",
@@ -11,6 +12,12 @@ const ALLOWED: Record<string, string> = {
   "image/webp": "webp",
   "application/pdf": "pdf",
 };
+
+const fileSchema = z.object({
+  name: z.string().trim().min(1).max(160),
+  type: z.string().trim().min(3).max(80),
+  dataUrl: z.string().max(12_000_000),
+});
 
 export const designRequestSchema = z.object({
   fullName: z.string().trim().min(3).max(80),
@@ -22,22 +29,18 @@ export const designRequestSchema = z.object({
   city: z.string().trim().min(2).max(60),
   brand: z.string().trim().max(40).default(""),
   model: z.string().trim().min(2).max(60),
+  phoneColor: z.string().trim().max(40).default(""),
+  subject: z.string().trim().max(60).default(""),
+  style: z.string().trim().max(60).default(""),
   requestType: z.enum(["back", "camera", "both"]),
-  description: z.string().trim().min(5).max(1000),
+  description: z.string().trim().max(1000).default(""),
   colors: z.string().trim().max(200).default(""),
   notes: z.string().trim().max(500).default(""),
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
-  file: z
-    .object({
-      name: z.string().trim().min(1).max(160),
-      type: z.string().trim().min(3).max(80),
-      dataUrl: z.string().max(12_000_000),
-    })
-    .nullable()
-    .default(null),
+  files: z.array(fileSchema).max(MAX_FILES).default([]),
 });
 
-export type DesignRequestInput = z.infer<typeof designRequestSchema>;
+export type DesignRequestInput = z.input<typeof designRequestSchema>;
 
 function buildRequestNumber() {
   const d = new Date();
@@ -53,20 +56,20 @@ export const createDesignRequest = createServerFn({ method: "POST" })
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     const requestNumber = buildRequestNumber();
-    let filePath: string | null = null;
+    const paths: string[] = [];
 
-    if (data.file) {
-      const ext = ALLOWED[data.file.type];
+    for (const [i, f] of data.files.entries()) {
+      const ext = ALLOWED[f.type];
       if (!ext) throw new Error("INVALID_FILE_TYPE");
-      const base64 = data.file.dataUrl.split(",")[1] ?? "";
+      const base64 = f.dataUrl.split(",")[1] ?? "";
       const bytes = Buffer.from(base64, "base64");
       if (bytes.byteLength === 0 || bytes.byteLength > MAX_BYTES) throw new Error("INVALID_FILE_SIZE");
-      const path = `${requestNumber}/upload.${ext}`;
+      const path = `${requestNumber}/upload-${i + 1}.${ext}`;
       const { error: upErr } = await supabaseAdmin.storage
         .from("design-uploads")
-        .upload(path, bytes, { contentType: data.file.type, upsert: true });
+        .upload(path, bytes, { contentType: f.type, upsert: true });
       if (upErr) throw new Error(upErr.message);
-      filePath = path;
+      paths.push(path);
     }
 
     const { error } = await supabaseAdmin.from("design_requests").insert({
@@ -76,11 +79,15 @@ export const createDesignRequest = createServerFn({ method: "POST" })
       city: data.city,
       phone_brand: data.brand,
       phone_model: data.model,
+      phone_color: data.phoneColor,
+      subject: data.subject,
+      style: data.style,
       request_type: data.requestType,
       description: data.description,
       colors: data.colors,
       notes: data.notes,
-      file_path: filePath,
+      file_path: paths[0] ?? null,
+      file_paths: paths,
       locale: data.locale,
     });
     if (error) throw new Error(error.message);
