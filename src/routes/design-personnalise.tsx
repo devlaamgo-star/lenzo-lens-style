@@ -126,9 +126,6 @@ function CustomDesignPage() {
         </div>
       </section>
 
-      {/* IDEA → SKIN */}
-      <IdeaToSkinSection />
-
       {/* YOU SEND THE IDEA */}
       <YouSendSection />
 
