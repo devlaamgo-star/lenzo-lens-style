@@ -9,7 +9,6 @@ import { CustomExamplesSection } from "@/components/sections/CustomExamplesSecti
 import {
   CustomGallerySection,
   FileQualitySection,
-  IdeaToSkinSection,
   YouSendSection,
 } from "@/components/sections/CustomDesignSections";
 import {
@@ -126,9 +125,6 @@ function CustomDesignPage() {
           </div>
         </div>
       </section>
-
-      {/* IDEA → SKIN */}
-      <IdeaToSkinSection />
 
       {/* YOU SEND THE IDEA */}
       <YouSendSection />

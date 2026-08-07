@@ -1,82 +1,15 @@
 import { useState } from "react";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import {
   FILE_QUALITY,
   GALLERY,
-  IDEA_TO_SKIN,
   RIGHTS_NOTE,
   TRUST_POINTS,
   YOU_SEND,
 } from "@/lib/custom-design-wizard";
 
-export function IdeaToSkinSection() {
-  const { lang, dir } = useI18n();
-  return (
-    <section className="section-y bg-surface">
-      <div className="container-page">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2.1rem]">{IDEA_TO_SKIN.title[lang]}</h2>
-          <p className="mt-3 text-sm text-muted-foreground sm:text-base">{IDEA_TO_SKIN.sub[lang]}</p>
-        </div>
-        <div className="mt-10 space-y-5">
-          {IDEA_TO_SKIN.cases.map((c) => (
-            <div
-              key={c.design.en}
-              className="grid items-center gap-3 rounded-3xl border border-border bg-card p-4 sm:p-6 lg:grid-cols-[1fr_auto_1fr_auto_1fr]"
-            >
-              <Stage label={IDEA_TO_SKIN.stageLabels[0]![lang]} caption={c.idea[lang]}>
-                <span className="flex aspect-[4/3] w-full items-center justify-center rounded-xl bg-surface text-4xl" aria-hidden>
-                  {c.ideaEmoji}
-                </span>
-              </Stage>
-              <Arrow dir={dir} />
-              <Stage label={IDEA_TO_SKIN.stageLabels[1]![lang]} caption={c.design[lang]}>
-                <img src={c.designImage} alt={c.design[lang]} loading="lazy" className="aspect-[4/3] w-full rounded-xl bg-surface object-contain" />
-              </Stage>
-              <Arrow dir={dir} />
-              <Stage label={IDEA_TO_SKIN.stageLabels[2]![lang]} caption={c.final[lang]} highlight>
-                <img src={c.finalImage} alt={c.final[lang]} loading="lazy" className="aspect-[4/3] w-full rounded-xl bg-surface object-contain" />
-              </Stage>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Arrow({ dir }: { dir: string }) {
-  return (
-    <div className="flex items-center justify-center py-1 lg:py-0">
-      <ArrowRight
-        className={cn("h-5 w-5 text-primary", dir === "rtl" ? "rotate-180 max-lg:rotate-90" : "max-lg:rotate-90")}
-        aria-hidden
-      />
-    </div>
-  );
-}
-
-function Stage({
-  label,
-  caption,
-  highlight,
-  children,
-}: {
-  label: string;
-  caption: string;
-  highlight?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className={cn("min-w-0 rounded-2xl border p-3", highlight ? "border-primary/40 bg-primary/5" : "border-border")}>
-      <p className="mb-2 text-[11px] font-bold uppercase tracking-wide text-primary">{label}</p>
-      {children}
-      <p className="mt-2 text-xs font-medium leading-snug sm:text-sm">{caption}</p>
-    </div>
-  );
-}
 
 export function YouSendSection() {
   const { lang } = useI18n();
