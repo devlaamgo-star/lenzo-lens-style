@@ -141,7 +141,7 @@ const D = {
   ],
   "badge.new": ["Nouveau", "جديد", "New"],
   "badge.best": ["Bestseller", "الأكثر مبيعاً", "Bestseller"],
-  "card.included": ["Inclus dans votre pack de 3", "مشمول في باقة الـ 3", "Included in your pack of 3"],
+  "card.included": ["49 MAD", "49 درهم", "49 MAD"],
   "card.add": ["Ajouter au pack", "أضف إلى الباقة", "Add to pack"],
   "card.added": ["Ajouté", "تمت الإضافة", "Added"],
   "card.quickview": ["Aperçu rapide", "معاينة سريعة", "Quick view"],
