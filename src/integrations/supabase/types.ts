@@ -14,6 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      design_requests: {
+        Row: {
+          city: string
+          colors: string
+          created_at: string
+          description: string
+          file_path: string | null
+          full_name: string
+          id: string
+          locale: string
+          notes: string
+          phone: string
+          phone_brand: string
+          phone_model: string
+          request_number: string
+          request_type: string
+          status: string
+        }
+        Insert: {
+          city: string
+          colors?: string
+          created_at?: string
+          description?: string
+          file_path?: string | null
+          full_name: string
+          id?: string
+          locale?: string
+          notes?: string
+          phone: string
+          phone_brand?: string
+          phone_model?: string
+          request_number: string
+          request_type: string
+          status?: string
+        }
+        Update: {
+          city?: string
+          colors?: string
+          created_at?: string
+          description?: string
+          file_path?: string | null
+          full_name?: string
+          id?: string
+          locale?: string
+          notes?: string
+          phone?: string
+          phone_brand?: string
+          phone_model?: string
+          request_number?: string
+          request_type?: string
+          status?: string
+        }
+        Relationships: []
+      }
       orders: {
         Row: {
           address: string
