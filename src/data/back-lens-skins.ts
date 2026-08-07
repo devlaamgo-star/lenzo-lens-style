@@ -19,6 +19,16 @@ import bl16 from "@/assets/backlens/bl-16.png.asset.json";
 import bl17 from "@/assets/backlens/bl-17.webp.asset.json";
 import bl18 from "@/assets/backlens/bl-18.webp.asset.json";
 import bl19 from "@/assets/backlens/bl-19.webp.asset.json";
+import bl20 from "@/assets/backlens/bl-20.webp.asset.json";
+import bl21 from "@/assets/backlens/bl-21.webp.asset.json";
+import bl22 from "@/assets/backlens/bl-22.webp.asset.json";
+import bl23 from "@/assets/backlens/bl-23.webp.asset.json";
+import bl24 from "@/assets/backlens/bl-24.webp.asset.json";
+import bl25 from "@/assets/backlens/bl-25.webp.asset.json";
+import bl26 from "@/assets/backlens/bl-26.webp.asset.json";
+import bl27 from "@/assets/backlens/bl-27.webp.asset.json";
+import bl28 from "@/assets/backlens/bl-28.webp.asset.json";
+import bl29 from "@/assets/backlens/bl-29.webp.asset.json";
 
 export type BackLensSkin = {
   id: string;
