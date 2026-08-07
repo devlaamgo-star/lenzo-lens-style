@@ -15,6 +15,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BenefitsSection, TrustSection } from "@/components/sections/BenefitsTrust";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
+import { CustomDesignCta } from "@/components/sections/CustomDesignCta";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { StickyPackBar } from "@/components/StickyPackBar";
 
@@ -248,6 +249,7 @@ function HomePage() {
       <HowItWorks />
       <BenefitsSection />
       <TrustSection />
+      <CustomDesignCta />
       <ReviewsSection />
       <FaqSection />
       <StickyPackBar />
