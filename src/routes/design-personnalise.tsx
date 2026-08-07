@@ -250,7 +250,7 @@ function CustomDesignPage() {
         >
           {CD.ctaPrimary[lang]}
         </a>
-        <p className="mt-1.5 text-center text-[11px] text-muted-foreground">{CD.trustTitle[lang]}</p>
+        <p className="mt-1.5 text-center text-[11px] text-muted-foreground">{HOME_CTA.note[lang]}</p>
       </div>
     </>
   );
