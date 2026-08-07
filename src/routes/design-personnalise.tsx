@@ -5,6 +5,7 @@ import { whatsappLink } from "@/lib/catalog";
 import { CD, CD_EXAMPLES } from "@/lib/custom-design";
 import { HOME_CTA, WIZ } from "@/lib/custom-design-wizard";
 import { CustomDesignWizard } from "@/components/CustomDesignWizard";
+import { CustomExamplesSection } from "@/components/sections/CustomExamplesSection";
 import {
   CustomGallerySection,
   FileQualitySection,
