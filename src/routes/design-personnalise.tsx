@@ -9,7 +9,6 @@ import { CustomExamplesSection } from "@/components/sections/CustomExamplesSecti
 import {
   CustomGallerySection,
   FileQualitySection,
-  IdeaToSkinSection,
   YouSendSection,
 } from "@/components/sections/CustomDesignSections";
 import {
