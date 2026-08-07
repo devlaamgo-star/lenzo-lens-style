@@ -33,7 +33,7 @@ export const LENS_SKIN_PRICE = 79;
 
 export const BACK_LENS_SKIN_PRICE = 129;
 
-export const AIR_SKIN_PRICE = 89;
+export const AIR_SKIN_PRICE = 49;
 
 export const ANIME_SKIN_PRICE = 149;
 
