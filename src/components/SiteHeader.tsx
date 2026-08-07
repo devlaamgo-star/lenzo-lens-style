@@ -5,7 +5,7 @@ import logo from "@/assets/skinup-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
-import { CAMERA_LENS_SKINS, FULL_BODY_SKINS, PACK_SIZE } from "@/lib/catalog";
+import { CAMERA_LENS_SKINS, FULL_BODY_SKINS } from "@/lib/catalog";
 import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
 import { LANGS, type Lang } from "@/lib/translations";
 import { cn } from "@/lib/utils";
@@ -239,9 +239,9 @@ export function SiteHeader() {
             className="relative grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface"
           >
             <ShoppingBag className="h-[18px] w-[18px]" />
-            {cart.count + (pack.designs.length === PACK_SIZE ? 1 : 0) > 0 && (
+            {cart.count + pack.designs.length > 0 && (
               <span className="absolute -top-0.5 end-0 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
-                {cart.count + (pack.designs.length === PACK_SIZE ? 1 : 0)}
+                {cart.count + pack.designs.length}
               </span>
             )}
           </Link>
