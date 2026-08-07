@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, Crown, Loader2, Sparkles, Upload, X } from "lucide-react";
 import { toast } from "sonner";
 import { useServerFn } from "@tanstack/react-start";
@@ -25,6 +25,18 @@ export function CustomDesignWizard() {
 
   const [step, setStep] = useState(1);
   const [subject, setSubject] = useState("");
+
+  useEffect(() => {
+    const onPreselect = (e: Event) => {
+      const value = (e as CustomEvent<string>).detail;
+      if (!value) return;
+      setSubject(value);
+      setStep(1);
+    };
+    window.addEventListener("skinup:preselect-subject", onPreselect);
+    return () => window.removeEventListener("skinup:preselect-subject", onPreselect);
+  }, []);
+
   const [style, setStyle] = useState("");
   const [colors, setColors] = useState<string[]>([]);
   const [customColor, setCustomColor] = useState("");
