@@ -31,7 +31,7 @@ export const FULL_SKIN_PRICE = 149;
 
 export const LENS_SKIN_PRICE = 79;
 
-export const BACK_LENS_SKIN_PRICE = 169;
+export const BACK_LENS_SKIN_PRICE = 129;
 
 export const AIR_SKIN_PRICE = 89;
 

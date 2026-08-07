@@ -4,7 +4,7 @@ import type { CartCategory } from "./cart";
 export const CATEGORY_PRICES: Record<CartCategory, number> = {
   lens: 79,
   skins: 149,
-  backlens: 169,
+  backlens: 129,
   air: 89,
   anime: 149,
 };
