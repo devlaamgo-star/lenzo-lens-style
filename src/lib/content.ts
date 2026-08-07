@@ -14,7 +14,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: {
       fr: "Les designs sont très propres et l’installation était facile. J’ai reçu ma commande rapidement.",
-      ar: "التصاميم نظيفة جداً والتركيب كان سهلاً. توصلت بالطلب بسرعة.",
+      ar: "الديزاينات نقيين بزاف والتركيب ساهل. وصلني الطلب بسرعة وعجبني بزاف.",
       en: "The designs are very clean and installation was easy. My order arrived quickly.",
     },
   },
@@ -24,7 +24,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: {
       fr: "J’ai pris le pack doré et argent. La finition est discrète et ça change vraiment le look du téléphone.",
-      ar: "أخذت الباقة الذهبية والفضية. التشطيب أنيق ويغير مظهر الهاتف فعلاً.",
+      ar: "خديت الباك الذهبي والفضي، الجودة زوينة والتليفون تبدل الشكل ديالو كامل.",
       en: "I took the gold and silver pack. The finish is subtle and it really changes the phone's look.",
     },
   },
@@ -34,7 +34,7 @@ export const REVIEWS: Review[] = [
     rating: 4,
     text: {
       fr: "Bon rapport qualité-prix. J’ai payé à la livraison, le livreur a appelé avant de passer.",
-      ar: "جودة مناسبة للثمن. دفعت عند الاستلام والموصل اتصل قبل المجيء.",
+      ar: "الجودة زوينة مقابل الثمن. خلصت ملي وصلني الطلب وكلشي داز مزيان.",
       en: "Good value. I paid on delivery and the courier called before arriving.",
     },
   },
@@ -44,7 +44,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: {
       fr: "Commande confirmée par WhatsApp en quelques minutes. Les stickers tiennent bien depuis trois semaines.",
-      ar: "تم تأكيد الطلب عبر واتساب في دقائق. الملصقات ثابتة منذ ثلاثة أسابيع.",
+      ar: "أكدت الطلب فالواتساب بسرعة، والستيكرات باقيين لاصقين مزيان حتى من بعد مدة.",
       en: "Order confirmed on WhatsApp within minutes. The stickers have held well for three weeks.",
     },
   },
@@ -54,7 +54,7 @@ export const REVIEWS: Review[] = [
     rating: 4,
     text: {
       fr: "J’ai hésité sur mon modèle, le support m’a aidé à choisir. Pose simple en deux minutes.",
-      ar: "ترددت في اختيار الموديل وساعدني الدعم. التركيب سهل في دقيقتين.",
+      ar: "كنت محتار شنو ناخد، ولكن ساعدوني نختار الموديل والتركيب كان ساهل بزاف.",
       en: "I hesitated on my model and support helped me choose. Two-minute install.",
     },
   },
@@ -64,7 +64,7 @@ export const REVIEWS: Review[] = [
     rating: 5,
     text: {
       fr: "Livraison gratuite jusqu’à chez moi et emballage soigné. Je recommanderai un autre pack.",
-      ar: "توصيل مجاني حتى المنزل وتغليف مرتب. سأطلب باقة أخرى.",
+      ar: "التوصيل وصل حتى للدار وكلشي كان مرتب. أكيد غادي نعاود نطلب.",
       en: "Free delivery to my door and neat packaging. I'll order another pack.",
     },
   },

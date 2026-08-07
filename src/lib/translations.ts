@@ -296,10 +296,10 @@ const D = {
   ],
   "reviews.sub": [
     "Avis de clients au Maroc.",
-    "آراء عملاء من المغرب.",
+    "آراء زبناءنا من المغرب",
     "Reviews from customers in Morocco.",
   ],
-  "reviews.verified": ["Commande vérifiée", "طلب موثق", "Verified order"],
+  "reviews.verified": ["Commande vérifiée", "طلب مؤكد", "Verified order"],
 
   "faq.title": ["Questions fréquentes", "الأسئلة الشائعة", "Frequently asked questions"],
   "faq.sub": [
