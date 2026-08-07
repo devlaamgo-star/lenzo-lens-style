@@ -55,6 +55,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/design-personnalise" className="transition-colors hover:text-primary">
+                {t("nav.custom")}
+              </Link>
+            </li>
+            <li>
               <Link to="/faq" className="transition-colors hover:text-primary">
                 {t("nav.faq")}
               </Link>
