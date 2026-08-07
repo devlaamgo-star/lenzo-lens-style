@@ -85,13 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LENZO — Stickers caméra décoratifs pour iPhone au Maroc" },
+      { title: "SKINUP — Stickers caméra décoratifs pour iPhone au Maroc" },
       {
         name: "description",
         content:
           "3 stickers caméra iPhone pour 99 MAD. Livraison gratuite au Maroc et paiement à la livraison.",
       },
-      { name: "author", content: "LENZO" },
+      { name: "author", content: "SKINUP" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -108,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   }),
   loader: async (): Promise<{ lang: Lang }> => {
     if (import.meta.env.SSR) return { lang: await getServerLang() };
-    const stored = typeof window !== "undefined" ? window.localStorage.getItem("lenzo-lang") : null;
+    const stored = typeof window !== "undefined" ? window.localStorage.getItem("skinup-lang") : null;
     return { lang: stored && (LANGS as readonly string[]).includes(stored) ? (stored as Lang) : "fr" };
   },
   shellComponent: RootShell,
@@ -125,7 +125,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         <ScriptOnce>
-          {`try{var l=localStorage.getItem('lenzo-lang');if(l){document.cookie='lenzo-lang='+l+'; path=/; max-age=31536000; samesite=lax';}if(l==='fr'||l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}else{document.documentElement.dir='ltr';}}catch(e){}`}
+          {`try{var l=localStorage.getItem('skinup-lang');if(l){document.cookie='skinup-lang='+l+'; path=/; max-age=31536000; samesite=lax';}if(l==='fr'||l==='ar'||l==='en'){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';}else{document.documentElement.dir='ltr';}}catch(e){}`}
         </ScriptOnce>
         {children}
         <Scripts />

@@ -135,9 +135,9 @@ const D = {
 
   "new.title": ["Nouveautés", "الجديد", "New arrivals"],
   "new.sub": [
-    "Découvrez les derniers designs LENZO.",
-    "اكتشف أحدث تصاميم LENZO.",
-    "Discover the latest LENZO designs.",
+    "Découvrez les derniers designs SKINUP.",
+    "اكتشف أحدث تصاميم SKINUP.",
+    "Discover the latest SKINUP designs.",
   ],
   "badge.new": ["Nouveau", "جديد", "New"],
   "badge.best": ["Bestseller", "الأكثر مبيعاً", "Bestseller"],
@@ -290,9 +290,9 @@ const D = {
   ],
 
   "reviews.title": [
-    "Ils ont personnalisé leur iPhone avec LENZO",
-    "خصصوا هواتفهم مع LENZO",
-    "They personalised their iPhone with LENZO",
+    "Ils ont personnalisé leur iPhone avec SKINUP",
+    "خصصوا هواتفهم مع SKINUP",
+    "They personalised their iPhone with SKINUP",
   ],
   "reviews.sub": [
     "Avis de clients au Maroc.",
@@ -426,9 +426,9 @@ const D = {
 
   "wa.help": ["Besoin d’aide ?", "تحتاج مساعدة؟", "Need help?"],
   "wa.msg": [
-    "Bonjour LENZO, j’ai besoin d’aide pour choisir mon modèle d’iPhone et composer mon pack.",
-    "مرحباً LENZO، أحتاج مساعدة لاختيار موديل iPhone وتكوين باقتي.",
-    "Hello LENZO, I need help choosing my iPhone model and building my pack.",
+    "Bonjour SKINUP, j’ai besoin d’aide pour choisir mon modèle d’iPhone et composer mon pack.",
+    "مرحباً SKINUP، أحتاج مساعدة لاختيار موديل iPhone وتكوين باقتي.",
+    "Hello SKINUP, I need help choosing my iPhone model and building my pack.",
   ],
 
   "footer.desc": [
@@ -445,7 +445,7 @@ const D = {
   "footer.privacy": ["Politique de confidentialité", "سياسة الخصوصية", "Privacy policy"],
   "footer.shipPolicy": ["Politique de livraison", "سياسة التوصيل", "Delivery policy"],
   "footer.returnPolicy": ["Politique de retours", "سياسة الإرجاع", "Returns policy"],
-  "footer.rights": ["© LENZO. Tous droits réservés.", "© LENZO. جميع الحقوق محفوظة.", "© LENZO. All rights reserved."],
+  "footer.rights": ["© SKINUP. Tous droits réservés.", "© SKINUP. جميع الحقوق محفوظة.", "© SKINUP. All rights reserved."],
 
   "breadcrumb.home": ["Accueil", "الرئيسية", "Home"],
   "cart.title": ["Mon panier", "سلتي", "My cart"],

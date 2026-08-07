@@ -7,13 +7,13 @@ import { AirSkinCard } from "@/components/AirSkinCard";
 export const Route = createFileRoute("/iphone-air/")({
   head: () => ({
     meta: [
-      { title: "Skins iPhone Air — designs exclusifs LENZO" },
+      { title: "Skins iPhone Air — designs exclusifs SKINUP" },
       {
         name: "description",
         content:
-          "Skins décoratifs LENZO conçus spécialement pour l’iPhone Air. Découpes précises, livraison gratuite au Maroc, paiement à la livraison.",
+          "Skins décoratifs SKINUP conçus spécialement pour l’iPhone Air. Découpes précises, livraison gratuite au Maroc, paiement à la livraison.",
       },
-      { property: "og:title", content: "Skins iPhone Air — designs exclusifs LENZO" },
+      { property: "og:title", content: "Skins iPhone Air — designs exclusifs SKINUP" },
       {
         property: "og:description",
         content: "Découvrez des designs créés spécialement pour votre iPhone Air.",

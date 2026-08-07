@@ -16,11 +16,11 @@ export const Route = createFileRoute("/iphone-air/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Produit introuvable — LENZO" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Produit introuvable — SKINUP" }, { name: "robots", content: "noindex" }],
       };
     }
     const { skin } = loaderData;
-    const title = `${skin.name.fr} — Skin iPhone Air | LENZO`;
+    const title = `${skin.name.fr} — Skin iPhone Air | SKINUP`;
     return {
       meta: [
         { title },

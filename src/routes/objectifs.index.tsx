@@ -7,15 +7,15 @@ import { LensSkinCard } from "@/components/LensSkinCard";
 export const Route = createFileRoute("/objectifs/")({
   head: () => ({
     meta: [
-      { title: "Stickers pour objectifs caméra iPhone 17 Pro Max — LENZO" },
+      { title: "Stickers pour objectifs caméra iPhone 17 Pro Max — SKINUP" },
       {
         name: "description",
         content:
-          "Stickers décoratifs LENZO pour la zone des objectifs caméra de l’iPhone 17 Pro Max. Découpe précise, livraison gratuite au Maroc et paiement à la livraison.",
+          "Stickers décoratifs SKINUP pour la zone des objectifs caméra de l’iPhone 17 Pro Max. Découpe précise, livraison gratuite au Maroc et paiement à la livraison.",
       },
       {
         property: "og:title",
-        content: "Stickers pour objectifs caméra iPhone 17 Pro Max — LENZO",
+        content: "Stickers pour objectifs caméra iPhone 17 Pro Max — SKINUP",
       },
       {
         property: "og:description",

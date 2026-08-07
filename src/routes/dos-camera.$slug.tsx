@@ -16,11 +16,11 @@ export const Route = createFileRoute("/dos-camera/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Produit introuvable — LENZO" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Produit introuvable — SKINUP" }, { name: "robots", content: "noindex" }],
       };
     }
     const { skin } = loaderData;
-    const title = `${skin.name.fr} — Skin arrière & caméra iPhone 17 Pro Max | LENZO`;
+    const title = `${skin.name.fr} — Skin arrière & caméra iPhone 17 Pro Max | SKINUP`;
     return {
       meta: [
         { title },

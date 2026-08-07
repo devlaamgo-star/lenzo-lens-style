@@ -10,16 +10,16 @@ import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 export const Route = createFileRoute("/panier")({
   head: () => ({
     meta: [
-      { title: "Mon panier — LENZO" },
+      { title: "Mon panier — SKINUP" },
       {
         name: "description",
         content:
-          "Vérifiez vos produits LENZO, votre modèle d’iPhone et vos quantités avant de commander en paiement à la livraison.",
+          "Vérifiez vos produits SKINUP, votre modèle d’iPhone et vos quantités avant de commander en paiement à la livraison.",
       },
-      { property: "og:title", content: "Mon panier — LENZO" },
+      { property: "og:title", content: "Mon panier — SKINUP" },
       {
         property: "og:description",
-        content: "Modèle, quantité et total avant de finaliser votre commande LENZO.",
+        content: "Modèle, quantité et total avant de finaliser votre commande SKINUP.",
       },
       { name: "robots", content: "noindex" },
     ],

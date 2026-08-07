@@ -18,7 +18,7 @@ type I18nValue = {
 
 const I18nContext = createContext<I18nValue | null>(null);
 
-const STORAGE_KEY = "lenzo-lang";
+const STORAGE_KEY = "skinup-lang";
 
 export function I18nProvider({
   children,

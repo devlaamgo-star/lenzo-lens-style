@@ -8,13 +8,13 @@ import { ReturnsPolicyCard } from "@/routes/retours";
 export const Route = createFileRoute("/confirmation")({
   head: () => ({
     meta: [
-      { title: "Merci pour votre commande — LENZO" },
+      { title: "Merci pour votre commande — SKINUP" },
       {
         name: "description",
-        content: "Merci pour votre commande LENZO. Notre équipe vous appelle pour confirmer la livraison.",
+        content: "Merci pour votre commande SKINUP. Notre équipe vous appelle pour confirmer la livraison.",
       },
-      { property: "og:title", content: "Merci pour votre commande — LENZO" },
-      { property: "og:description", content: "Merci pour votre commande LENZO." },
+      { property: "og:title", content: "Merci pour votre commande — SKINUP" },
+      { property: "og:description", content: "Merci pour votre commande SKINUP." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -48,7 +48,7 @@ function ConfirmationPage() {
   const [order, setOrder] = useState<LastOrder | null>(null);
 
   useEffect(() => {
-    const raw = window.sessionStorage.getItem("lenzo-last-order");
+    const raw = window.sessionStorage.getItem("skinup-last-order");
     if (raw) {
       try {
         setOrder(JSON.parse(raw) as LastOrder);

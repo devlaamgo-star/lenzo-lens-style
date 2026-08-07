@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle, Music2 } from "lucide-react";
-import logo from "@/assets/lenzo-logo.png";
+import logo from "@/assets/skinup-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { whatsappLink } from "@/lib/catalog";
 
@@ -11,7 +11,7 @@ export function SiteFooter() {
     <footer className="mt-8 border-t border-border bg-surface">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <img src={logo} alt="LENZO" width={1152} height={576} loading="lazy" className="h-6 w-auto self-start" />
+          <img src={logo} alt="SKINUP" width={1152} height={576} loading="lazy" className="h-6 w-auto self-start" />
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">{t("footer.desc")}</p>
         </div>
 
@@ -96,8 +96,8 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href="mailto:contact@lenzo.ma" className="inline-flex items-center gap-2 transition-colors hover:text-primary">
-                <Mail className="h-4 w-4" /> contact@lenzo.ma
+              <a href="mailto:contact@skinup.ma" className="inline-flex items-center gap-2 transition-colors hover:text-primary">
+                <Mail className="h-4 w-4" /> contact@skinup.ma
               </a>
             </li>
             <li>

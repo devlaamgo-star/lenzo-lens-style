@@ -38,7 +38,7 @@ type CartValue = {
 };
 
 const CartContext = createContext<CartValue | null>(null);
-const KEY = "lenzo-cart";
+const KEY = "skinup-cart";
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);

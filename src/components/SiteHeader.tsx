@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, ShoppingBag, User, X } from "lucide-react";
-import logo from "@/assets/lenzo-logo.png";
+import logo from "@/assets/skinup-logo.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
@@ -94,7 +94,7 @@ export function SiteHeader() {
             <SheetContent side={dir === "rtl" ? "right" : "left"} className="w-[86vw] max-w-sm overflow-y-auto p-0">
               <SheetTitle className="sr-only">{t("nav.menu")}</SheetTitle>
               <div className="flex items-center justify-between border-b border-border px-5 py-4">
-                <img src={logo} alt="LENZO" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
+                <img src={logo} alt="SKINUP" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
                 <button
                   type="button"
                   aria-label={t("nav.close")}
@@ -164,7 +164,7 @@ export function SiteHeader() {
           </Sheet>
 
           <Link to="/" className="flex shrink-0 items-center">
-            <img src={logo} alt="LENZO" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
+            <img src={logo} alt="SKINUP" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
           </Link>
         </div>
 

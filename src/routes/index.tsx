@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-lenzo-phones.png.asset.json";
+import heroImage from "@/assets/hero-phones.png.asset.json";
 
 import { useI18n } from "@/lib/i18n";
 import { DESIGNS, FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
@@ -21,13 +21,13 @@ import { StickyPackBar } from "@/components/StickyPackBar";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LENZO — 3 stickers caméra iPhone pour 99 MAD" },
+      { title: "SKINUP — 3 stickers caméra iPhone pour 99 MAD" },
       {
         name: "description",
         content:
-          "Personnalisez le module caméra de votre iPhone avec les stickers décoratifs LENZO. 3 stickers au choix à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
+          "Personnalisez le module caméra de votre iPhone avec les stickers décoratifs SKINUP. 3 stickers au choix à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
       },
-      { property: "og:title", content: "LENZO — 3 stickers caméra iPhone pour 99 MAD" },
+      { property: "og:title", content: "SKINUP — 3 stickers caméra iPhone pour 99 MAD" },
       {
         property: "og:description",
         content:
@@ -96,7 +96,7 @@ function Hero() {
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
             <img
               src={heroImage.url}
-              alt="Stickers décoratifs LENZO appliqués sur trois iPhone, designs colorés sur le module caméra"
+              alt="Stickers décoratifs SKINUP appliqués sur trois iPhone, designs colorés sur le module caméra"
               width={1408}
               height={1408}
               className="h-full w-full object-contain object-center lg:object-cover"
