@@ -15,6 +15,7 @@ import { Route as CollectionRouteImport } from './routes/collection'
 import { Route as CommandeRouteImport } from './routes/commande'
 import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
+import { Route as DesignPersonnaliseRouteImport } from './routes/design-personnalise'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
 import { Route as PanierRouteImport } from './routes/panier'
@@ -58,6 +59,11 @@ const CommentCaMarcheRoute = CommentCaMarcheRouteImport.update({
 const ConfirmationRoute = ConfirmationRouteImport.update({
   id: '/confirmation',
   path: '/confirmation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignPersonnaliseRoute = DesignPersonnaliseRouteImport.update({
+  id: '/design-personnalise',
+  path: '/design-personnalise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -138,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/commande': typeof CommandeRoute
   '/comment-ca-marche': typeof CommentCaMarcheRoute
   '/confirmation': typeof ConfirmationRoute
+  '/design-personnalise': typeof DesignPersonnaliseRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/panier': typeof PanierRoute
@@ -160,6 +167,7 @@ export interface FileRoutesByTo {
   '/commande': typeof CommandeRoute
   '/comment-ca-marche': typeof CommentCaMarcheRoute
   '/confirmation': typeof ConfirmationRoute
+  '/design-personnalise': typeof DesignPersonnaliseRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/panier': typeof PanierRoute
@@ -183,6 +191,7 @@ export interface FileRoutesById {
   '/commande': typeof CommandeRoute
   '/comment-ca-marche': typeof CommentCaMarcheRoute
   '/confirmation': typeof ConfirmationRoute
+  '/design-personnalise': typeof DesignPersonnaliseRoute
   '/faq': typeof FaqRoute
   '/pack': typeof PackRoute
   '/panier': typeof PanierRoute
@@ -207,6 +216,7 @@ export interface FileRouteTypes {
     | '/commande'
     | '/comment-ca-marche'
     | '/confirmation'
+    | '/design-personnalise'
     | '/faq'
     | '/pack'
     | '/panier'
@@ -229,6 +239,7 @@ export interface FileRouteTypes {
     | '/commande'
     | '/comment-ca-marche'
     | '/confirmation'
+    | '/design-personnalise'
     | '/faq'
     | '/pack'
     | '/panier'
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/commande'
     | '/comment-ca-marche'
     | '/confirmation'
+    | '/design-personnalise'
     | '/faq'
     | '/pack'
     | '/panier'
@@ -274,6 +286,7 @@ export interface RootRouteChildren {
   CommandeRoute: typeof CommandeRoute
   CommentCaMarcheRoute: typeof CommentCaMarcheRoute
   ConfirmationRoute: typeof ConfirmationRoute
+  DesignPersonnaliseRoute: typeof DesignPersonnaliseRoute
   FaqRoute: typeof FaqRoute
   PackRoute: typeof PackRoute
   PanierRoute: typeof PanierRoute
@@ -332,6 +345,13 @@ declare module '@tanstack/react-router' {
       path: '/confirmation'
       fullPath: '/confirmation'
       preLoaderRoute: typeof ConfirmationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-personnalise': {
+      id: '/design-personnalise'
+      path: '/design-personnalise'
+      fullPath: '/design-personnalise'
+      preLoaderRoute: typeof DesignPersonnaliseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -442,6 +462,7 @@ const rootRouteChildren: RootRouteChildren = {
   CommandeRoute: CommandeRoute,
   CommentCaMarcheRoute: CommentCaMarcheRoute,
   ConfirmationRoute: ConfirmationRoute,
+  DesignPersonnaliseRoute: DesignPersonnaliseRoute,
   FaqRoute: FaqRoute,
   PackRoute: PackRoute,
   PanierRoute: PanierRoute,
