@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
-import { PACK_PRICE, WHATSAPP_NUMBER, designById } from "@/lib/catalog";
+import { WHATSAPP_NUMBER, designById } from "@/lib/catalog";
+import { packBreakdown } from "@/lib/pricing";
 import { ReturnsPolicyCard } from "@/routes/retours";
 
 export const Route = createFileRoute("/confirmation")({
@@ -101,14 +102,37 @@ function ConfirmationPage() {
                   </div>
                 ))}
 
-                {order.designs.length === 3 && (
+                {order.designs.length > 0 && (
                   <div>
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-medium">{t("pack.packLabel")}</p>
-                      <span className="text-sm font-semibold">{PACK_PRICE} MAD</span>
-                    </div>
+                    {packBreakdown(order.designs.length).promoApplies ? (
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-medium">{t("pack.promoLine")}</p>
+                        <span className="text-sm font-semibold">
+                          {packBreakdown(order.designs.length).promoTotal} MAD
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-medium">
+                          {t("pack.orderItems")} × {order.designs.length}
+                        </p>
+                        <span className="text-sm font-semibold">
+                          {packBreakdown(order.designs.length).promoTotal} MAD
+                        </span>
+                      </div>
+                    )}
+                    {packBreakdown(order.designs.length).extraCount > 0 && (
+                      <div className="mt-1 flex items-center justify-between">
+                        <p className="text-sm font-medium">
+                          {t("pack.extraLine")} × {packBreakdown(order.designs.length).extraCount}
+                        </p>
+                        <span className="text-sm font-semibold">
+                          {packBreakdown(order.designs.length).extraTotal} MAD
+                        </span>
+                      </div>
+                    )}
                     <p className="mt-1 text-xs text-muted-foreground">
-                      {order.model} · {t("f.qty")} 1
+                      {order.model} · {t("f.qty")} {order.designs.length}
                     </p>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {order.designs.map((id, i) => {

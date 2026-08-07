@@ -26,7 +26,6 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
   const pack = usePack();
   const [open, setOpen] = useState(false);
   const count = pack.countOf(design.id);
-  const full = pack.isComplete;
 
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
@@ -70,23 +69,15 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
 
         <button
           type="button"
-          disabled={full && count === 0}
+          
           onClick={() => pack.add(design.id)}
           className={cn(
             "mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold transition-colors",
-            full && count === 0
-              ? "cursor-not-allowed bg-muted text-muted-foreground"
-              : "bg-ink text-ink-foreground hover:bg-primary",
+            "bg-ink text-ink-foreground hover:bg-primary",
           )}
         >
-          {full && count === 0 ? (
-            t("card.full")
-          ) : (
-            <>
-              {count > 0 ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-              {count > 0 ? t("card.added") : t("card.add")}
-            </>
-          )}
+          {count > 0 ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+          {count > 0 ? t("card.added") : t("card.add")}
         </button>
       </div>
 
@@ -123,11 +114,10 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
 
               <button
                 type="button"
-                disabled={full && count === 0}
                 onClick={() => pack.add(design.id)}
                 className="inline-flex h-11 items-center justify-center rounded-full bg-ink px-5 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
               >
-                {full && count === 0 ? t("card.full") : t("card.add")}
+                {t("card.add")}
               </button>
               <Link
                 to="/pack"

@@ -27,6 +27,7 @@ export type Database = {
           locale: string
           notes: string | null
           order_number: string
+          pack_breakdown: Json | null
           payment_method: string
           phone: string
           quantity: number
@@ -45,6 +46,7 @@ export type Database = {
           locale?: string
           notes?: string | null
           order_number: string
+          pack_breakdown?: Json | null
           payment_method?: string
           phone: string
           quantity?: number
@@ -63,6 +65,7 @@ export type Database = {
           locale?: string
           notes?: string | null
           order_number?: string
+          pack_breakdown?: Json | null
           payment_method?: string
           phone?: string
           quantity?: number

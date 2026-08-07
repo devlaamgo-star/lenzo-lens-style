@@ -3,7 +3,7 @@ import { ChevronRight, Trash2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { useCart } from "@/lib/cart";
 import { usePack } from "@/lib/pack";
-import { PACK_PRICE, designById } from "@/lib/catalog";
+import { designById } from "@/lib/catalog";
 import { QtyStepper } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 
@@ -31,8 +31,9 @@ function CartPage() {
   const { t, lang } = useI18n();
   const cart = useCart();
   const pack = usePack();
-  const packReady = pack.designs.length === 3;
-  const total = cart.subtotal + (packReady ? PACK_PRICE : 0);
+  const b = pack.breakdown;
+  const packReady = b.count > 0;
+  const total = cart.subtotal + b.total;
   const empty = cart.items.length === 0 && !packReady;
 
   return (
@@ -101,9 +102,28 @@ function CartPage() {
 
             {packReady && (
               <div className="rounded-2xl border border-border bg-card p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-semibold">{t("pack.packLabel")}</p>
-                  <span className="text-sm font-bold">{PACK_PRICE} MAD</span>
+                <div className="space-y-1.5">
+                  {b.promoApplies ? (
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold">{t("pack.promoLine")}</p>
+                      <span className="text-sm font-bold">{b.promoTotal} MAD</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold">
+                        {t("pack.orderItems")} × {b.count}
+                      </p>
+                      <span className="text-sm font-bold">{b.promoTotal} MAD</span>
+                    </div>
+                  )}
+                  {b.extraCount > 0 && (
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-semibold">
+                        {t("pack.extraLine")} × {b.extraCount}
+                      </p>
+                      <span className="text-sm font-bold">{b.extraTotal} MAD</span>
+                    </div>
+                  )}
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">
                   {t("pack.model")} : <span className="font-medium text-foreground">{pack.model || "—"}</span>
@@ -146,6 +166,9 @@ function CartPage() {
                   <dd className="text-xl font-extrabold">{total} MAD</dd>
                 </div>
               </dl>
+              {packReady && (
+                <p className="mt-3 text-xs text-muted-foreground">{t("pack.promoNote")}</p>
+              )}
               {!empty && (
                 <Link
                   to="/commande"

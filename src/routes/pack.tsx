@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, Plus, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { DESIGNS, PACK_OLD_PRICE, PACK_PRICE, PACK_SIZE, designById, IPHONE_MODELS } from "@/lib/catalog";
+import { DESIGNS, designById, IPHONE_MODELS } from "@/lib/catalog";
+
 import { cn } from "@/lib/utils";
 import {
   Select,
@@ -34,7 +35,8 @@ export const Route = createFileRoute("/pack")({
 function PackSummary({ compact = false }: { compact?: boolean }) {
   const { t, lang } = useI18n();
   const pack = usePack();
-  const canOrder = pack.isComplete && pack.model !== "";
+  const b = pack.breakdown;
+  const canOrder = b.count > 0 && pack.model !== "";
 
   return (
     <div className={cn("rounded-2xl border border-border bg-card p-5 shadow-soft", compact && "p-4")}>
@@ -86,13 +88,33 @@ function PackSummary({ compact = false }: { compact?: boolean }) {
           <span className="text-muted-foreground">{t("pack.payment")}</span>
           <span className="font-medium">{t("pack.cod")}</span>
         </div>
+        {b.promoApplies && (
+          <div className="flex items-center justify-between">
+            <span className="text-muted-foreground">{t("pack.promoLine")}</span>
+            <span className="font-medium">{b.promoTotal} MAD</span>
+          </div>
+        )}
+        {b.extraCount > 0 && (
+          <div className="flex items-center justify-between">
+            <span className="text-muted-foreground">
+              {t("pack.extraLine")} × {b.extraCount}
+            </span>
+            <span className="font-medium">{b.extraTotal} MAD</span>
+          </div>
+        )}
+        {!b.promoApplies && b.count > 0 && (
+          <div className="flex items-center justify-between">
+            <span className="text-muted-foreground">
+              {t("pack.orderItems")} × {b.count}
+            </span>
+            <span className="font-medium">{b.promoTotal} MAD</span>
+          </div>
+        )}
         <div className="flex items-baseline justify-between pt-2">
           <span className="font-semibold">{t("pack.total")}</span>
-          <span className="flex items-baseline gap-2">
-            <span className="text-xs text-muted-foreground line-through">{PACK_OLD_PRICE} MAD</span>
-            <span className="text-xl font-extrabold">{PACK_PRICE} MAD</span>
-          </span>
+          <span className="text-xl font-extrabold">{b.total} MAD</span>
         </div>
+        <p className="pt-1 text-xs text-muted-foreground">{t("pack.promoNote")}</p>
       </div>
 
       {canOrder ? (
@@ -108,7 +130,7 @@ function PackSummary({ compact = false }: { compact?: boolean }) {
           disabled
           className="mt-5 inline-flex h-12 w-full cursor-not-allowed items-center justify-center rounded-full bg-muted text-sm font-semibold text-muted-foreground"
         >
-          {pack.model === "" ? t("pack.needModel") : t("pack.needThree")}
+          {pack.model === "" ? t("pack.needModel") : t("pack.needOne")}
         </button>
       )}
 
@@ -172,18 +194,21 @@ function PackPage() {
                 <span
                   className={cn(
                     "shrink-0 rounded-full px-3 py-1.5 text-xs font-bold",
-                    pack.isComplete ? "bg-success text-success-foreground" : "bg-accent text-accent-foreground",
+                    pack.breakdown.promoApplies
+                      ? "bg-success text-success-foreground"
+                      : "bg-accent text-accent-foreground",
                   )}
                 >
-                  {pack.designs.length}/{PACK_SIZE} {t("pack.selected")}
+                  {pack.designs.length} {t("pack.selectedCount")}
+                  {pack.breakdown.promoApplies ? ` — ${t("pack.promoApplied")}` : ""}
                 </span>
               </div>
               <p className="mt-2 text-xs text-muted-foreground">{t("pack.sameAllowed")}</p>
+              <p className="mt-1 text-xs text-muted-foreground">{t("pack.promoNote")}</p>
 
               <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:gap-5">
                 {DESIGNS.map((d) => {
                   const count = pack.countOf(d.id);
-                  const disabled = pack.isComplete && count === 0;
                   return (
                     <div
                       key={d.id}
@@ -221,14 +246,8 @@ function PackPage() {
                           </button>
                           <button
                             type="button"
-                            disabled={disabled}
                             onClick={() => pack.add(d.id)}
-                            className={cn(
-                              "inline-flex h-10 items-center justify-center gap-1.5 rounded-full text-xs font-semibold",
-                              disabled
-                                ? "cursor-not-allowed bg-muted text-muted-foreground"
-                                : "bg-ink text-ink-foreground hover:bg-primary",
-                            )}
+                            className="inline-flex h-10 items-center justify-center gap-1.5 rounded-full bg-ink text-xs font-semibold text-ink-foreground hover:bg-primary"
                           >
                             {count > 0 ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                             {count > 0 ? t("card.added") : t("card.add")}

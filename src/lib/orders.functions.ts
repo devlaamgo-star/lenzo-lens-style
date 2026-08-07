@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { CATEGORY_PRICES, PACK_TOTAL } from "./pricing";
+import { CATEGORY_PRICES, packBreakdown } from "./pricing";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
@@ -22,7 +22,7 @@ export const orderSchema = z.object({
   city: z.string().trim().min(2).max(60),
   address: z.string().trim().min(8).max(300),
   model: z.string().trim().max(40).default(""),
-  designs: z.array(z.string().trim().min(1).max(40)).max(3).default([]),
+  designs: z.array(z.string().trim().min(1).max(40)).max(30).default([]),
   items: z.array(itemSchema).max(30).default([]),
   notes: z.string().trim().max(500).optional().default(""),
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
@@ -44,7 +44,8 @@ export const createOrder = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
-    const hasPack = data.designs.length === 3;
+    const pack = packBreakdown(data.designs.length);
+    const hasPack = pack.count > 0;
     if (!hasPack && data.items.length === 0) throw new Error("EMPTY_ORDER");
     if (hasPack && !data.model) throw new Error("MODEL_REQUIRED");
 
@@ -52,9 +53,9 @@ export const createOrder = createServerFn({ method: "POST" })
       (sum, i) => sum + CATEGORY_PRICES[i.category] * i.qty,
       0,
     );
-    const total = itemsTotal + (hasPack ? PACK_TOTAL : 0);
+    const total = itemsTotal + pack.total;
     const quantity =
-      data.items.reduce((sum, i) => sum + i.qty, 0) + (hasPack ? 1 : 0);
+      data.items.reduce((sum, i) => sum + i.qty, 0) + pack.count;
 
     const orderNumber = buildOrderNumber();
     const { error } = await supabaseAdmin.from("orders").insert({
@@ -72,6 +73,16 @@ export const createOrder = createServerFn({ method: "POST" })
       })),
       quantity,
       notes: data.notes || null,
+      pack_breakdown: {
+        itemCount: pack.count,
+        promoApplied: pack.promoApplies,
+        promoItems: pack.promoCount,
+        promoTotal: pack.promoTotal,
+        extraItems: pack.extraCount,
+        extraUnitPrice: CATEGORY_PRICES.lens,
+        extraTotal: pack.extraTotal,
+        packTotal: pack.total,
+      },
       total_mad: total,
       payment_method: "cod",
       status: "pending_confirmation",
