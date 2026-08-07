@@ -2,6 +2,15 @@ import type { Lang } from "@/data/products";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { CAMERA_LENS_SKINS } from "@/data/camera-lens-skins";
 
+import ex1 from "@/assets/custom/ex-1.png.asset.json";
+import ex2 from "@/assets/custom/ex-2.png.asset.json";
+import ex3 from "@/assets/custom/ex-3.png.asset.json";
+import ex4 from "@/assets/custom/ex-4.png.asset.json";
+import ex5 from "@/assets/custom/ex-5.png.asset.json";
+import ex6 from "@/assets/custom/ex-6.png.asset.json";
+import ex7 from "@/assets/custom/ex-7.png.asset.json";
+import ex8 from "@/assets/custom/ex-8.png.asset.json";
+
 export type L = Record<Lang, string>;
 
 export const CD = {
@@ -101,14 +110,14 @@ export const CD = {
   ],
 
   examplesTitle: {
-    fr: "Exemples de designs personnalisés",
-    ar: "أمثلة على Designs مخصصين",
-    en: "Custom design examples",
+    fr: "Voyez ce qu'on peut créer pour vous",
+    ar: "شوف شنو نقدروا نصاوبو ليك",
+    en: "See what we can create for you",
   } as L,
   examplesSub: {
-    fr: "Des rendus réalisés par notre équipe sur des iPhone — votre design peut être totalement différent.",
-    ar: "شي أمثلة صاوبها الفريق ديالنا على iPhone — الـ Design ديالك يقدر يكون مختلف بزاف.",
-    en: "Renders made by our team on iPhone — your own design can look completely different.",
+    fr: "Une photo, un logo, un nom ou juste une idée ? L'équipe SKINUP la transforme en design pour votre téléphone.",
+    ar: "صورة، Logo، اسم ولا غير فكرة فبالك؟ فريق SKINUP يقدر يحولها لـ Design خاص بتليفونك.",
+    en: "A photo, a logo, a name or just an idea? The SKINUP team turns it into a design for your phone.",
   } as L,
 
   formTitle: {
@@ -241,13 +250,85 @@ export const CD = {
 const bl = (i: number) => BACK_LENS_SKINS[i]?.image ?? BACK_LENS_SKINS[0]?.image ?? "";
 const ln = (i: number) => CAMERA_LENS_SKINS[i]?.image ?? CAMERA_LENS_SKINS[0]?.image ?? "";
 
-export const CD_EXAMPLES: { image: string; label: L }[] = [
-  { image: bl(0), label: { fr: "Portrait personnel", ar: "صورة شخصية", en: "Personal portrait" } },
-  { image: bl(9), label: { fr: "Logo d'entreprise", ar: "Logo ديال شركة", en: "Business logo" } },
-  { image: bl(19), label: { fr: "Initiales & nom", ar: "Initials و الاسم", en: "Initials & name" } },
-  { image: bl(4), label: { fr: "Design couple", ar: "Design ديال الكوبل", en: "Couple design" } },
-  { image: bl(22), label: { fr: "Inspiration auto", ar: "Design ديال الطوموبيلات", en: "Car inspired" } },
-  { image: bl(14), label: { fr: "Branding minimal", ar: "Branding بسيط", en: "Minimal branding" } },
-  { image: ln(0), label: { fr: "Sticker caméra sur mesure", ar: "Sticker كاميرا مخصص", en: "Custom camera sticker" } },
-  { image: bl(27), label: { fr: "Arrière + caméra assortis", ar: "الظهر + الكاميرا متناسقين", en: "Matching rear + camera" } },
+export const CD_EXAMPLES: { image: string; label: L; desc: L; subject: string }[] = [
+  {
+    image: ex1.url,
+    subject: "photo",
+    label: { fr: "Votre photo personnelle", ar: "صورتك الشخصية", en: "Your personal photo" },
+    desc: {
+      fr: "Envoyez-nous votre photo et on la transforme en design unique.",
+      ar: "صيفط لينا صورتك ونحوّلوها لـ Design خاص بيك.",
+      en: "Send us your photo and we turn it into a design of your own.",
+    },
+  },
+  {
+    image: ex2.url,
+    subject: "photo",
+    label: { fr: "Votre photo avec un style signé", ar: "صورتك بستايل مميز", en: "Your photo, styled" },
+    desc: {
+      fr: "On travaille votre photo dans un style net, assorti au skin caméra.",
+      ar: "نقدروا نخدمو صورتك بستايل نقي ومتناسق مع Skin الكاميرا.",
+      en: "We refine your photo in a clean style matched to the camera skin.",
+    },
+  },
+  {
+    image: ex3.url,
+    subject: "couple",
+    label: { fr: "Design de couple", ar: "Design ديال Couple", en: "Couple design" },
+    desc: {
+      fr: "Votre photo à deux devient un skin personnalisé et unique.",
+      ar: "صورة ديالكم نقدروا نحوّلوها لـ Skin مخصص ومميز.",
+      en: "Your photo together becomes a unique custom skin.",
+    },
+  },
+  {
+    image: ex4.url,
+    subject: "couple",
+    label: { fr: "Design de famille", ar: "Design ديال العائلة", en: "Family design" },
+    desc: {
+      fr: "Gardez votre plus belle photo de famille toujours avec vous.",
+      ar: "خلي أحسن صورة عائلية ديالك ديما معاك.",
+      en: "Keep your favourite family photo with you at all times.",
+    },
+  },
+  {
+    image: ex5.url,
+    subject: "logo",
+    label: { fr: "Le logo de votre projet", ar: "Logo ديال مشروعك", en: "Your project logo" },
+    desc: {
+      fr: "Café, boutique ou projet ? On crée un skin à l'identité de votre marque.",
+      ar: "عندك Café، محل ولا مشروع؟ نصاوبو Skin بالهوية ديال البراند ديالك.",
+      en: "Café, shop or side project? We build a skin around your brand identity.",
+    },
+  },
+  {
+    image: ex6.url,
+    subject: "business",
+    label: { fr: "Branding de votre business", ar: "Branding ديال Business", en: "Business branding" },
+    desc: {
+      fr: "Logo, couleurs et identité de votre projet dans un design cohérent.",
+      ar: "Logo، الألوان والهوية ديال المشروع ديالك فـ Design واحد متناسق.",
+      en: "Logo, colours and identity in one coherent design.",
+    },
+  },
+  {
+    image: ex7.url,
+    subject: "name",
+    label: { fr: "Votre nom ou vos initiales", ar: "الاسم ولا Initials", en: "Your name or initials" },
+    desc: {
+      fr: "Votre nom ou vos initiales dans un style qui vous ressemble.",
+      ar: "الاسم ديالك ولا الحروف الأولى ديالك بستايل خاص بيك.",
+      en: "Your name or initials in a style that is yours.",
+    },
+  },
+  {
+    image: ex8.url,
+    subject: "business",
+    label: { fr: "Le logo de votre société", ar: "Logo ديال الشركة", en: "Your company logo" },
+    desc: {
+      fr: "On crée aussi des designs professionnels pour les sociétés et les équipes.",
+      ar: "نقدروا نصاوبو Design احترافي حتى للشركات والفرق.",
+      en: "We also craft professional designs for companies and teams.",
+    },
+  },
 ];
