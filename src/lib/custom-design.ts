@@ -332,3 +332,17 @@ export const CD_EXAMPLES: { image: string; label: L; desc: L; subject: string }[
     },
   },
 ];
+
+export const EX_MODAL = {
+  note: {
+    fr: "Ceci n'est qu'un exemple — votre design sera créé à partir de la photo ou de l'idée que vous nous envoyez.",
+    ar: "هاد غير مثال — Design ديالك غادي يتصاوب حسب الصورة ولا الفكرة اللي غادي تصيفط لينا.",
+    en: "This is only an example — your design will be created from the photo or idea you send us.",
+  } as L,
+  cta: {
+    fr: "Je veux un design comme celui-ci",
+    ar: "بغيت Design بحال هادا",
+    en: "I want a design like this",
+  } as L,
+  close: { fr: "Fermer", ar: "سد", en: "Close" } as L,
+};
