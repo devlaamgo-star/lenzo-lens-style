@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-phones.png.asset.json";
+import heroImage from "@/assets/hero-three-iphones.png.asset.json";
 
 import { useI18n } from "@/lib/i18n";
 import { DESIGNS, FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
@@ -97,10 +97,11 @@ function Hero() {
             <img
               src={heroImage.url}
               alt="Stickers décoratifs SKINUP appliqués sur trois iPhone, designs colorés sur le module caméra"
-              width={1408}
-              height={1408}
+              width={783}
+              height={813}
               className="h-full w-full object-contain object-center lg:object-cover"
             />
+
           </div>
           <div className="absolute -bottom-4 start-4 rounded-2xl border border-border bg-card px-4 py-3 shadow-lift sm:start-6">
             <p className="text-lg font-extrabold leading-none">{PACK_PRICE} MAD</p>
