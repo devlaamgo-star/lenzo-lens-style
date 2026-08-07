@@ -60,6 +60,16 @@ const SEEDS: {
   { slug: "canard-cobalt", fr: "Canard Cobalt", ar: "بطة كوبالت", en: "Cobalt Duck", image: bl7.url, isNew: true, popularity: 84 },
   { slug: "canard-nocturne", fr: "Canard Nocturne", ar: "بطة ليلية", en: "Night Duck", image: bl8.url, isNew: true, popularity: 82 },
   { slug: "envol-urbain", fr: "Envol Urbain", ar: "إقلاع حضري", en: "Urban Takeoff", image: bl9.url, isNew: true, popularity: 80 },
+  { slug: "success-bear", fr: "Success Bear", ar: "دب النجاح", en: "Success Bear", image: bl10.url, isNew: true, popularity: 99 },
+  { slug: "millionaire-mindset", fr: "Millionaire Mindset", ar: "عقلية المليونير", en: "Millionaire Mindset", image: bl11.url, isNew: true, popularity: 98 },
+  { slug: "crypto-bull", fr: "Crypto Bull", ar: "ثور الكريبتو", en: "Crypto Bull", image: bl12.url, isNew: true, popularity: 97 },
+  { slug: "hustle-mindset", fr: "Hustle Mindset", ar: "عقلية الكفاح", en: "Hustle Mindset", image: bl13.url, isNew: true, popularity: 95 },
+  { slug: "wealth-mode", fr: "Wealth Mode", ar: "وضع الثراء", en: "Wealth Mode", image: bl14.url, isNew: true, popularity: 93 },
+  { slug: "designer-mindset", fr: "Designer Mindset", ar: "عقلية المصمم", en: "Designer Mindset", image: bl15.url, isNew: true, popularity: 91 },
+  { slug: "crypto-shark", fr: "Crypto Shark", ar: "قرش الكريبتو", en: "Crypto Shark", image: bl16.url, isNew: true, popularity: 89 },
+  { slug: "discipline", fr: "Discipline", ar: "الانضباط", en: "Discipline", image: bl17.url, isNew: true, popularity: 87 },
+  { slug: "crypto-city", fr: "Crypto City", ar: "مدينة الكريبتو", en: "Crypto City", image: bl18.url, isNew: true, popularity: 85 },
+  { slug: "build-wealth-lion", fr: "Build Wealth Lion", ar: "أسد بناء الثروة", en: "Build Wealth Lion", image: bl19.url, isNew: true, popularity: 83 },
 ];
 
 export const BACK_LENS_SKINS: BackLensSkin[] = SEEDS.map((s) => ({
