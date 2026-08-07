@@ -7,16 +7,16 @@ import { SkinCard } from "@/components/SkinCard";
 export const Route = createFileRoute("/skins/")({
   head: () => ({
     meta: [
-      { title: "Skins intégrales iPhone 17 Pro Max — LENZO" },
+      { title: "Skins intégrales iPhone 17 Pro Max — SKINUP" },
       {
         name: "description",
         content:
-          "Découvrez les skins intégrales LENZO pour iPhone 17 Pro Max : découpe précise, rendu fin et élégant. Livraison gratuite au Maroc et paiement à la livraison.",
+          "Découvrez les skins intégrales SKINUP pour iPhone 17 Pro Max : découpe précise, rendu fin et élégant. Livraison gratuite au Maroc et paiement à la livraison.",
       },
-      { property: "og:title", content: "Skins intégrales iPhone 17 Pro Max — LENZO" },
+      { property: "og:title", content: "Skins intégrales iPhone 17 Pro Max — SKINUP" },
       {
         property: "og:description",
-        content: "Transformez complètement le style de votre iPhone avec les skins intégrales LENZO.",
+        content: "Transformez complètement le style de votre iPhone avec les skins intégrales SKINUP.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

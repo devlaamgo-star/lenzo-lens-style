@@ -16,11 +16,11 @@ export const Route = createFileRoute("/anime/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Produit introuvable — LENZO" }, { name: "robots", content: "noindex" }],
+        meta: [{ title: "Produit introuvable — SKINUP" }, { name: "robots", content: "noindex" }],
       };
     }
     const { skin } = loaderData;
-    const title = `${skin.name.fr} — Skin Anime | LENZO`;
+    const title = `${skin.name.fr} — Skin Anime | SKINUP`;
     return {
       meta: [
         { title },

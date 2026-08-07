@@ -15,13 +15,13 @@ import {
 export const Route = createFileRoute("/pack")({
   head: () => ({
     meta: [
-      { title: "Composer mon pack — 3 designs LENZO pour 99 MAD" },
+      { title: "Composer mon pack — 3 designs SKINUP pour 99 MAD" },
       {
         name: "description",
         content:
           "Choisissez votre modèle d’iPhone puis 3 designs de stickers caméra. 99 MAD, livraison gratuite au Maroc, paiement à la livraison.",
       },
-      { property: "og:title", content: "Composer mon pack — LENZO" },
+      { property: "og:title", content: "Composer mon pack — SKINUP" },
       {
         property: "og:description",
         content: "Modèle d’iPhone + 3 designs = 99 MAD, livré gratuitement au Maroc.",

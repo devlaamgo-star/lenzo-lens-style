@@ -6,16 +6,16 @@ import { whatsappLink } from "@/lib/catalog";
 export const Route = createFileRoute("/retours")({
   head: () => ({
     meta: [
-      { title: "Retours et remboursements — LENZO" },
+      { title: "Retours et remboursements — SKINUP" },
       {
         name: "description",
         content:
-          "Produit incorrect, endommagé ou défectueux ? Découvrez la politique de retours et remboursements LENZO pour les commandes au Maroc.",
+          "Produit incorrect, endommagé ou défectueux ? Découvrez la politique de retours et remboursements SKINUP pour les commandes au Maroc.",
       },
-      { property: "og:title", content: "Retours et remboursements — LENZO" },
+      { property: "og:title", content: "Retours et remboursements — SKINUP" },
       {
         property: "og:description",
-        content: "Échange ou remboursement après vérification de votre commande LENZO.",
+        content: "Échange ou remboursement après vérification de votre commande SKINUP.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

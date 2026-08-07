@@ -14,13 +14,13 @@ import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 export const Route = createFileRoute("/commande")({
   head: () => ({
     meta: [
-      { title: "Finaliser ma commande — LENZO" },
+      { title: "Finaliser ma commande — SKINUP" },
       {
         name: "description",
         content:
-          "Finalisez votre commande LENZO : paiement à la livraison, livraison gratuite partout au Maroc, confirmation par téléphone.",
+          "Finalisez votre commande SKINUP : paiement à la livraison, livraison gratuite partout au Maroc, confirmation par téléphone.",
       },
-      { property: "og:title", content: "Finaliser ma commande — LENZO" },
+      { property: "og:title", content: "Finaliser ma commande — SKINUP" },
       {
         property: "og:description",
         content: "Paiement à la livraison et livraison gratuite partout au Maroc.",
@@ -93,7 +93,7 @@ function OrderPage() {
         },
       });
       window.sessionStorage.setItem(
-        "lenzo-last-order",
+        "skinup-last-order",
         JSON.stringify({
           orderNumber: res.orderNumber,
           total: res.total,

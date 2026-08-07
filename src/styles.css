@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * LENZO design system.
+ * SKINUP design system.
  * Warm white surfaces, near-black type, refined orange accent.
  * All colors are oklch tokens. Never hardcode colors in components.
  */

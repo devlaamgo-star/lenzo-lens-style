@@ -7,13 +7,13 @@ import { BackLensSkinCard } from "@/components/BackLensSkinCard";
 export const Route = createFileRoute("/dos-camera/")({
   head: () => ({
     meta: [
-      { title: "Skins arrière & caméra iPhone 17 Pro Max — LENZO" },
+      { title: "Skins arrière & caméra iPhone 17 Pro Max — SKINUP" },
       {
         name: "description",
         content:
-          "Skins LENZO coordonnés pour le dos et le module caméra de l’iPhone 17 Pro Max. Découpe précise, livraison gratuite au Maroc, paiement à la livraison.",
+          "Skins SKINUP coordonnés pour le dos et le module caméra de l’iPhone 17 Pro Max. Découpe précise, livraison gratuite au Maroc, paiement à la livraison.",
       },
-      { property: "og:title", content: "Skins arrière & caméra iPhone 17 Pro Max — LENZO" },
+      { property: "og:title", content: "Skins arrière & caméra iPhone 17 Pro Max — SKINUP" },
       {
         property: "og:description",
         content: "Un design coordonné pour le dos et le module caméra de votre iPhone.",

@@ -23,7 +23,7 @@ type PackValue = {
 };
 
 const PackContext = createContext<PackValue | null>(null);
-const KEY = "lenzo-pack";
+const KEY = "skinup-pack";
 
 export function PackProvider({ children }: { children: ReactNode }) {
   const [model, setModelState] = useState("iPhone 17 Pro Max");

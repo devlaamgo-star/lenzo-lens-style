@@ -26,13 +26,13 @@ export const Route = createFileRoute("/collection")({
   validateSearch: (search) => searchSchema.parse(search),
   head: () => ({
     meta: [
-      { title: "Tous les designs — Collection LENZO" },
+      { title: "Tous les designs — Collection SKINUP" },
       {
         name: "description",
         content:
-          "Découvrez tous les designs de stickers caméra LENZO pour iPhone. Filtrez par modèle, collection et style, puis composez votre pack de 3 pour 99 MAD.",
+          "Découvrez tous les designs de stickers caméra SKINUP pour iPhone. Filtrez par modèle, collection et style, puis composez votre pack de 3 pour 99 MAD.",
       },
-      { property: "og:title", content: "Tous les designs — Collection LENZO" },
+      { property: "og:title", content: "Tous les designs — Collection SKINUP" },
       {
         property: "og:description",
         content: "Filtrez par modèle, collection et style, puis composez votre pack de 3 pour 99 MAD.",

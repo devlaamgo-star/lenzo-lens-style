@@ -7,13 +7,13 @@ import { AnimeSkinCard } from "@/components/AnimeSkinCard";
 export const Route = createFileRoute("/anime/")({
   head: () => ({
     meta: [
-      { title: "Skins Anime — designs manga LENZO" },
+      { title: "Skins Anime — designs manga SKINUP" },
       {
         name: "description",
         content:
-          "Skins décoratifs LENZO inspirés de l’univers manga. Découpes précises, livraison gratuite au Maroc, paiement à la livraison.",
+          "Skins décoratifs SKINUP inspirés de l’univers manga. Découpes précises, livraison gratuite au Maroc, paiement à la livraison.",
       },
-      { property: "og:title", content: "Skins Anime — designs manga LENZO" },
+      { property: "og:title", content: "Skins Anime — designs manga SKINUP" },
       {
         property: "og:description",
         content: "Des designs inspirés de l’univers manga pour personnaliser votre iPhone.",

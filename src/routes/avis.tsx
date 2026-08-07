@@ -6,16 +6,16 @@ import { StickyPackBar } from "@/components/StickyPackBar";
 export const Route = createFileRoute("/avis")({
   head: () => ({
     meta: [
-      { title: "Avis clients — LENZO Maroc" },
+      { title: "Avis clients — SKINUP Maroc" },
       {
         name: "description",
         content:
-          "Ce que nos clients marocains pensent des stickers caméra LENZO : qualité, pose facile et livraison rapide partout au Maroc.",
+          "Ce que nos clients marocains pensent des stickers caméra SKINUP : qualité, pose facile et livraison rapide partout au Maroc.",
       },
-      { property: "og:title", content: "Avis clients — LENZO Maroc" },
+      { property: "og:title", content: "Avis clients — SKINUP Maroc" },
       {
         property: "og:description",
-        content: "Les retours de nos clients au Maroc sur les stickers caméra LENZO.",
+        content: "Les retours de nos clients au Maroc sur les stickers caméra SKINUP.",
       },
     ],
   }),
