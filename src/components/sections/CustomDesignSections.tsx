@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import {
   FILE_QUALITY,
   GALLERY,
-  IDEA_TO_SKIN,
   RIGHTS_NOTE,
   TRUST_POINTS,
   YOU_SEND,
