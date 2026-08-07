@@ -89,7 +89,7 @@ function CustomDesignPage() {
     }
     const reader = new FileReader();
     reader.onload = () => {
-      setErrors((x) => ({ ...x, file: undefined }));
+      setErrors(({ file: _omit, ...rest }) => rest);
       setFile({ name: f.name, type: f.type, dataUrl: String(reader.result) });
     };
     reader.readAsDataURL(f);
