@@ -11,7 +11,7 @@ export function SiteFooter() {
     <footer className="mt-8 border-t border-border bg-surface">
       <div className="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
-          <img src={logo} alt="SKINUP" width={1152} height={576} loading="lazy" className="h-6 w-auto self-start" />
+          <img src={logo} alt="SKINUP" width={1152} height={576} loading="lazy" className="mb-3 w-[92px] self-start sm:w-[112px] lg:w-[132px]" />
           <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">{t("footer.desc")}</p>
         </div>
 
