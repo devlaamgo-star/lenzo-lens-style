@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
-import { PACK_PRICE, designById, MOROCCAN_CITIES } from "@/lib/catalog";
+import { designById, MOROCCAN_CITIES } from "@/lib/catalog";
 import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
@@ -47,8 +47,9 @@ function OrderPage() {
   const [errors, setErrors] = useState<Errors>({});
   const [pending, setPending] = useState(false);
 
-  const packReady = pack.designs.length === 3;
-  const total = cart.subtotal + (packReady ? PACK_PRICE : 0);
+  const b = pack.breakdown;
+  const packReady = b.count > 0;
+  const total = cart.subtotal + b.total;
   const empty = cart.items.length === 0 && !packReady;
 
   const set =
@@ -293,12 +294,29 @@ function OrderPage() {
 
           {packReady && (
             <div>
-              <div className="flex items-center justify-between">
-                <p className="text-sm font-medium">{t("pack.packLabel")}</p>
-                <span className="text-sm font-semibold">{PACK_PRICE} MAD</span>
-              </div>
+              {b.promoApplies ? (
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-medium">{t("pack.promoLine")}</p>
+                  <span className="text-sm font-semibold">{b.promoTotal} MAD</span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-between">
+                  <p className="text-sm font-medium">
+                    {t("pack.orderItems")} × {b.count}
+                  </p>
+                  <span className="text-sm font-semibold">{b.promoTotal} MAD</span>
+                </div>
+              )}
+              {b.extraCount > 0 && (
+                <div className="mt-1 flex items-center justify-between">
+                  <p className="text-sm font-medium">
+                    {t("pack.extraLine")} × {b.extraCount}
+                  </p>
+                  <span className="text-sm font-semibold">{b.extraTotal} MAD</span>
+                </div>
+              )}
               <p className="mt-1 text-xs text-muted-foreground">
-                {pack.model || "—"} · {t("f.qty")} 1
+                {pack.model || "—"} · {t("f.qty")} {b.count}
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {pack.designs.map((id, i) => {
