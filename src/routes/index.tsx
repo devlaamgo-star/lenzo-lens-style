@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-phones.png.asset.json";
+import heroImage from "@/assets/hero-three-iphones.png.asset.json";
 
 import { useI18n } from "@/lib/i18n";
 import { DESIGNS, FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
