@@ -5,6 +5,7 @@ import { whatsappLink } from "@/lib/catalog";
 import { CD, CD_EXAMPLES } from "@/lib/custom-design";
 import { HOME_CTA, WIZ } from "@/lib/custom-design-wizard";
 import { CustomDesignWizard } from "@/components/CustomDesignWizard";
+import { CustomExamplesSection } from "@/components/sections/CustomExamplesSection";
 import {
   CustomGallerySection,
   FileQualitySection,
@@ -156,32 +157,7 @@ function CustomDesignPage() {
       <CustomGallerySection />
 
       {/* EXAMPLES */}
-      <section id="exemples" className="section-y scroll-mt-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-bold sm:text-3xl lg:text-[2.1rem]">{CD.examplesTitle[lang]}</h2>
-            <p className="mt-3 text-sm text-muted-foreground sm:text-base">{CD.examplesSub[lang]}</p>
-          </div>
-          <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {CD_EXAMPLES.map((ex) => (
-              <figure
-                key={ex.label.en}
-                className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-lift"
-              >
-                <img
-                  src={ex.image}
-                  alt={ex.label[lang]}
-                  loading="lazy"
-                  className="aspect-square w-full bg-surface object-contain"
-                />
-                <figcaption className="border-t border-border px-3 py-3 text-center text-xs font-medium sm:text-sm">
-                  {ex.label[lang]}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CustomExamplesSection />
 
       {/* FILE QUALITY + TRUST POINTS */}
       <FileQualitySection />
