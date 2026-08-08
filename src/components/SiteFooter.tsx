@@ -2,7 +2,8 @@ import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle, Music2 } from "lucide-react";
 import logo from "@/assets/skinup-logo.png";
 import { useI18n } from "@/lib/i18n";
-import { whatsappLink } from "@/lib/catalog";
+import { whatsappLink, WHATSAPP_DISPLAY_LOCAL } from "@/lib/catalog";
+import { toast } from "sonner";
 
 export function SiteFooter() {
   const { t } = useI18n();
