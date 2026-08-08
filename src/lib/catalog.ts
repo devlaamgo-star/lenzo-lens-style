@@ -59,7 +59,11 @@ export const PACK_PRICE = 99;
 export const PACK_OLD_PRICE = 147;
 export const PACK_SIZE = 3;
 
-export const WHATSAPP_NUMBER = "212600000000";
+export const WHATSAPP_NUMBER = "212666256545";
+/** Local display format for Moroccan customers */
+export const WHATSAPP_DISPLAY_LOCAL = "06 66 25 65 45";
+/** International display format */
+export const WHATSAPP_DISPLAY_INTL = "+212 666 256 545";
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
