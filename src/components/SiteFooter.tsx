@@ -97,7 +97,8 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 transition-colors hover:text-primary"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp
+                <MessageCircle className="h-4 w-4" />
+                <span dir="ltr">{WHATSAPP_DISPLAY_LOCAL}</span>
               </a>
             </li>
             <li>
@@ -106,24 +107,28 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+              <button
+                type="button"
+                aria-disabled="true"
+                title={t("social.ig.soon")}
+                onClick={() => toast(t("social.ig.soon"))}
+                className="inline-flex cursor-not-allowed items-center gap-2 text-muted-foreground opacity-70"
               >
                 <Instagram className="h-4 w-4" /> Instagram
-              </a>
+                <span className="rounded-full border border-border px-2 py-0.5 text-[10px]">{t("social.soon")}</span>
+              </button>
             </li>
             <li>
-              <a
-                href="https://tiktok.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+              <button
+                type="button"
+                aria-disabled="true"
+                title={t("social.tt.soon")}
+                onClick={() => toast(t("social.tt.soon"))}
+                className="inline-flex cursor-not-allowed items-center gap-2 text-muted-foreground opacity-70"
               >
                 <Music2 className="h-4 w-4" /> TikTok
-              </a>
+                <span className="rounded-full border border-border px-2 py-0.5 text-[10px]">{t("social.soon")}</span>
+              </button>
             </li>
           </ul>
         </div>
