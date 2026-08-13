@@ -31,7 +31,7 @@ export type AdminRecord = {
   notes: string;
   source: string;
   files: string[];
-  details: Record<string, unknown>;
+  details: Record<string, string | number | boolean | null>;
 };
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
@@ -115,9 +115,9 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         source: o.source || "/commande",
         files: (o.file_paths ?? []) as string[],
         details: {
-          items,
-          designs: designsList,
-          pack_breakdown: o.pack_breakdown,
+          items: JSON.stringify(items),
+          designs: JSON.stringify(designsList),
+          pack_breakdown: JSON.stringify(o.pack_breakdown ?? null),
           payment_method: o.payment_method,
         },
       });
