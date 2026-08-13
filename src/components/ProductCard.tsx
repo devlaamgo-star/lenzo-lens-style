@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Check, Eye, Plus } from "lucide-react";
+import { Check, Eye } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
@@ -28,7 +28,13 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
   const count = pack.countOf(design.id);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+      <Link
+        to="/objectifs/$slug"
+        params={{ slug: design.slug }}
+        aria-label={design.name[lang]}
+        className="absolute inset-0 z-[1]"
+      />
       <div className="relative aspect-square overflow-hidden bg-surface">
         <img
           src={design.image}
@@ -38,7 +44,7 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04]"
         />
-        <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3">
+        <div className="absolute inset-x-0 top-0 z-[2] flex items-start justify-between gap-2 p-3">
           <div className="flex flex-wrap gap-1.5">
             {design.isNew && (
               <span className="rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold tracking-wide text-primary-foreground">
@@ -67,18 +73,17 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
         <p className="text-xs text-muted-foreground">{t("card.compatible")}</p>
         <p className="mt-1 text-xs font-medium text-accent-foreground">{t("card.included")}</p>
 
-        <button
-          type="button"
-          
-          onClick={() => pack.add(design.id)}
+        <Link
+          to="/objectifs/$slug"
+          params={{ slug: design.slug }}
           className={cn(
-            "mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold transition-colors",
+            "relative z-[2] mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold transition-colors",
             "bg-ink text-ink-foreground hover:bg-primary",
           )}
         >
-          {count > 0 ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-          {count > 0 ? t("card.added") : t("card.add")}
-        </button>
+          {count > 0 && <Check className="h-4 w-4" />}
+          {t("skins.viewProduct")}
+        </Link>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
