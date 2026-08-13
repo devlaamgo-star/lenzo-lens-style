@@ -379,7 +379,12 @@ function AdminOrdersPage() {
           {selected && (
             <>
               <DialogHeader>
-                <DialogTitle>Commande {selected.reference}</DialogTitle>
+                <DialogTitle className="flex flex-wrap items-center gap-3">
+                  <span>Commande {selected.reference}</span>
+                  <Badge className={STATUS_CLASS[selected.status] ?? ""} variant="secondary">
+                    {STATUS_LABEL[selected.status] ?? selected.status}
+                  </Badge>
+                </DialogTitle>
               </DialogHeader>
 
               <div className="flex flex-wrap items-center gap-3">
@@ -414,62 +419,173 @@ function AdminOrdersPage() {
                 </a>
               </div>
 
-              <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
-                {[
-                  ["Date", fmtDate(selected.createdAt)],
-                  ["Type", selected.kind === "order" ? "Commande boutique" : "Design personnalisé"],
-                  ["Client", selected.fullName],
-                  ["Téléphone", selected.phone],
-                  ["Ville", selected.city],
-                  ["Adresse", selected.address || "—"],
-                  ["Produit", selected.product],
-                  ["Modèle iPhone", selected.model || "—"],
-                  ["Quantité", String(selected.quantity)],
-                  ["Total", selected.total != null ? `${selected.total} MAD` : "—"],
-                  ["Langue", selected.locale],
-                  ["Source", selected.source],
-                  ["Notes", selected.notes || "—"],
-                  ...Object.entries(selected.details).map(([k, v]) => [k, String(v ?? "—")]),
-                ].map(([k, v]) => (
-                  <div key={k as string} className="border-b py-1">
-                    <dt className="text-xs uppercase text-muted-foreground">{k}</dt>
-                    <dd className="break-words">{v}</dd>
-                  </div>
-                ))}
-              </dl>
+              <section className="mt-6">
+                <h3 className="text-sm font-semibold">Informations client</h3>
+                <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+                  {[
+                    ["Nom complet", selected.fullName],
+                    ["Téléphone", selected.phone],
+                    ["Ville", selected.city],
+                    ["Adresse", selected.address || "—"],
+                    ["Date", fmtDate(selected.createdAt)],
+                    ["Langue", selected.locale.toUpperCase()],
+                  ].map(([k, v]) => (
+                    <div key={k} className="border-b py-1">
+                      <dt className="text-xs uppercase text-muted-foreground">{k}</dt>
+                      <dd className="break-words">{v}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </section>
 
-              <div className="mt-6">
+              {selected.kind === "order" && (
+                <section className="mt-6">
+                  <h3 className="text-sm font-semibold">
+                    Produits commandés ({selected.lines.length})
+                  </h3>
+                  <ul className="mt-3 space-y-3">
+                    {selected.lines.map((l) => (
+                      <li
+                        key={l.key}
+                        className="flex items-center gap-4 rounded-xl border bg-card p-3"
+                      >
+                        <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg border bg-muted">
+                          {l.image ? (
+                            <img
+                              src={l.image}
+                              alt={l.name}
+                              className="h-full w-full object-contain"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span className="flex h-full w-full items-center justify-center text-[10px] text-muted-foreground">
+                              Sans image
+                            </span>
+                          )}
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate font-medium">{l.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {l.categoryLabel}
+                            {l.model ? ` · ${l.model}` : ""}
+                          </p>
+                          <p className="mt-1 text-sm">
+                            Quantité : <span className="font-medium">{l.qty}</span>
+                            {l.inPack && (
+                              <Badge variant="secondary" className="ml-2 align-middle">
+                                Pack 3 pour 99 MAD
+                              </Badge>
+                            )}
+                          </p>
+                        </div>
+                        <div className="shrink-0 text-right text-sm">
+                          {l.unitPrice != null ? (
+                            <>
+                              <p>{l.unitPrice} MAD / u.</p>
+                              <p className="font-semibold">{l.lineTotal} MAD</p>
+                            </>
+                          ) : (
+                            <p className="text-muted-foreground">Inclus dans le pack</p>
+                          )}
+                        </div>
+                      </li>
+                    ))}
+                    {selected.lines.length === 0 && (
+                      <li className="text-sm text-muted-foreground">Aucun produit enregistré.</li>
+                    )}
+                  </ul>
+                </section>
+              )}
+
+              {selected.kind === "design" && (
+                <section className="mt-6">
+                  <h3 className="text-sm font-semibold">Détails du design</h3>
+                  <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+                    {Object.entries(selected.details)
+                      .filter(([, v]) => v !== null && String(v).trim() !== "")
+                      .map(([k, v]) => (
+                        <div key={k} className="border-b py-1">
+                          <dt className="text-xs uppercase text-muted-foreground">{k}</dt>
+                          <dd className="break-words">{String(v)}</dd>
+                        </div>
+                      ))}
+                    <div className="border-b py-1">
+                      <dt className="text-xs uppercase text-muted-foreground">Quantité</dt>
+                      <dd>{selected.quantity}</dd>
+                    </div>
+                  </dl>
+                </section>
+              )}
+
+              <section className="mt-6">
                 <h3 className="text-sm font-semibold">
-                  Fichiers envoyés ({selected.files.length})
+                  Fichiers envoyés par le client ({selected.files.length})
                 </h3>
                 {selected.files.length === 0 && (
                   <p className="mt-2 text-sm text-muted-foreground">Aucun fichier.</p>
                 )}
-                <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
                   {(filesQuery.data ?? []).map((f) => (
                     <a
                       key={f.path}
                       href={f.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="block overflow-hidden rounded-lg border"
+                      className="block overflow-hidden rounded-lg border bg-muted"
+                      title="Ouvrir en taille réelle"
                     >
                       {/\.(pdf)$/i.test(f.path) ? (
-                        <span className="flex h-32 items-center justify-center text-xs">
+                        <span className="flex h-64 items-center justify-center text-sm">
                           PDF — ouvrir
                         </span>
                       ) : (
                         <img
                           src={f.url}
                           alt={`Fichier client ${f.path}`}
-                          className="h-32 w-full object-cover"
+                          className="h-64 w-full object-contain"
                           loading="lazy"
                         />
                       )}
                     </a>
                   ))}
                 </div>
-              </div>
+              </section>
+
+              {selected.summary && (
+                <section className="mt-6 rounded-xl border bg-muted/30 p-4">
+                  <h3 className="text-sm font-semibold">Récapitulatif</h3>
+                  <dl className="mt-3 space-y-1 text-sm">
+                    <div className="flex justify-between">
+                      <dt>Total articles</dt>
+                      <dd>{selected.summary.totalItems}</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt>Sous-total</dt>
+                      <dd>{selected.summary.subtotal} MAD</dd>
+                    </div>
+                    {selected.summary.discount != null && (
+                      <div className="flex justify-between text-emerald-600">
+                        <dt>{selected.summary.discountLabel || "Remise"}</dt>
+                        <dd>-{selected.summary.discount} MAD</dd>
+                      </div>
+                    )}
+                    <div className="flex justify-between border-t pt-2 text-base font-semibold">
+                      <dt>Total à encaisser</dt>
+                      <dd>{selected.summary.total} MAD</dd>
+                    </div>
+                    <div className="flex justify-between pt-1 text-muted-foreground">
+                      <dt>Paiement</dt>
+                      <dd>{selected.summary.paymentMethod}</dd>
+                    </div>
+                  </dl>
+                  {selected.notes && (
+                    <p className="mt-3 text-sm">
+                      <span className="text-xs uppercase text-muted-foreground">Notes : </span>
+                      {selected.notes}
+                    </p>
+                  )}
+                </section>
+              )}
             </>
           )}
         </DialogContent>
@@ -477,3 +593,4 @@ function AdminOrdersPage() {
     </main>
   );
 }
+
