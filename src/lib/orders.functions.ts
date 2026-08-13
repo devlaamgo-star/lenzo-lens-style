@@ -26,6 +26,7 @@ export const orderSchema = z.object({
   items: z.array(itemSchema).max(30).default([]),
   notes: z.string().trim().max(500).optional().default(""),
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
+  source: z.string().trim().max(120).default("/commande"),
 });
 
 export type OrderInput = z.infer<typeof orderSchema>;
@@ -85,7 +86,8 @@ export const createOrder = createServerFn({ method: "POST" })
       },
       total_mad: total,
       payment_method: "cod",
-      status: "pending_confirmation",
+      status: "new",
+      source: data.source,
       locale: data.locale,
     });
 
