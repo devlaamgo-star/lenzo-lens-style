@@ -88,6 +88,8 @@ function OrderPage() {
             category: i.category,
             model: i.model,
             qty: i.qty,
+            image: i.image,
+            slug: i.slug,
           })),
           notes: values.notes,
           locale: lang,
