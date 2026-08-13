@@ -10,6 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AvisRouteImport } from './routes/avis'
 import { Route as CollectionRouteImport } from './routes/collection'
 import { Route as CommandeRouteImport } from './routes/commande'
@@ -30,10 +32,20 @@ import { Route as ObjectifsIndexRouteImport } from './routes/objectifs.index'
 import { Route as ObjectifsSlugRouteImport } from './routes/objectifs.$slug'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
 import { Route as SkinsSlugRouteImport } from './routes/skins.$slug'
+import { Route as AuthenticatedAdminOrdersRouteImport } from './routes/_authenticated/admin.orders'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AvisRoute = AvisRouteImport.update({
@@ -136,9 +148,16 @@ const SkinsSlugRoute = SkinsSlugRouteImport.update({
   path: '/skins/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminOrdersRoute =
+  AuthenticatedAdminOrdersRouteImport.update({
+    id: '/admin/orders',
+    path: '/admin/orders',
+    getParentRoute: () => AuthenticatedRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/avis': typeof AvisRoute
   '/collection': typeof CollectionRoute
   '/commande': typeof CommandeRoute
@@ -159,9 +178,11 @@ export interface FileRoutesByFullPath {
   '/iphone-air/': typeof IphoneAirIndexRoute
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
+  '/admin/orders': typeof AuthenticatedAdminOrdersRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/auth': typeof AuthRoute
   '/avis': typeof AvisRoute
   '/collection': typeof CollectionRoute
   '/commande': typeof CommandeRoute
@@ -182,10 +203,13 @@ export interface FileRoutesByTo {
   '/iphone-air': typeof IphoneAirIndexRoute
   '/objectifs': typeof ObjectifsIndexRoute
   '/skins': typeof SkinsIndexRoute
+  '/admin/orders': typeof AuthenticatedAdminOrdersRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/auth': typeof AuthRoute
   '/avis': typeof AvisRoute
   '/collection': typeof CollectionRoute
   '/commande': typeof CommandeRoute
@@ -206,11 +230,13 @@ export interface FileRoutesById {
   '/iphone-air/': typeof IphoneAirIndexRoute
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
+  '/_authenticated/admin/orders': typeof AuthenticatedAdminOrdersRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/auth'
     | '/avis'
     | '/collection'
     | '/commande'
@@ -231,9 +257,11 @@ export interface FileRouteTypes {
     | '/iphone-air/'
     | '/objectifs/'
     | '/skins/'
+    | '/admin/orders'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/auth'
     | '/avis'
     | '/collection'
     | '/commande'
@@ -254,9 +282,12 @@ export interface FileRouteTypes {
     | '/iphone-air'
     | '/objectifs'
     | '/skins'
+    | '/admin/orders'
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
+    | '/auth'
     | '/avis'
     | '/collection'
     | '/commande'
@@ -277,10 +308,13 @@ export interface FileRouteTypes {
     | '/iphone-air/'
     | '/objectifs/'
     | '/skins/'
+    | '/_authenticated/admin/orders'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  AuthRoute: typeof AuthRoute
   AvisRoute: typeof AvisRoute
   CollectionRoute: typeof CollectionRoute
   CommandeRoute: typeof CommandeRoute
@@ -310,6 +344,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/avis': {
@@ -452,11 +500,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SkinsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/orders': {
+      id: '/_authenticated/admin/orders'
+      path: '/admin/orders'
+      fullPath: '/admin/orders'
+      preLoaderRoute: typeof AuthenticatedAdminOrdersRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminOrdersRoute: typeof AuthenticatedAdminOrdersRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminOrdersRoute: AuthenticatedAdminOrdersRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  AuthRoute: AuthRoute,
   AvisRoute: AvisRoute,
   CollectionRoute: CollectionRoute,
   CommandeRoute: CommandeRoute,

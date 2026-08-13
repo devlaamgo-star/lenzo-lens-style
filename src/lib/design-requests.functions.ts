@@ -41,6 +41,7 @@ export const designRequestSchema = z.object({
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
   files: z.array(fileSchema).max(MAX_FILES).default([]),
   selections: z.record(z.string(), z.any()).default({}),
+  source: z.string().trim().max(120).default("/design-personnalise"),
 });
 
 export type DesignRequestInput = z.input<typeof designRequestSchema>;
@@ -94,6 +95,10 @@ export const createDesignRequest = createServerFn({ method: "POST" })
       file_path: paths[0] ?? null,
       file_paths: paths,
       locale: data.locale,
+      address: data.address,
+      quantity: data.quantity,
+      source: data.source,
+      status: "new",
     });
     if (error) throw new Error(error.message);
 
