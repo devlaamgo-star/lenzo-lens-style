@@ -17,77 +17,104 @@ export type Database = {
       design_requests: {
         Row: {
           address: string
+          admin_notes: string
+          archived: boolean
           city: string
           colors: string
           created_at: string
           description: string
+          expected_delivery_at: string | null
           file_path: string | null
           file_paths: string[]
           full_name: string
           id: string
           locale: string
           notes: string
+          payment_status: string
           phone: string
           phone_brand: string
           phone_color: string
           phone_model: string
+          priority: string
           quantity: number
           request_number: string
           request_type: string
+          shipped_at: string | null
+          shipping_carrier: string
           source: string
           status: string
+          status_history: Json
           style: string
           subject: string
+          tracking_number: string
           updated_at: string
         }
         Insert: {
           address?: string
+          admin_notes?: string
+          archived?: boolean
           city: string
           colors?: string
           created_at?: string
           description?: string
+          expected_delivery_at?: string | null
           file_path?: string | null
           file_paths?: string[]
           full_name: string
           id?: string
           locale?: string
           notes?: string
+          payment_status?: string
           phone: string
           phone_brand?: string
           phone_color?: string
           phone_model?: string
+          priority?: string
           quantity?: number
           request_number: string
           request_type: string
+          shipped_at?: string | null
+          shipping_carrier?: string
           source?: string
           status?: string
+          status_history?: Json
           style?: string
           subject?: string
+          tracking_number?: string
           updated_at?: string
         }
         Update: {
           address?: string
+          admin_notes?: string
+          archived?: boolean
           city?: string
           colors?: string
           created_at?: string
           description?: string
+          expected_delivery_at?: string | null
           file_path?: string | null
           file_paths?: string[]
           full_name?: string
           id?: string
           locale?: string
           notes?: string
+          payment_status?: string
           phone?: string
           phone_brand?: string
           phone_color?: string
           phone_model?: string
+          priority?: string
           quantity?: number
           request_number?: string
           request_type?: string
+          shipped_at?: string | null
+          shipping_carrier?: string
           source?: string
           status?: string
+          status_history?: Json
           style?: string
           subject?: string
+          tracking_number?: string
           updated_at?: string
         }
         Relationships: []
@@ -95,9 +122,12 @@ export type Database = {
       orders: {
         Row: {
           address: string
+          admin_notes: string
+          archived: boolean
           city: string
           created_at: string
           designs: Json
+          expected_delivery_at: string | null
           file_paths: string[]
           full_name: string
           id: string
@@ -108,18 +138,27 @@ export type Database = {
           order_number: string
           pack_breakdown: Json | null
           payment_method: string
+          payment_status: string
           phone: string
+          priority: string
           quantity: number
+          shipped_at: string | null
+          shipping_carrier: string
           source: string
           status: string
+          status_history: Json
           total_mad: number
+          tracking_number: string
           updated_at: string
         }
         Insert: {
           address: string
+          admin_notes?: string
+          archived?: boolean
           city: string
           created_at?: string
           designs?: Json
+          expected_delivery_at?: string | null
           file_paths?: string[]
           full_name: string
           id?: string
@@ -130,18 +169,27 @@ export type Database = {
           order_number: string
           pack_breakdown?: Json | null
           payment_method?: string
+          payment_status?: string
           phone: string
+          priority?: string
           quantity?: number
+          shipped_at?: string | null
+          shipping_carrier?: string
           source?: string
           status?: string
+          status_history?: Json
           total_mad?: number
+          tracking_number?: string
           updated_at?: string
         }
         Update: {
           address?: string
+          admin_notes?: string
+          archived?: boolean
           city?: string
           created_at?: string
           designs?: Json
+          expected_delivery_at?: string | null
           file_paths?: string[]
           full_name?: string
           id?: string
@@ -152,11 +200,17 @@ export type Database = {
           order_number?: string
           pack_breakdown?: Json | null
           payment_method?: string
+          payment_status?: string
           phone?: string
+          priority?: string
           quantity?: number
+          shipped_at?: string | null
+          shipping_carrier?: string
           source?: string
           status?: string
+          status_history?: Json
           total_mad?: number
+          tracking_number?: string
           updated_at?: string
         }
         Relationships: []
