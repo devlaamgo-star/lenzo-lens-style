@@ -23,7 +23,13 @@ export function AirSkinCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+      <Link
+        to="/iphone-air/$slug"
+        params={{ slug: skin.slug }}
+        aria-label={skin.name[lang]}
+        className="absolute inset-0 z-[1]"
+      />
       <div className="relative aspect-square overflow-hidden bg-surface">
         <img
           src={skin.image}
@@ -31,7 +37,7 @@ export function AirSkinCard({
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-x-0 top-0 flex items-start justify-between gap-2 p-3">
+        <div className="absolute inset-x-0 top-0 z-[2] flex items-start justify-between gap-2 p-3">
           {skin.isNew ? (
             <span className="rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold tracking-wide text-primary-foreground">
               {t("badge.new")}
@@ -43,7 +49,7 @@ export function AirSkinCard({
             type="button"
             onClick={() => setOpen(true)}
             aria-label={t("card.quickview")}
-            className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-card/90 text-foreground shadow-soft backdrop-blur transition-colors hover:bg-card"
+            className="relative z-[2] grid h-8 w-8 shrink-0 place-items-center rounded-full bg-card/90 text-foreground shadow-soft backdrop-blur transition-colors hover:bg-card"
           >
             <Eye className="h-4 w-4" />
           </button>
@@ -58,7 +64,7 @@ export function AirSkinCard({
         <Link
           to="/iphone-air/$slug"
           params={{ slug: skin.slug }}
-          className="mt-3 inline-flex h-11 w-full items-center justify-center rounded-full bg-ink text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
+          className="relative z-[2] mt-3 inline-flex h-11 w-full items-center justify-center rounded-full bg-ink text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
         >
           {t("skins.viewProduct")}
         </Link>
