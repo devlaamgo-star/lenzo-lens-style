@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { lookupProduct } from "@/lib/product-lookup";
 
 export const ORDER_STATUSES = [
   "new",
