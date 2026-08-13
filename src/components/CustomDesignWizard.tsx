@@ -133,8 +133,51 @@ export function CustomDesignWizard() {
           description: desc,
           colors: colorsText(),
           notes: "",
+          address: "",
+          quantity: 1,
           locale: lang,
           files,
+          selections: {
+            step1_subject: {
+              value: subject,
+              label_fr: WIZ.s1.options.find((o) => o.value === subject)?.label.fr ?? subject,
+              label_en: WIZ.s1.options.find((o) => o.value === subject)?.label.en ?? subject,
+            },
+            step2_style: {
+              value: style,
+              label_fr: WIZ.s2.options.find((o) => o.value === style)?.label.fr ?? style,
+              label_en: WIZ.s2.options.find((o) => o.value === style)?.label.en ?? style,
+            },
+            step3_colors: {
+              selected: colors.map(
+                (c) => WIZ.s3.options.find((o) => o.value === c)?.label.en ?? c,
+              ),
+              custom_color: customColor.trim(),
+              let_designer_choose: letDesigner,
+              summary: colorsText(),
+            },
+            step4_phone: {
+              brand: PHONE_BRANDS.find((b) => b.value === brand)?.label ?? brand,
+              model: resolvedModel,
+              other_model: otherModel,
+              color: PHONE_COLORS.find((c) => c.value === phoneColor)?.label.en ?? "",
+            },
+            step5_product_type: {
+              value: type,
+              label_fr: WIZ.s5.options.find((o) => o.value === type)?.label.fr ?? type,
+              label_en: WIZ.s5.options.find((o) => o.value === type)?.label.en ?? type,
+            },
+            step6_files: {
+              count: files.length,
+              names: files.map((f) => f.name),
+              types: files.map((f) => f.type),
+              description: desc,
+            },
+            step7_contact: { full_name: name, phone, city },
+            quantity: 1,
+            language: lang,
+            submitted_at: new Date().toISOString(),
+          },
         },
       });
       setDone(res.requestNumber);
