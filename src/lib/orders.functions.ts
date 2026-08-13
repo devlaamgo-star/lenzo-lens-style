@@ -94,5 +94,49 @@ export const createOrder = createServerFn({ method: "POST" })
       throw new Error("ORDER_FAILED");
     }
 
+    const { postWebhookJson } = await import("./webhook.server");
+    const { designById } = await import("./catalog");
+    await postWebhookJson({
+      event_type: "new_order",
+      order_number: orderNumber,
+      customer: {
+        full_name: data.fullName,
+        phone: data.phone,
+        address: data.address,
+        city: data.city,
+      },
+      products: [
+        ...data.items.map((i) => ({
+          name: i.name,
+          category: i.category,
+          design: i.productId,
+          model: i.model,
+          quantity: i.qty,
+          price: `${CATEGORY_PRICES[i.category]} MAD`,
+          line_total: `${CATEGORY_PRICES[i.category] * i.qty} MAD`,
+        })),
+        ...data.designs.map((id) => ({
+          name: designById(id)?.name.fr ?? id,
+          category: "lens",
+          design: id,
+          model: data.model,
+          quantity: 1,
+          price: `${CATEGORY_PRICES.lens} MAD`,
+          in_pack: true,
+        })),
+      ],
+      discount: pack.promoApplies
+        ? `Pack 3 pour 99 MAD (${pack.promoCount} articles à ${pack.promoTotal} MAD)`
+        : "",
+      pack_breakdown: pack,
+      quantity,
+      total: `${total} MAD`,
+      payment_method: "cod",
+      notes: data.notes || "",
+      language: data.locale,
+      timestamp: new Date().toISOString(),
+    });
+
     return { orderNumber, total, quantity };
   });
+

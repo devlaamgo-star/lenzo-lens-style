@@ -57,6 +57,7 @@ export const createDesignRequest = createServerFn({ method: "POST" })
 
     const requestNumber = buildRequestNumber();
     const paths: string[] = [];
+    const uploaded: { name: string; type: string; bytes: Uint8Array }[] = [];
 
     for (const [i, f] of data.files.entries()) {
       const ext = ALLOWED[f.type];
@@ -70,6 +71,7 @@ export const createDesignRequest = createServerFn({ method: "POST" })
         .upload(path, bytes, { contentType: f.type, upsert: true });
       if (upErr) throw new Error(upErr.message);
       paths.push(path);
+      uploaded.push({ name: f.name, type: f.type, bytes: new Uint8Array(bytes) });
     }
 
     const { error } = await supabaseAdmin.from("design_requests").insert({
@@ -92,5 +94,36 @@ export const createDesignRequest = createServerFn({ method: "POST" })
     });
     if (error) throw new Error(error.message);
 
+    const { postWebhookForm } = await import("./webhook.server");
+    await postWebhookForm(
+      {
+        event_type: "custom_design_request",
+        request_number: requestNumber,
+        customer: {
+          full_name: data.fullName,
+          phone: data.phone,
+          city: data.city,
+        },
+        device: {
+          brand: data.brand,
+          model: data.model,
+          color: data.phoneColor,
+        },
+        product_type: data.requestType,
+        subject: data.subject,
+        style: data.style,
+        colors: data.colors,
+        description: data.description,
+        notes: data.notes,
+        quantity: 1,
+        files: paths,
+        file_count: uploaded.length,
+        language: data.locale,
+        timestamp: new Date().toISOString(),
+      },
+      uploaded,
+    );
+
     return { requestNumber };
   });
+
