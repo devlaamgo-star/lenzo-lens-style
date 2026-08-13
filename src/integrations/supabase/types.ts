@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       design_requests: {
         Row: {
+          address: string
           city: string
           colors: string
           created_at: string
@@ -30,13 +31,17 @@ export type Database = {
           phone_brand: string
           phone_color: string
           phone_model: string
+          quantity: number
           request_number: string
           request_type: string
+          source: string
           status: string
           style: string
           subject: string
+          updated_at: string
         }
         Insert: {
+          address?: string
           city: string
           colors?: string
           created_at?: string
@@ -51,13 +56,17 @@ export type Database = {
           phone_brand?: string
           phone_color?: string
           phone_model?: string
+          quantity?: number
           request_number: string
           request_type: string
+          source?: string
           status?: string
           style?: string
           subject?: string
+          updated_at?: string
         }
         Update: {
+          address?: string
           city?: string
           colors?: string
           created_at?: string
@@ -72,11 +81,14 @@ export type Database = {
           phone_brand?: string
           phone_color?: string
           phone_model?: string
+          quantity?: number
           request_number?: string
           request_type?: string
+          source?: string
           status?: string
           style?: string
           subject?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -86,6 +98,7 @@ export type Database = {
           city: string
           created_at: string
           designs: Json
+          file_paths: string[]
           full_name: string
           id: string
           iphone_model: string
@@ -97,14 +110,17 @@ export type Database = {
           payment_method: string
           phone: string
           quantity: number
+          source: string
           status: string
           total_mad: number
+          updated_at: string
         }
         Insert: {
           address: string
           city: string
           created_at?: string
           designs?: Json
+          file_paths?: string[]
           full_name: string
           id?: string
           iphone_model?: string
@@ -116,14 +132,17 @@ export type Database = {
           payment_method?: string
           phone: string
           quantity?: number
+          source?: string
           status?: string
           total_mad?: number
+          updated_at?: string
         }
         Update: {
           address?: string
           city?: string
           created_at?: string
           designs?: Json
+          file_paths?: string[]
           full_name?: string
           id?: string
           iphone_model?: string
@@ -135,8 +154,31 @@ export type Database = {
           payment_method?: string
           phone?: string
           quantity?: number
+          source?: string
           status?: string
           total_mad?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
         }
         Relationships: []
       }
@@ -145,10 +187,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_first_admin: { Args: never; Returns: boolean }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "moderator" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -275,6 +324,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "moderator", "user"],
+    },
   },
 } as const
