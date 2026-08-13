@@ -36,8 +36,11 @@ export const designRequestSchema = z.object({
   description: z.string().trim().max(1000).default(""),
   colors: z.string().trim().max(200).default(""),
   notes: z.string().trim().max(500).default(""),
+  address: z.string().trim().max(200).default(""),
+  quantity: z.number().int().min(1).max(50).default(1),
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
   files: z.array(fileSchema).max(MAX_FILES).default([]),
+  selections: z.record(z.string(), z.any()).default({}),
 });
 
 export type DesignRequestInput = z.input<typeof designRequestSchema>;
