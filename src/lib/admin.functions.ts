@@ -331,7 +331,7 @@ async function applyStatus(
     status_history: [...history, { status, at: new Date().toISOString() }],
   };
   if (status === "shipped" && !row?.shipped_at) patch['shipped_at'] = new Date().toISOString();
-  const { error } = await admin.from(table).update(patch).eq("id", id);
+  const { error } = await admin.from(table).update(patch as never).eq("id", id);
   if (error) throw new Error(error.message);
 }
 
@@ -396,7 +396,10 @@ export const updateRecordOps = createServerFn({ method: "POST" })
     if (data.priority !== undefined) patch['priority'] = data.priority;
     if (data.archived !== undefined) patch['archived'] = data.archived;
     if (Object.keys(patch).length === 0) return { ok: true };
-    const { error } = await supabaseAdmin.from(tableFor(data.kind)).update(patch).eq("id", data.id);
+    const { error } = await supabaseAdmin
+      .from(tableFor(data.kind))
+      .update(patch as never)
+      .eq("id", data.id);
     if (error) throw new Error(error.message);
     return { ok: true };
   });
