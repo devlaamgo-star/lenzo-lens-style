@@ -13,6 +13,27 @@ export const ORDER_STATUSES = [
 
 export type OrderStatus = (typeof ORDER_STATUSES)[number];
 
+export type AdminLine = {
+  key: string;
+  name: string;
+  image: string | null;
+  categoryLabel: string;
+  model: string;
+  qty: number;
+  unitPrice: number | null;
+  lineTotal: number | null;
+  inPack: boolean;
+};
+
+export type AdminSummary = {
+  totalItems: number;
+  subtotal: number | null;
+  discount: number | null;
+  discountLabel: string;
+  total: number | null;
+  paymentMethod: string;
+};
+
 export type AdminRecord = {
   kind: "order" | "design";
   id: string;
@@ -31,8 +52,11 @@ export type AdminRecord = {
   notes: string;
   source: string;
   files: string[];
+  lines: AdminLine[];
+  summary: AdminSummary | null;
   details: Record<string, string | number | boolean | null>;
 };
+
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
   const { data, error } = await context.supabase.rpc("has_role", {
