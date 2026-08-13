@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { lookupProduct } from "@/lib/product-lookup";
 
 export const ORDER_STATUSES = [
   "new",
@@ -12,6 +13,27 @@ export const ORDER_STATUSES = [
 ] as const;
 
 export type OrderStatus = (typeof ORDER_STATUSES)[number];
+
+export type AdminLine = {
+  key: string;
+  name: string;
+  image: string | null;
+  categoryLabel: string;
+  model: string;
+  qty: number;
+  unitPrice: number | null;
+  lineTotal: number | null;
+  inPack: boolean;
+};
+
+export type AdminSummary = {
+  totalItems: number;
+  subtotal: number | null;
+  discount: number | null;
+  discountLabel: string;
+  total: number | null;
+  paymentMethod: string;
+};
 
 export type AdminRecord = {
   kind: "order" | "design";
@@ -31,8 +53,11 @@ export type AdminRecord = {
   notes: string;
   source: string;
   files: string[];
+  lines: AdminLine[];
+  summary: AdminSummary | null;
   details: Record<string, string | number | boolean | null>;
 };
+
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
   const { data, error } = await context.supabase.rpc("has_role", {
@@ -88,14 +113,63 @@ export const listAdminOrders = createServerFn({ method: "GET" })
 
     for (const o of orders.data ?? []) {
       const items = Array.isArray(o.items) ? (o.items as any[]) : [];
-      const designsList = Array.isArray(o.designs) ? (o.designs as any[]) : [];
+      const designsList = (Array.isArray(o.designs) ? (o.designs as any[]) : []).map((d) =>
+        typeof d === "string" ? d : String(d?.productId ?? d?.id ?? ""),
+      );
+      const pack = (o.pack_breakdown ?? null) as any;
+      const lines: AdminLine[] = [];
+
+      for (const i of items) {
+        const ref = lookupProduct(String(i?.productId ?? ""));
+        const qty = Number(i?.qty ?? 1);
+        const unit = i?.unitPrice != null ? Number(i.unitPrice) : null;
+        lines.push({
+          key: `item-${i?.productId ?? lines.length}-${i?.model ?? ""}`,
+          name: ref?.name ?? i?.name ?? String(i?.productId ?? "Produit"),
+          image: (i?.image as string) ?? ref?.image ?? null,
+          categoryLabel: ref?.categoryLabel ?? String(i?.category ?? ""),
+          model: String(i?.model ?? o.iphone_model ?? ""),
+          qty,
+          unitPrice: unit,
+          lineTotal: unit != null ? unit * qty : null,
+          inPack: false,
+        });
+      }
+
+      const packQty = new Map<string, number>();
+      for (const id of designsList) if (id) packQty.set(id, (packQty.get(id) ?? 0) + 1);
+      const packUnit = pack?.promoApplied
+        ? null
+        : pack?.extraUnitPrice != null
+          ? Number(pack.extraUnitPrice)
+          : null;
+      for (const [id, qty] of packQty) {
+        const ref = lookupProduct(id);
+        lines.push({
+          key: `pack-${id}`,
+          name: ref?.name ?? id,
+          image: ref?.image ?? null,
+          categoryLabel: ref?.categoryLabel ?? "Stickers caméra",
+          model: o.iphone_model ?? "",
+          qty,
+          unitPrice: packUnit,
+          lineTotal: packUnit != null ? packUnit * qty : null,
+          inPack: true,
+        });
+      }
+
       const product =
-        [
-          ...items.map((i) => `${i?.name ?? i?.productId ?? ""} x${i?.qty ?? 1}`),
-          ...(designsList.length ? [`Pack objectifs (${designsList.length})`] : []),
-        ]
-          .filter(Boolean)
-          .join(", ") || "—";
+        lines.map((l) => `${l.name} x${l.qty}`).join(", ") || "—";
+
+      const itemsSubtotal = items.reduce(
+        (s, i) => s + (Number(i?.unitPrice ?? 0) * Number(i?.qty ?? 1) || 0),
+        0,
+      );
+      const packCount = Number(pack?.itemCount ?? designsList.length);
+      const packListPrice = packCount * Number(pack?.extraUnitPrice ?? 49);
+      const packTotal = Number(pack?.packTotal ?? 0);
+      const discount = packListPrice > packTotal ? packListPrice - packTotal : 0;
+
       rows.push({
         kind: "order",
         id: o.id,
@@ -114,12 +188,16 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         notes: o.notes ?? "",
         source: o.source || "/commande",
         files: (o.file_paths ?? []) as string[],
-        details: {
-          items: JSON.stringify(items),
-          designs: JSON.stringify(designsList),
-          pack_breakdown: JSON.stringify(o.pack_breakdown ?? null),
-          payment_method: o.payment_method,
+        lines,
+        summary: {
+          totalItems: lines.reduce((s, l) => s + l.qty, 0) || o.quantity,
+          subtotal: itemsSubtotal + packListPrice,
+          discount: discount || null,
+          discountLabel: discount ? `Offre pack 3 pour ${packTotal} MAD` : "",
+          total: o.total_mad,
+          paymentMethod: o.payment_method === "cod" ? "Paiement à la livraison" : o.payment_method,
         },
+        details: {},
       });
     }
 
@@ -142,16 +220,19 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         notes: d.notes,
         source: d.source || "/design-personnalise",
         files: (d.file_paths ?? []) as string[],
+        lines: [],
+        summary: null,
         details: {
-          subject: d.subject,
-          style: d.style,
-          colors: d.colors,
-          description: d.description,
-          phone_color: d.phone_color,
-          request_type: d.request_type,
+          Sujet: d.subject,
+          Style: d.style,
+          Couleurs: d.colors,
+          Description: d.description,
+          "Couleur du téléphone": d.phone_color,
+          "Type de demande": d.request_type,
         },
       });
     }
+
 
     rows.sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
     return rows;

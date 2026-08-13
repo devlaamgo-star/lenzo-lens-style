@@ -10,6 +10,8 @@ const itemSchema = z.object({
   category: z.enum(["lens", "skins", "backlens", "air", "anime"]),
   model: z.string().trim().min(3).max(40),
   qty: z.number().int().min(1).max(20),
+  image: z.string().trim().max(400).optional().default(""),
+  slug: z.string().trim().max(80).optional().default(""),
 });
 
 export const orderSchema = z.object({
@@ -69,6 +71,7 @@ export const createOrder = createServerFn({ method: "POST" })
       designs: data.designs,
       items: data.items.map((i) => ({
         ...i,
+        image: i.image || undefined,
         unitPrice: CATEGORY_PRICES[i.category],
         lineTotal: CATEGORY_PRICES[i.category] * i.qty,
       })),
