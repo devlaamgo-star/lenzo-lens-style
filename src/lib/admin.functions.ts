@@ -6,11 +6,28 @@ import { lookupProduct } from "@/lib/product-lookup";
 export const ORDER_STATUSES = [
   "new",
   "confirmed",
-  "preparing",
+  "processing",
+  "ready_to_ship",
   "shipped",
+  "out_for_delivery",
   "delivered",
+  "completed",
   "cancelled",
+  "returned",
+  "failed_delivery",
 ] as const;
+
+export const PAYMENT_STATUSES = [
+  "cod_pending",
+  "paid",
+  "refused",
+  "returned",
+  "refunded",
+] as const;
+
+export type PaymentStatus = (typeof PAYMENT_STATUSES)[number];
+
+export type StatusEvent = { status: string; at: string };
 
 export type OrderStatus = (typeof ORDER_STATUSES)[number];
 
@@ -56,7 +73,30 @@ export type AdminRecord = {
   lines: AdminLine[];
   summary: AdminSummary | null;
   details: Record<string, string | number | boolean | null>;
+  paymentStatus: string;
+  carrier: string;
+  tracking: string;
+  shippedAt: string | null;
+  expectedDeliveryAt: string | null;
+  adminNotes: string;
+  priority: string;
+  archived: boolean;
+  history: StatusEvent[];
 };
+
+function ops(row: any) {
+  return {
+    paymentStatus: (row.payment_status as string) || "cod_pending",
+    carrier: (row.shipping_carrier as string) || "",
+    tracking: (row.tracking_number as string) || "",
+    shippedAt: (row.shipped_at as string) ?? null,
+    expectedDeliveryAt: (row.expected_delivery_at as string) ?? null,
+    adminNotes: (row.admin_notes as string) || "",
+    priority: (row.priority as string) || "normal",
+    archived: Boolean(row.archived),
+    history: (Array.isArray(row.status_history) ? row.status_history : []) as StatusEvent[],
+  };
+}
 
 
 async function assertAdmin(context: { supabase: any; userId: string }) {
@@ -198,6 +238,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
           paymentMethod: o.payment_method === "cod" ? "Paiement à la livraison" : o.payment_method,
         },
         details: {},
+        ...ops(o),
       });
     }
 
@@ -230,6 +271,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
           "Couleur du téléphone": d.phone_color,
           "Type de demande": d.request_type,
         },
+        ...ops(d),
       });
     }
 
@@ -262,13 +304,56 @@ export const getRecordFileUrls = createServerFn({ method: "POST" })
     return out;
   });
 
+const targetSchema = z.object({
+  kind: z.enum(["order", "design"]),
+  id: z.string().uuid(),
+});
+
+function tableFor(kind: "order" | "design") {
+  return kind === "order" ? "orders" : "design_requests";
+}
+
+async function applyStatus(
+  admin: any,
+  kind: "order" | "design",
+  id: string,
+  status: OrderStatus,
+) {
+  const table = tableFor(kind);
+  const { data: row } = await admin
+    .from(table)
+    .select("status_history, shipped_at")
+    .eq("id", id)
+    .maybeSingle();
+  const history: StatusEvent[] = Array.isArray(row?.status_history) ? row.status_history : [];
+  const patch: Record<string, unknown> = {
+    status,
+    status_history: [...history, { status, at: new Date().toISOString() }],
+  };
+  if (status === "shipped" && !row?.shipped_at) patch['shipped_at'] = new Date().toISOString();
+  const { error } = await admin.from(table).update(patch as never).eq("id", id);
+  if (error) throw new Error(error.message);
+}
+
 export const updateRecordStatus = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((data: unknown) =>
+    targetSchema.extend({ status: z.enum(ORDER_STATUSES) }).parse(data),
+  )
+  .handler(async ({ data, context }) => {
+    await assertAdmin(context as any);
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    await applyStatus(supabaseAdmin, data.kind, data.id, data.status);
+    return { ok: true };
+  });
+
+/** Change the status of several records at once. */
+export const bulkUpdateStatus = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((data: unknown) =>
     z
       .object({
-        kind: z.enum(["order", "design"]),
-        id: z.string().uuid(),
+        targets: z.array(targetSchema).min(1).max(200),
         status: z.enum(ORDER_STATUSES),
       })
       .parse(data),
@@ -276,10 +361,44 @@ export const updateRecordStatus = createServerFn({ method: "POST" })
   .handler(async ({ data, context }) => {
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-    const table = data.kind === "order" ? "orders" : "design_requests";
+    for (const t of data.targets) {
+      await applyStatus(supabaseAdmin, t.kind, t.id, data.status);
+    }
+    return { ok: true, count: data.targets.length };
+  });
+
+/** Update operational fields: payment, shipping, notes, priority, archive. */
+export const updateRecordOps = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((data: unknown) =>
+    targetSchema
+      .extend({
+        paymentStatus: z.enum(PAYMENT_STATUSES).optional(),
+        carrier: z.string().trim().max(80).optional(),
+        tracking: z.string().trim().max(80).optional(),
+        expectedDeliveryAt: z.string().trim().max(40).nullable().optional(),
+        adminNotes: z.string().trim().max(2000).optional(),
+        priority: z.enum(["normal", "urgent"]).optional(),
+        archived: z.boolean().optional(),
+      })
+      .parse(data),
+  )
+  .handler(async ({ data, context }) => {
+    await assertAdmin(context as any);
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const patch: Record<string, unknown> = {};
+    if (data.paymentStatus !== undefined) patch['payment_status'] = data.paymentStatus;
+    if (data.carrier !== undefined) patch['shipping_carrier'] = data.carrier;
+    if (data.tracking !== undefined) patch['tracking_number'] = data.tracking;
+    if (data.expectedDeliveryAt !== undefined)
+      patch['expected_delivery_at'] = data.expectedDeliveryAt || null;
+    if (data.adminNotes !== undefined) patch['admin_notes'] = data.adminNotes;
+    if (data.priority !== undefined) patch['priority'] = data.priority;
+    if (data.archived !== undefined) patch['archived'] = data.archived;
+    if (Object.keys(patch).length === 0) return { ok: true };
     const { error } = await supabaseAdmin
-      .from(table)
-      .update({ status: data.status })
+      .from(tableFor(data.kind))
+      .update(patch as never)
       .eq("id", data.id);
     if (error) throw new Error(error.message);
     return { ok: true };
