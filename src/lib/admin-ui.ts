@@ -2,9 +2,6 @@ import type { AdminRecord } from "@/lib/admin.functions";
 
 export const STATUS_LABEL: Record<string, string> = {
   new: "Nouvelle",
-  design_review: "Revue design",
-  awaiting_approval: "Attente validation client",
-  approved: "Design approuvé",
   confirmed: "Confirmée",
   processing: "En traitement",
   preparing: "En traitement",
@@ -20,9 +17,6 @@ export const STATUS_LABEL: Record<string, string> = {
 
 export const STATUS_CLASS: Record<string, string> = {
   new: "bg-primary/15 text-primary",
-  design_review: "bg-fuchsia-500/15 text-fuchsia-600",
-  awaiting_approval: "bg-yellow-500/15 text-yellow-700",
-  approved: "bg-teal-500/15 text-teal-600",
   confirmed: "bg-blue-500/15 text-blue-600",
   processing: "bg-amber-500/15 text-amber-600",
   preparing: "bg-amber-500/15 text-amber-600",
@@ -65,9 +59,6 @@ export const TIMELINE_STEPS = [
 
 /** Actions rapides proposées sur chaque ligne. */
 export const QUICK_ACTIONS = [
-  { status: "design_review", label: "Revue design" },
-  { status: "awaiting_approval", label: "Attente client" },
-  { status: "approved", label: "Design approuvé" },
   { status: "confirmed", label: "Confirmer" },
   { status: "processing", label: "En traitement" },
   { status: "ready_to_ship", label: "Prête à expédier" },

@@ -1074,35 +1074,28 @@ function OrderDetail({
           <p className="mt-2 text-sm text-muted-foreground">Aucun fichier.</p>
         )}
         <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-          {files.map((f) => {
-            const isPreview = /apercu-final/i.test(f.path);
-            return (
-              <div key={f.path} className="overflow-hidden rounded-lg border bg-muted">
-                <p className="flex items-center justify-between gap-2 border-b bg-card px-3 py-2 text-xs font-semibold">
-                  <span className="truncate">
-                    {isPreview ? "Aperçu final validé par le client" : "Fichier d'origine du client"}
-                  </span>
-                  <a href={f.url} download target="_blank" rel="noreferrer" className="shrink-0 text-primary underline">
-                    Télécharger
-                  </a>
-                </p>
-                <a href={f.url} target="_blank" rel="noreferrer" className="block" title="Ouvrir en taille réelle">
-                  {/\.(pdf)$/i.test(f.path) ? (
-                    <span className="flex h-64 items-center justify-center text-sm">PDF — ouvrir</span>
-                  ) : (
-                    <img
-                      src={f.url}
-                      alt={isPreview ? "Aperçu final" : `Fichier client ${f.path}`}
-                      className="h-64 w-full object-contain"
-                      loading="lazy"
-                    />
-                  )}
-                </a>
-              </div>
-            );
-          })}
+          {files.map((f) => (
+            <a
+              key={f.path}
+              href={f.url}
+              target="_blank"
+              rel="noreferrer"
+              className="block overflow-hidden rounded-lg border bg-muted"
+              title="Ouvrir en taille réelle"
+            >
+              {/\.(pdf)$/i.test(f.path) ? (
+                <span className="flex h-64 items-center justify-center text-sm">PDF — ouvrir</span>
+              ) : (
+                <img
+                  src={f.url}
+                  alt={`Fichier client ${f.path}`}
+                  className="h-64 w-full object-contain"
+                  loading="lazy"
+                />
+              )}
+            </a>
+          ))}
         </div>
-
       </section>
 
       {record.summary && (
