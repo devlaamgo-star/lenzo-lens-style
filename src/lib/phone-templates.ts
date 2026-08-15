@@ -114,7 +114,7 @@ export const PHONE_TEMPLATES: PhoneTemplate[] = [
       { cx: 0.23, cy: 0.5, r: 0.11 },
       { cx: 0.31, cy: 0.5, r: 0.08 },
     ],
-    colors: ["black", "white", "gold" as string, "blue"].filter((c) => c !== "gold"),
+    colors: ["black", "white", "silver", "blue"],
   },
   {
     id: "iphone-16-pro-max",
