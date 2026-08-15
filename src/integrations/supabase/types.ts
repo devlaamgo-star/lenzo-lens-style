@@ -23,6 +23,7 @@ export type Database = {
           colors: string
           created_at: string
           description: string
+          email: string
           expected_delivery_at: string | null
           file_path: string | null
           file_paths: string[]
@@ -35,6 +36,7 @@ export type Database = {
           phone_brand: string
           phone_color: string
           phone_model: string
+          preview_path: string | null
           priority: string
           quantity: number
           request_number: string
@@ -57,6 +59,7 @@ export type Database = {
           colors?: string
           created_at?: string
           description?: string
+          email?: string
           expected_delivery_at?: string | null
           file_path?: string | null
           file_paths?: string[]
@@ -69,6 +72,7 @@ export type Database = {
           phone_brand?: string
           phone_color?: string
           phone_model?: string
+          preview_path?: string | null
           priority?: string
           quantity?: number
           request_number: string
@@ -91,6 +95,7 @@ export type Database = {
           colors?: string
           created_at?: string
           description?: string
+          email?: string
           expected_delivery_at?: string | null
           file_path?: string | null
           file_paths?: string[]
@@ -103,6 +108,7 @@ export type Database = {
           phone_brand?: string
           phone_color?: string
           phone_model?: string
+          preview_path?: string | null
           priority?: string
           quantity?: number
           request_number?: string
