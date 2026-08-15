@@ -4,7 +4,7 @@ import { z } from "zod";
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
 const MAX_BYTES = 8 * 1024 * 1024;
-const MAX_FILES = 6;
+const MAX_FILES = 8;
 
 const ALLOWED: Record<string, string> = {
   "image/jpeg": "jpg",
@@ -26,6 +26,7 @@ export const designRequestSchema = z.object({
     .trim()
     .transform((v) => v.replace(/[\s.-]/g, ""))
     .refine((v) => moroccanPhone.test(v)),
+  email: z.string().trim().max(120).default(""),
   city: z.string().trim().min(2).max(60),
   brand: z.string().trim().max(40).default(""),
   model: z.string().trim().min(2).max(60),
@@ -40,6 +41,7 @@ export const designRequestSchema = z.object({
   quantity: z.number().int().min(1).max(50).default(1),
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
   files: z.array(fileSchema).max(MAX_FILES).default([]),
+  hasPreview: z.boolean().default(false),
   selections: z.record(z.string(), z.any()).default({}),
   source: z.string().trim().max(120).default("/design-personnalise"),
 });
@@ -61,6 +63,7 @@ export const createDesignRequest = createServerFn({ method: "POST" })
 
     const requestNumber = buildRequestNumber();
     const paths: string[] = [];
+    let previewPath: string | null = null;
     const uploaded: { name: string; type: string; bytes: Uint8Array }[] = [];
 
     for (const [i, f] of data.files.entries()) {
@@ -69,12 +72,14 @@ export const createDesignRequest = createServerFn({ method: "POST" })
       const base64 = f.dataUrl.split(",")[1] ?? "";
       const bytes = Buffer.from(base64, "base64");
       if (bytes.byteLength === 0 || bytes.byteLength > MAX_BYTES) throw new Error("INVALID_FILE_SIZE");
-      const path = `${requestNumber}/upload-${i + 1}.${ext}`;
+      const isPreview = data.hasPreview && i === data.files.length - 1;
+      const path = isPreview ? `${requestNumber}/apercu-final.${ext}` : `${requestNumber}/upload-${i + 1}.${ext}`;
       const { error: upErr } = await supabaseAdmin.storage
         .from("design-uploads")
         .upload(path, bytes, { contentType: f.type, upsert: true });
       if (upErr) throw new Error(upErr.message);
       paths.push(path);
+      if (isPreview) previewPath = path;
       uploaded.push({ name: f.name, type: f.type, bytes: new Uint8Array(bytes) });
     }
 
@@ -94,6 +99,8 @@ export const createDesignRequest = createServerFn({ method: "POST" })
       notes: data.notes,
       file_path: paths[0] ?? null,
       file_paths: paths,
+      email: data.email,
+      preview_path: previewPath,
       locale: data.locale,
       address: data.address,
       quantity: data.quantity,
@@ -109,6 +116,7 @@ export const createDesignRequest = createServerFn({ method: "POST" })
         request_number: requestNumber,
         full_name: data.fullName,
         phone: data.phone,
+        email: data.email,
         city: data.city,
         address: data.address,
         customer: {
@@ -134,6 +142,7 @@ export const createDesignRequest = createServerFn({ method: "POST" })
         quantity: data.quantity,
         selections: data.selections,
         files: paths,
+        preview_file: previewPath,
         file_names: uploaded.map((u) => u.name),
         file_count: uploaded.length,
         language: data.locale,
