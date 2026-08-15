@@ -5,6 +5,9 @@ import { lookupProduct } from "@/lib/product-lookup";
 
 export const ORDER_STATUSES = [
   "new",
+  "design_review",
+  "awaiting_approval",
+  "approved",
   "confirmed",
   "processing",
   "ready_to_ship",
@@ -264,12 +267,14 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         lines: [],
         summary: null,
         details: {
+          Email: (d as any).email || "—",
           Sujet: d.subject,
           Style: d.style,
           Couleurs: d.colors,
           Description: d.description,
           "Couleur du téléphone": d.phone_color,
           "Type de demande": d.request_type,
+          "Aperçu final": (d as any).preview_path ? "Oui" : "Non",
         },
         ...ops(d),
       });
