@@ -54,8 +54,7 @@ export function SiteHeader() {
 
   const collectionItems = [
     { to: "/collection" as const, search: {}, label: t("menu.all") },
-    { to: "/collection" as const, search: {}, label: t("menu.stickers") },
-    { to: "/objectifs" as const, search: {}, label: t("lens.nav") },
+    { to: "/objectifs" as const, search: {}, label: t("menu.stickers") },
     { to: "/dos-camera" as const, search: {}, label: t("backlens.nav") },
     { to: "/iphone-air" as const, search: {}, label: t("air.nav") },
     { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
