@@ -1,18 +1,42 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { CATEGORY_PRICES, packBreakdown } from "./pricing";
+import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, packBreakdown } from "./pricing";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
+
+const customSkinSchema = z.object({
+  modelId: z.string().trim().max(60),
+  modelLabel: z.string().trim().max(60),
+  coverage: z.enum(["full", "back", "camera"]),
+  templateId: z.string().trim().max(80),
+  transform: z.object({
+    x: z.number(),
+    y: z.number(),
+    scale: z.number(),
+    rotation: z.number(),
+  }),
+  originalPath: z.string().trim().max(300),
+  previewPath: z.string().trim().max(300),
+});
 
 const itemSchema = z.object({
   productId: z.string().trim().min(1).max(60),
   name: z.string().trim().min(1).max(120),
-  category: z.enum(["lens", "skins", "backlens", "air", "anime"]),
+  category: z.enum(["lens", "skins", "backlens", "air", "anime", "custom"]),
   model: z.string().trim().min(3).max(40),
   qty: z.number().int().min(1).max(20),
   image: z.string().trim().max(400).optional().default(""),
   slug: z.string().trim().max(80).optional().default(""),
+  custom: customSkinSchema.optional(),
 });
+
+/** Prix unitaire d'une ligne : couverture du skin personnalisé sinon prix catégorie. */
+function unitPriceFor(item: z.infer<typeof itemSchema>) {
+  if (item.category === "custom" && item.custom) {
+    return CUSTOM_COVERAGE_PRICES[item.custom.coverage];
+  }
+  return CATEGORY_PRICES[item.category];
+}
 
 export const orderSchema = z.object({
   fullName: z.string().trim().min(3).max(80),
@@ -52,9 +76,10 @@ export const createOrder = createServerFn({ method: "POST" })
     if (!hasPack && data.items.length === 0) throw new Error("EMPTY_ORDER");
     if (hasPack && !data.model) throw new Error("MODEL_REQUIRED");
 
-    const itemsTotal = data.items.reduce(
-      (sum, i) => sum + CATEGORY_PRICES[i.category] * i.qty,
-      0,
+    const itemsTotal = data.items.reduce((sum, i) => sum + unitPriceFor(i) * i.qty, 0);
+
+    const customPaths = data.items.flatMap((i) =>
+      i.custom ? [i.custom.previewPath, i.custom.originalPath] : [],
     );
     const total = itemsTotal + pack.total;
     const quantity =
@@ -72,9 +97,10 @@ export const createOrder = createServerFn({ method: "POST" })
       items: data.items.map((i) => ({
         ...i,
         image: i.image || undefined,
-        unitPrice: CATEGORY_PRICES[i.category],
-        lineTotal: CATEGORY_PRICES[i.category] * i.qty,
+        unitPrice: unitPriceFor(i),
+        lineTotal: unitPriceFor(i) * i.qty,
       })),
+      file_paths: customPaths,
       quantity,
       notes: data.notes || null,
       pack_breakdown: {
@@ -117,8 +143,18 @@ export const createOrder = createServerFn({ method: "POST" })
           design: i.productId,
           model: i.model,
           quantity: i.qty,
-          price: `${CATEGORY_PRICES[i.category]} MAD`,
-          line_total: `${CATEGORY_PRICES[i.category] * i.qty} MAD`,
+          price: `${unitPriceFor(i)} MAD`,
+          line_total: `${unitPriceFor(i) * i.qty} MAD`,
+          custom_skin: i.custom
+            ? {
+                model: i.custom.modelLabel,
+                coverage: i.custom.coverage,
+                template: i.custom.templateId,
+                transform: i.custom.transform,
+                original_file: i.custom.originalPath,
+                preview_file: i.custom.previewPath,
+              }
+            : undefined,
         })),
         ...data.designs.map((id) => ({
           name: designById(id)?.name.fr ?? id,
