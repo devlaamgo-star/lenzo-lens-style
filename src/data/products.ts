@@ -17,8 +17,7 @@ export type Product = {
 /**
  * Aucun produit générique ici : le catalogue SKINUP est constitué uniquement
  * des produits créés à partir des images réellement fournies (voir
- * full-body-skins, camera-lens-skins, back-lens-skins, iphone-air-skins,
- * anime-skins).
+ * full-body-skins, camera-lens-skins, back-lens-skins, iphone-air-skins).
  */
 export const PRODUCTS: Product[] = [];
 
