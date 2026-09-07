@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { CAMERA_LENS_SKINS } from "@/lib/catalog";
 import { LensSkinCard } from "@/components/LensSkinCard";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 
 export const Route = createFileRoute("/objectifs/")({
   head: () => ({
@@ -53,6 +54,7 @@ function LensCollectionPage() {
             {CAMERA_LENS_SKINS.length} {t("col.results")}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            <CustomSkinCard priority />
             {CAMERA_LENS_SKINS.map((s, i) => (
               <LensSkinCard key={s.id} skin={s} priority={i < 4} />
             ))}

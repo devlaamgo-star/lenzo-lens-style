@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { BACK_LENS_SKINS } from "@/lib/catalog";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 
 export const Route = createFileRoute("/dos-camera/")({
   head: () => ({
@@ -52,6 +53,7 @@ function BackLensCollectionPage() {
             {BACK_LENS_SKINS.length} {t("col.results")}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            <CustomSkinCard priority />
             {BACK_LENS_SKINS.map((s, i) => (
               <BackLensSkinCard key={s.id} skin={s} priority={i < 4} />
             ))}

@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { StickyPackBar } from "@/components/StickyPackBar";
 import { cn } from "@/lib/utils";
 import {
+import { CustomSkinCard } from "@/components/CustomSkinCard";
   Select,
   SelectContent,
   SelectItem,
@@ -224,6 +225,7 @@ function CollectionPage() {
                 wide ? "lg:grid-cols-3" : "lg:grid-cols-4",
               )}
             >
+              <CustomSkinCard priority />
               {results.map((d, i) => (
                 <ProductCard key={d.id} design={d} priority={i < 4} />
               ))}

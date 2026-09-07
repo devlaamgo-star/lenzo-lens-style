@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { ANIME_SKINS } from "@/lib/catalog";
 import { AnimeSkinCard } from "@/components/AnimeSkinCard";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 
 export const Route = createFileRoute("/anime/")({
   head: () => ({
@@ -52,6 +53,7 @@ function AnimeCollectionPage() {
             {ANIME_SKINS.length} {t("col.results")}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            <CustomSkinCard priority />
             {ANIME_SKINS.map((s, i) => (
               <AnimeSkinCard key={s.id} skin={s} priority={i < 4} />
             ))}
