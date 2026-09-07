@@ -58,8 +58,6 @@ export function SiteHeader() {
     { to: "/objectifs" as const, search: {}, label: t("lens.nav") },
     { to: "/dos-camera" as const, search: {}, label: t("backlens.nav") },
     { to: "/iphone-air" as const, search: {}, label: t("air.nav") },
-    
-    { to: "/skins" as const, search: {}, label: t("skins.nav") },
     { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
   ];
 
