@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { IPHONE_AIR_SKINS } from "@/lib/catalog";
 import { AirSkinCard } from "@/components/AirSkinCard";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 
 export const Route = createFileRoute("/iphone-air/")({
   head: () => ({
@@ -50,6 +51,7 @@ function AirCollectionPage() {
             {IPHONE_AIR_SKINS.length} {t("col.results")}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            <CustomSkinCard priority />
             {IPHONE_AIR_SKINS.map((s, i) => (
               <AirSkinCard key={s.id} skin={s} priority={i < 4} />
             ))}

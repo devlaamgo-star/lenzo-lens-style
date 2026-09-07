@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { FULL_BODY_SKINS } from "@/lib/catalog";
 import { SkinCard } from "@/components/SkinCard";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 
 export const Route = createFileRoute("/skins/")({
   head: () => ({
@@ -50,6 +51,7 @@ function SkinsPage() {
             {FULL_BODY_SKINS.length} {t("col.results")}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            <CustomSkinCard priority />
             {FULL_BODY_SKINS.map((s, i) => (
               <SkinCard key={s.id} skin={s} priority={i < 4} />
             ))}

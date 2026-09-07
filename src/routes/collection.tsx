@@ -7,6 +7,7 @@ import { DESIGNS, IPHONE_MODELS } from "@/lib/catalog";
 import { ProductCard } from "@/components/ProductCard";
 import { StickyPackBar } from "@/components/StickyPackBar";
 import { cn } from "@/lib/utils";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 import {
   Select,
   SelectContent,
@@ -224,6 +225,7 @@ function CollectionPage() {
                 wide ? "lg:grid-cols-3" : "lg:grid-cols-4",
               )}
             >
+              <CustomSkinCard priority />
               {results.map((d, i) => (
                 <ProductCard key={d.id} design={d} priority={i < 4} />
               ))}

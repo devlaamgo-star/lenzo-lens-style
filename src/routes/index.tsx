@@ -12,6 +12,7 @@ import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
 import { AnimeSkinCard } from "@/components/AnimeSkinCard";
 import { AirSkinCard } from "@/components/AirSkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { CustomSkinCard } from "@/components/CustomSkinCard";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { BenefitsSection, TrustSection } from "@/components/sections/BenefitsTrust";
 import { ReviewsSection } from "@/components/sections/ReviewsSection";
@@ -135,7 +136,8 @@ function HomePage() {
             </Link>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            {newest.map((d, i) => (
+            <CustomSkinCard priority />
+            {newest.slice(0, 3).map((d, i) => (
               <ProductCard key={d.id} design={d} priority={i < 2} />
             ))}
           </div>
@@ -154,7 +156,8 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading title="lens.title" subtitle="lens.sub" />
           <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            {CAMERA_LENS_SKINS.slice(0, 4).map((s) => (
+            <CustomSkinCard />
+            {CAMERA_LENS_SKINS.slice(0, 3).map((s) => (
               <LensSkinCard key={s.id} skin={s} />
             ))}
           </div>
@@ -174,7 +177,8 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading title="anime.title" subtitle="anime.sub" />
           <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            {ANIME_SKINS.slice(0, 4).map((s) => (
+            <CustomSkinCard />
+            {ANIME_SKINS.slice(0, 3).map((s) => (
               <AnimeSkinCard key={s.id} skin={s} />
             ))}
           </div>
@@ -193,7 +197,8 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading title="air.title" subtitle="air.sub" />
           <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            {IPHONE_AIR_SKINS.slice(0, 4).map((s) => (
+            <CustomSkinCard />
+            {IPHONE_AIR_SKINS.slice(0, 3).map((s) => (
               <AirSkinCard key={s.id} skin={s} />
             ))}
           </div>
@@ -212,7 +217,8 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading title="backlens.title" subtitle="backlens.sub" />
           <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            {BACK_LENS_SKINS.slice(0, 4).map((s) => (
+            <CustomSkinCard />
+            {BACK_LENS_SKINS.slice(0, 3).map((s) => (
               <BackLensSkinCard key={s.id} skin={s} />
             ))}
           </div>
@@ -231,7 +237,8 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading title="skins.title" subtitle="skins.sub" />
           <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            {FULL_BODY_SKINS.slice(0, 4).map((s) => (
+            <CustomSkinCard />
+            {FULL_BODY_SKINS.slice(0, 3).map((s) => (
               <SkinCard key={s.id} skin={s} />
             ))}
           </div>
