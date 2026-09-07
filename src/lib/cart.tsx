@@ -9,7 +9,18 @@ import {
 } from "react";
 import type { Lang } from "./translations";
 
-export type CartCategory = "lens" | "skins" | "backlens" | "air" | "anime";
+export type CartCategory = "lens" | "skins" | "backlens" | "air" | "anime" | "custom";
+
+/** Design personnalisé créé dans le configurateur. */
+export type CustomSkinMeta = {
+  modelId: string;
+  modelLabel: string;
+  coverage: "full" | "back" | "camera";
+  templateId: string;
+  transform: { x: number; y: number; scale: number; rotation: number };
+  originalPath: string;
+  previewPath: string;
+};
 
 export type CartProduct = {
   productId: string;
@@ -18,6 +29,7 @@ export type CartProduct = {
   name: Record<Lang, string>;
   image: string;
   price: number;
+  custom?: CustomSkinMeta;
 };
 
 export type CartItem = CartProduct & {
