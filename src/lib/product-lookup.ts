@@ -40,6 +40,6 @@ export function lookupProduct(idOrSlug: string): ProductRef | undefined {
   if (!idOrSlug) return undefined;
   const direct = INDEX.get(idOrSlug);
   if (direct) return direct;
-  const stripped = idOrSlug.replace(/^(lens|skin|backlens|air|anime)-/, "");
+  const stripped = idOrSlug.replace(/^(lens|skin|backlens|air)-/, "");
   return INDEX.get(stripped);
 }

@@ -101,7 +101,7 @@ export const CD = {
     { fr: "Branding business", ar: "Business branding", en: "Business branding" } as L,
     { fr: "Designs couple / famille", ar: "Designs ديال الكوبل والعائلة", en: "Couple / family designs" } as L,
     { fr: "Designs minimalistes", ar: "Designs بسيطة", en: "Minimal designs" } as L,
-    { fr: "Artwork inspiré anime", ar: "Artwork ديال الأنمي", en: "Anime-inspired artwork" } as L,
+    
     { fr: "Voitures & lifestyle", ar: "طوموبيلات و Lifestyle", en: "Cars & lifestyle" } as L,
     { fr: "Money / mindset", ar: "Money / Mindset", en: "Money / mindset" } as L,
     { fr: "Couleurs sur mesure", ar: "ألوان على الطلب", en: "Custom colours" } as L,
