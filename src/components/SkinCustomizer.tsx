@@ -88,7 +88,7 @@ export function SkinCustomizer() {
   const fileRef = useRef<HTMLInputElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  const [modelId, setModelId] = useState(SKIN_MODELS[0].id);
+  const [modelId, setModelId] = useState<string>(SKIN_MODELS[0].id);
   const [coverage, setCoverage] = useState<SkinCoverage>("full");
   const [img, setImg] = useState<Loaded | null>(null);
   const [t, setT] = useState<SkinTransform>(DEFAULT_TRANSFORM);
