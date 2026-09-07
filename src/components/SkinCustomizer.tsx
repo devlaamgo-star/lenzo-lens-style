@@ -52,12 +52,16 @@ function templateSvgMarkup(
           `<rect x="${r.x}" y="${r.y}" width="${r.width}" height="${r.height}" fill="none" stroke="#111" stroke-width="0.6"/>`,
       )
       .join("");
+  const rectMarkup = (attrs: string) =>
+    tpl.printRects
+      .map((r) => `<rect x="${r.x}" y="${r.y}" width="${r.width}" height="${r.height}" ${attrs}/>`)
+      .join("");
   const clip = `<clipPath id="${clipId}" clipPathUnits="userSpaceOnUse">${tpl.printPaths
     .map((d) => `<path d="${d}" clip-rule="evenodd"/>`)
-    .join("")}</clipPath>`;
-  const plate = tpl.printPaths
-    .map((d) => `<path d="${d}" fill="#f4f4f5" fill-rule="evenodd"/>`)
-    .join("");
+    .join("")}${rectMarkup("")}</clipPath>`;
+  const plate =
+    tpl.printPaths.map((d) => `<path d="${d}" fill="#f4f4f5" fill-rule="evenodd"/>`).join("") +
+    rectMarkup('fill="#f4f4f5"');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${tpl.viewBox}" width="${
     tpl.width * 4
   }" height="${tpl.height * 4}"><defs>${clip}</defs>${plate}${inner}${outline}</svg>`;
@@ -235,10 +239,23 @@ export function SkinCustomizer() {
                 {tpl.printPaths.map((d, i) => (
                   <path key={i} d={d} clipRule="evenodd" />
                 ))}
+                {tpl.printRects.map((r, i) => (
+                  <rect key={`cr-${i}`} x={r.x} y={r.y} width={r.width} height={r.height} />
+                ))}
               </clipPath>
             </defs>
             {tpl.printPaths.map((d, i) => (
               <path key={`plate-${i}`} d={d} fill="hsl(0 0% 96%)" fillRule="evenodd" />
+            ))}
+            {tpl.printRects.map((r, i) => (
+              <rect
+                key={`plate-r-${i}`}
+                x={r.x}
+                y={r.y}
+                width={r.width}
+                height={r.height}
+                fill="hsl(0 0% 96%)"
+              />
             ))}
             {img && (
               <g clipPath={`url(#clip-${tpl.id})`}>
