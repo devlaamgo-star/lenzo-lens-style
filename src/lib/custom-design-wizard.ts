@@ -2,13 +2,11 @@ import type { Lang } from "@/data/products";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { CAMERA_LENS_SKINS } from "@/data/camera-lens-skins";
 import { FULL_BODY_SKINS } from "@/data/full-body-skins";
-import { ANIME_SKINS } from "@/data/anime-skins";
 import type { L } from "@/lib/custom-design";
 
 const bl = (i: number) => BACK_LENS_SKINS[i % BACK_LENS_SKINS.length]?.image ?? "";
 const ln = (i: number) => CAMERA_LENS_SKINS[i % CAMERA_LENS_SKINS.length]?.image ?? "";
 const fb = (i: number) => FULL_BODY_SKINS[i % FULL_BODY_SKINS.length]?.image ?? "";
-const an = (i: number) => ANIME_SKINS[i % ANIME_SKINS.length]?.image ?? "";
 
 export type Option = { value: string; label: L; image?: string; emoji?: string };
 
@@ -52,7 +50,6 @@ export const WIZ = {
     options: [
       { value: "minimal", label: { fr: "Minimal", ar: "Minimal", en: "Minimal" } as L, image: bl(14) },
       { value: "luxury", label: { fr: "Luxury", ar: "Luxury", en: "Luxury" } as L, image: bl(19) },
-      { value: "anime", label: { fr: "Anime", ar: "Anime", en: "Anime" } as L, image: an(1) },
       { value: "street", label: { fr: "Street", ar: "Street", en: "Street" } as L, image: bl(22) },
       { value: "dark", label: { fr: "Dark", ar: "Dark", en: "Dark" } as L, image: bl(0) },
       { value: "cute", label: { fr: "Cute", ar: "Cute", en: "Cute" } as L, image: ln(6) },

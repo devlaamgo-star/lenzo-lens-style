@@ -2,7 +2,7 @@ import { CAMERA_LENS_SKINS } from "@/data/camera-lens-skins";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { FULL_BODY_SKINS } from "@/data/full-body-skins";
 import { IPHONE_AIR_SKINS } from "@/data/iphone-air-skins";
-import { ANIME_SKINS } from "@/data/anime-skins";
+
 
 export type ProductRef = {
   id: string;
@@ -17,7 +17,7 @@ const GROUPS: { label: string; items: readonly { id: string; slug: string; name:
   { label: "Skins arrière & caméra", items: BACK_LENS_SKINS },
   { label: "Full body skins", items: FULL_BODY_SKINS },
   { label: "Skins iPhone Air", items: IPHONE_AIR_SKINS },
-  { label: "Anime skins", items: ANIME_SKINS },
+  
 ];
 
 const INDEX = new Map<string, ProductRef>();

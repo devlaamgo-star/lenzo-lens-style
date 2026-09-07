@@ -22,7 +22,7 @@ const customSkinSchema = z.object({
 const itemSchema = z.object({
   productId: z.string().trim().min(1).max(60),
   name: z.string().trim().min(1).max(120),
-  category: z.enum(["lens", "skins", "backlens", "air", "anime", "custom"]),
+  category: z.enum(["lens", "skins", "backlens", "air", "custom"]),
   model: z.string().trim().min(3).max(40),
   qty: z.number().int().min(1).max(20),
   image: z.string().trim().max(400).optional().default(""),
