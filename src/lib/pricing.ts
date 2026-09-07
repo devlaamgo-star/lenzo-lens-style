@@ -12,8 +12,8 @@ export const CATEGORY_PRICES: Record<CartCategory, number> = {
 /** Prix des skins personnalisés selon la couverture choisie. */
 export const CUSTOM_COVERAGE_PRICES = { full: 149, back: 129, camera: 49 } as const;
 
-export const PACK_TOTAL = 99;
-/** Nombre d'articles couverts par l'offre 3 pour 99 MAD. */
+export const PACK_TOTAL = 149;
+/** Nombre d'articles couverts par l'offre 3 pour 149 MAD. */
 export const PACK_PROMO_SIZE = 3;
 /** Prix unitaire d'un sticker caméra hors offre. */
 export const LENS_UNIT_PRICE = CATEGORY_PRICES.lens;
@@ -29,7 +29,7 @@ export type PackBreakdown = {
 };
 
 /**
- * Les 3 premiers stickers caméra = 99 MAD.
+ * Les 3 premiers stickers caméra = 149 MAD.
  * Chaque article supplémentaire est facturé à son prix normal.
  * Moins de 3 articles : prix normal à l'unité.
  */

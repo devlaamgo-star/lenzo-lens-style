@@ -21,17 +21,17 @@ import { StickyPackBar } from "@/components/StickyPackBar";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "SKINUP — 3 stickers caméra iPhone pour 99 MAD" },
+      { title: "SKINUP — 3 stickers caméra iPhone pour 149 MAD" },
       {
         name: "description",
         content:
-          "Personnalisez le module caméra de votre iPhone avec les stickers décoratifs SKINUP. 3 stickers au choix à 99 MAD, livraison gratuite au Maroc et paiement à la livraison.",
+          "Personnalisez le module caméra de votre iPhone avec les stickers décoratifs SKINUP. 3 stickers au choix à 149 MAD, livraison gratuite au Maroc et paiement à la livraison.",
       },
-      { property: "og:title", content: "SKINUP — 3 stickers caméra iPhone pour 99 MAD" },
+      { property: "og:title", content: "SKINUP — 3 stickers caméra iPhone pour 149 MAD" },
       {
         property: "og:description",
         content:
-          "3 stickers décoratifs pour module caméra iPhone à 99 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
+          "3 stickers décoratifs pour module caméra iPhone à 149 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
       },
 
     ],

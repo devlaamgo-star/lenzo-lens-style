@@ -164,9 +164,9 @@ export const FAQS: Faq[] = [
       en: "How does cash on delivery work?",
     },
     a: {
-      fr: "Vous ne payez rien en ligne. Nous confirmons votre commande par téléphone ou WhatsApp, puis vous réglez 99 MAD au livreur à la réception.",
-      ar: "لا تدفع شيئاً عبر الإنترنت. نؤكد الطلب هاتفياً أو عبر واتساب ثم تدفع 99 درهم للموصل عند الاستلام.",
-      en: "You pay nothing online. We confirm your order by phone or WhatsApp, then you pay 99 MAD to the courier on delivery.",
+      fr: "Vous ne payez rien en ligne. Nous confirmons votre commande par téléphone ou WhatsApp, puis vous réglez 149 MAD au livreur à la réception.",
+      ar: "لا تدفع شيئاً عبر الإنترنت. نؤكد الطلب هاتفياً أو عبر واتساب ثم تدفع 149 درهم للموصل عند الاستلام.",
+      en: "You pay nothing online. We confirm your order by phone or WhatsApp, then you pay 149 MAD to the courier on delivery.",
     },
   },
   {

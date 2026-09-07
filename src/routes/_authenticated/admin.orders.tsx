@@ -1022,7 +1022,7 @@ function OrderDetail({
                     Quantité : <span className="font-medium">{l.qty}</span>
                     {l.inPack && (
                       <Badge variant="secondary" className="ml-2 align-middle">
-                        Pack 3 pour 99 MAD
+                        Pack 3 pour 149 MAD
                       </Badge>
                     )}
                   </p>
