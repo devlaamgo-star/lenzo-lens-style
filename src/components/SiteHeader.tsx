@@ -70,7 +70,6 @@ export function SiteHeader() {
     { to: "/comment-ca-marche" as const, label: t("nav.how"), search: {} },
     { to: "/avis" as const, label: t("nav.reviews"), search: {} },
     { to: "/creer-mon-skin" as const, label: t("nav.builder"), search: {} },
-    { to: "/design-personnalise" as const, label: t("nav.custom"), search: {} },
     { to: "/faq" as const, label: t("nav.faq"), search: {} },
   ];
 
