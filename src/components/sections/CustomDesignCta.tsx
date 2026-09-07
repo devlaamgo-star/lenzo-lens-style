@@ -22,7 +22,7 @@ export function CustomDesignCta() {
             <p className="mt-2.5 max-w-lg text-sm text-muted-foreground sm:text-base">{HOME_CTA.text[lang]}</p>
             <div className="mt-5">
               <Link
-                to="/design-personnalise"
+                to="/creer-mon-skin"
                 className="inline-flex h-12 min-w-0 items-center justify-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.02]"
               >
                 <span className="truncate">{HOME_CTA.cta[lang]}</span>

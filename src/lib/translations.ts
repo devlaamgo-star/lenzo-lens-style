@@ -18,7 +18,7 @@ const D = {
   "nav.how": ["Comment ça marche", "كيف تعمل", "How it works"],
   "nav.reviews": ["Avis clients", "آراء العملاء", "Reviews"],
   "nav.faq": ["FAQ", "الأسئلة الشائعة", "FAQ"],
-  "nav.custom": ["Design personnalisé", "صمّم Skin ديالك", "Custom Design"],
+  
   "nav.builder": ["Créer mon skin", "صمم السكين ديالي", "Create my skin"],
   "nav.menu": ["Menu", "القائمة", "Menu"],
   "nav.search": ["Rechercher", "بحث", "Search"],
