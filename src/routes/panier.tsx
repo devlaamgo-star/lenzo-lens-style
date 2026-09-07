@@ -6,6 +6,7 @@ import { usePack } from "@/lib/pack";
 import { designById } from "@/lib/catalog";
 import { QtyStepper } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
+import { LENS_UNIT_PRICE } from "@/lib/pricing";
 
 export const Route = createFileRoute("/panier")({
   head: () => ({
@@ -83,11 +84,15 @@ function CartPage() {
                   <p className="mt-1 text-xs text-muted-foreground">
                     {t("pack.model")} : <span className="font-medium text-foreground">{item.model}</span>
                   </p>
-                  <p className="mt-1 text-sm font-bold">{item.price} MAD</p>
+                  <p className="mt-1 text-sm font-bold">
+                    {item.category === "lens" ? LENS_UNIT_PRICE : item.price} MAD
+                  </p>
                 </div>
                 <div className="flex items-center gap-3">
                   <QtyStepper value={item.qty} onChange={(q) => cart.setQty(item.key, q)} compact />
-                  <span className="w-20 text-end text-sm font-bold">{item.price * item.qty} MAD</span>
+                  <span className="w-20 text-end text-sm font-bold">
+                    {(item.category === "lens" ? LENS_UNIT_PRICE : item.price) * item.qty} MAD
+                  </span>
                   <button
                     type="button"
                     aria-label={t("cart.remove")}
@@ -163,7 +168,10 @@ function CartPage() {
                       {t("cart.bundleLine")}
                       {cart.bundleGroups > 1 ? ` × ${cart.bundleGroups}` : ""}
                     </dt>
-                    <dd className="font-medium">-{cart.bundleDiscount} MAD</dd>
+                    <dd className="flex items-center gap-2 font-medium">
+                      <span className="text-muted-foreground line-through">{cart.bundleListTotal} MAD</span>
+                      <span>{cart.bundleTotal} MAD</span>
+                    </dd>
                   </div>
                 )}
                 <div className="flex items-center justify-between">
