@@ -3,6 +3,12 @@ import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { lookupProduct } from "@/lib/product-lookup";
 
+const COVERAGE_FR: Record<string, string> = {
+  full: "Arrière & côtés",
+  back: "Arrière uniquement",
+  camera: "Zone caméra",
+};
+
 export const ORDER_STATUSES = [
   "new",
   "confirmed",
@@ -159,16 +165,31 @@ export const listAdminOrders = createServerFn({ method: "GET" })
       const pack = (o.pack_breakdown ?? null) as any;
       const lines: AdminLine[] = [];
 
+      const customDetails: Record<string, string> = {};
+      let customIndex = 0;
+
       for (const i of items) {
         const ref = lookupProduct(String(i?.productId ?? ""));
         const qty = Number(i?.qty ?? 1);
         const unit = i?.unitPrice != null ? Number(i.unitPrice) : null;
+        const custom = (i?.custom ?? null) as any;
+        if (custom) {
+          customIndex += 1;
+          const tr = custom.transform ?? {};
+          customDetails[`Skin personnalisé ${customIndex}`] =
+            `${custom.modelLabel ?? custom.modelId ?? ""} — ${COVERAGE_FR[String(custom.coverage)] ?? custom.coverage}` +
+            ` · zoom ${Math.round(Number(tr.scale ?? 1) * 100)}%` +
+            ` · rotation ${Math.round(Number(tr.rotation ?? 0))}°` +
+            ` · position X ${Math.round(Number(tr.x ?? 0))} / Y ${Math.round(Number(tr.y ?? 0))}`;
+        }
         lines.push({
           key: `item-${i?.productId ?? lines.length}-${i?.model ?? ""}`,
           name: ref?.name ?? i?.name ?? String(i?.productId ?? "Produit"),
           image: (i?.image as string) ?? ref?.image ?? null,
-          categoryLabel: ref?.categoryLabel ?? String(i?.category ?? ""),
-          model: String(i?.model ?? o.iphone_model ?? ""),
+          categoryLabel: custom
+            ? "Skin personnalisé"
+            : (ref?.categoryLabel ?? String(i?.category ?? "")),
+          model: String(custom?.modelLabel ?? i?.model ?? o.iphone_model ?? ""),
           qty,
           unitPrice: unit,
           lineTotal: unit != null ? unit * qty : null,
@@ -237,7 +258,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
           total: o.total_mad,
           paymentMethod: o.payment_method === "cod" ? "Paiement à la livraison" : o.payment_method,
         },
-        details: {},
+        details: customDetails,
         ...ops(o),
       });
     }
