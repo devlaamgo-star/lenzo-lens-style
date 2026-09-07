@@ -7,8 +7,7 @@ import { FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "
 import { SkinCard } from "@/components/SkinCard";
 import { LensSkinCard } from "@/components/LensSkinCard";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
-import { BACK_LENS_SKINS, IPHONE_AIR_SKINS, ANIME_SKINS } from "@/lib/catalog";
-import { AnimeSkinCard } from "@/components/AnimeSkinCard";
+import { BACK_LENS_SKINS, IPHONE_AIR_SKINS } from "@/lib/catalog";
 import { AirSkinCard } from "@/components/AirSkinCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { CustomSkinCard } from "@/components/CustomSkinCard";
@@ -146,25 +145,6 @@ function HomePage() {
       </section>
 
 
-      <section className="section-y">
-        <div className="container-page">
-          <SectionHeading title="anime.title" subtitle="anime.sub" />
-          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            <CustomSkinCard />
-            {ANIME_SKINS.slice(0, 3).map((s) => (
-              <AnimeSkinCard key={s.id} skin={s} />
-            ))}
-          </div>
-          <div className="mt-6 flex justify-center">
-            <Link
-              to="/anime"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
-            >
-              {t("anime.viewAll")}
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <section className="section-y">
         <div className="container-page">
