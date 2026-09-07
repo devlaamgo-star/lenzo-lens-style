@@ -473,6 +473,11 @@ const D = {
   "cart.empty": ["Votre panier est vide.", "سلتك فارغة.", "Your cart is empty."],
   "cart.continue": ["Continuer mes achats", "تابع التسوق", "Continue shopping"],
   "cart.subtotal": ["Sous-total", "المجموع الفرعي", "Subtotal"],
+  "cart.bundleLine": [
+    "Offre Stickers caméra — 3 pour 149 MAD",
+    "عرض ستيكرات الكاميرا — 3 بـ 149 درهم",
+    "Camera Skins Bundle — 3 for 149 MAD",
+  ],
   "cart.checkout": ["Passer la commande", "إتمام الطلب", "Checkout"],
   "cart.remove": ["Retirer", "إزالة", "Remove"],
   "cart.items": ["Produits commandés", "المنتجات المطلوبة", "Ordered products"],

@@ -33,7 +33,7 @@ function CartPage() {
   const pack = usePack();
   const b = pack.breakdown;
   const packReady = b.count > 0;
-  const total = cart.subtotal + b.total;
+  const total = cart.total + b.total;
   const empty = cart.items.length === 0 && !packReady;
 
   return (
@@ -155,8 +155,17 @@ function CartPage() {
               <dl className="mt-4 space-y-3 text-sm">
                 <div className="flex items-center justify-between">
                   <dt className="text-muted-foreground">{t("cart.subtotal")}</dt>
-                  <dd className="font-medium">{total} MAD</dd>
+                  <dd className="font-medium">{cart.subtotal + b.total} MAD</dd>
                 </div>
+                {cart.bundleDiscount > 0 && (
+                  <div className="flex items-center justify-between text-success">
+                    <dt>
+                      {t("cart.bundleLine")}
+                      {cart.bundleGroups > 1 ? ` × ${cart.bundleGroups}` : ""}
+                    </dt>
+                    <dd className="font-medium">-{cart.bundleDiscount} MAD</dd>
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
                   <dt className="text-muted-foreground">{t("pack.delivery")}</dt>
                   <dd className="font-medium text-success">{t("pack.free")}</dd>
