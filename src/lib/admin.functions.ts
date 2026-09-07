@@ -229,7 +229,9 @@ export const listAdminOrders = createServerFn({ method: "GET" })
       const packCount = Number(pack?.itemCount ?? designsList.length);
       const packListPrice = packCount * Number(pack?.extraUnitPrice ?? 49);
       const packTotal = Number(pack?.packTotal ?? 0);
-      const discount = packListPrice > packTotal ? packListPrice - packTotal : 0;
+      const packDiscount = packListPrice > packTotal ? packListPrice - packTotal : 0;
+      const cameraBundleDiscount = Number(pack?.cameraBundleDiscount ?? 0) || 0;
+      const discount = packDiscount + cameraBundleDiscount;
 
       rows.push({
         kind: "order",
@@ -254,7 +256,14 @@ export const listAdminOrders = createServerFn({ method: "GET" })
           totalItems: lines.reduce((s, l) => s + l.qty, 0) || o.quantity,
           subtotal: itemsSubtotal + packListPrice,
           discount: discount || null,
-          discountLabel: discount ? `Offre pack 3 pour ${packTotal} MAD` : "",
+          discountLabel: discount
+            ? [
+                packDiscount ? `Offre pack 3 pour ${packTotal} MAD` : "",
+                cameraBundleDiscount ? "Offre Stickers caméra 3 pour 149 MAD" : "",
+              ]
+                .filter(Boolean)
+                .join(" + ")
+            : "",
           total: o.total_mad,
           paymentMethod: o.payment_method === "cod" ? "Paiement à la livraison" : o.payment_method,
         },

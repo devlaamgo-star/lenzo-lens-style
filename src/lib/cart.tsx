@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Lang } from "./translations";
+import { cameraBundle } from "./pricing";
 
 export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
 
@@ -42,6 +43,11 @@ type CartValue = {
   items: CartItem[];
   count: number;
   subtotal: number;
+  /** Remise offre "3 stickers caméra pour 149 MAD" */
+  bundleDiscount: number;
+  bundleGroups: number;
+  /** Sous-total après remise */
+  total: number;
   add: (product: CartProduct, model: string, qty: number) => void;
   setQty: (key: string, qty: number) => void;
   remove: (key: string) => void;
@@ -100,19 +106,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clear = useCallback(() => setItems([]), []);
 
-  const value = useMemo<CartValue>(
-    () => ({
+  const value = useMemo<CartValue>(() => {
+    const subtotal = items.reduce((n, i) => n + i.qty * i.price, 0);
+    const lensUnits = items.reduce((n, i) => (i.category === "lens" ? n + i.qty : n), 0);
+    const bundle = cameraBundle(lensUnits);
+    return {
       items,
       count: items.reduce((n, i) => n + i.qty, 0),
-      subtotal: items.reduce((n, i) => n + i.qty * i.price, 0),
+      subtotal,
+      bundleDiscount: bundle.discount,
+      bundleGroups: bundle.groups,
+      total: subtotal - bundle.discount,
       add,
       setQty,
       remove,
       clear,
       ready,
-    }),
-    [items, add, setQty, remove, clear, ready],
-  );
+    };
+  }, [items, add, setQty, remove, clear, ready]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
@@ -121,6 +132,9 @@ const FALLBACK: CartValue = {
   items: [],
   count: 0,
   subtotal: 0,
+  bundleDiscount: 0,
+  bundleGroups: 0,
+  total: 0,
   add: () => {},
   setQty: () => {},
   remove: () => {},

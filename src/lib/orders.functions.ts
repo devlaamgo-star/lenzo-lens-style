@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, packBreakdown } from "./pricing";
+import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, cameraBundle, packBreakdown } from "./pricing";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
@@ -76,7 +76,10 @@ export const createOrder = createServerFn({ method: "POST" })
     if (!hasPack && data.items.length === 0) throw new Error("EMPTY_ORDER");
     if (hasPack && !data.model) throw new Error("MODEL_REQUIRED");
 
-    const itemsTotal = data.items.reduce((sum, i) => sum + unitPriceFor(i) * i.qty, 0);
+    const itemsList = data.items.reduce((sum, i) => sum + unitPriceFor(i) * i.qty, 0);
+    const lensUnits = data.items.reduce((sum, i) => (i.category === "lens" ? sum + i.qty : sum), 0);
+    const bundle = cameraBundle(lensUnits);
+    const itemsTotal = itemsList - bundle.discount;
 
     const customPaths = data.items.flatMap((i) =>
       i.custom ? [i.custom.previewPath, i.custom.originalPath] : [],
@@ -112,6 +115,8 @@ export const createOrder = createServerFn({ method: "POST" })
         extraUnitPrice: CATEGORY_PRICES.lens,
         extraTotal: pack.extraTotal,
         packTotal: pack.total,
+        cameraBundleGroups: bundle.groups,
+        cameraBundleDiscount: bundle.discount,
       },
       total_mad: total,
       payment_method: "cod",
@@ -166,6 +171,9 @@ export const createOrder = createServerFn({ method: "POST" })
           in_pack: true,
         })),
       ],
+      camera_bundle: bundle.discount
+        ? `Offre Stickers caméra 3 pour 149 MAD × ${bundle.groups} (-${bundle.discount} MAD)`
+        : "",
       discount: pack.promoApplies
         ? `Pack 3 pour 149 MAD (${pack.promoCount} articles à ${pack.promoTotal} MAD)`
         : "",
