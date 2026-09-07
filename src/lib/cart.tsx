@@ -42,6 +42,11 @@ type CartValue = {
   items: CartItem[];
   count: number;
   subtotal: number;
+  /** Remise offre "3 stickers caméra pour 149 MAD" */
+  bundleDiscount: number;
+  bundleGroups: number;
+  /** Sous-total après remise */
+  total: number;
   add: (product: CartProduct, model: string, qty: number) => void;
   setQty: (key: string, qty: number) => void;
   remove: (key: string) => void;
