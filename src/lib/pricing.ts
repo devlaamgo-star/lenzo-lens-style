@@ -50,3 +50,32 @@ export function packBreakdown(count: number): PackBreakdown {
     total: promoTotal + extraTotal,
   };
 }
+
+export type CameraBundle = {
+  units: number;
+  groups: number;
+  remainder: number;
+  listTotal: number;
+  bundledTotal: number;
+  discount: number;
+};
+
+/**
+ * Offre Stickers caméra : chaque groupe de 3 stickers = 149 MAD.
+ * Les articles restants gardent leur prix normal.
+ */
+export function cameraBundle(units: number): CameraBundle {
+  const n = Math.max(0, Math.floor(units) || 0);
+  const groups = Math.floor(n / PACK_PROMO_SIZE);
+  const remainder = n % PACK_PROMO_SIZE;
+  const listTotal = n * LENS_UNIT_PRICE;
+  const bundledTotal = groups * PACK_TOTAL + remainder * LENS_UNIT_PRICE;
+  return {
+    units: n,
+    groups,
+    remainder,
+    listTotal,
+    bundledTotal,
+    discount: Math.max(0, listTotal - bundledTotal),
+  };
+}
