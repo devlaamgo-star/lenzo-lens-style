@@ -3,8 +3,7 @@ import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-three-iphones.png.asset.json";
 
 import { useI18n } from "@/lib/i18n";
-import { DESIGNS, FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
-import { ProductCard } from "@/components/ProductCard";
+import { FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
 import { SkinCard } from "@/components/SkinCard";
 import { LensSkinCard } from "@/components/LensSkinCard";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
