@@ -117,38 +117,12 @@ function Hero() {
 
 function HomePage() {
   const { t } = useI18n();
-  const newest = [...DESIGNS].sort((a, b) => Number(b.isNew) - Number(a.isNew)).slice(0, 4);
 
   return (
     <>
       <Hero />
 
-      <section className="section-y">
-        <div className="container-page">
-          <div className="grid grid-cols-[minmax(0,1fr)_auto] items-end gap-4">
-            <SectionHeading title="new.title" subtitle="new.sub" align="start" />
-            <Link
-              to="/collection"
-              className="hidden shrink-0 items-center gap-1.5 text-sm font-semibold text-primary hover:underline sm:inline-flex"
-            >
-              {t("common.viewAll")}
-              <ArrowRight className="h-4 w-4 flip-rtl" />
-            </Link>
-          </div>
-          <div className="mt-8 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            <CustomSkinCard priority />
-            {newest.slice(0, 3).map((d, i) => (
-              <ProductCard key={d.id} design={d} priority={i < 2} />
-            ))}
-          </div>
-          <Link
-            to="/collection"
-            className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full border border-border bg-card text-sm font-semibold sm:hidden"
-          >
-            {t("common.viewAll")}
-          </Link>
-        </div>
-      </section>
+
 
 
 
