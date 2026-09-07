@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Lang } from "./translations";
-import { cameraBundle } from "./pricing";
+import { cameraBundle, LENS_UNIT_PRICE } from "./pricing";
 
 export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
 
@@ -46,6 +46,8 @@ type CartValue = {
   /** Remise offre "3 stickers caméra pour 149 MAD" */
   bundleDiscount: number;
   bundleGroups: number;
+  bundleListTotal: number;
+  bundleTotal: number;
   /** Sous-total après remise */
   total: number;
   add: (product: CartProduct, model: string, qty: number) => void;
@@ -107,7 +109,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const clear = useCallback(() => setItems([]), []);
 
   const value = useMemo<CartValue>(() => {
-    const subtotal = items.reduce((n, i) => n + i.qty * i.price, 0);
+    const subtotal = items.reduce(
+      (n, i) => n + i.qty * (i.category === "lens" ? LENS_UNIT_PRICE : i.price),
+      0,
+    );
     const lensUnits = items.reduce((n, i) => (i.category === "lens" ? n + i.qty : n), 0);
     const bundle = cameraBundle(lensUnits);
     return {
@@ -116,6 +121,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
       subtotal,
       bundleDiscount: bundle.discount,
       bundleGroups: bundle.groups,
+      bundleListTotal: bundle.groups * 3 * LENS_UNIT_PRICE,
+      bundleTotal: bundle.groups * 149,
       total: subtotal - bundle.discount,
       add,
       setQty,
@@ -134,6 +141,8 @@ const FALLBACK: CartValue = {
   subtotal: 0,
   bundleDiscount: 0,
   bundleGroups: 0,
+  bundleListTotal: 0,
+  bundleTotal: 0,
   total: 0,
   add: () => {},
   setQty: () => {},

@@ -227,7 +227,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         0,
       );
       const packCount = Number(pack?.itemCount ?? designsList.length);
-      const packListPrice = packCount * Number(pack?.extraUnitPrice ?? 49);
+      const packListPrice = packCount * Number(pack?.extraUnitPrice ?? 79);
       const packTotal = Number(pack?.packTotal ?? 0);
       const packDiscount = packListPrice > packTotal ? packListPrice - packTotal : 0;
       const cameraBundleDiscount = Number(pack?.cameraBundleDiscount ?? 0) || 0;

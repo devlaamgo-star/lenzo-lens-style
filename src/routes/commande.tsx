@@ -10,6 +10,7 @@ import { designById, MOROCCAN_CITIES } from "@/lib/catalog";
 import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
+import { LENS_UNIT_PRICE } from "@/lib/pricing";
 
 export const Route = createFileRoute("/commande")({
   head: () => ({
@@ -291,7 +292,9 @@ function OrderPage() {
                   {i.model} · {t("f.qty")} {i.qty}
                 </p>
               </div>
-              <span className="text-sm font-semibold">{i.price * i.qty} MAD</span>
+              <span className="text-sm font-semibold">
+                {(i.category === "lens" ? LENS_UNIT_PRICE : i.price) * i.qty} MAD
+              </span>
             </div>
           ))}
 
@@ -354,7 +357,10 @@ function OrderPage() {
                 {t("cart.bundleLine")}
                 {cart.bundleGroups > 1 ? ` × ${cart.bundleGroups}` : ""}
               </dt>
-              <dd className="font-medium">-{cart.bundleDiscount} MAD</dd>
+              <dd className="flex items-center gap-2 font-medium">
+                <span className="text-muted-foreground line-through">{cart.bundleListTotal} MAD</span>
+                <span>{cart.bundleTotal} MAD</span>
+              </dd>
             </div>
           )}
           <div className="flex items-center justify-between">
