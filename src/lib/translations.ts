@@ -45,15 +45,6 @@ const D = {
     "ملصق لعدسات الكاميرا",
     "Camera lens skin",
   ],
-  "anime.nav": ["Skins Anime", "سكينات أنمي", "Anime Skins"],
-  "anime.title": ["Skins Anime", "سكينات أنمي", "Anime Skins"],
-  "anime.sub": [
-    "Des designs inspirés de l’univers manga pour personnaliser votre iPhone.",
-    "تصاميم مستوحاة من عالم المانغا لتخصيص هاتفك آيفون.",
-    "Manga-inspired designs to personalise your iPhone.",
-  ],
-  "anime.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
-  "anime.category": ["Skin Anime", "سكين أنمي", "Anime skin"],
   "air.nav": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
   "air.title": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
   "air.sub": [

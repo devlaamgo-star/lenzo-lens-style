@@ -9,7 +9,7 @@ import {
 } from "react";
 import type { Lang } from "./translations";
 
-export type CartCategory = "lens" | "skins" | "backlens" | "air" | "anime" | "custom";
+export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
 
 /** Design personnalisé créé dans le configurateur. */
 export type CustomSkinMeta = {
