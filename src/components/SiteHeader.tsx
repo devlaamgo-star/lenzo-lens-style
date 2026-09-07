@@ -62,7 +62,6 @@ export function SiteHeader() {
   ];
 
   const rightLinks = [
-    { to: "/skins" as const, label: t("skins.nav"), search: {} },
     { to: "/comment-ca-marche" as const, label: t("nav.how"), search: {} },
     { to: "/avis" as const, label: t("nav.reviews"), search: {} },
     { to: "/creer-mon-skin" as const, label: t("nav.builder"), search: {} },
