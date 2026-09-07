@@ -7,8 +7,8 @@ import { DESIGNS, IPHONE_MODELS } from "@/lib/catalog";
 import { ProductCard } from "@/components/ProductCard";
 import { StickyPackBar } from "@/components/StickyPackBar";
 import { cn } from "@/lib/utils";
-import {
 import { CustomSkinCard } from "@/components/CustomSkinCard";
+import {
   Select,
   SelectContent,
   SelectItem,
