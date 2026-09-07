@@ -35,11 +35,6 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/collection" search={{ filter: "new" }} className="transition-colors hover:text-primary">
-                {t("nav.new")}
-              </Link>
-            </li>
-            <li>
               <Link to="/collection" search={{ filter: "best" }} className="transition-colors hover:text-primary">
                 {t("nav.best")}
               </Link>

@@ -60,13 +60,11 @@ export function SiteHeader() {
     { to: "/iphone-air" as const, search: {}, label: t("air.nav") },
     { to: "/anime" as const, search: {}, label: t("anime.nav") },
     { to: "/skins" as const, search: {}, label: t("skins.nav") },
-    { to: "/collection" as const, search: { filter: "new" as const }, label: t("nav.new") },
     { to: "/collection" as const, search: { filter: "best" as const }, label: t("nav.best") },
   ];
 
   const rightLinks = [
     { to: "/skins" as const, label: t("skins.nav"), search: {} },
-    { to: "/collection" as const, label: t("nav.new"), search: { filter: "new" as const } },
     { to: "/comment-ca-marche" as const, label: t("nav.how"), search: {} },
     { to: "/avis" as const, label: t("nav.reviews"), search: {} },
     { to: "/creer-mon-skin" as const, label: t("nav.builder"), search: {} },

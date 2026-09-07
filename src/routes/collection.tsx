@@ -156,18 +156,6 @@ function CollectionPage() {
                 </SelectContent>
               </Select>
 
-              <Select
-                value={search.filter ?? "all"}
-                onValueChange={(v) => update({ filter: v === "all" ? undefined : v })}
-              >
-                <SelectTrigger className="h-11 min-w-0 rounded-full">
-                  <SelectValue placeholder={t("col.style")} />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="all">{t("col.style")} — {t("col.all")}</SelectItem>
-                  <SelectItem value="new">{t("nav.new")}</SelectItem>
-                </SelectContent>
-              </Select>
 
               <Select value={sort} onValueChange={(v) => update({ sort: v })}>
                 <SelectTrigger className="h-11 min-w-0 rounded-full">
