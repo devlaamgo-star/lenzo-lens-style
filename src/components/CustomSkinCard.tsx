@@ -17,10 +17,7 @@ export function CustomSkinCard({ priority = false }: { priority?: boolean }) {
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"
         />
-        <div className="absolute inset-x-0 top-0 z-[2] flex items-start justify-between gap-2 p-3">
-          <span className="rounded-full bg-primary px-2.5 py-1 text-[11px] font-semibold tracking-wide text-primary-foreground">
-            {t("badge.featured")}
-          </span>
+        <div className="absolute right-0 top-0 z-[2] flex items-start justify-end p-3">
           <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-card/90 text-foreground shadow-soft backdrop-blur">
             <Paintbrush className="h-4 w-4" />
           </span>
