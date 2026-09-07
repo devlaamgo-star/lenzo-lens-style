@@ -167,7 +167,7 @@ export const createOrder = createServerFn({ method: "POST" })
         })),
       ],
       discount: pack.promoApplies
-        ? `Pack 3 pour 99 MAD (${pack.promoCount} articles à ${pack.promoTotal} MAD)`
+        ? `Pack 3 pour 149 MAD (${pack.promoCount} articles à ${pack.promoTotal} MAD)`
         : "",
       pack_breakdown: pack,
       quantity,

@@ -51,8 +51,8 @@ export const IPHONE_MODELS = ["iPhone 17 Pro", "iPhone 17 Pro Max"] as const;
 /** Aucun modèle présélectionné : le client doit choisir. */
 export const DEFAULT_IPHONE_MODEL = "";
 
-export const PACK_PRICE = 99;
-export const PACK_OLD_PRICE = 147;
+export const PACK_PRICE = 149;
+export const PACK_OLD_PRICE = 197;
 export const PACK_SIZE = 3;
 
 export const WHATSAPP_NUMBER = "212666256545";

@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "3 stickers caméra iPhone pour 99 MAD. Livraison gratuite au Maroc et paiement à la livraison.",
+          "3 stickers caméra iPhone pour 149 MAD. Livraison gratuite au Maroc et paiement à la livraison.",
       },
       { name: "author", content: "SKINUP" },
       { property: "og:type", content: "website" },

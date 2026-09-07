@@ -116,9 +116,9 @@ const D = {
   "hero.cta": ["Composer mon pack", "كوّن باقتك", "Build my pack"],
   "hero.cta2": ["Voir les designs", "شاهد التصاميم", "View the designs"],
   "hero.offer": [
-    "3 stickers au choix pour seulement 99 MAD",
-    "3 ملصقات من اختيارك بـ 99 درهم فقط",
-    "3 stickers of your choice for only 99 MAD",
+    "3 stickers au choix pour seulement 149 MAD",
+    "3 ملصقات من اختيارك بـ 149 درهم فقط",
+    "3 stickers of your choice for only 149 MAD",
   ],
   "hero.trust1": ["Livraison gratuite au Maroc", "توصيل مجاني داخل المغرب", "Free delivery in Morocco"],
   "hero.trust2": ["Paiement à la livraison", "الدفع عند الاستلام", "Cash on delivery"],
@@ -307,9 +307,9 @@ const D = {
 
   "pack.title": ["Composer mon pack", "كوّن باقتي", "Build my pack"],
   "pack.sub": [
-    "3 designs, 99 MAD, livraison gratuite.",
-    "3 تصاميم، 99 درهم، توصيل مجاني.",
-    "3 designs, 99 MAD, free delivery.",
+    "3 designs, 149 MAD, livraison gratuite.",
+    "3 تصاميم، 149 درهم، توصيل مجاني.",
+    "3 designs, 149 MAD, free delivery.",
   ],
   "pack.step1": ["Étape 1 — Choisissez le modèle de votre iPhone", "الخطوة 1 — اختر موديل iPhone", "Step 1 — Choose your iPhone model"],
   "pack.step2": ["Étape 2 — Choisissez vos 3 stickers", "الخطوة 2 — اختر ملصقاتك الثلاثة", "Step 2 — Choose your 3 stickers"],
@@ -336,14 +336,14 @@ const D = {
   "pack.needThree": ["Sélectionnez 3 designs", "اختر 3 تصاميم", "Select 3 designs"],
   "pack.selectedCount": ["articles sélectionnés", "منتجات مختارة", "items selected"],
   "pack.promoApplied": [
-    "Offre 3 pour 99 MAD appliquée",
-    "تم تطبيق عرض 3 مقابل 99 درهم",
-    "3 for 99 MAD offer applied",
+    "Offre 3 pour 149 MAD appliquée",
+    "تم تطبيق عرض 3 مقابل 149 درهم",
+    "3 for 149 MAD offer applied",
   ],
   "pack.promoNote": [
-    "Vos 3 premiers stickers bénéficient de l’offre à 99 MAD. Les articles supplémentaires sont facturés au prix normal.",
-    "أول 3 ملصقات تستفيد من عرض 99 درهم، ويتم احتساب المنتجات الإضافية بسعرها العادي.",
-    "Your first 3 stickers are included in the 99 MAD offer. Additional items are charged at their regular price.",
+    "Vos 3 premiers stickers bénéficient de l’offre à 149 MAD. Les articles supplémentaires sont facturés au prix normal.",
+    "أول 3 ملصقات تستفيد من عرض 149 درهم، ويتم احتساب المنتجات الإضافية بسعرها العادي.",
+    "Your first 3 stickers are included in the 149 MAD offer. Additional items are charged at their regular price.",
   ],
   "pack.promoLine": [
     "Promotion pack — 3 stickers caméra",
@@ -379,9 +379,9 @@ const D = {
   "col.grid": ["Affichage", "طريقة العرض", "Layout"],
   "picks.title": ["Choisissez vos designs préférés", "اختر تصاميمك المفضلة", "Choose your favourite designs"],
   "picks.sub": [
-    "3 stickers décoratifs au choix pour 99 MAD — livraison gratuite partout au Maroc, paiement à la livraison.",
-    "3 ملصقات ديكورية من اختيارك بـ 99 درهم — توصيل مجاني لكل المغرب والدفع عند الاستلام.",
-    "Any 3 decorative stickers for 99 MAD — free delivery across Morocco, cash on delivery.",
+    "3 stickers décoratifs au choix pour 149 MAD — livraison gratuite partout au Maroc, paiement à la livraison.",
+    "3 ملصقات ديكورية من اختيارك بـ 149 درهم — توصيل مجاني لكل المغرب والدفع عند الاستلام.",
+    "Any 3 decorative stickers for 149 MAD — free delivery across Morocco, cash on delivery.",
   ],
 
   "search.placeholder": ["Rechercher un design…", "ابحث عن تصميم…", "Search a design…"],
