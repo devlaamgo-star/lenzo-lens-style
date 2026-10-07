@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Lang } from "./translations";
-import { cameraBundle, LENS_UNIT_PRICE } from "./pricing";
+import { eligibleBundle, isBundleEligible, LENS_UNIT_PRICE } from "./pricing";
 
 export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
 
@@ -49,6 +49,8 @@ type CartValue = {
   bundleListTotal: number;
   bundleTotal: number;
   bundleRemainder: number;
+  bundleRemainderTotal: number;
+  bundleGroupList: { listTotal: number; total: number }[];
   /** Sous-total après remise */
   total: number;
   add: (product: CartProduct, model: string, qty: number) => void;
@@ -114,17 +116,24 @@ export function CartProvider({ children }: { children: ReactNode }) {
       (n, i) => n + i.qty * (i.category === "lens" ? LENS_UNIT_PRICE : i.price),
       0,
     );
-    const lensUnits = items.reduce((n, i) => (i.category === "lens" ? n + i.qty : n), 0);
-    const bundle = cameraBundle(lensUnits);
+    const bundle = eligibleBundle(
+      items.flatMap((i) =>
+        isBundleEligible(i.category)
+          ? Array(i.qty).fill(i.category === "lens" ? LENS_UNIT_PRICE : i.price)
+          : [],
+      ),
+    );
     return {
       items,
       count: items.reduce((n, i) => n + i.qty, 0),
       subtotal,
       bundleDiscount: bundle.discount,
-      bundleGroups: bundle.groups,
-      bundleListTotal: bundle.groups * 3 * LENS_UNIT_PRICE,
-      bundleTotal: bundle.groups * 149,
-      bundleRemainder: bundle.remainder,
+      bundleGroups: bundle.groups.length,
+      bundleGroupList: bundle.groups,
+      bundleListTotal: bundle.groups.reduce((s, g) => s + g.listTotal, 0),
+      bundleTotal: bundle.groups.reduce((s, g) => s + g.total, 0),
+      bundleRemainder: bundle.remainderCount,
+      bundleRemainderTotal: bundle.remainderTotal,
       total: subtotal - bundle.discount,
       add,
       setQty,
@@ -146,6 +155,8 @@ const FALLBACK: CartValue = {
   bundleListTotal: 0,
   bundleTotal: 0,
   bundleRemainder: 0,
+  bundleRemainderTotal: 0,
+  bundleGroupList: [],
   total: 0,
   add: () => {},
   setQty: () => {},

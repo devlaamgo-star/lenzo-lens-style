@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, cameraBundle, packBreakdown } from "./pricing";
+import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, eligibleBundle, isBundleEligible, packBreakdown } from "./pricing";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
@@ -77,8 +77,10 @@ export const createOrder = createServerFn({ method: "POST" })
     if (hasPack && !data.model) throw new Error("MODEL_REQUIRED");
 
     const itemsList = data.items.reduce((sum, i) => sum + unitPriceFor(i) * i.qty, 0);
-    const lensUnits = data.items.reduce((sum, i) => (i.category === "lens" ? sum + i.qty : sum), 0);
-    const bundle = cameraBundle(lensUnits);
+    const eligible = eligibleBundle(
+      data.items.flatMap((i) => (isBundleEligible(i.category) ? Array(i.qty).fill(unitPriceFor(i)) : [])),
+    );
+    const bundle = { groups: eligible.groups.length, discount: eligible.discount };
     const itemsTotal = itemsList - bundle.discount;
 
     const customPaths = data.items.flatMap((i) =>
