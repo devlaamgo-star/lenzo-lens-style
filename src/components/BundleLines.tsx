@@ -1,11 +1,11 @@
 import { useCart } from "@/lib/cart";
-import { useLang } from "@/lib/lang";
+import { useI18n } from "@/lib/i18n";
 import { LENS_UNIT_PRICE, PACK_TOTAL, PACK_PROMO_SIZE } from "@/lib/pricing";
 
 /** Une ligne par groupe complet de 3 stickers caméra, puis les articles hors offre. */
 export function BundleLines() {
   const cart = useCart();
-  const { t } = useLang();
+  const { t } = useI18n();
   if (cart.bundleGroups === 0) return null;
   return (
     <>

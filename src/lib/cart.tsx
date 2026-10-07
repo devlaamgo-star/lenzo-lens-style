@@ -145,6 +145,7 @@ const FALLBACK: CartValue = {
   bundleGroups: 0,
   bundleListTotal: 0,
   bundleTotal: 0,
+  bundleRemainder: 0,
   total: 0,
   add: () => {},
   setQty: () => {},
