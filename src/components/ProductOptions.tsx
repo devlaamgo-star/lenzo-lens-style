@@ -4,7 +4,7 @@ import { Minus, Plus, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { useCart, type CartProduct } from "@/lib/cart";
-import { IPHONE_MODELS } from "@/lib/catalog";
+import { IPHONE_MODELS, modelsForCategory } from "@/lib/catalog";
 import {
   Select,
   SelectContent,
@@ -18,7 +18,9 @@ export function ModelSelect({
   onChange,
   error,
   className = "h-11 rounded-full",
+  models = IPHONE_MODELS,
 }: {
+  models?: readonly string[];
   value: string;
   onChange: (v: string) => void;
   error?: string | undefined;
@@ -33,7 +35,7 @@ export function ModelSelect({
           <SelectValue placeholder={t("pack.modelPlaceholder")} />
         </SelectTrigger>
         <SelectContent>
-          {IPHONE_MODELS.map((m) => (
+          {models.map((m) => (
             <SelectItem key={m} value={m}>
               {m}
             </SelectItem>
@@ -95,7 +97,8 @@ export function AddToCartBlock({
   const { t } = useI18n();
   const cart = useCart();
   const navigate = useNavigate();
-  const [model, setModel] = useState("");
+  const models = modelsForCategory(product.category);
+  const [model, setModel] = useState(models.length === 1 ? models[0] : "");
   const [qty, setQty] = useState(1);
   const [error, setError] = useState<string | undefined>(undefined);
 
@@ -113,7 +116,7 @@ export function AddToCartBlock({
 
   return (
     <div className="w-full space-y-3">
-      <ModelSelect value={model} onChange={(v) => { setModel(v); setError(undefined); }} error={error} />
+      <ModelSelect models={models} value={model} onChange={(v) => { setModel(v); setError(undefined); }} error={error} />
       <div className="flex flex-wrap items-center gap-3">
         <div>
           <span className="mb-1.5 block text-sm font-medium">{t("skins.qty")}</span>

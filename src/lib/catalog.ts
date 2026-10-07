@@ -43,6 +43,11 @@ export function designById(id: string): Design | undefined {
 
 
 export const IPHONE_MODELS = ["iPhone 17 Pro", "iPhone 17 Pro Max"] as const;
+export const IPHONE_AIR_MODELS = ["iPhone Air"] as const;
+/** Modèles proposés selon la catégorie : la collection iPhone Air n'accepte que l'iPhone Air. */
+export function modelsForCategory(category: string): readonly string[] {
+  return category === "air" ? IPHONE_AIR_MODELS : IPHONE_MODELS;
+}
 
 /** Aucun modèle présélectionné : le client doit choisir. */
 export const DEFAULT_IPHONE_MODEL = "";
