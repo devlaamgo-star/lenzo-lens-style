@@ -27,6 +27,8 @@ export const Route = createFileRoute("/pack")({
         property: "og:description",
         content: "Modèle d’iPhone + 3 designs = 149 MAD, livré gratuitement au Maroc.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PackPage,

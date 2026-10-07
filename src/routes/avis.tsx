@@ -17,6 +17,8 @@ export const Route = createFileRoute("/avis")({
         property: "og:description",
         content: "Les retours de nos clients au Maroc sur les stickers caméra SKINUP.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: () => (

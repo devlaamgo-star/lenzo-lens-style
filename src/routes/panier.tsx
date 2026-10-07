@@ -23,6 +23,8 @@ export const Route = createFileRoute("/panier")({
         content: "Modèle, quantité et total avant de finaliser votre commande SKINUP.",
       },
       { name: "robots", content: "noindex" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: CartPage,

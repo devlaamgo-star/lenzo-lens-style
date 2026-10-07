@@ -3,8 +3,7 @@ import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
 import heroImage from "@/assets/hero-three-iphones.png.asset.json";
 
 import { useI18n } from "@/lib/i18n";
-import { FULL_BODY_SKINS, CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
-import { SkinCard } from "@/components/SkinCard";
+import { CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
 import { LensSkinCard } from "@/components/LensSkinCard";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
 import { BACK_LENS_SKINS, IPHONE_AIR_SKINS } from "@/lib/catalog";
@@ -33,7 +32,8 @@ export const Route = createFileRoute("/")({
         content:
           "3 stickers décoratifs pour module caméra iPhone à 149 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
       },
-
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: HomePage,
@@ -181,26 +181,6 @@ function HomePage() {
               className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
             >
               {t("backlens.viewAll")}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-y bg-surface">
-        <div className="container-page">
-          <SectionHeading title="skins.title" subtitle="skins.sub" />
-          <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            <CustomSkinCard />
-            {FULL_BODY_SKINS.slice(0, 3).map((s) => (
-              <SkinCard key={s.id} skin={s} />
-            ))}
-          </div>
-          <div className="mt-6 flex justify-center">
-            <Link
-              to="/skins"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-8 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
-            >
-              {t("skins.viewAll")}
             </Link>
           </div>
         </div>

@@ -16,6 +16,8 @@ export const Route = createFileRoute("/faq")({
         property: "og:description",
         content: "Livraison, paiement à la livraison, compatibilité et pose des stickers SKINUP.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: () => (

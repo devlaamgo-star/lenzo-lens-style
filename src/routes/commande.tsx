@@ -26,6 +26,8 @@ export const Route = createFileRoute("/commande")({
         property: "og:description",
         content: "Paiement à la livraison et livraison gratuite partout au Maroc.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: OrderPage,
