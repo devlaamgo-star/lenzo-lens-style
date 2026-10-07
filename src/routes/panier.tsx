@@ -1,3 +1,4 @@
+import { BundleLines } from "@/components/BundleLines";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronRight, Trash2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
@@ -164,18 +165,7 @@ function CartPage() {
                   <dt className="text-muted-foreground">{t("cart.subtotal")}</dt>
                   <dd className="font-medium">{cart.subtotal + b.total} MAD</dd>
                 </div>
-                {cart.bundleDiscount > 0 && (
-                  <div className="flex items-center justify-between text-success">
-                    <dt>
-                      {t("cart.bundleLine")}
-                      {cart.bundleGroups > 1 ? ` × ${cart.bundleGroups}` : ""}
-                    </dt>
-                    <dd className="flex items-center gap-2 font-medium">
-                      <span className="text-muted-foreground line-through">{cart.bundleListTotal} MAD</span>
-                      <span>{cart.bundleTotal} MAD</span>
-                    </dd>
-                  </div>
-                )}
+                <BundleLines />
                 <div className="flex items-center justify-between">
                   <dt className="text-muted-foreground">{t("pack.delivery")}</dt>
                   <dd className="font-medium text-success">{t("pack.free")}</dd>

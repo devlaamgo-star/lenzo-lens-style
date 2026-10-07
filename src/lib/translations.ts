@@ -478,6 +478,7 @@ const D = {
     "عرض ستيكرات الكاميرا — 3 بـ 149 درهم",
     "Camera Skins Bundle — 3 for 149 MAD",
   ],
+  "cart.bundleOutside": ["Sticker(s) caméra hors offre", "ستيكر(ات) كاميرا خارج العرض", "Camera skin(s) outside the offer"],
   "cart.checkout": ["Passer la commande", "إتمام الطلب", "Checkout"],
   "cart.remove": ["Retirer", "إزالة", "Remove"],
   "cart.items": ["Produits commandés", "المنتجات المطلوبة", "Ordered products"],
