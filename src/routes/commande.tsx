@@ -1,4 +1,4 @@
-import { BundleLines } from "@/components/BundleLines";
+import { BundleLines, SummaryItems } from "@/components/BundleLines";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ChevronRight, Loader2 } from "lucide-react";
 import { useState } from "react";
@@ -350,6 +350,7 @@ function OrderPage() {
         </div>
 
         <dl className="mt-4 space-y-3 border-t border-border pt-4 text-sm">
+          <SummaryItems />
           <div className="flex items-center justify-between">
             <dt className="text-muted-foreground">{t("f.subtotal")}</dt>
             <dd className="font-medium">{cart.subtotal + b.total} MAD</dd>
