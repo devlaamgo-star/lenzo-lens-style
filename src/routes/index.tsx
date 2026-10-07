@@ -32,7 +32,8 @@ export const Route = createFileRoute("/")({
         content:
           "3 stickers décoratifs pour module caméra iPhone à 149 MAD. Livraison gratuite au Maroc, paiement à la livraison.",
       },
-
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: HomePage,

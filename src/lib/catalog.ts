@@ -1,5 +1,4 @@
 import { type CollectionId as PCollectionId } from "@/data/products";
-import { FULL_BODY_SKINS, skinBySlug, type FullBodySkin } from "@/data/full-body-skins";
 import {
   CAMERA_LENS_SKINS,
   lensSkinBySlug,
@@ -15,16 +14,13 @@ import {
   iphoneAirSkinBySlug,
   type IphoneAirSkin,
 } from "@/data/iphone-air-skins";
-export type { FullBodySkin, CameraLensSkin, BackLensSkin, IphoneAirSkin };
-export { FULL_BODY_SKINS, skinBySlug };
+export type { CameraLensSkin, BackLensSkin, IphoneAirSkin };
 export { CAMERA_LENS_SKINS, lensSkinBySlug };
 export { BACK_LENS_SKINS, backLensSkinBySlug };
 export { IPHONE_AIR_SKINS, iphoneAirSkinBySlug };
 
 /** Stickers caméra : uniquement les visuels réellement fournis (objectifs) */
 export const CAMERA_STICKERS: CameraLensSkin[] = CAMERA_LENS_SKINS;
-
-export const FULL_SKIN_PRICE = 149;
 
 export const LENS_SKIN_PRICE = 79;
 

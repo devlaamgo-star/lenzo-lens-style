@@ -38,6 +38,8 @@ export const Route = createFileRoute("/collection")({
         property: "og:description",
         content: "Filtrez par modèle, collection et style, puis composez votre pack de 3 pour 149 MAD.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: CollectionPage,
