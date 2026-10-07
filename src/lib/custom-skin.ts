@@ -3,8 +3,8 @@ import type { SkinCoverage } from "./skin-templates";
 
 export const COVERAGE_PRICES: Record<SkinCoverage, number> = {
   full: 149,
-  back: 129,
-  camera: 49,
+  back: 199,
+  camera: 99,
 };
 
 export const COVERAGE_LABELS: Record<SkinCoverage, Record<Lang, string>> = {
