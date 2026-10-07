@@ -48,6 +48,7 @@ type CartValue = {
   bundleGroups: number;
   bundleListTotal: number;
   bundleTotal: number;
+  bundleRemainder: number;
   /** Sous-total après remise */
   total: number;
   add: (product: CartProduct, model: string, qty: number) => void;
@@ -123,6 +124,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       bundleGroups: bundle.groups,
       bundleListTotal: bundle.groups * 3 * LENS_UNIT_PRICE,
       bundleTotal: bundle.groups * 149,
+      bundleRemainder: bundle.remainder,
       total: subtotal - bundle.discount,
       add,
       setQty,
