@@ -1,4 +1,4 @@
-import { BundleLines } from "@/components/BundleLines";
+import { BundleLines, SummaryItems } from "@/components/BundleLines";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronRight, Trash2 } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
@@ -161,6 +161,7 @@ function CartPage() {
             <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
               <h2 className="text-base font-bold">{t("f.summary")}</h2>
               <dl className="mt-4 space-y-3 text-sm">
+                <SummaryItems />
                 <div className="flex items-center justify-between">
                   <dt className="text-muted-foreground">{t("cart.subtotal")}</dt>
                   <dd className="font-medium">{cart.subtotal + b.total} MAD</dd>
