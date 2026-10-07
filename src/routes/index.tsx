@@ -150,8 +150,7 @@ function HomePage() {
         <div className="container-page">
           <SectionHeading title="air.title" subtitle="air.sub" />
           <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-6">
-            <CustomSkinCard />
-            {IPHONE_AIR_SKINS.slice(0, 3).map((s) => (
+            {IPHONE_AIR_SKINS.slice(0, 4).map((s) => (
               <AirSkinCard key={s.id} skin={s} />
             ))}
           </div>
