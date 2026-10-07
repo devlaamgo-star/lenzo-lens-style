@@ -11,3 +11,8 @@ test("3/6/9 camera skins at 79", () => {
   expect(eligibleBundle(Array(6).fill(79)).bundledTotal).toBe(298);
   expect(eligibleBundle(Array(9).fill(79)).bundledTotal).toBe(447);
 });
+test("iPhone Air camera skins are 79 and mix in the bundle", async () => {
+  const { CATEGORY_PRICES } = await import("./pricing");
+  expect(CATEGORY_PRICES.air).toBe(79);
+  expect(eligibleBundle([79, 79, 79]).bundledTotal).toBe(149);
+});
