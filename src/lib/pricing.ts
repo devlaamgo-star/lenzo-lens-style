@@ -79,3 +79,35 @@ export function cameraBundle(units: number): CameraBundle {
     discount: Math.max(0, listTotal - bundledTotal),
   };
 }
+
+/** Seules les catégories "caméra uniquement" comptent pour l'offre 3 pour 149 MAD (jamais le prix). */
+export const BUNDLE_ELIGIBLE_CATEGORIES = ["lens", "air"] as const;
+export function isBundleEligible(category: string): boolean {
+  return (BUNDLE_ELIGIBLE_CATEGORIES as readonly string[]).includes(category);
+}
+
+export type EligibleBundle = {
+  units: number;
+  groups: { listTotal: number; total: number }[];
+  remainderCount: number;
+  remainderTotal: number;
+  listTotal: number;
+  bundledTotal: number;
+  discount: number;
+};
+
+/** Groupes de 3 articles éligibles (prix unitaires réels) → 149 MAD chacun, jamais plus cher que le prix normal. */
+export function eligibleBundle(unitPrices: number[]): EligibleBundle {
+  const prices = [...unitPrices].sort((a, b) => b - a);
+  const nGroups = Math.floor(prices.length / PACK_PROMO_SIZE);
+  const groups: { listTotal: number; total: number }[] = [];
+  for (let g = 0; g < nGroups; g++) {
+    const list = prices.slice(g * 3, g * 3 + 3).reduce((s, p) => s + p, 0);
+    groups.push({ listTotal: list, total: Math.min(list, PACK_TOTAL) });
+  }
+  const rest = prices.slice(nGroups * 3);
+  const remainderTotal = rest.reduce((s, p) => s + p, 0);
+  const listTotal = prices.reduce((s, p) => s + p, 0);
+  const bundledTotal = groups.reduce((s, g) => s + g.total, 0) + remainderTotal;
+  return { units: prices.length, groups, remainderCount: rest.length, remainderTotal, listTotal, bundledTotal, discount: listTotal - bundledTotal };
+}
