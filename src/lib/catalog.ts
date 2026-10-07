@@ -26,7 +26,7 @@ export const LENS_SKIN_PRICE = 79;
 
 export const BACK_LENS_SKIN_PRICE = 129;
 
-export const AIR_SKIN_PRICE = 49;
+export const AIR_SKIN_PRICE = 79;
 
 
 export type Lang = "fr" | "ar" | "en";

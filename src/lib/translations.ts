@@ -138,7 +138,7 @@ const D = {
   "custom.name": ["Créez votre propre skin", "صمّم السكين ديالك", "Create Your Own Skin"],
   "custom.price": ["Dès 99 MAD", "ابتداءً من 99 درهم", "From 99 MAD"],
   "custom.cta": ["Personnaliser", "خصّص", "Customize"],
-  "card.included": ["49 MAD", "49 درهم", "49 MAD"],
+  "card.included": ["79 MAD", "79 درهم", "79 MAD"],
   "card.add": ["Ajouter au pack", "أضف إلى الباقة", "Add to pack"],
   "card.added": ["Ajouté", "تمت الإضافة", "Added"],
   "card.quickview": ["Aperçu rapide", "معاينة سريعة", "Quick view"],

@@ -113,13 +113,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<CartValue>(() => {
     const subtotal = items.reduce(
-      (n, i) => n + i.qty * (i.category === "lens" ? LENS_UNIT_PRICE : i.price),
+      (n, i) => n + i.qty * (isBundleEligible(i.category) ? LENS_UNIT_PRICE : i.price),
       0,
     );
     const bundle = eligibleBundle(
       items.flatMap((i) =>
         isBundleEligible(i.category)
-          ? Array(i.qty).fill(i.category === "lens" ? LENS_UNIT_PRICE : i.price)
+          ? Array(i.qty).fill(isBundleEligible(i.category) ? LENS_UNIT_PRICE : i.price)
           : [],
       ),
     );
