@@ -18,6 +18,8 @@ export const Route = createFileRoute("/comment-ca-marche")({
         property: "og:description",
         content: "3 designs, une commande, paiement à la livraison. Pose en moins d’une minute.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: () => (
