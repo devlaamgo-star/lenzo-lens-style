@@ -98,7 +98,7 @@ export function AddToCartBlock({
   const cart = useCart();
   const navigate = useNavigate();
   const models = modelsForCategory(product.category);
-  const [model, setModel] = useState(models.length === 1 ? models[0] : "");
+  const [model, setModel] = useState<string>(models.length === 1 ? (models[0] ?? "") : "");
   const [qty, setQty] = useState(1);
   const [error, setError] = useState<string | undefined>(undefined);
 
