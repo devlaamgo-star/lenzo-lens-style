@@ -69,6 +69,7 @@ function buildOrderNumber() {
 export const createOrder = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => orderSchema.parse(data))
   .handler(async ({ data }) => {
+    data.items = data.items.map((i) => (i.category === "air" ? { ...i, model: "iPhone Air" } : i));
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
     const pack = packBreakdown(data.designs.length);
