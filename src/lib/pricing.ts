@@ -10,7 +10,7 @@ export const CATEGORY_PRICES: Record<CartCategory, number> = {
 };
 
 /** Prix des skins personnalisés selon la couverture choisie. */
-export const CUSTOM_COVERAGE_PRICES = { full: 149, back: 129, camera: 49 } as const;
+export const CUSTOM_COVERAGE_PRICES = { full: 149, back: 199, camera: 99 } as const;
 
 export const PACK_TOTAL = 149;
 /** Nombre d'articles couverts par l'offre 3 pour 149 MAD. */
