@@ -93,7 +93,7 @@ export function SkinCustomizer() {
   const svgRef = useRef<SVGSVGElement>(null);
 
   const [modelId, setModelId] = useState<string>(SKIN_MODELS[0].id);
-  const [coverage, setCoverage] = useState<SkinCoverage>("full");
+  const [coverage, setCoverage] = useState<SkinCoverage>("back");
   const [img, setImg] = useState<Loaded | null>(null);
   const [t, setT] = useState<SkinTransform>(DEFAULT_TRANSFORM);
   const [qty, setQty] = useState(1);
@@ -312,7 +312,7 @@ export function SkinCustomizer() {
             {CS.coverage[lang]}
           </label>
           <div className="mt-2 grid gap-2">
-            {(["full", "back", "camera"] as SkinCoverage[]).map((c) => (
+            {(["back", "camera"] as SkinCoverage[]).map((c) => (
               <button
                 key={c}
                 type="button"
