@@ -5,7 +5,7 @@ export const CATEGORY_PRICES: Record<CartCategory, number> = {
   lens: 79,
   skins: 149,
   backlens: 129,
-  air: 49,
+  air: 79,
   custom: 149,
 };
 
