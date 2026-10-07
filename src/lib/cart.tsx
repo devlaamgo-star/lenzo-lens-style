@@ -72,7 +72,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
       const raw = window.localStorage.getItem(KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as CartItem[];
-        if (Array.isArray(parsed)) setItems(parsed.filter((i) => i && i.productId && i.qty >= 1));
+        if (Array.isArray(parsed)) setItems(
+            parsed
+              .filter((i) => i && i.productId && i.qty >= 1)
+              .map((i) => (i.category === "air" ? { ...i, model: "iPhone Air", key: `air:${i.productId}:iPhone Air` } : i)),
+          );
       }
     } catch {
       /* ignore malformed storage */
@@ -85,7 +89,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(KEY, JSON.stringify(items));
   }, [items, ready]);
 
-  const add = useCallback((product: CartProduct, model: string, qty: number) => {
+  const add = useCallback((product: CartProduct, rawModel: string, qty: number) => {
+    const model = product.category === "air" ? "iPhone Air" : rawModel;
     const key = `${product.category}:${product.productId}:${model}`;
     const safeQty = Math.max(1, Math.min(20, Math.floor(qty) || 1));
     setItems((prev) => {
