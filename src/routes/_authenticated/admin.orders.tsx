@@ -270,7 +270,7 @@ function AdminOrdersPage() {
     setConfirmAction({
       title:
         targets.length === 1
-          ? `Supprimer la commande ${targets[0].reference} ?`
+          ? `Supprimer la commande ${targets[0]?.reference} ?`
           : `Supprimer ${targets.length} commande(s) ?`,
       body: "Suppression définitive de la base de données. Cette action est irréversible.",
       run: () => deleteMutation.mutate(targets),
