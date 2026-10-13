@@ -433,3 +433,32 @@ export const updateRecordOps = createServerFn({ method: "POST" })
     if (error) throw new Error(error.message);
     return { ok: true };
   });
+
+/** Permanently delete orders/design requests (and their uploaded files). */
+export const deleteRecords = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator((data: unknown) =>
+    z.object({ targets: z.array(targetSchema).min(1).max(500) }).parse(data),
+  )
+  .handler(async ({ data, context }) => {
+    await assertAdmin(context as any);
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    let count = 0;
+    for (const kind of ["order", "design"] as const) {
+      const ids = data.targets.filter((t) => t.kind === kind).map((t) => t.id);
+      if (!ids.length) continue;
+      const { data: rows } = await supabaseAdmin
+        .from(tableFor(kind))
+        .select("file_paths")
+        .in("id", ids);
+      const paths = (rows ?? []).flatMap((r: any) => (r.file_paths ?? []) as string[]);
+      const { error, count: n } = await supabaseAdmin
+        .from(tableFor(kind))
+        .delete({ count: "exact" })
+        .in("id", ids);
+      if (error) throw new Error(error.message);
+      count += n ?? 0;
+      if (paths.length) await supabaseAdmin.storage.from(bucketFor(kind)).remove(paths);
+    }
+    return { ok: true, count };
+  });

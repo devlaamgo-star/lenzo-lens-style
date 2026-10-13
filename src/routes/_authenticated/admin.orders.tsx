@@ -10,6 +10,7 @@ import {
   type OrderStatus,
   bulkUpdateStatus,
   claimFirstAdmin,
+  deleteRecords,
   getAdminStatus,
   getRecordFileUrls,
   listAdminOrders,
@@ -112,6 +113,7 @@ function AdminOrdersPage() {
   const setStatus = useServerFn(updateRecordStatus);
   const setBulk = useServerFn(bulkUpdateStatus);
   const setOps = useServerFn(updateRecordOps);
+  const removeRecords = useServerFn(deleteRecords);
   const fetchFiles = useServerFn(getRecordFileUrls);
 
   const statusQuery = useQuery({ queryKey: ["admin-status"], queryFn: () => fetchStatus() });
@@ -250,6 +252,30 @@ function AdminOrdersPage() {
     enabled: Boolean(selected && selected.files.length),
     queryFn: () => fetchFiles({ data: { kind: selected!.kind, paths: selected!.files } }),
   });
+
+  const deleteMutation = useMutation({
+    mutationFn: (targets: AdminRecord[]) =>
+      removeRecords({ data: { targets: targets.map((r) => ({ kind: r.kind, id: r.id })) } }),
+    onSuccess: (res) => {
+      toast.success(`${res.count} commande(s) supprimée(s) définitivement`);
+      setChecked({});
+      setSelectedId(null);
+      invalidate();
+    },
+    onError: () => toast.error("Suppression impossible"),
+  });
+
+  function askDelete(targets: AdminRecord[]) {
+    if (!targets.length) return;
+    setConfirmAction({
+      title:
+        targets.length === 1
+          ? `Supprimer la commande ${targets[0]?.reference} ?`
+          : `Supprimer ${targets.length} commande(s) ?`,
+      body: "Suppression définitive de la base de données. Cette action est irréversible.",
+      run: () => deleteMutation.mutate(targets),
+    });
+  }
 
   function quickStatus(r: AdminRecord, status: OrderStatus) {
     if (status === "cancelled") {
@@ -532,6 +558,9 @@ function AdminOrdersPage() {
               {a.label}
             </Button>
           ))}
+          <Button size="sm" variant="destructive" onClick={() => askDelete(selectedRows)}>
+            Supprimer
+          </Button>
           <Button size="sm" variant="secondary" onClick={() => exportCsv(selectedRows)}>
             Exporter la sélection
           </Button>
@@ -590,7 +619,7 @@ function AdminOrdersPage() {
             {!ordersQuery.isLoading && filtered.length === 0 && (
               <tr>
                 <td colSpan={16} className="px-3 py-8 text-center text-muted-foreground">
-                  Aucune commande.
+                  Aucune commande pour le moment.
                 </td>
               </tr>
             )}
@@ -680,6 +709,12 @@ function AdminOrdersPage() {
                             {a.label}
                           </DropdownMenuItem>
                         ))}
+                        <DropdownMenuItem
+                          onSelect={() => askDelete([r])}
+                          className="text-destructive"
+                        >
+                          Supprimer
+                        </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </td>
@@ -739,6 +774,7 @@ function AdminOrdersPage() {
                   },
                 })
               }
+              onDelete={() => askDelete([selected])}
             />
           )}
         </DialogContent>
@@ -776,12 +812,14 @@ function OrderDetail({
   onStatus,
   onOps,
   onArchive,
+  onDelete,
 }: {
   record: AdminRecord;
   files: { path: string; url: string }[];
   onStatus: (s: OrderStatus) => void;
   onOps: (patch: Record<string, unknown>) => void;
   onArchive: () => void;
+  onDelete: () => void;
 }) {
   const [carrier, setCarrier] = useState(record.carrier);
   const [tracking, setTracking] = useState(record.tracking);
@@ -844,6 +882,9 @@ function OrderDetail({
         </Button>
         <Button size="sm" variant="outline" onClick={onArchive}>
           {record.archived ? "Désarchiver" : "Archiver"}
+        </Button>
+        <Button size="sm" variant="destructive" onClick={onDelete}>
+          Supprimer
         </Button>
         <Select
           value={record.paymentStatus}
