@@ -8,3 +8,8 @@
 
 - [x] Update phone, WhatsApp, email and active social links consistently.
 - [x] Verify all five links and mobile alignment.
+
+# Mobile menu close button
+
+- [x] Remove the duplicate close icon from the mobile navigation drawer.
+- [x] Verify one close button, tap area, label and close/reopen on mobile.
