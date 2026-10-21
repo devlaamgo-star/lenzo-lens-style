@@ -6,5 +6,5 @@
 
 # Public contact update
 
-- [ ] Update phone, WhatsApp, email and active social links consistently.
-- [ ] Verify all five links and mobile alignment.
+- [x] Update phone, WhatsApp, email and active social links consistently.
+- [x] Verify all five links and mobile alignment.
