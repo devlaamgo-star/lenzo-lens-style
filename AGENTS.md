@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Retired storefront category URLs redirect permanently to `/collection`; preserve source assets and historical product lookup data so existing orders remain readable.
+- Public contact destinations are centralized in `src/lib/catalog.ts`; reuse them for footer entries and WhatsApp links to prevent conflicting contact information.

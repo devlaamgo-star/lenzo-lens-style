@@ -56,11 +56,15 @@ export const PACK_PRICE = 149;
 export const PACK_OLD_PRICE = 197;
 export const PACK_SIZE = 3;
 
-export const WHATSAPP_NUMBER = "212666256545";
+export const WHATSAPP_NUMBER = "212694728194";
 /** Local display format for Moroccan customers */
-export const WHATSAPP_DISPLAY_LOCAL = "06 66 25 65 45";
+export const WHATSAPP_DISPLAY_LOCAL = "+212 694-728194";
 /** International display format */
-export const WHATSAPP_DISPLAY_INTL = "+212 666 256 545";
+export const WHATSAPP_DISPLAY_INTL = "+212 694-728194";
+export const PHONE_LINK = "tel:+212694728194";
+export const CONTACT_EMAIL = "skinup.ma@gmail.com";
+export const INSTAGRAM_LINK = "https://www.instagram.com/skinup.ma/";
+export const TIKTOK_LINK = "https://www.tiktok.com/@skinup.ma";
 
 export function whatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;

@@ -1,9 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, MessageCircle, Music2 } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Music2, Phone } from "lucide-react";
 import logo from "@/assets/skinup-logo.png";
 import { useI18n } from "@/lib/i18n";
-import { whatsappLink, WHATSAPP_DISPLAY_LOCAL } from "@/lib/catalog";
-import { toast } from "sonner";
+import { whatsappLink, WHATSAPP_NUMBER, WHATSAPP_DISPLAY_INTL, PHONE_LINK, CONTACT_EMAIL, INSTAGRAM_LINK, TIKTOK_LINK } from "@/lib/catalog";
 
 export function SiteFooter() {
   const { t } = useI18n();
@@ -90,46 +89,53 @@ export function SiteFooter() {
 
         <div>
           <h3 className="text-sm font-semibold">{t("footer.contact")}</h3>
-          <ul className="mt-4 space-y-2.5 text-sm text-muted-foreground">
+          <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
             <li>
               <a
-                href={whatsappLink(t("wa.msg"))}
+                href={PHONE_LINK}
+                aria-label={`${t("f.phone")} : ${WHATSAPP_DISPLAY_INTL}`}
+                className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-primary"
+              >
+                <Phone className="h-4 w-4 shrink-0" />
+                <span dir="ltr">{WHATSAPP_DISPLAY_INTL}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-primary"
+                aria-label={`WhatsApp : ${WHATSAPP_DISPLAY_INTL}`}
+                className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-primary"
               >
-                <MessageCircle className="h-4 w-4" />
-                <span dir="ltr">{WHATSAPP_DISPLAY_LOCAL}</span>
+                <MessageCircle className="h-4 w-4 shrink-0" />
+                <span dir="ltr">{WHATSAPP_DISPLAY_INTL}</span>
               </a>
             </li>
             <li>
-              <a href="mailto:contact@skinup.ma" className="inline-flex items-center gap-2 transition-colors hover:text-primary">
-                <Mail className="h-4 w-4" /> contact@skinup.ma
+              <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-primary">
+                <Mail className="h-4 w-4 shrink-0" /> <span dir="ltr">{CONTACT_EMAIL}</span>
               </a>
             </li>
             <li>
-              <button
-                type="button"
-                aria-disabled="true"
-                title={t("social.ig.soon")}
-                onClick={() => toast(t("social.ig.soon"))}
-                className="inline-flex cursor-not-allowed items-center gap-2 text-muted-foreground opacity-70"
+              <a
+                href={INSTAGRAM_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-primary"
               >
-                <Instagram className="h-4 w-4" /> Instagram
-                <span className="rounded-full border border-border px-2 py-0.5 text-[10px]">{t("social.soon")}</span>
-              </button>
+                <Instagram className="h-4 w-4 shrink-0" /> <span dir="ltr">Instagram · @skinup.ma</span>
+              </a>
             </li>
             <li>
-              <button
-                type="button"
-                aria-disabled="true"
-                title={t("social.tt.soon")}
-                onClick={() => toast(t("social.tt.soon"))}
-                className="inline-flex cursor-not-allowed items-center gap-2 text-muted-foreground opacity-70"
+              <a
+                href={TIKTOK_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 transition-colors hover:text-primary"
               >
-                <Music2 className="h-4 w-4" /> TikTok
-                <span className="rounded-full border border-border px-2 py-0.5 text-[10px]">{t("social.soon")}</span>
-              </button>
+                <Music2 className="h-4 w-4 shrink-0" /> <span dir="ltr">TikTok · @skinup.ma</span>
+              </a>
             </li>
           </ul>
         </div>
