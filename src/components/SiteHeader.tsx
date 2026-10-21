@@ -86,18 +86,21 @@ export function SiteHeader() {
                 <Menu className="h-5 w-5" />
               </button>
             </SheetTrigger>
-            <SheetContent side={dir === "rtl" ? "right" : "left"} className="w-[86vw] max-w-sm overflow-y-auto p-0">
+            <SheetContent
+              side={dir === "rtl" ? "right" : "left"}
+              showCloseButton={false}
+              className="w-[86vw] max-w-sm overflow-y-auto p-0"
+            >
               <SheetTitle className="sr-only">{t("nav.menu")}</SheetTitle>
-              <div className="flex items-center justify-between border-b border-border px-5 py-4">
+              <div className="flex items-center justify-between gap-3 border-b border-border px-5 py-4">
                 <img src={logo} alt="SKINUP" width={1152} height={576} className="h-auto w-[100px] object-contain md:w-[120px] lg:w-[140px]" />
-                <button
+                <SheetClose
                   type="button"
                   aria-label={t("nav.close")}
-                  onClick={() => setMobileOpen(false)}
-                  className="grid h-9 w-9 place-items-center rounded-full hover:bg-surface"
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-foreground transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <X className="h-5 w-5" />
-                </button>
+                </SheetClose>
               </div>
               <nav className="flex flex-col gap-1 p-4">
                 <Link
