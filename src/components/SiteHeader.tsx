@@ -17,7 +17,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinkClass =
   "relative inline-flex items-center py-1 text-[13px] font-medium tracking-tight text-foreground/70 transition-colors hover:text-foreground data-[status=active]:text-foreground";
