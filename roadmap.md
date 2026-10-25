@@ -23,5 +23,5 @@
 
 # TikTok successful form event
 
-- [ ] Connect a once-only SubmitForm event to confirmed successful checkout submissions, preserving regional blocking and opt-outs.
-- [ ] Test success, failure, duplicate calls and blocked visitors; update privacy disclosure.
+- [x] Connect a once-only SubmitForm event to confirmed successful checkout submissions, preserving regional blocking and opt-outs.
+- [x] Test success, failure, duplicate calls and blocked visitors; update privacy disclosure. Eight automated tests pass. Browser mocked checkout success produced exactly one TikTok Lead transmission (SDK maps SubmitForm to Lead); simulated failure/invalid form/refresh produced no additional conversion. France remained blocked. No production test order was created.
