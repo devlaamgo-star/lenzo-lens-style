@@ -16,6 +16,7 @@ import { Route as AvisRouteImport } from './routes/avis'
 import { Route as CollectionRouteImport } from './routes/collection'
 import { Route as CommandeRouteImport } from './routes/commande'
 import { Route as CommentCaMarcheRouteImport } from './routes/comment-ca-marche'
+import { Route as ConfidentialiteRouteImport } from './routes/confidentialite'
 import { Route as ConfirmationRouteImport } from './routes/confirmation'
 import { Route as CreerMonSkinRouteImport } from './routes/creer-mon-skin'
 import { Route as DesignPersonnaliseRouteImport } from './routes/design-personnalise'
@@ -65,6 +66,11 @@ const CommandeRoute = CommandeRouteImport.update({
 const CommentCaMarcheRoute = CommentCaMarcheRouteImport.update({
   id: '/comment-ca-marche',
   path: '/comment-ca-marche',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfidentialiteRoute = ConfidentialiteRouteImport.update({
+  id: '/confidentialite',
+  path: '/confidentialite',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConfirmationRoute = ConfirmationRouteImport.update({
@@ -156,6 +162,7 @@ export interface FileRoutesByFullPath {
   '/collection': typeof CollectionRoute
   '/commande': typeof CommandeRoute
   '/comment-ca-marche': typeof CommentCaMarcheRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/confirmation': typeof ConfirmationRoute
   '/creer-mon-skin': typeof CreerMonSkinRoute
   '/design-personnalise': typeof DesignPersonnaliseRoute
@@ -180,6 +187,7 @@ export interface FileRoutesByTo {
   '/collection': typeof CollectionRoute
   '/commande': typeof CommandeRoute
   '/comment-ca-marche': typeof CommentCaMarcheRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/confirmation': typeof ConfirmationRoute
   '/creer-mon-skin': typeof CreerMonSkinRoute
   '/design-personnalise': typeof DesignPersonnaliseRoute
@@ -206,6 +214,7 @@ export interface FileRoutesById {
   '/collection': typeof CollectionRoute
   '/commande': typeof CommandeRoute
   '/comment-ca-marche': typeof CommentCaMarcheRoute
+  '/confidentialite': typeof ConfidentialiteRoute
   '/confirmation': typeof ConfirmationRoute
   '/creer-mon-skin': typeof CreerMonSkinRoute
   '/design-personnalise': typeof DesignPersonnaliseRoute
@@ -232,6 +241,7 @@ export interface FileRouteTypes {
     | '/collection'
     | '/commande'
     | '/comment-ca-marche'
+    | '/confidentialite'
     | '/confirmation'
     | '/creer-mon-skin'
     | '/design-personnalise'
@@ -256,6 +266,7 @@ export interface FileRouteTypes {
     | '/collection'
     | '/commande'
     | '/comment-ca-marche'
+    | '/confidentialite'
     | '/confirmation'
     | '/creer-mon-skin'
     | '/design-personnalise'
@@ -281,6 +292,7 @@ export interface FileRouteTypes {
     | '/collection'
     | '/commande'
     | '/comment-ca-marche'
+    | '/confidentialite'
     | '/confirmation'
     | '/creer-mon-skin'
     | '/design-personnalise'
@@ -307,6 +319,7 @@ export interface RootRouteChildren {
   CollectionRoute: typeof CollectionRoute
   CommandeRoute: typeof CommandeRoute
   CommentCaMarcheRoute: typeof CommentCaMarcheRoute
+  ConfidentialiteRoute: typeof ConfidentialiteRoute
   ConfirmationRoute: typeof ConfirmationRoute
   CreerMonSkinRoute: typeof CreerMonSkinRoute
   DesignPersonnaliseRoute: typeof DesignPersonnaliseRoute
@@ -373,6 +386,13 @@ declare module '@tanstack/react-router' {
       path: '/comment-ca-marche'
       fullPath: '/comment-ca-marche'
       preLoaderRoute: typeof CommentCaMarcheRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confidentialite': {
+      id: '/confidentialite'
+      path: '/confidentialite'
+      fullPath: '/confidentialite'
+      preLoaderRoute: typeof ConfidentialiteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/confirmation': {
@@ -509,6 +529,7 @@ const rootRouteChildren: RootRouteChildren = {
   CollectionRoute: CollectionRoute,
   CommandeRoute: CommandeRoute,
   CommentCaMarcheRoute: CommentCaMarcheRoute,
+  ConfidentialiteRoute: ConfidentialiteRoute,
   ConfirmationRoute: ConfirmationRoute,
   CreerMonSkinRoute: CreerMonSkinRoute,
   DesignPersonnaliseRoute: DesignPersonnaliseRoute,
