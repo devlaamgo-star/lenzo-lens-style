@@ -18,4 +18,5 @@
 
 - [x] Add a once-only global TikTok install without changing Meta.
 - [x] Block consent-required/unknown regions and provide privacy disclosure and opt-out.
-- [ ] Verify permitted pageviews, blocked regions, navigation and opt-out.
+- [x] Verify permitted pageviews, blocked regions, navigation and opt-out (five tests; browser Pageview transmissions succeeded under simulated Morocco, with one SDK install).
+- [ ] Publish and verify TikTok on skinup.ma — awaiting a publishing request; no published-site or TikTok account receipt check performed.
