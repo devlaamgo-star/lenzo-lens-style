@@ -20,3 +20,8 @@
 - [x] Block consent-required/unknown regions and provide privacy disclosure and opt-out.
 - [x] Verify permitted pageviews, blocked regions, navigation and opt-out (five tests; browser Pageview transmissions succeeded under simulated Morocco, with one SDK install).
 - [ ] Publish and verify TikTok on skinup.ma — awaiting a publishing request; no published-site or TikTok account receipt check performed.
+
+# TikTok successful form event
+
+- [ ] Connect a once-only SubmitForm event to confirmed successful checkout submissions, preserving regional blocking and opt-outs.
+- [ ] Test success, failure, duplicate calls and blocked visitors; update privacy disclosure.
