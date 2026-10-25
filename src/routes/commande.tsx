@@ -100,6 +100,7 @@ function OrderPage() {
           locale: lang,
         },
       });
+      window.skinupTikTokSubmitForm?.(res.orderNumber);
       window.sessionStorage.setItem(
         "skinup-last-order",
         JSON.stringify({
