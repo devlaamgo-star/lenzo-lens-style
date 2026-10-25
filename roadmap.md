@@ -13,3 +13,9 @@
 
 - [x] Remove the duplicate close icon from the mobile navigation drawer.
 - [x] Verify one close button, tap area, label and close/reopen on mobile.
+
+# TikTok Pixel
+
+- [x] Add a once-only global TikTok install without changing Meta.
+- [x] Block consent-required/unknown regions and provide privacy disclosure and opt-out.
+- [ ] Verify permitted pageviews, blocked regions, navigation and opt-out.

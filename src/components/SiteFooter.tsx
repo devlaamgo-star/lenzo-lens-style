@@ -147,7 +147,7 @@ export function SiteFooter() {
             <Link to="/faq" className="hover:text-primary">
               {t("footer.terms")}
             </Link>
-            <Link to="/faq" className="hover:text-primary">
+            <Link to="/confidentialite" className="hover:text-primary">
               {t("footer.privacy")}
             </Link>
             <Link to="/faq" hash="livraison" className="hover:text-primary">
