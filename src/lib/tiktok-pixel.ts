@@ -6,7 +6,7 @@ function installTikTok(pixelId: string, choiceKey: string) {
   const w = window as typeof window & {
     skinupTikTokPage?: () => void;
     skinupTikTokSubmitForm?: (submissionId: string) => void;
-    skinupTikTokPurchase?: (orderNumber: string, details: { value: number; quantity: number; contentIds: string[] }) => void;
+    skinupTikTokPurchase?: (orderNumber: string, details: { value: number; quantity: number; contents: { id: string; qty: number }[] }) => void;
     skinupTikTokInstalled?: boolean;
     TiktokAnalyticsObject?: string;
     ttq?: any;
