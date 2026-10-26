@@ -31,6 +31,24 @@ import {
   waTemplates,
 } from "@/lib/admin-ui";
 import { supabase } from "@/integrations/supabase/client";
+import { SOURCE_LABEL, TRAFFIC_SOURCES } from "@/lib/attribution";
+
+const SOURCE_CLASS: Record<string, string> = {
+  tiktok: "bg-foreground text-background",
+  facebook: "bg-primary/15 text-primary",
+  instagram: "bg-accent text-accent-foreground",
+  google: "bg-secondary text-secondary-foreground",
+  direct: "bg-muted text-muted-foreground",
+  other: "bg-muted text-muted-foreground",
+};
+
+function SourceBadge({ source }: { source: string }) {
+  return (
+    <Badge variant="secondary" className={`whitespace-nowrap ${SOURCE_CLASS[source] ?? ""}`}>
+      {SOURCE_LABEL[source] ?? source}
+    </Badge>
+  );
+}
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -132,6 +150,7 @@ function AdminOrdersPage() {
   const [cityFilter, setCityFilter] = useState<string>("all");
   const [productFilter, setProductFilter] = useState<string>("all");
   const [modelFilter, setModelFilter] = useState<string>("all");
+  const [sourceFilter, setSourceFilter] = useState<string>("all");
   const [preset, setPreset] = useState<DatePreset>("all");
   const [showArchived, setShowArchived] = useState(false);
   const [checked, setChecked] = useState<Record<string, boolean>>({});
@@ -175,6 +194,8 @@ function AdminOrdersPage() {
       if (shippingFilter !== "all" && shippingState(r) !== shippingFilter) return false;
       if (cityFilter !== "all" && r.city !== cityFilter) return false;
       if (modelFilter !== "all" && r.model !== modelFilter) return false;
+      if (sourceFilter !== "all" && (r.kind !== "order" || r.trafficSource !== sourceFilter))
+        return false;
       if (productFilter !== "all" && !r.lines.some((l) => l.categoryLabel === productFilter))
         return false;
       if (!matchesPreset(r.createdAt, preset)) return false;
@@ -189,6 +210,7 @@ function AdminOrdersPage() {
     cityFilter,
     productFilter,
     modelFilter,
+    sourceFilter,
     preset,
     showArchived,
   ]);
@@ -533,6 +555,19 @@ function AdminOrdersPage() {
             ))}
           </SelectContent>
         </Select>
+        <Select value={sourceFilter} onValueChange={setSourceFilter}>
+          <SelectTrigger>
+            <SelectValue placeholder="Source" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Toutes les sources</SelectItem>
+            {TRAFFIC_SOURCES.map((s) => (
+              <SelectItem key={s} value={s}>
+                {SOURCE_LABEL[s]}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </section>
 
       {selectedRows.length > 0 && (
@@ -596,6 +631,7 @@ function AdminOrdersPage() {
                 "Modèle",
                 "Qté",
                 "Total",
+                "Source",
                 "Paiement",
                 "Statut",
                 "Livraison",
@@ -611,14 +647,14 @@ function AdminOrdersPage() {
           <tbody>
             {ordersQuery.isLoading && (
               <tr>
-                <td colSpan={16} className="px-3 py-8 text-center text-muted-foreground">
+                <td colSpan={17} className="px-3 py-8 text-center text-muted-foreground">
                   Chargement…
                 </td>
               </tr>
             )}
             {!ordersQuery.isLoading && filtered.length === 0 && (
               <tr>
-                <td colSpan={16} className="px-3 py-8 text-center text-muted-foreground">
+                <td colSpan={17} className="px-3 py-8 text-center text-muted-foreground">
                   Aucune commande pour le moment.
                 </td>
               </tr>
@@ -677,6 +713,9 @@ function AdminOrdersPage() {
                   <td className="px-3 py-3">{r.quantity}</td>
                   <td className="whitespace-nowrap px-3 py-3">
                     {r.total != null ? `${r.total} MAD` : "—"}
+                  </td>
+                  <td className="px-3 py-3">
+                    {r.kind === "order" ? <SourceBadge source={r.trafficSource} /> : "—"}
                   </td>
                   <td className="px-3 py-3">
                     <Badge className={PAYMENT_CLASS[r.paymentStatus] ?? ""} variant="secondary">
@@ -945,6 +984,29 @@ function OrderDetail({
           })}
         </ol>
       </section>
+
+      {record.kind === "order" && (
+        <section className="mt-6">
+          <h3 className="text-sm font-semibold">Source marketing</h3>
+          <div className="mt-2"><SourceBadge source={record.trafficSource} /></div>
+          <dl className="mt-3 grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+            {([
+              ["utm_source", record.utm.source],
+              ["utm_medium", record.utm.medium],
+              ["utm_campaign", record.utm.campaign],
+              ["fbclid", record.utm.fbclid],
+              ["ttclid", record.utm.ttclid],
+            ] as const)
+              .filter(([, v]) => v)
+              .map(([k, v]) => (
+                <div key={k} className="border-b py-1">
+                  <dt className="text-xs uppercase text-muted-foreground">{k}</dt>
+                  <dd className="break-all">{v}</dd>
+                </div>
+              ))}
+          </dl>
+        </section>
+      )}
 
       <section className="mt-6">
         <h3 className="text-sm font-semibold">Informations client</h3>

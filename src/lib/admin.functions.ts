@@ -88,6 +88,8 @@ export type AdminRecord = {
   priority: string;
   archived: boolean;
   history: StatusEvent[];
+  trafficSource: string;
+  utm: { source: string; medium: string; campaign: string; fbclid: string; ttclid: string };
 };
 
 function ops(row: any) {
@@ -101,6 +103,14 @@ function ops(row: any) {
     priority: (row.priority as string) || "normal",
     archived: Boolean(row.archived),
     history: (Array.isArray(row.status_history) ? row.status_history : []) as StatusEvent[],
+    trafficSource: (row.traffic_source as string) || "direct",
+    utm: {
+      source: (row.utm_source as string) || "",
+      medium: (row.utm_medium as string) || "",
+      campaign: (row.utm_campaign as string) || "",
+      fbclid: (row.fbclid as string) || "",
+      ttclid: (row.ttclid as string) || "",
+    },
   };
 }
 

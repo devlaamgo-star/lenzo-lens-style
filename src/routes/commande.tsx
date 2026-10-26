@@ -12,6 +12,7 @@ import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 import { LENS_UNIT_PRICE } from "@/lib/pricing";
+import { readAttribution } from "@/lib/attribution";
 
 export const Route = createFileRoute("/commande")({
   head: () => ({
@@ -98,6 +99,7 @@ function OrderPage() {
           })),
           notes: values.notes,
           locale: lang,
+          attribution: readAttribution(),
         },
       });
       window.skinupTikTokSubmitForm?.(res.orderNumber);

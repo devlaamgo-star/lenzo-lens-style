@@ -134,6 +134,7 @@ export type Database = {
           created_at: string
           designs: Json
           expected_delivery_at: string | null
+          fbclid: string
           file_paths: string[]
           full_name: string
           id: string
@@ -155,7 +156,12 @@ export type Database = {
           status_history: Json
           total_mad: number
           tracking_number: string
+          traffic_source: string
+          ttclid: string
           updated_at: string
+          utm_campaign: string
+          utm_medium: string
+          utm_source: string
         }
         Insert: {
           address: string
@@ -165,6 +171,7 @@ export type Database = {
           created_at?: string
           designs?: Json
           expected_delivery_at?: string | null
+          fbclid?: string
           file_paths?: string[]
           full_name: string
           id?: string
@@ -186,7 +193,12 @@ export type Database = {
           status_history?: Json
           total_mad?: number
           tracking_number?: string
+          traffic_source?: string
+          ttclid?: string
           updated_at?: string
+          utm_campaign?: string
+          utm_medium?: string
+          utm_source?: string
         }
         Update: {
           address?: string
@@ -196,6 +208,7 @@ export type Database = {
           created_at?: string
           designs?: Json
           expected_delivery_at?: string | null
+          fbclid?: string
           file_paths?: string[]
           full_name?: string
           id?: string
@@ -217,7 +230,12 @@ export type Database = {
           status_history?: Json
           total_mad?: number
           tracking_number?: string
+          traffic_source?: string
+          ttclid?: string
           updated_at?: string
+          utm_campaign?: string
+          utm_medium?: string
+          utm_source?: string
         }
         Relationships: []
       }
