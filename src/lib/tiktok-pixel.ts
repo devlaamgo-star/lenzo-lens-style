@@ -75,6 +75,25 @@ function installTikTok(pixelId: string, choiceKey: string) {
       w.ttq.track('SubmitForm');
     } catch { /* Advertising failure must not turn a saved order into a failed submission. */ }
   };
+  // Standard Purchase event, fired once per saved order from the checkout success path.
+  w.skinupTikTokPurchase = (orderNumber: string, details: { value: number; quantity: number; contentIds: string[] }) => {
+    if (!orderNumber || completedPurchases.has(orderNumber)) return;
+    const key = `skinup-tiktok-purchase:${orderNumber}`;
+    try { if (sessionStorage.getItem(key)) return; } catch { /* In-memory deduplication remains available. */ }
+    completedPurchases.add(orderNumber);
+    try { sessionStorage.setItem(key, "handled"); } catch { /* Never prevent checkout success. */ }
+    if (!regionAllowed || optedOut()) return;
+    try {
+      load();
+      w.ttq.track('Purchase', {
+        value: details.value,
+        currency: 'MAD',
+        content_type: 'product',
+        contents: details.contentIds.map(id => ({ content_id: id, quantity: 1 })),
+        quantity: details.quantity,
+      });
+    } catch { /* Advertising failure must not turn a saved order into a failed purchase. */ }
+  };
   const applyOptOut = () => {
     if (optedOut() && w.ttq) {
       w.ttq.revokeConsent();
