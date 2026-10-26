@@ -88,3 +88,48 @@ test("SubmitForm never loads TikTok in a consent-required region or after withdr
   withdrawn.window.skinupTikTokSubmitForm("LNZ-REFUSED");
   expect(withdrawn.window.ttq.filter(event => event[0] === "track").length).toBe(0);
 });
+
+const purchaseDetails = { value: 228, quantity: 4, contentIds: ["lens-1", "lens-2"] };
+
+test("page load sends no Purchase; a confirmed order sends it once with value, MAD currency and contents", async () => {
+  const state = await visit("MA");
+  const purchases = () => state.window.ttq.filter(event => event[0] === "track" && event[1] === "Purchase");
+  expect(purchases().length).toBe(0);
+  state.window.skinupTikTokPurchase("LNZ-ORDER-1", purchaseDetails);
+  state.window.skinupTikTokPurchase("LNZ-ORDER-1", purchaseDetails);
+  expect(purchases()).toEqual([["track", "Purchase", {
+    value: 228,
+    currency: "MAD",
+    content_type: "product",
+    contents: [{ content_id: "lens-1", quantity: 1 }, { content_id: "lens-2", quantity: 1 }],
+    quantity: 4,
+  }]]);
+  state.window.skinupTikTokPurchase("LNZ-ORDER-2", purchaseDetails);
+  expect(purchases().length).toBe(2);
+});
+
+test("Purchase and SubmitForm deduplicate independently for the same order", async () => {
+  const state = await visit("MA");
+  state.window.skinupTikTokSubmitForm("LNZ-BOTH");
+  state.window.skinupTikTokPurchase("LNZ-BOTH", purchaseDetails);
+  expect(state.window.ttq.filter(event => event[0] === "track").map(event => event[1])).toEqual(["SubmitForm", "Purchase"]);
+});
+
+test("blocked Purchase is never replayed when the visitor becomes eligible", async () => {
+  const state = await visit("MA");
+  state.context.navigator.globalPrivacyControl = true;
+  state.window.skinupTikTokPurchase("LNZ-BLOCKED", purchaseDetails);
+  state.context.navigator.globalPrivacyControl = false;
+  state.window.skinupTikTokPurchase("LNZ-BLOCKED", purchaseDetails);
+  expect(state.window.ttq.filter(event => event[0] === "track").length).toBe(0);
+});
+
+test("Purchase never loads TikTok in a consent-required region or after withdrawal", async () => {
+  const blocked = await visit("FR");
+  blocked.window.skinupTikTokPurchase("LNZ-FR", purchaseDetails);
+  expect(blocked.scripts.length).toBe(0);
+  const withdrawn = await visit("MA");
+  withdrawn.listeners["skinup-advertising-choice"]();
+  withdrawn.window.skinupTikTokPurchase("LNZ-REFUSED", purchaseDetails);
+  expect(withdrawn.window.ttq.filter(event => event[0] === "track").length).toBe(0);
+});
