@@ -122,5 +122,6 @@ declare global {
   interface Window {
     skinupTikTokPage?: () => void;
     skinupTikTokSubmitForm?: (submissionId: string) => void;
+    skinupTikTokPurchase?: (orderNumber: string, details: { value: number; quantity: number; contentIds: string[] }) => void;
   }
 }
