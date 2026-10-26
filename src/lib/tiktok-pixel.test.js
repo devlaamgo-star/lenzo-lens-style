@@ -89,7 +89,7 @@ test("SubmitForm never loads TikTok in a consent-required region or after withdr
   expect(withdrawn.window.ttq.filter(event => event[0] === "track").length).toBe(0);
 });
 
-const purchaseDetails = { value: 228, quantity: 4, contentIds: ["lens-1", "lens-2"] };
+const purchaseDetails = { value: 228, quantity: 4, contents: [{ id: "lens-1", qty: 3 }, { id: "lens-2", qty: 1 }] };
 
 test("page load sends no Purchase; a confirmed order sends it once with value, MAD currency and contents", async () => {
   const state = await visit("MA");
@@ -101,7 +101,7 @@ test("page load sends no Purchase; a confirmed order sends it once with value, M
     value: 228,
     currency: "MAD",
     content_type: "product",
-    contents: [{ content_id: "lens-1", quantity: 1 }, { content_id: "lens-2", quantity: 1 }],
+    contents: [{ content_id: "lens-1", quantity: 3 }, { content_id: "lens-2", quantity: 1 }],
     quantity: 4,
   }]]);
   state.window.skinupTikTokPurchase("LNZ-ORDER-2", purchaseDetails);

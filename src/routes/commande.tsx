@@ -104,9 +104,9 @@ function OrderPage() {
       window.skinupTikTokPurchase?.(res.orderNumber, {
         value: res.total,
         quantity: res.quantity,
-        contentIds: [
-          ...cart.items.map((i) => i.productId),
-          ...(packReady ? pack.designs : []),
+        contents: [
+          ...cart.items.map((i) => ({ id: i.productId, qty: i.qty })),
+          ...(packReady ? pack.designs.map((d) => ({ id: d, qty: 1 })) : []),
         ],
       });
       window.sessionStorage.setItem(
