@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, eligibleBundle, isBundleEligible, packBreakdown } from "./pricing";
+import { TRAFFIC_SOURCES } from "./attribution";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
@@ -53,6 +54,16 @@ export const orderSchema = z.object({
   notes: z.string().trim().max(500).optional().default(""),
   locale: z.enum(["fr", "ar", "en"]).default("fr"),
   source: z.string().trim().max(120).default("/commande"),
+  attribution: z
+    .object({
+      trafficSource: z.enum(TRAFFIC_SOURCES),
+      utmSource: z.string().trim().max(200).default(""),
+      utmMedium: z.string().trim().max(200).default(""),
+      utmCampaign: z.string().trim().max(200).default(""),
+      fbclid: z.string().trim().max(200).default(""),
+      ttclid: z.string().trim().max(200).default(""),
+    })
+    .optional(),
 });
 
 export type OrderInput = z.infer<typeof orderSchema>;
@@ -126,6 +137,12 @@ export const createOrder = createServerFn({ method: "POST" })
       status: "new",
       source: data.source,
       locale: data.locale,
+      traffic_source: data.attribution?.trafficSource ?? "direct",
+      utm_source: data.attribution?.utmSource ?? "",
+      utm_medium: data.attribution?.utmMedium ?? "",
+      utm_campaign: data.attribution?.utmCampaign ?? "",
+      fbclid: data.attribution?.fbclid ?? "",
+      ttclid: data.attribution?.ttclid ?? "",
     });
 
     if (error) {

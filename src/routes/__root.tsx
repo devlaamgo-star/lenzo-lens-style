@@ -18,6 +18,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 import { getServerLang } from "@/lib/lang.functions";
 import { LANGS, type Lang } from "@/lib/translations";
+import { captureAttribution } from "@/lib/attribution";
 import { PackProvider } from "@/lib/pack";
 import { CartProvider } from "@/lib/cart";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -168,7 +169,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const { lang } = Route.useLoaderData();
   const pathname = useLocation({ select: location => location.pathname });
-  useEffect(() => { window.skinupTikTokPage?.(); }, [pathname]);
+  useEffect(() => { window.skinupTikTokPage?.(); captureAttribution(); }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
