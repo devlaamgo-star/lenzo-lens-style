@@ -101,6 +101,14 @@ function OrderPage() {
         },
       });
       window.skinupTikTokSubmitForm?.(res.orderNumber);
+      window.skinupTikTokPurchase?.(res.orderNumber, {
+        value: res.total,
+        quantity: res.quantity,
+        contents: [
+          ...cart.items.map((i) => ({ id: i.productId, qty: i.qty })),
+          ...(packReady ? pack.designs.map((d) => ({ id: d, qty: 1 })) : []),
+        ],
+      });
       window.sessionStorage.setItem(
         "skinup-last-order",
         JSON.stringify({

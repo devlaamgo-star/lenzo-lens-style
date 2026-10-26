@@ -6,6 +6,7 @@ function installTikTok(pixelId: string, choiceKey: string) {
   const w = window as typeof window & {
     skinupTikTokPage?: () => void;
     skinupTikTokSubmitForm?: (submissionId: string) => void;
+    skinupTikTokPurchase?: (orderNumber: string, details: { value: number; quantity: number; contents: { id: string; qty: number }[] }) => void;
     skinupTikTokInstalled?: boolean;
     TiktokAnalyticsObject?: string;
     ttq?: any;
@@ -16,6 +17,7 @@ function installTikTok(pixelId: string, choiceKey: string) {
   let lastPage = "";
   let visitRefused = false;
   const completedSubmissions = new Set<string>();
+  const completedPurchases = new Set<string>();
   const deniedCountries = new Set("AT BE BG HR CY CZ DK EE FI FR DE GR HU IS IE IT LV LI LT LU MT NL NO PL PT RO SK SI ES SE GB CH".split(" "));
   const knownCountries = new Set("AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW".split(" "));
   function optedOut() {
@@ -73,6 +75,25 @@ function installTikTok(pixelId: string, choiceKey: string) {
       w.ttq.track('SubmitForm');
     } catch { /* Advertising failure must not turn a saved order into a failed submission. */ }
   };
+  // Standard Purchase event, fired once per saved order from the checkout success path.
+  w.skinupTikTokPurchase = (orderNumber: string, details: { value: number; quantity: number; contents: { id: string; qty: number }[] }) => {
+    if (!orderNumber || completedPurchases.has(orderNumber)) return;
+    const key = `skinup-tiktok-purchase:${orderNumber}`;
+    try { if (sessionStorage.getItem(key)) return; } catch { /* In-memory deduplication remains available. */ }
+    completedPurchases.add(orderNumber);
+    try { sessionStorage.setItem(key, "handled"); } catch { /* Never prevent checkout success. */ }
+    if (!regionAllowed || optedOut()) return;
+    try {
+      load();
+      w.ttq.track('Purchase', {
+        value: details.value,
+        currency: 'MAD',
+        content_type: 'product',
+        contents: details.contents.map(c => ({ content_id: c.id, quantity: c.qty })),
+        quantity: details.quantity,
+      });
+    } catch { /* Advertising failure must not turn a saved order into a failed purchase. */ }
+  };
   const applyOptOut = () => {
     if (optedOut() && w.ttq) {
       w.ttq.revokeConsent();
@@ -101,5 +122,6 @@ declare global {
   interface Window {
     skinupTikTokPage?: () => void;
     skinupTikTokSubmitForm?: (submissionId: string) => void;
+    skinupTikTokPurchase?: (orderNumber: string, details: { value: number; quantity: number; contents: { id: string; qty: number }[] }) => void;
   }
 }
