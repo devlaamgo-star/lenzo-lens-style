@@ -2,6 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PackageCheck, RefreshCcw, ShieldCheck, MessageCircle } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { whatsappLink } from "@/lib/catalog";
+import { useCart } from "@/lib/cart";
+import { usePack } from "@/lib/pack";
+import { cameraDeliveryFee } from "@/lib/pricing";
 
 export const Route = createFileRoute("/retours")({
   head: () => ({
@@ -43,6 +46,9 @@ export function ReturnsPolicyCard() {
 
 export function CodInfoCard() {
   const { t } = useI18n();
+  const cart = useCart();
+  const pack = usePack();
+  const shipping = cameraDeliveryFee(cart.items, pack.designs.length);
   return (
     <div className="rounded-2xl border border-border bg-card p-5 shadow-soft">
       <h2 className="flex items-center gap-2 text-base font-bold">
@@ -51,7 +57,7 @@ export function CodInfoCard() {
       </h2>
       <p className="mt-2 text-sm text-muted-foreground">{t("cod.text")}</p>
       <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-        {[t("cod.p1"), t("cod.p2"), t("cod.p3")].map((line) => (
+        {[shipping ? t("lens.singleOffer") : t("cod.p1"), t("cod.p2"), t("cod.p3")].map((line) => (
           <li key={line} className="flex items-start gap-2">
             <PackageCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
             <span>{line}</span>

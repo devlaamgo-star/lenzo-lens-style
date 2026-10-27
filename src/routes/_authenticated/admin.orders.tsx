@@ -1222,6 +1222,12 @@ function OrderDetail({
                 <dd>-{record.summary.discount} MAD</dd>
               </div>
             )}
+            {record.summary.shipping !== undefined && (
+              <div className="flex justify-between">
+                <dt>Livraison</dt>
+                <dd>{record.summary.shipping} MAD</dd>
+              </div>
+            )}
             <div className="flex justify-between border-t pt-2 text-base font-semibold">
               <dt>Total à encaisser</dt>
               <dd>{record.summary.total} MAD</dd>

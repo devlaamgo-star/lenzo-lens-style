@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
+import { useCart } from "@/lib/cart";
+import { cameraDeliveryFee } from "@/lib/pricing";
 
 
 /**
@@ -10,6 +12,8 @@ import { usePack } from "@/lib/pack";
 export function StickyPackBar() {
   const { t } = useI18n();
   const pack = usePack();
+  const cart = useCart();
+  const shipping = cameraDeliveryFee(cart.items, pack.designs.length);
 
   return (
     <>
@@ -17,7 +21,7 @@ export function StickyPackBar() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-card/95 px-4 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-3 backdrop-blur lg:hidden">
         <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
           <div className="min-w-0">
-            <p className="truncate text-sm font-bold">{pack.breakdown.total} MAD</p>
+            <p className="truncate text-sm font-bold">{pack.breakdown.total + shipping} MAD</p>
             <p className="truncate text-xs text-muted-foreground">
               {pack.designs.length} {t("pack.selectedCount")}
               {pack.breakdown.promoApplies ? ` — ${t("pack.promoApplied")}` : ""}
