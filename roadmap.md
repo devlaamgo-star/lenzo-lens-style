@@ -2,9 +2,9 @@
 
 # Ozon delivery address
 
-- [ ] Add reusable Casablanca/Agadir example zones and searchable required selection.
-- [ ] Validate full addresses and persist separate delivery zone/full address fields.
-- [ ] Show separate location fields in Orders and verify checkout on desktop/mobile.
+- [x] Add reusable Casablanca/Agadir example zones and searchable required selection.
+- [x] Validate full addresses and persist separate delivery zone/full address fields.
+- [x] Show separate location fields in Orders; checkout verified on desktop/mobile with a saved order and exact database readback. Signed-in admin browser check unavailable: requesting user has no matching account.
 - [ ] Expand nationwide only after user reviews the example selector and supplies an approved Ozon list.
 
 - [x] Remove Full Body Skins homepage section, collection selector and search entries.

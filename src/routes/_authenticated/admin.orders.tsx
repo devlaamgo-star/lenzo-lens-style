@@ -318,8 +318,8 @@ function AdminOrdersPage() {
       "type",
       "client",
       "telephone",
-      "ville",
-      "adresse",
+      "delivery_zone",
+      "full_address",
       "produit",
       "modele",
       "quantite",
@@ -691,7 +691,10 @@ function AdminOrdersPage() {
                   <td className="whitespace-nowrap px-3 py-3" dir="ltr">
                     {r.phone}
                   </td>
-                  <td className="px-3 py-3">{r.city}</td>
+                  <td className="max-w-[240px] px-3 py-3">
+                    <p>{r.city}</p>
+                    <p className="mt-1 break-words text-xs text-muted-foreground">{r.fullAddress || "—"}</p>
+                  </td>
                   <td className="px-3 py-2">
                     <div className="h-11 w-11 overflow-hidden rounded-md border bg-muted">
                       {thumb ? (
