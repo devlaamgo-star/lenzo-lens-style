@@ -170,7 +170,7 @@ function OrderPage() {
       <section className="section-y">
         <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
           <form onSubmit={onSubmit} noValidate className="min-w-0 space-y-5">
-            <div className="flex items-start gap-2.5 rounded-xl border border-accent bg-accent px-3.5 py-3 text-xs leading-relaxed text-accent-foreground">
+            <div dir={lang === "ar" ? "rtl" : "ltr"} className="flex items-start gap-2.5 rounded-xl border border-accent bg-accent px-3.5 py-3 text-xs leading-relaxed text-accent-foreground">
               <AlertCircle className="mt-px h-4 w-4 shrink-0" aria-hidden="true" />
               <p>{t("f.infoNotice")}</p>
             </div>
