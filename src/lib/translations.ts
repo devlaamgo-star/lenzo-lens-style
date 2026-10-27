@@ -40,6 +40,10 @@ const D = {
     "Personalise every detail around your iPhone lenses.",
   ],
   "lens.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
+  "lens.singleOffer": ["1 skin : 79 MAD + 20 MAD de livraison", "سكين واحد: 79 درهم + 20 درهم للتوصيل", "1 skin: 79 MAD + 20 MAD delivery"],
+  "announce.camera": ["3 SKINS CAMÉRA : 149 MAD, LIVRAISON OFFERTE — PAIEMENT À LA LIVRAISON", "3 سكينات كاميرا: 149 درهم، توصيل مجاني — الدفع عند الاستلام", "3 CAMERA SKINS: 149 MAD, FREE DELIVERY — CASH ON DELIVERY"],
+  "lens.tripleOffer": ["3 skins: 149 MAD, livraison offerte", "3 سكينات: 149 درهم، توصيل مجاني", "3 skins: 149 MAD, free delivery"],
+  "cart.airBundleLine": ["Offre iPhone Air — 3 pour 149 MAD", "عرض iPhone Air — 3 بـ 149 درهم", "iPhone Air Bundle — 3 for 149 MAD"],
   "lens.category": [
     "Sticker pour objectifs caméra",
     "ملصق لعدسات الكاميرا",

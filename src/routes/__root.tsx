@@ -19,8 +19,9 @@ import { I18nProvider, useI18n } from "@/lib/i18n";
 import { getServerLang } from "@/lib/lang.functions";
 import { LANGS, type Lang } from "@/lib/translations";
 import { captureAttribution } from "@/lib/attribution";
-import { PackProvider } from "@/lib/pack";
-import { CartProvider } from "@/lib/cart";
+import { PackProvider, usePack } from "@/lib/pack";
+import { CartProvider, useCart } from "@/lib/cart";
+import { cameraDeliveryFee } from "@/lib/pricing";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
@@ -156,10 +157,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function AnnouncementBar() {
   const { t } = useI18n();
+  const cart = useCart();
+  const pack = usePack();
+  const pathname = useLocation({ select: (location) => location.pathname });
+  const cameraContext = pathname.startsWith("/objectifs") || cameraDeliveryFee(cart.items, pack.designs.length) > 0;
   return (
     <div className="bg-ink text-ink-foreground">
       <p className="container-page py-2 text-center text-[11px] font-medium leading-tight tracking-wide sm:text-xs">
-        {t("announce.bar")}
+        {t(cameraContext ? "announce.camera" : "announce.bar")}
       </p>
     </div>
   );

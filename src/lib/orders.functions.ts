@@ -1,6 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
-import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, eligibleBundle, isBundleEligible, packBreakdown } from "./pricing";
+import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, categoryBundles, cameraDeliveryFee, packBreakdown } from "./pricing";
 import { TRAFFIC_SOURCES } from "./attribution";
 import { deliveryZoneSchema, fullAddressSchema } from "./delivery-address";
 
@@ -90,16 +90,15 @@ export const createOrder = createServerFn({ method: "POST" })
     if (hasPack && !data.model) throw new Error("MODEL_REQUIRED");
 
     const itemsList = data.items.reduce((sum, i) => sum + unitPriceFor(i) * i.qty, 0);
-    const eligible = eligibleBundle(
-      data.items.flatMap((i) => (isBundleEligible(i.category) ? Array(i.qty).fill(unitPriceFor(i)) : [])),
-    );
+    const eligible = categoryBundles(data.items.map((i) => ({ ...i, price: unitPriceFor(i) })));
     const bundle = { groups: eligible.groups.length, discount: eligible.discount };
     const itemsTotal = itemsList - bundle.discount;
 
     const customPaths = data.items.flatMap((i) =>
       i.custom ? [i.custom.previewPath, i.custom.originalPath] : [],
     );
-    const total = itemsTotal + pack.total;
+    const shipping = cameraDeliveryFee(data.items, pack.count);
+    const total = itemsTotal + pack.total + shipping;
     const quantity =
       data.items.reduce((sum, i) => sum + i.qty, 0) + pack.count;
 
@@ -133,8 +132,11 @@ export const createOrder = createServerFn({ method: "POST" })
         extraUnitPrice: CATEGORY_PRICES.lens,
         extraTotal: pack.extraTotal,
         packTotal: pack.total,
-        cameraBundleGroups: bundle.groups,
-        cameraBundleDiscount: bundle.discount,
+        cameraBundleGroups: eligible.groups.filter((g) => g.category === "lens").length,
+        cameraBundleDiscount: eligible.groups.filter((g) => g.category === "lens").reduce((sum, g) => sum + g.listTotal - g.total, 0),
+        airBundleGroups: eligible.groups.filter((g) => g.category === "air").length,
+        airBundleDiscount: eligible.groups.filter((g) => g.category === "air").reduce((sum, g) => sum + g.listTotal - g.total, 0),
+        shippingTotal: shipping,
       },
       total_mad: total,
       payment_method: "cod",
@@ -197,9 +199,9 @@ export const createOrder = createServerFn({ method: "POST" })
           in_pack: true,
         })),
       ],
-      camera_bundle: bundle.discount
-        ? `Offre Stickers caméra 3 pour 149 MAD × ${bundle.groups} (-${bundle.discount} MAD)`
-        : "",
+      camera_bundle: eligible.groups.filter((g) => g.category === "lens"),
+      air_bundle: eligible.groups.filter((g) => g.category === "air"),
+      shipping_mad: shipping,
       discount: pack.promoApplies
         ? `Pack 3 pour 149 MAD (${pack.promoCount} articles à ${pack.promoTotal} MAD)`
         : "",
@@ -212,6 +214,6 @@ export const createOrder = createServerFn({ method: "POST" })
       timestamp: new Date().toISOString(),
     });
 
-    return { orderNumber, total, quantity };
+    return { orderNumber, total, quantity, shipping };
   });
 

@@ -111,3 +111,26 @@ export function eligibleBundle(unitPrices: number[]): EligibleBundle {
   const bundledTotal = groups.reduce((s, g) => s + g.total, 0) + remainderTotal;
   return { units: prices.length, groups, remainderCount: rest.length, remainderTotal, listTotal, bundledTotal, discount: listTotal - bundledTotal };
 }
+
+type PricingItem = { category: string; qty: number; price: number };
+
+/** Camera and Air offers are independent; never pool their quantities. */
+export function categoryBundles(items: PricingItem[]) {
+  const bundles = BUNDLE_ELIGIBLE_CATEGORIES.map((category) => ({
+    category,
+    ...eligibleBundle(items.flatMap((i) => i.category === category ? Array(i.qty).fill(i.price) : [])),
+  }));
+  return {
+    discount: bundles.reduce((sum, b) => sum + b.discount, 0),
+    groups: bundles.flatMap((b) => b.groups.map((g) => ({ ...g, category: b.category }))),
+    remainderCount: bundles.reduce((sum, b) => sum + b.remainderCount, 0),
+    remainderTotal: bundles.reduce((sum, b) => sum + b.remainderTotal, 0),
+  };
+}
+
+/** Only a basket of exactly one regular camera skin incurs delivery. Legacy pack designs are camera skins. */
+export function cameraDeliveryFee(items: { category: string; qty: number }[], packCount = 0): number {
+  const cameraCount = packCount + items.reduce((sum, i) => sum + (i.category === "lens" ? i.qty : 0), 0);
+  const hasOther = items.some((i) => i.category !== "lens" && i.qty > 0);
+  return cameraCount === 1 && !hasOther ? 20 : 0;
+}

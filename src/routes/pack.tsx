@@ -3,6 +3,8 @@ import { Check, ChevronRight, Plus, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { DESIGNS, designById, IPHONE_MODELS } from "@/lib/catalog";
+import { useCart } from "@/lib/cart";
+import { cameraDeliveryFee } from "@/lib/pricing";
 
 import { cn } from "@/lib/utils";
 import {
@@ -38,6 +40,8 @@ function PackSummary({ compact = false }: { compact?: boolean }) {
   const { t, lang } = useI18n();
   const pack = usePack();
   const b = pack.breakdown;
+  const cart = useCart();
+  const shipping = cameraDeliveryFee(cart.items, b.count);
   const canOrder = b.count > 0 && pack.model !== "";
 
   return (
@@ -84,7 +88,7 @@ function PackSummary({ compact = false }: { compact?: boolean }) {
       <div className="mt-5 space-y-2 border-t border-border pt-4 text-sm">
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground">{t("pack.delivery")}</span>
-          <span className="font-medium text-success">{t("pack.free")}</span>
+          <span className={shipping ? "font-medium" : "font-medium text-success"}>{shipping ? `${shipping} MAD` : t("pack.free")}</span>
         </div>
         <div className="flex items-center justify-between">
           <span className="text-muted-foreground">{t("pack.payment")}</span>
@@ -114,7 +118,7 @@ function PackSummary({ compact = false }: { compact?: boolean }) {
         )}
         <div className="flex items-baseline justify-between pt-2">
           <span className="font-semibold">{t("pack.total")}</span>
-          <span className="text-xl font-extrabold">{b.total} MAD</span>
+          <span className="text-xl font-extrabold">{b.total + shipping} MAD</span>
         </div>
         <p className="pt-1 text-xs text-muted-foreground">{t("pack.promoNote")}</p>
       </div>

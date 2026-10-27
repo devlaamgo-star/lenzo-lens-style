@@ -53,6 +53,8 @@ export function LensSkinCard({
         <h3 className="truncate text-sm font-semibold sm:text-base">{skin.name[lang]}</h3>
         <p className="text-xs text-muted-foreground">{skin.device}</p>
         <p className="mt-1 text-sm font-bold">{LENS_SKIN_PRICE} MAD</p>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{t("lens.singleOffer")}</p>
+        <p className="text-xs font-medium leading-relaxed text-success">{t("lens.tripleOffer")}</p>
 
         <Link
           to="/objectifs/$slug"
@@ -79,6 +81,8 @@ export function LensSkinCard({
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>
             <p className="text-sm">{t("skins.compat")}</p>
             <p className="text-base font-bold">{LENS_SKIN_PRICE} MAD</p>
+            <p className="text-xs text-muted-foreground">{t("lens.singleOffer")}</p>
+            <p className="text-xs font-medium text-success">{t("lens.tripleOffer")}</p>
             <AddToCartBlock
               compact
               onDone={() => setOpen(false)}

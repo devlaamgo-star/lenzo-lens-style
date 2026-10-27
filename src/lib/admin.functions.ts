@@ -56,6 +56,7 @@ export type AdminSummary = {
   discountLabel: string;
   total: number | null;
   paymentMethod: string;
+  shipping?: number | undefined;
 };
 
 export type AdminRecord = {
@@ -243,7 +244,8 @@ export const listAdminOrders = createServerFn({ method: "GET" })
       const packTotal = Number(pack?.packTotal ?? 0);
       const packDiscount = packListPrice > packTotal ? packListPrice - packTotal : 0;
       const cameraBundleDiscount = Number(pack?.cameraBundleDiscount ?? 0) || 0;
-      const discount = packDiscount + cameraBundleDiscount;
+      const airBundleDiscount = Number(pack?.airBundleDiscount ?? 0) || 0;
+      const discount = packDiscount + cameraBundleDiscount + airBundleDiscount;
 
       rows.push({
         kind: "order",
@@ -274,11 +276,13 @@ export const listAdminOrders = createServerFn({ method: "GET" })
             ? [
                 packDiscount ? `Offre pack 3 pour ${packTotal} MAD` : "",
                 cameraBundleDiscount ? "Offre Stickers caméra 3 pour 149 MAD" : "",
+                airBundleDiscount ? "Offre iPhone Air 3 pour 149 MAD" : "",
               ]
                 .filter(Boolean)
                 .join(" + ")
             : "",
           total: o.total_mad,
+          shipping: pack?.shippingTotal != null ? Number(pack.shippingTotal) : undefined,
           paymentMethod: o.payment_method === "cod" ? "Paiement à la livraison" : o.payment_method,
         },
         details: customDetails,

@@ -1,5 +1,9 @@
 # Category removal
 
+# Camera-only pricing
+- [x] Separate camera and Air bundle groups; add 20 MAD delivery only for an exactly-one-camera-only basket; mixed delivery stays free.
+- [x] Update camera offer text, cart, checkout and saved order delivery totals. 76 tests pass; browser verified one/three-camera checkout totals and mixed Air baskets; mobile no overflow, no runtime errors. No test order submitted to the shared production database; saved-order/admin readback not verified. Not published.
+
 # Ozon delivery address
 
 - [x] Add reusable Casablanca/Agadir example zones and searchable required selection.
