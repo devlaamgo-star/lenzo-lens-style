@@ -28,6 +28,7 @@ type OrderItem = { name: string; image: string; model: string; qty: number; pric
 type LastOrder = {
   orderNumber: string;
   total: number;
+  shipping?: number;
   name: string;
   phone: string;
   city: string;
@@ -156,6 +157,7 @@ function ConfirmationPage() {
 
               <div className="space-y-3 border-t border-border pt-3">
                 <Row label={t("f.paymentMethod")} value={t("pack.cod")} />
+                {order.shipping !== undefined && <Row label={t("pack.delivery")} value={order.shipping ? `${order.shipping} MAD` : t("pack.free")} />}
                 <Row label={t("conf.status")} value={t("conf.pending")} />
                 <div className="flex items-center justify-between">
                   <span className="font-semibold">{t("pack.total")}</span>

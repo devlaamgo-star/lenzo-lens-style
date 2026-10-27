@@ -13,7 +13,7 @@ import { isDeliveryZone, isCompleteAddress } from "@/lib/delivery-address";
 import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
-import { LENS_UNIT_PRICE } from "@/lib/pricing";
+import { LENS_UNIT_PRICE, cameraDeliveryFee } from "@/lib/pricing";
 import { readAttribution } from "@/lib/attribution";
 
 export const Route = createFileRoute("/commande")({
@@ -23,12 +23,12 @@ export const Route = createFileRoute("/commande")({
       {
         name: "description",
         content:
-          "Finalisez votre commande SKINUP : paiement à la livraison, livraison gratuite partout au Maroc, confirmation par téléphone.",
+          "Finalisez votre commande SKINUP : paiement à la livraison au Maroc, frais de livraison calculés selon votre panier, confirmation par téléphone.",
       },
       { property: "og:title", content: "Finaliser ma commande — SKINUP" },
       {
         property: "og:description",
-        content: "Paiement à la livraison et livraison gratuite partout au Maroc.",
+        content: "Paiement à la livraison au Maroc, frais de livraison calculés selon votre panier.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -56,7 +56,8 @@ function OrderPage() {
 
   const b = pack.breakdown;
   const packReady = b.count > 0;
-  const total = cart.total + b.total;
+  const shipping = cameraDeliveryFee(cart.items, b.count);
+  const total = cart.total + b.total + shipping;
   const empty = cart.items.length === 0 && !packReady;
 
   const set =
@@ -118,6 +119,7 @@ function OrderPage() {
         JSON.stringify({
           orderNumber: res.orderNumber,
           total: res.total,
+          shipping: res.shipping,
           name: values.name,
           phone: values.phone,
           city: values.city,
@@ -362,7 +364,7 @@ function OrderPage() {
           <BundleLines />
           <div className="flex items-center justify-between">
             <dt className="text-muted-foreground">{t("pack.delivery")}</dt>
-            <dd className="font-medium text-success">{t("pack.free")}</dd>
+            <dd className={shipping ? "font-medium" : "font-medium text-success"}>{shipping ? `${shipping} MAD` : t("pack.free")}</dd>
           </div>
           <div className="flex items-center justify-between">
             <dt className="text-muted-foreground">{t("f.paymentMethod")}</dt>

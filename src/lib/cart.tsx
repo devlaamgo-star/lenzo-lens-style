@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Lang } from "./translations";
-import { eligibleBundle, isBundleEligible, LENS_UNIT_PRICE } from "./pricing";
+import { categoryBundles, isBundleEligible, LENS_UNIT_PRICE } from "./pricing";
 
 export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
 
@@ -50,7 +50,7 @@ type CartValue = {
   bundleTotal: number;
   bundleRemainder: number;
   bundleRemainderTotal: number;
-  bundleGroupList: { listTotal: number; total: number }[];
+  bundleGroupList: { listTotal: number; total: number; category: "lens" | "air" }[];
   /** Sous-total après remise */
   total: number;
   add: (product: CartProduct, model: string, qty: number) => void;
@@ -121,13 +121,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       (n, i) => n + i.qty * (isBundleEligible(i.category) ? LENS_UNIT_PRICE : i.price),
       0,
     );
-    const bundle = eligibleBundle(
-      items.flatMap((i) =>
-        isBundleEligible(i.category)
-          ? Array(i.qty).fill(isBundleEligible(i.category) ? LENS_UNIT_PRICE : i.price)
-          : [],
-      ),
-    );
+    const bundle = categoryBundles(items.map((i) => ({ ...i, price: isBundleEligible(i.category) ? LENS_UNIT_PRICE : i.price })));
     return {
       items,
       count: items.reduce((n, i) => n + i.qty, 0),

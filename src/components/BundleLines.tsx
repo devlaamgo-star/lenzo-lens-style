@@ -22,11 +22,11 @@ export function SummaryItems() {
   const cart = useCart();
   const { t, lang } = useI18n();
   if (cart.items.length === 0) return null;
-  const cam = cart.items.filter((i) => isBundleEligible(i.category));
+  const cam = cart.items.filter((i) => i.category === "lens");
   const camQty = cam.reduce((n, i) => n + i.qty, 0);
   const others = new Map<string, { qty: number; total: number; unit: number }>();
   for (const i of cart.items) {
-    if (isBundleEligible(i.category)) continue;
+    if (i.category === "lens") continue;
     const k = i.category;
     const g = others.get(k) ?? { qty: 0, total: 0, unit: unit(i) };
     g.qty += i.qty;
@@ -60,7 +60,7 @@ export function SummaryItems() {
         )}
         {cart.bundleGroupList.map((g, i) => (
           <div key={i} className="flex items-center justify-between gap-3 text-success">
-            <dt>{t("cart.bundleLine")}</dt>
+            <dt>{t(g.category === "air" ? "cart.airBundleLine" : "cart.bundleLine")}</dt>
             <dd className="flex shrink-0 items-center gap-2 font-medium">
               <span className="text-muted-foreground line-through">{g.listTotal} MAD</span>
               <span className="font-bold">{g.total} MAD</span>

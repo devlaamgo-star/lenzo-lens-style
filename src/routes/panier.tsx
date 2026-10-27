@@ -7,7 +7,7 @@ import { usePack } from "@/lib/pack";
 import { designById } from "@/lib/catalog";
 import { QtyStepper } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
-import { LENS_UNIT_PRICE } from "@/lib/pricing";
+import { LENS_UNIT_PRICE, cameraDeliveryFee } from "@/lib/pricing";
 
 export const Route = createFileRoute("/panier")({
   head: () => ({
@@ -37,7 +37,8 @@ function CartPage() {
   const pack = usePack();
   const b = pack.breakdown;
   const packReady = b.count > 0;
-  const total = cart.total + b.total;
+  const shipping = cameraDeliveryFee(cart.items, b.count);
+  const total = cart.total + b.total + shipping;
   const empty = cart.items.length === 0 && !packReady;
 
   return (
@@ -169,7 +170,7 @@ function CartPage() {
                 <BundleLines />
                 <div className="flex items-center justify-between">
                   <dt className="text-muted-foreground">{t("pack.delivery")}</dt>
-                  <dd className="font-medium text-success">{t("pack.free")}</dd>
+                  <dd className={shipping ? "font-medium" : "font-medium text-success"}>{shipping ? `${shipping} MAD` : t("pack.free")}</dd>
                 </div>
                 <div className="flex items-center justify-between border-t border-border pt-3">
                   <dt className="font-semibold">{t("pack.total")}</dt>
