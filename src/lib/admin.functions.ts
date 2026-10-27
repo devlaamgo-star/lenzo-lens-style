@@ -56,7 +56,7 @@ export type AdminSummary = {
   discountLabel: string;
   total: number | null;
   paymentMethod: string;
-  shipping?: number;
+  shipping?: number | undefined;
 };
 
 export type AdminRecord = {
