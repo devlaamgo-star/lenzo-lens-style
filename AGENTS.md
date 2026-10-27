@@ -19,3 +19,4 @@
 - New orders persist canonical `delivery_zone` and `full_address` separately and mirror legacy city/address for existing consumers; admin falls back for historical orders without inventing an approved zone.
 - Shared pricing helpers in `src/lib/pricing.ts` isolate bundle quantities by category and determine delivery from the entire basket, including legacy pack designs; use them in cart/checkout and order saving to keep displayed and persisted totals consistent.
 - Orders revenue is read-only derived from filtered admin order records via `src/lib/revenue.ts`, using Casablanca creation-date calendar days and stored final totals; this avoids repricing historical orders or changing status workflows.
+- Customizer model aliases reuse the existing coverage-specific template geometry through `templateFor` while returning the selected model identity; selector-only additions must not reshape previews or relabel the saved model as the source template model.
