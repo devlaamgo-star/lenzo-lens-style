@@ -1014,7 +1014,7 @@ function OrderDetail({
           {[
             ["Nom complet", record.fullName],
             ["Téléphone", record.phone],
-            [record.kind === "order" ? "Zone de livraison" : "Ville", record.deliveryZone || `${record.city} (ancienne commande)`],
+            [record.kind === "order" ? "Zone de livraison" : "Ville", record.kind === "design" ? record.city : record.deliveryZone || `${record.city} (ancienne commande)`],
             ["Adresse complète", record.fullAddress || "—"],
             ["Date", fmtDate(record.createdAt)],
             ["Langue", record.locale.toUpperCase()],

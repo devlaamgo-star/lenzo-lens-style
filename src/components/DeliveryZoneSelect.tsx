@@ -5,7 +5,7 @@ import { searchDeliveryZones } from "@/lib/delivery-address";
 import { useI18n } from "@/lib/i18n";
 
 export function DeliveryZoneSelect({ value, onChange, error, className }: {
-  value: string; onChange: (value: string) => void; error?: string; className: string;
+  value: string; onChange: (value: string) => void; error?: string | undefined; className: string;
 }) {
   const { t } = useI18n();
   const listId = useId();
