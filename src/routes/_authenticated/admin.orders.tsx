@@ -32,6 +32,7 @@ import {
 } from "@/lib/admin-ui";
 import { supabase } from "@/integrations/supabase/client";
 import { SOURCE_LABEL, TRAFFIC_SOURCES } from "@/lib/attribution";
+import { RevenueSummary } from "@/components/RevenueSummary";
 
 const SOURCE_CLASS: Record<string, string> = {
   tiktok: "bg-foreground text-background",
@@ -458,6 +459,8 @@ function AdminOrdersPage() {
           );
         })}
       </section>
+
+      <RevenueSummary orders={filtered} loading={ordersQuery.isPending} />
 
       <section className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Input
