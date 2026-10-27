@@ -1,5 +1,12 @@
 # Category removal
 
+# Ozon delivery address
+
+- [ ] Add reusable Casablanca/Agadir example zones and searchable required selection.
+- [ ] Validate full addresses and persist separate delivery zone/full address fields.
+- [ ] Show separate location fields in Orders and verify checkout on desktop/mobile.
+- [ ] Expand nationwide only after user reviews the example selector and supplies an approved Ozon list.
+
 - [x] Remove Full Body Skins homepage section, collection selector and search entries.
 - [x] Retire Full Body Skins collection/product pages and remove unused card links.
 - [x] Verify remaining categories, customizer access and gap-free layout.
