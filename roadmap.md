@@ -32,3 +32,7 @@
 
 - [x] Connect a once-only SubmitForm event to confirmed successful checkout submissions, preserving regional blocking and opt-outs.
 - [x] Test success, failure, duplicate calls and blocked visitors; update privacy disclosure. Eight automated tests pass. Browser mocked checkout success produced exactly one TikTok Lead transmission (SDK maps SubmitForm to Lead); simulated failure/invalid form/refresh produced no additional conversion. France remained blocked. No production test order was created.
+
+# Checkout information notice
+
+- [x] Add a compact trilingual warning note above the checkout customer fields (exact FR/AR/EN wording, accent styling, warning icon, RTL-correct in Arabic); 34 tests pass, typecheck clean, verified in all three languages in the browser.

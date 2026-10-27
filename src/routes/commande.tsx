@@ -1,6 +1,6 @@
 import { BundleLines, SummaryItems } from "@/components/BundleLines";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { ChevronRight, Loader2 } from "lucide-react";
+import { AlertCircle, ChevronRight, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
@@ -170,6 +170,10 @@ function OrderPage() {
       <section className="section-y">
         <div className="container-page grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-10">
           <form onSubmit={onSubmit} noValidate className="min-w-0 space-y-5">
+            <div dir={lang === "ar" ? "rtl" : "ltr"} className="flex items-start gap-2.5 rounded-xl border border-accent bg-accent px-3.5 py-3 text-xs leading-relaxed text-accent-foreground">
+              <AlertCircle className="mt-px h-4 w-4 shrink-0" aria-hidden="true" />
+              <p>{t("f.infoNotice")}</p>
+            </div>
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="min-w-0">
                 <label htmlFor="name" className="mb-1.5 block text-sm font-medium">
