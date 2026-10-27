@@ -84,9 +84,14 @@ export const SKIN_TEMPLATES: SkinTemplate[] = [
 ];
 
 export function templateFor(modelId: string, coverage: SkinCoverage): SkinTemplate | undefined {
+  if (modelId === "iphone-17-pro") {
+    const existing = SKIN_TEMPLATES.find((t) => t.modelId === "iphone-17-pro-max" && t.coverage === coverage);
+    return existing ? { ...existing, modelId, modelLabel: "iPhone 17 Pro" } : undefined;
+  }
   return SKIN_TEMPLATES.find((t) => t.modelId === modelId && t.coverage === coverage);
 }
 
 export const SKIN_MODELS = [
   { id: "iphone-17-pro-max", label: "iPhone 17 Pro Max" },
+  { id: "iphone-17-pro", label: "iPhone 17 Pro" },
 ] as const;
