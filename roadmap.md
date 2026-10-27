@@ -1,8 +1,9 @@
 # Category removal
 
 # Orders revenue summary
-- [ ] Add compact revenue and order count with five creation-date periods and existing filters.
-- [ ] Test exclusions, stored totals and calendar boundaries; verify dashboard without modifying order data.
+- [x] Add compact revenue and order count with five creation-date periods and existing filters; no order data/status changes.
+- [x] Test exclusions, stored totals and Casablanca calendar boundaries; 86 tests pass, preview build OK.
+- [ ] Verify revenue controls against real orders in the signed-in dashboard — requesting user has no matching app account; needs an existing admin session in preview. Not published.
 
 # Camera-only pricing
 - [x] Separate camera and Air bundle groups; add 20 MAD delivery only for an exactly-one-camera-only basket; mixed delivery stays free.
