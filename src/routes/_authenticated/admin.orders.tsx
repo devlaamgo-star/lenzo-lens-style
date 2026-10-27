@@ -460,10 +460,9 @@ function AdminOrdersPage() {
         })}
       </section>
 
+      <RevenueSummary orders={filtered} loading={ordersQuery.isPending} />
+
       <section className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <div className="col-span-full -mt-6 mb-3">
-          <RevenueSummary orders={filtered} loading={ordersQuery.isPending} />
-        </div>
         <Input
           placeholder="Rechercher nom, téléphone, n° commande…"
           value={search}

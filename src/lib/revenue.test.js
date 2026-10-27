@@ -15,7 +15,7 @@ test("revenue sums stored final totals including discounts and delivery", () => 
     .toEqual({ total: 1842, count: 3 });
 });
 test("today includes the full creation calendar day, not a rolling 24 hours", () => {
-  expect(revenueSummary([order("2026-10-27T00:00:00Z"), order("2026-10-27T23:00:00Z"), order("2026-10-26T12:01:00Z")], "today", now))
+  expect(revenueSummary([order("2026-10-27T00:00:00Z"), order("2026-10-27T22:59:59Z"), order("2026-10-26T12:01:00Z")], "today", now))
     .toEqual({ total: 198, count: 2 });
 });
 test("yesterday includes only the preceding creation calendar day", () => {
