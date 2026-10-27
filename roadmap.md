@@ -5,7 +5,7 @@
 - [x] Add reusable Casablanca/Agadir example zones and searchable required selection.
 - [x] Validate full addresses and persist separate delivery zone/full address fields.
 - [x] Show separate location fields in Orders; checkout verified on desktop/mobile with a saved order and exact database readback. Signed-in admin browser check unavailable: requesting user has no matching account.
-- [ ] Expand to all verified Ozon Express Morocco destinations, including smaller areas and parent-city search; preserve checkout and exact selected order values.
+- [x] Expand to all verified Ozon Express Morocco destinations: official 1,024-record snapshot, 955 distinct real labels (exact duplicates collapsed, two test placeholders omitted), parent-city aliases, exact values preserved. Source parity checked; 61 tests pass; browser search and selection verified with a real product in checkout, without placing an order. Checkout UI unchanged.
 
 - [x] Remove Full Body Skins homepage section, collection selector and search entries.
 - [x] Retire Full Body Skins collection/product pages and remove unused card links.
