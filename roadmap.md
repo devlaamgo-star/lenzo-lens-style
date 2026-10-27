@@ -1,5 +1,9 @@
 # Category removal
 
+# Camera-only pricing
+- [ ] Separate camera and Air bundle groups; add 20 MAD delivery only for an exactly-one-camera-only basket.
+- [ ] Update camera offer text, cart, checkout and saved order delivery totals; verify calculations and customer flow.
+
 # Ozon delivery address
 
 - [x] Add reusable Casablanca/Agadir example zones and searchable required selection.
