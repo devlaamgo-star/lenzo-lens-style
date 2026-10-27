@@ -7,7 +7,9 @@ import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
-import { designById, MOROCCAN_CITIES } from "@/lib/catalog";
+import { designById } from "@/lib/catalog";
+import { DeliveryZoneSelect } from "@/components/DeliveryZoneSelect";
+import { isDeliveryZone, isCompleteAddress } from "@/lib/delivery-address";
 import { createOrder } from "@/lib/orders.functions";
 import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
@@ -66,8 +68,8 @@ function OrderPage() {
     const next: Errors = {};
     if (values.name.trim().length < 3) next.name = t("e.name");
     if (!PHONE_RE.test(values.phone.replace(/[\s.-]/g, ""))) next.phone = t("e.phone");
-    if (values.city.trim().length < 2) next.city = t("e.city");
-    if (values.address.trim().length < 8) next.address = t("e.address");
+    if (!isDeliveryZone(values.city)) next.city = t("e.deliveryZone");
+    if (!isCompleteAddress(values.address)) next.address = t("e.fullAddress");
     if (packReady && !pack.model) next.model = t("e.modelSelect");
     if (empty) next.cart = t("e.emptyCart");
     setErrors(next);
@@ -83,8 +85,8 @@ function OrderPage() {
         data: {
           fullName: values.name,
           phone: values.phone,
-          city: values.city,
-          address: values.address,
+          deliveryZone: values.city,
+          fullAddress: values.address,
           model: packReady ? pack.model : "",
           designs: packReady ? pack.designs : [],
           items: cart.items.map((i) => ({
@@ -192,27 +194,9 @@ function OrderPage() {
                 />
                 {errors.phone && <p className="mt-1.5 text-xs text-destructive">{errors.phone}</p>}
               </div>
-              <div className="min-w-0">
-                <label htmlFor="city" className="mb-1.5 block text-sm font-medium">
-                  {t("f.city")}
-                </label>
-                <input
-                  id="city"
-                  list="ma-cities"
-                  placeholder={t("f.cityPlaceholder")}
-                  value={values.city}
-                  onChange={set("city")}
-                  maxLength={60}
-                  className={fieldClass}
-                />
-                <datalist id="ma-cities">
-                  {MOROCCAN_CITIES.map((c) => (
-                    <option key={c} value={c} />
-                  ))}
-                </datalist>
-
-                {errors.city && <p className="mt-1.5 text-xs text-destructive">{errors.city}</p>}
-              </div>
+              <DeliveryZoneSelect value={values.city}
+                onChange={(city) => setValues((v) => ({ ...v, city }))}
+                error={errors.city} className={fieldClass} />
               {packReady && (
                 <div className="min-w-0">
                   <ModelSelect
@@ -232,11 +216,16 @@ function OrderPage() {
               <textarea
                 id="address"
                 rows={3}
+                required
+                aria-invalid={Boolean(errors.address)}
+                aria-describedby="address-help"
+                placeholder={t("f.fullAddressPlaceholder")}
                 value={values.address}
                 onChange={set("address")}
                 maxLength={300}
                 className="w-full rounded-xl border border-input bg-card p-4 text-sm outline-none transition-colors focus:border-primary"
               />
+              <p id="address-help" className="mt-1.5 text-xs text-muted-foreground">{t("f.fullAddressHelp")}</p>
               {errors.address && <p className="mt-1.5 text-xs text-destructive">{errors.address}</p>}
             </div>
 

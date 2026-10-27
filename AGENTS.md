@@ -15,3 +15,5 @@
 - TikTok's global head bootstrap uses same-origin regional blocking before loading the SDK; one pathname pageview is dispatched via the root navigation effect, with persistent opt-outs shared across tabs.
 - TikTok SubmitForm runs only after checkout returns a saved order number; deduplicate locally per order without sending that number or customer identifiers, and never replay blocked submissions.
 - TikTok Purchase fires from the same checkout success path with value/currency MAD/contents/quantity; it deduplicates per order number independently from SubmitForm and follows the same regional and opt-out blocking.
+- Delivery-zone labels and parent-city search aliases live in `src/data/delivery-zones.ts`; shared validation in `src/lib/delivery-address.ts` is used by checkout and the order server validator so dataset updates require no checkout changes.
+- New orders persist canonical `delivery_zone` and `full_address` separately and mirror legacy city/address for existing consumers; admin falls back for historical orders without inventing an approved zone.

@@ -187,7 +187,7 @@ function AdminOrdersPage() {
     const q = search.trim().toLowerCase();
     return rows.filter((r) => {
       if (Boolean(r.archived) !== showArchived) return false;
-      if (q && ![r.fullName, r.phone, r.reference, r.city].some((v) => v?.toLowerCase().includes(q)))
+      if (q && ![r.fullName, r.phone, r.reference, r.city, r.fullAddress].some((v) => v?.toLowerCase().includes(q)))
         return false;
       if (statusFilter !== "all" && r.status !== statusFilter) return false;
       if (paymentFilter !== "all" && r.paymentStatus !== paymentFilter) return false;
@@ -518,10 +518,10 @@ function AdminOrdersPage() {
         </Select>
         <Select value={cityFilter} onValueChange={setCityFilter}>
           <SelectTrigger>
-            <SelectValue placeholder="Ville" />
+            <SelectValue placeholder="Ville / zone de livraison" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">Toutes les villes</SelectItem>
+            <SelectItem value="all">Toutes les villes / zones</SelectItem>
             {cities.map((c) => (
               <SelectItem key={c} value={c}>
                 {c}
@@ -625,7 +625,7 @@ function AdminOrdersPage() {
                 "Date",
                 "Client",
                 "Téléphone",
-                "Ville",
+                "Ville / zone de livraison",
                 "",
                 "Produit",
                 "Modèle",
@@ -1014,8 +1014,8 @@ function OrderDetail({
           {[
             ["Nom complet", record.fullName],
             ["Téléphone", record.phone],
-            ["Ville", record.city],
-            ["Adresse", record.address || "—"],
+            [record.kind === "order" ? "Zone de livraison" : "Ville", record.deliveryZone || `${record.city} (ancienne commande)`],
+            ["Adresse complète", record.fullAddress || "—"],
             ["Date", fmtDate(record.createdAt)],
             ["Langue", record.locale.toUpperCase()],
           ].map(([k, v]) => (

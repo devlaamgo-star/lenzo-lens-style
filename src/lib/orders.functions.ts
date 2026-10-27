@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, eligibleBundle, isBundleEligible, packBreakdown } from "./pricing";
 import { TRAFFIC_SOURCES } from "./attribution";
+import { deliveryZoneSchema, fullAddressSchema } from "./delivery-address";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
@@ -46,8 +47,8 @@ export const orderSchema = z.object({
     .trim()
     .transform((v) => v.replace(/[\s.-]/g, ""))
     .refine((v) => moroccanPhone.test(v)),
-  city: z.string().trim().min(2).max(60),
-  address: z.string().trim().min(8).max(300),
+  deliveryZone: deliveryZoneSchema,
+  fullAddress: fullAddressSchema,
   model: z.string().trim().max(40).default(""),
   designs: z.array(z.string().trim().min(1).max(40)).max(30).default([]),
   items: z.array(itemSchema).max(30).default([]),
@@ -107,8 +108,11 @@ export const createOrder = createServerFn({ method: "POST" })
       order_number: orderNumber,
       full_name: data.fullName,
       phone: data.phone,
-      city: data.city,
-      address: data.address,
+      delivery_zone: data.deliveryZone,
+      full_address: data.fullAddress,
+      // Keep legacy consumers compatible while using separate canonical fields.
+      city: data.deliveryZone,
+      address: data.fullAddress,
       iphone_model: data.model,
       designs: data.designs,
       items: data.items.map((i) => ({
@@ -158,8 +162,10 @@ export const createOrder = createServerFn({ method: "POST" })
       customer: {
         full_name: data.fullName,
         phone: data.phone,
-        address: data.address,
-        city: data.city,
+        delivery_zone: data.deliveryZone,
+        full_address: data.fullAddress,
+        address: data.fullAddress,
+        city: data.deliveryZone,
       },
       products: [
         ...data.items.map((i) => ({

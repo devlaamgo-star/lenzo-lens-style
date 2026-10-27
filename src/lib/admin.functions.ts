@@ -67,6 +67,8 @@ export type AdminRecord = {
   phone: string;
   city: string;
   address: string;
+  deliveryZone: string;
+  fullAddress: string;
   product: string;
   model: string;
   quantity: number;
@@ -250,8 +252,10 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         createdAt: o.created_at,
         fullName: o.full_name,
         phone: o.phone,
-        city: o.city,
-        address: o.address,
+        city: o.delivery_zone ?? o.city,
+        address: o.full_address ?? o.address,
+        deliveryZone: o.delivery_zone ?? "",
+        fullAddress: o.full_address ?? o.address,
         product,
         model: o.iphone_model,
         quantity: o.quantity,
@@ -292,6 +296,8 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         phone: d.phone,
         city: d.city,
         address: d.address ?? "",
+        deliveryZone: "",
+        fullAddress: d.address ?? "",
         product: `Design personnalisé — ${d.request_type}`,
         model: [d.phone_brand, d.phone_model].filter(Boolean).join(" ").trim(),
         quantity: d.quantity ?? 1,
