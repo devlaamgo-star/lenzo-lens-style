@@ -132,10 +132,12 @@ export type Database = {
           archived: boolean
           city: string
           created_at: string
+          delivery_zone: string | null
           designs: Json
           expected_delivery_at: string | null
           fbclid: string
           file_paths: string[]
+          full_address: string | null
           full_name: string
           id: string
           iphone_model: string
@@ -169,10 +171,12 @@ export type Database = {
           archived?: boolean
           city: string
           created_at?: string
+          delivery_zone?: string | null
           designs?: Json
           expected_delivery_at?: string | null
           fbclid?: string
           file_paths?: string[]
+          full_address?: string | null
           full_name: string
           id?: string
           iphone_model?: string
@@ -206,10 +210,12 @@ export type Database = {
           archived?: boolean
           city?: string
           created_at?: string
+          delivery_zone?: string | null
           designs?: Json
           expected_delivery_at?: string | null
           fbclid?: string
           file_paths?: string[]
+          full_address?: string | null
           full_name?: string
           id?: string
           iphone_model?: string
