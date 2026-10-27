@@ -8,7 +8,7 @@ test("empty search shows no zones", () => {
 test("casa includes neighborhoods and parent-city nearby areas", () => {
   const labels = searchDeliveryZones("CASA").map((z) => z.label);
   expect(labels).toContain("Casablanca – Maarif");
-  expect(labels).toContain("Daroua");
+  expect(labels).toContain("DAROUA");
   expect(labels).not.toContain("Agadir");
 });
 test("ain matches all supplied Casablanca Ain zones", () => {
