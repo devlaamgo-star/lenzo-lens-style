@@ -392,6 +392,11 @@ const D = {
     "تدفع فقط عند استلام طلبك.",
     "You only pay when you receive your order.",
   ],
+  "f.infoNotice": [
+    "Merci de saisir vos informations correctes. Des informations incorrectes peuvent retarder ou annuler votre commande.",
+    "عفاك دخل المعلومات ديالك صحيحة. معلومات غالطة تقدر تأخر أو تلغي الطلب ديالك.",
+    "Please enter your correct information. Incorrect details may delay or cancel your order.",
+  ],
   "f.name": ["Nom complet", "الاسم الكامل", "Full name"],
   "f.phone": ["Numéro de téléphone", "رقم الهاتف", "Phone number"],
   "f.city": ["Ville", "المدينة", "City"],
