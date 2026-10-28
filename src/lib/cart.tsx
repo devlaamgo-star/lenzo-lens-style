@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Lang } from "./translations";
+import { metaTrack } from "./meta-pixel";
 import { categoryBundles, isBundleEligible, LENS_UNIT_PRICE } from "./pricing";
 
 export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
@@ -101,6 +102,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
         );
       }
       return [...prev, { ...product, key, model, qty: safeQty }];
+    });
+    const unit = isBundleEligible(product.category) ? LENS_UNIT_PRICE : product.price;
+    metaTrack("AddToCart", {
+      content_ids: [product.productId], content_type: "product",
+      contents: [{ id: product.productId, quantity: safeQty }],
+      value: unit * safeQty, currency: "MAD",
     });
   }, []);
 

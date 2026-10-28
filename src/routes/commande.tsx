@@ -114,6 +114,17 @@ function OrderPage() {
           ...(packReady ? pack.designs.map((d) => ({ id: d, qty: 1 })) : []),
         ],
       });
+      window.skinupMetaPurchase?.(res.orderNumber, {
+        value: res.total,
+        currency: "MAD",
+        content_type: "product",
+        content_ids: [...cart.items.map((i) => i.productId), ...(packReady ? pack.designs : [])],
+        contents: [
+          ...cart.items.map((i) => ({ id: i.productId, quantity: i.qty })),
+          ...(packReady ? pack.designs.map((d) => ({ id: d, quantity: 1 })) : []),
+        ],
+        num_items: res.quantity,
+      });
       window.sessionStorage.setItem(
         "skinup-last-order",
         JSON.stringify({

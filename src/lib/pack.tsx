@@ -1,3 +1,4 @@
+import { metaTrack } from "./meta-pixel";
 import {
   createContext,
   useCallback,
@@ -51,7 +52,9 @@ export function PackProvider({ children }: { children: ReactNode }) {
   }, [model, designs, ready]);
 
   const add = useCallback((id: string) => {
-    setDesigns((prev) => (prev.length >= 30 ? prev : [...prev, id]));
+    let added = false;
+    setDesigns((prev) => { if (prev.length >= 30) return prev; added = true; return [...prev, id]; });
+    queueMicrotask(() => { if (added) metaTrack("AddToCart", { content_ids: [id], content_type: "product", contents: [{ id, quantity: 1 }], currency: "MAD" }); });
   }, []);
 
   const removeAt = useCallback((index: number) => {

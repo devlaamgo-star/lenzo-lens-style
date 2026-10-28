@@ -27,6 +27,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Toaster } from "@/components/ui/sonner";
 import { TIKTOK_HEAD_SCRIPT } from "@/lib/tiktok-pixel";
+import { META_HEAD_SCRIPT } from "@/lib/meta-pixel";
+import { MetaConsentBanner } from "@/components/MetaConsentBanner";
 
 function NotFoundComponent() {
   const { t } = useI18n();
@@ -128,20 +130,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
         <script id="skinup-tiktok-pixel" dangerouslySetInnerHTML={{ __html: TIKTOK_HEAD_SCRIPT }} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '1234974428754696');fbq('track', 'PageView');`,
-          }}
-        />
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1234974428754696&ev=PageView&noscript=1"
-            alt=""
-          />
-        </noscript>
+        <script id="skinup-meta-pixel" dangerouslySetInnerHTML={{ __html: META_HEAD_SCRIPT }} />
       </head>
       <body>
         <ScriptOnce>
@@ -174,7 +163,9 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const { lang } = Route.useLoaderData();
   const pathname = useLocation({ select: location => location.pathname });
+  const href = useLocation({ select: location => location.href });
   useEffect(() => { window.skinupTikTokPage?.(); captureAttribution(); }, [pathname]);
+  useEffect(() => { window.skinupMetaPage?.(); }, [href]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -191,6 +182,7 @@ function RootComponent() {
             <SiteFooter />
           </div>
           <WhatsAppFab />
+          <MetaConsentBanner />
           <Toaster position="top-center" />
          </CartProvider>
         </PackProvider>
