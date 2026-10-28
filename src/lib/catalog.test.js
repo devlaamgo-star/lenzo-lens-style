@@ -34,3 +34,21 @@ test("Instagram uses the direct SKINUP profile", () => {
 test("TikTok uses the direct SKINUP profile", () => {
   expect(catalog.TIKTOK_LINK).toBe("https://www.tiktok.com/@skinup.ma");
 });
+
+test("Every Journey belongs to Skin arrière & caméra", () => {
+  expect(catalog.backLensSkinBySlug("every-journey")?.category).toBe("back-and-lens-skins");
+});
+
+test("Every Journey uses the existing 129 MAD back and camera price", () => {
+  const product = catalog.backLensSkinBySlug("every-journey");
+  expect(product).toBeDefined();
+  expect(catalog.BACK_LENS_SKIN_PRICE).toBe(129);
+});
+
+test("Every Journey is compatible with iPhone 17 Pro Max", () => {
+  expect(catalog.backLensSkinBySlug("every-journey")?.device).toBe("iPhone 17 Pro Max");
+});
+
+test("Every Journey is in stock", () => {
+  expect(catalog.backLensSkinBySlug("every-journey")?.inStock).toBe(true);
+});
