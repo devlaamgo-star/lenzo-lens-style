@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ChevronRight, Truck, Wallet, Scissors, Check } from "lucide-react";
 import { useEffect, useState } from "react";
-import { metaTrack } from "@/lib/meta-pixel";
+import { metaViewContent } from "@/lib/meta-pixel";
 import { AddToCartBlock } from "@/components/ProductOptions";
 import { useI18n } from "@/lib/i18n";
 import { AIR_SKIN_PRICE, iphoneAirSkinBySlug } from "@/lib/catalog";
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/iphone-air/$slug")({
 
 function AirProductPage() {
   const { skin } = Route.useLoaderData();
-  useEffect(() => { metaTrack("ViewContent", { content_ids: [skin.id], content_type: "product", content_name: skin.name.fr, value: AIR_SKIN_PRICE, currency: "MAD" }); }, [skin.id]);
+  useEffect(() => { metaViewContent(skin.id, { content_ids: [skin.id], content_type: "product", content_name: skin.name.fr, value: AIR_SKIN_PRICE, currency: "MAD" }); }, [skin.id]);
   const { t, lang } = useI18n();
 
   const related = IPHONE_AIR_SKINS.filter((s) => s.id !== skin.id).slice(0, 4);

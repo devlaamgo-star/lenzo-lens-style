@@ -117,6 +117,15 @@ export function readMetaConsent(): MetaConsentRecord | null {
   try { const raw = localStorage.getItem(META_CONSENT_KEY); return raw ? JSON.parse(raw) : null; } catch { return null; }
 }
 
+let lastView = "";
+/** ViewContent once per product per navigation entry, even if the page re-mounts. */
+export function metaViewContent(id: string, params: MetaParams) {
+  const key = `${id}|${(window.history.state as { __TSR_key?: string } | null)?.__TSR_key ?? location.href}`;
+  if (key === lastView) return;
+  lastView = key;
+  metaTrack("ViewContent", params);
+}
+
 export function metaTrack(name: string, params: MetaParams, eventID?: string) {
   try { window.skinupMetaTrack?.(name, params, eventID); } catch { /* never block the store */ }
 }
