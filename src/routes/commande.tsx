@@ -63,14 +63,14 @@ function OrderPage() {
 
   const checkoutTracked = useRef(false);
   useEffect(() => {
-    if (checkoutTracked.current || !cart.ready || empty) return;
+    if (checkoutTracked.current || !cart.ready || !pack.ready || empty) return;
     checkoutTracked.current = true;
     metaTrack("InitiateCheckout", {
       value: total, currency: "MAD", content_type: "product",
       content_ids: [...cart.items.map((i) => i.productId), ...(packReady ? pack.designs : [])],
       num_items: cart.count + b.count,
     });
-  }, [cart.ready, empty]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [cart.ready, pack.ready, empty]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const set =
     (key: keyof typeof values) =>
