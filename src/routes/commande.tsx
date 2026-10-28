@@ -1,7 +1,8 @@
 import { BundleLines, SummaryItems } from "@/components/BundleLines";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { AlertCircle, ChevronRight, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { metaTrack } from "@/lib/meta-pixel";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
@@ -60,6 +61,17 @@ function OrderPage() {
   const total = cart.total + b.total + shipping;
   const empty = cart.items.length === 0 && !packReady;
 
+  const checkoutTracked = useRef(false);
+  useEffect(() => {
+    if (checkoutTracked.current || !cart.ready || !pack.ready || empty) return;
+    checkoutTracked.current = true;
+    metaTrack("InitiateCheckout", {
+      value: total, currency: "MAD", content_type: "product",
+      content_ids: [...cart.items.map((i) => i.productId), ...(packReady ? pack.designs : [])],
+      num_items: cart.count + b.count,
+    });
+  }, [cart.ready, pack.ready, empty]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const set =
     (key: keyof typeof values) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -113,6 +125,17 @@ function OrderPage() {
           ...cart.items.map((i) => ({ id: i.productId, qty: i.qty })),
           ...(packReady ? pack.designs.map((d) => ({ id: d, qty: 1 })) : []),
         ],
+      });
+      window.skinupMetaPurchase?.(res.orderNumber, {
+        value: res.total,
+        currency: "MAD",
+        content_type: "product",
+        content_ids: [...cart.items.map((i) => i.productId), ...(packReady ? pack.designs : [])],
+        contents: [
+          ...cart.items.map((i) => ({ id: i.productId, quantity: i.qty })),
+          ...(packReady ? pack.designs.map((d) => ({ id: d, quantity: 1 })) : []),
+        ],
+        num_items: res.quantity,
       });
       window.sessionStorage.setItem(
         "skinup-last-order",

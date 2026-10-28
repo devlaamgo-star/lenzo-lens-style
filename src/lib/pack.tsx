@@ -1,9 +1,11 @@
+import { metaTrack } from "./meta-pixel";
 import {
   createContext,
   useCallback,
   useContext,
   useEffect,
   useMemo,
+  useRef,
   useState,
   type ReactNode,
 } from "react";
@@ -45,13 +47,18 @@ export function PackProvider({ children }: { children: ReactNode }) {
     setReady(true);
   }, []);
 
+  const countRef = useRef(0);
+  countRef.current = designs.length;
   useEffect(() => {
     if (!ready) return;
     window.localStorage.setItem(KEY, JSON.stringify({ model, designs }));
   }, [model, designs, ready]);
 
   const add = useCallback((id: string) => {
+    if (countRef.current >= 30) return;
+    countRef.current += 1;
     setDesigns((prev) => (prev.length >= 30 ? prev : [...prev, id]));
+    metaTrack("AddToCart", { content_ids: [id], content_type: "product", contents: [{ id, quantity: 1 }], currency: "MAD" });
   }, []);
 
   const removeAt = useCallback((index: number) => {
