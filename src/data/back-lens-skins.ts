@@ -29,6 +29,7 @@ import bl26 from "@/assets/backlens/bl-26.webp.asset.json";
 import bl27 from "@/assets/backlens/bl-27.webp.asset.json";
 import bl28 from "@/assets/backlens/bl-28.webp.asset.json";
 import bl29 from "@/assets/backlens/bl-29.webp.asset.json";
+import everyJourney from "@/assets/backlens/every-journey.png.asset.json";
 
 export type BackLensSkin = {
   id: string;
@@ -90,6 +91,7 @@ const SEEDS: {
   { slug: "discipline", fr: "Discipline", ar: "الانضباط", en: "Discipline", image: bl27.url, isNew: true, popularity: 92 },
   { slug: "crypto-city", fr: "Crypto City", ar: "مدينة الكريبتو", en: "Crypto City", image: bl28.url, isNew: true, popularity: 91 },
   { slug: "build-wealth-lion", fr: "Build Wealth Lion", ar: "أسد بناء الثروة", en: "Build Wealth Lion", image: bl29.url, isNew: true, popularity: 90 },
+  { slug: "every-journey", fr: "Every Journey", ar: "Every Journey", en: "Every Journey", image: everyJourney.url, isNew: false, popularity: 0 },
 ];
 
 export const BACK_LENS_SKINS: BackLensSkin[] = SEEDS.map((s) => ({
