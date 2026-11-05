@@ -1,5 +1,10 @@
 # Category removal
 
+# Back & Lens design replacement preparation
+- [x] Save all original product records and exact setup snapshots inside the project before clearing active designs.
+- [x] Separate historical lookup from the active catalog; keep the category, customizer, shared assets and all commerce settings unchanged.
+- [ ] Verify empty ready-made listings, historical lookups and customization access; no replacement products or publishing requested.
+
 # Orders revenue summary
 - [x] Add compact revenue and order count with five creation-date periods and existing filters; no order data/status changes.
 - [x] Test exclusions, stored totals and Casablanca calendar boundaries; 86 tests pass, preview build OK.
