@@ -1,0 +1,15 @@
+Import the attached organized SKINUP catalog into the existing “Back & Lens Skins” category using catalog.json as the exact product-to-image mapping.
+
+IMPORTANT: Each product has TWO images. These are two gallery images for ONE product, not two separate products. The archive contains 23 image pairs and 46 original images. Of these, 22 products are ready to import. Product 17 has mismatched artwork: its main image shows a yellow duck wearing sunglasses, while its gallery image shows a pale duck without sunglasses. Preserve the files but skip Product 17 pending a matching pair or explicit user approval. The original Product 23 folder was empty; leave it pending. Do not invent missing products or renumber Product 24.
+
+For each entry in catalog.json with import_status = ready:
+- Create one product using its name, unique slug, external_reference, and display_order. Keep the supplied numeric order: 01–16, 18–22, then 24. Keep 17 and 23 pending.
+- Use 01-main.png as the category-card image and first product-gallery image. Use 02-gallery.png as the second product-gallery image. Both paths are listed explicitly in the manifest.
+- Keep images paired within their own product folder. A three-phone image is one gallery image for one design; it does not represent three products or a three-item bundle.
+- Reuse the complete Back & Lens Skins product template saved earlier: pricing, descriptions, supported phone models, selectable options, variants, discounts, and purchasing behavior. Do not infer compatibility, stock, or variant availability from the mockup images or set a new price.
+- Preserve the supplied artwork, colors, backgrounds, text, and proportions. Display complete images on a white image area without cropping or distortion. Match the existing product-card and product-page layout on mobile and desktop.
+- If this exact imported product already exists, update it by external_reference instead of duplicating it. Do not merge different product numbers merely because their artwork is similar.
+
+Append these products without deleting any current products. Preserve “Create Your Own Skin”, other categories, checkout, delivery, tracking, and existing orders. Do not restore previously removed catalog designs unless they are explicitly included in this manifest.
+
+Verify the import against all 22 ready manifest entries: correct names, image pairs and order, working product URLs, inherited prices and options, and working add-to-cart. Confirm the number actually imported, report Product 17 as requiring image-pair review, and Product 23 as missing. Do not claim success for inaccessible images or products you could not verify.
