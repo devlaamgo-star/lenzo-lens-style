@@ -1,5 +1,6 @@
 import { CAMERA_LENS_SKINS } from "@/data/camera-lens-skins";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
+import { ARCHIVED_BACK_LENS_SKINS } from "@/data/archive/back-lens-skins";
 import { FULL_BODY_SKINS } from "@/data/full-body-skins";
 import { IPHONE_AIR_SKINS } from "@/data/iphone-air-skins";
 
@@ -14,7 +15,7 @@ export type ProductRef = {
 
 const GROUPS: { label: string; items: readonly { id: string; slug: string; name: { fr: string }; image: string }[] }[] = [
   { label: "Stickers caméra", items: CAMERA_LENS_SKINS },
-  { label: "Skins arrière & caméra", items: BACK_LENS_SKINS },
+  { label: "Skins arrière & caméra", items: [...ARCHIVED_BACK_LENS_SKINS, ...BACK_LENS_SKINS] },
   { label: "Full body skins", items: FULL_BODY_SKINS },
   { label: "Skins iPhone Air", items: IPHONE_AIR_SKINS },
   
