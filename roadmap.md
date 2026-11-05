@@ -1,8 +1,8 @@
 # Category removal
 
 # Two new Back & Lens products
-- [ ] Add each supplied image once using the preserved template; append without changing existing products or shared settings.
-- [ ] Verify images, product cards, models, quantities and cart on desktop/mobile.
+- [x] Append Rose Bottle Orange and Rose Bottle Trio once each using the preserved template and upload fingerprint registry; existing archive, customization and shared settings unchanged.
+- [x] Verify unmodified image bytes, cards, pages, required models, quantities and actual cart additions on desktop/mobile; 98 tests pass, build OK. Not published.
 
 # Back & Lens design replacement preparation
 - [x] Save all original product records and exact setup snapshots inside the project before clearing active designs.
