@@ -1,5 +1,9 @@
 # Category removal
 
+# Two new Back & Lens products
+- [ ] Add each supplied image once using the preserved template; append without changing existing products or shared settings.
+- [ ] Verify images, product cards, models, quantities and cart on desktop/mobile.
+
 # Back & Lens design replacement preparation
 - [x] Save all original product records and exact setup snapshots inside the project before clearing active designs.
 - [x] Separate historical lookup from the active catalog; keep the category, customizer, shared assets and all commerce settings unchanged.
