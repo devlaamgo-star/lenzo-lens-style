@@ -1,0 +1,846 @@
+{
+  "category": "Back & Lens Skins",
+  "expected_product_folders": 24,
+  "paired_product_count": 23,
+  "ready_product_count": 22,
+  "review_required_product_numbers": [
+    17
+  ],
+  "image_count": 46,
+  "missing_product_numbers": [
+    23
+  ],
+  "missing_reason": "The original product 23 folder is empty. Do not create a placeholder product.",
+  "names_note": "Descriptive English product names assigned during organization; not supplied as official titles.",
+  "image_policy": "Original image bytes are unchanged. One product per source folder, two images per product.",
+  "products": [
+    {
+      "source_product_number": 1,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-01",
+      "name": "Little Yellow Duck",
+      "slug": "back-lens-little-yellow-duck",
+      "category": "Back & Lens Skins",
+      "display_order": 1,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-01-little-yellow-duck/01-main.png",
+      "gallery_images": [
+        "products/product-01-little-yellow-duck/01-main.png",
+        "products/product-01-little-yellow-duck/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-01-little-yellow-duck/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "5f55c5135d987dcb4dc4f6e67021a084278fb585c82962beedad70383f1ea70b",
+          "original_archive_path": "Full prodcuts /Product 1 /13.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-01-little-yellow-duck/02-gallery.png",
+          "width": 1362,
+          "height": 1155,
+          "sha256": "543868b6d912ed09bc17b61677ac4407f9c73d7cfd5aac7b3bcbdea424598330",
+          "original_archive_path": "Full prodcuts /Product 1 /SKINUP Three-Phone Color Showcase (1).png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 2,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-02",
+      "name": "Levi's Resolve",
+      "slug": "back-lens-levi-s-resolve",
+      "category": "Back & Lens Skins",
+      "display_order": 2,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-02-levi-s-resolve/01-main.png",
+      "gallery_images": [
+        "products/product-02-levi-s-resolve/01-main.png",
+        "products/product-02-levi-s-resolve/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-02-levi-s-resolve/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "333e5a82c28583566fdf08f36c265397b249fc34859a6dad9f88cab47aa4855a",
+          "original_archive_path": "Full prodcuts /Product 2/14.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-02-levi-s-resolve/02-gallery.png",
+          "width": 1358,
+          "height": 1159,
+          "sha256": "9c68c2a9d84e19df92fad0bcfccfc6cc101ad0e18b189448fe7b45c31b8931c3",
+          "original_archive_path": "Full prodcuts /Product 2/SKINUP Levi phone trio showcase.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 3,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-03",
+      "name": "Pirate Wanted Posters",
+      "slug": "back-lens-pirate-wanted-posters",
+      "category": "Back & Lens Skins",
+      "display_order": 3,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-03-pirate-wanted-posters/01-main.png",
+      "gallery_images": [
+        "products/product-03-pirate-wanted-posters/01-main.png",
+        "products/product-03-pirate-wanted-posters/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-03-pirate-wanted-posters/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "786fb53da39ac1d1c618067d3758150d62b9aeb699e297bed324f625b44a5d5a",
+          "original_archive_path": "Full prodcuts /product 3/15.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-03-pirate-wanted-posters/02-gallery.png",
+          "width": 1360,
+          "height": 1156,
+          "sha256": "d79c72b835bfc2ecbb77d11c8e88fd09ff437d43da6cc9f4c11bcfd137dd9d67",
+          "original_archive_path": "Full prodcuts /product 3/SKINUP Trio_ Navy, Orange, Silver.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 4,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-04",
+      "name": "Crew at Sunset",
+      "slug": "back-lens-crew-at-sunset",
+      "category": "Back & Lens Skins",
+      "display_order": 4,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-04-crew-at-sunset/01-main.png",
+      "gallery_images": [
+        "products/product-04-crew-at-sunset/01-main.png",
+        "products/product-04-crew-at-sunset/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-04-crew-at-sunset/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "037f51d336ed81e94353f16e404565c7054c0d379009730d09609c64fb0fa051",
+          "original_archive_path": "Full prodcuts /Product 4/16.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-04-crew-at-sunset/02-gallery.png",
+          "width": 1358,
+          "height": 1158,
+          "sha256": "4a581ab2184361196348d1b41ab23e29b0598c424c63a35a5dc18aa13e6e9066",
+          "original_archive_path": "Full prodcuts /Product 4/SKINUP One Piece phone trio.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 5,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-05",
+      "name": "Dapper Cat",
+      "slug": "back-lens-dapper-cat",
+      "category": "Back & Lens Skins",
+      "display_order": 5,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-05-dapper-cat/01-main.png",
+      "gallery_images": [
+        "products/product-05-dapper-cat/01-main.png",
+        "products/product-05-dapper-cat/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-05-dapper-cat/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "79a9244db2afbec851abc24d3eadcb05e792994e2768002c70d4a798d6224461",
+          "original_archive_path": "Full prodcuts /Product 5/17.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-05-dapper-cat/02-gallery.png",
+          "width": 1361,
+          "height": 1156,
+          "sha256": "e62b4b9737f1ed605f1004a39a6bbc9e6c5586055eba78ce2b054a177eff5f93",
+          "original_archive_path": "Full prodcuts /Product 5/SKINUP premium three-phone color lineup.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 6,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-06",
+      "name": "Great Wave Shark",
+      "slug": "back-lens-great-wave-shark",
+      "category": "Back & Lens Skins",
+      "display_order": 6,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-06-great-wave-shark/01-main.png",
+      "gallery_images": [
+        "products/product-06-great-wave-shark/01-main.png",
+        "products/product-06-great-wave-shark/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-06-great-wave-shark/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "91c1f7674da06ebfe238c4811a8c0d8927032fc42f1359381b7f4833850f4520",
+          "original_archive_path": "Full prodcuts /Product 6/22.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-06-great-wave-shark/02-gallery.png",
+          "width": 1363,
+          "height": 1154,
+          "sha256": "8c25d63001c3690a97e11b97f4d3ff3254487e4817f93869f36ee7b1f761a326",
+          "original_archive_path": "Full prodcuts /Product 6/SKINUP phone trio_ blue, orange, silver.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 7,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-07",
+      "name": "Headphones Cat",
+      "slug": "back-lens-headphones-cat",
+      "category": "Back & Lens Skins",
+      "display_order": 7,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-07-headphones-cat/01-main.png",
+      "gallery_images": [
+        "products/product-07-headphones-cat/01-main.png",
+        "products/product-07-headphones-cat/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-07-headphones-cat/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "5250d73a1b91c6b13360a0629578b712ce77ac9d9daced6f8e51cd6f9a6dbee8",
+          "original_archive_path": "Full prodcuts /Product 7/33.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-07-headphones-cat/02-gallery.png",
+          "width": 1363,
+          "height": 1154,
+          "sha256": "edcaea7e8e3910b46105aab6f6af705a5bac576a5b6783af2277c5340ba5444d",
+          "original_archive_path": "Full prodcuts /Product 7/SKINUP phone trio in elegant colors.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 8,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-08",
+      "name": "Straw Hat Crew",
+      "slug": "back-lens-straw-hat-crew",
+      "category": "Back & Lens Skins",
+      "display_order": 8,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-08-straw-hat-crew/01-main.png",
+      "gallery_images": [
+        "products/product-08-straw-hat-crew/01-main.png",
+        "products/product-08-straw-hat-crew/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-08-straw-hat-crew/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "f7f4b892e95b21f749623a0be7390d4767c8bd95f3a5f64db03748ec2e838c24",
+          "original_archive_path": "Full prodcuts /Product 8/44.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-08-straw-hat-crew/02-gallery.png",
+          "width": 1362,
+          "height": 1155,
+          "sha256": "b86f37bc8dbb0823c552a355fb662b63231b458d88540c28c91440533c1fd31d",
+          "original_archive_path": "Full prodcuts /Product 8/SKINUP anime phone trio.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 9,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-09",
+      "name": "Yellow Duck Pattern",
+      "slug": "back-lens-yellow-duck-pattern",
+      "category": "Back & Lens Skins",
+      "display_order": 9,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-09-yellow-duck-pattern/01-main.png",
+      "gallery_images": [
+        "products/product-09-yellow-duck-pattern/01-main.png",
+        "products/product-09-yellow-duck-pattern/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-09-yellow-duck-pattern/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "80e7f2dc977b49efe022c263c7de6a86c2cc1630b23b8b5bdedab27e4f1917ea",
+          "original_archive_path": "Full prodcuts /Product 9/1010.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-09-yellow-duck-pattern/02-gallery.png",
+          "width": 1359,
+          "height": 1158,
+          "sha256": "f22b40edad78ef30538e44075213c329163c1cbc2dc510cb9f74f13532f3e870",
+          "original_archive_path": "Full prodcuts /Product 9/SKINUP trio with duck-patterned skins.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 10,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-10",
+      "name": "No Risk No Story",
+      "slug": "back-lens-no-risk-no-story",
+      "category": "Back & Lens Skins",
+      "display_order": 10,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-10-no-risk-no-story/01-main.png",
+      "gallery_images": [
+        "products/product-10-no-risk-no-story/01-main.png",
+        "products/product-10-no-risk-no-story/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-10-no-risk-no-story/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "e843f940324604ddaa6a83a0ed374e698f5b98acaaec2ec000179575364caa4f",
+          "original_archive_path": "Full prodcuts /Product 10/99.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-10-no-risk-no-story/02-gallery.png",
+          "width": 1360,
+          "height": 1157,
+          "sha256": "87fde9b70d6723e8ea5551d7faab3aa328906980e94f46575d014547d5c5112d",
+          "original_archive_path": "Full prodcuts /Product 10/SKINUP Three-Phone Premium Showcase (1).png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 11,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-11",
+      "name": "Moroccan Pop Art",
+      "slug": "back-lens-moroccan-pop-art",
+      "category": "Back & Lens Skins",
+      "display_order": 11,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-11-moroccan-pop-art/01-main.png",
+      "gallery_images": [
+        "products/product-11-moroccan-pop-art/01-main.png",
+        "products/product-11-moroccan-pop-art/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-11-moroccan-pop-art/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "72fd6af098947a57882fd3540454e8851aa76a977677f5beaaa08c2a95e3db18",
+          "original_archive_path": "Full prodcuts /Product 11/88.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-11-moroccan-pop-art/02-gallery.png",
+          "width": 1368,
+          "height": 1150,
+          "sha256": "62f1172908182a2c87ef6b570ada48d5556c241e0543150546b132c6a8999ec7",
+          "original_archive_path": "Full prodcuts /Product 11/SKINUP trio with Moroccan souvenir artwork.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 12,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-12",
+      "name": "Trust in Allah",
+      "slug": "back-lens-trust-in-allah",
+      "category": "Back & Lens Skins",
+      "display_order": 12,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-12-trust-in-allah/01-main.png",
+      "gallery_images": [
+        "products/product-12-trust-in-allah/01-main.png",
+        "products/product-12-trust-in-allah/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-12-trust-in-allah/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "79502753760a8b073f1a58cff3be547ee6fc3cca91b1aee819b33a41b36ab935",
+          "original_archive_path": "Full prodcuts /Product 12/77.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-12-trust-in-allah/02-gallery.png",
+          "width": 1358,
+          "height": 1159,
+          "sha256": "a7f8f03c913e58b5cb306631b46b998c642e80367b0ea80897340b5edeab350d",
+          "original_archive_path": "Full prodcuts /Product 12/SKINUP three-phone color showcase.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 13,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-13",
+      "name": "Smiley Faces",
+      "slug": "back-lens-smiley-faces",
+      "category": "Back & Lens Skins",
+      "display_order": 13,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-13-smiley-faces/01-main.png",
+      "gallery_images": [
+        "products/product-13-smiley-faces/01-main.png",
+        "products/product-13-smiley-faces/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-13-smiley-faces/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "b22e95631f2df39217d4e09f429012e110384fa4267aee77a10545a3d5cb6fb1",
+          "original_archive_path": "Full prodcuts /Product 13/66.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-13-smiley-faces/02-gallery.png",
+          "width": 1361,
+          "height": 1156,
+          "sha256": "d6f80f14f5ae2988d98d2d6a791deb45d0830266012def7fe92ad8fd1bd81a5a",
+          "original_archive_path": "Full prodcuts /Product 13/57e9fee6-c40e-433a-93b9-71b7a475422e.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 14,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-14",
+      "name": "Beyond the Wall",
+      "slug": "back-lens-beyond-the-wall",
+      "category": "Back & Lens Skins",
+      "display_order": 14,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-14-beyond-the-wall/01-main.png",
+      "gallery_images": [
+        "products/product-14-beyond-the-wall/01-main.png",
+        "products/product-14-beyond-the-wall/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-14-beyond-the-wall/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "1b0b4d44ce1ac063b07a1cc4a59ccc7a1608c4b62d9ad93371ff1e0c01dbc986",
+          "original_archive_path": "Full prodcuts /Product 14/1111.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-14-beyond-the-wall/02-gallery.png",
+          "width": 1364,
+          "height": 1153,
+          "sha256": "8cf7c2729d05484767d375ead302996a6bddf9dcb1c4c4b653013258a2a2fd40",
+          "original_archive_path": "Full prodcuts /Product 14/Premium SKINUP phone trio.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 15,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-15",
+      "name": "Luffy at Sea",
+      "slug": "back-lens-luffy-at-sea",
+      "category": "Back & Lens Skins",
+      "display_order": 15,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-15-luffy-at-sea/01-main.png",
+      "gallery_images": [
+        "products/product-15-luffy-at-sea/01-main.png",
+        "products/product-15-luffy-at-sea/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-15-luffy-at-sea/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "acc66181a70611c4ecaee472e98823f706cbb793adff09efb27fda9dfa856dfe",
+          "original_archive_path": "Full prodcuts /Product 15/1212.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-15-luffy-at-sea/02-gallery.png",
+          "width": 1362,
+          "height": 1155,
+          "sha256": "17023018c9847969f42a4dc6658da45c0a7419ad6319ee51bddfee3031eea3d8",
+          "original_archive_path": "Full prodcuts /Product 15/SKINUP trio with Luffy artwork.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 16,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-16",
+      "name": "Desert Sun",
+      "slug": "back-lens-desert-sun",
+      "category": "Back & Lens Skins",
+      "display_order": 16,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-16-desert-sun/01-main.png",
+      "gallery_images": [
+        "products/product-16-desert-sun/01-main.png",
+        "products/product-16-desert-sun/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-16-desert-sun/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "79009b749ad59996d78b7094299b79ef9893a7ee7bf00c0424c5d7127c0f8c4c",
+          "original_archive_path": "Full prodcuts /product 16/10.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-16-desert-sun/02-gallery.png",
+          "width": 1367,
+          "height": 1150,
+          "sha256": "dc735a03727dffbac0b8601957e141ea3022c415675a652278592a708710e644",
+          "original_archive_path": "Full prodcuts /product 16/Three-color SKINUP desert sun showcase.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 17,
+      "import_status": "review_required",
+      "review_note": "The main image shows a yellow duck wearing sunglasses; the gallery image shows a pale duck without sunglasses. These are different artworks. Keep both originals for review and skip this product until a matching pair is provided or the user explicitly approves the pairing.",
+      "external_reference": "skinup-backlens-17",
+      "name": "Amber Duck Bar",
+      "slug": "back-lens-amber-duck-bar",
+      "category": "Back & Lens Skins",
+      "display_order": 17,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-17-amber-duck-bar/01-main.png",
+      "gallery_images": [
+        "products/product-17-amber-duck-bar/01-main.png",
+        "products/product-17-amber-duck-bar/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-17-amber-duck-bar/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "9b197f13cd0f28526c7df2dd9aa609f107e6869e262bcc6da97d422da8eaad86",
+          "original_archive_path": "Full prodcuts /product 17/9.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-17-amber-duck-bar/02-gallery.png",
+          "width": 1358,
+          "height": 1158,
+          "sha256": "51e95312e40844a19a3a64953182f1d954ffa531f1b0c105a687272fe92b98d1",
+          "original_archive_path": "Full prodcuts /product 17/SKINUP Duck Bar Phone Collection.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 18,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-18",
+      "name": "Blue Duck Bar",
+      "slug": "back-lens-blue-duck-bar",
+      "category": "Back & Lens Skins",
+      "display_order": 18,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-18-blue-duck-bar/01-main.png",
+      "gallery_images": [
+        "products/product-18-blue-duck-bar/01-main.png",
+        "products/product-18-blue-duck-bar/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-18-blue-duck-bar/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "e07fa044b53438f67a9687c985869a223f1625bc21b0239f6b35988459966a7f",
+          "original_archive_path": "Full prodcuts /product 18/1.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-18-blue-duck-bar/02-gallery.png",
+          "width": 1448,
+          "height": 1086,
+          "sha256": "0d019f16af216d55549fc90f5caba582adf65f84fd29e3c823438faf64a9af8d",
+          "original_archive_path": "Full prodcuts /product 18/SKINUP Duck Bar Phone Trio.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 19,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-19",
+      "name": "Golden Zellige",
+      "slug": "back-lens-golden-zellige",
+      "category": "Back & Lens Skins",
+      "display_order": 19,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-19-golden-zellige/01-main.png",
+      "gallery_images": [
+        "products/product-19-golden-zellige/01-main.png",
+        "products/product-19-golden-zellige/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-19-golden-zellige/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "2d295637714026e165f7b50c3ee6eccc6486c297eea4ad79e0a69d24be47ba94",
+          "original_archive_path": "Full prodcuts /product 19/13.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-19-golden-zellige/02-gallery.png",
+          "width": 1364,
+          "height": 1153,
+          "sha256": "c3f2da1cdcfae04f57ba305578d23b7eafd9568da3c78d9e0fb467dc84ecb56e",
+          "original_archive_path": "Full prodcuts /product 19/SKINUP Three-Phone Premium Showcase.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 20,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-20",
+      "name": "Midnight Duck Bar",
+      "slug": "back-lens-midnight-duck-bar",
+      "category": "Back & Lens Skins",
+      "display_order": 20,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-20-midnight-duck-bar/01-main.png",
+      "gallery_images": [
+        "products/product-20-midnight-duck-bar/01-main.png",
+        "products/product-20-midnight-duck-bar/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-20-midnight-duck-bar/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "06a189050a4831b86d233f429bbe478f481a8879c96b6197ee25bc543aa1dcf2",
+          "original_archive_path": "Full prodcuts /product 20/15.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-20-midnight-duck-bar/02-gallery.png",
+          "width": 1448,
+          "height": 1086,
+          "sha256": "1b53de86fbd278750d5d54328693eef5a9de20e3778a4f95ce167805b3d1ff86",
+          "original_archive_path": "Full prodcuts /product 20/08429adf-9cdf-415f-babb-6ecd8c8a7916.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 21,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-21",
+      "name": "Celestial Horizon",
+      "slug": "back-lens-celestial-horizon",
+      "category": "Back & Lens Skins",
+      "display_order": 21,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-21-celestial-horizon/01-main.png",
+      "gallery_images": [
+        "products/product-21-celestial-horizon/01-main.png",
+        "products/product-21-celestial-horizon/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-21-celestial-horizon/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "d25b0f800612938210870ef5211b4ddb9f777bfbda30c987a7763e776d7241f5",
+          "original_archive_path": "Full prodcuts /product 21/7.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-21-celestial-horizon/02-gallery.png",
+          "width": 1362,
+          "height": 1155,
+          "sha256": "4c8c9918ad96c09a73ac036cc02995966f17e51e33349501c8d337d9a66bd791",
+          "original_archive_path": "Full prodcuts /product 21/SKINUP cosmic phone trio.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 22,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-22",
+      "name": "Leopard Print",
+      "slug": "back-lens-leopard-print",
+      "category": "Back & Lens Skins",
+      "display_order": 22,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-22-leopard-print/01-main.png",
+      "gallery_images": [
+        "products/product-22-leopard-print/01-main.png",
+        "products/product-22-leopard-print/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-22-leopard-print/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "26d542bffd08e3f9a7323b71eaee8efc4efb803db6509401da1b03256fd88ddc",
+          "original_archive_path": "Full prodcuts /product 22/4.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-22-leopard-print/02-gallery.png",
+          "width": 1358,
+          "height": 1158,
+          "sha256": "702631470dadf123ca6fc79dbf070d73b77c538e22c9b9171c8c2d5ae149d145",
+          "original_archive_path": "Full prodcuts /product 22/Leopard Skin iPhones_ Bleu, Orange et Argent.png"
+        }
+      ]
+    },
+    {
+      "source_product_number": 24,
+      "import_status": "ready",
+      "review_note": null,
+      "external_reference": "skinup-backlens-24",
+      "name": "Desert Rider",
+      "slug": "back-lens-desert-rider",
+      "category": "Back & Lens Skins",
+      "display_order": 24,
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/product-24-desert-rider/01-main.png",
+      "gallery_images": [
+        "products/product-24-desert-rider/01-main.png",
+        "products/product-24-desert-rider/02-gallery.png"
+      ],
+      "images": [
+        {
+          "position": 1,
+          "role": "main",
+          "file": "products/product-24-desert-rider/01-main.png",
+          "width": 1000,
+          "height": 1200,
+          "sha256": "570cc97b661090960f5bb939e6700f02cf306cf5c1ac2ce9743034dacf1775e3",
+          "original_archive_path": "Full prodcuts /product 24/fdfd.png"
+        },
+        {
+          "position": 2,
+          "role": "gallery",
+          "file": "products/product-24-desert-rider/02-gallery.png",
+          "width": 1363,
+          "height": 1154,
+          "sha256": "9aad9fcbb35e3060dae044f3dc56c4632a082a9f329851a8ca64e4e0b48385b8",
+          "original_archive_path": "Full prodcuts /product 24/SKINUP three-phone color showcase (2).png"
+        }
+      ]
+    }
+  ]
+}

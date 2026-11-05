@@ -7,6 +7,7 @@ import { useI18n } from "@/lib/i18n";
 import { BACK_LENS_SKIN_PRICE, backLensSkinBySlug } from "@/lib/catalog";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/dos-camera/$slug")({
   loader: ({ params }) => {
@@ -40,6 +41,8 @@ function BackLensProductPage() {
   const { skin } = Route.useLoaderData();
   useEffect(() => { metaViewContent(skin.id, { content_ids: [skin.id], content_type: "product", content_name: skin.name.fr, value: BACK_LENS_SKIN_PRICE, currency: "MAD" }); }, [skin.id]);
   const { t, lang } = useI18n();
+  const [galleryIndex, setGalleryIndex] = useState(0);
+  useEffect(() => { setGalleryIndex(0); }, [skin.id]);
 
   const related = BACK_LENS_SKINS.filter((s) => s.id !== skin.id).slice(0, 4);
 
@@ -63,12 +66,31 @@ function BackLensProductPage() {
 
       <section className="section-y">
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className="space-y-3">
           <div className="overflow-hidden rounded-3xl border border-border bg-card">
             <img
-              src={skin.image}
+              src={skin.gallery[galleryIndex] ?? skin.image}
               alt={`${skin.name[lang]} — ${t("backlens.category")} ${skin.device}`}
               className="aspect-square w-full object-contain p-6"
             />
+          </div>
+          {skin.gallery.length > 1 && (
+            <div className="flex gap-3" role="group" aria-label={skin.name[lang]}>
+              {skin.gallery.map((image, index) => (
+                <Button
+                  key={image}
+                  type="button"
+                  variant="outline"
+                  aria-label={`${skin.name[lang]} — ${index + 1} / ${skin.gallery.length}`}
+                  aria-pressed={galleryIndex === index}
+                  onClick={() => setGalleryIndex(index)}
+                  className={`h-20 w-20 overflow-hidden bg-card p-0 ${galleryIndex === index ? "border-primary ring-1 ring-primary" : "border-border"}`}
+                >
+                  <img src={image} alt="" className="h-full w-full object-contain" />
+                </Button>
+              ))}
+            </div>
+          )}
           </div>
 
           <div className="flex flex-col items-start gap-4">
