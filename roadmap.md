@@ -1,5 +1,9 @@
 # Category removal
 
+# Organized Back & Lens import
+- [ ] Import the 22 ready manifest products with exact identifiers, numbering and paired images using the preserved template; retain Product 17 for review and Product 23 as missing.
+- [ ] Verify all product URLs, both images, inherited prices/options and add-to-cart; preserve customization and historical orders.
+
 # Back & Lens design replacement preparation
 - [x] Save all original product records and exact setup snapshots inside the project before clearing active designs.
 - [x] Separate historical lookup from the active catalog; keep the category, customizer, shared assets and all commerce settings unchanged.
