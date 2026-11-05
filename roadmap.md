@@ -1,8 +1,8 @@
 # Category removal
 
 # Organized Back & Lens import
-- [ ] Import the 22 ready manifest products with exact identifiers, numbering and paired images using the preserved template; retain Product 17 for review and Product 23 as missing.
-- [ ] Verify all product URLs, both images, inherited prices/options and add-to-cart; preserve customization and historical orders.
+- [x] Import the 22 ready manifest products with exact identifiers, numbering and paired images using the preserved template; retain Product 17 for review and Product 23 as missing. Original manifest, instructions and all 46 assets preserved.
+- [x] Verify all 22 product URLs, both images, inherited prices/options and actual add-to-cart; desktop/mobile image and listing checks pass, all cart lines are 129 MAD (2,838 MAD total, free delivery), historical lookup tests pass. No order submitted; not published.
 
 # Back & Lens design replacement preparation
 - [x] Save all original product records and exact setup snapshots inside the project before clearing active designs.

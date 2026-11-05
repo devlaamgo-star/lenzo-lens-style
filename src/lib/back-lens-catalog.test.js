@@ -2,6 +2,7 @@ import { expect, test } from "bun:test";
 import { BACK_LENS_SKINS, backLensSkinBySlug, mergeBackLensProducts } from "../data/back-lens-skins";
 import manifest from "../../catalog-templates/back-lens-skins/imports/organized-2026-11/catalog.json";
 import { BACK_LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
+import { readFileSync } from "node:fs";
 import { ARCHIVED_BACK_LENS_SKINS } from "../data/archive/back-lens-skins";
 import { createBackLensProduct } from "../data/back-lens-product-template";
 import { lookupProduct } from "./product-lookup";
@@ -47,6 +48,8 @@ for (const entry of manifest.products.filter((p) => p.import_status === "ready")
     expect(product.gallery).toHaveLength(2);
     expect(product.image).toBe(product.gallery[0]);
     expect(product.gallery[1]).not.toBe(product.image);
+    const pointer = (role) => JSON.parse(readFileSync(new URL(`../assets/backlens/organized-2026-11/product-${String(entry.source_product_number).padStart(2, "0")}-${role}.png.asset.json`, import.meta.url), "utf8")).url;
+    expect(product.gallery).toEqual([pointer("main"), pointer("gallery")]);
     expect(product.description).toEqual(reference.description);
     expect(product.category).toBe("back-and-lens-skins");
     expect(product.device).toBe(reference.device);
