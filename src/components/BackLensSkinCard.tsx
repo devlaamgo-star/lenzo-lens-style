@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { BACK_LENS_SKIN_PRICE, type BackLensSkin } from "@/lib/catalog";
 import { AddToCartBlock } from "@/components/ProductOptions";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -54,13 +55,14 @@ export function BackLensSkinCard({
         <p className="text-xs text-muted-foreground">{skin.device}</p>
         <p className="mt-1 text-sm font-bold">{BACK_LENS_SKIN_PRICE} MAD</p>
 
+        <Button asChild className="relative z-[2] mt-3 h-11 w-full rounded-full bg-primary p-0 text-sm font-semibold text-card shadow-none hover:bg-primary-hover">
         <Link
           to="/dos-camera/$slug"
           params={{ slug: skin.slug }}
-          className="relative z-[2] mt-3 inline-flex h-11 w-full items-center justify-center rounded-full bg-ink text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
         >
           {t("skins.viewProduct")}
         </Link>
+        </Button>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -91,14 +93,15 @@ export function BackLensSkinCard({
                 price: BACK_LENS_SKIN_PRICE,
               }}
             />
+            <Button asChild className="h-11 rounded-full bg-primary px-5 py-0 text-sm font-semibold text-card shadow-none hover:bg-primary-hover">
             <Link
               to="/dos-camera/$slug"
               params={{ slug: skin.slug }}
               onClick={() => setOpen(false)}
-              className="inline-flex h-11 items-center justify-center rounded-full bg-ink px-5 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
             >
               {t("skins.viewProduct")}
             </Link>
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
