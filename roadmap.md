@@ -1,14 +1,5 @@
 # Category removal
 
-# Two new Back & Lens products
-- [x] Append Rose Bottle Orange and Rose Bottle Trio once each using the preserved template and upload fingerprint registry; existing archive, customization and shared settings unchanged.
-- [x] Verify unmodified image bytes, cards, pages, required models, quantities and actual cart additions on desktop/mobile; 98 tests pass, build OK. Not published.
-
-# Back & Lens design replacement preparation
-- [x] Save all original product records and exact setup snapshots inside the project before clearing active designs.
-- [x] Separate historical lookup from the active catalog; keep the category, customizer, shared assets and all commerce settings unchanged.
-- [x] Verify empty ready-made listings on desktop/mobile and homepage, all 30 historical lookups, retired product URLs and customizer model selection; 95 tests pass, preview build OK. No replacement products added; not published.
-
 # Orders revenue summary
 - [x] Add compact revenue and order count with five creation-date periods and existing filters; no order data/status changes.
 - [x] Test exclusions, stored totals and Casablanca calendar boundaries; 86 tests pass, preview build OK.

@@ -1,6 +1,5 @@
 import { expect, test } from "bun:test";
 import * as catalog from "./catalog";
-import { archivedBackLensSkinBySlug } from "../data/archive/back-lens-skins";
 
 test("Full Body Skins is not available in the storefront catalog", () => {
   expect("FULL_BODY_SKINS" in catalog).toBe(false);
@@ -9,6 +8,7 @@ test("Full Body Skins is not available in the storefront catalog", () => {
 
 test("Other storefront categories remain available", () => {
   expect(catalog.CAMERA_LENS_SKINS.length).toBeGreaterThan(0);
+  expect(catalog.BACK_LENS_SKINS.length).toBeGreaterThan(0);
   expect(catalog.IPHONE_AIR_SKINS.length).toBeGreaterThan(0);
 });
 
@@ -36,19 +36,19 @@ test("TikTok uses the direct SKINUP profile", () => {
 });
 
 test("Every Journey belongs to Skin arrière & caméra", () => {
-  expect(archivedBackLensSkinBySlug("every-journey")?.category).toBe("back-and-lens-skins");
+  expect(catalog.backLensSkinBySlug("every-journey")?.category).toBe("back-and-lens-skins");
 });
 
 test("Every Journey uses the existing 129 MAD back and camera price", () => {
-  const product = archivedBackLensSkinBySlug("every-journey");
+  const product = catalog.backLensSkinBySlug("every-journey");
   expect(product).toBeDefined();
   expect(catalog.BACK_LENS_SKIN_PRICE).toBe(129);
 });
 
 test("Every Journey is compatible with iPhone 17 Pro Max", () => {
-  expect(archivedBackLensSkinBySlug("every-journey")?.device).toBe("iPhone 17 Pro Max");
+  expect(catalog.backLensSkinBySlug("every-journey")?.device).toBe("iPhone 17 Pro Max");
 });
 
 test("Every Journey is in stock", () => {
-  expect(archivedBackLensSkinBySlug("every-journey")?.inStock).toBe(true);
+  expect(catalog.backLensSkinBySlug("every-journey")?.inStock).toBe(true);
 });
