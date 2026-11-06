@@ -1,8 +1,8 @@
 # Category removal
 
 # Back & Lens Batch 02
-- [ ] Append eight manifest products after the existing 22, preserving batch-specific identifiers, image pairs and saved configuration.
-- [ ] Verify all eight pages, original image bytes, prices/models, orange cards and actual add-to-cart on desktop/mobile; no order submission.
+- [x] Append eight manifest products after the existing 22, preserving batch-specific identifiers, image pairs and saved configuration; manifest and instructions saved with the reusable template.
+- [x] Verify all eight pages and 16 CDN image SHA-256 hashes, 129 MAD prices, both iPhone models, orange/white buttons and darker hover, actual add-to-cart on desktop/mobile (eight lines, 1,032 MAD, free delivery); 128 tests pass, preview build OK, no browser errors. No order submitted; not published.
 
 # Organized Back & Lens import
 - [x] Import the 22 ready manifest products with exact identifiers, numbering and paired images using the preserved template; retain Product 17 for review and Product 23 as missing. Original manifest, instructions and all 46 assets preserved.
