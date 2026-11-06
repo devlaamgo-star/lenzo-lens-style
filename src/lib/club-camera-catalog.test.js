@@ -1,7 +1,6 @@
 import { expect, test } from "bun:test";
 import { CAMERA_LENS_SKINS, LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
 import { lookupProduct } from "./product-lookup";
-import { basketBreakdown } from "./pricing";
 
 const slugs = ["fc-barcelone", "paris-saint-germain", "manchester-united", "manchester-city", "liverpool", "arsenal", "chelsea", "bayern-munich", "juventus", "ac-milan"];
 
