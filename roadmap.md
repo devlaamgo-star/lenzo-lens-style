@@ -1,5 +1,9 @@
 # Category removal
 
+# Moroccan club camera stickers
+- [ ] Append the four supplied Moroccan club designs with correct artwork mapping, existing camera settings and no duplicates.
+- [ ] Verify images, pages, search, models and add-to-cart on desktop/mobile, plus admin lookup.
+
 # Club camera stickers
 - [x] Add ten uploaded club designs after the 56 existing camera products with stable identities and no duplicates, exact French titles/descriptions, original-image hash parity and opt-in white/contain full-phone presentation; shared commerce unchanged.
 - [x] Verify all ten cards/pages/images, both phone models, actual add-to-cart (ten lines at 79 MAD), search and no overflow/errors on desktop/mobile; 140 tests pass and preview build OK. Admin product lookup verified by tests; signed-in dashboard readback remains unavailable without an admin session. No order created; not published.
