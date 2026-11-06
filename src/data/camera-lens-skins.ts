@@ -66,6 +66,10 @@ import chelsea from "@/assets/lens/clubs/chelsea.png.asset.json";
 import bayern from "@/assets/lens/clubs/bayern-munich.png.asset.json";
 import juventus from "@/assets/lens/clubs/juventus.png.asset.json";
 import milan from "@/assets/lens/clubs/ac-milan.png.asset.json";
+import raja from "@/assets/lens/clubs/raja-casablanca.png.asset.json";
+import wydad from "@/assets/lens/clubs/wydad-casablanca.png.asset.json";
+import asFar from "@/assets/lens/clubs/as-far.png.asset.json";
+import masFes from "@/assets/lens/clubs/mas-fes.png.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -173,6 +177,10 @@ const CLUB_DESIGNS = [
   { slug: "bayern-munich", club: "Bayern Munich", image: bayern.url },
   { slug: "juventus", club: "Juventus", image: juventus.url },
   { slug: "ac-milan", club: "AC Milan", image: milan.url },
+  { slug: "raja-casablanca", club: "Raja Casablanca", image: raja.url },
+  { slug: "wydad-casablanca", club: "Wydad Casablanca", image: wydad.url },
+  { slug: "as-far", club: "AS FAR – الجيش الملكي", image: asFar.url },
+  { slug: "mas-fes", club: "MAS Fès – المغرب الفاسي", image: masFes.url },
 ];
 
 const ORIGINAL_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
