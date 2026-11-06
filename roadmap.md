@@ -1,5 +1,9 @@
 # Category removal
 
+# Club camera stickers
+- [x] Add ten uploaded club designs after the 56 existing camera products with stable identities and no duplicates, exact French titles/descriptions, original-image hash parity and opt-in white/contain full-phone presentation; shared commerce unchanged.
+- [x] Verify all ten cards/pages/images, both phone models, actual add-to-cart (ten lines at 79 MAD), search and no overflow/errors on desktop/mobile; 140 tests pass and preview build OK. Admin product lookup verified by tests; signed-in dashboard readback remains unavailable without an admin session. No order created; not published.
+
 # Back & Lens Batch 02
 - [x] Append eight manifest products after the existing 22, preserving batch-specific identifiers, image pairs and saved configuration; manifest and instructions saved with the reusable template.
 - [x] Verify all eight pages and 16 CDN image SHA-256 hashes, 129 MAD prices, both iPhone models, orange/white buttons and darker hover, actual add-to-cart on desktop/mobile (eight lines, 1,032 MAD, free delivery); 128 tests pass, preview build OK, no browser errors. No order submitted; not published.
