@@ -11,7 +11,7 @@
 
 - Retired storefront category URLs redirect permanently to `/collection`; preserve source assets and historical product lookup data so existing orders remain readable.
 - Back & Lens active designs live separately from the immutable original archive used by historical product lookup; future designs use `createBackLensProduct` and the preserved setup under `catalog-templates/back-lens-skins` so replacement artwork does not alter shared commerce or page behavior.
-- Organized Back & Lens imports retain their manifest in the saved template folder, merge by external reference and preserve ordered gallery pairs; product-page thumbnails expose supplied gallery images without modifying shared purchasing controls.
+- Organized Back & Lens imports retain each batch manifest in the saved template folder, append in batch order and merge only by external reference (source numbers are batch-local); preserve ordered gallery pairs and shared purchasing controls.
 - Public contact destinations are centralized in `src/lib/catalog.ts`; reuse them for footer entries and WhatsApp links to prevent conflicting contact information.
 - Shared sheet panels render a built-in corner close button; any panel that supplies its own close control must pass `showCloseButton={false}` so two close icons never appear.
 - TikTok's global head bootstrap uses same-origin regional blocking before loading the SDK; one pathname pageview is dispatched via the root navigation effect, with persistent opt-outs shared across tabs.
