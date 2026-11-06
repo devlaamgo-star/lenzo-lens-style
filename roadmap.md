@@ -1,5 +1,9 @@
 # Category removal
 
+# Club camera stickers
+- [ ] Add ten uploaded club designs to the existing camera catalog without duplicates, preserving artwork and shared commerce settings.
+- [ ] Verify all images, pages, search, model selection and add-to-cart on desktop/mobile; keep admin lookup integrated.
+
 # Back & Lens Batch 02
 - [x] Append eight manifest products after the existing 22, preserving batch-specific identifiers, image pairs and saved configuration; manifest and instructions saved with the reusable template.
 - [x] Verify all eight pages and 16 CDN image SHA-256 hashes, 129 MAD prices, both iPhone models, orange/white buttons and darker hover, actual add-to-cart on desktop/mobile (eight lines, 1,032 MAD, free delivery); 128 tests pass, preview build OK, no browser errors. No order submitted; not published.
