@@ -1,0 +1,14 @@
+Add all 8 products in this attached organized batch to the existing “Back & Lens Skins” category.
+
+Read catalog.json and use it as the exact product-to-image mapping. This is BATCH 02, containing 8 new products and 16 images. Its local source numbers 1–8 are independent of the previous batch; do not overwrite, renumber, or merge earlier products with those numbers.
+
+For each manifest entry:
+- Create ONE product with its supplied name and unique slug. Record its external_reference as a stable import key. If that exact batch reference has already been imported, update it instead of duplicating it.
+- Use 01-main.png (one phone) as the category-card image and first gallery image. Use 02-gallery.png (three-phone showcase) as the second gallery image. Both images belong to the SAME product. The three-phone showcase is not three products or a bundle offer.
+- Inherit the complete product configuration from our saved Back & Lens Skins template: prices, descriptions, supported iPhone models, color options, variants, discounts, and purchase behavior. Do not infer phone compatibility or stock from a mockup.
+- Preserve the supplied artwork, text, colors, white backgrounds, and proportions. Display the full image without cropping or distortion.
+- Match the current category-card and product-page layout. Keep the recently applied brand-orange “Voir le produit” buttons, with white text and the existing hover style, on mobile and desktop.
+
+Append these eight products after the current catalog, in manifest order. Preserve all existing products, “Create Your Own Skin”, other categories, checkout, delivery, tracking, and order history. The pending items from the earlier batch are outside this import.
+
+Verify all 8 product pages, correct image pairs and order, inherited prices and selectors, orange product buttons, and add-to-cart. Confirm the number actually added. If you cannot access an attached image or archive, report that clearly before claiming the import is complete.

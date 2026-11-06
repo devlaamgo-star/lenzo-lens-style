@@ -1,6 +1,9 @@
 import { expect, test } from "bun:test";
 import { BACK_LENS_SKINS, backLensSkinBySlug, mergeBackLensProducts } from "../data/back-lens-skins";
 import manifest from "../../catalog-templates/back-lens-skins/imports/organized-2026-11/catalog.json";
+import batch02Manifest from "../../catalog-templates/back-lens-skins/imports/batch02/catalog.json";
+import { ORGANIZED_BACK_LENS_PRODUCTS } from "../data/organized-back-lens-products";
+import { BATCH02_BACK_LENS_PRODUCTS } from "../data/batch02-back-lens-products";
 import { BACK_LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
 import { readFileSync } from "node:fs";
 import { ARCHIVED_BACK_LENS_SKINS } from "../data/archive/back-lens-skins";
@@ -31,9 +34,9 @@ test("Reusable template replaces only supplied design-specific fields", () => {
 });
 
 test("Exactly 22 ready entries preserve original numbering; 17 and 23 remain pending", () => {
-  expect(BACK_LENS_SKINS).toHaveLength(22);
-  expect(BACK_LENS_SKINS.map((p) => p.sourceProductNumber)).toEqual([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,24]);
-  expect(BACK_LENS_SKINS.some((p) => [17,23].includes(p.sourceProductNumber))).toBe(false);
+  expect(ORGANIZED_BACK_LENS_PRODUCTS).toHaveLength(22);
+  expect(ORGANIZED_BACK_LENS_PRODUCTS.map((p) => p.sourceProductNumber)).toEqual([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,24]);
+  expect(ORGANIZED_BACK_LENS_PRODUCTS.some((p) => [17,23].includes(p.sourceProductNumber))).toBe(false);
 });
 
 for (const entry of manifest.products.filter((p) => p.import_status === "ready")) {
@@ -65,7 +68,40 @@ test("Repeated imports update by external reference and preserve unrelated produ
   const existing = { ...first, id: "existing-product", slug: "existing-product", externalReference: "existing-product" };
   const updated = { ...first, name: { fr: "Updated", ar: "Updated", en: "Updated" } };
   const result = mergeBackLensProducts([existing, ...BACK_LENS_SKINS], [updated]);
-  expect(result).toHaveLength(23);
+  expect(result).toHaveLength(31);
   expect(result[0]).toEqual(existing);
   expect(result.find((p) => p.externalReference === first.externalReference)).toEqual(updated);
 });
+
+test("Batch 02 appends eight products without replacing Batch 01 local numbers", () => {
+  expect(BATCH02_BACK_LENS_PRODUCTS).toHaveLength(8);
+  expect(BACK_LENS_SKINS).toHaveLength(30);
+  expect(BACK_LENS_SKINS.slice(0, 22)).toEqual(ORGANIZED_BACK_LENS_PRODUCTS);
+  expect(BACK_LENS_SKINS.slice(22)).toEqual(BATCH02_BACK_LENS_PRODUCTS);
+  expect(BATCH02_BACK_LENS_PRODUCTS.map((p) => p.sourceProductNumber)).toEqual([1,2,3,4,5,6,7,8]);
+  expect(new Set(BACK_LENS_SKINS.map((p) => p.id)).size).toBe(30);
+  expect(new Set(BACK_LENS_SKINS.map((p) => p.slug)).size).toBe(30);
+  expect(mergeBackLensProducts(BACK_LENS_SKINS, BATCH02_BACK_LENS_PRODUCTS)).toEqual(BACK_LENS_SKINS);
+});
+
+for (const entry of batch02Manifest.products) {
+  test(`Batch 02 product ${entry.source_product_number}: exact identity, gallery order and inherited configuration`, () => {
+    const product = backLensSkinBySlug(entry.slug);
+    const reference = ARCHIVED_BACK_LENS_SKINS.find((p) => p.slug === "horizon-celeste");
+    const pointer = (role) => JSON.parse(readFileSync(new URL(`../assets/backlens/batch02/batch02-product-${String(entry.source_product_number).padStart(2, "0")}-${role}.png.asset.json`, import.meta.url), "utf8")).url;
+    expect(product).toEqual({
+      ...reference,
+      id: entry.external_reference,
+      externalReference: entry.external_reference,
+      sourceProductNumber: entry.source_product_number,
+      displayOrder: entry.suggested_catalog_position,
+      slug: entry.slug,
+      name: { fr: entry.name, ar: entry.name, en: entry.name },
+      image: pointer("main"),
+      gallery: [pointer("main"), pointer("gallery")],
+    });
+    expect(BACK_LENS_SKIN_PRICE).toBe(129);
+    expect(modelsForCategory("backlens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
+    expect(lookupProduct(entry.external_reference)?.name).toBe(entry.name);
+  });
+}

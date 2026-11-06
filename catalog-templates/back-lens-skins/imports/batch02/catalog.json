@@ -1,0 +1,310 @@
+{
+  "batch": 2,
+  "source_archive": "Archive 2.zip",
+  "category": "Back & Lens Skins",
+  "product_count": 8,
+  "ready_product_count": 8,
+  "image_count": 16,
+  "missing_product_numbers": [],
+  "names_note": "Descriptive English names assigned during organization.",
+  "append_policy": "Append this batch after existing products in source order; never replace earlier batch products with the same source number.",
+  "image_policy": "Original bytes are unchanged. Each folder holds exactly one product with two images.",
+  "products": [
+    {
+      "batch": 2,
+      "source_product_number": 1,
+      "external_reference": "skinup-backlens-batch02-01",
+      "name": "Yellow Raincoat",
+      "slug": "back-lens-batch02-yellow-raincoat",
+      "category": "Back & Lens Skins",
+      "append_order": 1,
+      "suggested_catalog_position": 25,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-01-yellow-raincoat/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-01-yellow-raincoat/01-main.png",
+        "products/batch02-product-01-yellow-raincoat/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-01-yellow-raincoat/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "489dabb778d03a8a682d25b769cbfbb578278d2d3cc4c471571eafdaaa6f80e6",
+          "original_archive_path": "product 1/5.png"
+        },
+        {
+          "file": "products/batch02-product-01-yellow-raincoat/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1359,
+          "height": 1157,
+          "sha256": "1b21ddc13e219d57802b06a917dfb1127e945da66be128b9b2d460b33014f45c",
+          "original_archive_path": "product 1/SKINUP trio_ Bleu Nuit, Orange, Argent.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 2,
+      "external_reference": "skinup-backlens-batch02-02",
+      "name": "Moroccan Heritage Gold",
+      "slug": "back-lens-batch02-moroccan-heritage-gold",
+      "category": "Back & Lens Skins",
+      "append_order": 2,
+      "suggested_catalog_position": 26,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-02-moroccan-heritage-gold/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-02-moroccan-heritage-gold/01-main.png",
+        "products/batch02-product-02-moroccan-heritage-gold/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-02-moroccan-heritage-gold/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "be1b83b1c5b439d956852bad4e7f24e1fce253a98fd5d9ddcaaa422225326ee7",
+          "original_archive_path": "product 2/6.png"
+        },
+        {
+          "file": "products/batch02-product-02-moroccan-heritage-gold/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1362,
+          "height": 1155,
+          "sha256": "ff7edf81cf3c286cae6bd2821ea3eb175fa6b2ae67e15454584ea24b281debf0",
+          "original_archive_path": "product 2/Premium SKINUP phone trio showcase.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 3,
+      "external_reference": "skinup-backlens-batch02-03",
+      "name": "Botanical Bottles",
+      "slug": "back-lens-batch02-botanical-bottles",
+      "category": "Back & Lens Skins",
+      "append_order": 3,
+      "suggested_catalog_position": 27,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-03-botanical-bottles/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-03-botanical-bottles/01-main.png",
+        "products/batch02-product-03-botanical-bottles/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-03-botanical-bottles/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "beb72082b76a21f47f1ec9ad1415f637030de3af2f6e91abad730d2e1cdcf15b",
+          "original_archive_path": "product 3/8.png"
+        },
+        {
+          "file": "products/batch02-product-03-botanical-bottles/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1361,
+          "height": 1156,
+          "sha256": "d756f23b90730458cf4867e22f0ce2d9beda9f04bbad77b09c40daa1be541411",
+          "original_archive_path": "product 3/SKINUP phone trio with bottle art.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 4,
+      "external_reference": "skinup-backlens-batch02-04",
+      "name": "Chromatic Waves",
+      "slug": "back-lens-batch02-chromatic-waves",
+      "category": "Back & Lens Skins",
+      "append_order": 4,
+      "suggested_catalog_position": 28,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-04-chromatic-waves/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-04-chromatic-waves/01-main.png",
+        "products/batch02-product-04-chromatic-waves/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-04-chromatic-waves/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "8a7c5408ed68338fadcabf0cda415a87e02ad57af659f30c24fc91bf0b580289",
+          "original_archive_path": "product 4/7.png"
+        },
+        {
+          "file": "products/batch02-product-04-chromatic-waves/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1362,
+          "height": 1155,
+          "sha256": "0b3858dddb7dd0a2f650ca1419d73b66f6d9e67aaf5c8e3cf2178684bdafc388",
+          "original_archive_path": "product 4/Premium SKINUP trio_ Bleu Nuit, Orange, Argent.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 5,
+      "external_reference": "skinup-backlens-batch02-05",
+      "name": "Morocco Pride",
+      "slug": "back-lens-batch02-morocco-pride",
+      "category": "Back & Lens Skins",
+      "append_order": 5,
+      "suggested_catalog_position": 29,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-05-morocco-pride/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-05-morocco-pride/01-main.png",
+        "products/batch02-product-05-morocco-pride/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-05-morocco-pride/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "9b9c5d07f1b8e01a89e579f0487932d3bc046f12f253511bc17b4e1e14e14bb5",
+          "original_archive_path": "product 5/3.png"
+        },
+        {
+          "file": "products/batch02-product-05-morocco-pride/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1362,
+          "height": 1155,
+          "sha256": "38ee31bd3b12aa2678d9c17cd2ff8dfe346af236b8107330a5d7c82ec4ddb092",
+          "original_archive_path": "product 5/Premium SKINUP Moroccan phone trio.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 6,
+      "external_reference": "skinup-backlens-batch02-06",
+      "name": "Atlas Lions Red",
+      "slug": "back-lens-batch02-atlas-lions-red",
+      "category": "Back & Lens Skins",
+      "append_order": 6,
+      "suggested_catalog_position": 30,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-06-atlas-lions-red/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-06-atlas-lions-red/01-main.png",
+        "products/batch02-product-06-atlas-lions-red/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-06-atlas-lions-red/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "4570296a7bfa8e9e9b8800f288056ae29dbb2e26cbd7b51f8f310619215b53bc",
+          "original_archive_path": "product 6/2.png"
+        },
+        {
+          "file": "products/batch02-product-06-atlas-lions-red/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1362,
+          "height": 1155,
+          "sha256": "63a447b72fa794053aede85188c8212cc01aab79c90b2433e7d9d1e293467e12",
+          "original_archive_path": "product 6/SKINUP Moroccan Football Phone Trio.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 7,
+      "external_reference": "skinup-backlens-batch02-07",
+      "name": "Rose and Shadow",
+      "slug": "back-lens-batch02-rose-and-shadow",
+      "category": "Back & Lens Skins",
+      "append_order": 7,
+      "suggested_catalog_position": 31,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-07-rose-and-shadow/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-07-rose-and-shadow/01-main.png",
+        "products/batch02-product-07-rose-and-shadow/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-07-rose-and-shadow/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "53fa5c0489d0ba9cb856e028086f3e3e4c8f2ea2a261d48538c00dcf6f579bcc",
+          "original_archive_path": "product 7/1.png"
+        },
+        {
+          "file": "products/batch02-product-07-rose-and-shadow/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1365,
+          "height": 1152,
+          "sha256": "6ffb29c70298f769ff82711f9e05c09ad6ba1304cb37213b3a43b8f60bf4c7ba",
+          "original_archive_path": "product 7/SKINUP Three-Phone Catalog with Botanical Skins.png"
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "source_product_number": 8,
+      "external_reference": "skinup-backlens-batch02-08",
+      "name": "Moroccan Rose",
+      "slug": "back-lens-batch02-moroccan-rose",
+      "category": "Back & Lens Skins",
+      "append_order": 8,
+      "suggested_catalog_position": 32,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": "products/batch02-product-08-moroccan-rose/01-main.png",
+      "gallery_images": [
+        "products/batch02-product-08-moroccan-rose/01-main.png",
+        "products/batch02-product-08-moroccan-rose/02-gallery.png"
+      ],
+      "images": [
+        {
+          "file": "products/batch02-product-08-moroccan-rose/01-main.png",
+          "role": "main",
+          "position": 1,
+          "width": 1000,
+          "height": 1200,
+          "sha256": "248de292580b1b1fe3d7c9e917c927393a6fcb088f83cdf57ff52fb501f41bd6",
+          "original_archive_path": "product 8/11 23.23.40.png"
+        },
+        {
+          "file": "products/batch02-product-08-moroccan-rose/02-gallery.png",
+          "role": "gallery",
+          "position": 2,
+          "width": 1536,
+          "height": 1024,
+          "sha256": "de82fab8414aa30cf2caa762fd3b712b8c44ad8b9da0dbb27f67dc85951e8f31",
+          "original_archive_path": "product 8/Three SKINUP phones in elegant colorways.png"
+        }
+      ]
+    }
+  ]
+}
