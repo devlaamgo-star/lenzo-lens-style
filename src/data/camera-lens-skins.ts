@@ -56,6 +56,16 @@ import lens53 from "@/assets/lens/lens-53.png.asset.json";
 import lens54 from "@/assets/lens/lens-54.png.asset.json";
 import lens55 from "@/assets/lens/lens-55.png.asset.json";
 import lens56 from "@/assets/lens/lens-56.png.asset.json";
+import barcelone from "@/assets/lens/clubs/fc-barcelone.png.asset.json";
+import psg from "@/assets/lens/clubs/paris-saint-germain.png.asset.json";
+import united from "@/assets/lens/clubs/manchester-united.png.asset.json";
+import city from "@/assets/lens/clubs/manchester-city.png.asset.json";
+import liverpool from "@/assets/lens/clubs/liverpool.png.asset.json";
+import arsenal from "@/assets/lens/clubs/arsenal.png.asset.json";
+import chelsea from "@/assets/lens/clubs/chelsea.png.asset.json";
+import bayern from "@/assets/lens/clubs/bayern-munich.png.asset.json";
+import juventus from "@/assets/lens/clubs/juventus.png.asset.json";
+import milan from "@/assets/lens/clubs/ac-milan.png.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -69,6 +79,7 @@ export type CameraLensSkin = {
   inStock: boolean;
   isNew: boolean;
   popularity: number;
+  imagePresentation?: "full-phone";
 };
 
 const DESC: Record<Lang, string> = {
@@ -151,7 +162,20 @@ const SEEDS: Seed[] = [
   { slug: "focus-mode", fr: "Focus Mode", ar: "وضع التركيز", en: "Focus Mode", image: lens56.url, isNew: true, popularity: 4 },
 ];
 
-export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
+const CLUB_DESIGNS = [
+  { slug: "fc-barcelone", club: "FC Barcelone", image: barcelone.url },
+  { slug: "paris-saint-germain", club: "Paris Saint-Germain", image: psg.url },
+  { slug: "manchester-united", club: "Manchester United", image: united.url },
+  { slug: "manchester-city", club: "Manchester City", image: city.url },
+  { slug: "liverpool", club: "Liverpool", image: liverpool.url },
+  { slug: "arsenal", club: "Arsenal", image: arsenal.url },
+  { slug: "chelsea", club: "Chelsea", image: chelsea.url },
+  { slug: "bayern-munich", club: "Bayern Munich", image: bayern.url },
+  { slug: "juventus", club: "Juventus", image: juventus.url },
+  { slug: "ac-milan", club: "AC Milan", image: milan.url },
+];
+
+const ORIGINAL_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
   id: `lens-${s.slug}`,
   slug: s.slug,
   name: { fr: s.fr, ar: s.ar, en: s.en },
@@ -164,6 +188,33 @@ export const CAMERA_LENS_SKINS: CameraLensSkin[] = SEEDS.map((s) => ({
   isNew: s.isNew,
   popularity: s.popularity,
 }));
+
+// Stable club slugs update a matching product in place, preserving its order-history ID.
+export const CAMERA_LENS_SKINS: CameraLensSkin[] = [...ORIGINAL_SKINS];
+for (const design of CLUB_DESIGNS) {
+  const existingIndex = CAMERA_LENS_SKINS.findIndex((skin) => skin.slug === design.slug);
+  const existing = CAMERA_LENS_SKINS[existingIndex];
+  const skin: CameraLensSkin = {
+    id: existing?.id ?? `lens-${design.slug}`,
+    slug: existing?.slug ?? design.slug,
+    name: { fr: `Sticker caméra – ${design.club}`, en: `Camera sticker – ${design.club}`, ar: `ملصق الكاميرا – ${design.club}` },
+    description: {
+      fr: `Affichez votre passion pour ${design.club} avec ce sticker décoratif pour la zone caméra de votre iPhone, aux couleurs du club et découpé autour des objectifs, du flash et des capteurs.`,
+      en: `Show your passion for ${design.club} with this decorative iPhone camera skin in the club's colors, precisely cut around the lenses, flash and sensors.`,
+      ar: DESC.ar,
+    },
+    image: design.image,
+    gallery: [design.image],
+    category: "camera-lens-skins",
+    device: DEVICE,
+    inStock: true,
+    isNew: false,
+    popularity: existing?.popularity ?? 3,
+    imagePresentation: "full-phone",
+  };
+  if (existingIndex >= 0) CAMERA_LENS_SKINS[existingIndex] = skin;
+  else CAMERA_LENS_SKINS.push(skin);
+}
 
 export function lensSkinBySlug(slug: string): CameraLensSkin | undefined {
   return CAMERA_LENS_SKINS.find((s) => s.slug === slug);

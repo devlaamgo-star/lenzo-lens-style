@@ -69,7 +69,7 @@ function LensProductPage() {
               <img
                 src={skin.gallery[active] ?? skin.image}
                 alt={`${skin.name[lang]} — ${t("lens.category")} ${skin.device}`}
-                className="aspect-square w-full object-contain p-6"
+                className={`aspect-square w-full object-contain object-center ${skin.imagePresentation === "full-phone" ? "" : "p-6"}`}
               />
             </div>
             {skin.gallery.length > 1 && (
