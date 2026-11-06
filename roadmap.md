@@ -1,8 +1,8 @@
 # Category removal
 
 # Moroccan club camera stickers
-- [ ] Append the four supplied Moroccan club designs with correct artwork mapping, existing camera settings and no duplicates.
-- [ ] Verify images, pages, search, models and add-to-cart on desktop/mobile, plus admin lookup.
+- [x] Append Raja, Wydad, AS FAR and MAS Fès with correct supplied artwork, French titles/descriptions and stable slugs; all 66 previous camera products and shared commerce settings preserved.
+- [x] Verify all four cards/images/pages, both models, actual add-to-cart and search on desktop/mobile; 144 tests pass, build OK, no browser errors. Admin lookup tested; signed-in dashboard readback unavailable without an admin session. No order submitted; not published.
 
 # Club camera stickers
 - [x] Add ten uploaded club designs after the 56 existing camera products with stable identities and no duplicates, exact French titles/descriptions, original-image hash parity and opt-in white/contain full-phone presentation; shared commerce unchanged.
