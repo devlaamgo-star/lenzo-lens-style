@@ -70,3 +70,7 @@
 # Character camera stickers
 
 - [x] Add six camera-only character designs (Spider-Man Keffieh, Naruto Curieux, Nezuko Rose, Pepe Blasé with three phone-color photos, Shin-chan Caché, Hinata Timide) with the camera-only notice; tests and desktop/mobile browser checks pass.
+
+# Camera offer clarity
+
+- [x] Remove repeated offer text from camera cards, add one offer banner above the camera grid and a compact clarification near Add to Cart; 3 identical or different camera skins verified at 149 MAD with free delivery (tests + browser cart).
