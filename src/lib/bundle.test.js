@@ -58,3 +58,15 @@ test("legacy camera-only selection has the same single-item fee", () => {
   expect(cameraDeliveryFee([{ category: "air", qty: 1 }], 1)).toBe(0);
   expect(cameraDeliveryFee([])).toBe(0);
 });
+test("3 identical or 3 different camera designs both cost 149 MAD with free delivery", () => {
+  const identical = [{ productId: "lens-naruto-curieux", category: "lens", qty: 3, price: 79 }];
+  const different = ["lens-naruto-curieux", "lens-pepe-blase", "lens-fc-barcelone"].map((productId) => ({ productId, category: "lens", qty: 1, price: 79 }));
+  for (const items of [identical, different]) {
+    expect(237 - categoryBundles(items).discount + cameraDeliveryFee(items)).toBe(149);
+    expect(cameraDeliveryFee(items)).toBe(0);
+  }
+});
+test("the camera offer never applies to back & lens skins", () => {
+  const items = [{ category: "backlens", qty: 3, price: 129 }];
+  expect(categoryBundles(items).discount).toBe(0);
+});
