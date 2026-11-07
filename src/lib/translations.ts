@@ -43,6 +43,13 @@ const D = {
   "lens.singleOffer": ["1 skin : 79 MAD + 20 MAD de livraison", "سكين واحد: 79 درهم + 20 درهم للتوصيل", "1 skin: 79 MAD + 20 MAD delivery"],
   "announce.camera": ["3 SKINS CAMÉRA : 149 MAD, LIVRAISON OFFERTE — PAIEMENT À LA LIVRAISON", "3 سكينات كاميرا: 149 درهم، توصيل مجاني — الدفع عند الاستلام", "3 CAMERA SKINS: 149 MAD, FREE DELIVERY — CASH ON DELIVERY"],
   "lens.tripleOffer": ["3 skins: 149 MAD, livraison offerte", "3 سكينات: 149 درهم، توصيل مجاني", "3 skins: 149 MAD, free delivery"],
+  "lens.offerTitle": ["3 skins caméra au choix pour 149 DH", "3 سكينات كاميرا من اختيارك بـ 149 درهم", "Any 3 camera skins for 149 DH"],
+  "lens.offerSub": ["Mixez vos designs préférés — livraison offerte !", "امزج تصاميمك المفضلة — التوصيل مجاني!", "Mix your favourite designs — free delivery!"],
+  "lens.offerHow": [
+    "Choisissez 3 skins identiques ou différents et ajoutez-les au panier : l’offre s’applique automatiquement.",
+    "اختر 3 سكينات متطابقة أو مختلفة وأضفها إلى السلة: يُطبَّق العرض تلقائياً.",
+    "Choose 3 identical or different skins and add them to your cart: the offer applies automatically.",
+  ],
   "cart.airBundleLine": ["Offre iPhone Air — 3 pour 149 MAD", "عرض iPhone Air — 3 بـ 149 درهم", "iPhone Air Bundle — 3 for 149 MAD"],
   "lens.category": [
     "Sticker pour objectifs caméra",

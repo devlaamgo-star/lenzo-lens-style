@@ -4,6 +4,7 @@ import { useI18n } from "@/lib/i18n";
 import { CAMERA_LENS_SKINS } from "@/lib/catalog";
 import { LensSkinCard } from "@/components/LensSkinCard";
 import { CustomSkinCard } from "@/components/CustomSkinCard";
+import { CameraOfferBanner } from "@/components/CameraOfferBanner";
 
 export const Route = createFileRoute("/objectifs/")({
   head: () => ({
@@ -50,7 +51,8 @@ function LensCollectionPage() {
 
       <section className="section-y">
         <div className="container-page">
-          <p className="text-xs text-muted-foreground">
+          <CameraOfferBanner />
+          <p className="mt-6 text-xs text-muted-foreground">
             {CAMERA_LENS_SKINS.length} {t("col.results")}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
