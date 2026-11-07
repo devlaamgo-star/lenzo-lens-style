@@ -6,6 +6,7 @@ import { AddToCartBlock } from "@/components/ProductOptions";
 import { useI18n } from "@/lib/i18n";
 import { LENS_SKIN_PRICE, lensSkinBySlug } from "@/lib/catalog";
 import { LensSkinCard } from "@/components/LensSkinCard";
+import { CameraOfferBanner } from "@/components/CameraOfferBanner";
 import { CAMERA_LENS_SKINS } from "@/data/camera-lens-skins";
 
 export const Route = createFileRoute("/objectifs/$slug")({
@@ -120,6 +121,7 @@ function LensProductPage() {
               </p>
             )}
 
+            <CameraOfferBanner compact />
             <AddToCartBlock
               product={{
                 productId: skin.id,
