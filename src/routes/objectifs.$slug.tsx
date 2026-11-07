@@ -101,10 +101,7 @@ function LensProductPage() {
             <h1 className="text-2xl font-bold sm:text-3xl">{skin.name[lang]}</h1>
             <p className="text-sm text-muted-foreground">{t("skins.compat")}</p>
             <p className="text-2xl font-bold">{LENS_SKIN_PRICE} MAD</p>
-            <div className="space-y-1 text-sm">
-              <p className="text-muted-foreground">{t("lens.singleOffer")}</p>
-              <p className="font-medium text-success">{t("lens.tripleOffer")}</p>
-            </div>
+            <p className="text-sm text-muted-foreground">{t("lens.singleOffer")}</p>
             {skin.inStock && (
               <p className="inline-flex items-center gap-1.5 text-sm text-success">
                 <Check className="h-4 w-4" />
