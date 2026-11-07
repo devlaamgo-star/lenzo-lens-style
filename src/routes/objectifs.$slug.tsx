@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ChevronRight, Truck, Wallet, Scissors, Check } from "lucide-react";
+import { ChevronRight, Truck, Wallet, Scissors, Check, Info } from "lucide-react";
 import { useEffect, useState } from "react";
 import { metaViewContent } from "@/lib/meta-pixel";
 import { AddToCartBlock } from "@/components/ProductOptions";
@@ -22,12 +22,13 @@ export const Route = createFileRoute("/objectifs/$slug")({
     }
     const { skin } = loaderData;
     const title = `${skin.name.fr} — Sticker objectifs caméra iPhone 17 Pro Max | SKINUP`;
+    const description = skin.scopeNote ? `${skin.description.fr} ${skin.scopeNote.fr}` : skin.description.fr;
     return {
       meta: [
         { title },
-        { name: "description", content: skin.description.fr },
+        { name: "description", content: description },
         { property: "og:title", content: title },
-        { property: "og:description", content: skin.description.fr },
+        { property: "og:description", content: description },
         { property: "og:type", content: "product" },
         { name: "twitter:card", content: "summary_large_image" },
       ],
@@ -112,6 +113,12 @@ function LensProductPage() {
             <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
               {skin.description[lang]}
             </p>
+            {skin.scopeNote && (
+              <p className="flex max-w-md items-start gap-2 rounded-xl border border-primary/30 bg-primary/5 px-3 py-2 text-sm font-medium text-foreground">
+                <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={2} />
+                <span>{skin.scopeNote[lang]}</span>
+              </p>
+            )}
 
             <AddToCartBlock
               product={{

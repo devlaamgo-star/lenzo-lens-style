@@ -66,3 +66,7 @@
 # Checkout information notice
 
 - [x] Add a compact trilingual warning note above the checkout customer fields (exact FR/AR/EN wording, accent styling, warning icon, RTL-correct in Arabic); 34 tests pass, typecheck clean, verified in all three languages in the browser.
+
+# Character camera stickers
+
+- [x] Add six camera-only character designs (Spider-Man Keffieh, Naruto Curieux, Nezuko Rose, Pepe Blasé with three phone-color photos, Shin-chan Caché, Hinata Timide) with the camera-only notice; tests and desktop/mobile browser checks pass.

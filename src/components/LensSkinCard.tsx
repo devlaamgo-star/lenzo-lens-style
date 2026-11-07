@@ -79,6 +79,9 @@ export function LensSkinCard({
           />
           <div className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>
+            {skin.scopeNote && (
+              <p className="rounded-lg border border-primary/30 bg-primary/5 px-3 py-2 text-xs font-medium text-foreground">{skin.scopeNote[lang]}</p>
+            )}
             <p className="text-sm">{t("skins.compat")}</p>
             <p className="text-base font-bold">{LENS_SKIN_PRICE} MAD</p>
             <p className="text-xs text-muted-foreground">{t("lens.singleOffer")}</p>

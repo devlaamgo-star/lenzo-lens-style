@@ -18,9 +18,9 @@ for (const slug of slugs) {
 }
 
 test("club imports preserve all 56 existing camera designs and unique identities", () => {
-  expect(CAMERA_LENS_SKINS).toHaveLength(70);
-  expect(new Set(CAMERA_LENS_SKINS.map((skin) => skin.id)).size).toBe(70);
-  expect(new Set(CAMERA_LENS_SKINS.map((skin) => skin.slug)).size).toBe(70);
+  expect(CAMERA_LENS_SKINS).toHaveLength(76);
+  expect(new Set(CAMERA_LENS_SKINS.map((skin) => skin.id)).size).toBe(76);
+  expect(new Set(CAMERA_LENS_SKINS.map((skin) => skin.slug)).size).toBe(76);
   expect(CAMERA_LENS_SKINS[0].slug).toBe("horizon-ambre");
   expect(CAMERA_LENS_SKINS[55].slug).toBe("focus-mode");
 });

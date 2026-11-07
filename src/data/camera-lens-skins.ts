@@ -70,6 +70,14 @@ import raja from "@/assets/lens/clubs/raja-casablanca.png.asset.json";
 import wydad from "@/assets/lens/clubs/wydad-casablanca.png.asset.json";
 import asFar from "@/assets/lens/clubs/as-far.png.asset.json";
 import masFes from "@/assets/lens/clubs/mas-fes.png.asset.json";
+import spiderManOrange from "@/assets/lens/characters/spider-man-keffieh-orange.png.asset.json";
+import narutoOrange from "@/assets/lens/characters/naruto-curieux-orange.png.asset.json";
+import nezukoOrange from "@/assets/lens/characters/nezuko-rose-orange.png.asset.json";
+import pepeOrange from "@/assets/lens/characters/pepe-blase-orange.png.asset.json";
+import pepeSilver from "@/assets/lens/characters/pepe-blase-argent.png.asset.json";
+import pepeNavy from "@/assets/lens/characters/pepe-blase-bleu-nuit.png.asset.json";
+import shinChanNavy from "@/assets/lens/characters/shin-chan-cache-bleu-nuit.png.asset.json";
+import hinataNavy from "@/assets/lens/characters/hinata-timide-bleu-nuit.png.asset.json";
 
 export type CameraLensSkin = {
   id: string;
@@ -84,6 +92,14 @@ export type CameraLensSkin = {
   isNew: boolean;
   popularity: number;
   imagePresentation?: "full-phone";
+  /** Highlighted product-scope notice shown on the product page and quick view. */
+  scopeNote?: Record<Lang, string>;
+};
+
+export const CAMERA_ONLY_NOTE: Record<Lang, string> = {
+  fr: "Skin pour le module caméra uniquement. Téléphone et skin arrière non inclus.",
+  en: "Skin for the camera module only. Phone and back skin not included.",
+  ar: "سكين لوحدة الكاميرا فقط. الهاتف وسكين الظهر غير متضمنين.",
 };
 
 const DESC: Record<Lang, string> = {
@@ -219,6 +235,83 @@ for (const design of CLUB_DESIGNS) {
     isNew: false,
     popularity: existing?.popularity ?? 3,
     imagePresentation: "full-phone",
+  };
+  if (existingIndex >= 0) CAMERA_LENS_SKINS[existingIndex] = skin;
+  else CAMERA_LENS_SKINS.push(skin);
+}
+
+// One product per artwork; photos of the same artwork on other phone colors share one gallery.
+const CHARACTER_DESIGNS: {
+  slug: string;
+  fr: string;
+  en: string;
+  ar: string;
+  descFr: string;
+  descEn: string;
+  descAr: string;
+  gallery: string[];
+}[] = [
+  {
+    slug: "spider-man-keffieh", fr: "Spider-Man Keffieh", en: "Keffiyeh Spider-Man", ar: "سبايدرمان بالكوفية",
+    descFr: "Spider-Man coiffé d'un keffieh, imprimé sur un sticker découpé autour des objectifs, du flash et des capteurs.",
+    descEn: "Spider-Man wearing a keffiyeh, printed on a skin cut around the lenses, flash and sensors.",
+    descAr: "سبايدرمان بالكوفية على ملصق مقصوص حول العدسات والفلاش والمستشعرات.",
+    gallery: [spiderManOrange.url],
+  },
+  {
+    slug: "naruto-curieux", fr: "Naruto Curieux", en: "Curious Naruto", ar: "ناروتو الفضولي",
+    descFr: "Naruto qui surgit entre les objectifs, imprimé sur un sticker découpé autour des objectifs, du flash et des capteurs.",
+    descEn: "Naruto popping out between the lenses, printed on a skin cut around the lenses, flash and sensors.",
+    descAr: "ناروتو يطل بين العدسات على ملصق مقصوص حول العدسات والفلاش والمستشعرات.",
+    gallery: [narutoOrange.url],
+  },
+  {
+    slug: "nezuko-rose", fr: "Nezuko Rose", en: "Pink Nezuko", ar: "نيزوكو الوردية",
+    descFr: "Nezuko sur fond rose, imprimée sur un sticker découpé autour des objectifs, du flash et des capteurs.",
+    descEn: "Nezuko on a pink background, printed on a skin cut around the lenses, flash and sensors.",
+    descAr: "نيزوكو بخلفية وردية على ملصق مقصوص حول العدسات والفلاش والمستشعرات.",
+    gallery: [nezukoOrange.url],
+  },
+  {
+    slug: "pepe-blase", fr: "Pepe Blasé", en: "Unimpressed Pepe", ar: "بيبي الضفدع",
+    descFr: "La grenouille Pepe à l'air blasé, imprimée sur un sticker découpé autour des objectifs, du flash et des capteurs.",
+    descEn: "Pepe the frog looking unimpressed, printed on a skin cut around the lenses, flash and sensors.",
+    descAr: "الضفدع بيبي على ملصق مقصوص حول العدسات والفلاش والمستشعرات.",
+    gallery: [pepeOrange.url, pepeSilver.url, pepeNavy.url],
+  },
+  {
+    slug: "shin-chan-cache", fr: "Shin-chan Caché", en: "Peeking Shin-chan", ar: "شين تشان المختبئ",
+    descFr: "Shin-chan qui se cache derrière les objectifs, imprimé sur un sticker découpé autour des objectifs, du flash et des capteurs.",
+    descEn: "Shin-chan peeking from behind the lenses, printed on a skin cut around the lenses, flash and sensors.",
+    descAr: "شين تشان يختبئ خلف العدسات على ملصق مقصوص حول العدسات والفلاش والمستشعرات.",
+    gallery: [shinChanNavy.url],
+  },
+  {
+    slug: "hinata-timide", fr: "Hinata Timide", en: "Shy Hinata", ar: "هيناتا الخجولة",
+    descFr: "Hinata qui apparaît timidement près des objectifs, imprimée sur un sticker découpé autour des objectifs, du flash et des capteurs.",
+    descEn: "Hinata shyly peeking near the lenses, printed on a skin cut around the lenses, flash and sensors.",
+    descAr: "هيناتا تطل بخجل قرب العدسات على ملصق مقصوص حول العدسات والفلاش والمستشعرات.",
+    gallery: [hinataNavy.url],
+  },
+];
+
+for (const design of CHARACTER_DESIGNS) {
+  const existingIndex = CAMERA_LENS_SKINS.findIndex((skin) => skin.slug === design.slug);
+  const existing = CAMERA_LENS_SKINS[existingIndex];
+  const skin: CameraLensSkin = {
+    id: existing?.id ?? `lens-${design.slug}`,
+    slug: design.slug,
+    name: { fr: design.fr, en: design.en, ar: design.ar },
+    description: { fr: design.descFr, en: design.descEn, ar: design.descAr },
+    image: design.gallery[0] ?? "",
+    gallery: design.gallery,
+    category: "camera-lens-skins",
+    device: DEVICE,
+    inStock: true,
+    isNew: false,
+    popularity: existing?.popularity ?? 2,
+    imagePresentation: "full-phone",
+    scopeNote: CAMERA_ONLY_NOTE,
   };
   if (existingIndex >= 0) CAMERA_LENS_SKINS[existingIndex] = skin;
   else CAMERA_LENS_SKINS.push(skin);
