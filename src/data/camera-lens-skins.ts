@@ -302,11 +302,7 @@ for (const design of CHARACTER_DESIGNS) {
     id: existing?.id ?? `lens-${design.slug}`,
     slug: design.slug,
     name: { fr: design.fr, en: design.en, ar: design.ar },
-    description: {
-      fr: `${design.descFr} ${CAMERA_ONLY_NOTE.fr}`,
-      en: `${design.descEn} ${CAMERA_ONLY_NOTE.en}`,
-      ar: `${design.descAr} ${CAMERA_ONLY_NOTE.ar}`,
-    },
+    description: { fr: design.descFr, en: design.descEn, ar: design.descAr },
     image: design.gallery[0],
     gallery: design.gallery,
     category: "camera-lens-skins",
