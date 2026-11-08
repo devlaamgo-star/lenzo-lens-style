@@ -16,6 +16,7 @@ import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 import { LENS_UNIT_PRICE, cameraDeliveryFee } from "@/lib/pricing";
 import { readAttribution } from "@/lib/attribution";
+import { saveLastOrder } from "@/lib/last-order";
 
 export const Route = createFileRoute("/commande")({
   head: () => ({
@@ -93,6 +94,8 @@ function OrderPage() {
     e.preventDefault();
     if (!validate() || pending) return;
     setPending(true);
+    // Blocks automatic page reloads while the order is in flight.
+    window.__skinupSubmitting = true;
     try {
       const res = await submitOrder({
         data: {
@@ -117,6 +120,8 @@ function OrderPage() {
           attribution: readAttribution(),
         },
       });
+      // The order is saved from here on: nothing below may surface as a failed order.
+      try {
       window.skinupTikTokSubmitForm?.(res.orderNumber);
       window.skinupTikTokPurchase?.(res.orderNumber, {
         value: res.total,
@@ -137,9 +142,8 @@ function OrderPage() {
         ],
         num_items: res.quantity,
       });
-      window.sessionStorage.setItem(
-        "skinup-last-order",
-        JSON.stringify({
+      } catch { /* tracking must never affect a saved order */ }
+      saveLastOrder({
           orderNumber: res.orderNumber,
           total: res.total,
           shipping: res.shipping,
@@ -156,8 +160,7 @@ function OrderPage() {
             qty: i.qty,
             price: i.price,
           })),
-        }),
-      );
+      });
       pack.clear();
       cart.clear();
       navigate({ to: "/confirmation" });
@@ -165,6 +168,7 @@ function OrderPage() {
       console.error(err);
       toast.error(t("e.server"));
     } finally {
+      window.__skinupSubmitting = false;
       setPending(false);
     }
   };

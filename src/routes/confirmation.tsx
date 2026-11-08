@@ -5,6 +5,7 @@ import { useI18n } from "@/lib/i18n";
 import { WHATSAPP_NUMBER, designById } from "@/lib/catalog";
 import { packBreakdown } from "@/lib/pricing";
 import { ReturnsPolicyCard } from "@/routes/retours";
+import { readLastOrder } from "@/lib/last-order";
 
 export const Route = createFileRoute("/confirmation")({
   head: () => ({
