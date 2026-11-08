@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Truck, Wallet, Scissors, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-three-iphones.png.asset.json";
+import heroJpg1122 from "@/assets/hero-three-iphones-1122.jpg.asset.json";
+import heroWebp560 from "@/assets/hero-three-iphones-560.webp.asset.json";
+import heroWebp840 from "@/assets/hero-three-iphones-840.webp.asset.json";
+import heroWebp1122 from "@/assets/hero-three-iphones-1122.webp.asset.json";
+
+// Same hero photo, re-encoded at phone/tablet/desktop widths (24–69 KB instead of 1.8 MB).
+const HERO_WEBP_SRCSET = `${heroWebp560.url} 560w, ${heroWebp840.url} 840w, ${heroWebp1122.url} 1122w`;
+const HERO_SIZES = "(min-width: 1024px) 600px, 100vw";
 
 import { useI18n } from "@/lib/i18n";
 import { CAMERA_LENS_SKINS, PACK_OLD_PRICE, PACK_PRICE } from "@/lib/catalog";
@@ -94,13 +101,18 @@ function Hero() {
 
         <div className="relative order-first lg:order-last">
           <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-card">
-            <img
-              src={heroImage.url}
-              alt="Stickers décoratifs SKINUP appliqués sur trois iPhone, designs colorés sur le module caméra"
-              width={1122}
-              height={1402}
-              className="h-full w-full object-contain object-center lg:object-cover"
-            />
+            <picture className="contents">
+              <source type="image/webp" srcSet={HERO_WEBP_SRCSET} sizes={HERO_SIZES} />
+              <img
+                src={heroJpg1122.url}
+                alt="Stickers décoratifs SKINUP appliqués sur trois iPhone, designs colorés sur le module caméra"
+                width={1122}
+                height={1402}
+                fetchPriority="high"
+                decoding="async"
+                className="h-full w-full object-contain object-center lg:object-cover"
+              />
+            </picture>
 
           </div>
           <div className="absolute -bottom-4 start-4 rounded-2xl border border-border bg-card px-4 py-3 shadow-lift sm:start-6">

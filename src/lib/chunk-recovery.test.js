@@ -40,3 +40,10 @@ describe("claimAutoReload", () => {
     expect(claimAutoReload(ignoring, 1)).toBe(false);
   });
 });
+
+describe("claimAutoReload with the page-only storage replacement", () => {
+  it("treats the replacement as unavailable so reloads cannot loop", () => {
+    const shim = { __skinupMemory: true, getItem: () => null, setItem: () => {} };
+    expect(claimAutoReload(shim, 1)).toBe(false);
+  });
+});

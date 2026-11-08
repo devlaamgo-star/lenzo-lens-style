@@ -16,6 +16,7 @@ import { ModelSelect } from "@/components/ProductOptions";
 import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 import { LENS_UNIT_PRICE, cameraDeliveryFee } from "@/lib/pricing";
 import { readAttribution } from "@/lib/attribution";
+import { saveLastOrder } from "@/lib/last-order";
 
 export const Route = createFileRoute("/commande")({
   head: () => ({
@@ -93,6 +94,8 @@ function OrderPage() {
     e.preventDefault();
     if (!validate() || pending) return;
     setPending(true);
+    // Blocks automatic page reloads while the order is in flight.
+    window.__skinupSubmitting = true;
     try {
       const res = await submitOrder({
         data: {
@@ -117,47 +120,47 @@ function OrderPage() {
           attribution: readAttribution(),
         },
       });
-      window.skinupTikTokSubmitForm?.(res.orderNumber);
-      window.skinupTikTokPurchase?.(res.orderNumber, {
-        value: res.total,
-        quantity: res.quantity,
-        contents: [
-          ...cart.items.map((i) => ({ id: i.productId, qty: i.qty })),
-          ...(packReady ? pack.designs.map((d) => ({ id: d, qty: 1 })) : []),
-        ],
+      // The order is saved from here on: nothing below may surface as a failed order.
+      try {
+        window.skinupTikTokSubmitForm?.(res.orderNumber);
+        window.skinupTikTokPurchase?.(res.orderNumber, {
+          value: res.total,
+          quantity: res.quantity,
+          contents: [
+            ...cart.items.map((i) => ({ id: i.productId, qty: i.qty })),
+            ...(packReady ? pack.designs.map((d) => ({ id: d, qty: 1 })) : []),
+          ],
+        });
+        window.skinupMetaPurchase?.(res.orderNumber, {
+          value: res.total,
+          currency: "MAD",
+          content_type: "product",
+          content_ids: [...cart.items.map((i) => i.productId), ...(packReady ? pack.designs : [])],
+          contents: [
+            ...cart.items.map((i) => ({ id: i.productId, quantity: i.qty })),
+            ...(packReady ? pack.designs.map((d) => ({ id: d, quantity: 1 })) : []),
+          ],
+          num_items: res.quantity,
+        });
+      } catch { /* tracking must never affect a saved order */ }
+      saveLastOrder({
+        orderNumber: res.orderNumber,
+        total: res.total,
+        shipping: res.shipping,
+        name: values.name,
+        phone: values.phone,
+        city: values.city,
+        address: values.address,
+        model: packReady ? pack.model : "",
+        designs: packReady ? pack.designs : [],
+        items: cart.items.map((i) => ({
+          name: i.name[lang],
+          image: i.image,
+          model: i.model,
+          qty: i.qty,
+          price: i.price,
+        })),
       });
-      window.skinupMetaPurchase?.(res.orderNumber, {
-        value: res.total,
-        currency: "MAD",
-        content_type: "product",
-        content_ids: [...cart.items.map((i) => i.productId), ...(packReady ? pack.designs : [])],
-        contents: [
-          ...cart.items.map((i) => ({ id: i.productId, quantity: i.qty })),
-          ...(packReady ? pack.designs.map((d) => ({ id: d, quantity: 1 })) : []),
-        ],
-        num_items: res.quantity,
-      });
-      window.sessionStorage.setItem(
-        "skinup-last-order",
-        JSON.stringify({
-          orderNumber: res.orderNumber,
-          total: res.total,
-          shipping: res.shipping,
-          name: values.name,
-          phone: values.phone,
-          city: values.city,
-          address: values.address,
-          model: packReady ? pack.model : "",
-          designs: packReady ? pack.designs : [],
-          items: cart.items.map((i) => ({
-            name: i.name[lang],
-            image: i.image,
-            model: i.model,
-            qty: i.qty,
-            price: i.price,
-          })),
-        }),
-      );
       pack.clear();
       cart.clear();
       navigate({ to: "/confirmation" });
@@ -165,6 +168,7 @@ function OrderPage() {
       console.error(err);
       toast.error(t("e.server"));
     } finally {
+      window.__skinupSubmitting = false;
       setPending(false);
     }
   };

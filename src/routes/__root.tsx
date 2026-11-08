@@ -15,7 +15,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 import { getServerLang } from "@/lib/lang.functions";
-import { LANGS, type Lang } from "@/lib/translations";
+import { LANGS, translate, type Lang } from "@/lib/translations";
 import { captureAttribution } from "@/lib/attribution";
 import { PackProvider, usePack } from "@/lib/pack";
 import { CartProvider, useCart } from "@/lib/cart";
@@ -29,7 +29,14 @@ import { META_HEAD_SCRIPT } from "@/lib/meta-pixel";
 import { MetaConsentBanner } from "@/components/MetaConsentBanner";
 import { AppErrorFallback } from "@/components/AppErrorFallback";
 import { COMPAT_HEAD_SCRIPT } from "@/lib/browser-compat";
-import { installChunkRecovery } from "@/lib/chunk-recovery";
+import { markAppStarted } from "@/lib/chunk-recovery";
+import { bootGuardScript } from "@/lib/boot-guard";
+
+const BOOT_GUARD_SCRIPT = bootGuardScript({
+  fr: { title: translate("fr", "err.title"), retry: translate("fr", "err.retry") },
+  ar: { title: translate("ar", "err.title"), retry: translate("ar", "err.retry") },
+  en: { title: translate("en", "err.title"), retry: translate("en", "err.retry") },
+});
 
 function NotFoundComponent() {
   const { t } = useI18n();
@@ -108,6 +115,8 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="fr" suppressHydrationWarning>
       <head>
         <script id="skinup-compat" dangerouslySetInnerHTML={{ __html: COMPAT_HEAD_SCRIPT }} />
+        {/* Must precede every app script: protects the first render when they fail. */}
+        <script id="skinup-boot" dangerouslySetInnerHTML={{ __html: BOOT_GUARD_SCRIPT }} />
         <HeadContent />
         <script id="skinup-tiktok-pixel" dangerouslySetInnerHTML={{ __html: TIKTOK_HEAD_SCRIPT }} />
         <script id="skinup-meta-pixel" dangerouslySetInnerHTML={{ __html: META_HEAD_SCRIPT }} />
@@ -144,7 +153,8 @@ function RootComponent() {
   const { lang } = Route.useLoaderData();
   const pathname = useLocation({ select: location => location.pathname });
   const href = useLocation({ select: location => location.href });
-  useEffect(() => { installChunkRecovery(); }, []);
+  // Runs once the page has hydrated: tells the inline boot guard the app started.
+  useEffect(() => { markAppStarted(); }, []);
   useEffect(() => { safely(() => window.skinupTikTokPage?.()); safely(captureAttribution); }, [pathname]);
   useEffect(() => { safely(() => window.skinupMetaPage?.()); }, [href]);
 

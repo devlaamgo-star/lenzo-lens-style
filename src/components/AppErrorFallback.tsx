@@ -2,7 +2,12 @@ import { useEffect } from "react";
 import { useRouter, type ErrorComponentProps } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
-import { isChunkLoadError, reloadOnceForChunkError } from "@/lib/chunk-recovery";
+import {
+  isChunkLoadError,
+  markAppStarted,
+  reloadOnceForChunkError,
+  reportBootIssue,
+} from "@/lib/chunk-recovery";
 
 /** Friendly error screen for the whole site and for individual pages. */
 export function AppErrorFallback({ error, reset }: ErrorComponentProps) {
@@ -11,10 +16,16 @@ export function AppErrorFallback({ error, reset }: ErrorComponentProps) {
   const chunkError = isChunkLoadError(error);
 
   useEffect(() => {
+    // This screen already offers a retry; the startup bar would be a duplicate.
+    markAppStarted();
     console.error(error);
-    reportLovableError(error, { boundary: "tanstack_error_component" });
-    // A missing site file usually means a newer version was published: fetch it once.
-    if (chunkError) reloadOnceForChunkError();
+    if (chunkError) {
+      reportBootIssue("route_import_failed", error);
+      // A missing site file usually means a newer version was published: fetch it once.
+      reloadOnceForChunkError();
+    } else {
+      reportLovableError(error, { boundary: "tanstack_error_component" });
+    }
   }, [error, chunkError]);
 
   const retry = () => {
