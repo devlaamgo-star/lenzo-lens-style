@@ -334,7 +334,7 @@ function AdminOrdersPage() {
       "langue",
       "source",
     ];
-    const esc = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const esc = csvCell;
     const csv = [
       head.join(","),
       ...list.map((r) =>
