@@ -28,7 +28,7 @@ function boot({ storage = memoryStorage(), sessionThrows = false, submitting = f
   let reloads = 0;
   const element = (tag) => ({ tagName: tag.toUpperCase(), style: {}, attrs: {}, children: [], setAttribute(k, v) { this.attrs[k] = v; }, appendChild(c) { this.children.push(c); } });
   const document = {
-    readyState: "complete",
+    readyState: "loading",
     documentElement: { getAttribute: () => "fr" },
     body: { appendChild: (el) => appended.push(el) },
     createElement: element,
@@ -148,6 +148,23 @@ describe("boot guard script", () => {
     expect(failure.ctx.route).toBe("/objectifs");
     expect(failure.ctx.browser).toBe("instagram-inapp/ios 17.2");
     expect(JSON.stringify(page.reports)).not.toContain("SECRET123");
+  });
+
+  it("shows the retry bar if the page loaded but the app never started", () => {
+    const page = boot();
+    page.fire("load", {});
+    page.runTimers();
+    expect(page.appended[0].id).toBe("skinup-boot-bar");
+    expect(page.reloads()).toBe(0);
+    expect(page.reports.some((r) => r.ctx.skinup_kind === "startup_timeout")).toBe(true);
+  });
+
+  it("keeps quiet on a slow load once the app starts", () => {
+    const page = boot();
+    page.fire("load", {});
+    page.window.__skinupBoot.markReady();
+    page.runTimers();
+    expect(page.appended.length).toBe(0);
   });
 
   it("classifies hydration errors", () => {
