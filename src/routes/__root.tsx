@@ -38,6 +38,13 @@ const BOOT_GUARD_SCRIPT = bootGuardScript({
   en: { title: translate("en", "err.title"), retry: translate("en", "err.retry") },
 });
 
+// French/Latin (Plus Jakarta Sans) and Arabic (Noto Kufi Arabic) faces, display=swap.
+const FONT_STYLESHEET =
+  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap";
+// A stylesheet inserted by script is non-render-blocking; the request still starts
+// immediately from the head, and text shows in the fallback font until it swaps.
+const FONT_LOADER_SCRIPT = `(function(){try{var l=document.createElement("link");l.rel="stylesheet";l.href=${JSON.stringify(FONT_STYLESHEET)};l.id="skinup-fonts-css";document.head.appendChild(l);}catch(e){}})();`;
+
 function NotFoundComponent() {
   const { t } = useI18n();
   return (
@@ -92,10 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap",
-      },
+      // Google Fonts CSS is attached by FONT_LOADER_SCRIPT so it never blocks first paint.
       { rel: "icon", type: "image/png", href: "/favicon.png" },
     ],
   }),
@@ -117,6 +121,11 @@ function RootShell({ children }: { children: ReactNode }) {
         <script id="skinup-compat" dangerouslySetInnerHTML={{ __html: COMPAT_HEAD_SCRIPT }} />
         {/* Must precede every app script: protects the first render when they fail. */}
         <script id="skinup-boot" dangerouslySetInnerHTML={{ __html: BOOT_GUARD_SCRIPT }} />
+        {/* Before HeadContent: an inline script placed after the app stylesheet would wait for it. */}
+        <script id="skinup-fonts" dangerouslySetInnerHTML={{ __html: FONT_LOADER_SCRIPT }} />
+        <noscript>
+          <link rel="stylesheet" href={FONT_STYLESHEET} />
+        </noscript>
         <HeadContent />
         <script id="skinup-tiktok-pixel" dangerouslySetInnerHTML={{ __html: TIKTOK_HEAD_SCRIPT }} />
         <script id="skinup-meta-pixel" dangerouslySetInnerHTML={{ __html: META_HEAD_SCRIPT }} />

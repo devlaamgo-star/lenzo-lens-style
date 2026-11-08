@@ -5,6 +5,7 @@ import { useI18n } from "@/lib/i18n";
 import { BACK_LENS_SKIN_PRICE, type BackLensSkin } from "@/lib/catalog";
 import { AddToCartBlock } from "@/components/ProductOptions";
 import { Button } from "@/components/ui/button";
+import { BACK_LENS_CARD_SIZES, backLensCardThumbnail } from "@/data/back-lens-card-thumbnails";
 import {
   Dialog,
   DialogContent,
@@ -22,6 +23,7 @@ export function BackLensSkinCard({
 }) {
   const { t, lang } = useI18n();
   const [open, setOpen] = useState(false);
+  const thumbnail = backLensCardThumbnail(skin.id);
 
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
@@ -33,7 +35,12 @@ export function BackLensSkinCard({
       />
       <div className="relative aspect-square overflow-hidden bg-card">
         <img
-          src={skin.image}
+          src={thumbnail?.src ?? skin.image}
+          srcSet={thumbnail?.srcSet}
+          sizes={thumbnail ? BACK_LENS_CARD_SIZES : undefined}
+          width={thumbnail ? 540 : undefined}
+          height={thumbnail ? 648 : undefined}
+          decoding="async"
           alt={`${skin.name[lang]} — ${t("backlens.category")} ${skin.device}`}
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-contain object-center"
