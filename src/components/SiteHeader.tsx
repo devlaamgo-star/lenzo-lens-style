@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, Search, ShoppingBag, User, X } from "lucide-react";
-import logo from "@/assets/skinup-logo.png";
+// Same logo resized to its largest on-screen size (16 KB instead of 329 KB).
+import logo from "@/assets/skinup-logo-480.png";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";

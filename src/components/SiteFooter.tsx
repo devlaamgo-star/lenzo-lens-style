@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Mail, MessageCircle, Music2, Phone } from "lucide-react";
-import logo from "@/assets/skinup-logo.png";
+// Same logo resized to its largest on-screen size (16 KB instead of 329 KB).
+import logo from "@/assets/skinup-logo-480.png";
 import { useI18n } from "@/lib/i18n";
 import { whatsappLink, WHATSAPP_NUMBER, WHATSAPP_DISPLAY_INTL, PHONE_LINK, CONTACT_EMAIL, INSTAGRAM_LINK, TIKTOK_LINK } from "@/lib/catalog";
 
