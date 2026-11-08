@@ -33,6 +33,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { SOURCE_LABEL, TRAFFIC_SOURCES } from "@/lib/attribution";
 import { RevenueSummary } from "@/components/RevenueSummary";
+import { csvCell } from "@/lib/csv";
 
 const SOURCE_CLASS: Record<string, string> = {
   tiktok: "bg-foreground text-background",
@@ -334,7 +335,7 @@ function AdminOrdersPage() {
       "langue",
       "source",
     ];
-    const esc = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+    const esc = csvCell;
     const csv = [
       head.join(","),
       ...list.map((r) =>
