@@ -12,4 +12,18 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    environments: {
+      client: {
+        build: {
+          // Browser JS only: the default (Safari 16.4 / Chrome 111) ships ES2022 class
+          // static blocks from Radix, which older iPhones (iOS 14–16.3) and outdated
+          // Android WebViews cannot parse, wiping the homepage and product pages.
+          target: ["es2020", "safari14", "ios14", "chrome87", "edge88", "firefox78"],
+          // Keep the stylesheet output identical to the previous default.
+          cssTarget: ["chrome111", "edge111", "firefox114", "safari16.4", "ios16.4"],
+        },
+      },
+    },
+  },
 });

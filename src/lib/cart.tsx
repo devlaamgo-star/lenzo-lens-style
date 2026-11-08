@@ -87,7 +87,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (!ready) return;
-    window.localStorage.setItem(KEY, JSON.stringify(items));
+    try { window.localStorage.setItem(KEY, JSON.stringify(items)); } catch { /* storage blocked or full */ }
   }, [items, ready]);
 
   const add = useCallback((product: CartProduct, rawModel: string, qty: number) => {
