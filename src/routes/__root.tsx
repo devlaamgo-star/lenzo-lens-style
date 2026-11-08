@@ -121,11 +121,12 @@ function RootShell({ children }: { children: ReactNode }) {
         <script id="skinup-compat" dangerouslySetInnerHTML={{ __html: COMPAT_HEAD_SCRIPT }} />
         {/* Must precede every app script: protects the first render when they fail. */}
         <script id="skinup-boot" dangerouslySetInnerHTML={{ __html: BOOT_GUARD_SCRIPT }} />
-        <HeadContent />
+        {/* Before HeadContent: an inline script placed after the app stylesheet would wait for it. */}
         <script id="skinup-fonts" dangerouslySetInnerHTML={{ __html: FONT_LOADER_SCRIPT }} />
         <noscript>
           <link rel="stylesheet" href={FONT_STYLESHEET} />
         </noscript>
+        <HeadContent />
         <script id="skinup-tiktok-pixel" dangerouslySetInnerHTML={{ __html: TIKTOK_HEAD_SCRIPT }} />
         <script id="skinup-meta-pixel" dangerouslySetInnerHTML={{ __html: META_HEAD_SCRIPT }} />
       </head>
