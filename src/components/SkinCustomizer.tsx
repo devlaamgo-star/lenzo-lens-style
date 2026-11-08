@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import {
   Minus,
   Plus,
@@ -21,7 +21,6 @@ import {
 } from "@/lib/skin-templates";
 import { COVERAGE_LABELS, COVERAGE_PRICES, CS, type SkinTransform } from "@/lib/custom-skin";
 import { saveCustomSkin } from "@/lib/custom-skin.functions";
-import { warmSupabaseClient } from "@/lib/lazy-supabase-auth";
 import { toast } from "sonner";
 
 const ACCEPT = ["image/jpeg", "image/png", "image/webp"];
@@ -92,7 +91,6 @@ export function SkinCustomizer() {
   const cart = useCart();
   const fileRef = useRef<HTMLInputElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-  useEffect(() => { warmSupabaseClient(); }, []);
 
   const [modelId, setModelId] = useState<string>(SKIN_MODELS[0].id);
   const [coverage, setCoverage] = useState<SkinCoverage>("back");
