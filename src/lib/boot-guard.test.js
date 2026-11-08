@@ -173,4 +173,15 @@ describe("boot guard script", () => {
     page.fire("error", { message: "Minified React error #418; visit https://react.dev/errors/418" });
     expect(page.reports.some((r) => r.ctx.skinup_kind === "hydration_error")).toBe(true);
   });
+
+  it("keeps the underlying cause of errors React recovered from while hydrating", () => {
+    const page = boot();
+    page.window.__skinupBoot.markReady();
+    const error = Object.assign(new Error("Minified React error #520; visit https://react.dev/errors/520"), {
+      cause: new TypeError("Importing a module script failed."),
+    });
+    page.fire("error", { message: error.message, error });
+    const report = page.reports.find((r) => r.ctx.skinup_kind === "hydration_error");
+    expect(report.message).toContain("cause: Importing a module script failed.");
+  });
 });
