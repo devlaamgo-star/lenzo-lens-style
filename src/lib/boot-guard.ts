@@ -31,7 +31,8 @@ export function bootGuardScript(strings: BootStrings): string {
     "var KEY=" + JSON.stringify(RELOAD_KEY) + ",WIN=" + AUTO_RELOAD_WINDOW_MS + ",STALL=" + STARTUP_STALL_MS + ";",
     "var TXT=" + JSON.stringify(strings) + ";",
     "var CHUNK=/failed to fetch dynamically imported module|error loading dynamically imported module|importing a module script failed|failed to load module script|loading chunk|loading css chunk|unable to preload css|is not a valid javascript mime type/i;",
-    "var HYD=/hydrat|Minified React error #(418|421|422|423|425)[^0-9]/i;",
+    // React's "recovered by client rendering" errors (hydration mismatches and errors thrown while hydrating).
+    "var HYD=/hydrat|Minified React error #(418|419|421|422|423|425|520)[^0-9]/i;",
     "var B=W.__skinupBoot={ready:false,failed:false,q:[],seen:{}};",
 
     // ---- context for reports (no query strings, no customer data) ----
@@ -87,7 +88,7 @@ export function bootGuardScript(strings: BootStrings): string {
     "if(t.tagName==='SCRIPT'){if(!B.ready)fail('Failed to load '+path(u));else B.report('route_import_failed','Failed to load '+path(u));}",
     "else if(t.tagName==='LINK'&&/modulepreload/i.test(t.rel||''))B.report(B.ready?'route_import_failed':'entry_preload_failed','Failed to preload '+path(u),null,'warning');return;}",
     "var m=String(e.message||(e.error&&e.error.message)||'');",
-    "if(HYD.test(m)){B.report('hydration_error',m,null,'warning');return;}",
+    "if(HYD.test(m)){var c=e.error&&e.error.cause;B.report('hydration_error',m.slice(0,60)+(c?' | cause: '+(c.message||c):''),null,'warning');return;}",
     "if(!B.ready&&appAsset(e.filename)&&/SyntaxError/i.test(m+' '+(e.error&&e.error.name)))fail(m);",
     "}catch(x){}},true);",
     "W.addEventListener('unhandledrejection',function(e){try{var r=e&&e.reason,m=String(r&&r.message||r||'');if(!CHUNK.test(m))return;if(!B.ready)fail(m);else B.report('route_import_failed',m);}catch(x){}});",
