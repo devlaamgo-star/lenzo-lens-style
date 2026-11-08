@@ -21,6 +21,7 @@ import {
 } from "@/lib/skin-templates";
 import { COVERAGE_LABELS, COVERAGE_PRICES, CS, type SkinTransform } from "@/lib/custom-skin";
 import { saveCustomSkin } from "@/lib/custom-skin.functions";
+import { warmSupabaseClient } from "@/lib/lazy-supabase-auth";
 import { toast } from "sonner";
 
 const ACCEPT = ["image/jpeg", "image/png", "image/webp"];

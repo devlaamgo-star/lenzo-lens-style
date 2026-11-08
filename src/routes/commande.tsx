@@ -17,6 +17,7 @@ import { CodInfoCard, ReturnsPolicyCard } from "@/routes/retours";
 import { LENS_UNIT_PRICE, cameraDeliveryFee } from "@/lib/pricing";
 import { readAttribution } from "@/lib/attribution";
 import { saveLastOrder } from "@/lib/last-order";
+import { warmSupabaseClient } from "@/lib/lazy-supabase-auth";
 
 export const Route = createFileRoute("/commande")({
   head: () => ({
@@ -61,6 +62,9 @@ function OrderPage() {
   const shipping = cameraDeliveryFee(cart.items, b.count);
   const total = cart.total + b.total + shipping;
   const empty = cart.items.length === 0 && !packReady;
+
+  // Download the server-call helper now so submitting the order doesn't wait for it.
+  useEffect(() => { warmSupabaseClient(); }, []);
 
   const checkoutTracked = useRef(false);
   useEffect(() => {
