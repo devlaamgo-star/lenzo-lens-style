@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Minus,
   Plus,
@@ -92,6 +92,7 @@ export function SkinCustomizer() {
   const cart = useCart();
   const fileRef = useRef<HTMLInputElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
+  useEffect(() => { warmSupabaseClient(); }, []);
 
   const [modelId, setModelId] = useState<string>(SKIN_MODELS[0].id);
   const [coverage, setCoverage] = useState<SkinCoverage>("back");
