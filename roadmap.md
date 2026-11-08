@@ -74,3 +74,9 @@
 # Camera offer clarity
 
 - [x] Remove repeated offer text from camera cards, add one offer banner above the camera grid and a compact clarification near Add to Cart; 3 identical or different camera skins verified at 149 MAD with free delivery (tests + browser cart).
+
+# Startup reliability (Preview only, awaiting review before publish)
+
+- [x] Early boot guard with retry bar over the server-rendered page, one shared reload allowance, no auto-reload during order submission, storage-blocked fallback, classified error reports.
+- [x] Lighter first load: hero photo and logo re-encoded at display size; tests for forced script/route failures, blocked storage, blocked trackers, slow network, ad links and checkout (no order submitted).
+- [ ] Real-phone checks (iPhone Safari, Instagram/Facebook/TikTok in-app, older Android) — needs the owner's phones.
