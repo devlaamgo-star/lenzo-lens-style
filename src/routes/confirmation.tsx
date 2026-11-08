@@ -52,14 +52,7 @@ function ConfirmationPage() {
   const [order, setOrder] = useState<LastOrder | null>(null);
 
   useEffect(() => {
-    const raw = window.sessionStorage.getItem("skinup-last-order");
-    if (raw) {
-      try {
-        setOrder(JSON.parse(raw) as LastOrder);
-      } catch {
-        setOrder(null);
-      }
-    }
+    setOrder(readLastOrder<LastOrder>());
   }, []);
 
   const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

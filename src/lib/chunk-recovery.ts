@@ -1,9 +1,39 @@
-// Recovery for script files that fail to download, e.g. a tab opened before a new
+// Recovery for site files that fail to download, e.g. a tab opened before a new
 // deployment asks for a file that no longer exists, or a flaky mobile connection.
+//
+// The inline boot guard (src/lib/boot-guard.ts) owns the shared reload budget so the
+// startup path, the router's retry path and the page error screen can never add up
+// to more than one automatic reload per tab per five minutes.
 
-const RELOAD_KEY = "skinup-chunk-reload-at";
-/** At most one automatic reload in this window, so a permanent failure can never loop. */
-export const AUTO_RELOAD_WINDOW_MS = 5 * 60 * 1000;
+import { AUTO_RELOAD_WINDOW_MS, RELOAD_KEY } from "./boot-guard";
+
+export { AUTO_RELOAD_WINDOW_MS };
+
+type BootReportKind =
+  | "entry_script_failed"
+  | "entry_preload_failed"
+  | "startup_timeout"
+  | "route_import_failed"
+  | "hydration_error"
+  | "storage_unavailable";
+
+type SkinupBoot = {
+  ready: boolean;
+  failed: boolean;
+  markReady: () => void;
+  showRetry: () => void;
+  claim: () => boolean;
+  reloadOnce: (kind: BootReportKind) => boolean;
+  report: (kind: BootReportKind, detail: unknown, extra?: Record<string, unknown> | null, severity?: "error" | "warning" | "info") => void;
+};
+
+declare global {
+  interface Window {
+    __skinupBoot?: SkinupBoot;
+    /** True while an order is being sent: automatic reloads are refused so nothing is resubmitted or lost mid-request. */
+    __skinupSubmitting?: boolean;
+  }
+}
 
 const CHUNK_ERROR_PATTERNS = [
   "failed to fetch dynamically imported module",
@@ -29,9 +59,10 @@ type StorageLike = Pick<Storage, "getItem" | "setItem">;
 /**
  * Decides whether an automatic reload is allowed now and records it.
  * Returns false when storage is unavailable: without a record we cannot rule out a loop.
+ * Mirrors the boot guard's rule; used only if the boot guard did not run.
  */
 export function claimAutoReload(storage: StorageLike | null | undefined, now: number): boolean {
-  if (!storage) return false;
+  if (!storage || (storage as { __skinupMemory?: boolean }).__skinupMemory) return false;
   try {
     const last = Number(storage.getItem(RELOAD_KEY) || 0);
     if (Number.isFinite(last) && last > 0 && now - last >= 0 && now - last < AUTO_RELOAD_WINDOW_MS) {
@@ -54,18 +85,24 @@ function sessionStore(): StorageLike | null {
 
 /** Reloads the page once to fetch the current site files. Returns true if a reload started. */
 export function reloadOnceForChunkError(): boolean {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined" || window.__skinupSubmitting) return false;
+  try {
+    const boot = window.__skinupBoot;
+    if (boot) return boot.reloadOnce("route_import_failed");
+  } catch {
+    return false;
+  }
   if (!claimAutoReload(sessionStore(), Date.now())) return false;
   window.location.reload();
   return true;
 }
 
-let installed = false;
-/** Vite reports failed script preloads through this event; recover before React sees the error. */
-export function installChunkRecovery() {
-  if (installed || typeof window === "undefined") return;
-  installed = true;
-  window.addEventListener("vite:preloadError", (event) => {
-    if (reloadOnceForChunkError()) event.preventDefault();
-  });
+/** Classified report through the boot guard; never throws. */
+export function reportBootIssue(kind: BootReportKind, detail: unknown, extra?: Record<string, unknown>) {
+  try { window.__skinupBoot?.report(kind, detail, extra ?? null); } catch { /* reporting must never break the page */ }
+}
+
+/** The app rendered (either the page or its own error screen): hide the startup retry bar. */
+export function markAppStarted() {
+  try { window.__skinupBoot?.markReady(); } catch { /* ignore */ }
 }
