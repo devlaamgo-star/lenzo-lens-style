@@ -24,7 +24,7 @@ const THUMBNAILS: Record<string, CardThumbnail> = {
 };
 
 /** Rendered image width inside a square card (images are 5:6, contained). */
-export const BACK_LENS_CARD_SIZES = "(min-width: 1024px) 260px, 42vw";
+export const BACK_LENS_CARD_SIZES = "(min-width: 1024px) 260px, 38vw";
 
 export function backLensCardThumbnail(productId: string): CardThumbnail | undefined {
   return THUMBNAILS[productId];
