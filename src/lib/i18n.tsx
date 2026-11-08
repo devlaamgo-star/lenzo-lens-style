@@ -30,7 +30,8 @@ export function I18nProvider({
   const [lang, setLangState] = useState<Lang>(initialLang);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY);
+    let stored: string | null = null;
+    try { stored = window.localStorage.getItem(STORAGE_KEY); } catch { /* storage blocked */ }
     if (stored && (LANGS as string[]).includes(stored) && stored !== lang) {
       setLangState(stored as Lang);
     }
@@ -45,7 +46,7 @@ export function I18nProvider({
 
   const setLang = useCallback((l: Lang) => {
     setLangState(l);
-    window.localStorage.setItem(STORAGE_KEY, l);
+    try { window.localStorage.setItem(STORAGE_KEY, l); } catch { /* storage blocked */ }
     document.cookie = `${STORAGE_KEY}=${l}; path=/; max-age=31536000; samesite=lax`;
   }, []);
 

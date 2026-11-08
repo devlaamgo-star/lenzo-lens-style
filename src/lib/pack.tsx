@@ -51,7 +51,7 @@ export function PackProvider({ children }: { children: ReactNode }) {
   countRef.current = designs.length;
   useEffect(() => {
     if (!ready) return;
-    window.localStorage.setItem(KEY, JSON.stringify({ model, designs }));
+    try { window.localStorage.setItem(KEY, JSON.stringify({ model, designs })); } catch { /* storage blocked or full */ }
   }, [model, designs, ready]);
 
   const add = useCallback((id: string) => {

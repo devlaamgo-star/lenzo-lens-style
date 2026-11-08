@@ -29,6 +29,9 @@ import { Toaster } from "@/components/ui/sonner";
 import { TIKTOK_HEAD_SCRIPT } from "@/lib/tiktok-pixel";
 import { META_HEAD_SCRIPT } from "@/lib/meta-pixel";
 import { MetaConsentBanner } from "@/components/MetaConsentBanner";
+import { AppErrorFallback } from "@/components/AppErrorFallback";
+import { COMPAT_HEAD_SCRIPT } from "@/lib/browser-compat";
+import { installChunkRecovery } from "@/lib/chunk-recovery";
 
 function NotFoundComponent() {
   const { t } = useI18n();
@@ -51,39 +54,17 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: ErrorComponentProps) {
-  console.error(error);
-  const router = useRouter();
-  const { t } = useI18n();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+function ErrorComponent(props: ErrorComponentProps) {
+  return <AppErrorFallback {...props} />;
+}
 
-  return (
-    <div className="flex min-h-[60vh] items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">{t("err.title")}</h1>
-        <p className="mt-2 text-sm text-muted-foreground">{t("err.text")}</p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90"
-          >
-            {t("err.retry")}
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-full border border-input bg-background px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-surface"
-          >
-            {t("nf.back")}
-          </a>
-        </div>
-      </div>
-    </div>
-  );
+/** Tracking helpers must never be able to break the page. */
+function safely(run: () => void) {
+  try { run(); } catch { /* ignore tracking failures */ }
+}
+
+function readStoredLang(): string | null {
+  try { return window.localStorage.getItem("skinup-lang"); } catch { return null; }
 }
 
 
@@ -115,7 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   }),
   loader: async (): Promise<{ lang: Lang }> => {
     if (import.meta.env.SSR) return { lang: await getServerLang() };
-    const stored = typeof window !== "undefined" ? window.localStorage.getItem("skinup-lang") : null;
+    const stored = typeof window !== "undefined" ? readStoredLang() : null;
     return { lang: stored && (LANGS as readonly string[]).includes(stored) ? (stored as Lang) : "fr" };
   },
   shellComponent: RootShell,
@@ -128,6 +109,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" suppressHydrationWarning>
       <head>
+        <script id="skinup-compat" dangerouslySetInnerHTML={{ __html: COMPAT_HEAD_SCRIPT }} />
         <HeadContent />
         <script id="skinup-tiktok-pixel" dangerouslySetInnerHTML={{ __html: TIKTOK_HEAD_SCRIPT }} />
         <script id="skinup-meta-pixel" dangerouslySetInnerHTML={{ __html: META_HEAD_SCRIPT }} />
@@ -164,8 +146,9 @@ function RootComponent() {
   const { lang } = Route.useLoaderData();
   const pathname = useLocation({ select: location => location.pathname });
   const href = useLocation({ select: location => location.href });
-  useEffect(() => { window.skinupTikTokPage?.(); captureAttribution(); }, [pathname]);
-  useEffect(() => { window.skinupMetaPage?.(); }, [href]);
+  useEffect(() => { installChunkRecovery(); }, []);
+  useEffect(() => { safely(() => window.skinupTikTokPage?.()); safely(captureAttribution); }, [pathname]);
+  useEffect(() => { safely(() => window.skinupMetaPage?.()); }, [href]);
 
   return (
     <QueryClientProvider client={queryClient}>
