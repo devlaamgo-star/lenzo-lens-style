@@ -4,6 +4,9 @@ import manifest from "../../catalog-templates/back-lens-skins/imports/organized-
 import batch02Manifest from "../../catalog-templates/back-lens-skins/imports/batch02/catalog.json";
 import { ORGANIZED_BACK_LENS_PRODUCTS } from "../data/organized-back-lens-products";
 import { BATCH02_BACK_LENS_PRODUCTS } from "../data/batch02-back-lens-products";
+import { BATCH03_BACK_LENS_PRODUCTS, BATCH03_DESCRIPTION } from "../data/batch03-back-lens-products";
+import batch03Manifest from "../../catalog-templates/back-lens-skins/imports/batch03/catalog.json";
+import { CAMERA_LENS_SKINS } from "../data/camera-lens-skins";
 import { BACK_LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
 import { readFileSync } from "node:fs";
 import { ARCHIVED_BACK_LENS_SKINS } from "../data/archive/back-lens-skins";
@@ -68,19 +71,18 @@ test("Repeated imports update by external reference and preserve unrelated produ
   const existing = { ...first, id: "existing-product", slug: "existing-product", externalReference: "existing-product" };
   const updated = { ...first, name: { fr: "Updated", ar: "Updated", en: "Updated" } };
   const result = mergeBackLensProducts([existing, ...BACK_LENS_SKINS], [updated]);
-  expect(result).toHaveLength(31);
+  expect(result).toHaveLength(BACK_LENS_SKINS.length + 1);
   expect(result[0]).toEqual(existing);
   expect(result.find((p) => p.externalReference === first.externalReference)).toEqual(updated);
 });
 
 test("Batch 02 appends eight products without replacing Batch 01 local numbers", () => {
   expect(BATCH02_BACK_LENS_PRODUCTS).toHaveLength(8);
-  expect(BACK_LENS_SKINS).toHaveLength(30);
   expect(BACK_LENS_SKINS.slice(0, 22)).toEqual(ORGANIZED_BACK_LENS_PRODUCTS);
-  expect(BACK_LENS_SKINS.slice(22)).toEqual(BATCH02_BACK_LENS_PRODUCTS);
+  expect(BACK_LENS_SKINS.slice(22, 30)).toEqual(BATCH02_BACK_LENS_PRODUCTS);
   expect(BATCH02_BACK_LENS_PRODUCTS.map((p) => p.sourceProductNumber)).toEqual([1,2,3,4,5,6,7,8]);
-  expect(new Set(BACK_LENS_SKINS.map((p) => p.id)).size).toBe(30);
-  expect(new Set(BACK_LENS_SKINS.map((p) => p.slug)).size).toBe(30);
+  expect(new Set(BACK_LENS_SKINS.map((p) => p.id)).size).toBe(BACK_LENS_SKINS.length);
+  expect(new Set(BACK_LENS_SKINS.map((p) => p.slug)).size).toBe(BACK_LENS_SKINS.length);
   expect(mergeBackLensProducts(BACK_LENS_SKINS, BATCH02_BACK_LENS_PRODUCTS)).toEqual(BACK_LENS_SKINS);
 });
 
@@ -100,6 +102,47 @@ for (const entry of batch02Manifest.products) {
       image: pointer("main"),
       gallery: [pointer("main"), pointer("gallery")],
     });
+    expect(BACK_LENS_SKIN_PRICE).toBe(129);
+    expect(modelsForCategory("backlens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
+    expect(lookupProduct(entry.external_reference)?.name).toBe(entry.name);
+  });
+}
+test("Batch 03 appends exactly nine packs (folders 1-9) after Batch 02", () => {
+  expect(BATCH03_BACK_LENS_PRODUCTS).toHaveLength(9);
+  expect(BACK_LENS_SKINS).toHaveLength(39);
+  expect(BACK_LENS_SKINS.slice(30)).toEqual(BATCH03_BACK_LENS_PRODUCTS);
+  expect(BATCH03_BACK_LENS_PRODUCTS.map((p) => p.name.fr)).toEqual([
+    "Friends", "Bear Coffee Sunset", "Naruto", "Chat Noir", "Tanjiro", "Tapis Oriental", "Itachi", "Café Latte", "Obito",
+  ]);
+  expect(mergeBackLensProducts(BACK_LENS_SKINS, BATCH03_BACK_LENS_PRODUCTS)).toEqual(BACK_LENS_SKINS);
+});
+
+test("Batch 03 packs stay out of the camera-only category", () => {
+  const ids = new Set(BATCH03_BACK_LENS_PRODUCTS.map((p) => p.id));
+  const slugs = new Set(BATCH03_BACK_LENS_PRODUCTS.map((p) => p.slug));
+  expect(CAMERA_LENS_SKINS.some((p) => ids.has(p.id) || slugs.has(p.slug))).toBe(false);
+});
+
+for (const entry of batch03Manifest.products) {
+  test(`Batch 03 product ${entry.source_product_number}: single-phone main, three-color second, pack description`, () => {
+    const product = backLensSkinBySlug(entry.slug);
+    const reference = ARCHIVED_BACK_LENS_SKINS.find((p) => p.slug === "horizon-celeste");
+    const pointer = (role) => JSON.parse(readFileSync(new URL(`../assets/backlens/batch03/batch03-product-${String(entry.source_product_number).padStart(2, "0")}-${role}.webp.asset.json`, import.meta.url), "utf8")).url;
+    expect(product).toEqual({
+      ...reference,
+      id: entry.external_reference,
+      externalReference: entry.external_reference,
+      sourceProductNumber: entry.source_product_number,
+      displayOrder: entry.display_order,
+      slug: entry.slug,
+      name: { fr: entry.name, ar: entry.name, en: entry.name },
+      description: BATCH03_DESCRIPTION,
+      image: pointer("main"),
+      gallery: [pointer("main"), pointer("gallery")],
+    });
+    expect(product.description.fr).toContain("skin pour le module caméra");
+    expect(product.description.fr).toContain("skin arrière");
+    expect(product.description.fr).toContain("Téléphone non inclus");
     expect(BACK_LENS_SKIN_PRICE).toBe(129);
     expect(modelsForCategory("backlens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
     expect(lookupProduct(entry.external_reference)?.name).toBe(entry.name);

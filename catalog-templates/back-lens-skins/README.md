@@ -25,7 +25,7 @@ Every original gallery is `[mainImage]`. The current page shows the main image; 
 
 ## Adding user-provided designs later
 1. Use the supplied artwork as-is via the existing asset pointer flow.
-2. Call `createBackLensProduct` with user-approved slug, translated name fields and main image; optional unique ID/gallery may be supplied. Use a new unique ID/slug; never reassign an old order's identifier.
+2. Call `createBackLensProduct` with user-approved slug, translated name fields and main image; optional unique ID/gallery may be supplied, plus an optional `description` only when the user explicitly requests a product-specific description (Batch 03 does). Use a new unique ID/slug; never reassign an old order's identifier.
 3. Add the returned product to the active `BACK_LENS_SKINS` array. Do not add any product until the user supplies it.
 4. Change only name, artwork/images, gallery entries, slug/ID unless explicitly authorized otherwise. All other reference fields and shared settings remain intact.
 5. Verify listing, quick view, model selection, quantity and cart using the existing components. Never copy snapshot code back over unrelated live fixes.
