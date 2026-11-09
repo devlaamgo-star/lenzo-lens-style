@@ -2,7 +2,7 @@ import type { BackLensSkin } from "./archive/back-lens-skins";
 import { ARCHIVED_BACK_LENS_SKINS } from "./archive/back-lens-skins";
 
 type NewBackLensDesign = Pick<BackLensSkin, "slug" | "name" | "image"> &
-  Partial<Pick<BackLensSkin, "id" | "gallery">> & {
+  Partial<Pick<BackLensSkin, "id" | "gallery" | "description">> & {
     externalReference?: string;
     sourceProductNumber?: number;
     displayOrder?: number;
@@ -17,7 +17,7 @@ export function createBackLensProduct(design: NewBackLensDesign): BackLensSkin &
     id: design.id ?? `backlens-${design.slug}`,
     slug: design.slug,
     name: { ...design.name },
-    description: { ...reference.description },
+    description: { ...(design.description ?? reference.description) },
     image: design.image,
     gallery: design.gallery ? [...design.gallery] : [design.image],
     ...(design.externalReference ? { externalReference: design.externalReference } : {}),
