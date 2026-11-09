@@ -1,0 +1,209 @@
+{
+  "batch": 3,
+  "source_archive": "SKINUP_9_Products_Lovable_Compressed.zip",
+  "category": "Back & Lens Skins",
+  "product_count": 9,
+  "image_count": 18,
+  "append_policy": "Append after existing products; batch-local numbers 1-9 never replace earlier batches.",
+  "image_policy": "Supplied WebP bytes unchanged. Single-phone photo is main image, three-color photo is second gallery image.",
+  "products": [
+    {
+      "batch": 3,
+      "source_folder": "1",
+      "source_product_number": 1,
+      "external_reference": "skinup-backlens-batch03-01",
+      "name": "Friends",
+      "slug": "back-lens-batch03-friends",
+      "category": "Back & Lens Skins",
+      "display_order": 33,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "1/1.webp",
+        "role": "single phone",
+        "sha256": "b92da485f7d25d2eb5803f5e2f66a70880bb0c8f2786be8d554f378a85d5f4b9"
+      },
+      "gallery_image": {
+        "source": "1/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "5a9004f1543e6fe4c42f4240ab05cc59ff5c8cced7851cbeb63250ad50399f93"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "2",
+      "source_product_number": 2,
+      "external_reference": "skinup-backlens-batch03-02",
+      "name": "Bear Coffee Sunset",
+      "slug": "back-lens-batch03-bear-coffee-sunset",
+      "category": "Back & Lens Skins",
+      "display_order": 34,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "2/2.webp",
+        "role": "single phone",
+        "sha256": "254564520f18808785e800e9d2dc5e6b08d1772c4bcd0555a0fb7ff20b50c37c"
+      },
+      "gallery_image": {
+        "source": "2/1.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "bb86fb9b5a72fdc5174c5a5de5d00d2a2703a2f9eef2bed3c79ecf39b1962d29"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "3",
+      "source_product_number": 3,
+      "external_reference": "skinup-backlens-batch03-03",
+      "name": "Naruto",
+      "slug": "back-lens-batch03-naruto",
+      "category": "Back & Lens Skins",
+      "display_order": 35,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "3/2.webp",
+        "role": "single phone",
+        "sha256": "b139c4ab8318dc405bbe99aa40a865096f437c611a4034e2808acbc3ded84056"
+      },
+      "gallery_image": {
+        "source": "3/1.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "b4fc8c26d41febff2be336f9d5b8138188a3155e692a42cdc7d1c3d8d214a49f"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "4",
+      "source_product_number": 4,
+      "external_reference": "skinup-backlens-batch03-04",
+      "name": "Chat Noir",
+      "slug": "back-lens-batch03-chat-noir",
+      "category": "Back & Lens Skins",
+      "display_order": 36,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "4/1.webp",
+        "role": "single phone",
+        "sha256": "a74cbf8237d1a5c78b0f3f83d40347459c6e554487b747bbab668c3f9ff0809b"
+      },
+      "gallery_image": {
+        "source": "4/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "43d82853799970866fa7125cfc8b9db2ae7f12363529443610101d7a1482494e"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "5",
+      "source_product_number": 5,
+      "external_reference": "skinup-backlens-batch03-05",
+      "name": "Tanjiro",
+      "slug": "back-lens-batch03-tanjiro",
+      "category": "Back & Lens Skins",
+      "display_order": 37,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "5/1.webp",
+        "role": "single phone",
+        "sha256": "0548f919794e34e6edb159841909ab2064e315ecc4bd7a3b61749cf27ae17dde"
+      },
+      "gallery_image": {
+        "source": "5/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "ca4f23e1192843ac0cd6b76410bbce35d453f011500bc25f09bfacaac27f719a"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "6",
+      "source_product_number": 6,
+      "external_reference": "skinup-backlens-batch03-06",
+      "name": "Tapis Oriental",
+      "slug": "back-lens-batch03-tapis-oriental",
+      "category": "Back & Lens Skins",
+      "display_order": 38,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "6/2.webp",
+        "role": "single phone",
+        "sha256": "78fe1dbddca01c8181b608b29f54106c37d6b0491bb7625b6f105a3ea857abdc"
+      },
+      "gallery_image": {
+        "source": "6/1.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "cf2a4dd8e21406ff7a8842803b857d34732ed63b7360b8a25a6ebb00444c8194"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "7",
+      "source_product_number": 7,
+      "external_reference": "skinup-backlens-batch03-07",
+      "name": "Itachi",
+      "slug": "back-lens-batch03-itachi",
+      "category": "Back & Lens Skins",
+      "display_order": 39,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "7/1.webp",
+        "role": "single phone",
+        "sha256": "7508ea96089bff1b972314d024b3d11c1f8fa4f8ba9ff128d383d1b0d7441a45"
+      },
+      "gallery_image": {
+        "source": "7/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "f8e5df2a8e6fff681859154e0d54101ceef13fc22bd0b33ea35a76f6f1b82027"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "8",
+      "source_product_number": 8,
+      "external_reference": "skinup-backlens-batch03-08",
+      "name": "Café Latte",
+      "slug": "back-lens-batch03-cafe-latte",
+      "category": "Back & Lens Skins",
+      "display_order": 40,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "8/2.webp",
+        "role": "single phone",
+        "sha256": "9f8a32c9104ea161f8fd76ad74e8ef22c8853b48b46c71e41bdedd815d143a25"
+      },
+      "gallery_image": {
+        "source": "8/1.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "8d45f514dd95d306e83561164e74d7694db88cfffd7d2dc74f1544f328f2971a"
+      }
+    },
+    {
+      "batch": 3,
+      "source_folder": "9",
+      "source_product_number": 9,
+      "external_reference": "skinup-backlens-batch03-09",
+      "name": "Obito",
+      "slug": "back-lens-batch03-obito",
+      "category": "Back & Lens Skins",
+      "display_order": 41,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "9/1.webp",
+        "role": "single phone",
+        "sha256": "7ab92dfce92ea6a5fced3e5718682eea34fb571a53e41d59a1d05b96814f73fb"
+      },
+      "gallery_image": {
+        "source": "9/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "8dc704b3d8cfe9cbe0f83f55bef9c909fe08493532679df2f7270dd15a5cce07"
+      }
+    }
+  ]
+}
