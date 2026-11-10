@@ -4,7 +4,7 @@ import { CAMERA_LENS_SKINS, LENS_SKIN_PRICE, modelsForCategory } from "./catalog
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { IPHONE_AIR_SKINS } from "@/data/iphone-air-skins";
 import { lookupProduct } from "./product-lookup";
-import { packBreakdown } from "./pricing";
+import { categoryBundles, cameraDeliveryFee } from "./pricing";
 
 const manifest = JSON.parse(readFileSync(new URL("../../catalog-templates/camera-lens-skins/imports/camera31/products.json", import.meta.url), "utf8"));
 const NOTE = "Skin pour la zone caméra uniquement. Téléphone et coque non inclus.";
@@ -52,4 +52,10 @@ test("the 31 designs never appear in back-skin or iPhone Air categories", () => 
 test("they inherit the 79 MAD camera price and existing model options", () => {
   expect(LENS_SKIN_PRICE).toBe(79);
   expect(modelsForCategory("lens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
+});
+
+test("any 3 different new designs get the 149 MAD offer with free delivery", () => {
+  const items = manifest.slice(0, 3).map((p) => ({ productId: `lens-${p.slug}`, category: "lens", qty: 1, price: 79 }));
+  expect(237 - categoryBundles(items).discount + cameraDeliveryFee(items)).toBe(149);
+  expect(cameraDeliveryFee(items)).toBe(0);
 });
