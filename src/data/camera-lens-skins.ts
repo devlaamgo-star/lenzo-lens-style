@@ -78,6 +78,7 @@ import pepeSilver from "@/assets/lens/characters/pepe-blase-argent.png.asset.jso
 import pepeNavy from "@/assets/lens/characters/pepe-blase-bleu-nuit.png.asset.json";
 import shinChanNavy from "@/assets/lens/characters/shin-chan-cache-bleu-nuit.png.asset.json";
 import hinataNavy from "@/assets/lens/characters/hinata-timide-bleu-nuit.png.asset.json";
+import { CAMERA31_DESIGNS, CAMERA31_SCOPE_NOTE } from "./camera-lens-batch31";
 
 export type CameraLensSkin = {
   id: string;
@@ -312,6 +313,35 @@ for (const design of CHARACTER_DESIGNS) {
     popularity: existing?.popularity ?? 2,
     imagePresentation: "full-phone",
     scopeNote: CAMERA_ONLY_NOTE,
+  };
+  if (existingIndex >= 0) CAMERA_LENS_SKINS[existingIndex] = skin;
+  else CAMERA_LENS_SKINS.push(skin);
+}
+
+// Camera-only batch of 31: merge by supplied slug or image filename so re-imports update in place.
+for (const design of CAMERA31_DESIGNS) {
+  const existingIndex = CAMERA_LENS_SKINS.findIndex(
+    (skin) => skin.slug === design.slug || skin.image.endsWith(`/${design.file}`),
+  );
+  const existing = CAMERA_LENS_SKINS[existingIndex];
+  const skin: CameraLensSkin = {
+    id: existing?.id ?? `lens-${design.slug}`,
+    slug: existing?.slug ?? design.slug,
+    name: { fr: design.name, en: design.name, ar: design.name },
+    description: {
+      fr: `Design « ${design.name} » imprimé sur un sticker décoratif découpé avec précision autour des objectifs, du flash et des capteurs de votre iPhone.`,
+      en: `The “${design.name}” design printed on a decorative skin precisely cut around your iPhone's lenses, flash and sensors.`,
+      ar: `تصميم «${design.name}» مطبوع على ملصق ديكوري مقصوص بدقة حول العدسات والفلاش والمستشعرات في جهاز iPhone.`,
+    },
+    image: design.image,
+    gallery: [design.image],
+    category: "camera-lens-skins",
+    device: DEVICE,
+    inStock: true,
+    isNew: false,
+    popularity: existing?.popularity ?? 1,
+    imagePresentation: "full-phone",
+    scopeNote: CAMERA31_SCOPE_NOTE,
   };
   if (existingIndex >= 0) CAMERA_LENS_SKINS[existingIndex] = skin;
   else CAMERA_LENS_SKINS.push(skin);

@@ -1,0 +1,43 @@
+Add all 31 products from the attached archive to skinup.ma, ONLY in the existing “Stickers pour objectifs caméra” category as camera-only skins.
+
+Use products.json or products.csv as the exact name-to-image mapping. Each WebP is one separate product's main image. The numbers retain the original filenames and intentionally have gaps; there are exactly 31 images. Use these names and files:
+
+- 01-dreamy-puppy.webp → Dreamy Puppy
+- 02-cosmic-explorer.webp → Cosmic Explorer
+- 03-capybara-afterhours.webp → Capybara Afterhours
+- 04-little-reaper.webp → Little Reaper
+- 05-chibi-gundam.webp → Chibi Gundam
+- 06-crystal-bunny.webp → Crystal Bunny
+- 07-orbit-bandit.webp → Orbit Bandit
+- 08-doraemon-sky-dream.webp → Doraemon Sky Dream
+- 09-doraemon-pink-door.webp → Doraemon Pink Door
+- 10-atay-cat.webp → Atay Cat
+- 11-funny-duck.webp → Funny Duck
+- 12-tom-cool-vibes.webp → Tom Cool Vibes
+- 13-matcha-dragon.webp → Matcha Dragon
+- 14-astral-koi.webp → Astral Koi
+- 15-ramen-ronin.webp → Ramen Ronin
+- 16-kickflip-frog.webp → Kickflip Frog
+- 17-cosmic-black-cat.webp → Cosmic Black Cat
+- 18-neon-kitsune.webp → Neon Kitsune
+- 19-rainy-day-duo.webp → Rainy Day Duo
+- 20-shin-chan-shiro-nap.webp → Shin-chan & Shiro Nap
+- 21-shin-chan-chill-beats.webp → Shin-chan Chill Beats
+- 22-shin-chan-midnight.webp → Shin-chan Midnight
+- 23-ghost-espresso.webp → Ghost Espresso
+- 24-midnight-cat.webp → Midnight Cat
+- 25-snoopy-cloud-gazing.webp → Snoopy Cloud Gazing
+- 26-snoopy-beach-balloons.webp → Snoopy Beach Balloons
+- 28-spider-graffiti.webp → Spider Graffiti
+- 29-sunset-quack.webp → Sunset Quack
+- 30-tom-mugshot.webp → Tom Mugshot
+- 32-crunchy-ice-cream.webp → Crunchy Ice Cream
+- 34-ghost-cat.webp → Ghost Cat
+
+These are finished product photos: preserve them exactly, including the SKINUP branding, phone color, full phone framing, white background and camera artwork. The phone shown is a display mockup; the item sold is ONLY the printed camera skin. Add a short French note on each product page: “Skin pour la zone caméra uniquement. Téléphone et coque non inclus.”
+
+Use the supplied WebP files directly. Display the complete image with object-fit: contain on a pure white background; do not crop, stretch, recolor, add artwork to the back or generate replacement images. Use the product name as meaningful image alt text and create a clean unique slug.
+
+Inherit the existing camera-only product configuration: 79 MAD unit price, current model selector and compatible model options, quantity controls, delivery settings and existing bundle calculation. Do not infer device model or compatibility from the mockup image. Keep the existing bundle policy: any 3 camera skins for 149 MAD with free delivery, including mixed designs; do not attach this offer to one design as if it requires 3 identical copies. Do not repeat that offer below every product card; use the existing shared offer placement.
+
+Add these products without deleting or replacing existing products. Prevent duplicate imports using the exact image filename/slug; if a matching imported product already exists, update that entry instead of creating a duplicate. Do not add these to back-skin or full-skin categories and do not change unrelated products, prices or checkout behavior. Verify every card opens the correct product page and that all 31 image/name associations are correct on desktop and mobile.
