@@ -27,7 +27,7 @@ export const BACK_LENS_SKINS = [
   BATCH02_BACK_LENS_PRODUCTS,
   BATCH03_BACK_LENS_PRODUCTS,
   BATCH04_BACK_LENS_PRODUCTS,
-].reduce(mergeBackLensProducts, ORGANIZED_BACK_LENS_PRODUCTS);
+].reduce<ActiveBackLensSkin[]>((all, batch) => mergeBackLensProducts(all, batch), ORGANIZED_BACK_LENS_PRODUCTS);
 
 export function backLensSkinBySlug(slug: string): BackLensSkin | undefined {
   return BACK_LENS_SKINS.find((s) => s.slug === slug);

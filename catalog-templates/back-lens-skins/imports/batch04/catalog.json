@@ -1,0 +1,103 @@
+{
+  "batch": 4,
+  "source_archive": "SKINUP_4_Products_Lovable_Compressed.zip",
+  "category": "Back & Lens Skins",
+  "product_count": 4,
+  "image_count": 8,
+  "append_policy": "Append after existing products; batch-local numbers 1-4 never replace earlier batches.",
+  "image_policy": "Supplied WebP bytes unchanged. 1.webp is the main image, 2.webp is the second gallery image.",
+  "products": [
+    {
+      "batch": 4,
+      "source_folder": "1",
+      "source_product_number": 1,
+      "external_reference": "skinup-backlens-batch04-01",
+      "name": "Amazigh Khamsa",
+      "design": "Blue, green and yellow decorative hand with a red Amazigh symbol",
+      "slug": "back-lens-batch04-amazigh-khamsa",
+      "category": "Back & Lens Skins",
+      "display_order": 42,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "1/1.webp",
+        "role": "single phone",
+        "sha256": "6b3058bfce7bcaacd0dbc6e3c17e4e8f5753d6313bc856fc369b706257e957cc"
+      },
+      "gallery_image": {
+        "source": "1/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "c7e0c9a9bc2d3a1d32e24baa5cd1381f88c88c05bfde88009050e6fb1ebb98a0"
+      }
+    },
+    {
+      "batch": 4,
+      "source_folder": "2",
+      "source_product_number": 2,
+      "external_reference": "skinup-backlens-batch04-02",
+      "name": "Moroccan Kingdom Gold",
+      "design": "Black calligraphy map on golden parchment",
+      "slug": "back-lens-batch04-moroccan-kingdom-gold",
+      "category": "Back & Lens Skins",
+      "display_order": 43,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "2/1.webp",
+        "role": "single phone",
+        "sha256": "0ba784dc1fa867bcd76452ce27b4531bea409fb8ece796163bd893cb6ea0a900"
+      },
+      "gallery_image": {
+        "source": "2/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "8d328c5f581e95d4253c90b97124d5596de982b165c03be2e57805869a5e9aed"
+      }
+    },
+    {
+      "batch": 4,
+      "source_folder": "3",
+      "source_product_number": 3,
+      "external_reference": "skinup-backlens-batch04-03",
+      "name": "Moroccan Kingdom Vintage",
+      "design": "Red calligraphy map with green stars on cream parchment",
+      "slug": "back-lens-batch04-moroccan-kingdom-vintage",
+      "category": "Back & Lens Skins",
+      "display_order": 44,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "3/1.webp",
+        "role": "single phone",
+        "sha256": "f3d28d3a11ad4cb0109468682c99ff9416973a99d68a9f65ae5aaf1d2d095c40"
+      },
+      "gallery_image": {
+        "source": "3/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "9176daefa6975fa576c7d9157ceeaa12fb38dbfc75a4b0df889a94a2b1bb3055"
+      }
+    },
+    {
+      "batch": 4,
+      "source_folder": "4",
+      "source_product_number": 4,
+      "external_reference": "skinup-backlens-batch04-04",
+      "name": "Moroccan Royal Crest",
+      "design": "Moroccan coat of arms with two golden lions and colorful zellige",
+      "slug": "back-lens-batch04-moroccan-royal-crest",
+      "category": "Back & Lens Skins",
+      "display_order": 45,
+      "import_status": "ready",
+      "configuration": "inherit_existing_saved_back_lens_template",
+      "main_image": {
+        "source": "4/1.webp",
+        "role": "single phone",
+        "sha256": "5ccceffab3c37008210bb35b9c3fd54cffadde08a6d42d4e2f18c5f0a1c61328"
+      },
+      "gallery_image": {
+        "source": "4/2.webp",
+        "role": "three colors (Bleu Nuit, Orange, Argent)",
+        "sha256": "d441d02e087bab9f3647e7cc8899120326c88d801ac5f57c2c4f10d58f1fc09c"
+      }
+    }
+  ]
+}
