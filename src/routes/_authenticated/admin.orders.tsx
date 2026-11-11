@@ -33,7 +33,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { SOURCE_LABEL, TRAFFIC_SOURCES } from "@/lib/attribution";
 import { RevenueSummary } from "@/components/RevenueSummary";
-import { csvCell } from "@/lib/csv";
+import { buildCsv, rowsForExport, setViewSelection, viewSelectionState } from "@/lib/admin-export";
 
 const SOURCE_CLASS: Record<string, string> = {
   tiktok: "bg-foreground text-background",
@@ -235,7 +235,9 @@ function AdminOrdersPage() {
     },
   ];
 
-  const selectedRows = filtered.filter((r) => checked[r.id]);
+  const selectedRows = rowsForExport(filtered, checked);
+  const viewIds = filtered.map((r) => r.id);
+  const headerChecked = viewSelectionState(viewIds, checked) === true;
 
   const invalidate = () => queryClient.invalidateQueries({ queryKey: ["admin-orders"] });
 
@@ -335,11 +337,10 @@ function AdminOrdersPage() {
       "langue",
       "source",
     ];
-    const esc = csvCell;
-    const csv = [
-      head.join(","),
-      ...list.map((r) =>
-        [
+    if (!list.length) return;
+    const csv = buildCsv(
+      head,
+      list.map((r) => [
           r.reference,
           r.createdAt,
           r.kind,
@@ -359,11 +360,8 @@ function AdminOrdersPage() {
           r.adminNotes,
           r.locale,
           r.source,
-        ]
-          .map(esc)
-          .join(","),
-      ),
-    ].join("\n");
+      ]),
+    );
     const url = URL.createObjectURL(new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" }));
     const a = document.createElement("a");
     a.href = url;
@@ -427,9 +425,20 @@ function AdminOrdersPage() {
           <Button variant="outline" onClick={() => setShowArchived((v) => !v)}>
             {showArchived ? "Voir les commandes actives" : "Voir les archives"}
           </Button>
-          <Button variant="outline" onClick={() => exportCsv(filtered)}>
-            Exporter CSV
-          </Button>
+          <div className="flex flex-col items-end gap-1">
+            <Button
+              variant="outline"
+              disabled={selectedRows.length === 0}
+              onClick={() => exportCsv(selectedRows)}
+            >
+              {selectedRows.length > 0 ? `Exporter CSV (${selectedRows.length})` : "Exporter CSV"}
+            </Button>
+            {selectedRows.length === 0 && (
+              <span className="text-xs text-muted-foreground">
+                Sélectionnez les commandes à exporter
+              </span>
+            )}
+          </div>
           <Button
             variant="ghost"
             onClick={async () => {
@@ -615,11 +624,9 @@ function AdminOrdersPage() {
             <tr>
               <th className="px-3 py-3">
                 <Checkbox
-                  checked={filtered.length > 0 && selectedRows.length === filtered.length}
+                  checked={headerChecked}
                   onCheckedChange={(v) =>
-                    setChecked(
-                      v ? Object.fromEntries(filtered.map((r) => [r.id, true])) : {},
-                    )
+                    setChecked((c) => setViewSelection(c, viewIds, v === true))
                   }
                   aria-label="Tout sélectionner"
                 />
