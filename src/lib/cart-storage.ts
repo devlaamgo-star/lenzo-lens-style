@@ -17,10 +17,16 @@ function num(v: unknown): number | null {
   return Number.isFinite(n) ? n : null;
 }
 
+type Loose<K extends string> = { [P in K]?: unknown };
+type SavedItem = Loose<"productId" | "slug" | "category" | "name" | "image" | "price" | "model" | "qty" | "custom">;
+type SavedNames = Loose<"fr" | "ar" | "en">;
+type SavedCustom = Loose<"modelId" | "modelLabel" | "coverage" | "templateId" | "originalPath" | "previewPath" | "transform">;
+type SavedTransform = Loose<"x" | "y" | "scale" | "rotation">;
+
 function customMeta(v: unknown): CustomSkinMeta | null {
   if (!v || typeof v !== "object") return null;
-  const c = v as Record<string, unknown>;
-  const t = (c.transform ?? {}) as Record<string, unknown>;
+  const c = v as SavedCustom;
+  const t = (c.transform && typeof c.transform === "object" ? c.transform : {}) as SavedTransform;
   const coverage = c.coverage === "full" || c.coverage === "back" || c.coverage === "camera" ? c.coverage : null;
   const modelId = str(c.modelId), modelLabel = str(c.modelLabel), templateId = str(c.templateId);
   const originalPath = str(c.originalPath), previewPath = str(c.previewPath);
@@ -34,13 +40,13 @@ function customMeta(v: unknown): CustomSkinMeta | null {
 /** Returns a valid item, or null when the saved entry cannot be shown or ordered safely. */
 export function sanitizeCartItem(raw: unknown): CartItem | null {
   if (!raw || typeof raw !== "object") return null;
-  const i = raw as Record<string, unknown>;
+  const i = raw as SavedItem;
   const productId = str(i.productId);
   const category = CATEGORIES.includes(i.category as CartCategory) ? (i.category as CartCategory) : null;
   if (!productId || !category) return null;
 
   // Older saves may hold a single name string instead of one name per language.
-  const names = (typeof i.name === "string" ? { fr: i.name } : i.name && typeof i.name === "object" ? i.name : {}) as Record<string, unknown>;
+  const names = (typeof i.name === "string" ? { fr: i.name } : i.name && typeof i.name === "object" ? i.name : {}) as SavedNames;
   const fr = str(names.fr) ?? str(names.en) ?? str(names.ar);
   if (!fr) return null;
 
