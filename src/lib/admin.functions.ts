@@ -142,14 +142,8 @@ export const getAdminStatus = createServerFn({ method: "GET" })
     return { isAdmin: Boolean(data), adminExists: (count ?? 0) > 0 };
   });
 
-/** One-time bootstrap: the first signed-in user becomes admin. */
-export const claimFirstAdmin = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
-  .handler(async ({ context }) => {
-    const { data, error } = await context.supabase.rpc("claim_first_admin");
-    if (error) throw new Error(error.message);
-    return { claimed: Boolean(data) };
-  });
+/** Upload paths the app itself generates; anything else is never deleted. */
+const SAFE_UPLOAD_PATH = /^[A-Za-z0-9_-]+(?:\/[A-Za-z0-9_-]+)*\/[A-Za-z0-9_-]+\.[A-Za-z0-9]{2,5}$/;
 
 function bucketFor(kind: "order" | "design") {
   return kind === "design" ? "design-uploads" : "order-uploads";
@@ -471,13 +465,24 @@ export const deleteRecords = createServerFn({ method: "POST" })
         .from(tableFor(kind))
         .select("file_paths")
         .in("id", ids);
-      const paths = (rows ?? []).flatMap((r: any) => (r.file_paths ?? []) as string[]);
+      const candidates = [
+        ...new Set((rows ?? []).flatMap((r: any) => (r.file_paths ?? []) as string[])),
+      ].filter((p) => typeof p === "string" && SAFE_UPLOAD_PATH.test(p));
       const { error, count: n } = await supabaseAdmin
         .from(tableFor(kind))
         .delete({ count: "exact" })
         .in("id", ids);
       if (error) throw new Error(error.message);
       count += n ?? 0;
+      // Never remove a file that any remaining record still references.
+      const paths: string[] = [];
+      for (const p of candidates) {
+        const { count: refs } = await supabaseAdmin
+          .from(tableFor(kind))
+          .select("id", { count: "exact", head: true })
+          .contains("file_paths", [p]);
+        if ((refs ?? 0) === 0) paths.push(p);
+      }
       if (paths.length) await supabaseAdmin.storage.from(bucketFor(kind)).remove(paths);
     }
     return { ok: true, count };

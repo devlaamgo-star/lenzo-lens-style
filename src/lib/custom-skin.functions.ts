@@ -10,7 +10,7 @@ const ALLOWED: Record<string, string> = {
 const MAX_BYTES = 10 * 1024 * 1024;
 
 const schema = z.object({
-  modelId: z.string().trim().min(2).max(60),
+  modelId: z.string().trim().regex(/^[A-Za-z0-9_-]{2,60}$/),
   coverage: z.enum(["full", "back", "camera"]),
   templateId: z.string().trim().min(2).max(80),
   transform: z.object({
