@@ -17,6 +17,11 @@ describe("saved basket from earlier visits", () => {
     expect(items.map((i) => i.productId)).toEqual(["lens-zellige"]);
   });
 
+  it("keeps an older item saved with a single name text", () => {
+    const item = sanitizeCartItem({ ...valid, name: "Ancien nom" });
+    expect(item?.name).toEqual({ fr: "Ancien nom", ar: "Ancien nom", en: "Ancien nom" });
+  });
+
   it("drops null, numbers and unreadable text", () => {
     expect(parseStoredCart(JSON.stringify([null, 5, "a"]))).toEqual([]);
     expect(parseStoredCart("{not json")).toEqual([]);

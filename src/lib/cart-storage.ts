@@ -39,7 +39,8 @@ export function sanitizeCartItem(raw: unknown): CartItem | null {
   const category = CATEGORIES.includes(i.category as CartCategory) ? (i.category as CartCategory) : null;
   if (!productId || !category) return null;
 
-  const names = (i.name && typeof i.name === "object" ? i.name : {}) as Record<string, unknown>;
+  // Older saves may hold a single name string instead of one name per language.
+  const names = (typeof i.name === "string" ? { fr: i.name } : i.name && typeof i.name === "object" ? i.name : {}) as Record<string, unknown>;
   const fr = str(names.fr) ?? str(names.en) ?? str(names.ar);
   if (!fr) return null;
 
