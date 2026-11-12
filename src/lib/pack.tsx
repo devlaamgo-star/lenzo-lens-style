@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { packBreakdown, type PackBreakdown } from "./pricing";
+import { parseStoredPack } from "./cart-storage";
 
 type PackValue = {
   model: string;
@@ -34,16 +35,10 @@ export function PackProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as { model?: string; designs?: string[] };
-        if (typeof parsed.model === "string" && parsed.model) setModelState("iPhone 17 Pro Max");
-        if (Array.isArray(parsed.designs)) setDesigns(parsed.designs.slice(0, 30));
-      }
-    } catch {
-      /* ignore malformed storage */
-    }
+    let raw: string | null = null;
+    try { raw = window.localStorage.getItem(KEY); } catch { /* storage blocked */ }
+    const saved = parseStoredPack(raw);
+    if (saved.designs.length) setDesigns(saved.designs);
     setReady(true);
   }, []);
 

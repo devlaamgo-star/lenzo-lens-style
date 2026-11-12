@@ -10,6 +10,7 @@ import {
 import type { Lang } from "./translations";
 import { metaTrack } from "./meta-pixel";
 import { categoryBundles, isBundleEligible, LENS_UNIT_PRICE } from "./pricing";
+import { parseStoredCart } from "./cart-storage";
 
 export type CartCategory = "lens" | "skins" | "backlens" | "air" | "custom";
 
@@ -69,19 +70,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    try {
-      const raw = window.localStorage.getItem(KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as CartItem[];
-        if (Array.isArray(parsed)) setItems(
-            parsed
-              .filter((i) => i && i.productId && i.qty >= 1)
-              .map((i) => (i.category === "air" ? { ...i, model: "iPhone Air", key: `air:${i.productId}:iPhone Air` } : i)),
-          );
-      }
-    } catch {
-      /* ignore malformed storage */
-    }
+    // Old or incomplete saved baskets are cleaned up here so they can never crash the page.
+    let raw: string | null = null;
+    try { raw = window.localStorage.getItem(KEY); } catch { /* storage blocked */ }
+    setItems(parseStoredCart(raw));
     setReady(true);
   }, []);
 
