@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ChevronRight, Truck, Wallet, Scissors, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import { metaViewContent } from "@/lib/meta-pixel";
@@ -7,11 +7,14 @@ import { useI18n } from "@/lib/i18n";
 import { BACK_LENS_SKIN_PRICE, backLensSkinBySlug } from "@/lib/catalog";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
+import { archivedBackLensSkinBySlug } from "@/data/archive/back-lens-skins";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/dos-camera/$slug")({
   loader: ({ params }) => {
     const skin = backLensSkinBySlug(params.slug);
+    // Retired designs (old ads, shared links) land on the current designs instead of a dead end.
+    if (!skin && archivedBackLensSkinBySlug(params.slug)) throw redirect({ to: "/dos-camera", statusCode: 301 });
     if (!skin) throw notFound();
     return { skin };
   },

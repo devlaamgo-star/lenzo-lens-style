@@ -30,3 +30,6 @@
 - Google Fonts CSS is attached by an inline head script placed before `HeadContent` (with a noscript fallback) so it never blocks first paint; keep it ahead of the app stylesheet link or the script waits for that CSS.
 - Admin orders CSV export and header-checkbox selection go through `src/lib/admin-export.ts` (checked rows by id, in current table order; header toggles only the filtered view) so the export never includes unselected orders.
 - Admin roles are granted only by direct database role assignment (no self-service claim); order upload paths must match the saveCustomSkin layout and deletion skips files still referenced elsewhere, so customers cannot gain admin or trigger removal of unrelated files.
+- Saved basket and pack data are read only through `src/lib/cart-storage.ts`, which drops malformed or outdated entries; a returning visitor's old browser data must never be able to crash cart or checkout.
+- Retired Back & Lens product slugs (in the original archive, not active) redirect permanently to `/dos-camera` so old ads and shared links never dead-end on a 404.
+- `src/start.ts` attaches the bearer token with a local middleware that lazy-imports the backend client, keeping the sign-in library out of the storefront's startup file; do not swap it back for the generated eager attacher.
