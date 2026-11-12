@@ -15,6 +15,13 @@
       "when": 1793103958731,
       "tag": "0001_order_delivery_location",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794495030030,
+      "tag": "0002_remove_claim_first_admin",
+      "breakpoints": true
     }
   ]
 }

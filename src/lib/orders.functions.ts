@@ -6,6 +6,11 @@ import { deliveryZoneSchema, fullAddressSchema } from "./delivery-address";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
+const CUSTOM_UPLOAD_BASE =
+  "(custom-skins/[A-Za-z0-9_-]{2,60}/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})";
+const CUSTOM_ORIGINAL_PATH = new RegExp(`^${CUSTOM_UPLOAD_BASE}/original\\.(?:jpg|png|webp)$`);
+const CUSTOM_PREVIEW_PATH = new RegExp(`^${CUSTOM_UPLOAD_BASE}/preview\\.png$`);
+
 const customSkinSchema = z.object({
   modelId: z.string().trim().max(60),
   modelLabel: z.string().trim().max(60),
@@ -19,7 +24,16 @@ const customSkinSchema = z.object({
   }),
   originalPath: z.string().trim().max(300),
   previewPath: z.string().trim().max(300),
-});
+}).refine(
+  (c) => {
+    // Only accept the exact paths produced by saveCustomSkin for one upload:
+    // custom-skins/<model>/<uuid>/original.<ext> + .../preview.png (same folder).
+    const o = CUSTOM_ORIGINAL_PATH.exec(c.originalPath);
+    const p = CUSTOM_PREVIEW_PATH.exec(c.previewPath);
+    return Boolean(o && p && o[1] === p[1]);
+  },
+  { message: "INVALID_UPLOAD_PATH" },
+);
 
 const itemSchema = z.object({
   productId: z.string().trim().min(1).max(60),

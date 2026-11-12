@@ -9,7 +9,6 @@ import {
   type AdminRecord,
   type OrderStatus,
   bulkUpdateStatus,
-  claimFirstAdmin,
   deleteRecords,
   getAdminStatus,
   getRecordFileUrls,
@@ -129,7 +128,6 @@ function AdminOrdersPage() {
   const queryClient = useQueryClient();
   const fetchStatus = useServerFn(getAdminStatus);
   const fetchOrders = useServerFn(listAdminOrders);
-  const claim = useServerFn(claimFirstAdmin);
   const setStatus = useServerFn(updateRecordStatus);
   const setBulk = useServerFn(bulkUpdateStatus);
   const setOps = useServerFn(updateRecordOps);
@@ -381,22 +379,6 @@ function AdminOrdersPage() {
         <p className="mt-2 text-sm text-muted-foreground">
           Votre compte n'a pas les droits administrateur.
         </p>
-        {!statusQuery.data?.adminExists && (
-          <Button
-            className="mt-6"
-            onClick={async () => {
-              const res = await claim();
-              if (res.claimed) {
-                toast.success("Vous êtes maintenant administrateur");
-                statusQuery.refetch();
-              } else {
-                toast.error("Un administrateur existe déjà");
-              }
-            }}
-          >
-            Devenir administrateur
-          </Button>
-        )}
         <div className="mt-6">
           <Button
             variant="ghost"
