@@ -80,3 +80,10 @@
 - [x] Early boot guard with retry bar over the server-rendered page, one shared reload allowance, no auto-reload during order submission, storage-blocked fallback, classified error reports.
 - [x] Lighter first load: hero photo and logo re-encoded at display size; tests for forced script/route failures, blocked storage, blocked trackers, slow network, ad links and checkout (no order submitted).
 - [ ] Real-phone checks (iPhone Safari, Instagram/Facebook/TikTok in-app, older Android) — needs the owner's phones.
+
+# Blank-page investigation (Nov 12)
+
+- [x] Live diagnosis: ad links, slow network, blocked storage, scripts off, failed main file tested on skinup.ma (iPhone/WebKit, TikTok in-app UA, Android Chrome).
+- [x] Old saved basket data no longer breaks cart/checkout; retired back & camera links go to current designs; lighter startup file.
+- [ ] Publish, then recheck live errors and loads without first paint.
+- [ ] Real-phone check in TikTok/Instagram apps — needs the owner's phone.
