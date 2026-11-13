@@ -24,6 +24,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PackRouteImport } from './routes/pack'
 import { Route as PanierRouteImport } from './routes/panier'
 import { Route as RetoursRouteImport } from './routes/retours'
+import { Route as ApiStorefrontRouteImport } from './routes/api.storefront'
 import { Route as DosCameraIndexRouteImport } from './routes/dos-camera.index'
 import { Route as DosCameraSlugRouteImport } from './routes/dos-camera.$slug'
 import { Route as IphoneAirIndexRouteImport } from './routes/iphone-air.index'
@@ -108,6 +109,11 @@ const RetoursRoute = RetoursRouteImport.update({
   path: '/retours',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiStorefrontRoute = ApiStorefrontRouteImport.update({
+  id: '/api/storefront',
+  path: '/api/storefront',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DosCameraIndexRoute = DosCameraIndexRouteImport.update({
   id: '/dos-camera/',
   path: '/dos-camera/',
@@ -170,6 +176,7 @@ export interface FileRoutesByFullPath {
   '/pack': typeof PackRoute
   '/panier': typeof PanierRoute
   '/retours': typeof RetoursRoute
+  '/api/storefront': typeof ApiStorefrontRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
@@ -195,6 +202,7 @@ export interface FileRoutesByTo {
   '/pack': typeof PackRoute
   '/panier': typeof PanierRoute
   '/retours': typeof RetoursRoute
+  '/api/storefront': typeof ApiStorefrontRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
@@ -222,6 +230,7 @@ export interface FileRoutesById {
   '/pack': typeof PackRoute
   '/panier': typeof PanierRoute
   '/retours': typeof RetoursRoute
+  '/api/storefront': typeof ApiStorefrontRoute
   '/dos-camera/$slug': typeof DosCameraSlugRoute
   '/iphone-air/$slug': typeof IphoneAirSlugRoute
   '/objectifs/$slug': typeof ObjectifsSlugRoute
@@ -249,6 +258,7 @@ export interface FileRouteTypes {
     | '/pack'
     | '/panier'
     | '/retours'
+    | '/api/storefront'
     | '/dos-camera/$slug'
     | '/iphone-air/$slug'
     | '/objectifs/$slug'
@@ -274,6 +284,7 @@ export interface FileRouteTypes {
     | '/pack'
     | '/panier'
     | '/retours'
+    | '/api/storefront'
     | '/dos-camera/$slug'
     | '/iphone-air/$slug'
     | '/objectifs/$slug'
@@ -300,6 +311,7 @@ export interface FileRouteTypes {
     | '/pack'
     | '/panier'
     | '/retours'
+    | '/api/storefront'
     | '/dos-camera/$slug'
     | '/iphone-air/$slug'
     | '/objectifs/$slug'
@@ -327,6 +339,7 @@ export interface RootRouteChildren {
   PackRoute: typeof PackRoute
   PanierRoute: typeof PanierRoute
   RetoursRoute: typeof RetoursRoute
+  ApiStorefrontRoute: typeof ApiStorefrontRoute
   DosCameraSlugRoute: typeof DosCameraSlugRoute
   IphoneAirSlugRoute: typeof IphoneAirSlugRoute
   ObjectifsSlugRoute: typeof ObjectifsSlugRoute
@@ -444,6 +457,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RetoursRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/storefront': {
+      id: '/api/storefront'
+      path: '/api/storefront'
+      fullPath: '/api/storefront'
+      preLoaderRoute: typeof ApiStorefrontRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dos-camera/': {
       id: '/dos-camera/'
       path: '/dos-camera'
@@ -537,6 +557,7 @@ const rootRouteChildren: RootRouteChildren = {
   PackRoute: PackRoute,
   PanierRoute: PanierRoute,
   RetoursRoute: RetoursRoute,
+  ApiStorefrontRoute: ApiStorefrontRoute,
   DosCameraSlugRoute: DosCameraSlugRoute,
   IphoneAirSlugRoute: IphoneAirSlugRoute,
   ObjectifsSlugRoute: ObjectifsSlugRoute,
