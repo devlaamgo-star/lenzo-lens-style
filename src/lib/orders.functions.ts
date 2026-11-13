@@ -95,6 +95,14 @@ function buildOrderNumber() {
 export const createOrder = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => orderSchema.parse(data))
   .handler(async ({ data }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ orderNumber: string; total: number; quantity: number; shipping: number }>(
+        "createOrder",
+        data,
+      );
+    }
+
     data.items = data.items.map((i) => (i.category === "air" ? { ...i, model: "iPhone Air" } : i));
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
