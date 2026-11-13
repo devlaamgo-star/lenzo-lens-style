@@ -34,6 +34,14 @@ function decode(dataUrl: string) {
 export const saveCustomSkin = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => schema.parse(data))
   .handler(async ({ data }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ id: string; originalPath: string; previewPath: string }>(
+        "saveCustomSkin",
+        data,
+      );
+    }
+
     const ext = ALLOWED[data.originalType];
     if (!ext) throw new Error("INVALID_FILE_TYPE");
 
