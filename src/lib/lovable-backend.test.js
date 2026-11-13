@@ -71,7 +71,7 @@ describe("Cloudflare relay", () => {
       "content-type": "application/json",
     });
     expect(JSON.parse(options.body)).toEqual({ operation: "listAdminOrders" });
-    expect(options.redirect).toBe("error");
+    expect(options.redirect).toBe("manual");
     expect(options.cache).toBe("no-store");
     expect(options.signal).toBeInstanceOf(AbortSignal);
   });
@@ -92,14 +92,15 @@ describe("Cloudflare relay", () => {
     expect(fetcher).toHaveBeenCalledTimes(1);
   });
 
-  it("does not retry or follow an upstream redirect", async () => {
-    const fetcher = mock(async () => new Response(null, {
-      status: 307, headers: { Location: "https://untrusted.example/collect" },
+  it.each([301, 302, 303, 307, 308])("does not retry or follow an upstream %s redirect", async (status) => {
+    const fetcher = mock(async () => Response.json({ ok: true, result: { id: "must-not-accept" } }, {
+      status, headers: { Location: "https://untrusted.example/collect" },
     }));
-    await expect(relayToLovable(BACKEND, "saveCustomSkin", {}, new Request(EXTERNAL), fetcher))
+    const request = new Request(EXTERNAL, { headers: { Authorization: "Bearer dummy-user-token" } });
+    await expect(relayToLovable(BACKEND, "saveCustomSkin", {}, request, fetcher))
       .rejects.toThrow("BACKEND_UNAVAILABLE");
     expect(fetcher).toHaveBeenCalledTimes(1);
-    expect(fetcher.mock.calls[0][1].redirect).toBe("error");
+    expect(fetcher.mock.calls[0][1].redirect).toBe("manual");
   });
 
   it.each([
