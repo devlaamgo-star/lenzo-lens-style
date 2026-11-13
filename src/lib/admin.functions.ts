@@ -130,6 +130,11 @@ async function assertAdmin(context: { supabase: any; userId: string }) {
 export const getAdminStatus = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ isAdmin: boolean; adminExists: boolean }>("getAdminStatus");
+    }
+
     const { data } = await context.supabase.rpc("has_role", {
       _user_id: context.userId,
       _role: "admin",
@@ -152,6 +157,11 @@ function bucketFor(kind: "order" | "design") {
 export const listAdminOrders = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }): Promise<AdminRecord[]> => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<AdminRecord[]>("listAdminOrders");
+    }
+
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
@@ -336,6 +346,11 @@ export const getRecordFileUrls = createServerFn({ method: "POST" })
       .parse(data),
   )
   .handler(async ({ data, context }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ path: string; url: string }[]>("getRecordFileUrls", data);
+    }
+
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const out: { path: string; url: string }[] = [];
@@ -385,6 +400,11 @@ export const updateRecordStatus = createServerFn({ method: "POST" })
     targetSchema.extend({ status: z.enum(ORDER_STATUSES) }).parse(data),
   )
   .handler(async ({ data, context }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ ok: boolean }>("updateRecordStatus", data);
+    }
+
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     await applyStatus(supabaseAdmin, data.kind, data.id, data.status);
@@ -403,6 +423,11 @@ export const bulkUpdateStatus = createServerFn({ method: "POST" })
       .parse(data),
   )
   .handler(async ({ data, context }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ ok: boolean; count: number }>("bulkUpdateStatus", data);
+    }
+
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     for (const t of data.targets) {
@@ -428,6 +453,11 @@ export const updateRecordOps = createServerFn({ method: "POST" })
       .parse(data),
   )
   .handler(async ({ data, context }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ ok: boolean }>("updateRecordOps", data);
+    }
+
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const patch: Record<string, unknown> = {};
@@ -455,6 +485,11 @@ export const deleteRecords = createServerFn({ method: "POST" })
     z.object({ targets: z.array(targetSchema).min(1).max(500) }).parse(data),
   )
   .handler(async ({ data, context }) => {
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ ok: boolean; count: number }>("deleteRecords", data);
+    }
+
     await assertAdmin(context as any);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     let count = 0;
