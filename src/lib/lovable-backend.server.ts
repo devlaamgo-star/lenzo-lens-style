@@ -46,9 +46,13 @@ export async function relayToLovable<T>(
     // Never follow a redirect with a login token, or retry an order/upload write.
     response = await fetcher(url, {
       method: "POST", headers, body: JSON.stringify({ operation, data }),
-      redirect: "error", cache: "no-store", signal: AbortSignal.timeout(60_000),
+      // Workers supports "manual", not "error". Reject every redirect below.
+      redirect: "manual", cache: "no-store", signal: AbortSignal.timeout(60_000),
     });
   } catch {
+    throw new Error("BACKEND_UNAVAILABLE");
+  }
+  if (response.status >= 300 && response.status < 400) {
     throw new Error("BACKEND_UNAVAILABLE");
   }
   if (!response.headers.get("content-type")?.includes("application/json")) {
