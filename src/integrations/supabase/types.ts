@@ -31,6 +31,9 @@ export type Database = {
           id: string
           locale: string
           notes: string
+          ozon_status: string | null
+          ozon_status_at: string | null
+          ozon_synced_at: string | null
           payment_status: string
           phone: string
           phone_brand: string
@@ -67,6 +70,9 @@ export type Database = {
           id?: string
           locale?: string
           notes?: string
+          ozon_status?: string | null
+          ozon_status_at?: string | null
+          ozon_synced_at?: string | null
           payment_status?: string
           phone: string
           phone_brand?: string
@@ -103,6 +109,9 @@ export type Database = {
           id?: string
           locale?: string
           notes?: string
+          ozon_status?: string | null
+          ozon_status_at?: string | null
+          ozon_synced_at?: string | null
           payment_status?: string
           phone?: string
           phone_brand?: string
@@ -145,6 +154,9 @@ export type Database = {
           locale: string
           notes: string | null
           order_number: string
+          ozon_status: string | null
+          ozon_status_at: string | null
+          ozon_synced_at: string | null
           pack_breakdown: Json | null
           payment_method: string
           payment_status: string
@@ -184,6 +196,9 @@ export type Database = {
           locale?: string
           notes?: string | null
           order_number: string
+          ozon_status?: string | null
+          ozon_status_at?: string | null
+          ozon_synced_at?: string | null
           pack_breakdown?: Json | null
           payment_method?: string
           payment_status?: string
@@ -223,6 +238,9 @@ export type Database = {
           locale?: string
           notes?: string | null
           order_number?: string
+          ozon_status?: string | null
+          ozon_status_at?: string | null
+          ozon_synced_at?: string | null
           pack_breakdown?: Json | null
           payment_method?: string
           payment_status?: string

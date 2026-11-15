@@ -141,6 +141,8 @@ function AdminOrdersPage() {
     queryKey: ["admin-orders"],
     queryFn: () => fetchOrders(),
     enabled: isAdmin,
+    // Ozon statuses are refreshed on the backend every 10 minutes.
+    refetchInterval: 10 * 60 * 1000,
   });
 
   const [search, setSearch] = useState("");
@@ -726,6 +728,14 @@ function AdminOrdersPage() {
                   <td className="whitespace-nowrap px-3 py-3 text-xs text-muted-foreground">
                     {SHIPPING_LABEL[shippingState(r)]}
                     {r.tracking ? ` · ${r.tracking}` : ""}
+                    {r.ozonStatus ? (
+                      <span
+                        className="mt-1 block font-medium text-foreground"
+                        title={r.ozonStatusAt ? `Ozon · ${fmtDate(r.ozonStatusAt)}` : "Ozon"}
+                      >
+                        Ozon : {r.ozonStatus}
+                      </span>
+                    ) : null}
                   </td>
                   <td className="px-3 py-3" onClick={(e) => e.stopPropagation()}>
                     <DropdownMenu>
@@ -1074,6 +1084,12 @@ function OrderDetail({
           <span className="text-xs text-muted-foreground">
             Statut livraison : {SHIPPING_LABEL[shippingState(record)]}
           </span>
+          {record.ozonStatus ? (
+            <span className="text-xs font-medium">
+              Ozon : {record.ozonStatus}
+              {record.ozonStatusAt ? ` (${fmtDate(record.ozonStatusAt)})` : ""}
+            </span>
+          ) : null}
         </div>
       </section>
 
