@@ -16,6 +16,11 @@ export const refreshOzonTracking = createServerFn({ method: "POST" })
       .parse(data),
   )
   .handler(async ({ data, context }) => {
+    // A separately hosted copy (no Ozon key / admin access) forwards to the Lovable backend.
+    const { isLovableBackendConfigured, callLovableBackend } = await import("./lovable-backend.server");
+    if (isLovableBackendConfigured()) {
+      return callLovableBackend<{ results: Record<string, string> }>("refreshOzonTracking", data);
+    }
     const { data: isAdmin, error } = await context.supabase.rpc("has_role", {
       _user_id: context.userId,
       _role: "admin",
