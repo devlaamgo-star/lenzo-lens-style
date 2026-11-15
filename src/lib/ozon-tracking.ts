@@ -34,19 +34,24 @@ export function parseOzonTracking(payload: unknown): OzonLatest[] {
   if (!check || check["RESULT"] !== "SUCCESS") throw new Error("OZON_API_REJECTED");
 
   const found = new Map<string, OzonLatest>();
-  const visit = (node: unknown, depth: number) => {
-    if (!node || typeof node !== "object" || depth > 4) return;
-    const obj = node as Record<string, any>;
-    const number = obj["TRACKING-NUMBER"];
-    if (typeof number === "string" && obj["LAST_TRACKING"]) {
-      const last = obj["LAST_TRACKING"];
-      const status = typeof last?.["STATUT"] === "string" ? last["STATUT"].trim() : "";
-      const ok = obj["RESULT"] === undefined || obj["RESULT"] === "SUCCESS";
-      if (ok && status) found.set(number, { trackingNumber: number, status, at: toIso(last["TIME"]) });
-      return;
-    }
-    for (const value of Object.values(obj)) visit(value, depth + 1);
+  const read = (fallbackNumber: string | null, entry: unknown) => {
+    if (!entry || typeof entry !== "object") return;
+    const obj = entry as Record<string, any>;
+    const own = typeof obj["TRACKING-NUMBER"] === "string" ? obj["TRACKING-NUMBER"] : null;
+    const number = own ?? fallbackNumber;
+    const last = obj["LAST_TRACKING"];
+    const status = typeof last?.["STATUT"] === "string" ? last["STATUT"].trim() : "";
+    const ok = obj["RESULT"] === undefined || obj["RESULT"] === "SUCCESS";
+    if (number && ok && status) found.set(number, { trackingNumber: number, status, at: toIso(last["TIME"]) });
   };
-  visit(payload, 0);
+  const root = payload as Record<string, any>;
+  // Bulk requests: {"MODE":"MULTI","TRACKING-LIST":{"<number>":{...}}}
+  const list = root["TRACKING-LIST"];
+  if (list && typeof list === "object") {
+    if (Array.isArray(list)) list.forEach((entry) => read(null, entry));
+    else for (const [number, entry] of Object.entries(list)) read(number, entry);
+  }
+  // Single tracking number: {"TRACKING":{"TRACKING-NUMBER":"...",...}}
+  if (root["TRACKING"]) read(null, root["TRACKING"]);
   return [...found.values()];
 }

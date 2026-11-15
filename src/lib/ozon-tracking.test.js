@@ -21,10 +21,11 @@ describe("Ozon tracking", () => {
   it("skips failed tracking lookups so the previous status is kept", () => {
     const out = parseOzonTracking({
       ...ok,
-      TRACKING: [
-        { "TRACKING-NUMBER": "A1", RESULT: "ERROR", LAST_TRACKING: { STATUT: "Livré" } },
-        { "TRACKING-NUMBER": "B2", RESULT: "SUCCESS", LAST_TRACKING: { STATUT: "Ramassé", TIME: "1" } },
-      ],
+      MODE: "MULTI",
+      "TRACKING-LIST": {
+        A1: { RESULT: "ERROR", MESSAGE: "Tracking number not found" },
+        B2: { RESULT: "SUCCESS", LAST_TRACKING: { STATUT: "Ramassé", TIME: "1" } },
+      },
     });
     expect(out.map((o) => o.trackingNumber)).toEqual(["B2"]);
   });

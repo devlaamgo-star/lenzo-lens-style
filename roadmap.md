@@ -87,3 +87,9 @@
 - [x] Old saved basket data no longer breaks cart/checkout; retired back & camera links go to current designs; lighter startup file.
 - [ ] Publish, then recheck live errors and loads without first paint.
 - [ ] Real-phone check in TikTok/Instagram apps — needs the owner's phone.
+
+# Ozon Express tracking status
+
+- [x] Store latest Ozon status per order; backend sync every 10 minutes by exact tracking number; show beside each order; failures keep previous status.
+- [ ] Test with one real Ozon shipment — waiting for a real tracking number from the owner.
+- [ ] Confirm scheduled runs on the live site — needs publishing.

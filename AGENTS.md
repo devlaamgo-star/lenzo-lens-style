@@ -33,3 +33,4 @@
 - Saved basket and pack data are read only through `src/lib/cart-storage.ts`, which drops malformed or outdated entries; a returning visitor's old browser data must never be able to crash cart or checkout.
 - Retired Back & Lens product slugs (in the original archive, not active) redirect permanently to `/dos-camera` so old ads and shared links never dead-end on a 404.
 - `src/start.ts` attaches the bearer token with a local middleware that lazy-imports the backend client, keeping the sign-in library out of the storefront's startup file; do not swap it back for the generated eager attacher.
+- Ozon Express tracking runs only on the backend: a 10-minute managed schedule calls `/api/public/ozon-tracking-sync` (cron-secret verified), which bulk-queries Ozon for orders with a tracking number and blank/Ozon carrier, matches results by exact tracking number and stores Ozon's status text verbatim; failed lookups leave the previous status untouched.
