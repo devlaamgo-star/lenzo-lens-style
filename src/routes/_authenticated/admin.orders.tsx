@@ -1084,6 +1084,12 @@ function OrderDetail({
           <span className="text-xs text-muted-foreground">
             Statut livraison : {SHIPPING_LABEL[shippingState(record)]}
           </span>
+          {record.ozonStatus ? (
+            <span className="text-xs font-medium">
+              Ozon : {record.ozonStatus}
+              {record.ozonStatusAt ? ` (${fmtDate(record.ozonStatusAt)})` : ""}
+            </span>
+          ) : null}
         </div>
       </section>
 
