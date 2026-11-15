@@ -87,6 +87,7 @@ export type AdminRecord = {
   tracking: string;
   ozonStatus: string;
   ozonStatusAt: string | null;
+  ozonSyncedAt: string | null;
   shippedAt: string | null;
   expectedDeliveryAt: string | null;
   adminNotes: string;
@@ -104,6 +105,7 @@ function ops(row: any) {
     tracking: (row.tracking_number as string) || "",
     ozonStatus: (row.ozon_status as string) || "",
     ozonStatusAt: (row.ozon_status_at as string) ?? null,
+    ozonSyncedAt: (row.ozon_synced_at as string) ?? null,
     shippedAt: (row.shipped_at as string) ?? null,
     expectedDeliveryAt: (row.expected_delivery_at as string) ?? null,
     adminNotes: (row.admin_notes as string) || "",
@@ -467,7 +469,20 @@ export const updateRecordOps = createServerFn({ method: "POST" })
     const patch: Record<string, unknown> = {};
     if (data.paymentStatus !== undefined) patch['payment_status'] = data.paymentStatus;
     if (data.carrier !== undefined) patch['shipping_carrier'] = data.carrier;
-    if (data.tracking !== undefined) patch['tracking_number'] = data.tracking;
+    if (data.tracking !== undefined) {
+      patch['tracking_number'] = data.tracking;
+      // A different tracking number must not keep the previous parcel's Ozon status.
+      const { data: current } = await supabaseAdmin
+        .from(tableFor(data.kind))
+        .select("tracking_number")
+        .eq("id", data.id)
+        .maybeSingle();
+      if ((current?.tracking_number ?? "") !== data.tracking) {
+        patch['ozon_status'] = null;
+        patch['ozon_status_at'] = null;
+        patch['ozon_synced_at'] = null;
+      }
+    }
     if (data.expectedDeliveryAt !== undefined)
       patch['expected_delivery_at'] = data.expectedDeliveryAt || null;
     if (data.adminNotes !== undefined) patch['admin_notes'] = data.adminNotes;

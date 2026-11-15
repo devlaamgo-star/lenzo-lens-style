@@ -32,6 +32,8 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { SOURCE_LABEL, TRAFFIC_SOURCES } from "@/lib/attribution";
 import { RevenueSummary } from "@/components/RevenueSummary";
+import { OzonTrackingCell } from "@/components/admin/OzonTrackingCell";
+import { refreshOzonTracking } from "@/lib/ozon.functions";
 import { buildCsv, rowsForExport, setViewSelection, viewSelectionState } from "@/lib/admin-export";
 
 const SOURCE_CLASS: Record<string, string> = {
@@ -133,6 +135,7 @@ function AdminOrdersPage() {
   const setOps = useServerFn(updateRecordOps);
   const removeRecords = useServerFn(deleteRecords);
   const fetchFiles = useServerFn(getRecordFileUrls);
+  const refreshOzon = useServerFn(refreshOzonTracking);
 
   const statusQuery = useQuery({ queryKey: ["admin-status"], queryFn: () => fetchStatus() });
   const isAdmin = statusQuery.data?.isAdmin ?? false;
@@ -264,11 +267,39 @@ function AdminOrdersPage() {
     onError: () => toast.error("Mise à jour groupée impossible"),
   });
 
+  // Fetches the latest Ozon status right away for one order.
+  const refreshOzonFor = async (target: { kind: "order" | "design"; id: string }) => {
+    try {
+      const { results } = await refreshOzon({ data: { targets: [target] } });
+      const r = results[target.id];
+      if (r === "updated") toast.success("Statut Ozon mis à jour");
+      else if (r === "no_status") toast.warning("Ozon ne renvoie aucun statut pour ce numéro");
+      else if (r === "failed") toast.error("Ozon injoignable — statut précédent conservé");
+    } catch {
+      toast.error("Actualisation Ozon impossible — statut précédent conservé");
+    }
+    invalidate();
+  };
+
+  const saveTracking = async (r: AdminRecord, tracking: string) => {
+    try {
+      await setOps({ data: { kind: r.kind, id: r.id, tracking } as never });
+    } catch {
+      toast.error("Enregistrement impossible");
+      throw new Error("save failed");
+    }
+    toast.success("Numéro de suivi enregistré");
+    await refreshOzonFor({ kind: r.kind, id: r.id });
+  };
+
   const opsMutation = useMutation({
     mutationFn: (v: Record<string, unknown>) => setOps({ data: v as never }),
-    onSuccess: () => {
+    onSuccess: (_res, v) => {
       toast.success("Commande mise à jour");
       invalidate();
+      if (typeof v["tracking"] === "string" && v["tracking"].trim()) {
+        void refreshOzonFor({ kind: v["kind"] as "order" | "design", id: v["id"] as string });
+      }
     },
     onError: () => toast.error("Enregistrement impossible"),
   });
@@ -725,17 +756,19 @@ function AdminOrdersPage() {
                       {STATUS_LABEL[r.status] ?? r.status}
                     </Badge>
                   </td>
-                  <td className="whitespace-nowrap px-3 py-3 text-xs text-muted-foreground">
-                    {SHIPPING_LABEL[shippingState(r)]}
-                    {r.tracking ? ` · ${r.tracking}` : ""}
-                    {r.ozonStatus ? (
-                      <span
-                        className="mt-1 block font-medium text-foreground"
-                        title={r.ozonStatusAt ? `Ozon · ${fmtDate(r.ozonStatusAt)}` : "Ozon"}
-                      >
-                        Ozon : {r.ozonStatus}
-                      </span>
-                    ) : null}
+                  <td
+                    className="min-w-[200px] px-3 py-3 text-xs text-muted-foreground"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <span className="whitespace-nowrap">{SHIPPING_LABEL[shippingState(r)]}</span>
+                    <OzonTrackingCell
+                      reference={r.reference}
+                      tracking={r.tracking}
+                      status={r.ozonStatus}
+                      syncedAt={r.ozonSyncedAt}
+                      onSave={(t) => saveTracking(r, t)}
+                      onRefresh={() => refreshOzonFor({ kind: r.kind, id: r.id })}
+                    />
                   </td>
                   <td className="px-3 py-3" onClick={(e) => e.stopPropagation()}>
                     <DropdownMenu>
