@@ -3,6 +3,7 @@
 export const STOREFRONT_OPERATIONS = [
   "createOrder", "saveCustomSkin", "getAdminStatus", "listAdminOrders",
   "getRecordFileUrls", "updateRecordStatus", "bulkUpdateStatus", "updateRecordOps", "deleteRecords",
+  "refreshOzonTracking",
 ] as const;
 export type StorefrontOperation = (typeof STOREFRONT_OPERATIONS)[number];
 

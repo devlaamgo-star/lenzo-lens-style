@@ -3,7 +3,7 @@ import { isLovableBackendConfigured, isStorefrontOperation, type StorefrontOpera
 const MAX_BODY_BYTES = 31_000_000; // two <=15 MB data URLs plus upload metadata
 const ADMIN_OPERATIONS = new Set<StorefrontOperation>([
   "getAdminStatus", "listAdminOrders", "getRecordFileUrls", "updateRecordStatus",
-  "bulkUpdateStatus", "updateRecordOps", "deleteRecords",
+  "bulkUpdateStatus", "updateRecordOps", "deleteRecords", "refreshOzonTracking",
 ]);
 type Dispatcher = (operation: StorefrontOperation, data: unknown) => Promise<unknown>;
 
@@ -82,6 +82,10 @@ async function dispatch(operation: StorefrontOperation, data: unknown): Promise<
     case "deleteRecords": {
       const { deleteRecords } = await import("./admin.functions");
       return deleteRecords({ data });
+    }
+    case "refreshOzonTracking": {
+      const { refreshOzonTracking } = await import("./ozon.functions");
+      return refreshOzonTracking({ data });
     }
   }
 }

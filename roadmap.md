@@ -93,4 +93,5 @@
 - [x] Store latest Ozon status per order; backend sync every 10 minutes by exact tracking number; show beside each order; failures keep previous status.
 - [ ] Test with one real Ozon shipment — waiting for a real tracking number from the owner.
 - [x] Show "Suivi Ozon" (status, last update, refresh) or "Ajouter un numéro de suivi" in each row's Livraison column; save fetches status immediately.
-- [ ] Confirm scheduled runs on the live site — needs publishing.
+- [x] Scheduled runs confirmed on the published Lovable site (23:20 run returned success).
+- [ ] skinup.ma shows the Ozon block — its separate Cloudflare copy must be redeployed from the latest code (owner's Cloudflare account), or its DNS pointed to Lovable.

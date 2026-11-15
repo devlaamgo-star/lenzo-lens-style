@@ -183,7 +183,7 @@ describe("Lovable storefront endpoint", () => {
 
   it.each([
     "getAdminStatus", "listAdminOrders", "getRecordFileUrls", "updateRecordStatus",
-    "bulkUpdateStatus", "updateRecordOps", "deleteRecords",
+    "bulkUpdateStatus", "updateRecordOps", "deleteRecords", "refreshOzonTracking",
   ])("rejects unauthenticated %s before dispatch", async (operation) => {
     const execute = mock(async () => ({ shouldNeverRun: true }));
     const response = await handleStorefrontRequest(apiRequest(operation, {}), execute);
