@@ -22,6 +22,13 @@
       "when": 1794495030030,
       "tag": "0002_remove_claim_first_admin",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1794783948026,
+      "tag": "0003_ozon_tracking_status",
+      "breakpoints": true
     }
   ]
 }
