@@ -34,6 +34,7 @@ import { Route as ObjectifsSlugRouteImport } from './routes/objectifs.$slug'
 import { Route as SkinsIndexRouteImport } from './routes/skins.index'
 import { Route as SkinsSlugRouteImport } from './routes/skins.$slug'
 import { Route as AuthenticatedAdminOrdersRouteImport } from './routes/_authenticated/admin.orders'
+import { Route as ApiPublicOzonTrackingSyncRouteImport } from './routes/api.public.ozon-tracking-sync'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -160,6 +161,12 @@ const AuthenticatedAdminOrdersRoute =
     path: '/admin/orders',
     getParentRoute: () => AuthenticatedRouteRoute,
   } as any)
+const ApiPublicOzonTrackingSyncRoute =
+  ApiPublicOzonTrackingSyncRouteImport.update({
+    id: '/api/public/ozon-tracking-sync',
+    path: '/api/public/ozon-tracking-sync',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -186,6 +193,7 @@ export interface FileRoutesByFullPath {
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
   '/admin/orders': typeof AuthenticatedAdminOrdersRoute
+  '/api/public/ozon-tracking-sync': typeof ApiPublicOzonTrackingSyncRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -212,6 +220,7 @@ export interface FileRoutesByTo {
   '/objectifs': typeof ObjectifsIndexRoute
   '/skins': typeof SkinsIndexRoute
   '/admin/orders': typeof AuthenticatedAdminOrdersRoute
+  '/api/public/ozon-tracking-sync': typeof ApiPublicOzonTrackingSyncRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -240,6 +249,7 @@ export interface FileRoutesById {
   '/objectifs/': typeof ObjectifsIndexRoute
   '/skins/': typeof SkinsIndexRoute
   '/_authenticated/admin/orders': typeof AuthenticatedAdminOrdersRoute
+  '/api/public/ozon-tracking-sync': typeof ApiPublicOzonTrackingSyncRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -268,6 +278,7 @@ export interface FileRouteTypes {
     | '/objectifs/'
     | '/skins/'
     | '/admin/orders'
+    | '/api/public/ozon-tracking-sync'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -294,6 +305,7 @@ export interface FileRouteTypes {
     | '/objectifs'
     | '/skins'
     | '/admin/orders'
+    | '/api/public/ozon-tracking-sync'
   id:
     | '__root__'
     | '/'
@@ -321,6 +333,7 @@ export interface FileRouteTypes {
     | '/objectifs/'
     | '/skins/'
     | '/_authenticated/admin/orders'
+    | '/api/public/ozon-tracking-sync'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -348,6 +361,7 @@ export interface RootRouteChildren {
   IphoneAirIndexRoute: typeof IphoneAirIndexRoute
   ObjectifsIndexRoute: typeof ObjectifsIndexRoute
   SkinsIndexRoute: typeof SkinsIndexRoute
+  ApiPublicOzonTrackingSyncRoute: typeof ApiPublicOzonTrackingSyncRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -527,6 +541,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminOrdersRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/api/public/ozon-tracking-sync': {
+      id: '/api/public/ozon-tracking-sync'
+      path: '/api/public/ozon-tracking-sync'
+      fullPath: '/api/public/ozon-tracking-sync'
+      preLoaderRoute: typeof ApiPublicOzonTrackingSyncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -566,6 +587,7 @@ const rootRouteChildren: RootRouteChildren = {
   IphoneAirIndexRoute: IphoneAirIndexRoute,
   ObjectifsIndexRoute: ObjectifsIndexRoute,
   SkinsIndexRoute: SkinsIndexRoute,
+  ApiPublicOzonTrackingSyncRoute: ApiPublicOzonTrackingSyncRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -85,6 +85,8 @@ export type AdminRecord = {
   paymentStatus: string;
   carrier: string;
   tracking: string;
+  ozonStatus: string;
+  ozonStatusAt: string | null;
   shippedAt: string | null;
   expectedDeliveryAt: string | null;
   adminNotes: string;
@@ -100,6 +102,8 @@ function ops(row: any) {
     paymentStatus: (row.payment_status as string) || "cod_pending",
     carrier: (row.shipping_carrier as string) || "",
     tracking: (row.tracking_number as string) || "",
+    ozonStatus: (row.ozon_status as string) || "",
+    ozonStatusAt: (row.ozon_status_at as string) ?? null,
     shippedAt: (row.shipped_at as string) ?? null,
     expectedDeliveryAt: (row.expected_delivery_at as string) ?? null,
     adminNotes: (row.admin_notes as string) || "",
