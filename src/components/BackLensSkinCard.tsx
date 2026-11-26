@@ -26,7 +26,7 @@ export function BackLensSkinCard({
   const thumbnail = backLensCardThumbnail(skin.id);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+    <article className="group relative flex h-full flex-col bg-background">
       <Link
         to="/dos-camera/$slug"
         params={{ slug: skin.slug }}
@@ -57,19 +57,14 @@ export function BackLensSkinCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 p-4">
+      <div className="flex flex-1 flex-col gap-0.5 px-1 pt-3">
         <h3 className="truncate text-sm font-semibold sm:text-base">{skin.name[lang]}</h3>
         <p className="text-xs text-muted-foreground">{skin.device}</p>
-        <p className="mt-1 text-sm font-bold">{BACK_LENS_SKIN_PRICE} MAD</p>
+        <p className="mt-1 text-sm font-semibold text-foreground">{BACK_LENS_SKIN_PRICE} MAD</p>
 
-        <Button asChild className="relative z-[2] mt-3 h-11 w-full rounded-full bg-primary p-0 text-sm font-semibold text-card shadow-none hover:bg-primary-hover">
-        <Link
-          to="/dos-camera/$slug"
-          params={{ slug: skin.slug }}
-        >
-          {t("skins.viewProduct")}
-        </Link>
-        </Button>
+        <button type="button" onClick={() => setOpen(true)} className="relative z-[2] mt-2 inline-flex h-9 w-fit items-center justify-center rounded-full border border-foreground px-4 text-xs font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background">
+          {t("card.quickAdd")}
+        </button>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -82,7 +77,7 @@ export function BackLensSkinCard({
             src={skin.image}
             alt={skin.name[lang]}
             loading="lazy"
-            className="max-h-[46vh] w-full rounded-xl bg-surface object-contain p-3"
+            className="max-h-[46vh] w-full rounded-xl bg-background object-contain"
           />
           <div className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>

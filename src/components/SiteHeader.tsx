@@ -82,7 +82,7 @@ export function SiteHeader() {
               <button
                 type="button"
                 aria-label={t("nav.menu")}
-                className="grid h-10 w-10 shrink-0 place-items-center rounded-full transition-colors hover:bg-surface lg:hidden"
+                className="grid h-10 w-10 shrink-0 place-items-center rounded-full transition-colors hover:bg-muted lg:hidden"
               >
                 <Menu className="h-5 w-5" />
               </button>
@@ -98,7 +98,7 @@ export function SiteHeader() {
                 <SheetClose
                   type="button"
                   aria-label={t("nav.close")}
-                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-foreground transition-colors hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <X className="h-5 w-5" />
                 </SheetClose>
@@ -108,7 +108,7 @@ export function SiteHeader() {
                   to="/collection"
                   search={{ filter: "best" as const }}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-xl px-3 py-3 text-base font-medium hover:bg-surface"
+                  className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted"
                 >
                   {t("nav.best")}
                 </Link>
@@ -117,7 +117,7 @@ export function SiteHeader() {
                   type="button"
                   onClick={() => setMobileCollectionOpen((v) => !v)}
                   aria-expanded={mobileCollectionOpen}
-                  className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium hover:bg-surface"
+                  className="flex items-center justify-between rounded-xl px-3 py-3 text-base font-medium hover:bg-muted"
                 >
                   {t("nav.collection")}
                   <ChevronDown
@@ -132,7 +132,7 @@ export function SiteHeader() {
                         to={item.to}
                         search={item.search}
                         onClick={() => setMobileOpen(false)}
-                        className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-surface hover:text-foreground"
+                        className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
                       >
                         {item.label}
                       </Link>
@@ -146,7 +146,7 @@ export function SiteHeader() {
                     to={item.to}
                     search={item.search}
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-xl px-3 py-3 text-base font-medium hover:bg-surface"
+                    className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted"
                   >
                     {item.label}
                   </Link>
@@ -200,7 +200,7 @@ export function SiteHeader() {
                     to={item.to}
                     search={item.search}
                     onClick={() => setCollectionOpen(false)}
-                    className="block px-6 py-3 text-[13px] text-muted-foreground transition-colors hover:bg-surface hover:text-foreground data-[status=active]:text-foreground"
+                    className="block px-6 py-3 text-[13px] text-muted-foreground transition-colors hover:bg-muted hover:text-foreground data-[status=active]:text-foreground"
                   >
                     {item.label}
                   </Link>
@@ -221,21 +221,21 @@ export function SiteHeader() {
             type="button"
             aria-label={t("nav.search")}
             onClick={() => setSearchOpen(true)}
-            className="grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface"
+            className="grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-muted"
           >
             <Search className="h-[18px] w-[18px]" />
           </button>
           <Link
             to="/commande"
             aria-label={t("nav.account")}
-            className="hidden h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface sm:grid"
+            className="hidden h-9 w-9 place-items-center rounded-full transition-colors hover:bg-muted sm:grid"
           >
             <User className="h-[18px] w-[18px]" />
           </Link>
           <Link
             to="/panier"
             aria-label={t("nav.cart")}
-            className="relative grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-surface"
+            className="relative grid h-9 w-9 place-items-center rounded-full transition-colors hover:bg-muted"
           >
             <ShoppingBag className="h-[18px] w-[18px]" />
             {cart.count + pack.designs.length > 0 && (

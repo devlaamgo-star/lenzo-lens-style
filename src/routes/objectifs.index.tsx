@@ -55,7 +55,7 @@ function LensCollectionPage() {
           <p className="mt-6 text-xs text-muted-foreground">
             {CAMERA_LENS_SKINS.length} {t("col.results")}
           </p>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10">
             <CustomSkinCard priority />
             {CAMERA_LENS_SKINS.map((s, i) => (
               <LensSkinCard key={s.id} skin={s} priority={i < 4} />

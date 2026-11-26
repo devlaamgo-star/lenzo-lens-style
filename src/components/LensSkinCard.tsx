@@ -24,19 +24,19 @@ export function LensSkinCard({
   const [open, setOpen] = useState(false);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+    <article className="group relative flex h-full flex-col bg-background">
       <Link
         to="/objectifs/$slug"
         params={{ slug: skin.slug }}
         aria-label={skin.name[lang]}
         className="absolute inset-0 z-[1]"
       />
-      <div className={`relative aspect-square overflow-hidden ${skin.imagePresentation === "full-phone" ? "bg-card" : "bg-surface"}`}>
+      <div className={`relative aspect-square overflow-hidden bg-background`}>
         <img
           src={skin.image}
           alt={`${skin.name[lang]} — ${t("lens.category")} ${skin.device}`}
           loading={priority ? "eager" : "lazy"}
-          className={`h-full w-full object-contain object-center ${skin.imagePresentation === "full-phone" ? "" : "p-3 transition-transform duration-500 group-hover:scale-[1.03]"}`}
+          className={`h-full w-full object-contain object-center ${skin.imagePresentation === "full-phone" ? "" : "transition-transform duration-500 group-hover:scale-[1.03]"}`}
         />
         <div className="absolute inset-x-0 top-0 z-[2] flex items-start justify-end gap-2 p-3">
           <button
@@ -50,18 +50,14 @@ export function LensSkinCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 p-4">
+      <div className="flex flex-1 flex-col gap-0.5 px-1 pt-3">
         <h3 className={`${skin.imagePresentation === "full-phone" ? "break-words" : "truncate"} text-sm font-semibold sm:text-base`}>{skin.name[lang]}</h3>
         <p className="text-xs text-muted-foreground">{skin.device}</p>
-        <p className="mt-1 text-sm font-bold">{LENS_SKIN_PRICE} MAD</p>
+        <p className="mt-1 text-sm font-semibold text-foreground">{LENS_SKIN_PRICE} MAD</p>
 
-        <Link
-          to="/objectifs/$slug"
-          params={{ slug: skin.slug }}
-          className="relative z-[2] mt-3 inline-flex h-11 w-full items-center justify-center rounded-full bg-ink text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
-        >
-          {t("skins.viewProduct")}
-        </Link>
+        <button type="button" onClick={() => setOpen(true)} className="relative z-[2] mt-2 inline-flex h-9 w-fit items-center justify-center rounded-full border border-foreground px-4 text-xs font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background">
+          {t("card.quickAdd")}
+        </button>
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -74,7 +70,7 @@ export function LensSkinCard({
             src={skin.image}
             alt={skin.name[lang]}
             loading="lazy"
-            className={`max-h-[46vh] w-full rounded-xl object-contain object-center ${skin.imagePresentation === "full-phone" ? "bg-card" : "bg-surface p-3"}`}
+            className={`max-h-[46vh] w-full rounded-xl object-contain object-center ${skin.imagePresentation === "full-phone" ? "bg-background" : "bg-background"}`}
           />
           <div className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">{skin.description[lang]}</p>

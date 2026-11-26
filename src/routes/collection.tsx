@@ -104,13 +104,13 @@ function CollectionPage() {
             </span>
             <Link
               to="/iphone-air"
-              className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-[13px] font-semibold transition-colors hover:bg-surface"
+              className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-[13px] font-semibold transition-colors hover:bg-muted"
             >
               {t("air.nav")}
             </Link>
             <Link
               to="/dos-camera"
-              className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-[13px] font-semibold transition-colors hover:bg-surface"
+              className="inline-flex h-9 items-center rounded-full border border-border bg-card px-4 text-[13px] font-semibold transition-colors hover:bg-muted"
             >
               {t("backlens.nav")}
             </Link>
@@ -192,8 +192,8 @@ function CollectionPage() {
           ) : (
             <div
               className={cn(
-                "mt-8 grid grid-cols-2 gap-4 lg:gap-6",
-                wide ? "lg:grid-cols-3" : "lg:grid-cols-4",
+                "mt-8 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10",
+                wide && "",
               )}
             >
               <CustomSkinCard priority />

@@ -28,21 +28,21 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
   const count = pack.countOf(design.id);
 
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+    <article className="group relative flex h-full flex-col bg-background">
       <Link
         to="/objectifs/$slug"
         params={{ slug: design.slug }}
         aria-label={design.name[lang]}
         className="absolute inset-0 z-[1]"
       />
-      <div className="relative aspect-square overflow-hidden bg-surface">
+      <div className="relative aspect-square overflow-hidden bg-background">
         <img
           src={design.image}
           alt={design.name[lang]}
           width={1024}
           height={1024}
           loading={priority ? "eager" : "lazy"}
-          className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.04]"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
         />
         <div className="absolute inset-x-0 top-0 z-[2] flex items-start justify-end gap-2 p-3">
           <button
@@ -61,21 +61,20 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 p-4">
+      <div className="flex flex-1 flex-col gap-0.5 px-1 pt-3">
         <h3 className="truncate text-sm font-semibold sm:text-base">{design.name[lang]}</h3>
         <p className="text-xs text-muted-foreground">{t("card.compatible")}</p>
-        <p className="mt-1 text-xs font-medium text-accent-foreground">{t("card.included")}</p>
+        <p className="mt-1 text-sm font-semibold text-foreground">{t("card.included")}</p>
 
         <Link
           to="/objectifs/$slug"
           params={{ slug: design.slug }}
           className={cn(
-            "relative z-[2] mt-3 inline-flex h-11 w-full items-center justify-center gap-2 rounded-full text-sm font-semibold transition-colors",
-            "bg-ink text-ink-foreground hover:bg-primary",
+            "relative z-[2] mt-2 inline-flex h-9 w-fit items-center justify-center gap-1.5 rounded-full border border-foreground px-4 text-xs font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background",
           )}
         >
           {count > 0 && <Check className="h-4 w-4" />}
-          {t("skins.viewProduct")}
+          {t("card.quickAdd")}
         </Link>
       </div>
 
@@ -91,7 +90,7 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
             width={1024}
             height={1024}
             loading="lazy"
-            className="w-full rounded-xl bg-surface object-contain p-3"
+            className="w-full rounded-xl bg-background object-contain"
           />
           <div className="flex flex-col gap-3">
             <p className="text-sm text-muted-foreground">{design.description[lang]}</p>
@@ -115,7 +114,7 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
                 onClick={() => pack.add(design.id)}
                 className="inline-flex h-11 items-center justify-center rounded-full bg-ink px-5 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
               >
-                {t("card.add")}
+                {t("card.quickAdd")}
               </button>
               <Link
                 to="/pack"

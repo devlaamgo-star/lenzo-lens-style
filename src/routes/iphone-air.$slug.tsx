@@ -121,7 +121,7 @@ function AirProductPage() {
       <section className="section-y bg-surface">
         <div className="container-page">
           <h2 className="text-xl font-bold sm:text-2xl">{t("air.title")}</h2>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+          <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-10">
             {related.map((s) => (
               <AirSkinCard key={s.id} skin={s} />
             ))}
