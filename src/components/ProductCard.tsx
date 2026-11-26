@@ -1,9 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Check, Eye } from "lucide-react";
+import { Eye } from "lucide-react";
 import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { IPHONE_MODELS, type Design } from "@/lib/catalog";
+import { IPHONE_MODELS, LENS_SKIN_PRICE, type Design } from "@/lib/catalog";
+import { lensSkinBySlug } from "@/data/camera-lens-skins";
+import { QuickAddButton } from "@/components/QuickAddDialog";
 import {
   Select,
   SelectContent,
@@ -26,6 +28,7 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
   const pack = usePack();
   const [open, setOpen] = useState(false);
   const count = pack.countOf(design.id);
+  const lensSkin = lensSkinBySlug(design.slug);
 
   return (
     <article className="group relative flex h-full flex-col bg-background">
@@ -66,16 +69,9 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
         <p className="text-xs text-muted-foreground">{t("card.compatible")}</p>
         <p className="mt-1 text-sm font-semibold text-foreground">{t("card.included")}</p>
 
-        <Link
-          to="/objectifs/$slug"
-          params={{ slug: design.slug }}
-          className={cn(
-            "relative z-[2] mt-2 inline-flex h-9 w-fit items-center justify-center gap-1.5 rounded-full border border-foreground px-4 text-xs font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background",
-          )}
-        >
-          {count > 0 && <Check className="h-4 w-4" />}
-          {t("card.quickAdd")}
-        </Link>
+        {lensSkin ? (
+          <QuickAddButton product={{ productId: lensSkin.id, slug: lensSkin.slug, category: "lens", name: lensSkin.name, image: lensSkin.image, price: LENS_SKIN_PRICE }} />
+        ) : null}
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -112,9 +108,9 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
               <button
                 type="button"
                 onClick={() => pack.add(design.id)}
-                className="inline-flex h-11 items-center justify-center rounded-full bg-ink px-5 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
+                                className="inline-flex h-11 items-center justify-center rounded-full bg-ink px-5 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground"
               >
-                {t("card.quickAdd")}
+                {t("card.add")}
               </button>
               <Link
                 to="/pack"

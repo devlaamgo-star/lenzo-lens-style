@@ -87,6 +87,7 @@ const D = {
   ],
   "skins.viewAll": ["Voir toute la collection", "عرض المجموعة كاملة", "View Full Collection"],
   "skins.category": ["Skin intégrale", "سكين كاملة", "Full body skin"],
+  "quickadd.choose": ["Choisissez votre modèle", "اختر الموديل ديالك", "Choose your model"],
   "card.quickAdd": ["+ Ajouter", "+ أضف", "+ Add"],
   "skins.viewProduct": ["Voir le produit", "عرض المنتج", "View product"],
   "skins.compat": [

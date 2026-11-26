@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useI18n } from "@/lib/i18n";
 import { BACK_LENS_SKIN_PRICE, type BackLensSkin } from "@/lib/catalog";
 import { AddToCartBlock } from "@/components/ProductOptions";
+import { QuickAddButton } from "@/components/QuickAddDialog";
 import { Button } from "@/components/ui/button";
 import { BACK_LENS_CARD_SIZES, backLensCardThumbnail } from "@/data/back-lens-card-thumbnails";
 import {
@@ -62,9 +63,7 @@ export function BackLensSkinCard({
         <p className="text-xs text-muted-foreground">{skin.device}</p>
         <p className="mt-1 text-sm font-semibold text-foreground">{BACK_LENS_SKIN_PRICE} MAD</p>
 
-        <button type="button" onClick={() => setOpen(true)} className="relative z-[2] mt-2 inline-flex h-9 w-fit items-center justify-center rounded-full border border-foreground px-4 text-xs font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background">
-          {t("card.quickAdd")}
-        </button>
+        <QuickAddButton product={{ productId: skin.id, slug: skin.slug, category: "backlens", name: skin.name, image: skin.image, price: BACK_LENS_SKIN_PRICE }} />
       </div>
 
       <Dialog open={open} onOpenChange={setOpen}>
