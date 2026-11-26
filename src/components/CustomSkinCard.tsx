@@ -24,8 +24,8 @@ export function CustomSkinCard({ priority = false }: { priority?: boolean }) {
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-0.5 px-1 pt-3">
-        <h3 className="truncate text-sm font-semibold sm:text-base">{t("custom.name")}</h3>
+      <div className="flex flex-1 flex-col items-center gap-0.5 px-1 pt-3 text-center">
+        <h3 className="w-full truncate text-sm font-semibold sm:text-base">{t("custom.name")}</h3>
         <p className="text-xs text-muted-foreground">iPhone 17 Pro Max</p>
         <p className="mt-1 text-sm font-semibold text-foreground">{t("custom.price")}</p>
 

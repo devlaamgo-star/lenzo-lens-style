@@ -50,8 +50,8 @@ export function AirSkinCard({
         </div>
       </div>
 
-      <div className="flex flex-1 flex-col gap-0.5 px-1 pt-3">
-        <h3 className="truncate text-sm font-semibold sm:text-base">{skin.name[lang]}</h3>
+      <div className="flex flex-1 flex-col items-center gap-0.5 px-1 pt-3 text-center">
+        <h3 className="w-full truncate text-sm font-semibold sm:text-base">{skin.name[lang]}</h3>
         <p className="text-xs text-muted-foreground">{skin.device}</p>
         <p className="mt-1 text-sm font-semibold text-foreground">{AIR_SKIN_PRICE} MAD</p>
 
