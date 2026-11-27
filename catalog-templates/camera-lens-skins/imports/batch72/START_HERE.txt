@@ -1,0 +1,33 @@
+SKINUP — 72 CAMERA PRODUCTS / LOVABLE IMPORT BUNDLE
+
+1. Give Lovable this ZIP and the full text from LOVABLE_PROMPT.txt.
+2. products.json is the authoritative product and image mapping.
+3. CATALOGUE.html is an offline visual index. Extract the ZIP first, then open it.
+
+CONTENTS
+- 72 named products, ordered 001–072.
+- 493 gallery images in WebP; maximum longest edge 1200 px.
+- 144 smaller cover derivatives (480 and 800 px), for responsive product cards.
+- products.csv: readable product catalog.
+- image-map.csv: mapping for all 495 source files, including the two exact duplicates.
+- No prices or phone compatibility have been invented. Reuse the existing camera category configuration.
+
+IMAGE ORDER
+01-cover.webp is the primary image AND first gallery image for its own product.
+Each product uses its own two-phone composition. Comic Boom is the first product of this batch.
+02.webp, 03.webp, etc. are the remaining product gallery images.
+_responsive contains smaller cover derivatives and must not become extra gallery images.
+
+SOURCE RECONCILIATION
+The upload contains exactly 72 product folders. Original folder numbering skips 66 and ends at 73.
+The new batch is numbered consecutively from 001 to 072; products.json retains every source folder ID.
+Two exact duplicate cover images were removed, in original source folders 19 and 28.
+All distinct supplied photos remain associated with their original products.
+
+OPTIMIZATION
+Source image bytes: 200,303,298
+Optimized image bytes, including responsive variants: 61,275,886
+Image weight reduced by 69.41%.
+Median 480 px card cover: approximately 15 KB.
+
+This package prepares the import. It does not itself modify or publish the live website.

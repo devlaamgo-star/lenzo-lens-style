@@ -1,0 +1,29 @@
+Import the attached SKINUP camera-skin product bundle into the existing Skinup website, in the camera-sticker category shown at /objectifs.
+
+Use products.json as the authoritative import manifest. products.csv is a readable summary, and image-map.csv maps the original source files to the optimized assets. Read the complete manifest and verify the referenced files before making changes.
+
+PRODUCTS AND ORDER
+- Add exactly 72 products to the existing camera category using the current database schema, storage, product components, and admin workflow.
+- Use each product's title_fr/name, description_fr, slug, tags, and alt_fr as provided. Keep import_key and sku as stable identifiers.
+- Import the batch idempotently: rerunning the import must update the same imported records and must not create duplicates. Store or reliably map import_key to the existing product ID. If a slug or SKU conflicts with an unrelated existing product, preserve that product and resolve the collision without overwriting it.
+- Follow sort_order 1 through 72 for this new batch. Comic Boom, product 001, must be first within the new batch. source_folder preserves the original archive folder ID; those IDs skip 66 and include 73, so do not use them as the product count or display order.
+- Append these products without deleting existing products or changing the existing products' order. Integrate the batch with the current catalog ordering mechanism.
+
+IMAGES
+- The bundle contains 493 unique gallery photos, optimized as WebP at a maximum longest edge of 1200 px, plus 144 responsive cover variants (480 px and 800 px for each of the 72 products). These responsive variants are derivatives, not additional products or extra gallery photos.
+- Each product has its own primary_image named 01-cover.webp. It is the matching two-phone cover composition for that design. Use that file as the card image and as the first image in the product gallery. Do not reuse Comic Boom's photo across other designs.
+- Preserve every images entry and its order. Its position and is_primary values define the intended gallery sequence; adapt position indexing to the existing app if necessary while keeping 01-cover.webp first. The remaining gallery files are 02.webp, 03.webp, and so on.
+- Use primary_image_responsive for responsive card images. Resolve every manifest path relative to the bundle root, upload the referenced files to the app's existing image storage, and persist the resulting durable URLs in the correct product records. Do not use temporary local paths as live URLs.
+- Keep each design associated only with its own files. Preserve the supplied images, aspect ratios, colors, and white backgrounds; use object-fit: contain so the full product remains visible.
+- For product cards, serve the 480/800 px cover variants with appropriate srcset and sizes, retaining the 1200 px cover as the larger fallback. Set intrinsic width and height to prevent layout shifts. Load the initial visible row normally and lazy-load later cards. Load gallery images only when needed; do not eagerly download every product gallery on the listing page.
+
+EXISTING STORE BEHAVIOR
+- Preserve the existing camera category's pricing, promotions, available phone-model choices, product-selection rules, cart, checkout, and order flow. Use the existing camera-product configuration for the new products.
+- Do not invent prices, supported phone models, compatibility claims, materials, certifications, or performance claims. If the existing app requires a value that cannot be determined from its current camera-product configuration, identify that specific missing field instead of guessing.
+- Keep the current site design and unrelated categories unchanged. Keep import metadata and source filenames out of customer-facing text.
+
+VALIDATION
+- Reconcile the final result against products.json: exactly 72 imported product records, unique stable import keys, all 493 gallery photos assigned to the correct products, and all 144 responsive cover variants available.
+- Verify that every referenced asset exists, every product has the correct cover first, no product has another design's images, and no broken image URLs remain.
+- Check /objectifs on mobile and desktop, open several products across the beginning, middle, and end of the batch, and confirm gallery order, existing model selection, cart, and checkout behavior.
+- Report the final imported product count, any failures or unresolved required fields, and whether a separate publish step is needed for the changes to appear on the live domain. Do not report completion while products or image associations are missing.

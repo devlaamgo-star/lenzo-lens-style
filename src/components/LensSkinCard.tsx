@@ -35,7 +35,11 @@ export function LensSkinCard({
       <div className={`relative aspect-square overflow-hidden bg-background`}>
         <img
           src={skin.image}
-          alt={`${skin.name[lang]} — ${t("lens.category")} ${skin.device}`}
+          srcSet={skin.responsiveCover?.map((cover) => `${cover.url} ${cover.width}w`).join(", ")}
+          sizes="(min-width: 1024px) 25vw, 50vw"
+          width={skin.imageWidth}
+          height={skin.imageHeight}
+          alt={lang === "fr" && skin.altFr ? skin.altFr : `${skin.name[lang]} — ${t("lens.category")} ${skin.device}`}
           loading={priority ? "eager" : "lazy"}
           className={`h-full w-full object-contain object-center ${skin.imagePresentation === "full-phone" ? "" : "transition-transform duration-500 group-hover:scale-[1.03]"}`}
         />

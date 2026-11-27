@@ -66,7 +66,7 @@ function LensProductPage() {
 
       <section className="section-y">
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
-          <div>
+          <div className="min-w-0">
             <div className="overflow-hidden rounded-3xl border border-border bg-card">
               <img
                 src={skin.gallery[active] ?? skin.image}
@@ -75,7 +75,7 @@ function LensProductPage() {
               />
             </div>
             {skin.gallery.length > 1 && (
-              <div className="mt-4 flex gap-3" aria-label={t("skins.gallery")}>
+              <div className="mt-4 flex gap-3 overflow-x-auto" aria-label={t("skins.gallery")}>
                 {skin.gallery.map((g: string, i: number) => (
                   <button
                     key={g}
@@ -83,7 +83,7 @@ function LensProductPage() {
                     onClick={() => setActive(i)}
                     aria-label={`${t("skins.gallery")} ${i + 1}`}
                     className={
-                      "h-20 w-20 overflow-hidden rounded-xl border bg-card p-1 " +
+                      "h-20 w-20 shrink-0 overflow-hidden rounded-xl border bg-card p-1 " +
                       (i === active ? "border-primary" : "border-border")
                     }
                   >

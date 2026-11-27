@@ -41,11 +41,13 @@ export function ProductCard({ design, priority = false }: { design: Design; prio
       <div className="relative aspect-square overflow-hidden bg-background">
         <img
           src={design.image}
-          alt={design.name[lang]}
-          width={1024}
-          height={1024}
+          srcSet={design.responsiveCover?.map((cover) => `${cover.url} ${cover.width}w`).join(", ")}
+          sizes="(min-width: 1024px) 25vw, 50vw"
+          alt={lang === "fr" && design.altFr ? design.altFr : design.name[lang]}
+          width={design.imageWidth ?? 1024}
+          height={design.imageHeight ?? 1024}
           loading={priority ? "eager" : "lazy"}
-          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+          className={`h-full w-full object-contain object-center ${design.imagePresentation === "full-phone" ? "" : "transition-transform duration-500 group-hover:scale-[1.04]"}`}
         />
         <div className="absolute inset-x-0 top-0 z-[2] flex items-start justify-end gap-2 p-3">
           <button

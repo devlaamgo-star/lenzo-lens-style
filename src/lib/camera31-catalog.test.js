@@ -1,6 +1,7 @@
 import { expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
-import { CAMERA_LENS_SKINS, LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
+import { LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
+import { ARCHIVED_CAMERA_LENS_SKINS as CAMERA_LENS_SKINS } from "../data/archive/camera-lens-skins";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { IPHONE_AIR_SKINS } from "@/data/iphone-air-skins";
 import { lookupProduct } from "./product-lookup";

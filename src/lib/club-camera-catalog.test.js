@@ -1,5 +1,6 @@
 import { expect, test } from "bun:test";
-import { CAMERA_LENS_SKINS, LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
+import { LENS_SKIN_PRICE, modelsForCategory } from "./catalog";
+import { ARCHIVED_CAMERA_LENS_SKINS as CAMERA_LENS_SKINS } from "../data/archive/camera-lens-skins";
 import { lookupProduct } from "./product-lookup";
 
 const slugs = ["fc-barcelone", "paris-saint-germain", "manchester-united", "manchester-city", "liverpool", "arsenal", "chelsea", "bayern-munich", "juventus", "ac-milan", "raja-casablanca", "wydad-casablanca", "as-far", "mas-fes"];

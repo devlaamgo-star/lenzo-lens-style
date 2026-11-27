@@ -1,4 +1,5 @@
 import { type CollectionId as PCollectionId } from "@/data/products";
+import { ARCHIVED_CAMERA_LENS_SKINS } from "@/data/archive/camera-lens-skins";
 import {
   CAMERA_LENS_SKINS,
   lensSkinBySlug,
@@ -38,7 +39,7 @@ export type Design = CameraLensSkin;
 export const DESIGNS: Design[] = CAMERA_LENS_SKINS;
 
 export function designById(id: string): Design | undefined {
-  return DESIGNS.find((d) => d.id === id);
+  return DESIGNS.find((d) => d.id === id) ?? ARCHIVED_CAMERA_LENS_SKINS.find((d) => d.id === id);
 }
 
 

@@ -1,3 +1,9 @@
+# Camera catalog replacement (72-design collection)
+- [x] Validate the complete manifest and all 637 supplied WebP assets; retain current camera configuration and 107 historical records.
+- [x] Replace only active camera designs with 72 stable-ID products and correctly ordered responsive covers/galleries.
+- [x] Verify exact count, all image URL byte hashes, historical lookup, desktop/mobile model selection, cart and checkout (no order submitted); 404 tests pass, build OK.
+- [ ] Make replacement visible on skinup.ma — its separate Cloudflare storefront needs the owner's deployment; no deployment performed in this request.
+
 # Category removal
 
 # Moroccan club camera stickers

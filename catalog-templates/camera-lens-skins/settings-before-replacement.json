@@ -1,0 +1,14 @@
+{
+  "price": 79,
+  "bundlePrice": 149,
+  "bundleSize": 3,
+  "models": [
+    "iPhone 17 Pro",
+    "iPhone 17 Pro Max"
+  ],
+  "defaultModel": "",
+  "oneItemDelivery": 20,
+  "threeItemDelivery": 0,
+  "mixedDelivery": 0,
+  "independentCategoryBundles": 0
+}
