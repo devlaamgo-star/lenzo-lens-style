@@ -1,3 +1,8 @@
+# iPhone Duo / Air Series import
+- [x] Rename the Air section to "iPhone Duo / Air Series" and add the 55 supplied products (folder 31 absent in source) with own covers first, all 437 photos in order; 547 images byte-verified; prices, offers and model unchanged; desktop/mobile and add-to-cart verified.
+- [ ] Separate "iPhone Duo" model choice — the store has no such variant today; waits on the owner confirming it.
+- [ ] Deploy to skinup.ma — separate Cloudflare storefront needs the owner's deployment.
+
 # Camera product-page redesign
 - [x] Redesign all 72 camera product pages with supplied French copy, DH prices, preserved photos and offers; all 72 URLs verified.
 - [x] Connect four exact camera models across purchase, quick add, packs and checkout; desktop/mobile verified, 412 tests pass. Order validation preserves every model for all 72 designs; existing admin detail mapping retains the exact item model. No real order created and signed-in admin readback not verified.

@@ -1,0 +1,32 @@
+Update the existing iPhone Air section on SKINUP so its visible category/tab label becomes exactly:
+"iPhone Duo / Air Series"
+
+Use the attached image as the label/layout reference, while preserving SKINUP's branding and responsive design. This collection is for decorative CAMERA-AREA SKINS for the Duo / Air models, not full-back skins.
+
+IMPORT SCOPE AND COUNT
+- Treat the THREE attached ZIP parts as ONE collection. Read all three before making catalog changes; each part repeats the same complete products.json manifest. Combine their product asset folders.
+- The supplied archive actually contains 55 products and 437 photos. Although the requested count was 56, source folder 31 is absent. Import exactly the 55 supplied records; do not invent a 56th product or duplicate another design.
+- Use products.json as the authoritative mapping of names, descriptions, sort_order, stable import_key, SKU, and image paths. products.csv is a readable summary; image-map.csv maps every source image.
+- Add these products ONLY to the existing Air section, updated to "iPhone Duo / Air Series". Preserve existing products unless they are the same records identified by this batch's stable import keys. Make reruns update the same records without duplication.
+- Keep the previously imported 72 Pro / Pro Max camera products, other categories, historical orders, and customer data unchanged. The earlier instruction to replace the Pro camera catalog does not authorize deleting products for this new import.
+
+PRODUCT NAMES AND IMAGES
+- Use the supplied French product names and descriptions. Keep technical source filenames and import metadata out of customer-facing text.
+- For EVERY design, use its own 01-cover.webp as BOTH its main product-card image and the first product-gallery image. This is the matching two-overlapping-phone Duo / Air composition shown in the reference.
+- Product 001, Route d'Automne, uses the supplied golden autumn road cover. Do not apply its artwork to the other designs; each product uses its OWN matching cover.
+- Preserve every other gallery image and its supplied order. Do not mix files between products or treat responsive derivatives as extra gallery images.
+- Follow sort_order for the new batch, with Route d'Automne first. Original source folders skip 31 and end at 56; display order is consecutively 001–055.
+
+MODELS AND CURRENT STORE SETTINGS
+- Preserve the existing valid model-selection behavior. Where the store already supports separate "iPhone Duo" and "iPhone Air" variants, expose both clearly and retain their actual model/variant values in order details. The collection label alone does not establish compatibility: do not invent a model mapping, map either label to a Pro / Pro Max variant, or guess a generation number.
+- Reuse the existing Air section's current prices in DH, promotions, bundle offers, delivery fees, model-selection rules, and purchase flow. Renaming the section and importing the new designs must not change them.
+- Retain the existing Moroccan checkout, payment-at-delivery behavior, cart, and admin workflow. If a required model mapping or price cannot be derived from the current configuration, identify that specific missing value rather than inventing it.
+
+PERFORMANCE AND PRESENTATION
+- Upload the supplied optimized WebP assets to the site's existing durable storage and save their real URLs in the appropriate records. Never use temporary local paths as live image URLs.
+- Use the supplied 480/800 px responsive covers for product cards with srcset/sizes. Use the 1200 px cover for larger displays. Set width/height and preserve the full image and white background with object-fit: contain.
+- Load the initial visible row normally; lazy-load later product cards. Download gallery photos only when needed, rather than fetching all 437 photos on the category page.
+- Keep the same professional SKINUP product presentation, with French customer-facing text and prices in DH. Use only supported factual claims and actual review/sales data.
+
+VALIDATION
+Verify the updated category label on desktop and mobile, exactly 55 imported records from this batch, every product's own correct cover first, all 437 gallery images associated with their original products, and valid model selections appearing correctly in cart/order details. Confirm the previous 72-product collection and unrelated categories are unchanged. Report any missing files or required configuration before claiming completion, and state whether publishing is required for the live domain.

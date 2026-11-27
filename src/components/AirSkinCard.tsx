@@ -33,8 +33,12 @@ export function AirSkinCard({
       />
       <div className="relative aspect-square overflow-hidden bg-background">
         <img
-          src={skin.image}
-          alt={`${skin.name[lang]} — ${t("air.category")} ${skin.device}`}
+          src={skin.responsiveCover?.[0]?.url ?? skin.image}
+          srcSet={skin.responsiveCover?.map((cover) => `${cover.url} ${cover.width}w`).join(", ")}
+          sizes={skin.responsiveCover ? "(min-width: 1024px) 25vw, 50vw" : undefined}
+          width={skin.responsiveCover ? 1200 : undefined}
+          height={skin.responsiveCover ? 1200 : undefined}
+          alt={skin.altFr && lang === "fr" ? skin.altFr : `${skin.name[lang]} — ${t("air.category")} ${skin.device}`}
           loading={priority ? "eager" : "lazy"}
           className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
         />

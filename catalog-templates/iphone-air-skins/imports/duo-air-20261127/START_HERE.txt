@@ -1,0 +1,36 @@
+SKINUP — iPhone Duo / Air Series
+
+DOWNLOAD ALL THREE ZIP PARTS and give them to Lovable together with LOVABLE_PROMPT.txt.
+Alternatively, extract all three into the SAME directory; their product folders merge.
+Each ZIP repeats the same complete products.json master manifest, not a separate collection.
+
+CONTENTS
+- 55 supplied products, named in French and numbered 001–055.
+- 437 gallery photos, optimized as WebP at up to 1200 px longest edge.
+- 110 responsive cover derivatives, at 480 px and 800 px.
+- products.json: authoritative product/image mapping for the entire collection.
+- products.csv: readable product list.
+- image-map.csv: all original filenames mapped to optimized assets.
+- CATALOGUE.html: offline visual index; extract all three parts before opening.
+
+REFERENCE COVER
+The supplied golden-autumn-road image is product 001, Route d'Automne.
+Every product's own matching two-phone composition is named 01-cover.webp.
+It must be both the product-card image and the first gallery image.
+_responsive files are smaller cover derivatives, not extra gallery images.
+
+COUNT RECONCILIATION
+The user requested 56 products, but the supplied ZIP contains 55 product folders.
+Original folder numbering skips 31 and ends at 56. All 55 supplied products are included.
+No missing product was invented, duplicated, or substituted.
+
+OPTIMIZATION
+Source image bytes: 133,697,286
+Optimized image bytes including responsive covers: 34,196,740
+Image weight reduction: 74.42%
+Median 480 px card cover: 10.6 KiB.
+
+STORE SCOPE
+Rename the existing Air section to "iPhone Duo / Air Series" and add this collection there.
+Keep the existing prices and store configuration. Do not delete the previous 72-product collection.
+This package prepares the import; it does not itself modify or publish the live website.

@@ -56,8 +56,8 @@ const D = {
     "ملصق لعدسات الكاميرا",
     "Camera lens skin",
   ],
-  "air.nav": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
-  "air.title": ["Skins iPhone Air", "سكينات iPhone Air", "iPhone Air Skins"],
+  "air.nav": ["iPhone Duo / Air Series", "iPhone Duo / Air Series", "iPhone Duo / Air Series"],
+  "air.title": ["iPhone Duo / Air Series", "iPhone Duo / Air Series", "iPhone Duo / Air Series"],
   "air.sub": [
     "Découvrez des designs créés spécialement pour votre iPhone Air.",
     "اكتشف تصاميم مصممة خصيصًا لجهاز iPhone Air.",

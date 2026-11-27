@@ -18,7 +18,7 @@ const GROUPS: { label: string; items: readonly { id: string; slug: string; name:
   { label: "Stickers caméra", items: [...ARCHIVED_CAMERA_LENS_SKINS, ...CAMERA_LENS_SKINS] },
   { label: "Skins arrière & caméra", items: [...ARCHIVED_BACK_LENS_SKINS, ...BACK_LENS_SKINS] },
   { label: "Full body skins", items: FULL_BODY_SKINS },
-  { label: "Skins iPhone Air", items: IPHONE_AIR_SKINS },
+  { label: "iPhone Duo / Air Series", items: IPHONE_AIR_SKINS },
   
 ];
 

@@ -38,3 +38,4 @@
 - skinup.ma is served by a separately hosted Cloudflare copy (DNS outside Lovable) that forwards privileged admin/order calls to the Lovable backend through `/api/storefront`; every new privileged server function must be added to `STOREFRONT_OPERATIONS`/`ADMIN_OPERATIONS` and forward when `isLovableBackendConfigured()`, or it breaks on skinup.ma.
 
 - Camera-specific model choices live in `CAMERA_IPHONE_MODELS` and `modelsForCategory("lens")`; pack selectors reuse that list while cart/order lines retain the exact selected string, so new camera options do not change other categories or customizer geometry.
+- iPhone Duo / Air imports are generated into `src/data/iphone-air-duo-batch.ts` by the script saved beside their manifest in `catalog-templates/iphone-air-skins/imports/`, keyed by `import_key`; reruns update records instead of duplicating, and original Air designs stay appended unchanged.

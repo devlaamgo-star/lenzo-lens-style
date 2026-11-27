@@ -21,7 +21,7 @@ export const Route = createFileRoute("/iphone-air/$slug")({
       };
     }
     const { skin } = loaderData;
-    const title = `${skin.name.fr} — Skin iPhone Air | SKINUP`;
+    const title = `${skin.name.fr} — iPhone Duo / Air Series | SKINUP`;
     return {
       meta: [
         { title },
@@ -40,6 +40,8 @@ function AirProductPage() {
   const { skin } = Route.useLoaderData();
   useEffect(() => { metaViewContent(skin.id, { content_ids: [skin.id], content_type: "product", content_name: skin.name.fr, value: AIR_SKIN_PRICE, currency: "MAD" }); }, [skin.id]);
   const { t, lang } = useI18n();
+  const [active, setActive] = useState(0);
+  useEffect(() => setActive(0), [skin.id]);
 
   const related = IPHONE_AIR_SKINS.filter((s) => s.id !== skin.id).slice(0, 4);
 
@@ -63,12 +65,33 @@ function AirProductPage() {
 
       <section className="section-y">
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="overflow-hidden rounded-3xl border border-border bg-card">
-            <img
-              src={skin.image}
-              alt={`${skin.name[lang]} — ${t("air.category")} ${skin.device}`}
-              className="aspect-square w-full object-contain p-6"
-            />
+          <div className="min-w-0">
+            <div className="overflow-hidden rounded-3xl border border-border bg-background">
+              <img
+                src={skin.gallery[active] ?? skin.image}
+                alt={`${skin.name[lang]} — ${t("air.category")} ${skin.device}, photo ${active + 1}`}
+                width={1200}
+                height={1200}
+                fetchPriority="high"
+                className="aspect-square w-full object-contain"
+              />
+            </div>
+            {skin.gallery.length > 1 && (
+              <div className="mt-4 flex gap-2 overflow-x-auto pb-2" aria-label="Photos">
+                {skin.gallery.map((image, i) => (
+                  <button
+                    key={image}
+                    type="button"
+                    onClick={() => setActive(i)}
+                    aria-label={`Photo ${i + 1}`}
+                    aria-pressed={i === active}
+                    className={`h-20 w-20 shrink-0 overflow-hidden rounded-lg border bg-background p-1 ${i === active ? "border-primary ring-1 ring-primary" : "border-border"}`}
+                  >
+                    <img src={image} alt="" loading="lazy" className="h-full w-full object-contain" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col items-start gap-4">

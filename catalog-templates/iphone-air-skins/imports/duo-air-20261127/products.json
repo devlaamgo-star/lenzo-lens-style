@@ -1,0 +1,5674 @@
+{
+  "schema_version": 1,
+  "batch_id": "skinup-duo-air-20261127",
+  "image_positions_are_one_based": true,
+  "stats": {
+    "product_count": 55,
+    "source_image_count": 437,
+    "unique_gallery_image_count": 437,
+    "removed_exact_duplicate_image_count": 0,
+    "responsive_variant_count": 110,
+    "optimized_image_count": 547,
+    "source_image_bytes": 133697286,
+    "optimized_image_bytes": 34196740,
+    "gallery_longest_edge_max": 1200,
+    "responsive_cover_edges": [
+      480,
+      800,
+      1200
+    ],
+    "format": "WebP",
+    "image_bytes_reduction_percent": 74.42,
+    "median_480_cover_bytes": 10874
+  },
+  "commercial_settings": "Reuse current Air category pricing and map the Duo / Air options to actual store variants. No prices or compatibility are asserted by this asset catalog.",
+  "products": [
+    {
+      "import_key": "skinup-duo-air-20261127-b002",
+      "sku": "SK-DA-B002",
+      "source_product_code": "B002",
+      "product_type": "camera_skin",
+      "name": "Route d’Automne",
+      "title_fr": "Skin caméra Duo / Air – Route d’Automne",
+      "description_fr": "Route sinueuse bordée d'arbres aux feuilles dorées, sous un ciel sombre traversé de nuages clairs.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-route-dautomne",
+      "sort_order": 1,
+      "source_folder": "1",
+      "primary_image": "products/001-route-dautomne/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/001-route-dautomne/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/001-route-dautomne/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/001-route-dautomne/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/001-route-dautomne/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B002-golden-autumn-road-01.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-02.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-03.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-04.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-06.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-07.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-08.jpeg"
+        },
+        {
+          "path": "products/001-route-dautomne/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B002-golden-autumn-road-09.jpeg"
+        }
+      ],
+      "tags": [
+        "automne",
+        "paysage",
+        "doré"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Route d’Automne présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b003",
+      "sku": "SK-DA-B003",
+      "source_product_code": "B003",
+      "product_type": "camera_skin",
+      "name": "Doodles Pop",
+      "title_fr": "Skin caméra Duo / Air – Doodles Pop",
+      "description_fr": "Dessins spontanés noirs sur fond blanc, ponctués de touches colorées et de petits motifs graphiques.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-doodles-pop",
+      "sort_order": 2,
+      "source_folder": "2",
+      "primary_image": "products/002-doodles-pop/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/002-doodles-pop/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/002-doodles-pop/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/002-doodles-pop/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/002-doodles-pop/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B003-ink-street-doodles-01.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-02.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-03.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-04.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-06.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-07.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-08.jpeg"
+        },
+        {
+          "path": "products/002-doodles-pop/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B003-ink-street-doodles-09.jpeg"
+        }
+      ],
+      "tags": [
+        "doodle",
+        "blanc",
+        "multicolore"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Doodles Pop présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b004",
+      "sku": "SK-DA-B004",
+      "source_product_code": "B004",
+      "product_type": "camera_skin",
+      "name": "Graffiti Néon",
+      "title_fr": "Skin caméra Duo / Air – Graffiti Néon",
+      "description_fr": "Entrelacs de formes et de lettres graffiti aux couleurs vives, mêlant rose, bleu, orange et jaune.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-graffiti-neon",
+      "sort_order": 3,
+      "source_folder": "3",
+      "primary_image": "products/003-graffiti-neon/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/003-graffiti-neon/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/003-graffiti-neon/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/003-graffiti-neon/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/003-graffiti-neon/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B004-neon-graffiti-01.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-02.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-03.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-04.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-06.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-07.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-08.jpeg"
+        },
+        {
+          "path": "products/003-graffiti-neon/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B004-neon-graffiti-09.jpeg"
+        }
+      ],
+      "tags": [
+        "graffiti",
+        "néon",
+        "multicolore"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Graffiti Néon présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b005",
+      "sku": "SK-DA-B005",
+      "source_product_code": "B005",
+      "product_type": "camera_skin",
+      "name": "Mosaïque Orange",
+      "title_fr": "Skin caméra Duo / Air – Mosaïque Orange",
+      "description_fr": "Composition géométrique de triangles, cercles et aplats orange, rouge, crème et noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-mosaique-orange",
+      "sort_order": 4,
+      "source_folder": "4",
+      "primary_image": "products/004-mosaique-orange/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/004-mosaique-orange/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/004-mosaique-orange/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/004-mosaique-orange/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/004-mosaique-orange/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B005-geometric-playground-01.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-02.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-03.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-04.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-06.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-07.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-08.jpeg"
+        },
+        {
+          "path": "products/004-mosaique-orange/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B005-geometric-playground-09.jpeg"
+        }
+      ],
+      "tags": [
+        "géométrique",
+        "orange",
+        "abstrait"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Mosaïque Orange présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b006",
+      "sku": "SK-DA-B006",
+      "source_product_code": "B006",
+      "product_type": "camera_skin",
+      "name": "Nuages Pastel",
+      "title_fr": "Skin caméra Duo / Air – Nuages Pastel",
+      "description_fr": "Grands nuages crème et rosés flottant dans un ciel bleu clair.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-nuages-pastel",
+      "sort_order": 5,
+      "source_folder": "5",
+      "primary_image": "products/005-nuages-pastel/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/005-nuages-pastel/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/005-nuages-pastel/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/005-nuages-pastel/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/005-nuages-pastel/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B006-blue-sky-clouds-01.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-02.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-03.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-04.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-06.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-07.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-08.jpeg"
+        },
+        {
+          "path": "products/005-nuages-pastel/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B006-blue-sky-clouds-09.jpeg"
+        }
+      ],
+      "tags": [
+        "nuages",
+        "ciel",
+        "pastel"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Nuages Pastel présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b007",
+      "sku": "SK-DA-B007",
+      "source_product_code": "B007",
+      "product_type": "camera_skin",
+      "name": "Oiseaux du Large",
+      "title_fr": "Skin caméra Duo / Air – Oiseaux du Large",
+      "description_fr": "Petits oiseaux blancs au-dessus d'une mer bleue, près d'un rivage clair aux contours arrondis.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-oiseaux-du-large",
+      "sort_order": 6,
+      "source_folder": "6",
+      "primary_image": "products/006-oiseaux-du-large/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/006-oiseaux-du-large/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/006-oiseaux-du-large/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/006-oiseaux-du-large/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/006-oiseaux-du-large/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B007-seabirds-at-sea-01.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-02.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-03.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-04.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-06.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-07.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-08.jpeg"
+        },
+        {
+          "path": "products/006-oiseaux-du-large/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B007-seabirds-at-sea-09.jpeg"
+        }
+      ],
+      "tags": [
+        "mer",
+        "oiseaux",
+        "bleu"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Oiseaux du Large présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b008",
+      "sku": "SK-DA-B008",
+      "source_product_code": "B008",
+      "product_type": "camera_skin",
+      "name": "Totems Pop",
+      "title_fr": "Skin caméra Duo / Air – Totems Pop",
+      "description_fr": "Formes et signes graphiques superposés dans des tons orange, rose, jaune, gris et noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-totems-pop",
+      "sort_order": 7,
+      "source_folder": "7",
+      "primary_image": "products/007-totems-pop/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/007-totems-pop/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/007-totems-pop/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/007-totems-pop/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/007-totems-pop/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B008-colorful-totems-01.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-02.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-03.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-04.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-06.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-07.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-08.jpeg"
+        },
+        {
+          "path": "products/007-totems-pop/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B008-colorful-totems-09.jpeg"
+        }
+      ],
+      "tags": [
+        "abstrait",
+        "graphique",
+        "multicolore"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Totems Pop présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b009",
+      "sku": "SK-DA-B009",
+      "source_product_code": "B009",
+      "product_type": "camera_skin",
+      "name": "Cassettes Rétro",
+      "title_fr": "Skin caméra Duo / Air – Cassettes Rétro",
+      "description_fr": "Accumulation de cassettes audio illustrées dans des tons orange, bleu et vert.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-cassettes-retro",
+      "sort_order": 8,
+      "source_folder": "8",
+      "primary_image": "products/008-cassettes-retro/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/008-cassettes-retro/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/008-cassettes-retro/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/008-cassettes-retro/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/008-cassettes-retro/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B009-retro-cassettes-01.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-02.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-03.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-04.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-06.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-07.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-08.jpeg"
+        },
+        {
+          "path": "products/008-cassettes-retro/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B009-retro-cassettes-09.jpeg"
+        }
+      ],
+      "tags": [
+        "cassette",
+        "musique",
+        "rétro"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Cassettes Rétro présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b010",
+      "sku": "SK-DA-B010",
+      "source_product_code": "B010",
+      "product_type": "camera_skin",
+      "name": "Soleil Tourbillon",
+      "title_fr": "Skin caméra Duo / Air – Soleil Tourbillon",
+      "description_fr": "Petit soleil jaune souriant au milieu de volutes et de nuages dessinés en blanc, gris, rouge et bleu.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-soleil-tourbillon",
+      "sort_order": 9,
+      "source_folder": "9",
+      "primary_image": "products/009-soleil-tourbillon/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/009-soleil-tourbillon/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/009-soleil-tourbillon/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/009-soleil-tourbillon/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/009-soleil-tourbillon/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B010-cloud-surge-01.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-02.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-03.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-04.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-06.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-07.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-08.jpeg"
+        },
+        {
+          "path": "products/009-soleil-tourbillon/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B010-cloud-surge-09.jpeg"
+        }
+      ],
+      "tags": [
+        "soleil",
+        "nuages",
+        "illustration"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Soleil Tourbillon présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b011",
+      "sku": "SK-DA-B011",
+      "source_product_code": "B011",
+      "product_type": "camera_skin",
+      "name": "Montagnes de Jade",
+      "title_fr": "Skin caméra Duo / Air – Montagnes de Jade",
+      "description_fr": "Succession de montagnes et de forêts vertes, enveloppées de bandes de brume blanche.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-montagnes-de-jade",
+      "sort_order": 10,
+      "source_folder": "10",
+      "primary_image": "products/010-montagnes-de-jade/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/010-montagnes-de-jade/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/010-montagnes-de-jade/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/010-montagnes-de-jade/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/010-montagnes-de-jade/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B011-misty-green-mountains-01.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-02.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-03.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-04.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-06.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-07.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-08.jpeg"
+        },
+        {
+          "path": "products/010-montagnes-de-jade/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B011-misty-green-mountains-09.jpeg"
+        }
+      ],
+      "tags": [
+        "montagne",
+        "forêt",
+        "vert"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Montagnes de Jade présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b012",
+      "sku": "SK-DA-B012",
+      "source_product_code": "B012",
+      "product_type": "camera_skin",
+      "name": "Soleil des Sommets",
+      "title_fr": "Skin caméra Duo / Air – Soleil des Sommets",
+      "description_fr": "Grand soleil orange au-dessus de sommets clairs aux ombres bleues et aux touches rosées.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-soleil-des-sommets",
+      "sort_order": 11,
+      "source_folder": "11",
+      "primary_image": "products/011-soleil-des-sommets/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/011-soleil-des-sommets/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/011-soleil-des-sommets/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/011-soleil-des-sommets/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/011-soleil-des-sommets/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B012-orange-sun-mountains-01.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-02.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-03.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-04.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-06.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-07.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-08.jpeg"
+        },
+        {
+          "path": "products/011-soleil-des-sommets/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B012-orange-sun-mountains-09.jpeg"
+        }
+      ],
+      "tags": [
+        "montagne",
+        "soleil",
+        "orange"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Soleil des Sommets présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b013",
+      "sku": "SK-DA-B013",
+      "source_product_code": "B013",
+      "product_type": "camera_skin",
+      "name": "Étoiles Rétro",
+      "title_fr": "Skin caméra Duo / Air – Étoiles Rétro",
+      "description_fr": "Étoiles dorées sur fond bleu nuit texturé, accompagnées de bandes crème et rouges à l'allure vintage.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-etoiles-retro",
+      "sort_order": 12,
+      "source_folder": "12",
+      "primary_image": "products/012-etoiles-retro/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/012-etoiles-retro/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/012-etoiles-retro/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/012-etoiles-retro/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/012-etoiles-retro/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B013-vintage-stars-and-stripes-01.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-02.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-03.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-04.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-06.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-07.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-08.jpeg"
+        },
+        {
+          "path": "products/012-etoiles-retro/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B013-vintage-stars-and-stripes-09.jpeg"
+        }
+      ],
+      "tags": [
+        "étoiles",
+        "vintage",
+        "bleu nuit"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Étoiles Rétro présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b014",
+      "sku": "SK-DA-B014",
+      "source_product_code": "B014",
+      "product_type": "camera_skin",
+      "name": "Grande Vague Azur",
+      "title_fr": "Skin caméra Duo / Air – Grande Vague Azur",
+      "description_fr": "Vagues turquoise et bleues aux crêtes d'écume blanche dans une composition illustrée dynamique.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-grande-vague-azur",
+      "sort_order": 13,
+      "source_folder": "13",
+      "primary_image": "products/013-grande-vague-azur/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/013-grande-vague-azur/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/013-grande-vague-azur/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/013-grande-vague-azur/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/013-grande-vague-azur/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B014-azure-great-wave-01.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-02.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-03.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-04.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-06.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-07.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-08.jpeg"
+        },
+        {
+          "path": "products/013-grande-vague-azur/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B014-azure-great-wave-09.jpeg"
+        }
+      ],
+      "tags": [
+        "vague",
+        "océan",
+        "turquoise"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Grande Vague Azur présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b015",
+      "sku": "SK-DA-B015",
+      "source_product_code": "B015",
+      "product_type": "camera_skin",
+      "name": "Carte Nocturne",
+      "title_fr": "Skin caméra Duo / Air – Carte Nocturne",
+      "description_fr": "Carte sombre parcourue de lignes fines, de tracés et de petites inscriptions grises et blanches.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-carte-nocturne",
+      "sort_order": 14,
+      "source_folder": "14",
+      "primary_image": "products/014-carte-nocturne/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/014-carte-nocturne/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/014-carte-nocturne/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/014-carte-nocturne/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/014-carte-nocturne/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B015-dark-contour-map-01.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-02.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-03.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-04.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-06.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-07.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-08.jpeg"
+        },
+        {
+          "path": "products/014-carte-nocturne/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B015-dark-contour-map-09.jpeg"
+        }
+      ],
+      "tags": [
+        "carte",
+        "noir",
+        "graphique"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Carte Nocturne présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b016",
+      "sku": "SK-DA-B016",
+      "source_product_code": "B016",
+      "product_type": "camera_skin",
+      "name": "Mouton des Prés",
+      "title_fr": "Skin caméra Duo / Air – Mouton des Prés",
+      "description_fr": "Petit mouton blanc aux grands yeux, debout dans l'herbe verte sur un fond crème.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-mouton-des-pres",
+      "sort_order": 15,
+      "source_folder": "15",
+      "primary_image": "products/015-mouton-des-pres/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/015-mouton-des-pres/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/015-mouton-des-pres/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/015-mouton-des-pres/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/015-mouton-des-pres/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B016-woolly-meadow-01.jpeg"
+        },
+        {
+          "path": "products/015-mouton-des-pres/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B016-woolly-meadow-02.jpeg"
+        },
+        {
+          "path": "products/015-mouton-des-pres/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B016-woolly-meadow-03.jpeg"
+        },
+        {
+          "path": "products/015-mouton-des-pres/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B016-woolly-meadow-04.jpeg"
+        },
+        {
+          "path": "products/015-mouton-des-pres/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B016-woolly-meadow-06.jpeg"
+        },
+        {
+          "path": "products/015-mouton-des-pres/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B016-woolly-meadow-07.jpeg"
+        },
+        {
+          "path": "products/015-mouton-des-pres/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B016-woolly-meadow-08.jpeg"
+        }
+      ],
+      "tags": [
+        "mouton",
+        "illustration",
+        "crème"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Mouton des Prés présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b017",
+      "sku": "SK-DA-B017",
+      "source_product_code": "B017",
+      "product_type": "camera_skin",
+      "name": "Chat Pattes en l’Air",
+      "title_fr": "Skin caméra Duo / Air – Chat Pattes en l’Air",
+      "description_fr": "Chat rayé blanc et orange levant les pattes, bouche grande ouverte, sur fond bleu foncé.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-chat-pattes-en-lair",
+      "sort_order": 16,
+      "source_folder": "16",
+      "primary_image": "products/016-chat-pattes-en-lair/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/016-chat-pattes-en-lair/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/016-chat-pattes-en-lair/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B017-paws-up-cat-01.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-02.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-03.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-04.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-06.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-07.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-08.jpeg"
+        },
+        {
+          "path": "products/016-chat-pattes-en-lair/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B017-paws-up-cat-09.jpeg"
+        }
+      ],
+      "tags": [
+        "chat",
+        "humour",
+        "bleu"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Chat Pattes en l’Air présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b018",
+      "sku": "SK-DA-B018",
+      "source_product_code": "B018",
+      "product_type": "camera_skin",
+      "name": "Chat Vert Malicieux",
+      "title_fr": "Skin caméra Duo / Air – Chat Vert Malicieux",
+      "description_fr": "Chat vert au cou allongé et au sourire malicieux, faisant un clin d'œil sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-chat-vert-malicieux",
+      "sort_order": 17,
+      "source_folder": "17",
+      "primary_image": "products/017-chat-vert-malicieux/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/017-chat-vert-malicieux/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/017-chat-vert-malicieux/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B018-longneck-cat-01.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-02.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-03.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-04.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-06.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-07.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-08.jpeg"
+        },
+        {
+          "path": "products/017-chat-vert-malicieux/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B018-longneck-cat-09.jpeg"
+        }
+      ],
+      "tags": [
+        "chat",
+        "vert",
+        "noir"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Chat Vert Malicieux présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b019",
+      "sku": "SK-DA-B019",
+      "source_product_code": "B019",
+      "product_type": "camera_skin",
+      "name": "Chat Fréquence Rouge",
+      "title_fr": "Skin caméra Duo / Air – Chat Fréquence Rouge",
+      "description_fr": "Chat en sweat rouge, portant des lunettes de soleil et un casque audio autour du cou sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-chat-frequence-rouge",
+      "sort_order": 18,
+      "source_folder": "18",
+      "primary_image": "products/018-chat-frequence-rouge/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/018-chat-frequence-rouge/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/018-chat-frequence-rouge/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B019-cool-cat-frequencies-01.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-02.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-03.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-04.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-06.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-07.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-08.jpeg"
+        },
+        {
+          "path": "products/018-chat-frequence-rouge/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B019-cool-cat-frequencies-09.jpeg"
+        }
+      ],
+      "tags": [
+        "chat",
+        "musique",
+        "rouge"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Chat Fréquence Rouge présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b020",
+      "sku": "SK-DA-B020",
+      "source_product_code": "B020",
+      "product_type": "camera_skin",
+      "name": "Phare Étoilé",
+      "title_fr": "Skin caméra Duo / Air – Phare Étoilé",
+      "description_fr": "Phare au bord de la mer, sous un ciel bleu animé de tourbillons et d'étoiles jaunes.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-phare-etoile",
+      "sort_order": 19,
+      "source_folder": "19",
+      "primary_image": "products/019-phare-etoile/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/019-phare-etoile/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/019-phare-etoile/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/019-phare-etoile/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/019-phare-etoile/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B020-starry-beacon-01.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-02.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-03.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-04.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-06.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-07.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-08.jpeg"
+        },
+        {
+          "path": "products/019-phare-etoile/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B020-starry-beacon-09.jpeg"
+        }
+      ],
+      "tags": [
+        "phare",
+        "nuit",
+        "bleu"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Phare Étoilé présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b021",
+      "sku": "SK-DA-B021",
+      "source_product_code": "B021",
+      "product_type": "camera_skin",
+      "name": "Chat aux Lunettes",
+      "title_fr": "Skin caméra Duo / Air – Chat aux Lunettes",
+      "description_fr": "Portrait de chat gris portant des lunettes rondes, la tête inclinée vers le haut sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-chat-aux-lunettes",
+      "sort_order": 20,
+      "source_folder": "20",
+      "primary_image": "products/020-chat-aux-lunettes/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/020-chat-aux-lunettes/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/020-chat-aux-lunettes/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B021-cheeky-sunglasses-cat-01.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-02.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-03.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-04.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-06.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-07.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-08.jpeg"
+        },
+        {
+          "path": "products/020-chat-aux-lunettes/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B021-cheeky-sunglasses-cat-09.jpeg"
+        }
+      ],
+      "tags": [
+        "chat",
+        "lunettes",
+        "noir et blanc"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Chat aux Lunettes présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b001",
+      "sku": "SK-DA-B001",
+      "source_product_code": "B001",
+      "product_type": "camera_skin",
+      "name": "Marguerite Azur",
+      "title_fr": "Skin caméra Duo / Air – Marguerite Azur",
+      "description_fr": "Une fleur blanche au cœur jaune se détache sur un fond bleu ciel.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-marguerite-azur",
+      "sort_order": 21,
+      "source_folder": "21",
+      "primary_image": "products/021-marguerite-azur/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/021-marguerite-azur/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/021-marguerite-azur/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/021-marguerite-azur/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/021-marguerite-azur/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B001-blue-sky-cosmos-01.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-02.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-03.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-04.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-06.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-07.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-08.jpeg"
+        },
+        {
+          "path": "products/021-marguerite-azur/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B001-blue-sky-cosmos-09.jpeg"
+        }
+      ],
+      "tags": [
+        "fleur",
+        "bleu ciel",
+        "minimaliste"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Marguerite Azur présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b022",
+      "sku": "SK-DA-B022",
+      "source_product_code": "B022",
+      "product_type": "camera_skin",
+      "name": "Faille Violette",
+      "title_fr": "Skin caméra Duo / Air – Faille Violette",
+      "description_fr": "Un anneau lumineux violet traversé d'un trait vertical sur un fond cosmique sombre.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-faille-violette",
+      "sort_order": 22,
+      "source_folder": "22",
+      "primary_image": "products/022-faille-violette/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/022-faille-violette/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/022-faille-violette/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/022-faille-violette/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/022-faille-violette/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B022-violet-event-horizon-01.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-02.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-03.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-04.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-06.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-07.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-08.jpeg"
+        },
+        {
+          "path": "products/022-faille-violette/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B022-violet-event-horizon-09.jpeg"
+        }
+      ],
+      "tags": [
+        "cosmos",
+        "violet",
+        "abstrait"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Faille Violette présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b023",
+      "sku": "SK-DA-B023",
+      "source_product_code": "B023",
+      "product_type": "camera_skin",
+      "name": "Capybara Incognito",
+      "title_fr": "Skin caméra Duo / Air – Capybara Incognito",
+      "description_fr": "Un capybara en noir et blanc porte des lunettes de soleil sur un fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-capybara-incognito",
+      "sort_order": 23,
+      "source_folder": "23",
+      "primary_image": "products/023-capybara-incognito/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/023-capybara-incognito/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/023-capybara-incognito/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/023-capybara-incognito/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/023-capybara-incognito/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B023-sunglasses-capybara-01.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-02.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-03.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-04.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-06.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-07.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-08.jpeg"
+        },
+        {
+          "path": "products/023-capybara-incognito/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B023-sunglasses-capybara-09.jpeg"
+        }
+      ],
+      "tags": [
+        "capybara",
+        "lunettes",
+        "animal"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Capybara Incognito présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b024",
+      "sku": "SK-DA-B024",
+      "source_product_code": "B024",
+      "product_type": "camera_skin",
+      "name": "Chat Roux Graphique",
+      "title_fr": "Skin caméra Duo / Air – Chat Roux Graphique",
+      "description_fr": "Un chat roux aux formes anguleuses et au regard amusé sur un fond crème.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-chat-roux-graphique",
+      "sort_order": 24,
+      "source_folder": "24",
+      "primary_image": "products/024-chat-roux-graphique/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/024-chat-roux-graphique/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/024-chat-roux-graphique/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/024-chat-roux-graphique/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/024-chat-roux-graphique/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B024-orange-cat-artist-01.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-02.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-03.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-04.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-06.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-07.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-08.jpeg"
+        },
+        {
+          "path": "products/024-chat-roux-graphique/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B024-orange-cat-artist-09.jpeg"
+        }
+      ],
+      "tags": [
+        "chat",
+        "roux",
+        "illustration"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Chat Roux Graphique présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b025",
+      "sku": "SK-DA-B025",
+      "source_product_code": "B025",
+      "product_type": "camera_skin",
+      "name": "Grenouille Détente",
+      "title_fr": "Skin caméra Duo / Air – Grenouille Détente",
+      "description_fr": "Une grenouille en lunettes de soleil tient une boisson sur un fond vert clair.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-grenouille-detente",
+      "sort_order": 25,
+      "source_folder": "25",
+      "primary_image": "products/025-grenouille-detente/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/025-grenouille-detente/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/025-grenouille-detente/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/025-grenouille-detente/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/025-grenouille-detente/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B025-cool-frog-tea-01.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-02.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-03.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-04.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-06.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-07.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-08.jpeg"
+        },
+        {
+          "path": "products/025-grenouille-detente/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B025-cool-frog-tea-09.jpeg"
+        }
+      ],
+      "tags": [
+        "grenouille",
+        "vert",
+        "illustration"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Grenouille Détente présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b026",
+      "sku": "SK-DA-B026",
+      "source_product_code": "B026",
+      "product_type": "camera_skin",
+      "name": "Crâne Carmin",
+      "title_fr": "Skin caméra Duo / Air – Crâne Carmin",
+      "description_fr": "Un crâne illustré au centre d'éclats rouges et de touches bleu pétrole.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-crane-carmin",
+      "sort_order": 26,
+      "source_folder": "26",
+      "primary_image": "products/026-crane-carmin/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/026-crane-carmin/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/026-crane-carmin/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/026-crane-carmin/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/026-crane-carmin/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B026-crimson-skull-01.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-02.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-03.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-04.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-06.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-07.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-08.jpeg"
+        },
+        {
+          "path": "products/026-crane-carmin/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B026-crimson-skull-09.jpeg"
+        }
+      ],
+      "tags": [
+        "crâne",
+        "rouge",
+        "graphique"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Crâne Carmin présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b027",
+      "sku": "SK-DA-B027",
+      "source_product_code": "B027",
+      "product_type": "camera_skin",
+      "name": "Voyageur Cosmique",
+      "title_fr": "Skin caméra Duo / Air – Voyageur Cosmique",
+      "description_fr": "Un petit personnage spatial entouré de planètes et d'éclats bleus et violets sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-voyageur-cosmique",
+      "sort_order": 27,
+      "source_folder": "27",
+      "primary_image": "products/027-voyageur-cosmique/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/027-voyageur-cosmique/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/027-voyageur-cosmique/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/027-voyageur-cosmique/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/027-voyageur-cosmique/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B027-cosmic-wanderer-01.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-02.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-03.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-04.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-06.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-07.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-08.jpeg"
+        },
+        {
+          "path": "products/027-voyageur-cosmique/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B027-cosmic-wanderer-09.jpeg"
+        }
+      ],
+      "tags": [
+        "cosmos",
+        "planètes",
+        "multicolore"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Voyageur Cosmique présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b028",
+      "sku": "SK-DA-B028",
+      "source_product_code": "B028",
+      "product_type": "camera_skin",
+      "name": "Tigre dans l'Azur",
+      "title_fr": "Skin caméra Duo / Air – Tigre dans l'Azur",
+      "description_fr": "Un tigre au regard frontal apparaît parmi des nuages blancs sur un fond bleu vif.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-tigre-dans-l-azur",
+      "sort_order": 28,
+      "source_folder": "28",
+      "primary_image": "products/028-tigre-dans-l-azur/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/028-tigre-dans-l-azur/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/028-tigre-dans-l-azur/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B028-tiger-up-close-01.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-02.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-03.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-04.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-06.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-07.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-08.jpeg"
+        },
+        {
+          "path": "products/028-tigre-dans-l-azur/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B028-tiger-up-close-09.jpeg"
+        }
+      ],
+      "tags": [
+        "tigre",
+        "bleu",
+        "animal"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Tigre dans l'Azur présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b029",
+      "sku": "SK-DA-B029",
+      "source_product_code": "B029",
+      "product_type": "camera_skin",
+      "name": "Échappée dans le Désert",
+      "title_fr": "Skin caméra Duo / Air – Échappée dans le Désert",
+      "description_fr": "Une petite voiture bleue roule sur une route droite entre des paysages désertiques orangés.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-echappee-dans-le-desert",
+      "sort_order": 29,
+      "source_folder": "29",
+      "primary_image": "products/029-echappee-dans-le-desert/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/029-echappee-dans-le-desert/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/029-echappee-dans-le-desert/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B029-open-road-blue-01 (1).jpeg"
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B029-open-road-blue-02 (1).jpeg"
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B029-open-road-blue-03 (1).jpeg"
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B029-open-road-blue-04 (1).jpeg"
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B029-open-road-blue-06 (1).jpeg"
+        },
+        {
+          "path": "products/029-echappee-dans-le-desert/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B029-open-road-blue-08.jpeg"
+        }
+      ],
+      "tags": [
+        "voiture",
+        "route",
+        "désert"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Échappée dans le Désert présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b030",
+      "sku": "SK-DA-B030",
+      "source_product_code": "B030",
+      "product_type": "camera_skin",
+      "name": "Départ sous la Lune",
+      "title_fr": "Skin caméra Duo / Air – Départ sous la Lune",
+      "description_fr": "La silhouette d'un avion passe devant une pleine lune dorée au-dessus d'une ville nocturne.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-depart-sous-la-lune",
+      "sort_order": 30,
+      "source_folder": "30",
+      "primary_image": "products/030-depart-sous-la-lune/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/030-depart-sous-la-lune/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/030-depart-sous-la-lune/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B030-golden-moon-departure-01.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-02.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-03.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-04.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-06.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-07.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-08.jpeg"
+        },
+        {
+          "path": "products/030-depart-sous-la-lune/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B030-golden-moon-departure-09.jpeg"
+        }
+      ],
+      "tags": [
+        "avion",
+        "lune",
+        "nuit"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Départ sous la Lune présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b031",
+      "sku": "SK-DA-B031",
+      "source_product_code": "B031",
+      "product_type": "camera_skin",
+      "name": "Rosace Aquarelle",
+      "title_fr": "Skin caméra Duo / Air – Rosace Aquarelle",
+      "description_fr": "Une rosace florale multicolore se détache sur des nuées bleues et crème à l'effet aquarelle.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-rosace-aquarelle",
+      "sort_order": 31,
+      "source_folder": "32",
+      "primary_image": "products/031-rosace-aquarelle/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/031-rosace-aquarelle/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/031-rosace-aquarelle/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/031-rosace-aquarelle/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/031-rosace-aquarelle/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B031-watercolor-bloom-01.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-02.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-03.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-04.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-06.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-07.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-08.jpeg"
+        },
+        {
+          "path": "products/031-rosace-aquarelle/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B031-watercolor-bloom-09.jpeg"
+        }
+      ],
+      "tags": [
+        "rosace",
+        "aquarelle",
+        "multicolore"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Rosace Aquarelle présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b032",
+      "sku": "SK-DA-B032",
+      "source_product_code": "B032",
+      "product_type": "camera_skin",
+      "name": "Muse Pop Art",
+      "title_fr": "Skin caméra Duo / Air – Muse Pop Art",
+      "description_fr": "Un portrait féminin aux lèvres rouges et aux lunettes sombres sur un fond à pois jaunes et bleus.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-muse-pop-art",
+      "sort_order": 32,
+      "source_folder": "33",
+      "primary_image": "products/032-muse-pop-art/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/032-muse-pop-art/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/032-muse-pop-art/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/032-muse-pop-art/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/032-muse-pop-art/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B032-pop-art-red-lips-01.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-02.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-03.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-04.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-06.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-07.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-08.jpeg"
+        },
+        {
+          "path": "products/032-muse-pop-art/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B032-pop-art-red-lips-09.jpeg"
+        }
+      ],
+      "tags": [
+        "portrait",
+        "pop art",
+        "jaune"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Muse Pop Art présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b033",
+      "sku": "SK-DA-B033",
+      "source_product_code": "B033",
+      "product_type": "camera_skin",
+      "name": "Galop Argenté",
+      "title_fr": "Skin caméra Duo / Air – Galop Argenté",
+      "description_fr": "Un cheval clair lancé au galop dans un paysage gris en noir et blanc.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-galop-argente",
+      "sort_order": 33,
+      "source_folder": "34",
+      "primary_image": "products/033-galop-argente/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/033-galop-argente/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/033-galop-argente/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/033-galop-argente/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/033-galop-argente/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B033-silver-gallop-01.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-02.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-03.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-04.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-06.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-07.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-08.jpeg"
+        },
+        {
+          "path": "products/033-galop-argente/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B033-silver-gallop-09.jpeg"
+        }
+      ],
+      "tags": [
+        "cheval",
+        "noir et blanc",
+        "animal"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Galop Argenté présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b034",
+      "sku": "SK-DA-B034",
+      "source_product_code": "B034",
+      "product_type": "camera_skin",
+      "name": "Cerf de Minuit",
+      "title_fr": "Skin caméra Duo / Air – Cerf de Minuit",
+      "description_fr": "Un cerf aux grands bois se détache sur un fond noir profond.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-cerf-de-minuit",
+      "sort_order": 34,
+      "source_folder": "35",
+      "primary_image": "products/034-cerf-de-minuit/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/034-cerf-de-minuit/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/034-cerf-de-minuit/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/034-cerf-de-minuit/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/034-cerf-de-minuit/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B034-midnight-stag-01.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-02.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-03.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-04.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-06.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-07.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-08.jpeg"
+        },
+        {
+          "path": "products/034-cerf-de-minuit/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B034-midnight-stag-09.jpeg"
+        }
+      ],
+      "tags": [
+        "cerf",
+        "noir",
+        "animal"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Cerf de Minuit présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b035",
+      "sku": "SK-DA-B035",
+      "source_product_code": "B035",
+      "product_type": "camera_skin",
+      "name": "Montgolfière Océan",
+      "title_fr": "Skin caméra Duo / Air – Montgolfière Océan",
+      "description_fr": "Une montgolfière rayée de noir et de blanc survole une mer bleu sombre.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-montgolfiere-ocean",
+      "sort_order": 35,
+      "source_folder": "36",
+      "primary_image": "products/035-montgolfiere-ocean/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/035-montgolfiere-ocean/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/035-montgolfiere-ocean/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B035-ocean-balloon-01.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-02.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-03.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-04.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-06.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-07.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-08.jpeg"
+        },
+        {
+          "path": "products/035-montgolfiere-ocean/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B035-ocean-balloon-09.jpeg"
+        }
+      ],
+      "tags": [
+        "montgolfière",
+        "océan",
+        "bleu"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Montgolfière Océan présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b036",
+      "sku": "SK-DA-B036",
+      "source_product_code": "B036",
+      "product_type": "camera_skin",
+      "name": "Xmas Doré",
+      "title_fr": "Skin caméra Duo / Air – Xmas Doré",
+      "description_fr": "L'inscription XMAS et de petites étoiles dorées composent un sapin graphique sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-xmas-dore",
+      "sort_order": 36,
+      "source_folder": "37",
+      "primary_image": "products/036-xmas-dore/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/036-xmas-dore/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/036-xmas-dore/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/036-xmas-dore/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/036-xmas-dore/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B036-gold-star-christmas-01.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-02.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-03.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-04.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-06.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-07.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-08.jpeg"
+        },
+        {
+          "path": "products/036-xmas-dore/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B036-gold-star-christmas-09.jpeg"
+        }
+      ],
+      "tags": [
+        "noël",
+        "étoiles",
+        "doré"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Xmas Doré présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b037",
+      "sku": "SK-DA-B037",
+      "source_product_code": "B037",
+      "product_type": "camera_skin",
+      "name": "Sapin des Ombres",
+      "title_fr": "Skin caméra Duo / Air – Sapin des Ombres",
+      "description_fr": "Un sapin sombre décoré de boules rouges et d'une étoile claire dans une ambiance bleu nuit.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-sapin-des-ombres",
+      "sort_order": 37,
+      "source_folder": "38",
+      "primary_image": "products/037-sapin-des-ombres/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/037-sapin-des-ombres/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/037-sapin-des-ombres/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/037-sapin-des-ombres/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/037-sapin-des-ombres/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B037-haunted-yule-01.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-02.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-03.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-04.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-06.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-07.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-08.jpeg"
+        },
+        {
+          "path": "products/037-sapin-des-ombres/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B037-haunted-yule-09.jpeg"
+        }
+      ],
+      "tags": [
+        "noël",
+        "sapin",
+        "bleu nuit"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Sapin des Ombres présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b038",
+      "sku": "SK-DA-B038",
+      "source_product_code": "B038",
+      "product_type": "camera_skin",
+      "name": "Crânes de Noël",
+      "title_fr": "Skin caméra Duo / Air – Crânes de Noël",
+      "description_fr": "Une composition de crânes coiffés de bonnets rouges de Noël sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-cranes-de-noel",
+      "sort_order": 38,
+      "source_folder": "39",
+      "primary_image": "products/038-cranes-de-noel/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/038-cranes-de-noel/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/038-cranes-de-noel/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/038-cranes-de-noel/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/038-cranes-de-noel/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B038-santa-skull-parade-01.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-02.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-03.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-04.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-06.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-07.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-08.jpeg"
+        },
+        {
+          "path": "products/038-cranes-de-noel/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B038-santa-skull-parade-09.jpeg"
+        }
+      ],
+      "tags": [
+        "noël",
+        "crâne",
+        "rouge"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Crânes de Noël présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b039",
+      "sku": "SK-DA-B039",
+      "source_product_code": "B039",
+      "product_type": "camera_skin",
+      "name": "Chocolat de Noël",
+      "title_fr": "Skin caméra Duo / Air – Chocolat de Noël",
+      "description_fr": "Une tasse rouge à carreaux, du chocolat fumant, un petit biscuit et une canne en sucre sur fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-chocolat-de-noel",
+      "sort_order": 39,
+      "source_folder": "40",
+      "primary_image": "products/039-chocolat-de-noel/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/039-chocolat-de-noel/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/039-chocolat-de-noel/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/039-chocolat-de-noel/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/039-chocolat-de-noel/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B039-gingerbread-cocoa-01.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-02.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-03.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-04.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-06.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-07.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-08.jpeg"
+        },
+        {
+          "path": "products/039-chocolat-de-noel/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B039-gingerbread-cocoa-09.jpeg"
+        }
+      ],
+      "tags": [
+        "noël",
+        "chocolat",
+        "rouge"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Chocolat de Noël présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b040",
+      "sku": "SK-DA-B040",
+      "source_product_code": "B040",
+      "product_type": "camera_skin",
+      "name": "Sapin Étoilé",
+      "title_fr": "Skin caméra Duo / Air – Sapin Étoilé",
+      "description_fr": "Un sapin vert décoré de boules rouges et couronné d'une étoile blanche sur fond sombre.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-sapin-etoile",
+      "sort_order": 40,
+      "source_folder": "41",
+      "primary_image": "products/040-sapin-etoile/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/040-sapin-etoile/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/040-sapin-etoile/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/040-sapin-etoile/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/040-sapin-etoile/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B040-paper-fir-01.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-02.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-03.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-04.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-06.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-07.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-08.jpeg"
+        },
+        {
+          "path": "products/040-sapin-etoile/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B040-paper-fir-09.jpeg"
+        }
+      ],
+      "tags": [
+        "noël",
+        "sapin",
+        "étoile"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Sapin Étoilé présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b041",
+      "sku": "SK-DA-B041",
+      "source_product_code": "B041",
+      "product_type": "camera_skin",
+      "name": "Flocons Turquoise",
+      "title_fr": "Skin caméra Duo / Air – Flocons Turquoise",
+      "description_fr": "Des flocons bleu clair et turquoise de différentes tailles sur un fond bleu nuit.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-flocons-turquoise",
+      "sort_order": 41,
+      "source_folder": "42",
+      "primary_image": "products/041-flocons-turquoise/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/041-flocons-turquoise/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/041-flocons-turquoise/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/041-flocons-turquoise/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/041-flocons-turquoise/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B041-turquoise-flurries-01.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-02.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-03.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-04.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-06.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-07.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-08.jpeg"
+        },
+        {
+          "path": "products/041-flocons-turquoise/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B041-turquoise-flurries-09.jpeg"
+        }
+      ],
+      "tags": [
+        "hiver",
+        "flocons",
+        "turquoise"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Flocons Turquoise présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b042",
+      "sku": "SK-DA-B042",
+      "source_product_code": "B042",
+      "product_type": "camera_skin",
+      "name": "Forêt Nordique",
+      "title_fr": "Skin caméra Duo / Air – Forêt Nordique",
+      "description_fr": "Un renne blanc, des sapins et des flocons rouges et blancs sur un fond bleu nuit.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-foret-nordique",
+      "sort_order": 42,
+      "source_folder": "43",
+      "primary_image": "products/042-foret-nordique/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/042-foret-nordique/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/042-foret-nordique/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/042-foret-nordique/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/042-foret-nordique/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B042-nordic-deer-grove-01.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-02.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-03.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-04.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-06.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-07.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-08.jpeg"
+        },
+        {
+          "path": "products/042-foret-nordique/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B042-nordic-deer-grove-09.jpeg"
+        }
+      ],
+      "tags": [
+        "renne",
+        "sapins",
+        "Noël"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Forêt Nordique présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b043",
+      "sku": "SK-DA-B043",
+      "source_product_code": "B043",
+      "product_type": "camera_skin",
+      "name": "Ordi en Maille",
+      "title_fr": "Skin caméra Duo / Air – Ordi en Maille",
+      "description_fr": "Un petit ordinateur rétro souriant au cœur de motifs géométriques inspirés du tricot, en noir et blanc.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-ordi-en-maille",
+      "sort_order": 43,
+      "source_folder": "44",
+      "primary_image": "products/043-ordi-en-maille/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/043-ordi-en-maille/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/043-ordi-en-maille/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/043-ordi-en-maille/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/043-ordi-en-maille/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B043-knit-pixel-computer-01.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-02.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-03.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-04.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-06.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-07.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-08.jpeg"
+        },
+        {
+          "path": "products/043-ordi-en-maille/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B043-knit-pixel-computer-09.jpeg"
+        }
+      ],
+      "tags": [
+        "ordinateur",
+        "tricot",
+        "noir et blanc"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Ordi en Maille présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b044",
+      "sku": "SK-DA-B044",
+      "source_product_code": "B044",
+      "product_type": "camera_skin",
+      "name": "Sapin sous les Étoiles",
+      "title_fr": "Skin caméra Duo / Air – Sapin sous les Étoiles",
+      "description_fr": "Un sapin solitaire sur une colline enneigée, sous un ciel bleu sombre parsemé de petites étoiles.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-sapin-sous-les-etoiles",
+      "sort_order": 44,
+      "source_folder": "45",
+      "primary_image": "products/044-sapin-sous-les-etoiles/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/044-sapin-sous-les-etoiles/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/044-sapin-sous-les-etoiles/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B044-starlit-snow-hill-01.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-02.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-03.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-04.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-06.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-07.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-08.jpeg"
+        },
+        {
+          "path": "products/044-sapin-sous-les-etoiles/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B044-starlit-snow-hill-09.jpeg"
+        }
+      ],
+      "tags": [
+        "sapin",
+        "neige",
+        "nuit"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Sapin sous les Étoiles présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b045",
+      "sku": "SK-DA-B045",
+      "source_product_code": "B045",
+      "product_type": "camera_skin",
+      "name": "Sapins Vert Profond",
+      "title_fr": "Skin caméra Duo / Air – Sapins Vert Profond",
+      "description_fr": "Des sapins dessinés en traits clairs et de petits motifs de neige sur un fond vert profond.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-sapins-vert-profond",
+      "sort_order": 45,
+      "source_folder": "46",
+      "primary_image": "products/045-sapins-vert-profond/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/045-sapins-vert-profond/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/045-sapins-vert-profond/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/045-sapins-vert-profond/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/045-sapins-vert-profond/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B045-evergreen-etch-01.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-02.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-03.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-04.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-06.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-07.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-08.jpeg"
+        },
+        {
+          "path": "products/045-sapins-vert-profond/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B045-evergreen-etch-09.jpeg"
+        }
+      ],
+      "tags": [
+        "sapins",
+        "vert",
+        "hiver"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Sapins Vert Profond présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b046",
+      "sku": "SK-DA-B046",
+      "source_product_code": "B046",
+      "product_type": "camera_skin",
+      "name": "Neige Monochrome",
+      "title_fr": "Skin caméra Duo / Air – Neige Monochrome",
+      "description_fr": "Des flocons et de fines branches blancs se détachent sur un fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-neige-monochrome",
+      "sort_order": 46,
+      "source_folder": "47",
+      "primary_image": "products/046-neige-monochrome/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/046-neige-monochrome/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/046-neige-monochrome/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/046-neige-monochrome/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/046-neige-monochrome/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B046-monochrome-snowfall-01.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-02.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-03.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-04.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-06.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-07.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-08.jpeg"
+        },
+        {
+          "path": "products/046-neige-monochrome/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B046-monochrome-snowfall-09.jpeg"
+        }
+      ],
+      "tags": [
+        "flocons",
+        "branches",
+        "noir et blanc"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Neige Monochrome présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b047",
+      "sku": "SK-DA-B047",
+      "source_product_code": "B047",
+      "product_type": "camera_skin",
+      "name": "Carillons Violets",
+      "title_fr": "Skin caméra Duo / Air – Carillons Violets",
+      "description_fr": "Des cloches, un renne, des sapins et des flocons dessinés en traits bleu clair sur un fond violet profond.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-carillons-violets",
+      "sort_order": 47,
+      "source_folder": "48",
+      "primary_image": "products/047-carillons-violets/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/047-carillons-violets/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/047-carillons-violets/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/047-carillons-violets/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/047-carillons-violets/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B047-violet-sleigh-bells-01.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-02.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-03.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-04.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-06.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-07.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-08.jpeg"
+        },
+        {
+          "path": "products/047-carillons-violets/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B047-violet-sleigh-bells-09.jpeg"
+        }
+      ],
+      "tags": [
+        "Noël",
+        "cloches",
+        "violet"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Carillons Violets présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b048",
+      "sku": "SK-DA-B048",
+      "source_product_code": "B048",
+      "product_type": "camera_skin",
+      "name": "Flocons Menthe",
+      "title_fr": "Skin caméra Duo / Air – Flocons Menthe",
+      "description_fr": "Une constellation de flocons vert menthe et de petits points clairs sur un fond bleu nuit.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-flocons-menthe",
+      "sort_order": 48,
+      "source_folder": "49",
+      "primary_image": "products/048-flocons-menthe/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/048-flocons-menthe/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/048-flocons-menthe/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/048-flocons-menthe/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/048-flocons-menthe/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B048-mint-nightfall-01.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-02.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-03.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-04.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-06.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-07.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-08.jpeg"
+        },
+        {
+          "path": "products/048-flocons-menthe/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B048-mint-nightfall-09.jpeg"
+        }
+      ],
+      "tags": [
+        "flocons",
+        "menthe",
+        "bleu nuit"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Flocons Menthe présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b049",
+      "sku": "SK-DA-B049",
+      "source_product_code": "B049",
+      "product_type": "camera_skin",
+      "name": "Sapins Émeraude",
+      "title_fr": "Skin caméra Duo / Air – Sapins Émeraude",
+      "description_fr": "Une forêt de sapins verts aux détails dorés sur un fond sombre.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-sapins-emeraude",
+      "sort_order": 49,
+      "source_folder": "50",
+      "primary_image": "products/049-sapins-emeraude/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/049-sapins-emeraude/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/049-sapins-emeraude/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/049-sapins-emeraude/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/049-sapins-emeraude/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B049-gilded-emerald-firs-01.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-02.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-03.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-04.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-06.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-07.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-08.jpeg"
+        },
+        {
+          "path": "products/049-sapins-emeraude/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B049-gilded-emerald-firs-09.jpeg"
+        }
+      ],
+      "tags": [
+        "sapins",
+        "vert émeraude",
+        "doré"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Sapins Émeraude présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b050",
+      "sku": "SK-DA-B050",
+      "source_product_code": "B050",
+      "product_type": "camera_skin",
+      "name": "Rennes au Nez Rouge",
+      "title_fr": "Skin caméra Duo / Air – Rennes au Nez Rouge",
+      "description_fr": "Des rennes illustrés au nez rouge se répètent parmi de petits motifs de Noël sur fond beige.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-rennes-au-nez-rouge",
+      "sort_order": 50,
+      "source_folder": "51",
+      "primary_image": "products/050-rennes-au-nez-rouge/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/050-rennes-au-nez-rouge/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/050-rennes-au-nez-rouge/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B050-red-nose-herd-01.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-02.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-03.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-04.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-06.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-07.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-08.jpeg"
+        },
+        {
+          "path": "products/050-rennes-au-nez-rouge/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B050-red-nose-herd-09.jpeg"
+        }
+      ],
+      "tags": [
+        "rennes",
+        "Noël",
+        "beige"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Rennes au Nez Rouge présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b051",
+      "sku": "SK-DA-B051",
+      "source_product_code": "B051",
+      "product_type": "camera_skin",
+      "name": "Forêt Dorée",
+      "title_fr": "Skin caméra Duo / Air – Forêt Dorée",
+      "description_fr": "Des sapins blancs et dorés, des étoiles et des flocons sur un fond bleu nuit.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-foret-doree",
+      "sort_order": 51,
+      "source_folder": "52",
+      "primary_image": "products/051-foret-doree/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/051-foret-doree/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/051-foret-doree/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/051-foret-doree/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/051-foret-doree/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B051-golden-snow-grove-01.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-02.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-03.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-04.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-06.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-07.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-08.jpeg"
+        },
+        {
+          "path": "products/051-foret-doree/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B051-golden-snow-grove-09.jpeg"
+        }
+      ],
+      "tags": [
+        "sapins",
+        "doré",
+        "bleu nuit"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Forêt Dorée présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b052",
+      "sku": "SK-DA-B052",
+      "source_product_code": "B052",
+      "product_type": "camera_skin",
+      "name": "Cristaux Cuivrés",
+      "title_fr": "Skin caméra Duo / Air – Cristaux Cuivrés",
+      "description_fr": "Des flocons aux tons cuivrés et bleu glacé composent un motif dense sur fond sombre.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-cristaux-cuivres",
+      "sort_order": 52,
+      "source_folder": "53",
+      "primary_image": "products/052-cristaux-cuivres/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/052-cristaux-cuivres/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/052-cristaux-cuivres/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/052-cristaux-cuivres/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/052-cristaux-cuivres/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B052-copper-ice-crystals-01.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-02.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-03.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-04.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-06.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-07.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-08.jpeg"
+        },
+        {
+          "path": "products/052-cristaux-cuivres/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B052-copper-ice-crystals-09.jpeg"
+        }
+      ],
+      "tags": [
+        "flocons",
+        "cuivre",
+        "bleu glacé"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Cristaux Cuivrés présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b053",
+      "sku": "SK-DA-B053",
+      "source_product_code": "B053",
+      "product_type": "camera_skin",
+      "name": "Branches Bleu Nuit",
+      "title_fr": "Skin caméra Duo / Air – Branches Bleu Nuit",
+      "description_fr": "Des branches de pin bleues, des pommes de pin et de petits ornements dorés sur fond bleu nuit.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-branches-bleu-nuit",
+      "sort_order": 53,
+      "source_folder": "54",
+      "primary_image": "products/053-branches-bleu-nuit/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/053-branches-bleu-nuit/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/053-branches-bleu-nuit/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B053-blue-boughs-01.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-02.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-03.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-04.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-06.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-07.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-08.jpeg"
+        },
+        {
+          "path": "products/053-branches-bleu-nuit/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B053-blue-boughs-09.jpeg"
+        }
+      ],
+      "tags": [
+        "pin",
+        "bleu nuit",
+        "doré"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Branches Bleu Nuit présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b059",
+      "sku": "SK-DA-B059",
+      "source_product_code": "B059",
+      "product_type": "camera_skin",
+      "name": "Cadeaux Verts et Or",
+      "title_fr": "Skin caméra Duo / Air – Cadeaux Verts et Or",
+      "description_fr": "Des paquets cadeaux verts ornés de rubans dorés se détachent sur un fond noir.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-cadeaux-verts-et-or",
+      "sort_order": 54,
+      "source_folder": "55",
+      "primary_image": "products/054-cadeaux-verts-et-or/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/054-cadeaux-verts-et-or/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/054-cadeaux-verts-et-or/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B059-golden-ribbon-gifts-01.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-02.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-03.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-04.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-06.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-07.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-08.jpeg"
+        },
+        {
+          "path": "products/054-cadeaux-verts-et-or/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B059-golden-ribbon-gifts-09.jpeg"
+        }
+      ],
+      "tags": [
+        "cadeaux",
+        "vert",
+        "doré"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Cadeaux Verts et Or présenté sur deux téléphones"
+    },
+    {
+      "import_key": "skinup-duo-air-20261127-b060",
+      "sku": "SK-DA-B060",
+      "source_product_code": "B060",
+      "product_type": "camera_skin",
+      "name": "Noël Vintage",
+      "title_fr": "Skin caméra Duo / Air – Noël Vintage",
+      "description_fr": "Des sapins décorés, des boules et de petits ornements rouges, verts et dorés sur fond crème.",
+      "category_fr": "iPhone Duo / Air Series",
+      "slug": "duo-air-noel-vintage",
+      "sort_order": 55,
+      "source_folder": "56",
+      "primary_image": "products/055-noel-vintage/01-cover.webp",
+      "primary_image_responsive": [
+        {
+          "path": "products/055-noel-vintage/_responsive/cover-480.webp",
+          "width": 480,
+          "height": 480
+        },
+        {
+          "path": "products/055-noel-vintage/_responsive/cover-800.webp",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "path": "products/055-noel-vintage/01-cover.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "images": [
+        {
+          "path": "products/055-noel-vintage/01-cover.webp",
+          "position": 1,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": true,
+          "source_file": "B060-vintage-christmas-grove-01.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/02.webp",
+          "position": 2,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-02.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/03.webp",
+          "position": 3,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-03.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/04.webp",
+          "position": 4,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-04.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/05.webp",
+          "position": 5,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-06.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/06.webp",
+          "position": 6,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-07.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/07.webp",
+          "position": 7,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-08.jpeg"
+        },
+        {
+          "path": "products/055-noel-vintage/08.webp",
+          "position": 8,
+          "width": 1200,
+          "height": 1200,
+          "is_primary": false,
+          "source_file": "B060-vintage-christmas-grove-09.jpeg"
+        }
+      ],
+      "tags": [
+        "Noël",
+        "sapins",
+        "vintage"
+      ],
+      "alt_fr": "Skin caméra Duo / Air Noël Vintage présenté sur deux téléphones"
+    }
+  ],
+  "source_reconciliation": {
+    "requested_product_count": 56,
+    "actual_supplied_product_count": 55,
+    "missing_source_folder_number": "31",
+    "note": "Original folder IDs range from 1 to 56 but skip 31. All 55 supplied products are included; no 56th product has been invented."
+  }
+}

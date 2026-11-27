@@ -1,4 +1,5 @@
 import type { Lang } from "./products";
+import { DUO_AIR_SKINS } from "./iphone-air-duo-batch";
 
 import a1 from "@/assets/air/air-1.webp.asset.json";
 import a2 from "@/assets/air/air-2.webp.asset.json";
@@ -23,6 +24,11 @@ export type IphoneAirSkin = {
   inStock: boolean;
   isNew: boolean;
   popularity: number;
+  importKey?: string;
+  sku?: string;
+  sortOrder?: number;
+  responsiveCover?: { url: string; width: number; height: number }[];
+  altFr?: string;
 };
 
 const DESC: Record<Lang, string> = {
@@ -54,7 +60,7 @@ const SEEDS: {
   { slug: "air-nuit-douce", fr: "Air Nuit Douce", ar: "ليلة إير الهادئة", en: "Air Cozy Night", image: a10.url, isNew: true, popularity: 78 },
 ];
 
-export const IPHONE_AIR_SKINS: IphoneAirSkin[] = SEEDS.map((s) => ({
+const ORIGINAL_AIR_SKINS: IphoneAirSkin[] = SEEDS.map((s) => ({
   id: `air-${s.slug}`,
   slug: s.slug,
   name: { fr: s.fr, ar: s.ar, en: s.en },
@@ -67,6 +73,9 @@ export const IPHONE_AIR_SKINS: IphoneAirSkin[] = SEEDS.map((s) => ({
   isNew: s.isNew,
   popularity: s.popularity,
 }));
+
+/** Duo / Air batch first (supplied sort_order), then the original Air designs, unchanged. */
+export const IPHONE_AIR_SKINS: IphoneAirSkin[] = [...DUO_AIR_SKINS, ...ORIGINAL_AIR_SKINS];
 
 export function iphoneAirSkinBySlug(slug: string): IphoneAirSkin | undefined {
   return IPHONE_AIR_SKINS.find((s) => s.slug === slug);
