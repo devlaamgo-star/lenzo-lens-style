@@ -60,7 +60,8 @@ const SEEDS: {
   { slug: "air-nuit-douce", fr: "Air Nuit Douce", ar: "ليلة إير الهادئة", en: "Air Cozy Night", image: a10.url, isNew: true, popularity: 78 },
 ];
 
-const ORIGINAL_AIR_SKINS: IphoneAirSkin[] = SEEDS.map((s) => ({
+/** Retired original Air designs: kept only so historical orders stay readable; never listed. */
+export const ARCHIVED_AIR_SKINS: IphoneAirSkin[] = SEEDS.map((s) => ({
   id: `air-${s.slug}`,
   slug: s.slug,
   name: { fr: s.fr, ar: s.ar, en: s.en },
@@ -74,8 +75,12 @@ const ORIGINAL_AIR_SKINS: IphoneAirSkin[] = SEEDS.map((s) => ({
   popularity: s.popularity,
 }));
 
-/** Duo / Air batch first (supplied sort_order), then the original Air designs, unchanged. */
-export const IPHONE_AIR_SKINS: IphoneAirSkin[] = [...DUO_AIR_SKINS, ...ORIGINAL_AIR_SKINS];
+/** Active iPhone Duo / Air Series: exactly the supplied manifest collection. */
+export const IPHONE_AIR_SKINS: IphoneAirSkin[] = DUO_AIR_SKINS;
+
+export function isArchivedAirSlug(slug: string): boolean {
+  return ARCHIVED_AIR_SKINS.some((s) => s.slug === slug);
+}
 
 export function iphoneAirSkinBySlug(slug: string): IphoneAirSkin | undefined {
   return IPHONE_AIR_SKINS.find((s) => s.slug === slug);

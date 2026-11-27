@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { ChevronRight, Truck, Wallet, Scissors, Check } from "lucide-react";
 import { useEffect, useState } from "react";
 import { metaViewContent } from "@/lib/meta-pixel";
@@ -6,11 +6,12 @@ import { AddToCartBlock } from "@/components/ProductOptions";
 import { useI18n } from "@/lib/i18n";
 import { AIR_SKIN_PRICE, iphoneAirSkinBySlug } from "@/lib/catalog";
 import { AirSkinCard } from "@/components/AirSkinCard";
-import { IPHONE_AIR_SKINS } from "@/data/iphone-air-skins";
+import { IPHONE_AIR_SKINS, isArchivedAirSlug } from "@/data/iphone-air-skins";
 
 export const Route = createFileRoute("/iphone-air/$slug")({
   loader: ({ params }) => {
     const skin = iphoneAirSkinBySlug(params.slug);
+    if (!skin && isArchivedAirSlug(params.slug)) throw redirect({ to: "/iphone-air", statusCode: 301 });
     if (!skin) throw notFound();
     return { skin };
   },

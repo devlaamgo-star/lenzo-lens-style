@@ -1,5 +1,6 @@
 # iPhone Duo / Air Series import
 - [x] Rename the Air section to "iPhone Duo / Air Series" and add the 55 supplied products (folder 31 absent in source) with own covers first, all 437 photos in order; 547 images byte-verified; prices, offers and model unchanged; desktop/mobile and add-to-cart verified.
+- [x] Remove the 10 old Air designs from the shop, search and suggestions; exactly 55 active, verified after refresh.
 - [ ] Separate "iPhone Duo" model choice — the store has no such variant today; waits on the owner confirming it.
 - [ ] Deploy to skinup.ma — separate Cloudflare storefront needs the owner's deployment.
 

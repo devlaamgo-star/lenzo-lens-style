@@ -27,9 +27,11 @@ test("each product keeps its own cover first and its own 437 gallery photos in o
   expect(total).toBe(437);
 });
 
-test("previous Air designs and 72 camera designs remain; Air pricing and model unchanged", () => {
-  expect(IPHONE_AIR_SKINS.length).toBe(65);
-  expect(IPHONE_AIR_SKINS.slice(55).map((s) => s.slug)[0]).toBe("air-couchant");
+test("only the 55 new Air designs are active; 72 camera designs remain; Air pricing and model unchanged", () => {
+  expect(IPHONE_AIR_SKINS.length).toBe(55);
+  const keys = new Set(manifest.products.map((p) => p.import_key));
+  expect(IPHONE_AIR_SKINS.every((s) => keys.has(s.importKey))).toBe(true);
+  expect(IPHONE_AIR_SKINS.some((s) => s.slug.startsWith("air-"))).toBe(false);
   expect(CAMERA72_SKINS.length).toBe(72);
   expect(CATEGORY_PRICES.air).toBe(79);
   expect([...modelsForCategory("air")]).toEqual(["iPhone Air"]);
