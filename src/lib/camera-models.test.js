@@ -10,8 +10,8 @@ test("camera options are the four exact requested identities", () => {
   expect(modelsForCategory("lens")).toEqual(models);
 });
 for (const model of models) {
-  test(`${model} retains its exact identity for all 72 designs through basket and order validation`, () => {
-    expect(CAMERA_LENS_SKINS).toHaveLength(72);
+  test(`${model} retains its exact identity for all 112 designs through basket and order validation`, () => {
+    expect(CAMERA_LENS_SKINS).toHaveLength(112);
     for (const product of CAMERA_LENS_SKINS) {
       const item = sanitizeCartItem({ productId: product.id, slug: product.slug, category: "lens", name: product.name, image: product.image, price: 79, model, qty: 1 });
       expect(item?.model).toBe(model);

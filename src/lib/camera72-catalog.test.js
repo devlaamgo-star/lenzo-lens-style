@@ -4,6 +4,7 @@ import manifest from "../../catalog-templates/camera-lens-skins/imports/batch72/
 import savedSettings from "../../catalog-templates/camera-lens-skins/settings-before-replacement.json";
 import { CAMERA_LENS_SKINS, LENS_SKIN_PRICE, PACK_PRICE, PACK_SIZE, DEFAULT_IPHONE_MODEL, modelsForCategory, designById } from "./catalog";
 import { ARCHIVED_CAMERA_LENS_SKINS } from "../data/archive/camera-lens-skins";
+import { CAMERA72_SKINS } from "../data/camera-lens-batch72";
 import { BACK_LENS_SKINS } from "../data/back-lens-skins";
 import { IPHONE_AIR_SKINS } from "../data/iphone-air-skins";
 import { lensSkinBySlug } from "../data/camera-lens-skins";
@@ -15,11 +16,12 @@ function assetUrl(path) {
   return JSON.parse(readFileSync(file, "utf8")).url;
 }
 
-test("exactly 72 active camera designs follow supplied order with Comic Boom first", () => {
-  expect(CAMERA_LENS_SKINS).toHaveLength(72);
+test("the original 72 camera designs retain supplied order with Comic Boom first", () => {
+  expect(CAMERA72_SKINS).toHaveLength(72);
   expect(CAMERA_LENS_SKINS[0].name.fr).toBe("Skin caméra – Comic Boom");
-  expect(CAMERA_LENS_SKINS.map((p) => p.slug)).toEqual(manifest.products.map((p) => p.slug));
-  for (const field of ["id", "slug", "sku", "importKey"]) expect(new Set(CAMERA_LENS_SKINS.map((p) => p[field])).size).toBe(72);
+  expect(CAMERA_LENS_SKINS.slice(0, 72)).toEqual(CAMERA72_SKINS);
+  expect(CAMERA72_SKINS.map((p) => p.slug)).toEqual(manifest.products.map((p) => p.slug));
+  for (const field of ["id", "slug", "sku", "importKey"]) expect(new Set(CAMERA72_SKINS.map((p) => p[field])).size).toBe(72);
 });
 
 for (const entry of manifest.products) {
@@ -41,10 +43,10 @@ for (const entry of manifest.products) {
 }
 
 test("493 gallery images and 144 derivatives are unique and never shared across products", () => {
-  const galleries = CAMERA_LENS_SKINS.flatMap((p) => p.gallery);
+  const galleries = CAMERA72_SKINS.flatMap((p) => p.gallery);
   expect(galleries).toHaveLength(493);
   expect(new Set(galleries).size).toBe(493);
-  const derivatives = CAMERA_LENS_SKINS.flatMap((p) => p.responsiveCover.filter((c) => c.width < 1200).map((c) => c.url));
+  const derivatives = CAMERA72_SKINS.flatMap((p) => p.responsiveCover.filter((c) => c.width < 1200).map((c) => c.url));
   expect(derivatives).toHaveLength(144);
   expect(new Set(derivatives).size).toBe(144);
   expect(derivatives.some((url) => galleries.includes(url))).toBe(false);
@@ -53,7 +55,8 @@ test("493 gallery images and 144 derivatives are unique and never shared across 
 test("all 107 retired products remain readable in historical orders but not active", () => {
   expect(ARCHIVED_CAMERA_LENS_SKINS).toHaveLength(107);
   for (const old of ARCHIVED_CAMERA_LENS_SKINS) {
-    expect(lensSkinBySlug(old.slug)).toBeUndefined();
+    // New manifests may reuse a retired slug; the old identity must remain archived.
+    expect(lensSkinBySlug(old.slug)?.id).not.toBe(old.id);
     expect(CAMERA_LENS_SKINS.some((p) => p.id === old.id)).toBe(false);
     expect(lookupProduct(old.id)?.image).toBe(old.image);
     expect(designById(old.id)?.name).toEqual(old.name);

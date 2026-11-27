@@ -1,0 +1,1469 @@
+{
+  "batch_id": "skinup-camera-archive3-20261127",
+  "product_count": 19,
+  "image_count": 94,
+  "category_intent": "Add these products to the existing camera skins category.",
+  "primary_image_rule": "Each product uses its own *-01-cover.webp as its main card image and first gallery image. The two-standing-phones-on-white Dragon sample is a composition reference, not one shared image for all products.",
+  "gallery_rule": "Use the explicit image positions; one product per product folder.",
+  "compression": {
+    "format": "WebP",
+    "quality": 78,
+    "dimensions": "Original dimensions preserved; no resizing, cropping, recoloring or regeneration."
+  },
+  "source_archive": "Archive 3.zip",
+  "source_folder_count": 49,
+  "source_image_count": 242,
+  "duplicate_folders_removed": [
+    [
+      "6",
+      "7"
+    ],
+    [
+      "11",
+      "12"
+    ],
+    [
+      "27",
+      "28"
+    ],
+    [
+      "33",
+      "34"
+    ],
+    [
+      "36",
+      "37",
+      "38",
+      "39"
+    ],
+    [
+      "40",
+      "50"
+    ],
+    [
+      "49",
+      "52"
+    ]
+  ],
+  "part_number": 1,
+  "part_count": 2,
+  "expected_batch_product_count": 40,
+  "expected_batch_image_count": 197,
+  "products": [
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-001",
+      "sku": "SKCAM-A3-001",
+      "name": "Sunset Rider",
+      "slug": "sunset-rider",
+      "folder": "products/skcam-a3-001-sunset-rider",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "1"
+      ],
+      "image_count": 4,
+      "primary_image": "products/skcam-a3-001-sunset-rider/skcam-a3-001-sunset-rider-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-001-sunset-rider/skcam-a3-001-sunset-rider-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 1254,
+          "height": 1254,
+          "alt": "Sunset Rider camera skin - cover",
+          "source_file": "1/Twin smartphones with sunset rider camera skins-3.png",
+          "bytes": 58016,
+          "sha256": "56abdbfbde33cd55c0f7cc03c146c29e76e7b9c57dde780515ea44cebf20ded9"
+        },
+        {
+          "path": "products/skcam-a3-001-sunset-rider/skcam-a3-001-sunset-rider-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 1254,
+          "height": 1254,
+          "alt": "Sunset Rider camera skin - peel",
+          "source_file": "1/Silver phone with sunset rider camera skin-1.png",
+          "bytes": 57328,
+          "sha256": "6705e4a9f338b627d89858a2af9489c0e37c2069904e27017294f469711d3fd1"
+        },
+        {
+          "path": "products/skcam-a3-001-sunset-rider/skcam-a3-001-sunset-rider-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 1254,
+          "height": 1254,
+          "alt": "Sunset Rider camera skin - angled duo",
+          "source_file": "1/Sunset Rider Phone Skin Duo-4.png",
+          "bytes": 65152,
+          "sha256": "8f399455d7a8343c1df104d1f77753bc9d69815a13b9b889bfc60956f63df583"
+        },
+        {
+          "path": "products/skcam-a3-001-sunset-rider/skcam-a3-001-sunset-rider-04-lifestyle-close.webp",
+          "position": 4,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 1254,
+          "height": 1254,
+          "alt": "Sunset Rider camera skin - lifestyle close",
+          "source_file": "1/Silver phone with sunset rider camera skin-6.png",
+          "bytes": 96100,
+          "sha256": "8a1668fc30df4c0a3f7b064f1d526c9dc8b0029ae5ee8eef92fc18d18584fec3"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-002",
+      "sku": "SKCAM-A3-002",
+      "name": "Funny Duck",
+      "slug": "funny-duck",
+      "folder": "products/skcam-a3-002-funny-duck",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "2"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-002-funny-duck/skcam-a3-002-funny-duck-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-002-funny-duck/skcam-a3-002-funny-duck-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Funny Duck camera skin - cover",
+          "source_file": "2/01-cover.webp",
+          "bytes": 71388,
+          "sha256": "0d3635d0bf640e09686458b7034a8cdbc989d2578bf7be58cd527f120620d86c"
+        },
+        {
+          "path": "products/skcam-a3-002-funny-duck/skcam-a3-002-funny-duck-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Funny Duck camera skin - peel",
+          "source_file": "2/02-peel.webp",
+          "bytes": 79554,
+          "sha256": "419e74344463491d5fd11f75c445750c97ece453cbe967a236c05dbb00dcfebc"
+        },
+        {
+          "path": "products/skcam-a3-002-funny-duck/skcam-a3-002-funny-duck-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Funny Duck camera skin - angled duo",
+          "source_file": "2/03-angled-duo.webp",
+          "bytes": 87564,
+          "sha256": "e77064067cf3cbdfe58d9348a0e95b9967bce649d7563b82bdd124bdf83eaa52"
+        },
+        {
+          "path": "products/skcam-a3-002-funny-duck/skcam-a3-002-funny-duck-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Funny Duck camera skin - lifestyle",
+          "source_file": "2/04-lifestyle.webp",
+          "bytes": 192538,
+          "sha256": "df95a6d12432cdbb17cfcefcfb62371712e42e84f9688c4560a1676f064b4db7"
+        },
+        {
+          "path": "products/skcam-a3-002-funny-duck/skcam-a3-002-funny-duck-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Funny Duck camera skin - lifestyle close",
+          "source_file": "2/05-lifestyle-close.webp",
+          "bytes": 190602,
+          "sha256": "52e54f4064386a73072d04833aa00e3fcf2430f347b5177aba3d93f73fd93eb6"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-003",
+      "sku": "SKCAM-A3-003",
+      "name": "Sunset Duck",
+      "slug": "sunset-duck",
+      "folder": "products/skcam-a3-003-sunset-duck",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "3"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-003-sunset-duck/skcam-a3-003-sunset-duck-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-003-sunset-duck/skcam-a3-003-sunset-duck-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Sunset Duck camera skin - cover",
+          "source_file": "3/01-cover.webp",
+          "bytes": 116794,
+          "sha256": "37dc2757e03174f5e4a95a8246d88d894bc43d854e538580a3475bb2702f9b64"
+        },
+        {
+          "path": "products/skcam-a3-003-sunset-duck/skcam-a3-003-sunset-duck-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Sunset Duck camera skin - peel",
+          "source_file": "3/02-peel.webp",
+          "bytes": 128652,
+          "sha256": "bfd0e06e798a7f896489a5164d2f25b0791eb821c273d86fded2dc77249828c2"
+        },
+        {
+          "path": "products/skcam-a3-003-sunset-duck/skcam-a3-003-sunset-duck-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Sunset Duck camera skin - angled duo",
+          "source_file": "3/03-angled-duo.webp",
+          "bytes": 129816,
+          "sha256": "91c004baa9a06d46b5fe7eb839a02f53a14cf8d3c274a423d221867ef43f569a"
+        },
+        {
+          "path": "products/skcam-a3-003-sunset-duck/skcam-a3-003-sunset-duck-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Sunset Duck camera skin - lifestyle",
+          "source_file": "3/04-lifestyle.webp",
+          "bytes": 223550,
+          "sha256": "3779741e7b8c42695282972293d499708cd2fbab9bbe03f83012ebc20acd4673"
+        },
+        {
+          "path": "products/skcam-a3-003-sunset-duck/skcam-a3-003-sunset-duck-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Sunset Duck camera skin - lifestyle close",
+          "source_file": "3/05-lifestyle-close.webp",
+          "bytes": 227506,
+          "sha256": "4ea59d7708ab866a6db45bfc56be5b21abed63825b50d970bded7c09de92a2d3"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-004",
+      "sku": "SKCAM-A3-004",
+      "name": "Capybara Afterhours",
+      "slug": "capybara-afterhours",
+      "folder": "products/skcam-a3-004-capybara-afterhours",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "4"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-004-capybara-afterhours/skcam-a3-004-capybara-afterhours-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-004-capybara-afterhours/skcam-a3-004-capybara-afterhours-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Capybara Afterhours camera skin - cover",
+          "source_file": "4/01-cover.webp",
+          "bytes": 78804,
+          "sha256": "9ef2d7795db5e29c7c2ba917b362d338f3e715ec54c239155c43c49e6ae18d58"
+        },
+        {
+          "path": "products/skcam-a3-004-capybara-afterhours/skcam-a3-004-capybara-afterhours-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Capybara Afterhours camera skin - peel",
+          "source_file": "4/02-peel.webp",
+          "bytes": 94078,
+          "sha256": "8e1e4c5d0b956c5abf74114958fb3385f0e8b3a8f08ebec89200f7f358f9e7ca"
+        },
+        {
+          "path": "products/skcam-a3-004-capybara-afterhours/skcam-a3-004-capybara-afterhours-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Capybara Afterhours camera skin - angled duo",
+          "source_file": "4/03-angled-duo.webp",
+          "bytes": 93094,
+          "sha256": "00bd99f97b9fa4c2c718fd37448ab24f81e68e79b303076e342254ca7390a695"
+        },
+        {
+          "path": "products/skcam-a3-004-capybara-afterhours/skcam-a3-004-capybara-afterhours-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Capybara Afterhours camera skin - lifestyle",
+          "source_file": "4/04-lifestyle.webp",
+          "bytes": 199816,
+          "sha256": "8662f3e7e80523d2d327c1a4a8e4c000d50cef1d94cdfe76b31cda3fd09c1973"
+        },
+        {
+          "path": "products/skcam-a3-004-capybara-afterhours/skcam-a3-004-capybara-afterhours-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Capybara Afterhours camera skin - lifestyle close",
+          "source_file": "4/05-lifestyle-close.webp",
+          "bytes": 178530,
+          "sha256": "ee03be398d3c7b5d72df76f000dfd1c64185a4e29915fa6abb201682f4cf0da3"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-005",
+      "sku": "SKCAM-A3-005",
+      "name": "Cartoon Mosaic",
+      "slug": "cartoon-mosaic",
+      "folder": "products/skcam-a3-005-cartoon-mosaic",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "5"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-005-cartoon-mosaic/skcam-a3-005-cartoon-mosaic-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-005-cartoon-mosaic/skcam-a3-005-cartoon-mosaic-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cartoon Mosaic camera skin - cover",
+          "source_file": "5/01-cover.webp",
+          "bytes": 136902,
+          "sha256": "ee18bb5558d672d6b4f11f7219f48679e4560b20f489bf949220d9fefd92c6e6"
+        },
+        {
+          "path": "products/skcam-a3-005-cartoon-mosaic/skcam-a3-005-cartoon-mosaic-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cartoon Mosaic camera skin - peel",
+          "source_file": "5/02-peel.webp",
+          "bytes": 122494,
+          "sha256": "db2e57d9b9ed13f95d1663d94fd14ef68540b220d2079322274a1006ddddd347"
+        },
+        {
+          "path": "products/skcam-a3-005-cartoon-mosaic/skcam-a3-005-cartoon-mosaic-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cartoon Mosaic camera skin - angled duo",
+          "source_file": "5/03-angled-duo.webp",
+          "bytes": 132580,
+          "sha256": "09ce1ea666c5be25ce343940daa0018c0a3d8640f2e64c3f7eeca2b77e90b26d"
+        },
+        {
+          "path": "products/skcam-a3-005-cartoon-mosaic/skcam-a3-005-cartoon-mosaic-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cartoon Mosaic camera skin - lifestyle",
+          "source_file": "5/04-lifestyle.webp",
+          "bytes": 208958,
+          "sha256": "5842e600cad00fea496dd242f2aa1cad981e495731dbb51ce6319f6a47bc2a0d"
+        },
+        {
+          "path": "products/skcam-a3-005-cartoon-mosaic/skcam-a3-005-cartoon-mosaic-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cartoon Mosaic camera skin - lifestyle close",
+          "source_file": "5/05-lifestyle-close.webp",
+          "bytes": 287454,
+          "sha256": "5613f25b99b0a72a17012c58768be6dc28e0f22d3bbeca91cdf7ea9a326872a5"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-006",
+      "sku": "SKCAM-A3-006",
+      "name": "Mint Tea Cat",
+      "slug": "mint-tea-cat",
+      "folder": "products/skcam-a3-006-mint-tea-cat",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "6",
+        "7"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-006-mint-tea-cat/skcam-a3-006-mint-tea-cat-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-006-mint-tea-cat/skcam-a3-006-mint-tea-cat-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Mint Tea Cat camera skin - cover",
+          "source_file": "6/01-cover.webp",
+          "bytes": 94700,
+          "sha256": "c9005a49f3d44cfcb1f7f01626f2fd33c310d06035416933972eb31ae6a996fe"
+        },
+        {
+          "path": "products/skcam-a3-006-mint-tea-cat/skcam-a3-006-mint-tea-cat-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Mint Tea Cat camera skin - peel",
+          "source_file": "6/02-peel.webp",
+          "bytes": 79880,
+          "sha256": "ebf510f8cac6b247829de5d2f0b3416fc108ced4764f9c3e4333abf7d3008e62"
+        },
+        {
+          "path": "products/skcam-a3-006-mint-tea-cat/skcam-a3-006-mint-tea-cat-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Mint Tea Cat camera skin - angled duo",
+          "source_file": "6/03-angled-duo.webp",
+          "bytes": 86058,
+          "sha256": "be75e215d87b9f8977e355143b0ad99835ca896011f39959e7618e827f0f9231"
+        },
+        {
+          "path": "products/skcam-a3-006-mint-tea-cat/skcam-a3-006-mint-tea-cat-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Mint Tea Cat camera skin - lifestyle",
+          "source_file": "6/04-lifestyle.webp",
+          "bytes": 210170,
+          "sha256": "502658e849aac669d71323486b4d955c6107523eb999df573c897b163bb88c0f"
+        },
+        {
+          "path": "products/skcam-a3-006-mint-tea-cat/skcam-a3-006-mint-tea-cat-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Mint Tea Cat camera skin - lifestyle close",
+          "source_file": "6/05-lifestyle-close.webp",
+          "bytes": 233484,
+          "sha256": "f8b9ec3f5e6956f08d40b88eac6da80c95c65970b32171ebee7b724b426341c0"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-007",
+      "sku": "SKCAM-A3-007",
+      "name": "Cosmic Cat",
+      "slug": "cosmic-cat",
+      "folder": "products/skcam-a3-007-cosmic-cat",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "8"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-007-cosmic-cat/skcam-a3-007-cosmic-cat-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-007-cosmic-cat/skcam-a3-007-cosmic-cat-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cosmic Cat camera skin - cover",
+          "source_file": "8/01-cover.webp",
+          "bytes": 137320,
+          "sha256": "6568a9a434baef4c60d7600f7b3a3e8c61eb7db6a80136d0a529673256cbe758"
+        },
+        {
+          "path": "products/skcam-a3-007-cosmic-cat/skcam-a3-007-cosmic-cat-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cosmic Cat camera skin - peel",
+          "source_file": "8/02-peel.webp",
+          "bytes": 111472,
+          "sha256": "08c9a43a32e60d2ed25cf0eddb689415611d592146386c3465f7a07e84218d17"
+        },
+        {
+          "path": "products/skcam-a3-007-cosmic-cat/skcam-a3-007-cosmic-cat-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cosmic Cat camera skin - angled duo",
+          "source_file": "8/03-angled-duo.webp",
+          "bytes": 135912,
+          "sha256": "0d82a97044fbd0fc6ee6983e83f574825095f06906403f2700bb9426da96387b"
+        },
+        {
+          "path": "products/skcam-a3-007-cosmic-cat/skcam-a3-007-cosmic-cat-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cosmic Cat camera skin - lifestyle",
+          "source_file": "8/04-lifestyle.webp",
+          "bytes": 265876,
+          "sha256": "64a70409675092edcffe4ed98389032ef2ad3458a0636918020d7d05ecafd3da"
+        },
+        {
+          "path": "products/skcam-a3-007-cosmic-cat/skcam-a3-007-cosmic-cat-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Cosmic Cat camera skin - lifestyle close",
+          "source_file": "8/05-lifestyle-close.webp",
+          "bytes": 303614,
+          "sha256": "c066088b9013751f27691dab1187ce2025b9f9f0c3ffbd35d052df739e7c2016"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-008",
+      "sku": "SKCAM-A3-008",
+      "name": "Foliage Cat",
+      "slug": "foliage-cat",
+      "folder": "products/skcam-a3-008-foliage-cat",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "9"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-008-foliage-cat/skcam-a3-008-foliage-cat-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-008-foliage-cat/skcam-a3-008-foliage-cat-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Foliage Cat camera skin - cover",
+          "source_file": "9/01-cover.webp",
+          "bytes": 92870,
+          "sha256": "330a858d6b6adb214f1f5073837c80d44959486b2013397065c829e2b8b3714c"
+        },
+        {
+          "path": "products/skcam-a3-008-foliage-cat/skcam-a3-008-foliage-cat-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Foliage Cat camera skin - peel",
+          "source_file": "9/02-peel.webp",
+          "bytes": 88402,
+          "sha256": "6ecb3f6cd846d58b759e61521da74794fbd491f1a4d303da3a493bb88870bcff"
+        },
+        {
+          "path": "products/skcam-a3-008-foliage-cat/skcam-a3-008-foliage-cat-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Foliage Cat camera skin - angled duo",
+          "source_file": "9/03-angled-duo.webp",
+          "bytes": 106798,
+          "sha256": "452cce0ef2baedb49384aaec7654d6adc349c3dbce56f526611de63e9edf5005"
+        },
+        {
+          "path": "products/skcam-a3-008-foliage-cat/skcam-a3-008-foliage-cat-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Foliage Cat camera skin - lifestyle",
+          "source_file": "9/04-lifestyle.webp",
+          "bytes": 205290,
+          "sha256": "fbb0adfe2b8c694dc7ec8b46d587822df61193305b4ca025217b99a20e041f98"
+        },
+        {
+          "path": "products/skcam-a3-008-foliage-cat/skcam-a3-008-foliage-cat-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Foliage Cat camera skin - lifestyle close",
+          "source_file": "9/05-lifestyle-close.webp",
+          "bytes": 186356,
+          "sha256": "5a378dd608f2d6e2fce1b8589a20592b3d9661100784f9367d40d022961e7a08"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-009",
+      "sku": "SKCAM-A3-009",
+      "name": "Let’s Go Cat",
+      "slug": "lets-go-cat",
+      "folder": "products/skcam-a3-009-lets-go-cat",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "10"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-009-lets-go-cat/skcam-a3-009-lets-go-cat-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-009-lets-go-cat/skcam-a3-009-lets-go-cat-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Let’s Go Cat camera skin - cover",
+          "source_file": "10/01-cover.webp",
+          "bytes": 86102,
+          "sha256": "42e4793be6d0e68e931dd9981099faf48f25622617d126cc4aa2772ba3d3ba33"
+        },
+        {
+          "path": "products/skcam-a3-009-lets-go-cat/skcam-a3-009-lets-go-cat-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Let’s Go Cat camera skin - peel",
+          "source_file": "10/02-peel.webp",
+          "bytes": 85238,
+          "sha256": "eeb24fdd9b3a01fb8bb1dbba912178d98289ad69c2aadcd983899526335771d9"
+        },
+        {
+          "path": "products/skcam-a3-009-lets-go-cat/skcam-a3-009-lets-go-cat-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Let’s Go Cat camera skin - angled duo",
+          "source_file": "10/03-angled-duo.webp",
+          "bytes": 95066,
+          "sha256": "d8a3f7897bc7c342601c710891dab17d57a127d5b3532e759bb38939c16f31c2"
+        },
+        {
+          "path": "products/skcam-a3-009-lets-go-cat/skcam-a3-009-lets-go-cat-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Let’s Go Cat camera skin - lifestyle",
+          "source_file": "10/04-lifestyle.webp",
+          "bytes": 201716,
+          "sha256": "4d375094f09759802c9540717bc3c9fcf0a0670da04135ec8c16cc0e9da9e3b9"
+        },
+        {
+          "path": "products/skcam-a3-009-lets-go-cat/skcam-a3-009-lets-go-cat-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Let’s Go Cat camera skin - lifestyle close",
+          "source_file": "10/05-lifestyle-close.webp",
+          "bytes": 224800,
+          "sha256": "6df5c2a535fb861f39e0b05c5cea75ef477a50e6cb4b9b3169f475024412703c"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-010",
+      "sku": "SKCAM-A3-010",
+      "name": "Midnight Cat",
+      "slug": "midnight-cat",
+      "folder": "products/skcam-a3-010-midnight-cat",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "11",
+        "12"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-010-midnight-cat/skcam-a3-010-midnight-cat-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-010-midnight-cat/skcam-a3-010-midnight-cat-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Midnight Cat camera skin - cover",
+          "source_file": "11/01-cover.webp",
+          "bytes": 60620,
+          "sha256": "93d8c02e710ffc49e223e792d5eeb7f88688c7efd21577c5f2d0bf746d06bcbe"
+        },
+        {
+          "path": "products/skcam-a3-010-midnight-cat/skcam-a3-010-midnight-cat-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Midnight Cat camera skin - peel",
+          "source_file": "11/02-peel.webp",
+          "bytes": 89174,
+          "sha256": "99eeecb10850e5c73f71c05fa702317786bdf725ddf1c60863a520fb8f156ae9"
+        },
+        {
+          "path": "products/skcam-a3-010-midnight-cat/skcam-a3-010-midnight-cat-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Midnight Cat camera skin - angled duo",
+          "source_file": "11/03-angled-duo.webp",
+          "bytes": 81764,
+          "sha256": "7bb36c5da096509f1446704a0497602fa52bfc6d7be9f1729077fb6aacfe06bd"
+        },
+        {
+          "path": "products/skcam-a3-010-midnight-cat/skcam-a3-010-midnight-cat-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Midnight Cat camera skin - lifestyle",
+          "source_file": "11/04-lifestyle.webp",
+          "bytes": 122602,
+          "sha256": "44eb025c8bddc4d10735c26effb6f7921dcbaa9b53bc14ed3497702ae7d08d21"
+        },
+        {
+          "path": "products/skcam-a3-010-midnight-cat/skcam-a3-010-midnight-cat-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Midnight Cat camera skin - lifestyle close",
+          "source_file": "11/05-lifestyle-close.webp",
+          "bytes": 114754,
+          "sha256": "9275a6205ec70338f7e88ddbe20f690878f5f06203e068c47c79c448e822fb2e"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-011",
+      "sku": "SKCAM-A3-011",
+      "name": "Thumbs Up Cat",
+      "slug": "thumbs-up-cat",
+      "folder": "products/skcam-a3-011-thumbs-up-cat",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "13"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-011-thumbs-up-cat/skcam-a3-011-thumbs-up-cat-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-011-thumbs-up-cat/skcam-a3-011-thumbs-up-cat-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Thumbs Up Cat camera skin - cover",
+          "source_file": "13/01-cover.webp",
+          "bytes": 91322,
+          "sha256": "5ee1de03fd19611e00de90715601312471ca95eb929adedd85e5e4d4dac3d6d3"
+        },
+        {
+          "path": "products/skcam-a3-011-thumbs-up-cat/skcam-a3-011-thumbs-up-cat-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Thumbs Up Cat camera skin - peel",
+          "source_file": "13/02-peel.webp",
+          "bytes": 103906,
+          "sha256": "4e9ea68f21a730689afb0c5f3ecfb14d05a600942b6cd1d97fa15e0c3fcbfad7"
+        },
+        {
+          "path": "products/skcam-a3-011-thumbs-up-cat/skcam-a3-011-thumbs-up-cat-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Thumbs Up Cat camera skin - angled duo",
+          "source_file": "13/03-angled-duo.webp",
+          "bytes": 101698,
+          "sha256": "15fca228eea3bf2c64e7555613d1ffc1afcad9c9b9103709bb0285a40da5bf33"
+        },
+        {
+          "path": "products/skcam-a3-011-thumbs-up-cat/skcam-a3-011-thumbs-up-cat-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Thumbs Up Cat camera skin - lifestyle",
+          "source_file": "13/04-lifestyle.webp",
+          "bytes": 242252,
+          "sha256": "16fc2e5b3bc79eb2e4895d471d6009dc4580b1376a0af26cdf8dd00aeb42b164"
+        },
+        {
+          "path": "products/skcam-a3-011-thumbs-up-cat/skcam-a3-011-thumbs-up-cat-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Thumbs Up Cat camera skin - lifestyle close",
+          "source_file": "13/05-lifestyle-close.webp",
+          "bytes": 213126,
+          "sha256": "c86616e83dfad3bce59e2830fc3da87e2f8b6a420e44ca853e0603f10a602565"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-012",
+      "sku": "SKCAM-A3-012",
+      "name": "Surprised Cat - Blue Burst",
+      "slug": "surprised-cat-blue-burst",
+      "folder": "products/skcam-a3-012-surprised-cat-blue-burst",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "14"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-012-surprised-cat-blue-burst/skcam-a3-012-surprised-cat-blue-burst-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-012-surprised-cat-blue-burst/skcam-a3-012-surprised-cat-blue-burst-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Blue Burst camera skin - cover",
+          "source_file": "14/01-cover.webp",
+          "bytes": 119818,
+          "sha256": "226cfde5b90817b106e7fcfa936580df7a5b5f58e9a699929f2c9370a1c0261c"
+        },
+        {
+          "path": "products/skcam-a3-012-surprised-cat-blue-burst/skcam-a3-012-surprised-cat-blue-burst-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Blue Burst camera skin - peel",
+          "source_file": "14/02-peel.webp",
+          "bytes": 113002,
+          "sha256": "30ee7f4c140be7c7186d06f77d3a539eafe7b7d3670939f38b5b72e65a379e8b"
+        },
+        {
+          "path": "products/skcam-a3-012-surprised-cat-blue-burst/skcam-a3-012-surprised-cat-blue-burst-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Blue Burst camera skin - angled duo",
+          "source_file": "14/03-angled-duo.webp",
+          "bytes": 136164,
+          "sha256": "977934da79078c67374d5a1f26b2dd123e6396c0911a93326a0daeeda6015ff5"
+        },
+        {
+          "path": "products/skcam-a3-012-surprised-cat-blue-burst/skcam-a3-012-surprised-cat-blue-burst-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Blue Burst camera skin - lifestyle",
+          "source_file": "14/04-lifestyle.webp",
+          "bytes": 183338,
+          "sha256": "bd5c7d694ded8fd13de1be4e6679a6150a60f8aeb0d5755214c1e04b0094bb87"
+        },
+        {
+          "path": "products/skcam-a3-012-surprised-cat-blue-burst/skcam-a3-012-surprised-cat-blue-burst-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Blue Burst camera skin - lifestyle close",
+          "source_file": "14/05-lifestyle-close.webp",
+          "bytes": 235430,
+          "sha256": "6a26f3c7039df35b69f230fe775b50c76e35bee4678e03ca6359fe4ba92d1f60"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-013",
+      "sku": "SKCAM-A3-013",
+      "name": "Surprised Cat - Gray Burst",
+      "slug": "surprised-cat-gray-burst",
+      "folder": "products/skcam-a3-013-surprised-cat-gray-burst",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "15"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-013-surprised-cat-gray-burst/skcam-a3-013-surprised-cat-gray-burst-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-013-surprised-cat-gray-burst/skcam-a3-013-surprised-cat-gray-burst-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Gray Burst camera skin - cover",
+          "source_file": "15/01-cover.webp",
+          "bytes": 124392,
+          "sha256": "e10edb6d7cedd816f2dce34cf989c4d22fbaa0c43ba11e72cb48a66b29af4f95"
+        },
+        {
+          "path": "products/skcam-a3-013-surprised-cat-gray-burst/skcam-a3-013-surprised-cat-gray-burst-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Gray Burst camera skin - peel",
+          "source_file": "15/02-peel.webp",
+          "bytes": 89298,
+          "sha256": "aecd09a5573d2dae54bb7afbad28c092b6ce93eceec8a01e9af53de8bda69fb4"
+        },
+        {
+          "path": "products/skcam-a3-013-surprised-cat-gray-burst/skcam-a3-013-surprised-cat-gray-burst-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Gray Burst camera skin - angled duo",
+          "source_file": "15/03-angled-duo.webp",
+          "bytes": 115958,
+          "sha256": "e124263a50acbcf86597b370cd7c80d2ef922cce059064e81496079938cb7d62"
+        },
+        {
+          "path": "products/skcam-a3-013-surprised-cat-gray-burst/skcam-a3-013-surprised-cat-gray-burst-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Gray Burst camera skin - lifestyle",
+          "source_file": "15/04-lifestyle.webp",
+          "bytes": 151780,
+          "sha256": "c3c01e1c13246fcc1020abf5294e762809034ee1a96c2ca4734416253288fc9f"
+        },
+        {
+          "path": "products/skcam-a3-013-surprised-cat-gray-burst/skcam-a3-013-surprised-cat-gray-burst-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Gray Burst camera skin - lifestyle close",
+          "source_file": "15/05-lifestyle-close.webp",
+          "bytes": 175890,
+          "sha256": "dd63c5bbc0be59b8c914f25eb62243780aacb633444c977788a19edc2554d490"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-014",
+      "sku": "SKCAM-A3-014",
+      "name": "Surprised Cat - Orange Burst",
+      "slug": "surprised-cat-orange-burst",
+      "folder": "products/skcam-a3-014-surprised-cat-orange-burst",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "16"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-014-surprised-cat-orange-burst/skcam-a3-014-surprised-cat-orange-burst-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-014-surprised-cat-orange-burst/skcam-a3-014-surprised-cat-orange-burst-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Orange Burst camera skin - cover",
+          "source_file": "16/01-cover.webp",
+          "bytes": 151246,
+          "sha256": "e4a93f5909c2be5cc93d7e474405427825684f0e3dcaace75bb5d31c8b605dac"
+        },
+        {
+          "path": "products/skcam-a3-014-surprised-cat-orange-burst/skcam-a3-014-surprised-cat-orange-burst-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Orange Burst camera skin - peel",
+          "source_file": "16/02-peel.webp",
+          "bytes": 124740,
+          "sha256": "236165d28546851ff0102d91fe5f393187d6bf78eac9765714bae6983d099491"
+        },
+        {
+          "path": "products/skcam-a3-014-surprised-cat-orange-burst/skcam-a3-014-surprised-cat-orange-burst-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Orange Burst camera skin - angled duo",
+          "source_file": "16/03-angled-duo.webp",
+          "bytes": 133834,
+          "sha256": "6f15bbe10e444ee383cfcacf0504836f045434c44b60ede5c323701fddf2a081"
+        },
+        {
+          "path": "products/skcam-a3-014-surprised-cat-orange-burst/skcam-a3-014-surprised-cat-orange-burst-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Orange Burst camera skin - lifestyle",
+          "source_file": "16/04-lifestyle.webp",
+          "bytes": 239940,
+          "sha256": "91aca574b3a0938f5f561bceeb420cd4b24a3eaa8b5040c20714ae8188988759"
+        },
+        {
+          "path": "products/skcam-a3-014-surprised-cat-orange-burst/skcam-a3-014-surprised-cat-orange-burst-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Surprised Cat - Orange Burst camera skin - lifestyle close",
+          "source_file": "16/05-lifestyle-close.webp",
+          "bytes": 260338,
+          "sha256": "536afb83ec58371d97d1d6739d7102f06c2ce4e492d058a92a8e291fe7b63f90"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-015",
+      "sku": "SKCAM-A3-015",
+      "name": "Dreamy Pup",
+      "slug": "dreamy-pup",
+      "folder": "products/skcam-a3-015-dreamy-pup",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "17"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-015-dreamy-pup/skcam-a3-015-dreamy-pup-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-015-dreamy-pup/skcam-a3-015-dreamy-pup-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Dreamy Pup camera skin - cover",
+          "source_file": "17/01-cover.webp",
+          "bytes": 53024,
+          "sha256": "208c41f4a7925c916fc2a4696efaac9cdfd28d9636c9ce5cd1ba2d86db9fa65e"
+        },
+        {
+          "path": "products/skcam-a3-015-dreamy-pup/skcam-a3-015-dreamy-pup-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Dreamy Pup camera skin - peel",
+          "source_file": "17/02-peel.webp",
+          "bytes": 53722,
+          "sha256": "347145f8340e4862c3a6b8529d10aaa4735e2bd5bc960d51b130900388cdf2a0"
+        },
+        {
+          "path": "products/skcam-a3-015-dreamy-pup/skcam-a3-015-dreamy-pup-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Dreamy Pup camera skin - angled duo",
+          "source_file": "17/03-angled-duo.webp",
+          "bytes": 65072,
+          "sha256": "165f6d8aa33edbace1bdc290db3c20ce55a0752d02be626c3a0d3592aff44f01"
+        },
+        {
+          "path": "products/skcam-a3-015-dreamy-pup/skcam-a3-015-dreamy-pup-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Dreamy Pup camera skin - lifestyle",
+          "source_file": "17/04-lifestyle.webp",
+          "bytes": 178756,
+          "sha256": "ec93894eac8e06a7154e787e8faefdbebc6c6861e27945fbd9d7776a4fb089fc"
+        },
+        {
+          "path": "products/skcam-a3-015-dreamy-pup/skcam-a3-015-dreamy-pup-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Dreamy Pup camera skin - lifestyle close",
+          "source_file": "17/05-lifestyle-close.webp",
+          "bytes": 132710,
+          "sha256": "db35783fbe2af2aa012a28d06bd6cf7a12333b647dfd2d7256ad1432af9aec45"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-016",
+      "sku": "SKCAM-A3-016",
+      "name": "Shadow Skull",
+      "slug": "shadow-skull",
+      "folder": "products/skcam-a3-016-shadow-skull",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "18"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-016-shadow-skull/skcam-a3-016-shadow-skull-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-016-shadow-skull/skcam-a3-016-shadow-skull-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Shadow Skull camera skin - cover",
+          "source_file": "18/01-cover.webp",
+          "bytes": 104582,
+          "sha256": "c30aad3fbe29d55c931f22a48ca217c3d15ae4ee8a63424da469e0e682a90924"
+        },
+        {
+          "path": "products/skcam-a3-016-shadow-skull/skcam-a3-016-shadow-skull-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Shadow Skull camera skin - peel",
+          "source_file": "18/02-peel.webp",
+          "bytes": 112306,
+          "sha256": "5b7c41e9e015b3fe1e146e43e24cee76e16b66f481db645f83a362b0a9ffa948"
+        },
+        {
+          "path": "products/skcam-a3-016-shadow-skull/skcam-a3-016-shadow-skull-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Shadow Skull camera skin - angled duo",
+          "source_file": "18/03-angled-duo.webp",
+          "bytes": 101798,
+          "sha256": "5a366cafe2622e14e235f22afbd0cb834854e6e532a14b20a133f4c4c596d300"
+        },
+        {
+          "path": "products/skcam-a3-016-shadow-skull/skcam-a3-016-shadow-skull-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Shadow Skull camera skin - lifestyle",
+          "source_file": "18/04-lifestyle.webp",
+          "bytes": 141506,
+          "sha256": "3aa720fb116cdff51b6dadf940d4bcadb85780efc87b0ae84919b79241438417"
+        },
+        {
+          "path": "products/skcam-a3-016-shadow-skull/skcam-a3-016-shadow-skull-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Shadow Skull camera skin - lifestyle close",
+          "source_file": "18/05-lifestyle-close.webp",
+          "bytes": 222124,
+          "sha256": "9521f7ac28e8418fa7726109319307d7b1d51e7e88b5766b0967a3b8fa6a3861"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-017",
+      "sku": "SKCAM-A3-017",
+      "name": "Neon Doodles",
+      "slug": "neon-doodles",
+      "folder": "products/skcam-a3-017-neon-doodles",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "19"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-017-neon-doodles/skcam-a3-017-neon-doodles-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-017-neon-doodles/skcam-a3-017-neon-doodles-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Neon Doodles camera skin - cover",
+          "source_file": "19/01-cover.webp",
+          "bytes": 183940,
+          "sha256": "060c564e6870c0d3929e72d9995d916c4f808393f548f873a4f3023e835cd63e"
+        },
+        {
+          "path": "products/skcam-a3-017-neon-doodles/skcam-a3-017-neon-doodles-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Neon Doodles camera skin - peel",
+          "source_file": "19/02-peel.webp",
+          "bytes": 139574,
+          "sha256": "288281feb270bad67ca4794988f8bac232d6816fe826b0e20099e25bd6fb7591"
+        },
+        {
+          "path": "products/skcam-a3-017-neon-doodles/skcam-a3-017-neon-doodles-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Neon Doodles camera skin - angled duo",
+          "source_file": "19/03-angled-duo.webp",
+          "bytes": 178218,
+          "sha256": "9508658c5f36e22e4cd26a5f216ef2cc01f24cde2736c23c4c2f42ad3042315e"
+        },
+        {
+          "path": "products/skcam-a3-017-neon-doodles/skcam-a3-017-neon-doodles-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Neon Doodles camera skin - lifestyle",
+          "source_file": "19/04-lifestyle.webp",
+          "bytes": 172758,
+          "sha256": "41cfae76a85180e26b9ae4a07309cf4ae39052fad91a150f89b5d2952c588256"
+        },
+        {
+          "path": "products/skcam-a3-017-neon-doodles/skcam-a3-017-neon-doodles-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Neon Doodles camera skin - lifestyle close",
+          "source_file": "19/05-lifestyle-close.webp",
+          "bytes": 250272,
+          "sha256": "17c568095f02522c8d8b9aaa3af02d9e8e9408f46807f60a77b0dedabb66e3fe"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-018",
+      "sku": "SKCAM-A3-018",
+      "name": "Doraemon Pink Door",
+      "slug": "doraemon-pink-door",
+      "folder": "products/skcam-a3-018-doraemon-pink-door",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "20"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-018-doraemon-pink-door/skcam-a3-018-doraemon-pink-door-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-018-doraemon-pink-door/skcam-a3-018-doraemon-pink-door-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Pink Door camera skin - cover",
+          "source_file": "20/01-cover.webp",
+          "bytes": 66080,
+          "sha256": "b76ac53755a88be03fc15a55f7b7fd2109933c546341ee1115fbfe3528d5fd0c"
+        },
+        {
+          "path": "products/skcam-a3-018-doraemon-pink-door/skcam-a3-018-doraemon-pink-door-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Pink Door camera skin - peel",
+          "source_file": "20/02-peel.webp",
+          "bytes": 76526,
+          "sha256": "8c925e87f4e1285e589d9e3a71335fd80161e317f6b0c2fdf33cf7669ffe14b6"
+        },
+        {
+          "path": "products/skcam-a3-018-doraemon-pink-door/skcam-a3-018-doraemon-pink-door-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Pink Door camera skin - angled duo",
+          "source_file": "20/03-angled-duo.webp",
+          "bytes": 71774,
+          "sha256": "68aefb368c9f74a1e15ca3ec6928c6954c921c867ee023eba31fc1a57b3a67ae"
+        },
+        {
+          "path": "products/skcam-a3-018-doraemon-pink-door/skcam-a3-018-doraemon-pink-door-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Pink Door camera skin - lifestyle",
+          "source_file": "20/04-lifestyle.webp",
+          "bytes": 160458,
+          "sha256": "379f4f9ef82e6c6cd9c07335ad532d35e2030faf7228a2d585829811680983f5"
+        },
+        {
+          "path": "products/skcam-a3-018-doraemon-pink-door/skcam-a3-018-doraemon-pink-door-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Pink Door camera skin - lifestyle close",
+          "source_file": "20/05-lifestyle-close.webp",
+          "bytes": 161502,
+          "sha256": "36ac8955530c8f7b4af4960486c1c896b25b1777b0172c1ae671c2678cd85561"
+        }
+      ]
+    },
+    {
+      "import_key": "skinup-camera-archive3-20261127:SKCAM-A3-019",
+      "sku": "SKCAM-A3-019",
+      "name": "Doraemon Sky Dreams",
+      "slug": "doraemon-sky-dreams",
+      "folder": "products/skcam-a3-019-doraemon-sky-dreams",
+      "category_intent": "existing camera skins category",
+      "source_folders": [
+        "21"
+      ],
+      "image_count": 5,
+      "primary_image": "products/skcam-a3-019-doraemon-sky-dreams/skcam-a3-019-doraemon-sky-dreams-01-cover.webp",
+      "images": [
+        {
+          "path": "products/skcam-a3-019-doraemon-sky-dreams/skcam-a3-019-doraemon-sky-dreams-01-cover.webp",
+          "position": 1,
+          "role": "cover",
+          "is_primary": true,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Sky Dreams camera skin - cover",
+          "source_file": "21/01-cover.webp",
+          "bytes": 79558,
+          "sha256": "8210b8210df82ee273114c1b209d411e3c36096fac1d7428a6809d75b59ae587"
+        },
+        {
+          "path": "products/skcam-a3-019-doraemon-sky-dreams/skcam-a3-019-doraemon-sky-dreams-02-peel.webp",
+          "position": 2,
+          "role": "peel",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Sky Dreams camera skin - peel",
+          "source_file": "21/02-peel.webp",
+          "bytes": 89976,
+          "sha256": "5230823cf7555b04f9113243ea955f5093d9b21c766862fc9a9b3419c9e15756"
+        },
+        {
+          "path": "products/skcam-a3-019-doraemon-sky-dreams/skcam-a3-019-doraemon-sky-dreams-03-angled-duo.webp",
+          "position": 3,
+          "role": "angled-duo",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Sky Dreams camera skin - angled duo",
+          "source_file": "21/03-angled-duo.webp",
+          "bytes": 100878,
+          "sha256": "b586c6c893ec7ff16941024faaefe047e8816360fc7da60d6928ebee268e28e4"
+        },
+        {
+          "path": "products/skcam-a3-019-doraemon-sky-dreams/skcam-a3-019-doraemon-sky-dreams-04-lifestyle.webp",
+          "position": 4,
+          "role": "lifestyle",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Sky Dreams camera skin - lifestyle",
+          "source_file": "21/04-lifestyle.webp",
+          "bytes": 113568,
+          "sha256": "577aca0cd792d171b0906871428db54ef13a2d82de19054cb00a2e9bbeb060b6"
+        },
+        {
+          "path": "products/skcam-a3-019-doraemon-sky-dreams/skcam-a3-019-doraemon-sky-dreams-05-lifestyle-close.webp",
+          "position": 5,
+          "role": "lifestyle-close",
+          "is_primary": false,
+          "width": 2000,
+          "height": 2000,
+          "alt": "Doraemon Sky Dreams camera skin - lifestyle close",
+          "source_file": "21/05-lifestyle-close.webp",
+          "bytes": 187232,
+          "sha256": "e96c0b13efeda6c5613f2a0947ca7a8c07988a2007be0896b944da4acc940c9a"
+        }
+      ]
+    }
+  ]
+}

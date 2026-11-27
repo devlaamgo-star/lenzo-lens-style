@@ -1,0 +1,11 @@
+Import BOTH attached optimized ZIPs into the existing Skin Camera / Camera Skins category, using the same layout and purchase flow as the other camera skins.
+
+Read CATALOG_PART_1.json and CATALOG_PART_2.json: together they contain exactly 40 products and 197 photos. Use the supplied names, SKUs, slugs and import_key values exactly. Each product folder is ONE product with its own gallery. The CSVs repeat the same data; import each product once. Keep separate artwork-color designs separate.
+
+CRITICAL MAIN PHOTO RULE: For EVERY product, its own file ending in -01-cover.webp MUST be the main storefront/card/cart thumbnail AND the FIRST photo in its product gallery. Use the upright overlapping two-phone photo on white, like my attached Monochrome Dragon example, with each product's matching design. Persist this in the existing main-image field and follow the exact gallery positions from the JSON files.
+
+Upload the supplied WebPs to permanent project asset storage. Preserve their unique filenames, colors, framing and aspect ratios. Use only the images assigned to each SKU: Sunset Rider has 4, Tom Cool Vibes has 3, and the other 38 products have 5 each. Use all available images without placeholders or borrowed photos.
+
+Reuse the current camera-skin prices, offers, compatible-model options, product settings and cart/checkout behavior. Phone colors and two phones shown in mockups are presentation only. Preserve existing unrelated products. Make re-imports idempotent by matching import_key/SKU; use normal database IDs.
+
+After BOTH parts are imported, verify 40 unique products, 197 correctly assigned photos, one matching cover per product, and correct cards/galleries/cart thumbnails on mobile and desktop. Report the imported counts and any missing assets.
