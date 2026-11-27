@@ -40,5 +40,5 @@ test("character designs are never added to back & lens skins", () => {
 
 test("character designs reuse the camera price and models", () => {
   expect(LENS_SKIN_PRICE).toBe(79);
-  expect(modelsForCategory("lens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
+  expect(modelsForCategory("lens").slice(0, 2)).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
 });

@@ -8,7 +8,7 @@ import { toast } from "sonner";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
 import { useCart } from "@/lib/cart";
-import { designById } from "@/lib/catalog";
+import { CAMERA_IPHONE_MODELS, designById } from "@/lib/catalog";
 import { DeliveryZoneSelect } from "@/components/DeliveryZoneSelect";
 import { isDeliveryZone, isCompleteAddress } from "@/lib/delivery-address";
 import { createOrder } from "@/lib/orders.functions";
@@ -233,6 +233,7 @@ function OrderPage() {
               {packReady && (
                 <div className="min-w-0">
                   <ModelSelect
+                    models={CAMERA_IPHONE_MODELS}
                     value={pack.model}
                     onChange={pack.setModel}
                     error={errors.model}

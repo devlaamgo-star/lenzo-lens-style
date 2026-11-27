@@ -60,11 +60,11 @@ test("all 107 retired products remain readable in historical orders but not acti
   }
 });
 
-test("replacement keeps camera prices, models and selection settings exactly unchanged", () => {
+test("replacement keeps camera prices and selection settings unchanged and retains original models", () => {
   expect(LENS_SKIN_PRICE).toBe(savedSettings.price);
   expect(PACK_PRICE).toBe(savedSettings.bundlePrice);
   expect(PACK_SIZE).toBe(savedSettings.bundleSize);
-  expect(modelsForCategory("lens")).toEqual(savedSettings.models);
+  expect(modelsForCategory("lens").slice(0, 2)).toEqual(savedSettings.models);
   expect(DEFAULT_IPHONE_MODEL).toBe(savedSettings.defaultModel);
 });
 

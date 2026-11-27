@@ -1,3 +1,8 @@
+# Camera product-page redesign
+- [x] Redesign all 72 camera product pages with supplied French copy, DH prices, preserved photos and offers; all 72 URLs verified.
+- [x] Connect four exact camera models across purchase, quick add, packs and checkout; desktop/mobile verified, 412 tests pass. Order validation preserves every model for all 72 designs; existing admin detail mapping retains the exact item model. No real order created and signed-in admin readback not verified.
+- [ ] Deploy redesign to skinup.ma — its separate Cloudflare storefront requires the owner's deployment; not published here.
+
 # Camera catalog replacement (72-design collection)
 - [x] Validate the complete manifest and all 637 supplied WebP assets; retain current camera configuration and 107 historical records.
 - [x] Replace only active camera designs with 72 stable-ID products and correctly ordered responsive covers/galleries.

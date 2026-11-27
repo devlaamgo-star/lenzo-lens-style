@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Minus, Plus, ShoppingBag } from "lucide-react";
@@ -19,7 +20,13 @@ export function ModelSelect({
   error,
   className = "h-11 rounded-full",
   models = IPHONE_MODELS,
+  label,
+  helper,
+  placeholder,
 }: {
+  label?: string;
+  helper?: string;
+  placeholder?: string;
   models?: readonly string[];
   value: string;
   onChange: (v: string) => void;
@@ -29,10 +36,10 @@ export function ModelSelect({
   const { t } = useI18n();
   return (
     <div className="w-full">
-      <label className="mb-1.5 block text-sm font-medium">{t("pack.model")}</label>
+      <label className="mb-1.5 block text-sm font-medium">{label ?? t("pack.model")}</label>
       <Select value={value} onValueChange={onChange}>
-        <SelectTrigger className={className}>
-          <SelectValue placeholder={t("pack.modelPlaceholder")} />
+        <SelectTrigger aria-label={label ?? t("pack.model")} className={className}>
+          <SelectValue placeholder={placeholder ?? t("pack.modelPlaceholder")} />
         </SelectTrigger>
         <SelectContent>
           {models.map((m) => (
@@ -42,6 +49,7 @@ export function ModelSelect({
           ))}
         </SelectContent>
       </Select>
+      {helper && <p className="mt-2 text-xs text-muted-foreground">{helper}</p>}
       {error && <p className="mt-1.5 text-xs text-destructive">{error}</p>}
     </div>
   );
@@ -89,7 +97,9 @@ export function AddToCartBlock({
   product,
   compact = false,
   onDone,
+  cameraFrench = false,
 }: {
+  cameraFrench?: boolean;
   product: CartProduct;
   compact?: boolean;
   onDone?: () => void;
@@ -104,41 +114,44 @@ export function AddToCartBlock({
 
   const submit = (goToCheckout: boolean) => {
     if (!model) {
-      setError(t("e.modelSelect"));
+      setError(cameraFrench ? "Choisissez votre modèle d’iPhone." : t("e.modelSelect"));
       return;
     }
     setError(undefined);
     cart.add(product, model, qty);
-    toast.success(t("cart.addedToast"));
+    toast.success(cameraFrench ? "Skin ajouté au panier" : t("cart.addedToast"));
     onDone?.();
     if (goToCheckout) navigate({ to: "/commande" });
   };
 
   return (
     <div className="w-full space-y-3">
-      <ModelSelect models={models} value={model} onChange={(v) => { setModel(v); setError(undefined); }} error={error} />
+      <ModelSelect
+        {...(cameraFrench ? { label: "Votre modèle d’iPhone", helper: "Choisissez le modèle exact de votre téléphone.", placeholder: "Sélectionnez votre modèle", className: "h-12 rounded-lg" } : {})}
+        models={models} value={model} onChange={(v) => { setModel(v); setError(undefined); }} error={error} />
       <div className="flex flex-wrap items-center gap-3">
         <div>
-          <span className="mb-1.5 block text-sm font-medium">{t("skins.qty")}</span>
+          <span className="mb-1.5 block text-sm font-medium">{cameraFrench ? "Quantité" : t("skins.qty")}</span>
           <QtyStepper value={qty} onChange={setQty} compact={compact} />
         </div>
-        <button
+        <Button
+          variant={cameraFrench ? "outline" : "ghost"}
           type="button"
           onClick={() => submit(false)}
-          className="mt-6 inline-flex h-12 flex-1 items-center justify-center gap-2 rounded-full bg-ink px-6 text-sm font-semibold text-ink-foreground transition-colors hover:bg-primary"
+          className={cameraFrench ? "mt-6 h-12 flex-1 rounded-lg px-4 font-semibold shadow-none" : "mt-6 h-12 flex-1 rounded-full bg-ink px-6 font-semibold text-ink-foreground hover:bg-primary"}
         >
           <ShoppingBag className="h-4 w-4" />
-          {t("cart.add")}
-        </button>
+          {cameraFrench ? "Ajouter au panier" : t("cart.add")}
+        </Button>
       </div>
-      <button
+      <Button
         type="button"
         onClick={() => submit(true)}
-        className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01]"
+        className={cameraFrench ? "h-12 w-full rounded-lg px-6 font-semibold shadow-none hover:bg-primary-hover" : "h-12 w-full rounded-full bg-primary px-6 font-semibold text-primary-foreground shadow-none transition-transform hover:scale-[1.01]"}
       >
-        {t("skins.order")}
-      </button>
-      <p className="text-xs text-muted-foreground">{t("cod.text")}</p>
+        {cameraFrench ? "Commander ce skin" : t("skins.order")}
+      </Button>
+      <p className="text-xs text-muted-foreground">{cameraFrench ? "Paiement à la livraison au Maroc." : t("cod.text")}</p>
     </div>
   );
 }

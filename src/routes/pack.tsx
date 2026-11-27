@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, ChevronRight, Plus, X } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 import { usePack } from "@/lib/pack";
-import { DESIGNS, designById, IPHONE_MODELS } from "@/lib/catalog";
+import { DESIGNS, designById, CAMERA_IPHONE_MODELS } from "@/lib/catalog";
 import { useCart } from "@/lib/cart";
 import { cameraDeliveryFee } from "@/lib/pricing";
 
@@ -184,7 +184,7 @@ function PackPage() {
                     <SelectValue placeholder={t("pack.modelPlaceholder")} />
                   </SelectTrigger>
                   <SelectContent className="max-h-72">
-                    {IPHONE_MODELS.map((m) => (
+                    {CAMERA_IPHONE_MODELS.map((m) => (
                       <SelectItem key={m} value={m}>
                         {m}
                       </SelectItem>

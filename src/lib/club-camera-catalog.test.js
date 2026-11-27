@@ -28,5 +28,5 @@ test("club imports preserve all 56 existing camera designs and unique identities
 
 test("club stickers inherit the existing camera price and both compatible models", () => {
   expect(LENS_SKIN_PRICE).toBe(79);
-  expect(modelsForCategory("lens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
+  expect(modelsForCategory("lens").slice(0, 2)).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
 });

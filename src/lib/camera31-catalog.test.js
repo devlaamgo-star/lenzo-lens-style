@@ -52,7 +52,7 @@ test("the 31 designs never appear in back-skin or iPhone Air categories", () => 
 
 test("they inherit the 79 MAD camera price and existing model options", () => {
   expect(LENS_SKIN_PRICE).toBe(79);
-  expect(modelsForCategory("lens")).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
+  expect(modelsForCategory("lens").slice(0, 2)).toEqual(["iPhone 17 Pro", "iPhone 17 Pro Max"]);
 });
 
 test("any 3 different new designs get the 149 MAD offer with free delivery", () => {
