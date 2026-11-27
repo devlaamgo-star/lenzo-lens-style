@@ -33,6 +33,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { SOURCE_LABEL, TRAFFIC_SOURCES } from "@/lib/attribution";
 import { RevenueSummary } from "@/components/RevenueSummary";
 import { OzonTrackingCell } from "@/components/admin/OzonTrackingCell";
+import { OrderThumbnail } from "@/components/admin/OrderThumbnail";
 import { refreshOzonTracking } from "@/lib/ozon.functions";
 import { buildCsv, rowsForExport, setViewSelection, viewSelectionState } from "@/lib/admin-export";
 
@@ -723,18 +724,7 @@ function AdminOrdersPage() {
                   </td>
                   <td className="px-3 py-2">
                     <div className="h-11 w-11 overflow-hidden rounded-md border bg-muted">
-                      {thumb ? (
-                        <img
-                          src={thumb}
-                          alt={r.product}
-                          className="h-full w-full object-contain"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <span className="flex h-full w-full items-center justify-center text-[9px] text-muted-foreground">
-                          {r.kind === "design" ? "Design" : "—"}
-                        </span>
-                      )}
+                      <OrderThumbnail image={thumb} name={r.product} />
                     </div>
                   </td>
                   <td className="max-w-[220px] truncate px-3 py-3">{r.product}</td>
@@ -1147,18 +1137,7 @@ function OrderDetail({
             {record.lines.map((l) => (
               <li key={l.key} className="flex items-center gap-4 rounded-xl border bg-card p-3">
                 <div className="h-20 w-20 shrink-0 overflow-hidden rounded-lg border bg-muted">
-                  {l.image ? (
-                    <img
-                      src={l.image}
-                      alt={l.name}
-                      className="h-full w-full object-contain"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <span className="flex h-full w-full items-center justify-center text-[10px] text-muted-foreground">
-                      Sans image
-                    </span>
-                  )}
+                  <OrderThumbnail image={l.image} name={l.name} />
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="truncate font-medium">{l.name}</p>

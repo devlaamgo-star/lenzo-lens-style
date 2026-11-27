@@ -40,3 +40,4 @@
 
 - Camera-specific model choices live in `CAMERA_IPHONE_MODELS` and `modelsForCategory("lens")`; pack selectors reuse that list while cart/order lines retain the exact selected string, so new camera options do not change other categories or customizer geometry.
 - iPhone Duo / Air imports are generated into `src/data/iphone-air-duo-batch.ts` by the script saved beside their manifest in `catalog-templates/iphone-air-skins/imports/`, keyed by `import_key`; reruns update records instead of duplicating; the 10 original Air designs are retired to `ARCHIVED_AIR_SKINS` (order lookup only) and their URLs redirect to `/iphone-air`.
+- Order-item covers resolve by catalog ID/SKU/import key/slug through `order-images.ts` and use absolute Lovable asset URLs; the separate storefront cannot serve relative Lovable asset paths, and failed admin thumbnails render a placeholder.

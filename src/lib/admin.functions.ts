@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { lookupProduct } from "@/lib/product-lookup";
+import { orderItemImage, orderProduct, stableOrderImage } from "./order-images";
 
 const COVERAGE_FR: Record<string, string> = {
   full: "Arrière & côtés",
@@ -192,7 +193,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
       let customIndex = 0;
 
       for (const i of items) {
-        const ref = lookupProduct(String(i?.productId ?? ""));
+        const ref = orderProduct(i ?? {});
         const qty = Number(i?.qty ?? 1);
         const unit = i?.unitPrice != null ? Number(i.unitPrice) : null;
         const custom = (i?.custom ?? null) as any;
@@ -208,7 +209,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         lines.push({
           key: `item-${i?.productId ?? lines.length}-${i?.model ?? ""}`,
           name: ref?.name ?? i?.name ?? String(i?.productId ?? "Produit"),
-          image: (i?.image as string) ?? ref?.image ?? null,
+          image: orderItemImage(i ?? {}),
           categoryLabel: custom
             ? "Skin personnalisé"
             : (ref?.categoryLabel ?? String(i?.category ?? "")),
@@ -232,7 +233,7 @@ export const listAdminOrders = createServerFn({ method: "GET" })
         lines.push({
           key: `pack-${id}`,
           name: ref?.name ?? id,
-          image: ref?.image ?? null,
+          image: stableOrderImage(ref?.image),
           categoryLabel: ref?.categoryLabel ?? "Stickers caméra",
           model: o.iphone_model ?? "",
           qty,

@@ -3,6 +3,7 @@ import { z } from "zod";
 import { CATEGORY_PRICES, CUSTOM_COVERAGE_PRICES, categoryBundles, cameraDeliveryFee, packBreakdown } from "./pricing";
 import { TRAFFIC_SOURCES } from "./attribution";
 import { deliveryZoneSchema, fullAddressSchema } from "./delivery-address";
+import { snapshotOrderItem } from "./order-images";
 
 const moroccanPhone = /^(?:\+212|00212|0)([5-7])\d{8}$/;
 
@@ -43,6 +44,8 @@ const itemSchema = z.object({
   qty: z.number().int().min(1).max(20),
   image: z.string().trim().max(400).optional().default(""),
   slug: z.string().trim().max(80).optional().default(""),
+  sku: z.string().trim().max(100).optional(),
+  importKey: z.string().trim().max(120).optional(),
   custom: customSkinSchema.optional(),
 });
 
@@ -137,8 +140,7 @@ export const createOrder = createServerFn({ method: "POST" })
       iphone_model: data.model,
       designs: data.designs,
       items: data.items.map((i) => ({
-        ...i,
-        image: i.image || undefined,
+        ...snapshotOrderItem(i),
         unitPrice: unitPriceFor(i),
         lineTotal: unitPriceFor(i) * i.qty,
       })),

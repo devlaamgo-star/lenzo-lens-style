@@ -1,3 +1,10 @@
+# Admin order thumbnails
+- [x] Exact stored Chat Bleu Tourbillon relative URL returns 404 on skinup.ma and 200/WebP on Lovable; admin query already includes items, but rendering trusted relative snapshots. Use catalog ID/SKU/import key/slug main covers and permanent absolute Lovable URLs with a clean error placeholder.
+- [x] Repair 59 existing orders for 44 catalog-verified product identities; zero remaining relative catalog snapshots. Original 118 orders' prices, quantities, statuses and remaining item fields verified identical by normalized digest. 141 tests pass; actual thumbnail component shows Chat Bleu Tourbillon and three older covers plus unavailable-photo placeholder on desktop/mobile.
+- [x] Save clearly labeled do-not-ship test order LNZ-261127-4453 through checkout; database readback confirms exact main cover, ID/SKU/import key, iPhone 17 Pro, quantity 1, 79 MAD item / 99 MAD total, status new.
+- [ ] Verify actual signed-in admin dashboard — temporary test-account access declined; requires the user's admin session. Original screenshot order LNZ-261127-7821 was visible at first read but no longer exists in later reads (not deleted by this task); its exact cover is verified independently.
+- [ ] Deploy frontend/server changes on Lovable and separate skinup.ma copy — not published in this request.
+
 # Camera 40-product addition
 - [x] Import both manifests and 197 unchanged WebPs with UUID identities; append 40 products, retaining all 72 existing camera products and shared commerce; zero missing assets.
 - [x] Verify all 197 CDN hashes, all 40 cards/pages/gallery positions and quick-add/cart covers after refresh on desktop/mobile; checkout cover and 99 MAD single-item total verified, no order submitted; identical generator reruns, 134 tests pass and build OK.

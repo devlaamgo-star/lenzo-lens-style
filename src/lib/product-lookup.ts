@@ -12,9 +12,11 @@ export type ProductRef = {
   name: string;
   image: string;
   categoryLabel: string;
+  sku?: string;
+  importKey?: string;
 };
 
-const GROUPS: { label: string; items: readonly { id: string; slug: string; name: { fr: string }; image: string }[] }[] = [
+const GROUPS: { label: string; items: readonly { id: string; slug: string; name: { fr: string }; image: string; sku?: string; importKey?: string }[] }[] = [
   { label: "Stickers caméra", items: [...ARCHIVED_CAMERA_LENS_SKINS, ...CAMERA_LENS_SKINS] },
   { label: "Skins arrière & caméra", items: [...ARCHIVED_BACK_LENS_SKINS, ...BACK_LENS_SKINS] },
   { label: "Full body skins", items: FULL_BODY_SKINS },
@@ -32,9 +34,13 @@ for (const group of GROUPS) {
       name: p.name.fr,
       image: p.image,
       categoryLabel: group.label,
+      ...(p.sku ? { sku: p.sku } : {}),
+      ...(p.importKey ? { importKey: p.importKey } : {}),
     };
     INDEX.set(p.id, ref);
     if (!INDEX.has(p.slug)) INDEX.set(p.slug, ref);
+    if (p.sku) INDEX.set(p.sku, ref);
+    if (p.importKey) INDEX.set(p.importKey, ref);
   }
 }
 
