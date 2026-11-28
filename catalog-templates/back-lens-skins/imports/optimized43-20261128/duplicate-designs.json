@@ -1,0 +1,13 @@
+{
+  "policy": "Keep latest Batch 08 five-photo master for repeated artwork",
+  "kept_products": [
+    "golden-raven",
+    "one-piece-wanted",
+    "levi-green"
+  ],
+  "excluded_earlier_groups": [
+    "SKINUP_5_Designs_25_Photos/01_Golden_Raven",
+    "SKINUP_5_Designs_25_Photos/02_One_Piece_Wanted",
+    "SKINUP_Levi_Back_Lens_5_Photos"
+  ]
+}

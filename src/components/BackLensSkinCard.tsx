@@ -39,8 +39,8 @@ export function BackLensSkinCard({
           src={thumbnail?.src ?? skin.image}
           srcSet={thumbnail?.srcSet}
           sizes={thumbnail ? BACK_LENS_CARD_SIZES : undefined}
-          width={thumbnail ? 540 : undefined}
-          height={thumbnail ? 648 : undefined}
+          width={thumbnail?.width ?? (thumbnail ? 540 : undefined)}
+          height={thumbnail?.height ?? (thumbnail ? 648 : undefined)}
           decoding="async"
           alt={`${skin.name[lang]} — ${t("backlens.category")} ${skin.device}`}
           loading={priority ? "eager" : "lazy"}

@@ -1,0 +1,12 @@
+Replace the entire active product catalog in the exact category "Skins arrière & caméra" using the attached SKINUP package.
+
+Use products.json as the source of truth: 43 unique products, five ordered gallery photos per product, plus one separate card thumbnail. The three duplicate designs have already been removed. Do not create a product for each image.
+
+1. Read the existing category's pricing, currency, phone-model options and purchase configuration first. Reuse them for the replacement products; do not invent prices or reset options.
+2. Remove all previous products from this category's active storefront and replace them with only the 43 manifest products. Preserve historical orders, line items and their saved product/image references. Leave other categories and their products unchanged.
+3. Import the WebP assets from products/<slug>/. Use name_fr as the displayed French product name, slug as the stable import key, and sort_order for catalog ordering. Make the import safe to rerun without duplicates.
+4. Map cover to the main product image and thumbnail to the collection/grid card. Map gallery in its exact supplied order: cover, peel detail, angled duo, lifestyle, close-up. card.webp is a thumbnail, not a sixth gallery photo. Upload the files and store working asset URLs; do not leave local archive paths as live URLs.
+5. Use the 480px thumbnails for grid cards and 1000px images for product details. Keep the supplied aspect ratios and full compositions. Lazy-load below-fold images and load additional gallery images only when needed. Set width and height to prevent layout shifts.
+6. Keep the current site design, checkout and order flow. Show the selected product's correct cover in the cart, checkout, confirmation and new admin order items.
+
+Before finishing, verify exactly 43 active products in this category, five distinct correctly assigned photos per product, no missing images, no duplicate products, and working model selection/add-to-cart/order images. Report the replacement counts and any unresolved pricing or import issue. Apply this replacement now; do not stop at a plan.

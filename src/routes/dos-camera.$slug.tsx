@@ -8,13 +8,14 @@ import { BACK_LENS_SKIN_PRICE, backLensSkinBySlug } from "@/lib/catalog";
 import { BackLensSkinCard } from "@/components/BackLensSkinCard";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { archivedBackLensSkinBySlug } from "@/data/archive/back-lens-skins";
+import { retiredBackLensSkinBySlug } from "@/data/archive/back-lens-imports";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/dos-camera/$slug")({
   loader: ({ params }) => {
     const skin = backLensSkinBySlug(params.slug);
     // Retired designs (old ads, shared links) land on the current designs instead of a dead end.
-    if (!skin && archivedBackLensSkinBySlug(params.slug)) throw redirect({ to: "/dos-camera", statusCode: 301 });
+    if (!skin && (archivedBackLensSkinBySlug(params.slug) || retiredBackLensSkinBySlug(params.slug))) throw redirect({ to: "/dos-camera", statusCode: 301 });
     if (!skin) throw notFound();
     return { skin };
   },
@@ -69,16 +70,20 @@ function BackLensProductPage() {
 
       <section className="section-y">
         <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className="space-y-3">
+          <div className="min-w-0 space-y-3">
           <div className="overflow-hidden rounded-3xl border border-border bg-card">
             <img
               src={skin.gallery[galleryIndex] ?? skin.image}
               alt={`${skin.name[lang]} — ${t("backlens.category")} ${skin.device}`}
+              width={1000}
+              height={1000}
+              decoding="async"
+              loading={galleryIndex === 0 ? "eager" : "lazy"}
               className="aspect-square w-full object-contain p-6"
             />
           </div>
           {skin.gallery.length > 1 && (
-            <div className="flex gap-3" role="group" aria-label={skin.name[lang]}>
+            <div className="flex gap-3 overflow-x-auto" role="group" aria-label={skin.name[lang]}>
               {skin.gallery.map((image, index) => (
                 <Button
                   key={image}
@@ -87,9 +92,9 @@ function BackLensProductPage() {
                   aria-label={`${skin.name[lang]} — ${index + 1} / ${skin.gallery.length}`}
                   aria-pressed={galleryIndex === index}
                   onClick={() => setGalleryIndex(index)}
-                  className={`h-20 w-20 overflow-hidden bg-card p-0 ${galleryIndex === index ? "border-primary ring-1 ring-primary" : "border-border"}`}
+                  className={`h-20 w-20 shrink-0 overflow-hidden bg-card p-0 ${galleryIndex === index ? "border-primary ring-1 ring-primary" : "border-border"}`}
                 >
-                  <img src={image} alt="" className="h-full w-full object-contain" />
+                  <img src={image} alt="" width={1000} height={1000} loading="lazy" decoding="async" className="h-full w-full object-contain" />
                 </Button>
               ))}
             </div>

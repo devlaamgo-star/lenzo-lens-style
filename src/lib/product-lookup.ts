@@ -2,6 +2,7 @@ import { CAMERA_LENS_SKINS } from "@/data/camera-lens-skins";
 import { ARCHIVED_CAMERA_LENS_SKINS } from "@/data/archive/camera-lens-skins";
 import { BACK_LENS_SKINS } from "@/data/back-lens-skins";
 import { ARCHIVED_BACK_LENS_SKINS } from "@/data/archive/back-lens-skins";
+import { RETIRED_BACK_LENS_PRODUCTS } from "@/data/archive/back-lens-imports";
 import { FULL_BODY_SKINS } from "@/data/full-body-skins";
 import { IPHONE_AIR_SKINS, ARCHIVED_AIR_SKINS } from "@/data/iphone-air-skins";
 
@@ -18,7 +19,7 @@ export type ProductRef = {
 
 const GROUPS: { label: string; items: readonly { id: string; slug: string; name: { fr: string }; image: string; sku?: string; importKey?: string }[] }[] = [
   { label: "Stickers caméra", items: [...ARCHIVED_CAMERA_LENS_SKINS, ...CAMERA_LENS_SKINS] },
-  { label: "Skins arrière & caméra", items: [...ARCHIVED_BACK_LENS_SKINS, ...BACK_LENS_SKINS] },
+  { label: "Skins arrière & caméra", items: [...ARCHIVED_BACK_LENS_SKINS, ...RETIRED_BACK_LENS_PRODUCTS, ...BACK_LENS_SKINS] },
   { label: "Full body skins", items: FULL_BODY_SKINS },
   { label: "iPhone Duo / Air Series", items: IPHONE_AIR_SKINS },
   { label: "Skins iPhone Air (archive)", items: ARCHIVED_AIR_SKINS },

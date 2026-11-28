@@ -1,5 +1,6 @@
 import { expect, test } from "bun:test";
-import { BACK_LENS_SKINS, backLensSkinBySlug, mergeBackLensProducts } from "../data/back-lens-skins";
+import { mergeBackLensProducts } from "../data/back-lens-skins";
+import { RETIRED_BACK_LENS_PRODUCTS as BACK_LENS_SKINS, retiredBackLensSkinBySlug as backLensSkinBySlug } from "../data/archive/back-lens-imports";
 import manifest from "../../catalog-templates/back-lens-skins/imports/organized-2026-11/catalog.json";
 import batch02Manifest from "../../catalog-templates/back-lens-skins/imports/batch02/catalog.json";
 import { ORGANIZED_BACK_LENS_PRODUCTS } from "../data/organized-back-lens-products";

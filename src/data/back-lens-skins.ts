@@ -1,8 +1,5 @@
 import type { BackLensSkin } from "./archive/back-lens-skins";
-import { ORGANIZED_BACK_LENS_PRODUCTS } from "./organized-back-lens-products";
-import { BATCH02_BACK_LENS_PRODUCTS } from "./batch02-back-lens-products";
-import { BATCH03_BACK_LENS_PRODUCTS } from "./batch03-back-lens-products";
-import { BATCH04_BACK_LENS_PRODUCTS } from "./batch04-back-lens-products";
+import { OPTIMIZED43_BACK_LENS_PRODUCTS } from "./back-lens-optimized43";
 export type { BackLensSkin } from "./archive/back-lens-skins";
 
 /** Active ready-made designs only. Original designs remain in archive for existing orders. */
@@ -23,11 +20,7 @@ export function mergeBackLensProducts(existing: ActiveBackLensSkin[], incoming: 
   return products;
 }
 
-export const BACK_LENS_SKINS = [
-  BATCH02_BACK_LENS_PRODUCTS,
-  BATCH03_BACK_LENS_PRODUCTS,
-  BATCH04_BACK_LENS_PRODUCTS,
-].reduce<ActiveBackLensSkin[]>((all, batch) => mergeBackLensProducts(all, batch), ORGANIZED_BACK_LENS_PRODUCTS);
+export const BACK_LENS_SKINS: ActiveBackLensSkin[] = OPTIMIZED43_BACK_LENS_PRODUCTS;
 
 export function backLensSkinBySlug(slug: string): BackLensSkin | undefined {
   return BACK_LENS_SKINS.find((s) => s.slug === slug);

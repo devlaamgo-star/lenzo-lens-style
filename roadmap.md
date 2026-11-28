@@ -1,3 +1,8 @@
+# Back & Lens 43-product replacement
+- [x] Replace the 43 previous active designs with the 43 supplied manifest products; archive prior identities and images, retain all other categories and commerce settings.
+- [x] Upload 215 gallery WebPs and 43 separate 480px thumbnails unchanged; all 258 live hashes match. Verify exact mapping and identical generator reruns; 257 tests pass, desktop all 43 pages and mobile cards/cart/checkout checked, mobile gallery overflow corrected. No order submitted or historical order modified.
+- [ ] Deploy replacement on skinup.ma — its separately hosted storefront requires the owner's deployment; changes applied in this project, not published.
+
 # Admin order thumbnails
 - [x] Exact stored Chat Bleu Tourbillon relative URL returns 404 on skinup.ma and 200/WebP on Lovable; admin query already includes items, but rendering trusted relative snapshots. Use catalog ID/SKU/import key/slug main covers and permanent absolute Lovable URLs with a clean error placeholder.
 - [x] Repair 59 existing orders for 44 catalog-verified product identities; zero remaining relative catalog snapshots. Original 118 orders' prices, quantities, statuses and remaining item fields verified identical by normalized digest. 141 tests pass; actual thumbnail component shows Chat Bleu Tourbillon and three older covers plus unavailable-photo placeholder on desktop/mobile.

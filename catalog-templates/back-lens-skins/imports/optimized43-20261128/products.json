@@ -1,0 +1,2248 @@
+{
+  "schema_version": 1,
+  "category": "Skins arrière & caméra",
+  "product_count": 43,
+  "gallery_images_per_product": 5,
+  "gallery_image_count": 215,
+  "card_image_count": 43,
+  "asset_paths_relative_to": "archive root",
+  "image_format": "webp",
+  "products": [
+    {
+      "slug": "one-piece-sunset",
+      "name_fr": "One Piece — Sunset",
+      "category": "Skins arrière & caméra",
+      "sort_order": 1,
+      "cover": "products/one-piece-sunset/01-cover.webp",
+      "thumbnail": "products/one-piece-sunset/card.webp",
+      "gallery": [
+        {
+          "path": "products/one-piece-sunset/01-cover.webp",
+          "role": "cover",
+          "alt": "One Piece — Sunset — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 64802
+        },
+        {
+          "path": "products/one-piece-sunset/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "One Piece — Sunset — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 75352
+        },
+        {
+          "path": "products/one-piece-sunset/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "One Piece — Sunset — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 62278
+        },
+        {
+          "path": "products/one-piece-sunset/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "One Piece — Sunset — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 101528
+        },
+        {
+          "path": "products/one-piece-sunset/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "One Piece — Sunset — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 123530
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "tom-gentleman",
+      "name_fr": "Tom Gentleman",
+      "category": "Skins arrière & caméra",
+      "sort_order": 2,
+      "cover": "products/tom-gentleman/01-cover.webp",
+      "thumbnail": "products/tom-gentleman/card.webp",
+      "gallery": [
+        {
+          "path": "products/tom-gentleman/01-cover.webp",
+          "role": "cover",
+          "alt": "Tom Gentleman — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 44008
+        },
+        {
+          "path": "products/tom-gentleman/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Tom Gentleman — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 59766
+        },
+        {
+          "path": "products/tom-gentleman/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Tom Gentleman — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 45896
+        },
+        {
+          "path": "products/tom-gentleman/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Tom Gentleman — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 93154
+        },
+        {
+          "path": "products/tom-gentleman/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Tom Gentleman — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 109124
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "maroc-vintage",
+      "name_fr": "Maroc Vintage",
+      "category": "Skins arrière & caméra",
+      "sort_order": 3,
+      "cover": "products/maroc-vintage/01-cover.webp",
+      "thumbnail": "products/maroc-vintage/card.webp",
+      "gallery": [
+        {
+          "path": "products/maroc-vintage/01-cover.webp",
+          "role": "cover",
+          "alt": "Maroc Vintage — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 136428
+        },
+        {
+          "path": "products/maroc-vintage/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Maroc Vintage — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 134850
+        },
+        {
+          "path": "products/maroc-vintage/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Maroc Vintage — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 123260
+        },
+        {
+          "path": "products/maroc-vintage/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Maroc Vintage — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 155648
+        },
+        {
+          "path": "products/maroc-vintage/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Maroc Vintage — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 189282
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "chat-requin",
+      "name_fr": "Chat & Requin",
+      "category": "Skins arrière & caméra",
+      "sort_order": 4,
+      "cover": "products/chat-requin/01-cover.webp",
+      "thumbnail": "products/chat-requin/card.webp",
+      "gallery": [
+        {
+          "path": "products/chat-requin/01-cover.webp",
+          "role": "cover",
+          "alt": "Chat & Requin — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 119650
+        },
+        {
+          "path": "products/chat-requin/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Chat & Requin — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 115726
+        },
+        {
+          "path": "products/chat-requin/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Chat & Requin — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 99412
+        },
+        {
+          "path": "products/chat-requin/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Chat & Requin — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 126334
+        },
+        {
+          "path": "products/chat-requin/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Chat & Requin — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 164354
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "chat-melomane",
+      "name_fr": "Chat mélomane",
+      "category": "Skins arrière & caméra",
+      "sort_order": 5,
+      "cover": "products/chat-melomane/01-cover.webp",
+      "thumbnail": "products/chat-melomane/card.webp",
+      "gallery": [
+        {
+          "path": "products/chat-melomane/01-cover.webp",
+          "role": "cover",
+          "alt": "Chat mélomane — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 81428
+        },
+        {
+          "path": "products/chat-melomane/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Chat mélomane — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 81290
+        },
+        {
+          "path": "products/chat-melomane/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Chat mélomane — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 76830
+        },
+        {
+          "path": "products/chat-melomane/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Chat mélomane — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 117396
+        },
+        {
+          "path": "products/chat-melomane/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Chat mélomane — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 140036
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "titans-curieux",
+      "name_fr": "Titans curieux",
+      "category": "Skins arrière & caméra",
+      "sort_order": 6,
+      "cover": "products/titans-curieux/01-cover.webp",
+      "thumbnail": "products/titans-curieux/card.webp",
+      "gallery": [
+        {
+          "path": "products/titans-curieux/01-cover.webp",
+          "role": "cover",
+          "alt": "Titans curieux — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 80330
+        },
+        {
+          "path": "products/titans-curieux/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Titans curieux — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 82566
+        },
+        {
+          "path": "products/titans-curieux/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Titans curieux — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 78514
+        },
+        {
+          "path": "products/titans-curieux/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Titans curieux — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 108608
+        },
+        {
+          "path": "products/titans-curieux/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Titans curieux — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 132034
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "yellow-ducks",
+      "name_fr": "Yellow Ducks",
+      "category": "Skins arrière & caméra",
+      "sort_order": 7,
+      "cover": "products/yellow-ducks/01-cover.webp",
+      "thumbnail": "products/yellow-ducks/card.webp",
+      "gallery": [
+        {
+          "path": "products/yellow-ducks/01-cover.webp",
+          "role": "cover",
+          "alt": "Yellow Ducks — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 95084
+        },
+        {
+          "path": "products/yellow-ducks/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Yellow Ducks — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 89054
+        },
+        {
+          "path": "products/yellow-ducks/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Yellow Ducks — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 91472
+        },
+        {
+          "path": "products/yellow-ducks/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Yellow Ducks — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 120730
+        },
+        {
+          "path": "products/yellow-ducks/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Yellow Ducks — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 130616
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "no-risk-no-story",
+      "name_fr": "No Risk. No Story.",
+      "category": "Skins arrière & caméra",
+      "sort_order": 8,
+      "cover": "products/no-risk-no-story/01-cover.webp",
+      "thumbnail": "products/no-risk-no-story/card.webp",
+      "gallery": [
+        {
+          "path": "products/no-risk-no-story/01-cover.webp",
+          "role": "cover",
+          "alt": "No Risk. No Story. — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 57860
+        },
+        {
+          "path": "products/no-risk-no-story/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "No Risk. No Story. — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 54028
+        },
+        {
+          "path": "products/no-risk-no-story/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "No Risk. No Story. — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 51620
+        },
+        {
+          "path": "products/no-risk-no-story/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "No Risk. No Story. — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 101608
+        },
+        {
+          "path": "products/no-risk-no-story/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "No Risk. No Story. — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 108402
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "trust-in-allah",
+      "name_fr": "Trust in Allah",
+      "category": "Skins arrière & caméra",
+      "sort_order": 9,
+      "cover": "products/trust-in-allah/01-cover.webp",
+      "thumbnail": "products/trust-in-allah/card.webp",
+      "gallery": [
+        {
+          "path": "products/trust-in-allah/01-cover.webp",
+          "role": "cover",
+          "alt": "Trust in Allah — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 68620
+        },
+        {
+          "path": "products/trust-in-allah/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Trust in Allah — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 78702
+        },
+        {
+          "path": "products/trust-in-allah/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Trust in Allah — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 58972
+        },
+        {
+          "path": "products/trust-in-allah/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Trust in Allah — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 110906
+        },
+        {
+          "path": "products/trust-in-allah/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Trust in Allah — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 151324
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "smiley-earth",
+      "name_fr": "Smiley Earth",
+      "category": "Skins arrière & caméra",
+      "sort_order": 10,
+      "cover": "products/smiley-earth/01-cover.webp",
+      "thumbnail": "products/smiley-earth/card.webp",
+      "gallery": [
+        {
+          "path": "products/smiley-earth/01-cover.webp",
+          "role": "cover",
+          "alt": "Smiley Earth — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 82154
+        },
+        {
+          "path": "products/smiley-earth/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Smiley Earth — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 101282
+        },
+        {
+          "path": "products/smiley-earth/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Smiley Earth — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 78732
+        },
+        {
+          "path": "products/smiley-earth/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Smiley Earth — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 111342
+        },
+        {
+          "path": "products/smiley-earth/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Smiley Earth — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 154882
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "titan-wall",
+      "name_fr": "Titan Wall",
+      "category": "Skins arrière & caméra",
+      "sort_order": 11,
+      "cover": "products/titan-wall/01-cover.webp",
+      "thumbnail": "products/titan-wall/card.webp",
+      "gallery": [
+        {
+          "path": "products/titan-wall/01-cover.webp",
+          "role": "cover",
+          "alt": "Titan Wall — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 72664
+        },
+        {
+          "path": "products/titan-wall/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Titan Wall — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 77948
+        },
+        {
+          "path": "products/titan-wall/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Titan Wall — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 62310
+        },
+        {
+          "path": "products/titan-wall/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Titan Wall — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 118984
+        },
+        {
+          "path": "products/titan-wall/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Titan Wall — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 121854
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "luffy-going-merry",
+      "name_fr": "Luffy — Going Merry",
+      "category": "Skins arrière & caméra",
+      "sort_order": 12,
+      "cover": "products/luffy-going-merry/01-cover.webp",
+      "thumbnail": "products/luffy-going-merry/card.webp",
+      "gallery": [
+        {
+          "path": "products/luffy-going-merry/01-cover.webp",
+          "role": "cover",
+          "alt": "Luffy — Going Merry — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 88694
+        },
+        {
+          "path": "products/luffy-going-merry/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Luffy — Going Merry — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 71952
+        },
+        {
+          "path": "products/luffy-going-merry/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Luffy — Going Merry — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 81304
+        },
+        {
+          "path": "products/luffy-going-merry/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Luffy — Going Merry — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 108302
+        },
+        {
+          "path": "products/luffy-going-merry/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Luffy — Going Merry — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 121218
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "soleil-du-desert",
+      "name_fr": "Soleil du désert",
+      "category": "Skins arrière & caméra",
+      "sort_order": 13,
+      "cover": "products/soleil-du-desert/01-cover.webp",
+      "thumbnail": "products/soleil-du-desert/card.webp",
+      "gallery": [
+        {
+          "path": "products/soleil-du-desert/01-cover.webp",
+          "role": "cover",
+          "alt": "Soleil du désert — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 56900
+        },
+        {
+          "path": "products/soleil-du-desert/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Soleil du désert — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 68870
+        },
+        {
+          "path": "products/soleil-du-desert/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Soleil du désert — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 58566
+        },
+        {
+          "path": "products/soleil-du-desert/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Soleil du désert — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 98092
+        },
+        {
+          "path": "products/soleil-du-desert/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Soleil du désert — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 114690
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "geometrie-noir-or",
+      "name_fr": "Géométrie noir & or",
+      "category": "Skins arrière & caméra",
+      "sort_order": 14,
+      "cover": "products/geometrie-noir-or/01-cover.webp",
+      "thumbnail": "products/geometrie-noir-or/card.webp",
+      "gallery": [
+        {
+          "path": "products/geometrie-noir-or/01-cover.webp",
+          "role": "cover",
+          "alt": "Géométrie noir & or — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 88318
+        },
+        {
+          "path": "products/geometrie-noir-or/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Géométrie noir & or — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 84800
+        },
+        {
+          "path": "products/geometrie-noir-or/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Géométrie noir & or — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 80894
+        },
+        {
+          "path": "products/geometrie-noir-or/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Géométrie noir & or — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 110060
+        },
+        {
+          "path": "products/geometrie-noir-or/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Géométrie noir & or — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 136882
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "duck-bar-dark",
+      "name_fr": "Duck Bar — Dark",
+      "category": "Skins arrière & caméra",
+      "sort_order": 15,
+      "cover": "products/duck-bar-dark/01-cover.webp",
+      "thumbnail": "products/duck-bar-dark/card.webp",
+      "gallery": [
+        {
+          "path": "products/duck-bar-dark/01-cover.webp",
+          "role": "cover",
+          "alt": "Duck Bar — Dark — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 64568
+        },
+        {
+          "path": "products/duck-bar-dark/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Duck Bar — Dark — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 73986
+        },
+        {
+          "path": "products/duck-bar-dark/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Duck Bar — Dark — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 62744
+        },
+        {
+          "path": "products/duck-bar-dark/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Duck Bar — Dark — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 91550
+        },
+        {
+          "path": "products/duck-bar-dark/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Duck Bar — Dark — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 112950
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "cosmic-earth",
+      "name_fr": "Cosmic Earth",
+      "category": "Skins arrière & caméra",
+      "sort_order": 16,
+      "cover": "products/cosmic-earth/01-cover.webp",
+      "thumbnail": "products/cosmic-earth/card.webp",
+      "gallery": [
+        {
+          "path": "products/cosmic-earth/01-cover.webp",
+          "role": "cover",
+          "alt": "Cosmic Earth — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 93778
+        },
+        {
+          "path": "products/cosmic-earth/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Cosmic Earth — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 90668
+        },
+        {
+          "path": "products/cosmic-earth/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Cosmic Earth — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 73966
+        },
+        {
+          "path": "products/cosmic-earth/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Cosmic Earth — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 112102
+        },
+        {
+          "path": "products/cosmic-earth/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Cosmic Earth — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 138802
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "leopard",
+      "name_fr": "Léopard",
+      "category": "Skins arrière & caméra",
+      "sort_order": 17,
+      "cover": "products/leopard/01-cover.webp",
+      "thumbnail": "products/leopard/card.webp",
+      "gallery": [
+        {
+          "path": "products/leopard/01-cover.webp",
+          "role": "cover",
+          "alt": "Léopard — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 101444
+        },
+        {
+          "path": "products/leopard/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Léopard — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 96578
+        },
+        {
+          "path": "products/leopard/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Léopard — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 91738
+        },
+        {
+          "path": "products/leopard/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Léopard — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 116110
+        },
+        {
+          "path": "products/leopard/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Léopard — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 137922
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "cavalier-palestine",
+      "name_fr": "Cavalier Palestine",
+      "category": "Skins arrière & caméra",
+      "sort_order": 18,
+      "cover": "products/cavalier-palestine/01-cover.webp",
+      "thumbnail": "products/cavalier-palestine/card.webp",
+      "gallery": [
+        {
+          "path": "products/cavalier-palestine/01-cover.webp",
+          "role": "cover",
+          "alt": "Cavalier Palestine — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 64102
+        },
+        {
+          "path": "products/cavalier-palestine/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Cavalier Palestine — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 75302
+        },
+        {
+          "path": "products/cavalier-palestine/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Cavalier Palestine — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 62090
+        },
+        {
+          "path": "products/cavalier-palestine/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Cavalier Palestine — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 95780
+        },
+        {
+          "path": "products/cavalier-palestine/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Cavalier Palestine — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 115034
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "djellaba-jaune",
+      "name_fr": "Djellaba jaune",
+      "category": "Skins arrière & caméra",
+      "sort_order": 19,
+      "cover": "products/djellaba-jaune/01-cover.webp",
+      "thumbnail": "products/djellaba-jaune/card.webp",
+      "gallery": [
+        {
+          "path": "products/djellaba-jaune/01-cover.webp",
+          "role": "cover",
+          "alt": "Djellaba jaune — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 53210
+        },
+        {
+          "path": "products/djellaba-jaune/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Djellaba jaune — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 49740
+        },
+        {
+          "path": "products/djellaba-jaune/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Djellaba jaune — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 52948
+        },
+        {
+          "path": "products/djellaba-jaune/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Djellaba jaune — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 85708
+        },
+        {
+          "path": "products/djellaba-jaune/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Djellaba jaune — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 91934
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "maroc-ivoire-or",
+      "name_fr": "Maroc ivoire & or",
+      "category": "Skins arrière & caméra",
+      "sort_order": 20,
+      "cover": "products/maroc-ivoire-or/01-cover.webp",
+      "thumbnail": "products/maroc-ivoire-or/card.webp",
+      "gallery": [
+        {
+          "path": "products/maroc-ivoire-or/01-cover.webp",
+          "role": "cover",
+          "alt": "Maroc ivoire & or — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 74986
+        },
+        {
+          "path": "products/maroc-ivoire-or/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Maroc ivoire & or — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 79180
+        },
+        {
+          "path": "products/maroc-ivoire-or/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Maroc ivoire & or — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 75088
+        },
+        {
+          "path": "products/maroc-ivoire-or/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Maroc ivoire & or — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 99660
+        },
+        {
+          "path": "products/maroc-ivoire-or/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Maroc ivoire & or — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 134150
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "gin-botanique",
+      "name_fr": "Gin botanique",
+      "category": "Skins arrière & caméra",
+      "sort_order": 21,
+      "cover": "products/gin-botanique/01-cover.webp",
+      "thumbnail": "products/gin-botanique/card.webp",
+      "gallery": [
+        {
+          "path": "products/gin-botanique/01-cover.webp",
+          "role": "cover",
+          "alt": "Gin botanique — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 50366
+        },
+        {
+          "path": "products/gin-botanique/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Gin botanique — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 61872
+        },
+        {
+          "path": "products/gin-botanique/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Gin botanique — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 51078
+        },
+        {
+          "path": "products/gin-botanique/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Gin botanique — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 87426
+        },
+        {
+          "path": "products/gin-botanique/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Gin botanique — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 97200
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "relief-colore",
+      "name_fr": "Relief coloré",
+      "category": "Skins arrière & caméra",
+      "sort_order": 22,
+      "cover": "products/relief-colore/01-cover.webp",
+      "thumbnail": "products/relief-colore/card.webp",
+      "gallery": [
+        {
+          "path": "products/relief-colore/01-cover.webp",
+          "role": "cover",
+          "alt": "Relief coloré — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 100352
+        },
+        {
+          "path": "products/relief-colore/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Relief coloré — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 119188
+        },
+        {
+          "path": "products/relief-colore/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Relief coloré — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 94846
+        },
+        {
+          "path": "products/relief-colore/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Relief coloré — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 131214
+        },
+        {
+          "path": "products/relief-colore/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Relief coloré — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 153984
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "maroc-rouge-vert",
+      "name_fr": "Maroc rouge & vert",
+      "category": "Skins arrière & caméra",
+      "sort_order": 23,
+      "cover": "products/maroc-rouge-vert/01-cover.webp",
+      "thumbnail": "products/maroc-rouge-vert/card.webp",
+      "gallery": [
+        {
+          "path": "products/maroc-rouge-vert/01-cover.webp",
+          "role": "cover",
+          "alt": "Maroc rouge & vert — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 48758
+        },
+        {
+          "path": "products/maroc-rouge-vert/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Maroc rouge & vert — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 60332
+        },
+        {
+          "path": "products/maroc-rouge-vert/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Maroc rouge & vert — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 48590
+        },
+        {
+          "path": "products/maroc-rouge-vert/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Maroc rouge & vert — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 92366
+        },
+        {
+          "path": "products/maroc-rouge-vert/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Maroc rouge & vert — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 97104
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "maroc-ecusson-rouge",
+      "name_fr": "Maroc — Écusson rouge",
+      "category": "Skins arrière & caméra",
+      "sort_order": 24,
+      "cover": "products/maroc-ecusson-rouge/01-cover.webp",
+      "thumbnail": "products/maroc-ecusson-rouge/card.webp",
+      "gallery": [
+        {
+          "path": "products/maroc-ecusson-rouge/01-cover.webp",
+          "role": "cover",
+          "alt": "Maroc — Écusson rouge — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 42648
+        },
+        {
+          "path": "products/maroc-ecusson-rouge/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Maroc — Écusson rouge — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 70876
+        },
+        {
+          "path": "products/maroc-ecusson-rouge/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Maroc — Écusson rouge — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 48742
+        },
+        {
+          "path": "products/maroc-ecusson-rouge/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Maroc — Écusson rouge — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 83862
+        },
+        {
+          "path": "products/maroc-ecusson-rouge/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Maroc — Écusson rouge — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 119400
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "absolut-rose",
+      "name_fr": "Absolut Rose",
+      "category": "Skins arrière & caméra",
+      "sort_order": 25,
+      "cover": "products/absolut-rose/01-cover.webp",
+      "thumbnail": "products/absolut-rose/card.webp",
+      "gallery": [
+        {
+          "path": "products/absolut-rose/01-cover.webp",
+          "role": "cover",
+          "alt": "Absolut Rose — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 40486
+        },
+        {
+          "path": "products/absolut-rose/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Absolut Rose — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 49308
+        },
+        {
+          "path": "products/absolut-rose/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Absolut Rose — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 43106
+        },
+        {
+          "path": "products/absolut-rose/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Absolut Rose — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 82028
+        },
+        {
+          "path": "products/absolut-rose/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Absolut Rose — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 88960
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "speciale-roses",
+      "name_fr": "Spéciale Roses",
+      "category": "Skins arrière & caméra",
+      "sort_order": 26,
+      "cover": "products/speciale-roses/01-cover.webp",
+      "thumbnail": "products/speciale-roses/card.webp",
+      "gallery": [
+        {
+          "path": "products/speciale-roses/01-cover.webp",
+          "role": "cover",
+          "alt": "Spéciale Roses — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 55524
+        },
+        {
+          "path": "products/speciale-roses/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Spéciale Roses — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 63176
+        },
+        {
+          "path": "products/speciale-roses/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Spéciale Roses — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 56882
+        },
+        {
+          "path": "products/speciale-roses/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Spéciale Roses — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 84920
+        },
+        {
+          "path": "products/speciale-roses/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Spéciale Roses — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 105410
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "friends-pack",
+      "name_fr": "Friends Pack",
+      "category": "Skins arrière & caméra",
+      "sort_order": 27,
+      "cover": "products/friends-pack/01-cover.webp",
+      "thumbnail": "products/friends-pack/card.webp",
+      "gallery": [
+        {
+          "path": "products/friends-pack/01-cover.webp",
+          "role": "cover",
+          "alt": "Friends Pack — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 57020
+        },
+        {
+          "path": "products/friends-pack/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Friends Pack — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 58224
+        },
+        {
+          "path": "products/friends-pack/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Friends Pack — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 60716
+        },
+        {
+          "path": "products/friends-pack/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Friends Pack — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 102354
+        },
+        {
+          "path": "products/friends-pack/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Friends Pack — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 118100
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "sunset-coffee-bear",
+      "name_fr": "Sunset Coffee Bear",
+      "category": "Skins arrière & caméra",
+      "sort_order": 28,
+      "cover": "products/sunset-coffee-bear/01-cover.webp",
+      "thumbnail": "products/sunset-coffee-bear/card.webp",
+      "gallery": [
+        {
+          "path": "products/sunset-coffee-bear/01-cover.webp",
+          "role": "cover",
+          "alt": "Sunset Coffee Bear — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 67360
+        },
+        {
+          "path": "products/sunset-coffee-bear/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Sunset Coffee Bear — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 82556
+        },
+        {
+          "path": "products/sunset-coffee-bear/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Sunset Coffee Bear — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 61146
+        },
+        {
+          "path": "products/sunset-coffee-bear/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Sunset Coffee Bear — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 104460
+        },
+        {
+          "path": "products/sunset-coffee-bear/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Sunset Coffee Bear — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 123670
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "naruto-flammes-orange",
+      "name_fr": "Naruto — Flammes orange",
+      "category": "Skins arrière & caméra",
+      "sort_order": 29,
+      "cover": "products/naruto-flammes-orange/01-cover.webp",
+      "thumbnail": "products/naruto-flammes-orange/card.webp",
+      "gallery": [
+        {
+          "path": "products/naruto-flammes-orange/01-cover.webp",
+          "role": "cover",
+          "alt": "Naruto — Flammes orange — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 59568
+        },
+        {
+          "path": "products/naruto-flammes-orange/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Naruto — Flammes orange — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 64316
+        },
+        {
+          "path": "products/naruto-flammes-orange/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Naruto — Flammes orange — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 63260
+        },
+        {
+          "path": "products/naruto-flammes-orange/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Naruto — Flammes orange — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 93916
+        },
+        {
+          "path": "products/naruto-flammes-orange/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Naruto — Flammes orange — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 105800
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "chat-noir",
+      "name_fr": "Chat noir",
+      "category": "Skins arrière & caméra",
+      "sort_order": 30,
+      "cover": "products/chat-noir/01-cover.webp",
+      "thumbnail": "products/chat-noir/card.webp",
+      "gallery": [
+        {
+          "path": "products/chat-noir/01-cover.webp",
+          "role": "cover",
+          "alt": "Chat noir — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 29898
+        },
+        {
+          "path": "products/chat-noir/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Chat noir — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 40168
+        },
+        {
+          "path": "products/chat-noir/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Chat noir — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 33964
+        },
+        {
+          "path": "products/chat-noir/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Chat noir — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 76808
+        },
+        {
+          "path": "products/chat-noir/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Chat noir — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 80928
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "tanjiro-crimson",
+      "name_fr": "Tanjiro Crimson",
+      "category": "Skins arrière & caméra",
+      "sort_order": 31,
+      "cover": "products/tanjiro-crimson/01-cover.webp",
+      "thumbnail": "products/tanjiro-crimson/card.webp",
+      "gallery": [
+        {
+          "path": "products/tanjiro-crimson/01-cover.webp",
+          "role": "cover",
+          "alt": "Tanjiro Crimson — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 67534
+        },
+        {
+          "path": "products/tanjiro-crimson/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Tanjiro Crimson — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 74980
+        },
+        {
+          "path": "products/tanjiro-crimson/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Tanjiro Crimson — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 63800
+        },
+        {
+          "path": "products/tanjiro-crimson/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Tanjiro Crimson — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 108186
+        },
+        {
+          "path": "products/tanjiro-crimson/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Tanjiro Crimson — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 116286
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "tapis-rouge-ivoire",
+      "name_fr": "Tapis rouge & ivoire",
+      "category": "Skins arrière & caméra",
+      "sort_order": 32,
+      "cover": "products/tapis-rouge-ivoire/01-cover.webp",
+      "thumbnail": "products/tapis-rouge-ivoire/card.webp",
+      "gallery": [
+        {
+          "path": "products/tapis-rouge-ivoire/01-cover.webp",
+          "role": "cover",
+          "alt": "Tapis rouge & ivoire — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 84452
+        },
+        {
+          "path": "products/tapis-rouge-ivoire/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Tapis rouge & ivoire — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 90644
+        },
+        {
+          "path": "products/tapis-rouge-ivoire/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Tapis rouge & ivoire — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 82770
+        },
+        {
+          "path": "products/tapis-rouge-ivoire/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Tapis rouge & ivoire — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 121434
+        },
+        {
+          "path": "products/tapis-rouge-ivoire/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Tapis rouge & ivoire — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 155608
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "itachi-lune-rouge",
+      "name_fr": "Itachi — Lune rouge",
+      "category": "Skins arrière & caméra",
+      "sort_order": 33,
+      "cover": "products/itachi-lune-rouge/01-cover.webp",
+      "thumbnail": "products/itachi-lune-rouge/card.webp",
+      "gallery": [
+        {
+          "path": "products/itachi-lune-rouge/01-cover.webp",
+          "role": "cover",
+          "alt": "Itachi — Lune rouge — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 53188
+        },
+        {
+          "path": "products/itachi-lune-rouge/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Itachi — Lune rouge — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 47408
+        },
+        {
+          "path": "products/itachi-lune-rouge/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Itachi — Lune rouge — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 52982
+        },
+        {
+          "path": "products/itachi-lune-rouge/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Itachi — Lune rouge — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 88936
+        },
+        {
+          "path": "products/itachi-lune-rouge/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Itachi — Lune rouge — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 94872
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "cafe-latte",
+      "name_fr": "Café Latte",
+      "category": "Skins arrière & caméra",
+      "sort_order": 34,
+      "cover": "products/cafe-latte/01-cover.webp",
+      "thumbnail": "products/cafe-latte/card.webp",
+      "gallery": [
+        {
+          "path": "products/cafe-latte/01-cover.webp",
+          "role": "cover",
+          "alt": "Café Latte — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 44740
+        },
+        {
+          "path": "products/cafe-latte/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Café Latte — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 49396
+        },
+        {
+          "path": "products/cafe-latte/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Café Latte — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 48758
+        },
+        {
+          "path": "products/cafe-latte/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Café Latte — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 91794
+        },
+        {
+          "path": "products/cafe-latte/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Café Latte — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 96508
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "obito-fumee-violette",
+      "name_fr": "Obito — Fumée violette",
+      "category": "Skins arrière & caméra",
+      "sort_order": 35,
+      "cover": "products/obito-fumee-violette/01-cover.webp",
+      "thumbnail": "products/obito-fumee-violette/card.webp",
+      "gallery": [
+        {
+          "path": "products/obito-fumee-violette/01-cover.webp",
+          "role": "cover",
+          "alt": "Obito — Fumée violette — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 52168
+        },
+        {
+          "path": "products/obito-fumee-violette/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Obito — Fumée violette — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 58376
+        },
+        {
+          "path": "products/obito-fumee-violette/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Obito — Fumée violette — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 54856
+        },
+        {
+          "path": "products/obito-fumee-violette/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Obito — Fumée violette — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 93182
+        },
+        {
+          "path": "products/obito-fumee-violette/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Obito — Fumée violette — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 112254
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "khmissa-amazighe",
+      "name_fr": "Khmissa amazighe",
+      "category": "Skins arrière & caméra",
+      "sort_order": 36,
+      "cover": "products/khmissa-amazighe/01-cover.webp",
+      "thumbnail": "products/khmissa-amazighe/card.webp",
+      "gallery": [
+        {
+          "path": "products/khmissa-amazighe/01-cover.webp",
+          "role": "cover",
+          "alt": "Khmissa amazighe — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 65540
+        },
+        {
+          "path": "products/khmissa-amazighe/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Khmissa amazighe — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 68506
+        },
+        {
+          "path": "products/khmissa-amazighe/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Khmissa amazighe — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 67536
+        },
+        {
+          "path": "products/khmissa-amazighe/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Khmissa amazighe — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 104824
+        },
+        {
+          "path": "products/khmissa-amazighe/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Khmissa amazighe — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 122766
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "maroc-calligraphie-or",
+      "name_fr": "Maroc — Calligraphie or",
+      "category": "Skins arrière & caméra",
+      "sort_order": 37,
+      "cover": "products/maroc-calligraphie-or/01-cover.webp",
+      "thumbnail": "products/maroc-calligraphie-or/card.webp",
+      "gallery": [
+        {
+          "path": "products/maroc-calligraphie-or/01-cover.webp",
+          "role": "cover",
+          "alt": "Maroc — Calligraphie or — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 89618
+        },
+        {
+          "path": "products/maroc-calligraphie-or/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Maroc — Calligraphie or — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 70578
+        },
+        {
+          "path": "products/maroc-calligraphie-or/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Maroc — Calligraphie or — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 74594
+        },
+        {
+          "path": "products/maroc-calligraphie-or/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Maroc — Calligraphie or — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 115264
+        },
+        {
+          "path": "products/maroc-calligraphie-or/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Maroc — Calligraphie or — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 130666
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "duck-bar-blue",
+      "name_fr": "Duck Bar — Blue",
+      "category": "Skins arrière & caméra",
+      "sort_order": 38,
+      "cover": "products/duck-bar-blue/01-cover.webp",
+      "thumbnail": "products/duck-bar-blue/card.webp",
+      "gallery": [
+        {
+          "path": "products/duck-bar-blue/01-cover.webp",
+          "role": "cover",
+          "alt": "Duck Bar — Blue — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 74992
+        },
+        {
+          "path": "products/duck-bar-blue/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Duck Bar — Blue — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 79060
+        },
+        {
+          "path": "products/duck-bar-blue/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Duck Bar — Blue — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 70642
+        },
+        {
+          "path": "products/duck-bar-blue/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Duck Bar — Blue — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 92938
+        },
+        {
+          "path": "products/duck-bar-blue/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Duck Bar — Blue — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 124772
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "maroc-calligraphie-rouge",
+      "name_fr": "Maroc — Calligraphie rouge",
+      "category": "Skins arrière & caméra",
+      "sort_order": 39,
+      "cover": "products/maroc-calligraphie-rouge/01-cover.webp",
+      "thumbnail": "products/maroc-calligraphie-rouge/card.webp",
+      "gallery": [
+        {
+          "path": "products/maroc-calligraphie-rouge/01-cover.webp",
+          "role": "cover",
+          "alt": "Maroc — Calligraphie rouge — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 60958
+        },
+        {
+          "path": "products/maroc-calligraphie-rouge/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Maroc — Calligraphie rouge — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 53240
+        },
+        {
+          "path": "products/maroc-calligraphie-rouge/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Maroc — Calligraphie rouge — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 59178
+        },
+        {
+          "path": "products/maroc-calligraphie-rouge/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Maroc — Calligraphie rouge — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 98002
+        },
+        {
+          "path": "products/maroc-calligraphie-rouge/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Maroc — Calligraphie rouge — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 110040
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "armoiries-du-maroc",
+      "name_fr": "Armoiries du Maroc",
+      "category": "Skins arrière & caméra",
+      "sort_order": 40,
+      "cover": "products/armoiries-du-maroc/01-cover.webp",
+      "thumbnail": "products/armoiries-du-maroc/card.webp",
+      "gallery": [
+        {
+          "path": "products/armoiries-du-maroc/01-cover.webp",
+          "role": "cover",
+          "alt": "Armoiries du Maroc — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 137908
+        },
+        {
+          "path": "products/armoiries-du-maroc/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Armoiries du Maroc — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 111132
+        },
+        {
+          "path": "products/armoiries-du-maroc/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Armoiries du Maroc — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 129516
+        },
+        {
+          "path": "products/armoiries-du-maroc/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Armoiries du Maroc — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 143614
+        },
+        {
+          "path": "products/armoiries-du-maroc/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Armoiries du Maroc — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 190934
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "golden-raven",
+      "name_fr": "Corbeau doré",
+      "category": "Skins arrière & caméra",
+      "sort_order": 41,
+      "cover": "products/golden-raven/01-cover.webp",
+      "thumbnail": "products/golden-raven/card.webp",
+      "gallery": [
+        {
+          "path": "products/golden-raven/01-cover.webp",
+          "role": "cover",
+          "alt": "Corbeau doré — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 103384
+        },
+        {
+          "path": "products/golden-raven/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Corbeau doré — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 107642
+        },
+        {
+          "path": "products/golden-raven/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Corbeau doré — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 83428
+        },
+        {
+          "path": "products/golden-raven/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Corbeau doré — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 133652
+        },
+        {
+          "path": "products/golden-raven/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Corbeau doré — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 154370
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "levi-green",
+      "name_fr": "Levi Green",
+      "category": "Skins arrière & caméra",
+      "sort_order": 42,
+      "cover": "products/levi-green/01-cover.webp",
+      "thumbnail": "products/levi-green/card.webp",
+      "gallery": [
+        {
+          "path": "products/levi-green/01-cover.webp",
+          "role": "cover",
+          "alt": "Levi Green — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 66394
+        },
+        {
+          "path": "products/levi-green/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "Levi Green — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 67334
+        },
+        {
+          "path": "products/levi-green/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "Levi Green — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 65368
+        },
+        {
+          "path": "products/levi-green/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "Levi Green — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 103914
+        },
+        {
+          "path": "products/levi-green/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "Levi Green — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 119998
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    },
+    {
+      "slug": "one-piece-wanted",
+      "name_fr": "One Piece — Wanted",
+      "category": "Skins arrière & caméra",
+      "sort_order": 43,
+      "cover": "products/one-piece-wanted/01-cover.webp",
+      "thumbnail": "products/one-piece-wanted/card.webp",
+      "gallery": [
+        {
+          "path": "products/one-piece-wanted/01-cover.webp",
+          "role": "cover",
+          "alt": "One Piece — Wanted — Vue principale",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 143810
+        },
+        {
+          "path": "products/one-piece-wanted/02-peel.webp",
+          "role": "peel-detail",
+          "alt": "One Piece — Wanted — Détail du skin caméra",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 135912
+        },
+        {
+          "path": "products/one-piece-wanted/03-angled-duo.webp",
+          "role": "angled-duo",
+          "alt": "One Piece — Wanted — Vue en angle",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 130060
+        },
+        {
+          "path": "products/one-piece-wanted/04-lifestyle.webp",
+          "role": "lifestyle",
+          "alt": "One Piece — Wanted — Mise en scène",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 143058
+        },
+        {
+          "path": "products/one-piece-wanted/05-lifestyle-close.webp",
+          "role": "lifestyle-close",
+          "alt": "One Piece — Wanted — Vue rapprochée",
+          "width": 1000,
+          "height": 1000,
+          "bytes": 184842
+        }
+      ],
+      "thumbnail_width": 480,
+      "thumbnail_height": 480
+    }
+  ]
+}

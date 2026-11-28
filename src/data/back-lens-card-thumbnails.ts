@@ -10,14 +10,16 @@ import levis720 from "@/assets/backlens/card-thumbs/back-lens-02-card-720.webp.a
 import pirate360 from "@/assets/backlens/card-thumbs/back-lens-03-card-360.webp.asset.json";
 import pirate540 from "@/assets/backlens/card-thumbs/back-lens-03-card-540.webp.asset.json";
 import pirate720 from "@/assets/backlens/card-thumbs/back-lens-03-card-720.webp.asset.json";
+import { OPTIMIZED43_CARD_THUMBNAILS } from "./back-lens-optimized43";
 
-export type CardThumbnail = { src: string; srcSet: string };
+export type CardThumbnail = { src: string; srcSet: string; width?: number; height?: number };
 
 function thumb(a: { url: string }, b: { url: string }, c: { url: string }): CardThumbnail {
   return { src: b.url, srcSet: `${a.url} 360w, ${b.url} 540w, ${c.url} 720w` };
 }
 
 const THUMBNAILS: Record<string, CardThumbnail> = {
+  ...OPTIMIZED43_CARD_THUMBNAILS,
   "skinup-backlens-01": thumb(duck360, duck540, duck720),
   "skinup-backlens-02": thumb(levis360, levis540, levis720),
   "skinup-backlens-03": thumb(pirate360, pirate540, pirate720),

@@ -1,6 +1,6 @@
 import { expect, test } from "bun:test";
 import { backLensCardThumbnail } from "../data/back-lens-card-thumbnails";
-import { backLensSkinBySlug } from "../data/back-lens-skins";
+import { retiredBackLensSkinBySlug as backLensSkinBySlug } from "../data/archive/back-lens-imports";
 
 const HOMEPAGE_TRIO = ["back-lens-little-yellow-duck", "back-lens-levi-s-resolve", "back-lens-pirate-wanted-posters"];
 
